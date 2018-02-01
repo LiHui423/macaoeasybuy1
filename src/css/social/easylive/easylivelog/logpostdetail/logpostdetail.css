@@ -1,0 +1,183 @@
+/*氣泡框*/
+.statistics .statistics-title li.select .statistics-bubble{
+	border-color:#60b3e8;
+}
+/*箭頭*/
+.all-look .all-look-bottom .bottom-arrow{
+	color:#60b3e8;
+}
+/*帖子類型*/
+.messBox_mess_time p:last-of-type {
+	margin-left:10px;
+}
+.articleType span {
+    background-color: #60b3e8;
+    padding: 3px 15px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #FFFFFF;
+}
+/*帖子樣式*/
+.pillar-all{
+	width:220px;
+	margin-right:15px;
+	visibility: hidden;
+}
+.pillar-all:nth-of-type(4){
+	margin-right:0px;
+}
+.pillar-all .pillar{
+	width:100%;
+	position:relative;
+	background-color:#fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+}
+.pillar-all .post-shadow{
+	width:100%;
+}
+.pillar-all .post-shadow img{
+	width:94%;
+	display: block;
+	margin:0 auto;
+	vertical-align: top;
+}
+.pillar-all:hover .shadow-box{
+	display:block;
+}
+.pillar-all .shadow-box{
+	position:absolute;
+	z-index:49;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	background-color:rgba(0,0,0,.1);
+	border-radius:10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	-ms-border-radius:10px;
+	-o-border-radius:10px;
+	display:none;
+}
+.pillar-all .page-main{
+	border:1px solid #ccc;
+	overflow: hidden;
+	border-radius:10px 10px 0px 0px;
+	-webkit-border-radius:10px 10px 0px 0px;
+	-moz-border-radius:10px 10px 0px 0px;
+	-ms-border-radius:10px 10px 0px 0px;
+	-o-border-radius:10px 10px 0px 0px;
+}
+.pillar-all .page-main a{
+	display:block;
+}
+.pillar-all .page-main img.page-main-head-img{
+	width:100%;
+}
+.pillar-all .post-main-text{
+	padding:14px 14px 18px 14px;
+}
+.pillar-all .page-main .post-title{
+	font-size:16px;
+	font-weight:bold;
+	color:#000;
+	letter-spacing:2px;
+}
+.pillar-all .page-main .post-description{
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 20px;
+    color: #aaa;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    max-height: 58px;
+}
+.pillar-all .laster{
+	border:1px solid #ccc;
+	border-top:0px;
+	border-radius:0px 0px 10px 10px;
+	-webkit-border-radius:0px 0px 10px 10px;
+	-moz-border-radius:0px 0px 10px 10px;
+	-ms-border-radius:0px 0px 10px 10px;
+	-o-border-radius:0px 0px 10px 10px;
+	overflow: hidden;
+}
+.pillar-all .laster .laster-num li{
+	float:left;
+	width:33.333333%;
+	text-align:center;
+	color:#aaa;
+	padding:32px 0px 10px 0px;
+}
+.pillar-all .laster .laster-num li:first-of-type{
+	background: url(/img/social/liveshot/ProdigalTopicList/eye.png) 28px 14px no-repeat;
+}
+.pillar-all .laster .laster-num li:nth-of-type(2){
+	background: url(/img/social/liveshot/ProdigalTopicList/good.png) 27px 10px no-repeat;
+}
+.pillar-all .laster .laster-num li:last-of-type{
+	background: url(/img/social/liveshot/ProdigalTopicList/message.png) 27px 13px no-repeat;
+}
+.pillar-all .laster-look{
+	padding:15px;
+	background-color:#F2F2F2;
+}
+.pillar-all .laster-look .laster-head{
+	border-radius:50%;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	-ms-border-radius:50%;
+	-o-border-radius:50%;
+	width:60px;
+	height:60px;
+	line-height:59px;
+	overflow: hidden;
+	float:left;
+}
+.pillar-all .laster-look .laster-head img{
+	width:100%;
+}
+.pillar-all .laster-look .laster-text{
+	float:left;
+	margin:10px 0px 0px 14px;
+	width: 114px;
+}
+.pillar-all .laster-look .laster-text .laster-text-name{
+	font-size:18px;
+	font-weight:bold;
+}
+.pillar-all .laster-look .laster-text .laster-text-name span{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 72px;
+}
+.pillar-all .laster-look .laster-text .laster-text-name img{
+	vertical-align: top;
+	margin-left:8px;
+	width:22px;
+}
+.pillar-all .laster-look .laster-text .laster-text-num{
+	font-size:14px;
+	color:#999;
+	font-weight:600;
+	width: 100%;
+	overflow: hidden;
+}
+
+/*我帖子*/
+.pillar-all.mine .laster .laster-look .laster-text{
+	margin:0px;
+}
+.pillar-all.mine .laster-text-num{
+	text-indent:100px;
+}

@@ -1,0 +1,49 @@
+#editor{
+	min-height:130px;
+	text-align: left;
+	font-size:16px;
+	padding:10px 15px 0px 15px;
+	line-height:24px;
+	letter-spacing: 2px;
+	outline: 0px;
+	-webkit-user-select: auto;
+	-moz-user-select: auto;
+	-ms-user-select: auto;
+	-o-user-select: auto;
+	user-select: auto;
+	overflow: auto;
+}
+#editor img{
+	width:24px;
+	margin:-3px 5px 0px 5px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	cursor: default;
+	resize: none;
+}
+#editor input{
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	padding:0px 0px;
+	margin:0px 4px;
+	border:0px;
+	outline:0px;
+	background-color:transparent;
+	height:24px;
+	line-height:24px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	cursor: default;
+	resize: none;
+}
+#editor[contentEditable=true]:empty:not(:focus):before{
+	color:#aaa;
+    content:attr(placeholder);
+}

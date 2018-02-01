@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商店詳細頁(首頁)</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/moreshops/shopDetails/shopDetails.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/common/detail_common.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/plug/yez_js_Reset.js"></script>
+		<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+		<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+		<script>
+			var url=location.href.split('?')[1].split('=')[1];
+			var shopId=url;
+		</script>
+	</head>
+	<body>
+		<header></header>
+
+		<div id="shopDetails_searchBar" class="clearfloat">
+
+			<div class="clearfloat">
+				<div class="shopDetails_searchBarLeft">
+					<div class="searchBarLeft_top clearfloat">
+						<div class="searchBarLeft_topLogo">
+							<img src="/img/common/loading_pc_shop.png">
+						</div>
+						<div class="searchBarLeft_topData clearfloat">
+							<ul>
+								<li>
+									<div class="searchBarLeft_number myborder-radius">&nbsp;</div>
+									<p>描述相符</p>
+								</li>
+								<li>
+									<div class="searchBarLeft_number myborder-radius">&nbsp;</div>
+									<p>價格合理</p>
+								</li>
+								<li>
+									<div class="searchBarLeft_number myborder-radius">&nbsp;</div>
+									<p>商品質量</p>
+								</li>
+							</ul>
+						</div>
+						<div class="searchBarLeft_allData">
+							<p>&nbsp;</p>
+							<p>近期好評率</p>
+						</div>
+					</div>
+
+				</div>
+				<div class="shopDetails_searchBarRight">
+					<div class="shopDetails_searchBox clearfloat">
+						<div class="shopDetails_searchBoxLeft">
+							<span>搜本店</span>
+							<span><img src="/img/easybuy/moreshops/shopDetails_slide.png"></span>
+							<div class="shopDetails_searchBoxLeft_slideBox">
+								<ul>
+									<li>搜本店</li>
+									<li>搜本站</li>
+								</ul>
+							</div>
+						</div>
+						<div class="shopDetails_searchBoxMiddle"><input type="text" id="search-input" value=""></div>
+						<div class="shopDetails_searchBoxRight" id="search_btn"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/systemImg/7/7/7/20160707031032363321007103210032.png"></div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="searchBarLeft_bottom clearfloat">
+				<ul>
+					<li class="shop-number">商品數量：<span>&nbsp;</span></li>
+					<li class="shop-type">商品類別：<span>&nbsp;</span></li>
+					<li class="shop-level">商家評級：<span></span></li>
+					<li class="shop-report">舉報投訴：<span>&nbsp;</span></li>
+					<li class="shop-starts">創店時間：<span>&nbsp;</span></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="containerBox" id="containerBox">
+			<div class="shopDetails_main">
+
+				<div class="shopDetails_main_mess">
+
+					<div class="shopDetails_mess clearfloat">
+						<div class="shopDetails_banner">
+							<ul id="foodBannerul"></ul>
+							<div class="circleBox" id="foodBannerul-dotted"></div>
+						</div>
+						<div class="shopDetails_shoper">
+							<div class="shopDetails_shoper_head myborder-radius"></div>
+							<p class="shopDetails_shoper_name"></p>
+							<p class="shopDetails_shoper_intro"></p>
+							<div class="focus_btn">
+								<span>加入關注</span><span><img src="/img/easybuy/goodDetails/QRcode_button.png"></span>
+								<div class="addShopCar_QRshow">
+									<div class="addShopCar_QRshow_top"><img src="/img/easybuy/goodDetails/ticketPopBox_top.png"></div>
+									<div class="addShopCar_QRshow_main">
+										<img src="/img/easybuy/goodDetails/QRcode_show.png">
+										<div class="addShopCar_QRshow_text">手機掃碼直達本店</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="shopDetails_operating clearfloat">
+						<div class="shopDetails_operating_left">
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+						</div>
+						<div class="shopDetails_operating_right clearfloat">
+							<ul>
+								<li class="shareTo_bth">
+									<div class="article_share">
+										<img src="/img/easybuy/museum/icon/museumDetails_share.png" class="marks">
+										<img src="/img/easybuy/museum/icon/museumDetails_shares.png" class="grays">
+									</div>
+									<p>分享好友</p>
+								</li>
+								<li>
+									<div class="article_report">
+										<img src="/img/easybuy/museum/icon/museumDetails_wrongs.png" class="marks">
+										<img src="/img/easybuy/museum/icon/museumDetails_wrong.png" class="grays">
+									</div>
+									<p>問題舉報</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="shopDetails_visitor clearfloat">
+						<div class="shopDetails_visitor_left">
+							<p>&nbsp;</p>
+							<div><span><img src="/img/common/icon/seeIcon_dark.png"></span><span>宜粉到訪</span></div>
+						</div>
+						<div class="shopDetails_visitor_right clearfloat">
+							<div>最近查看本店：</div>
+							<ul class="clearfloat"></ul>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="shopDetails_main_indexBox">
+
+					<div class="indexBox_classBox clearfloat">
+						<ul>
+							<li data-typeid = "1"><img src="/img/easybuy/moreshops/moreshops_details-1.png"></li>
+							<li data-typeid = "2"><img src="/img/easybuy/moreshops/moreshops_details-2.png"></li>
+							<li data-typeid = "3"><img src="/img/easybuy/moreshops/moreshops_details-3.png"></li>
+							<li data-typeid = "4"><img src="/img/easybuy/moreshops/moreshops_details-4.png"></li>
+						</ul>
+					</div>
+
+					<!--人氣推薦-->
+					<div class="indexBox_popularBox clearfloat">
+						<!--人氣推薦標題-->
+						<div class="indexBox_classBox_secTitle">
+							<img src="/img/easybuy/moreshops/moreshops_details-title1.png">
+						</div>
+
+						<ul class="clearfloat" id="sentiment-box"></ul>
+
+					</div>
+
+					<!--宜粉熱評-->
+					<div class="indexBox_commentBox">
+						<!--宜粉熱評標題-->
+						<div class="indexBox_classBox_secTitle">
+							<img src="/img/easybuy/moreshops/moreshops_details-title2.png">
+						</div>
+
+						<div class="Subclasses_showBox clearfloat" id="hot-comment-box">
+							<div class="Subclasses_showBox_left"></div>
+							<div class="Subclasses_showBox_right"></div>
+						</div>
+
+					</div>
+
+					<!--宜粉嗮圖-->
+					<div class="indexBox_showpicBox">
+						<!--宜粉嗮圖標題-->
+						<div class="indexBox_classBox_secTitle">
+							<img src="/img/easybuy/moreshops/moreshops_details-title3.png">
+						</div>
+
+						<ul class="clearfloat" id="print-shop-box"></ul>
+
+					</div>
+
+				</div>
+			</div>
+
+
+
+		</div>
+		<footer></footer>
+	</body>
+
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/common/header&search&footer/footer.js"></script>
+	<script src="/js/easybuy/moreshops/shopDetails/shopDetails_index.js"></script>
+	<script src="/js/easybuy/moreshops/shopDetails/shopDetail_common.js"></script>
+	<!-- 页面点击事件 -->
+	<script src="/js/common/clickEvent.js"></script>
+
+	<!--人氣推薦模板-->
+	<script id="sentiment-template" type="text/html">
+		<%for(var i=0;i<list.length;i++){%>
+		<li>
+			<img src="//wap.macaoeasybuy.com/<%=list[i].pic2%>">
+			<div class="indexBox_popularBox_goodtitle">
+				<p class="hiddenText"><%=list[i].Title%></p>
+			</div>
+		</li>
+		<%}%>
+	</script>
+
+	<!--宜粉熱評模板-->
+	<script id="hot-comment-template" type="text/html">
+		<div class="Subclasses_showBox_leftEach clearfloat" id="hot-comments-shop<%=id%>">
+			<div class="showBox_leftEach_pic">
+				<img src="//wap.macaoeasybuy.com/<%=Pic2%>">
+			</div>
+			<div class="showBox_leftEach_mess">
+				<div class="showBox_leftEach_commentBox">
+					<%if(userComment.length > 1){%>
+						<%for(var i=0;i<2;i++){%>
+						<div data-id="<%=userComment[i].id%>" class="showBox_leftEach_comment clearfloat">
+							<div class="showBox_leftEach_commentLeft myborder-radius">
+								<img data-type="userAvatar" src="//wap.macaoeasybuy.com/<%=userComment[i].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'">
+							</div>
+							<div class="showBox_leftEach_commentRight">
+								<div class="showBox_leftEach_comment_mess">
+									<span><%=userComment[i].Name%></span>
+									<%if(userComment[i].sex == 'Girl'){%>
+									<span><img src="/img/common/girl.png"></span>
+									<%}else{%>
+									<span><img src="/img/common/boy.png"></span>
+									<%}%>
+								</div>
+								<div class="showBox_leftEach_comment_main"><%=userComment[i].Comment%></div>
+							</div>
+						</div>
+						<%}%>
+					<%}else if(userComment.length == 1){%>
+						<div data-id="<%=userComment[i].id%>" class="showBox_leftEach_comment clearfloat">
+							<div class="showBox_leftEach_commentLeft myborder-radius">
+								<img data-type="userAvatar" src="//wap.macaoeasybuy.com/<%=userComment[0].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'">
+							</div>
+							<div class="showBox_leftEach_commentRight">
+								<div class="showBox_leftEach_comment_mess">
+									<span><%=userComment[0].Name%></span>
+									<%if(userComment[0].sex == 'Girl'){%>
+									<span><img src="/img/common/girl.png"></span>
+									<%}else{%>
+									<span><img src="/img/common/boy.png"></span>
+									<%}%>
+								</div>
+								<div class="showBox_leftEach_comment_main"><%=userComment[0].Comment%></div>
+							</div>
+						</div>
+					<%}%>
+				</div>
+				<div class="showBox_leftEach_goodDetail">
+					<p><%=Title%></p>
+					<div class="showBox_leftEach_goodDetail_price">
+						<span>MOP<%=price%></span><span>MOP<%=costPrice%></span>
+					</div>
+					<div class="showBox_leftEach_goodDetail_data clearfloat">
+						<ul>
+							<li><span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=SeeNumber%>查看</span></li>
+							<li><span><img src="/img/common/icon/loveIcon_dark.png"></span><span><%=LoveNumber%>心動</span></li>
+							<li><span><img src="/img/common/icon/buyIcon_dark.png"></span><span><%=BuyNumber%>件已售</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<!--宜粉熱評評論模板-->
+	<script id="hot-commentList-template" type="text/html">
+		<%for(var i=0;i<list.length;i++){%>
+		<div data-id="<%=list[i].id%>" class="showBox_leftEach_comment clearfloat">
+			<div class="showBox_leftEach_commentLeft myborder-radius">
+				<img data-type="userAvatar" src="//wap.macaoeasybuy.com/<%=list[i].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'">
+			</div>
+			<div class="showBox_leftEach_commentRight">
+				<div class="showBox_leftEach_comment_mess">
+					<span><%=list[i].Name%></span>
+					<%if(list[i].sex == 'Girl'){%>
+					<span><img src="/img/common/girl.png"></span>
+					<%}else{%>
+					<span><img src="/img/common/boy.png"></span>
+					<%}%>
+				</div>
+				<div class="showBox_leftEach_comment_main"><%=list[i].Comment%></div>
+			</div>
+		</div>
+		<%}%>
+	</script>
+
+	<!--宜粉嗮圖模板-->
+	<script id="print-shop-template" type="text/html">
+		<%for(var i=0;i<list.length;i++){%>
+		<li>
+			<div class="indexBox_showpic_pic"><img src="//wap.macaoeasybuy.com/<%=list[i].SentVolunteersurl%>" onerror="this.style.width='150px';this.onerror=null;this.src='/img/common/share_easybuy.png'"></div>
+			<div class="indexBox_showpic_mess clearfloat">
+				<div class="indexBox_showpic_messLeft"><img src="//wap.macaoeasybuy.com/<%=list[i].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'"></div>
+				<div class="indexBox_showpic_messRight">
+					<p>
+						<span><%=list[i].Name%></span>
+						<%if(list[i].sex == 'Boy'){%>
+						<span><img src="/img/common/boy.png"></span>
+						<%}else{%>
+						<span><img src="/img/common/girl.png"></span>
+						<%}%>
+					</p>
+					<p><%=list[i].purchasedfrom%></p>
+				</div>
+			</div>
+		</li>
+		<%}%>
+	</script>
+
+
+	<!--以下不知道有什麼用的-->
+	<!--好店街的分類模板-->
+	<!--<script id="moreShopMenu" type="text/html" data-array="moreShopMenuData">
+		<%for(var i=0; i<list.length;i++){%>
+			<li data-id = "<%=list[i].id%>"><%=list[i].name%></li>
+		<%}%>
+	</script>-->
+
+	<!--商店列表的模板-->
+	<!--<script id="moreShopEach" type="text/html" data-array="moreShopEachData">
+		<%for(var i=0; i<list.length;i++){%>
+			<div class="moreshopsBox_shopEach" data-id = "<%=list[i].id%>">
+				<div class="moreshopsBox_shopMess clearfloat">
+					<div class="moreshopsBox_shopMess_logo">
+						<img src='wap.macaoeasybuy.com/<%=list[i].logo%>' onerror="this.src='/img/common/loading_pc_shop.png'">
+					</div>
+					<div class="moreshopsBox_shopMess_data">
+						<div class="moreshopsBox_shopMess_dataEach"><span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=list[i].seeNumber%>次查看</span></div>
+						<div class="moreshopsBox_shopMess_dataEach"><span><img src="/img/common/icon/buyIcon_dark.png"></span><span><%=list[i].buyNumber%>件累計售出</span></div>
+					</div>
+				</div>
+				<div class="moreshopsBox_goodShowBox clearfloat">
+					<%for(var j=0; j<list[i].spPiclist.length;j++){%>
+						<div class="moreshopsBox_goodShowEach">
+							<img src='wap.macaoeasybuy.com/<%=list[i].spPiclist[j]%>' onerror="this.src='/img/common/loading_pc_600.jpg'">
+						</div>
+					<%}%>
+				</div>
+			</div>
+		<%}%>
+	</script>-->
+
+</html>

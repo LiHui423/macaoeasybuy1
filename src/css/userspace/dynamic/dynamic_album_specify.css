@@ -1,0 +1,281 @@
+.dynamic_mainBox{
+	padding: 0;
+}
+.dynamic_album_about{
+	padding: 40px 30px 30px 30px;
+	background-color: #FFFFFF;
+}
+.dynamic_album_author{
+	padding-bottom: 20px;
+	border-bottom: 1px solid #E3E3E3;
+}
+.dynamic_album_authorLeft{
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+	float: left;
+}
+.dynamic_album_authorLeft img{
+	width: 100%;
+}
+.dynamic_album_authorRight{
+	float: left;
+	margin-left: 12px;
+}
+.dynamic_album_authorRight p:nth-of-type(1){
+	margin-top: 10px;
+}
+.dynamic_album_authorRight p:nth-of-type(1) span{
+	display: inline-block;
+	vertical-align: top;
+}
+.dynamic_album_authorRight p:nth-of-type(1) span:nth-of-type(1){
+	font-size: 18px;
+}
+.dynamic_album_authorRight p:nth-of-type(1) span:nth-of-type(2){
+	width: 15px;
+	margin-left: 20px;
+}
+.dynamic_album_authorRight p:nth-of-type(1) span:nth-of-type(2) img{
+	width: 100%;
+}
+.dynamic_album_authorRight p:nth-of-type(2){
+	margin-top: 12px;
+	color: #B3B3B3;
+	letter-spacing: 1px;
+}
+.dynamic_album_mess{
+	padding-top: 30px;
+}
+.dynamic_album_messLeft{
+	float: left;
+	width: 160px;
+	height: 160px;
+	background-size:cover;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+	-o-background-size:cover;
+}
+.dynamic_album_messRight{
+	margin-left: 20px;
+	float: left;
+}
+.dynamic_album_messRight p:nth-of-type(1){
+	font-size: 26px;
+	letter-spacing: 3px;
+	color: #e98900;
+}
+.dynamic_album_messRight p:nth-of-type(2){
+	margin-top: 10px;
+	padding-left: 10px;
+	color: #b3b3b3;
+	letter-spacing: 1px;
+	font-size: 16px;
+}
+.dynamic_album_messRight p:nth-of-type(3){
+	margin-top: 10px;
+	padding-left: 10px;
+	color: #b3b3b3;
+	letter-spacing: 1px;
+	font-size: 16px;
+}
+.dynamic_album_data{
+	margin-top: 12px;
+	padding-left: 10px;
+}
+.dynamic_album_data ul li{
+	float: left;
+	padding: 0px 20px;
+	border-right:1px solid #E3E3E3;
+}
+.dynamic_album_data ul li:nth-of-type(1){
+	padding-left: 0px;
+}
+.dynamic_album_data ul li p{
+	text-align: center;
+}
+.dynamic_album_data ul li p:nth-of-type(1){
+	font-size: 22px;
+	color: #000000;
+}
+.dynamic_album_data ul li p:nth-of-type(2){
+	padding-left: 0px;
+	margin-top: 0px;
+	letter-spacing: 2px;
+}
+#album-lister{
+	padding:25px;
+}
+.album-list{
+    width: 289px;
+    overflow: hidden;
+    float: left;
+    margin-right: 25px;
+    cursor: pointer;
+}
+.album-list:nth-of-type(3n){
+	margin-right:0px;
+}
+.album-list .album-relative {
+    position: relative;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    overflow: hidden;
+}
+.album-list .album-top-img{
+	height: 289px;
+	overflow: hidden;
+}
+.album-list .album-top-img img {
+    width: 100%;
+}
+.album-list .album-state {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom: 0px;
+    border-top: 0px;
+    padding-bottom: 5px;
+}
+.album-list .album-state div {
+    width: 50%;
+    float: left;
+    text-align: left;
+    padding: 8px 0px;
+    color: #e98900;
+    padding-left: 18px;
+}
+.album-list .album-state div img {
+    margin-right: 5px;
+}
+.album-list .album-state div span{
+	padding-right:4px;
+}
+.album-list .album-poster {
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background-color:#f2f2f2;
+    padding:8px 15px;
+}
+.album-list .album-poster .laster-text-head{
+	float:left;
+	width:60px;
+	height:60px;
+}
+.album-list .album-poster .laster-text-head img{
+	width:100%;
+	height:100%;
+}
+.album-list .album-poster .laster-text-num{
+	float:left;
+	padding:15px;
+	color:#888;
+	font-size:15px;
+	margin-top:-6px;
+}
+.album-list .album-poster .laster-text-num .laster-text-num-first span{
+	color:#000;
+	font-weight: bold;
+}
+.album-list .album-poster .laster-text-num img{
+	width:20px;
+	margin-top:-2px;
+}
+.album-list .shadow-box {
+    position: absolute;
+    z-index: 49;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgba(0,0,0,.1);
+    border-radius: 10px;
+    display: none;
+}
+.album-list .hover-check-box-outer{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:70px;
+	height:70px;
+	z-index:400;
+	display:none;
+}
+.album-list:hover .shadow-box{
+	display:block;
+}
+.album-list:hover .hover-check-box-outer{
+	display: block;
+}
+.album-list .hover-check-box{
+	position:absolute;
+	top:15px;
+	left:15px;
+	width:30px;
+	height:30px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-ms-border-radius:5px;
+	-o-border-radius:5px;
+	border-radius:5px;
+	cursor: pointer;
+	cursor: -ms-pointer;
+	background:#fff;
+}
+.album-list.select .hover-check-box{
+	background:url(/img/social/easylive/check-select.png) center center no-repeat #fff;
+}
+.album-list .shadow-box p{
+	color:#fff;
+	font-size:16px;
+	font-weight:bold;
+	width:80%;
+	height:66px;
+	margin:122px auto 0px auto;
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    letter-spacing: 1px;
+    line-height:23px;
+}
+.album-list .bottom-shadow {
+    height:30px;
+}
+.album-list .bottom-shadow img {
+    width: 98%;
+    display: block;
+    margin: 0 auto;
+    vertical-align: top;
+}
+.dynamic_sortBox ul{
+	float: left;
+}
+.collection_btn{
+	float: right;
+	width: 160px;
+	height: 45px;
+	text-align: center;
+	background-color: #c6c6c6;
+	line-height: 45px;
+	letter-spacing: 2px;
+	font-size: 16px;
+	color: #FFFFFF;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	-ms-border-radius:6px;
+	-o-border-radius:6px;
+	border-radius:6px;
+	margin-right: 15px;
+	margin-top: 12px;
+}
+.collection_btn_curr{
+	background-color:#e98900;
+	cursor: pointer;
+}

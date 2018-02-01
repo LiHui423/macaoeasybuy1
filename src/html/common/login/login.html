@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>登入</title>
+		<link rel="stylesheet" href="/css/common/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/header&search&footer.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/common/login/login.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/template-native.js"></script>
+		<script src="/js/common/bootstrap.min.js"></script>
+		<script src="/js/common/yez_js_Reset.js"></script>
+	</head>
+	<body>
+		<div id="swapper">
+			<header>
+				<!--頁面的彈窗的遮罩層-->
+				<div class="headPop_BG"></div>
+				<div class="headNavBox">
+					<div class="headNav_secondNav easyBuyNav">
+						<div class="navBar">
+							<ul>
+								<li><a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a></li>
+								<li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
+								<li><a href="//shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
+								<li><a href="//shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
+								<li><a href="//shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+								<li><a href="//social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
+								<li><a href="//social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
+								<li><a href="//shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
+								<li><a href="//shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
+								<li><a href="//shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
+								<li><a href="//social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="headNav_secondNav easyaLifeNav">
+						<div class="navBar">
+							<ul>
+								<li><a href="#">全球筍貨</a></li>
+								<li><a href="#">福利社</a></li>
+								<li><a href="#">宜買話題</a></li>
+								<li><a href="#">生活圈</a></li>
+								<li><a href="#">宜粉日誌</a></li>
+								<li><a href="#">宜粉專輯</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="headNavBox_mainBox clearfloat">
+						<div class="headNavBox_left">
+							<ul>
+								<li>
+									<a href="#">
+										<span class="homeIcon"></span><span>宜買首頁</span>
+									</a>
+								</li>
+								<li class="easyaLifeIcon2">
+									<a href="#">
+										<span class="easyaLifeIcon"></span><span>宜生活</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="headNavBox_right">
+							<ul>
+								<li>
+									<a href="#">申請開店</a>
+								</li>
+								<li class="topMenu_appLoad" style="background-color: rgb(255, 208, 209);">
+									<a href="#">APP下載</a>
+									<!--APP下載的彈出框-->
+									<div class="top_menu_pop appLoadHoverBox" style="display: none; height: 245px; padding-top: 30px; margin-top: 0px; padding-bottom: 30px; margin-bottom: 0px;">
+										<ul>
+											<li>
+												<div><img src="/img/common/header&amp;search&amp;footer/QR code.png"></div>
+												<p>easyBuy微信訂閱號</p>
+											</li>
+											<li>
+												<div><img src="/img/common/header&amp;search&amp;footer/QR code.png"></div>
+												<p>easyBuy微信服務號</p>
+											</li>
+											<li>
+												<div><img src="/img/common/header&amp;search&amp;footer/QR code.png"></div>
+												<p>easyBuy客戶端下載</p>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="headNavBox_middle ">
+							<ul class="notLoggedIn">
+								<li>
+									<a href="#">登入</a>
+								</li>
+								<li>
+									<a href="#">註冊</a>
+								</li>
+							</ul>
+							<ul class="hadLoggedIn hide"><li class="topMenu_hover topMenu_hover_personnal" style="background-color: rgb(255, 208, 209);">
+						<a href="#">
+							<p>Hi,<span>Envy</span></p>
+						</a>
+						<!--個人信息的彈出框-->
+						<div class="top_menu_pop top_menu_pop_personnal" style=""><div class="header_picBox"><img src="/img/common/loading_pc_80.png"></div>
+					<div class="header_otherTool">
+						<a><span>個人空間</span>&nbsp;<span><img src="/img/common/header&amp;search&amp;footer/header_next.png"></span></a>
+						<a><span>成長詳情</span>&nbsp;<span><img src="/img/common/header&amp;search&amp;footer/header_next.png"></span></a>
+						<a><span>退出帳號</span>&nbsp;<span><img src="/img/common/header&amp;search&amp;footer/header_next.png"></span></a>
+					</div></div>
+					</li>
+					<li class="topMenu_hover_move">
+						<a href="#">
+							心動
+							<span class="topMenu_num"><span class="topMenu_triangleLeft"></span><span id="TopMenu_LoveNum">8</span></span>
+						</a>
+					</li>
+					<li class="topMenu_hover_shopcar">
+						<a href="#">
+							購物籃
+							<span class="topMenu_num"><span class="topMenu_triangleLeft"></span><span id="TopMenu_LoveNum">66</span></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							紅包
+							<span class="topMenu_num"><span class="topMenu_triangleLeft"></span><span id="TopMenu_LoveNum">MOP550</span></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							積分
+							<span class="topMenu_num"><span class="topMenu_triangleLeft"></span><span id="TopMenu_LoveNum">5000分</span></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">足跡</a>
+					</li></ul>
+						</div>
+					</div>
+				</div>
+				<!--個人信息模板-->
+				<script src="/js/common/header&amp;search&amp;footer/topMenu_date.js" type="text/javascript" charset="utf-8"></script>
+				<script type="text/html" id="showloadPeopleMess" data-array="loadPeopleMessList">
+					<li class="topMenu_hover topMenu_hover_personnal">
+						<a href="#">
+							<p>Hi,<span><%=list[0].name%></span></p>
+						</a>
+						<!--個人信息的彈出框-->
+						<div class="top_menu_pop top_menu_pop_personnal"></div>
+					</li>
+					<li class="topMenu_hover_move">
+						<a href="#">
+							心動
+							<span class="topMenu_num"><span class="topMenu_triangleLeft"></span><span id="TopMenu_LoveNum"><%=list[0].moveNmuber%></span></span></span>
+						</a>
+					</li>
+					<li class="topMenu_hover_shopcar">
+						<a href="#">
+							購物籃
+							<span class="topMenu_num"><span class="topMenu_triangleLeft"></span><span id="TopMenu_LoveNum"><%=list[0].shopCart%></span></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							紅包
+							<span class="topMenu_num"><span class="topMenu_triangleLeft"></span><span id="TopMenu_LoveNum">MOP<%=list[0].redPack%></span></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							積分
+							<span class="topMenu_num"><span class="topMenu_triangleLeft"></span><span id="TopMenu_LoveNum"><%=list[0].integral%>分</span></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">足跡</a>
+					</li>
+				</script>
+				<script type="text/html" id="showPersonnalMess" data-array="loadPeopleMessList">
+					<div class="header_picBox"><img src="<%=list[0].headPic%>"></div>
+					<div class="header_otherTool">
+						<a><span>個人空間</span>&nbsp;<span><img src="/img/common/header&search&footer/header_next.png"></span></a>
+						<a><span>成長詳情</span>&nbsp;<span><img src="/img/common/header&search&footer/header_next.png"></span></a>
+						<a><span>退出帳號</span>&nbsp;<span><img src="/img/common/header&search&footer/header_next.png"></span></a>
+					</div>
+				</script>
+			</header>
+			<div id="container">
+				<div class="container-swapper">
+					<div class="container-swapper-inner clearfloat">
+						<div class="empty-box"></div>
+						<div class="easy-box">
+							<ul class="easy-nav clearfloat">
+								<li class="select"><a href="/page/common/login/login.html">宜粉登入</a></li>
+								<li><a href="/page/common/register/register.html">簡單註冊</a></li>
+								<li><a href="">店主登入</a></li>
+							</ul>
+							<div class="easy-box-content">
+
+								<div id="login-box">
+									<input type="text" class="easy-input" id="users" placeholder="請輸入宜買賬號(8位字母加數字)">
+									<input type="password" class="easy-input" id="password" placeholder="請輸入宜買密碼(8位字母加數字)">
+									<div class="tips-box"><span>X</span><span class="text">賬號或密碼錯誤哦，請重新檢查</span></div>
+									<!--找不到此帳號，請檢查是否輸入正確-->
+									<!--密碼錯誤，請檢查是否輸入正確-->
+									<!--多次輸入錯誤密碼，請試試找回密碼-->
+									<div id="login-submit" class="easy-btn">登入</div>
+									<div id="find-password">
+										<span>找回密碼<hr></span>
+									</div>
+									<div class="other-login">
+										<div class="other-login-title">
+											<hr>
+											<span>快速登入</span>
+											<hr>
+										</div>
+										<div class="other-login-icon">
+											<img src="/img/userspace/personalinfo/wechat-icon.png" alt="" id="wechat-login">
+											<img src="/img/userspace/personalinfo/facebook-icon.png" alt="" id="facebook-login">
+										</div>
+									</div>
+								</div>
+
+								<div id="find-password-box">
+									<div class="title">找回密碼</div>
+									<ul class="find-password-nav clearfloat">
+										<li class="select">
+											<div class="nav-color">
+												<div>1</div>
+											</div>
+											<div class="nav-text">驗證手機號碼</div>
+										</li>
+										<li>
+											<div class="nav-color">
+												<div>2</div>
+											</div>
+											<div class="nav-text">重設登入密碼</div>
+										</li>
+									</ul>
+									<div class="find-password-page">
+										<div class="page-one">
+											<input type="text" class="easy-input" id="phone-number" placeholder="請輸入您的手機號碼">
+											<div class="code clearfloat">
+												<div>
+													<input type="text" class="easy-input" id="code" placeholder="驗證碼">
+												</div>
+												<div class="easy-btn" id="get-code">獲取驗證碼</div>
+											</div>
+											<div class="tips-box"><span>X</span><span class="text">驗證碼錯誤哦，請檢查手機短信</span></div>
+											<!--請輸入澳門區有效的手機號碼-->
+											<!--驗證碼輸入錯誤-->
+											<!--驗證碼已過期-->
+											<div class="easy-btn" id="next-btn">下一步</div>
+											<div class="easy-btn" id="cancel-one">返回</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="footBaner">
+					<div class="footerAdvertising">
+						<img src="/img/common/underBanner.png">
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="footerMessBox_bgColor">
+					<div class="footerMessBox">
+						<div class="footerLeft"><img src="/img/common/header&amp;search&amp;footer/webIcon.png"></div>
+						<div class="footerRight">
+							<div class="footerRight-about">
+								<ul>
+									<li>
+										<a href="#">我們的商家</a>
+									</li>
+									<li>
+										<a href="#">我們的用戶</a>
+									</li>
+									<li>
+										<a href="#">宜生活文化</a>
+									</li>
+									<li>
+										<a href="#">認識我們</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footerRight-Mess">
+								<p>宜買生活百貨（澳門）有限公司版權所有</p>
+								<p>2014-2017 Copyright reserved by easyBuy Department Stores ( Macao)Ltd</p>
+							</div>
+							<div class="footerRight-code">
+								<div class="footerRight-codeEach">
+									<div class="footerRight-codeEach-img"><img src="/img/common/header&amp;search&amp;footer/QR code.png"></div>
+									<p>宜買微信筆記</p>
+								</div>
+								<div class="footerRight-codeEach">
+									<div class="footerRight-codeEach-img"><img src="/img/common/header&amp;search&amp;footer/QR code.png"></div>
+									<p>宜買APP下載</p>
+								</div>
+								<div class="footerRight-codeEach">
+									<div class="footerRight-codeEach-img"><img src="/img/common/header&amp;search&amp;footer/QR code.png"></div>
+									<p>宜買微信服務號</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script src="/js/common/login/login.js"></script>
+	</body>
+</html>

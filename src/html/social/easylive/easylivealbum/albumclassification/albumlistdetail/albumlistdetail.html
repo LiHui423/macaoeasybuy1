@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>宜生活-指定專輯詳細頁</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/social/easylive/easylivealbum/albumclassification/albumlistdetail/albumlistdetail.css">
+        <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+	    <script src="/js/common/frameDomainJSON.js"></script>
+	    <script src="/js/common/getData/getData_sinple.js"></script>
+	    <script> easyBuy.social.isEasyLife = true;easyBuy.global.hasNav = false;</script>
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="searchBar">
+				<div class="searchBox">
+					<div class="searchBox_mainBox clearfloat">
+						<div class="searchBox_left">
+							<ul class="clearfloat">
+								<li><a href="http://social.macaoeasybuy.com/easylive/easyliveglobalgoods/globalgoods.html">全球筍貨</a></li>
+								<li><a href="http://social.macaoeasybuy.com/easylive/easylivewelfare/easylivewelfare.html">福利社</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivebuytopic/easylivebuytopic.html">宜買話題</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivelifecircle/easylivelifecircle.html">生活圈</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivelog/easylivelog.html">宜粉日誌</a></li>
+								<li class="select"><a href="//social.macaoeasybuy.com/easylive/easylivealbum/easylivealbum.html">宜粉專輯</a></li>
+							</ul>
+						</div>
+						<div class="searchBox_right" id="searchBox_rightBox"></div>
+					</div>
+				</div>
+			</div>
+			<div id="container">
+                <div class="detail-title">
+                    <div class="detail-title-inner">
+                        <div class="albumBox_topBox clearfloat">
+                            <div class="albumBox_showPic">
+                                <img src="/img/social/easylive/album-recommend-list1.png" alt="">
+                            </div>
+                            <div class="albumBox_introBox">
+                                <div class="albumBox_introEach clearfloat">
+                                    <div class="albumBox_introEachMain"><p class="albumPic_albumName">《哈哈哈狗狗》</p></div>
+                                </div>
+                                <div class="albumBox_introEach clearfloat">
+                                    <div class="albumBox_introEachTitle">專輯圈 :</div>
+                                    <div class="albumBox_introEachMain">28張</div>
+                                    <div class="albumBox_introEachTitle second-list">分類 :</div>
+                                    <div class="albumBox_introEachMain"><span>精心打扮</span></div>
+                                </div>
+                                <div class="detail-title-timer">
+                                    <span>2016-12-30</span>
+                                    <span>19:36:36</span>
+                                    <span>創建</span>
+                                </div>
+                                <div class="labelList_DataBox clearfloat">
+                                    <div class="labelList_DataEach">
+                                        <div><img src="/img/userspace/userspace_postDetails/icon/respond_answer.png"></div>
+                                        <p><span>66</span>個宜粉留言</p>
+                                    </div>
+                                    <div class="labelList_DataEach">
+                                        <div><img src="/img/userspace/userspace_postDetails/icon/respond_see.png"></div>
+                                        <p><span>66</span>個宜粉查看</p>
+                                    </div>
+                                    <div class="labelList_DataEach">
+                                        <div><img src="/img/userspace/userspace_postDetails/icon/respond_thumbsup.png"></div>
+                                        <p><span>66</span>個宜粉贊好</p>
+                                    </div>
+                                    <div class="labelList_DataEach">
+                                        <div><img src="/img/userspace/userspace_postDetails/icon/cai.png"></div>
+                                        <p><span>66</span>個宜粉採集</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-swapper">
+                    <div class="mdcategory_title clearfloat">
+                        <div class="mdcategory-access"><div>最近</div><div>訪問</div></div>
+                        <div class="secondhand_easyfans">
+                            <ul class="artTempFans clearfloat">
+                                <li><img src="http://dummyimage.com/120x90"></li>
+                                <li><img src="http://dummyimage.com/88x31"></li>
+                                <li><img src="http://dummyimage.com/234x60"></li>
+                                <li><img src="http://dummyimage.com/120x90"></li>
+                            </ul>
+                        </div>
+                        <div class="take-album-btn">
+                            <div class="album-btn cannot-select">批量採集(<span>0</span>/6)</div>
+                        </div>
+                    </div>
+                    <div class="album-lister clearfloat">
+
+                        <div class="album-list" id="0">
+                            <div class="album-relative">
+                                <div class="album-top-img"><img src="/img/social/easylive/album-recommend-list1.png" alt=""></div>
+                                <div class="album-state clearfloat">
+                                    <div><img src="/img/social/easylive/album-classification-eye.png" alt=""><span>1234</span>查看</div>
+                                    <div><img src="/img/social/easylive/album-classification-mes.png" alt=""><span>1234</span>回應</div>
+                                    <div><img src="/img/social/easylive/album-classification-good.png" alt=""><span>1234</span>讃好</div>
+                                    <div><img src="/img/social/easylive/album-classification-cai.png" alt=""><span>1234</span>採集</div>
+                                </div>
+                                <div class="album-poster">
+                                    <div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+                                </div>
+                                <a href="#" class="shadow-box">
+                                    <p>革油表间持转青十白并例代级其。好想米动快太那再并认大并农气亲。共计整手计应切过商商精求。府数连或照完石员周型部府备。道片音几难龙也律般族信第新品直极。高活值效地细从</p>
+                                </a>
+                                <div class="hover-check-box-outer">
+                                    <div class="hover-check-box"></div>
+                                </div>
+                            </div>
+                            <div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+                        </div>
+
+                        <div class="album-list" id="1">
+                            <div class="album-relative">
+                                <div class="album-top-img"><img src="/img/social/easylive/album-recommend-list1.png" alt=""></div>
+                                <div class="album-state clearfloat">
+                                    <div><img src="/img/social/easylive/album-classification-eye.png" alt=""><span>1234</span>查看</div>
+                                    <div><img src="/img/social/easylive/album-classification-mes.png" alt=""><span>1234</span>回應</div>
+                                    <div><img src="/img/social/easylive/album-classification-good.png" alt=""><span>1234</span>讃好</div>
+                                    <div><img src="/img/social/easylive/album-classification-cai.png" alt=""><span>1234</span>採集</div>
+                                </div>
+                                <div class="album-poster">
+                                    <div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+                                </div>
+                                <a href="#" class="shadow-box">
+                                    <p>革油表间持转青十白并例代级其。好想米动快太那再并认大并农气亲。共计整手计应切过商商精求。府数连或照完石员周型部府备。道片音几难龙也律般族信第新品直极。高活值效地细从</p>
+                                </a>
+                                <div class="hover-check-box-outer">
+                                    <div class="hover-check-box"></div>
+                                </div>
+                            </div>
+                            <div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+                        </div>
+
+                        <div class="album-list" id="2">
+                            <div class="album-relative">
+                                <div class="album-top-img"><img src="/img/social/easylive/album-recommend-list1.png" alt=""></div>
+                                <div class="album-state clearfloat">
+                                    <div><img src="/img/social/easylive/album-classification-eye.png" alt=""><span>1234</span>查看</div>
+                                    <div><img src="/img/social/easylive/album-classification-mes.png" alt=""><span>1234</span>回應</div>
+                                    <div><img src="/img/social/easylive/album-classification-good.png" alt=""><span>1234</span>讃好</div>
+                                    <div><img src="/img/social/easylive/album-classification-cai.png" alt=""><span>1234</span>採集</div>
+                                </div>
+                                <div class="album-poster">
+                                    <div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+                                </div>
+                                <a href="#" class="shadow-box">
+                                    <p>革油表间持转青十白并例代级其。好想米动快太那再并认大并农气亲。共计整手计应切过商商精求。府数连或照完石员周型部府备。道片音几难龙也律般族信第新品直极。高活值效地细从</p>
+                                </a>
+                                <div class="hover-check-box-outer">
+                                    <div class="hover-check-box"></div>
+                                </div>
+                            </div>
+                            <div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+                        </div>
+
+                        <div class="album-list" id="3">
+                            <div class="album-relative">
+                                <div class="album-top-img"><img src="/img/social/easylive/album-recommend-list1.png" alt=""></div>
+                                <div class="album-state clearfloat">
+                                    <div><img src="/img/social/easylive/album-classification-eye.png" alt=""><span>1234</span>查看</div>
+                                    <div><img src="/img/social/easylive/album-classification-mes.png" alt=""><span>1234</span>回應</div>
+                                    <div><img src="/img/social/easylive/album-classification-good.png" alt=""><span>1234</span>讃好</div>
+                                    <div><img src="/img/social/easylive/album-classification-cai.png" alt=""><span>1234</span>採集</div>
+                                </div>
+                                <div class="album-poster">
+                                    <div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+                                </div>
+                                <a href="#" class="shadow-box">
+                                    <p>革油表间持转青十白并例代级其。好想米动快太那再并认大并农气亲。共计整手计应切过商商精求。府数连或照完石员周型部府备。道片音几难龙也律般族信第新品直极。高活值效地细从</p>
+                                </a>
+                                <div class="hover-check-box-outer">
+                                    <div class="hover-check-box"></div>
+                                </div>
+                            </div>
+                            <div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+                        </div>
+
+                        <div class="album-list" id="4">
+                            <div class="album-relative">
+                                <div class="album-top-img"><img src="/img/social/easylive/album-recommend-list1.png" alt=""></div>
+                                <div class="album-state clearfloat">
+                                    <div><img src="/img/social/easylive/album-classification-eye.png" alt=""><span>1234</span>查看</div>
+                                    <div><img src="/img/social/easylive/album-classification-mes.png" alt=""><span>1234</span>回應</div>
+                                    <div><img src="/img/social/easylive/album-classification-good.png" alt=""><span>1234</span>讃好</div>
+                                    <div><img src="/img/social/easylive/album-classification-cai.png" alt=""><span>1234</span>採集</div>
+                                </div>
+                                <div class="album-poster">
+                                    <div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+                                </div>
+                                <a href="#" class="shadow-box">
+                                    <p>革油表间持转青十白并例代级其。好想米动快太那再并认大并农气亲。共计整手计应切过商商精求。府数连或照完石员周型部府备。道片音几难龙也律般族信第新品直极。高活值效地细从</p>
+                                </a>
+                                <div class="hover-check-box-outer">
+                                    <div class="hover-check-box"></div>
+                                </div>
+                            </div>
+                            <div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+                        </div>
+
+                        <div class="album-list" id="5">
+                            <div class="album-relative">
+                                <div class="album-top-img"><img src="/img/social/easylive/album-recommend-list1.png" alt=""></div>
+                                <div class="album-state clearfloat">
+                                    <div><img src="/img/social/easylive/album-classification-eye.png" alt=""><span>1234</span>查看</div>
+                                    <div><img src="/img/social/easylive/album-classification-mes.png" alt=""><span>1234</span>回應</div>
+                                    <div><img src="/img/social/easylive/album-classification-good.png" alt=""><span>1234</span>讃好</div>
+                                    <div><img src="/img/social/easylive/album-classification-cai.png" alt=""><span>1234</span>採集</div>
+                                </div>
+                                <div class="album-poster">
+                                    <div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+                                </div>
+                                <a href="#" class="shadow-box">
+                                    <p>革油表间持转青十白并例代级其。好想米动快太那再并认大并农气亲。共计整手计应切过商商精求。府数连或照完石员周型部府备。道片音几难龙也律般族信第新品直极。高活值效地细从</p>
+                                </a>
+                                <div class="hover-check-box-outer">
+                                    <div class="hover-check-box"></div>
+                                </div>
+                            </div>
+                            <div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+                        </div>
+
+                        <div class="album-list" id="6">
+                            <div class="album-relative">
+                                <div class="album-top-img"><img src="/img/social/easylive/album-recommend-list1.png" alt=""></div>
+                                <div class="album-state clearfloat">
+                                    <div><img src="/img/social/easylive/album-classification-eye.png" alt=""><span>1234</span>查看</div>
+                                    <div><img src="/img/social/easylive/album-classification-mes.png" alt=""><span>1234</span>回應</div>
+                                    <div><img src="/img/social/easylive/album-classification-good.png" alt=""><span>1234</span>讃好</div>
+                                    <div><img src="/img/social/easylive/album-classification-cai.png" alt=""><span>1234</span>採集</div>
+                                </div>
+                                <div class="album-poster">
+                                    <div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+                                </div>
+                                <a href="#" class="shadow-box">
+                                    <p>革油表间持转青十白并例代级其。好想米动快太那再并认大并农气亲。共计整手计应切过商商精求。府数连或照完石员周型部府备。道片音几难龙也律般族信第新品直极。高活值效地细从</p>
+                                </a>
+                                <div class="hover-check-box-outer">
+                                    <div class="hover-check-box"></div>
+                                </div>
+                            </div>
+                            <div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+                        </div>
+
+                        <div class="album-list" id="7">
+                            <div class="album-relative">
+                                <div class="album-top-img"><img src="/img/social/easylive/album-recommend-list1.png" alt=""></div>
+                                <div class="album-state clearfloat">
+                                    <div><img src="/img/social/easylive/album-classification-eye.png" alt=""><span>1234</span>查看</div>
+                                    <div><img src="/img/social/easylive/album-classification-mes.png" alt=""><span>1234</span>回應</div>
+                                    <div><img src="/img/social/easylive/album-classification-good.png" alt=""><span>1234</span>讃好</div>
+                                    <div><img src="/img/social/easylive/album-classification-cai.png" alt=""><span>1234</span>採集</div>
+                                </div>
+                                <div class="album-poster">
+                                    <div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+                                </div>
+                                <a href="#" class="shadow-box">
+                                    <p>革油表间持转青十白并例代级其。好想米动快太那再并认大并农气亲。共计整手计应切过商商精求。府数连或照完石员周型部府备。道片音几难龙也律般族信第新品直极。高活值效地细从</p>
+                                </a>
+                                <div class="hover-check-box-outer">
+                                    <div class="hover-check-box"></div>
+                                </div>
+                            </div>
+                            <div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+                        </div>
+
+                        <div class="album-list" id="8">
+                            <div class="album-relative">
+                                <div class="album-top-img"><img src="/img/social/easylive/album-recommend-list1.png" alt=""></div>
+                                <div class="album-state clearfloat">
+                                    <div><img src="/img/social/easylive/album-classification-eye.png" alt=""><span>1234</span>查看</div>
+                                    <div><img src="/img/social/easylive/album-classification-mes.png" alt=""><span>1234</span>回應</div>
+                                    <div><img src="/img/social/easylive/album-classification-good.png" alt=""><span>1234</span>讃好</div>
+                                    <div><img src="/img/social/easylive/album-classification-cai.png" alt=""><span>1234</span>採集</div>
+                                </div>
+                                <div class="album-poster">
+                                    <div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+                                </div>
+                                <a href="#" class="shadow-box">
+                                    <p>革油表间持转青十白并例代级其。好想米动快太那再并认大并农气亲。共计整手计应切过商商精求。府数连或照完石员周型部府备。道片音几难龙也律般族信第新品直极。高活值效地细从</p>
+                                </a>
+                                <div class="hover-check-box-outer">
+                                    <div class="hover-check-box"></div>
+                                </div>
+                            </div>
+                            <div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+                        </div>
+
+                        <div class="album-list" id="9">
+                            <div class="album-relative">
+                                <div class="album-top-img"><img src="/img/social/easylive/album-recommend-list1.png" alt=""></div>
+                                <div class="album-state clearfloat">
+                                    <div><img src="/img/social/easylive/album-classification-eye.png" alt=""><span>1234</span>查看</div>
+                                    <div><img src="/img/social/easylive/album-classification-mes.png" alt=""><span>1234</span>回應</div>
+                                    <div><img src="/img/social/easylive/album-classification-good.png" alt=""><span>1234</span>讃好</div>
+                                    <div><img src="/img/social/easylive/album-classification-cai.png" alt=""><span>1234</span>採集</div>
+                                </div>
+                                <div class="album-poster">
+                                    <div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+                                </div>
+                                <a href="#" class="shadow-box">
+                                    <p>革油表间持转青十白并例代级其。好想米动快太那再并认大并农气亲。共计整手计应切过商商精求。府数连或照完石员周型部府备。道片音几难龙也律般族信第新品直极。高活值效地细从</p>
+                                </a>
+                                <div class="hover-check-box-outer">
+                                    <div class="hover-check-box"></div>
+                                </div>
+                            </div>
+                            <div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+                        </div>
+
+                    </div>
+                    <p class="no-more">~沒有更多內容了~</p>
+                </div>
+			</div>
+			<footer></footer>
+		</div>
+		<div id="album-collect" class="collectControlPanel">
+			<div class="collect-shadow"></div>
+			<div class="collect-box">
+				<img src="/img/social/easylive/close-collect.png" alt="" class="close-collect">
+				<div class="collect-title">採集圖片</div>
+				<div class="collect-inner">
+					<div class="collect-tips">您可以把這些圖片收藏至您的專屬專輯中哦！</div>
+                    <ul class="collect-imgs scrollIe scrollOther">
+                            <li class="clearfloat">
+                                <div class="collect-img-shadow"></div>
+                                <div class="collect-img"></div>
+                                <textarea class="collect-describe scrollIe scrollOther"  cols="45" wrap="hard"></textarea>
+                            </li>
+                            <li class="clearfloat">
+                                <div class="collect-img-shadow"></div>
+                                <div class="collect-img"></div>
+                                <textarea class="collect-describe scrollIe scrollOther"  cols="45" wrap="hard"></textarea>
+                            </li>
+                            <li class="clearfloat">
+                                <div class="collect-img-shadow"></div>
+                                <div class="collect-img"></div>
+                                <textarea class="collect-describe scrollIe scrollOther"  cols="45" wrap="hard"></textarea>
+                            </li>
+                            <li class="clearfloat">
+                                <div class="collect-img-shadow"></div>
+                                <div class="collect-img"></div>
+                                <textarea class="collect-describe scrollIe scrollOther"  cols="45" wrap="hard"></textarea>
+                            </li>
+                        </ul>
+					<div class="collect-tips">我要收藏在新專輯：</div>
+					<div class="collect-create clearfloat">
+						<input type="text" class="collect-input">
+						<div class="create-btn">創建</div>
+					</div>
+					<div class="collect-tips">我要收藏在以下專輯：</div>
+					<div class="collect-list">
+						<div class="collect-list-title"></div>
+						<ul class="clearfloat scrollIe scrollOther">
+							<li>
+								<div class="collect-list-div">
+									<img class="collect-list-div-img" src="/img/social/easylive/album-recommend-list1.png" alt="">
+									<div class="img-number">12</div>
+									<div class="collect-select"><img src="/img/social/easylive/collect-select.png" alt=""></div>
+								</div>
+								<div class="collect-list-div">吃飯啦</div>
+							</li>
+                            <li>
+                                <div class="collect-list-div">
+                                    <img class="collect-list-div-img" src="/img/social/easylive/album-recommend-list1.png" alt="">
+                                    <div class="img-number">12</div>
+                                    <div class="collect-select"><img src="/img/social/easylive/collect-select.png" alt=""></div>
+                                </div>
+                                <div class="collect-list-div">吃飯啦</div>
+                            </li>
+                            <li>
+                                <div class="collect-list-div">
+                                    <img class="collect-list-div-img" src="/img/social/easylive/album-recommend-list1.png" alt="">
+                                    <div class="img-number">12</div>
+                                    <div class="collect-select"><img src="/img/social/easylive/collect-select.png" alt=""></div>
+                                </div>
+                                <div class="collect-list-div">吃飯啦</div>
+                            </li>
+                            <li>
+                                <div class="collect-list-div">
+                                    <img class="collect-list-div-img" src="/img/social/easylive/album-recommend-list1.png" alt="">
+                                    <div class="img-number">12</div>
+                                    <div class="collect-select"><img src="/img/social/easylive/collect-select.png" alt=""></div>
+                                </div>
+                                <div class="collect-list-div">吃飯啦</div>
+                            </li>
+                            <li>
+                                <div class="collect-list-div">
+                                    <img class="collect-list-div-img" src="/img/social/easylive/album-recommend-list1.png" alt="">
+                                    <div class="img-number">12</div>
+                                    <div class="collect-select"><img src="/img/social/easylive/collect-select.png" alt=""></div>
+                                </div>
+                                <div class="collect-list-div">吃飯啦</div>
+                            </li>
+						</ul>
+					</div>
+					<div class="want-collect cannot-collect">收藏至專輯</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="/js/plug/yez_js_Reset.js"></script>
+    	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	    <script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	    <script src="/js/common/header&search&footer/searchBar.js" async></script>
+	    <script src="/js/common/header&search&footer/footer.js" async></script>
+	    <script src="/js/common/header&search&footer/header.js"></script>
+        <script src="/js/plug/yeztemplate.js"></script>
+        <script src="/js/common/albumCollection/albumCollection.min.js"></script>
+		<script src="/js/social/easylive/easylivealbum/albumclassification/albumlistdetail/albumlistdetail.js"></script>
+        <script id="albumInfo" type="text/html" data-type="template">
+            <div class="detail-title">
+                <div class="detail-title-inner">
+                    <div class="albumBox_topBox clearfloat">
+                        <div class="albumBox_showPic">
+                            <img src="//wap.macaoeasybuy.com<%=data[0].thecoverpictureurl%>" alt="">
+                        </div>
+                        <div class="albumBox_introBox">
+                            <div class="albumBox_introEach clearfloat">
+                                <div class="albumBox_introEachMain"><p class="albumPic_albumName"><%=data[0].thealbumName%></p></div>
+                            </div>
+                            <div class="albumBox_introEach clearfloat">
+                                <div class="albumBox_introEachTitle">專輯圈 :</div>
+                                <div class="albumBox_introEachMain"><%=data[0].groupIMgSum%> 張</div>
+                                <div class="albumBox_introEachTitle second-list">分類 :</div>
+                                <div class="albumBox_introEachMain"><span><%=data[0].className%></span></div>
+                            </div>
+                            <div class="detail-title-timer">
+                                <span><%=data[0].uptime%></span>
+                                <span>創建</span>
+                            </div>
+                            <div class="labelList_DataBox clearfloat">
+                                <div class="labelList_DataEach">
+                                    <div><img src="/img/userspace/userspace_postDetails/icon/respond_answer.png"></div>
+                                    <p><span><%=data[0].topicSum%></span>個宜粉留言</p>
+                                </div>
+                                <div class="labelList_DataEach">
+                                    <div><img src="/img/userspace/userspace_postDetails/icon/respond_see.png"></div>
+                                    <p><%=data[0].seeNum%>個宜粉查看</p>
+                                </div>
+                                <div class="labelList_DataEach">
+                                    <div><img src="/img/userspace/userspace_postDetails/icon/respond_thumbsup.png"></div>
+                                    <p><%=data[0].loveNum%>個宜粉贊好</p>
+                                </div>
+                                <div class="labelList_DataEach">
+                                    <div><img src="/img/userspace/userspace_postDetails/icon/cai.png"></div>
+                                    <p><%=data[0].collectionNum%>個宜粉採集</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-swapper">
+                <div class="mdcategory_title clearfloat">
+                    <div class="mdcategory-access"><div>最近</div><div>訪問</div></div>
+                    <div class="secondhand_easyfans">
+                        <ul class="artTempFans clearfloat">
+                            <%for(var i=0; i < data[0].userList.length; i++) {%>
+                            <li id="<%=data[0].userList[i].id%>" class="user-avatar"><img src="//wap.macaoeasybuy.com<%=data[0].userList[i].userPic%>"></li>
+                            <%}%>
+                        </ul>
+                    </div>
+                    <div class="take-album-btn">
+                        <div class="album-btn cannot-select">批量採集(<span>0</span>/6)</div>
+                    </div>
+                </div>
+                <div class="album-lister clearfloat picture-list"></div>
+            </div>
+        </script>
+        <script id="albumPicList" type="text/html" data-type="template">
+            <div class="page<%=page%>">
+                <%for(var i=0; i < data.length; i++) {%>
+                <div class="album-list picture-item" id="<%=data[i].id%>">
+                    <div class="album-relative">
+                        <div class="img-container"><img src="//wap.macaoeasybuy.com<%=data[i].groupurl%>"></div>
+                        <div class="album-state clearfloat">
+                            <div><img src="/img/social/easylive/album-classification-eye.png" alt=""><%=data[i].seeNum%></div>
+                            <div><img src="/img/social/easylive/album-classification-mes.png" alt=""><%=data[i].topicrepSum%></div>
+                            <div><img src="/img/social/easylive/album-classification-good.png" alt=""><%=data[i].loveNum%></div>
+                            <div><img src="/img/social/easylive/album-classification-cai.png" alt=""><%=data[i].collectionNum%></div>
+                        </div>
+                        <div class="album-poster">
+                            <div class="laster-text-num"><%=data[i].uptime%>前發佈</div>
+                        </div>
+                        <a href="#" class="shadow-box">
+                            <p><%=data[i].groupdetailed%></p>
+                        </a>
+                        <div class="hover-check-box-outer">
+                            <div class="hover-check-box"></div>
+                        </div>
+                    </div>
+                    <div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+                </div>
+                <%}%>
+            </div>
+        </script>
+	</body>
+</html>

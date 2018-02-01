@@ -1,0 +1,84 @@
+body{
+	background: url(//img.macaoeasybuy.com/img/easybuy/museum/museum_back.png) fixed;
+	overflow-y: scroll;
+}
+.museumDetails_othersGood_showBox{
+	margin-top: 20px;
+}
+.museumDetails_othersGood_showBox:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.museumDetails_othersGood_showBox ul li{
+	width: 231px;
+	float: left;
+	margin-left: 60px;
+}
+.museumDetails_othersGood_showBox ul li:nth-child(5n+1){
+	margin-left: 0;
+}
+.museumDetails_othersGood_each{
+
+}
+.museumDetails_othersGood_head{
+	width: 231px;
+}
+.museumDetails_othersGood_head img{
+	width: 100%;
+}
+.museumDetails_othersGood_mess{
+	background-color: #FFFFFF;
+}
+.museumDetails_othersGood_mess{
+	text-align: center;
+	padding: 10px 0;
+	border-left:1px solid #E3E3E3;
+	border-right:1px solid #E3E3E3;
+}
+.museumDetails_othersGood_title{
+	font-size: 16px;
+	color: #333333;
+}
+.museumDetails_othersGood_price{
+	font-size: 24px;
+	color: #FF527C;
+	margin: 6px 0;
+}
+.museumDetails_othersGood_price span{
+	margin-left: 5px;
+}
+.museumDetails_othersGood_oldprice{
+	font-size: 14px;
+	color: #999999;
+	text-decoration: line-through;
+}
+.museumDetails_othersGood_oldprice span{
+	margin-left: 5px;
+}
+.museumDetails_othersGood_data{
+	padding: 15px 8px;
+	background-color: #bdaeb2;
+}
+.museumDetails_othersGood_data:after{
+	display: block;
+	clear: both;
+	content: "";
+}
+.museumDetails_othersGood_data ul li{
+	float: left;
+	width: 70px;
+	margin-left: 0px;
+}
+.museumDetails_othersGood_data ul li div{
+	width: 18px;
+	margin-left: 25px;
+}
+.museumDetails_othersGood_data ul li div img{
+	width: 100%;
+}
+.museumDetails_othersGood_data ul li p{
+	color: #FFFFFF;
+	text-align: center;
+	margin-top: 2px;
+}

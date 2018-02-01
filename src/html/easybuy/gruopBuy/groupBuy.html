@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>量販團</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/groupBuy/groupBuy.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_sinple.js"></script>
+	</head>
+	<body>
+		<header></header>
+		<div id ="searchBar">
+			<div class="searchBox">
+				<div class="searchBox_mainBox">
+					<div class="searchBox_left">
+						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+					</div>
+					<div class="searchBox_right" id="searchBox_rightBox"></div>
+				</div>
+			</div>
+		</div>
+		<div class="containerBox">
+			<!--橫條導航欄-->
+			<div class="navBar">
+				<ul>
+					<li><a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+						<li><a href="//social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
+						<li><a href="//social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
+						<li class="navBarLi_curr"><a href="//shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
+						<li><a href="//social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
+				</ul>
+			</div>
+			<!--輪播圖-->
+			<div id="groupBuy_banner">
+				<div class="bannerCon">
+					<div class="before"><img src="/img/common/bannerLeft.png" alt=""></div>
+					<div class="after"><img src="/img/common/bannerRight.png" alt=""></div>
+					<div class="scroll"></div>
+				</div>
+			</div>
+			<div class="groupBuy_mainBox">
+				<!--排序框-->
+				<div class="groupBuy_sortBox">
+					<div class="regionBox">
+						<div class="sortBox_left">
+							<span><img src="/img/easybuy/groupBuy/localSort.png"></span><span>按開團地區排序</span>
+						</div>
+						<div class="sortBox_right">
+							<ul>
+								<li data-id ="1" class="regionBox_curr"><img src="/img/easybuy/groupBuy/a_curr.png"><img src="/img/easybuy/groupBuy/a.png"></li>
+								<li data-id ="2"><img src="/img/easybuy/groupBuy/g_curr.png"><img src="/img/easybuy/groupBuy/g.png"></li>
+								<li data-id ="3"><img src="/img/easybuy/groupBuy/b_curr.png"><img src="/img/easybuy/groupBuy/b.png"></li>
+								<li data-id ="4"><img src="/img/easybuy/groupBuy/f_curr.png"><img src="/img/easybuy/groupBuy/f.png"></li>
+							</ul>
+						</div>
+					</div>
+					<div class="typeBox">
+						<div class="sortBox_left">
+							<span><img src="/img/easybuy/groupBuy/classSort.png"></span><span>按團類型排序</span>
+						</div>
+						<div class="sortBox_right">
+							<ul>
+								<li data-id ="41" class="typeBox_curr"><img src="/img/easybuy/groupBuy/classSort5_curr.png"><img src="/img/easybuy/groupBuy/classSort5.png"></li>
+								<li data-id ="42"><img src="/img/easybuy/groupBuy/classSort4_curr.png"><img src="/img/easybuy/groupBuy/classSort4.png"></li>
+								<li data-id ="43"><img src="/img/easybuy/groupBuy/classSort1_curr.png"><img src="/img/easybuy/groupBuy/classSort1.png"></li>
+								<li data-id ="44"><img src="/img/easybuy/groupBuy/classSort2_curr.png"><img src="/img/easybuy/groupBuy/classSort2.png"></li>
+								<li data-id ="45"><img src="/img/easybuy/groupBuy/classSort3_curr.png"><img src="/img/easybuy/groupBuy/classSort3.png"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="groupBuy_tabBar">
+					<div class="groupBuy_tabBar_main">
+						<ul>
+							<li data-id ="1" class="groupBuy_beginBtn groupBuy_tabBar_curr">正在進行</li>
+							<li data-id ="2" class="groupBuy_ingBtn" >開團預告</li>
+							<li data-id ="3" class="groupBuy_endBtn" >團購結束</li>
+						</ul>
+					</div>
+				</div>
+				<div class="groupBuy_goodsList">
+					<div class="groupBuy_goodTab groupBuy_begin clearfloat">
+
+					</div>
+					<div class="groupBuy_goodTab groupBuy_ing hide clearfloat">
+
+					</div>
+					<div class="groupBuy_goodTab groupBuy_end hide clearfloat">
+
+					</div>
+					<div class="groupBuy_goodsList_nomore">~沒有更多商品了哦~</div>
+				</div>
+			</div>
+		</div>
+		<footer></footer>
+	</body>
+
+	<script src="/js/plug/yez_js_Reset.js"></script>
+	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+
+	<script src="/js/common/header&search&footer/searchBar.js" async></script>
+	<script src="/js/common/header&search&footer/footer.js" async></script>
+	<script src="/js/common/header&search&footer/header.js"></script>
+
+	<script src="/js/common/groupBuy/groupBuy_countDown.js"></script>
+	<script src="/js/plug/gradientBanner.js"></script>
+	<script src="/js/easybuy/groupBuy/groupBuy_date.js"></script>
+	<script src="/js/easybuy/groupBuy/groupBuy.js"></script>
+
+	<!--banner模板-->
+	<script type="text/html" id="showBannerPic" data-array = "bannerPicList">
+		<%for(var i = 0;i <list.length;i++){%>
+			<%if(list[i].bannerPic==""){%>
+				<a href="<%=list[i].tourl%>">
+					<img src='//img.macaoeasybuy.com/img/common/loadnow.jpg'>
+				</a>
+			<%}else{%>
+				<a href="<%=list[i].tourl%>">
+					<img src=http://wap.macaoeasybuy.com/<%=list[i].bannerPic%>>
+				</a>
+			<%}%>
+		<%}%>
+	</script>
+	<!--團購商品(正在進行)-->
+	<script type="text/html" id="showGroupBuyBegin" data-array = "GroupBuyBeginList" data-type="template">
+		<%for(var i = 0;i <list.length;i++){%>
+			<div class="groupBuy_goodsEach groupBuy_goodsEach_begin" data-id = "<%=list[i].id%>">
+				<div class="groupBuy_goodsEach_pic" style="background-image:url(http://wap.macaoeasybuy.com<%=list[i].showPic%>)">
+					<div class="goodsEach_begin_hover">
+						<div class="begin_hover_iconBox">
+							<div><img src="/img/common/groupBuy_share.png"></div>
+							<p>邀好友參團 </p>
+						</div>
+						<div class="begin_hover_iconBox begin_hover_seeGoodDetails">
+							<div><img src="/img/easybuy/groupBuy/groupBuy_details.png"></div>
+							<p>查看商品 </p>
+						</div>
+					</div>
+				</div>
+				<div class="groupBuy_goodsEach_messBox">
+					<div class="groupBuy_goodsEach_title"><%=list[i].title%></div>
+				</div>
+				<div class="groupBuy_begin_price">
+					<div class="groupBuy_begin_newprice">MOP<span><%=list[i].newPrice%></span></div>
+					<div class="groupBuy_begin_oldprice"><del>MOP&nbsp;<%=list[i].oldPrice%></del></div>
+				</div>
+				<div class="groupBuy_begin_status">
+					<div class="begin_status_left">
+						<div class="begin_status_btn">
+							<p>我要參團</p>
+							<p>湊人中(<span class="joinPeopleNunber"><%=list[i].jionNumber%></span>/<span class="allPeopleNunber"><%=list[i].allNumber%></span>)</p>
+						</div>
+					</div>
+					<div class="begin_status_right">
+						<p>再湊<span><%=list[i].allNumber -list[i].jionNumber%></span>人</p>
+						<p>馬上開團</p>
+					</div>
+				</div>
+				<div class="groupBuy_begin_finishBox"><img src="/img/easybuy/groupBuy/groupBuy_begin_finish.png"></div>
+				<div class="progressBar">
+					<div class="progressBar_curr"></div>
+				</div>
+				<div class="groupBuy_begin_leastTime">
+					<ul>
+						<li>剩&nbsp;</li>
+						<li>
+							<span class="group_days">00</span><span>天</span>
+						</li>
+						<li>
+							<span class="group_hours">00</span><span>小時</span>
+						</li>
+						<li>
+							<span class="group_mins">00</span><span>分</span>
+						</li>
+						<li>
+							<span class="group_seconds">00</span><span>秒</span>
+						</li>
+						<input type="hidden" class="begindate" value="<%=list[i].beginTime%>">
+						<input type="hidden" class="overdate" value="<%=list[i].overTime%>">
+						<input type="hidden" class="nowdate" value="<%=list[i].nowtime%>">
+					</ul>
+				</div>
+			</div>
+		<%}%>
+	</script>
+
+	<!--團購商品(團購預告)-->
+	<script type="text/html" id="showGroupBuyNotice" data-array = "GroupBuyNoticeList" data-type="template">
+		<%for(var i = 0;i <list.length;i++){%>
+			<div class="groupBuy_goodsEach groupBuy_goodsEach_notice" data-id = "<%=list[i].id%>">
+				<div class="groupBuy_goodsEach_pic" style="background-image: url(http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].showPic%>)"></div>
+				<div class="groupBuy_goodsEach_see"><div><img src="/img/common/goodEach_seeIcon.png"></div><p><%=list[i].seeNumber%>人期待中！</p></div>
+				<div class="groupBuy_goodsEach_messBox">
+					<div class="groupBuy_goodsEach_title"><%=list[i].title%></div>
+					<div class="groupBuy_goodsEach_oldPrice">
+						<div class="del_line"><img src="/img/easybuy/groupBuy/del_line.png"></div>
+						MOP<span><%=list[i].oldPrice%></span>
+					</div>
+				</div>
+				<div class="groupBuy_goodsEach_bottom">
+					<div class="groupBuy_goodsEach_bottomLeft">
+						<div><img src="/img/common/curr_right.png"></div>
+						<p>開團</p>
+						<p>在即</p>
+					</div>
+					<div class="groupBuy_goodsEach_bottomRight">
+						<p class="groupBuy_goodsEach_reciprocal">
+							<span class="group_notice_days">00</span><span>天</span>
+							<span class="group_notice_hours">00</span><span>小時</span>
+							<span class="group_notice_mins">00</span><span>分</span>
+							<span class="group_notice_seconds">00</span><span>秒</span>
+						</p>
+						<p class="groupBuy_goodsEach_beginTime">
+							<span class="beginTime_month">03</span>-<span class="beginTime_day">03</span>&nbsp;<span class="beginTime_hour">18</span>:<span class="beginTime_minite">00</span>:<span class="beginTime_second">00</span>開團</p>
+					</div>
+				</div>
+				<input type="hidden" name="" class="noticeTime" value="<%=list[i].beginTime%>">
+				<input type="hidden" class="nowdate" value="<%=list[i].nowtime%>">
+			</div>
+		<%}%>
+	</script>
+
+	<!--團購商品(團購結束)-->
+	<script type="text/x-handlebars-template" id="showGroupBuy_end"  data-array = "GroupBuy_endList" data-type="template">
+		<%for(var i = 0;i <list.length;i++){%>
+			<div class="groupBuy_goodsEach groupBuy_end_goodsEach" data-id = "<%=list[i].id%>">
+				<div class="groupBuy_goodsEach_pic" style="background-image: url(http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].showPic%>);"></div>
+				<div class="groupBuy_goodsEach_see"><div><img src="/img/common/hadBuy.png"></div><p><%=list[i].jionNumber%>人已參團！</p></div>
+				<div class="groupBuy_goodsEach_messBox">
+					<div class="groupBuy_goodsEach_title"><%=list[i].title%></div>
+				</div>
+				<div class="groupBuy_goodsEach_bottom">
+					<div class="groupBuy_goodsEach_bottomLeft">
+						<div><img src="/img/common/curr_right_end.png"></div>
+						<p>開團</p>
+						<p>結束</p>
+					</div>
+					<div class="groupBuy_goodsEach_bottomRight">
+						<p class="groupBuy_goodsEach_beginTime GroupBuy_end_overTimeBox">
+							<span class="end_overTime_month">03</span>-<span class="end_overTime_day">03</span>&nbsp;<span class="end_overTime_hour">18</span>:<span class="end_overTime_minite">00</span>:<span class="end_overTime_second">00</span>已結束
+						</p>
+					</div>
+				</div>
+				<input type="hidden" name="" class="GroupBuy_end_overTime" value="<%=list[i].overTime%>">
+				<div class="groupBuy_end_hover"><img src="/img/easybuy/groupBuy/groupBuy_end_hover.png"></div>
+			</div>
+		<%}%>
+	</script>
+
+</html>

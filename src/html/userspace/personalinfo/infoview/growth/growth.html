@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>用戶空間-個人信息查看-成長</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/css/userspace/personalinfo/infoview/growth/growth.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<!--只有自己看自己，不需要參數-->
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu">
+								<li><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica13.png" alt=""></div><span>信息</span><span>3/10</span></a></li>
+								<li><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica14.png" alt=""></div><span>興趣</span><span>10/11</span></a></li>
+								<li><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica15.png" alt=""></div><span>技能</span><span>6/6</span></a></li>
+								<li id="sentiment"><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica16.png" alt=""></div><span>人氣</span><span>248/1000</span></a></li>
+								<li id="growth" class="select"><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica17.png" alt=""></div><span>成長</span><span>LV2</span></a></li>
+							</ul>
+						</div>
+						<div id="userspace-content">
+							<!--這裡是內容-->
+								<div class="content-title"><img src="/img/userspace/personalinfo/growth-icon01.png" alt="">成長詳情</div>
+								<div class="content-box growth-detail">
+									<div class="clearfloat">
+										<div class="info-icon">
+											<img src="/img/userspace/personalinfo/growth-icon01-01.png" alt="">
+										</div>
+										<div class="info-title">累積消費金額：</div>
+										<div class="info-content"></div>
+									</div>
+									<div class="clearfloat">
+										<div class="info-icon">
+											<img src="/img/userspace/personalinfo/growth-icon01-02.png" alt="">
+										</div>
+										<div class="info-title">累積被讃好數：</div>
+										<div class="info-content"></div>
+									</div>
+									<div class="clearfloat">
+										<div class="info-icon">
+											<img src="/img/userspace/personalinfo/growth-icon01-03.png" alt="">
+										</div>
+										<div class="info-title">目前經驗值：</div>
+										<div class="info-content"></div>
+										<div class="count-tips">(經驗值 = 累積消費金額X0.6 + 累積被讚好次數X0.4)</div>
+									</div>
+								</div>
+								<div class="content-title"><img src="/img/userspace/personalinfo/growth-icon02.png" alt="">寵物等級進度</div>
+								<div class="content-box pet">
+									<div class="pet-box">
+										<div class="top-arrow">
+											<div>
+											</div>
+										</div>
+										<div class="experience">
+										</div>
+										<div class="pet-preview clearfloat">
+											<div>
+												<div class="arrow"><img src="/img/userspace/personalinfo/growth-icon02-arrow01.png"></div>
+												<div class="pet-img"><img src="/img/userspace/personalinfo/growth-icon02-pet.png" alt=""></div>
+												<div class="pet-describe">
+													<span>LV.3蔥町獸 1000點</span>
+													<div>技能
+														<div>
+															<img src="/img/userspace/personalinfo/arrow.png" alt="">
+															<div>
+																<div><img src="/img/userspace/personalinfo/growth-icon02-icon.png">不定期吸引新粉絲關注自己</div>
+																<div><img src="/img/userspace/personalinfo/growth-icon02-icon.png">不定期吐積分到主人賬戶，每次漲10分</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div>
+												<div class="arrow"><img src="/img/userspace/personalinfo/growth-icon02-arrow01.png"></div>
+												<div class="pet-img"><img src="/img/userspace/personalinfo/growth-icon02-pet02.png" alt=""></div>
+												<div class="pet-describe">
+													<span>LV.4菜町獸 2000點</span>
+													<div>技能
+														<div>
+															<img src="/img/userspace/personalinfo/arrow.png" alt="">
+															<div>
+																<div><img src="/img/userspace/personalinfo/growth-icon02-icon.png">不定期吸引新粉絲關注自己</div>
+																<div><img src="/img/userspace/personalinfo/growth-icon02-icon.png">不定期吐積分到主人賬戶，每次漲10分</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div>
+												<div class="arrow select"><img src="/img/userspace/personalinfo/growth-icon02-arrow01.png"></div>
+												<div class="pet-img"><img src="/img/userspace/personalinfo/growth-icon02-pet03.png" alt=""></div>
+												<div class="pet-describe">
+													<span>LV.5菜皇獸 3000點</span>
+													<div>技能
+														<div>
+															<img src="/img/userspace/personalinfo/arrow.png" alt="">
+															<div>
+																<div><img src="/img/userspace/personalinfo/growth-icon02-icon.png">不定期吸引新粉絲關注自己</div>
+																<div><img src="/img/userspace/personalinfo/growth-icon02-icon.png">不定期吐積分到主人賬戶，每次漲10分</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="experience-tips"></div>
+								</div>
+								<div class="content-title clearfloat"><img src="/img/userspace/personalinfo/growth-icon03.png" alt="">經驗值明細<div>註冊時間：<span>2014-05-21</span></div></div>
+								<div class="content-box growth-detail experience-table">
+									<div class="clearfloat">
+										<div class="year">0000年</div>
+										<div class="data-num clearfloat shop">
+											<div>累積消費</div>
+											<div>MOP<span class="left">1,5210</span></div>
+											<div>明細
+												<div class="detail-box">
+													<img src="/img/userspace/personalinfo/arrow.png" alt="">
+													<div>
+														<div class="scrollIe scrollOther">
+															<div class="clearfloat">
+																<div>2014-01</div>
+																<div>累積消費<span>MOP 250</span></div>
+																<div>貢獻經驗值<span>150 點</span></div>
+															</div>
+															<div class="clearfloat">
+																<div>2014-01</div>
+																<div>累積消費<span>MOP 250</span></div>
+																<div>貢獻經驗值<span>150 點</span></div>
+															</div>
+															<div class="clearfloat">
+																<div>2014-01</div>
+																<div>累積消費<span>MOP 250</span></div>
+																<div>貢獻經驗值<span>150 點</span></div>
+															</div>
+														</div>
+														<div>注：恭喜經驗值=累積消費金額X0.6 (四捨五入)</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="data-num clearfloat good">
+											<div>累積被讃好</div>
+											<div><span class="right">1,5210</span>次</div>
+											<div>明細
+												<div class="detail-box good-detail">
+													<img src="/img/userspace/personalinfo/arrow.png" alt="">
+													<div>
+														<div class="scrollIe scrollOther">
+															<div class="clearfloat">
+																<div class="clearfloat"><div><img src="/img/userspace/personalinfo/growth-icon03-icon01.png" alt=""></div>日誌</div>
+																<div>累積被讃好<span>0 次</span></div>
+																<div>貢獻經驗值<span>0 點</span></div>
+															</div>
+															<div class="clearfloat">
+																<div class="clearfloat"><div><img src="/img/userspace/personalinfo/growth-icon03-icon02.png" alt=""></div>生活圈</div>
+																<div>累積被讃好<span>0 次</span></div>
+																<div>貢獻經驗值<span>0 點</span></div>
+															</div>
+															<div class="clearfloat">
+																<div class="clearfloat"><div><img src="/img/userspace/personalinfo/growth-icon03-icon03.png" alt=""></div>專輯</div>
+																<div>累積被讃好<span>0 次</span></div>
+																<div>貢獻經驗值<span>0 點</span></div>
+															</div>
+															<div class="clearfloat">
+																<div class="clearfloat"><div><img src="/img/userspace/personalinfo/growth-icon03-icon04.png" alt=""></div>二手</div>
+																<div>累積被讃好<span>0 次</span></div>
+																<div>貢獻經驗值<span>0 點</span></div>
+															</div>
+															<div class="clearfloat">
+																<div class="clearfloat"><div><img src="/img/userspace/personalinfo/growth-icon03-icon05.png" alt=""></div>敗家誌</div>
+																<div>累積被讃好<span>0 次</span></div>
+																<div>貢獻經驗值<span>0 點</span></div>
+															</div>
+															<div class="clearfloat">
+																<div class="clearfloat"><div><img src="/img/userspace/personalinfo/growth-icon03-icon06.png" alt=""></div>標籤</div>
+																<div>累積被讃好<span>0 次</span></div>
+																<div>貢獻經驗值<span>0 點</span></div>
+															</div>
+														</div>
+														<div>注：恭喜經驗值=累積被讃好次數X0.4 (四捨五入)</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="data-nums clearfloat">
+											<div>獲得經驗值</div>
+											<div>9,1501點</div>
+										</div>
+									</div>
+								</div>
+							<!--內容的結束標識-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+		<script src="/js/plug/yez_js_Reset.js"></script>
+		<script src="/js/common/vendor/template-native.js"></script>
+		<script src="/js/userspace/common/userinfo.js" async></script>
+		<script src="/js/userspace/common/leftmenu.js" async></script>
+		<script src="/js/userspace/common/newspush.js" async></script>
+		<script src="/js/common/header&search&footer/footer.js" async></script>
+		<script src="/js/common/header&search&footer/header.js"></script>
+        <script src="/js/common/ebtemplate-jquery.js"></script>
+		<script src="/js/userspace/personalinfo/infoview/growth/growth.js"></script>
+		<script id="queryUserGrowUpBasic" type="text/html" data-eb-template>
+			<div class="content-title"><img src="/img/userspace/personalinfo/growth-icon01.png">成長詳情</div>
+			<div class="content-box growth-detail">
+				<div class="clearfloat">
+					<div class="info-icon">
+						<img src="/img/userspace/personalinfo/growth-icon01-01.png">
+					</div>
+					<div class="info-title">累積消費金額：</div>
+					<div class="info-content">MOP<span class="left"><%=formatNum(payCount)%></span></div>
+				</div>
+				<div class="clearfloat">
+					<div class="info-icon">
+						<img src="/img/userspace/personalinfo/growth-icon01-02.png" alt="">
+					</div>
+					<div class="info-title">累積被讃好數：</div>
+					<div class="info-content"><span class="right"><%=formatNum(loveCount)%></span>次</div>
+				</div>
+				<div class="clearfloat">
+					<div class="info-icon">
+						<img src="/img/userspace/personalinfo/growth-icon01-03.png" alt="">
+					</div>
+					<div class="info-title">目前經驗值：</div>
+					<div class="info-content"><span class="right"><%=formatNum(experCount)%></span>點</div>
+					<div class="count-tips">(經驗值 = 累積消費金額X0.6 + 累積被讚好次數X0.4)</div>
+				</div>
+			</div>
+			<div class="content-title"><img src="/img/userspace/personalinfo/growth-icon02.png">寵物等級進度</div>
+			<div class="content-box pet">
+				<div class="pet-box">
+					<div class="top-arrow">
+						<div>
+							<img src="/img/userspace/personalinfo/growth-icon02-arrow02.png">
+							<span><%=formatNum(experCount)%></span>點
+						</div>
+					</div>
+					<div class="experience">
+						<div></div>
+					</div>
+					<div class="pet-preview clearfloat">
+                        <%for (var i=0, pet; pet = content[i++];) {%>
+                        <div>
+                            <div class="arrow"><img src="/img/userspace/personalinfo/growth-icon02-arrow01.png"></div>
+                            <div class="pet-img"><img src="<%=osURL%><%=pet.petPic%>"></div>
+                            <div class="pet-describe">
+                                <span>LV.<%=pet.level%> <%=pet.petName%> <%=pet.levelNum%>點</span>
+                                <div>技能
+                                    <div>
+                                        <img src="/img/userspace/personalinfo/arrow.png" alt="">
+                                        <div>
+                                            <div><img src="/img/userspace/personalinfo/growth-icon02-icon.png">不定期吸引新粉絲關注自己</div>
+                                            <div><img src="/img/userspace/personalinfo/growth-icon02-icon.png">不定期吐積分到主人賬戶，每次漲10分</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%}%>
+					</div>
+				</div>
+                <%if(nowLevel < 5) {%>
+                <div class="experience-tips">距離升級至 LV.<%=nextLevel%> <%=nextName%>還有<span> <%=nextExp%> </span>點經驗值</div>
+                <%}%>
+			</div>
+		</script>
+        <script id="queryUserGrowUpDetail" type="text/html" data-eb-template>
+            <div class="content-title clearfloat"><img src="/img/userspace/personalinfo/growth-icon03.png">經驗值明細<div>註冊時間：<span>2014-05-21</span></div></div>
+            <div class="content-box growth-detail experience-table">
+                <div class="clearfloat">
+                    <div class="year"><%=year%>年</div>
+                    <div class="data-num clearfloat shop">
+                        <div>累積消費</div>
+                        <div>MOP<span class="left"><%=formatNum(payCount)%></span></div>
+                        <div>明細<div class="detail-box good-detail"></div></div>
+                    </div>
+                    <div class="data-num clearfloat good">
+                        <div>累積被讃好</div>
+                        <div><span class="right"><%=formatNum(loveCount)%></span>次</div>
+                        <div>明細<div class="detail-box good-detail"></div></div>
+                    </div>
+                    <div class="data-nums clearfloat">
+                        <div>獲得經驗值</div>
+                        <div><%=formatNum(payCount*0.6 + loveCount*0.4)%> 點</div>
+                    </div>
+                </div>
+            </div>
+        </script>
+        <script id="queryUserGrowUpMoneyDetail" type="text/html" data-eb-template>
+                <img src="/img/userspace/personalinfo/arrow.png" alt="">
+                <div>
+                    <%for(var i=0, item; item = data[i++];) {%>
+                    <div class="scrollIe scrollOther">
+                        <div class="clearfloat">
+                            <div><%=item.year%>-<%=item.month%></div>
+                            <div>累積消費<span>MOP <%=formatNum(item.pay)%></span></div>
+                            <div>貢獻經驗值<span><%=formatNum(item.pay*0.6)%> 點</span></div>
+                        </div>
+                    </div>
+                    <%}%>
+                    <div>注：恭喜經驗值=累積消費金額X0.6 (四捨五入)</div>
+                </div>
+        </script>
+        <script id="queryUserGrowUpLoveDetail" type="text/html" data-eb-template>
+			<img src="/img/userspace/personalinfo/arrow.png" alt="">
+			<div>
+				<div class="scrollIe scrollOther">
+					<div class="clearfloat">
+						<div class="clearfloat"><div><img src="/img/userspace/personalinfo/growth-icon03-icon01.png" alt=""></div>日誌</div>
+						<div>累積被讃好<span><%=data.releaseCount%> 次</span></div>
+						<div>貢獻經驗值<span>0 點</span></div>
+					</div>
+					<div class="clearfloat">
+						<div class="clearfloat"><div><img src="/img/userspace/personalinfo/growth-icon03-icon02.png" alt=""></div>生活圈</div>
+						<div>累積被讃好<span><%=data.lifeCount%> 次</span></div>
+						<div>貢獻經驗值<span>0 點</span></div>
+					</div>
+					<div class="clearfloat">
+						<div class="clearfloat"><div><img src="/img/userspace/personalinfo/growth-icon03-icon03.png" alt=""></div>專輯</div>
+						<div>累積被讃好<span><%=data.albumCount%> 次</span></div>
+						<div>貢獻經驗值<span>0 點</span></div>
+					</div>
+					<div class="clearfloat">
+						<div class="clearfloat"><div><img src="/img/userspace/personalinfo/growth-icon03-icon04.png" alt=""></div>二手</div>
+						<div>累積被讃好<span><%=data.usedCount%> 次</span></div>
+						<div>貢獻經驗值<span>0 點</span></div>
+					</div>
+					<div class="clearfloat">
+						<div class="clearfloat"><div><img src="/img/userspace/personalinfo/growth-icon03-icon05.png" alt=""></div>敗家誌</div>
+						<div>累積被讃好<span><%=data.sentCount%> 次</span></div>
+						<div>貢獻經驗值<span>0 點</span></div>
+					</div>
+					<div class="clearfloat">
+						<div class="clearfloat"><div><img src="/img/userspace/personalinfo/growth-icon03-icon06.png" alt=""></div>標籤</div>
+						<div>累積被讃好<span><%=data.labelCount%> 次</span></div>
+						<div>貢獻經驗值<span>0 點</span></div>
+					</div>
+				</div>
+				<div>注：恭喜經驗值=累積被讃好次數X0.4 (四捨五入)</div>
+			</div>
+        </script>
+	</body>
+</html>

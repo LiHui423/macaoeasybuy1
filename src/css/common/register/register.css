@@ -1,0 +1,275 @@
+#container{
+	margin-top:-1px;
+}
+.container-swapper{
+	min-height:850px;
+	background: url(/img/common/loginregister/bg.jpg) center 0px no-repeat;
+}
+.container-swapper-inner{
+	width:1397px;
+	margin:0 auto;
+}
+.empty-box{
+	float:left;
+	width:62%;
+	height:500px;
+}
+.easy-box{
+	float:left;
+	width:408px;
+	border:2px solid #ff5b77;
+	background-color:#fff;
+	margin-top:80px;
+}
+.easy-box .easy-nav{
+	width:100%;
+	border-bottom:2px solid #ff5b77;
+}
+.easy-box .easy-nav li{
+	float:left;
+	width:33.333333%;
+	text-align: center;
+	border-right:2px solid #ff5b77;
+	font-size:18px;
+}
+.easy-box .easy-nav li.select{
+	background-color:#ff5b77;
+}
+.easy-box .easy-nav li:last-of-type{
+	border-right:0px;
+}
+.easy-box .easy-nav li a{
+	display: block;
+	color:#ff5b77;
+	padding:10px 0px;
+}
+.easy-box .easy-nav li.select a{
+	color:#fff;
+}
+.easy-box .easy-box-content{
+	padding:38px 45px 35px 45px;
+}
+
+input.easy-input{
+	width:100%;
+	padding:10px 12px;
+	font-size:16px;
+	outline:0px;
+	color:#ff5b77;
+	border:1px solid #ccc;
+	letter-spacing: 1px;
+	margin-bottom:20px;
+}
+input.easy-input::-webkit-input-placeholder {
+	color:#ccc;
+}
+input.easy-input:-moz-placeholder {
+	color:#ccc;
+}
+input.easy-input::-moz-placeholder {
+	color:#ccc;
+}
+input.easy-input:-ms-input-placeholder {
+	color:#ccc;
+}
+.tips-box{
+	color:#ff5b77;
+	font-size:16px;
+	letter-spacing: 2px;
+	padding:18px 0px;
+	height:58px;
+}
+.tips-box span:first-of-type{
+	padding-right:15px;
+	cursor: default;
+}
+.easy-btn{
+	background:#ff5b77;
+	color:#fff;
+	text-align: center;
+	font-size:18px;
+	padding:10px 0px;
+	cursor: pointer;
+}
+.code div:first-of-type {
+    width: 50%;
+    float: left;
+}
+.code div:last-of-type {
+	width: 46%;
+    float: right;
+    height: 44px;
+    padding: 0px;
+    line-height: 44px;
+}
+#confirm-password{
+	margin-bottom: 0px;
+}
+#set-user-info>.text{
+	color:#ff5b77;
+	font-size:22px;
+	letter-spacing: 3px;
+	text-align: center;
+}
+#set-user-info .text img{
+	width:30px;
+	margin:-4px 16px 0px 0px;
+}
+#set-user-info .text-tips{
+	text-align: left;
+	color:#ff5b77;
+	font-size:16px;
+	margin-top:18px;
+	letter-spacing: 1px;
+	margin-bottom:20px;
+}
+#set-user-info .birth{
+	width:100%;
+	height:44px;
+	line-height:44px;
+	margin-bottom:20px;
+}
+#set-user-info .birth div{
+	float:left;
+	width:26%;
+	height:100%;
+	color:#ff5b77;
+	font-size:16px;
+	text-align: left;
+}
+#set-user-info .birth-day{
+	float:left;
+	width:74%;
+	height:100%;
+}
+#set-user-info .birth-day li{
+    float: left;
+    width: 30%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    border:1px solid #ccc;
+    margin-right:5%;
+    font-size:16px;
+    color:#ff5b77;
+}
+#set-user-info .birth-day li:last-of-type{
+	margin-right:0px;
+}
+#set-user-info .birth-day li select{
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    border: 0px;
+    outline: 0px;
+    position: relative;
+    z-index: 10;
+    padding-left:6px;
+}
+#set-user-info .birth-day li select option{
+	padding:0px;
+	text-align: left;
+}
+#sex{
+
+}
+#sex-boy,
+#sex-girl{
+	width:46%;
+	height:44px;
+	line-height:44px;
+	text-align: center;
+	cursor: pointer;
+}
+#sex-boy{
+	float:right;
+	border:1px solid #B3E2F4;
+}
+#sex-boy img{
+	width:27px;
+	margin-top:-3px;
+}
+#sex-boy.select{
+	background-color:#B3E2F4;
+}
+#sex-girl{
+	float:left;
+	border:1px solid #FAB5C8;
+}
+#sex-girl img{
+	margin-top:-6px;
+}
+#sex-girl.select{
+	background-color:#FAB5C8;
+}
+#pass-btn {
+    text-align: center;
+    font-size: 16px;
+    margin-top:16px;
+}
+#pass-btn span {
+    cursor: pointer;
+    color:#aaa;
+}
+#pass-btn hr {
+    width: 33px;
+    height: 1px;
+    background-color: transparent;
+    margin: 0 auto;
+}
+#pass-btn span:hover hr{
+	background-color: #aaa;
+}
+#country{
+	width:100%;
+	height:44px;
+	line-height:44px;
+	border:1px solid #ccc;
+	margin-bottom: 20px;
+	font-size:16px;
+	background:url(/img/userspace/secondhand/state-arrow.png) 272px center no-repeat;
+	cursor: pointer;
+	position:relative;
+}
+#country div{
+	padding-left:12px;
+}
+#country .country-select{
+	position:absolute;
+	top:100%;
+	left:-1px;
+	width:100.5%;
+	border:1px solid #ccc;
+	background-color:#fff;
+	max-height: 424px;
+	overflow-x: hidden;
+	overflow-y: auto;
+    display: none;
+}
+#country .country-select li{
+	line-height: normal;
+	width:100%;
+	padding:18px 0px 18px 12px;
+}
+#country .country-select li:hover{
+	background-color:#ff5b77;
+	color:#fff;
+}
+/*底部*/
+.footBaner{
+	margin-top:-72px;
+}
+.footerAdvertising{
+	margin-top:0px;
+}
+#register-box{
+	/*display: none;*/
+}
+#set-user-info{
+	display: none;
+}

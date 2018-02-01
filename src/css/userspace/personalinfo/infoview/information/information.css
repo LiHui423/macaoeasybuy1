@@ -1,0 +1,165 @@
+#white-menu {
+   min-height:auto;
+}
+#userspace-content{
+	background-color:#fff;
+	border:1px solid #ddd;
+	border-top:0px;
+}
+.content-title{
+	height:65px;
+	line-height:65px;
+	padding-left:25px;
+	background-color:#fff3e1;
+	font-weight:bold;
+	font-size:18px;
+}
+.content-title img{
+	margin:-8px 15px 0px 0px;
+}
+.content-title.whos img{
+	margin-top:0px;
+}
+.content-lister{
+	border-top:1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding:0px 30px;
+}
+.content-lister li{
+	width:50%;
+	float:left;
+	color:#888;
+	font-size:18px;
+	border-bottom:1px solid #ddd;
+	height:75px;
+	line-height:75px;
+}
+.content-lister li:last-of-type{
+	border-bottom:0px;
+}
+.content-lister li:nth-last-of-type(2){
+	border-bottom:0px;
+}
+.content-lister li .icon{
+	width:35px;
+	height:100%;
+	display: block;
+	float:left;
+	position:relative;
+	margin-right:15px;
+}
+.content-lister li .icon img{
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.content-lister li span{
+	float:left;
+}
+.content-lister li .info-content{
+	float:right;
+	height:100%;
+	width:62%;
+	position:relative;
+	cursor: default;
+}
+.content-lister li .info-content:hover .other-list{
+	display:block;
+}
+
+#whos-look-me{
+	padding:15px 25px;
+	height:90px;
+}
+#whos-look-me div{
+	width: 100%;
+	text-align: center;
+	line-height:60px;
+	font-size:20px;
+	color:#ccc;
+	cursor: default;
+}
+#whos-look-me li{
+	float:left;
+	width:60px;
+	height:60px;
+	line-height: 59px;
+	margin-right:5.8px;
+	cursor: pointer;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	overflow: hidden;
+}
+#whos-look-me li:last-of-type{
+	margin-right:0px;
+}
+#whos-look-me li img{
+	width:100%;
+}
+#user-feelings img{
+	margin:-3px 0px 0px 5px;
+}
+#user-sex img {
+    width: 19px;
+    margin: -4px 0px 0px 8px;
+}
+#user-sex.girl{
+	color:#FF527B;
+}
+#user-sex.boy{
+	color:#4699F7;
+}
+.other-list{
+	position:absolute;
+	top:100%;
+	left:-80px;
+	width:100%;
+	background-color:#fff;
+    -webkit-box-shadow: 0 1px 30px 5px rgba(169, 169, 169, 0.73);
+    -moz-box-shadow: 0 1px 30px 5px rgba(169, 169, 169, 0.73);
+    box-shadow: 0 1px 30px 5px rgba(169, 169, 169, 0.73);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    z-index: 50;
+    padding:5px 5px 5px 15px;
+    display: none;
+}
+.other-list .arrow{
+	position:absolute;
+	top:-15px;
+	left:50%;
+	-webkit-transform: translate(-50%,0px);
+	-moz-transform: translate(-50%,0px);
+	-ms-transform: translate(-50%,0px);
+	-o-transform: translate(-50%,0px);
+	transform: translate(-50%,0px);
+}
+.other-list .other-lister{
+	width:100%;
+	max-height:220px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-right:10px;
+}
+.other-list .other-lister div{
+	line-height:60px;
+	height:60px;
+	border-bottom:1px solid #ccc;
+}
+.other-list .other-lister div:last-of-type{
+	border-bottom:0px;
+}
+.content-lister li .info-content.select{
+	color:#e98900;
+}

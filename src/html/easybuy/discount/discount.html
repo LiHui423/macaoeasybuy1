@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>今日降價</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/discount/discount.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/plug/handlebars.runtime-v4.0.5.js"></script>
+		<style type="text/css">
+			.navBar_borderBox{
+				width: 100%;
+				border-bottom: 2px solid #FF527C;
+				padding-bottom: 15px;
+			}
+			#groupBuy_banner{
+				margin-top: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<header></header>
+		<div id ="searchBar">
+			<div class="searchBox">
+				<div class="searchBox_mainBox">
+					<div class="searchBox_left">
+						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+					</div>
+					<div class="searchBox_right" id="searchBox_rightBox"></div>
+				</div>
+			</div>
+		</div>
+		<div class="containerBox">
+			<!--橫條導航欄-->
+			<div class="navBar_borderBox">
+				<div class="navBar">
+					<ul>
+						<li><a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
+						<li class="navBarLi_curr"><a href="//shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+						<li><a href="//social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
+						<li><a href="//social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
+						<li><a href="//social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--輪播圖-->
+			<div id="groupBuy_banner">
+				<div class="bannerCon">
+					<div class="before"><img src="/img/common/bannerLeft.png" alt=""></div>
+					<div class="after"><img src="/img/common/bannerRight.png" alt=""></div>
+					<div class="scroll">
+						<a><img src="/img/common/loading_banner.jpg"></a>
+						<a><img src="/img/common/loading_banner.jpg"></a>
+						<a><img src="/img/common/loading_banner.jpg"></a>
+					</div>
+				</div>
+			</div>
+			<div class="discountBox">
+				<div class="discount_main">
+					<div class="discount_countDownBox">
+						<div class="discount_Number">
+							<span class="discount_Number_hour">00</span> 小時 <span class="discount_Number_min">00</span> 分 <span class="discount_Number_second">00</span> 秒
+						</div>
+						<p>時間結束以後，以下商品將恢復平日價</p>
+					</div>
+					<div class="discount_goods clearfloat">
+						<!--沒有內容時候的畫面-->
+						<div class="noshowgood">
+							<div class="noshowgood_pic"><img src="/img/common/05.png"></div>
+							<p>不好意思，暫時沒有內容哦！</p>
+						</div>
+					</div>
+					<div class="loadingnow"><img src="/img/common/loadingnow .gif"></div>
+					<div class="noMore">~沒有更多內容了哦~</div>
+				</div>
+
+			</div>
+		</div>
+		<footer></footer>
+	</body>
+	<!--模板文件和模擬數據-->
+	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/js/easybuy/discount/discount_date.js"></script>
+	<!--頭部文件的js-->
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<!--輪播圖的js-->
+	<script src="/js/plug/gradientBanner.js"></script>
+	<!--搜索框部份的js-->
+	<script src="/js/common/header&search&footer/searchBar.js"></script>
+	<!--倒計時的js-->
+	<script src="/js/common/groupBuy/groupBuy_countDown.js"></script>
+	<!--今日降價的js-->
+	<script src="/js/easybuy/discount/discount.js"></script>
+	<script src="/js/common/header&search&footer/footer.js"></script>
+	
+	<!--banner模板-->
+	<script type="text/html" id="showBannerPic" data-array = "bannerPicList">
+		<%for(var i = 0;i <list.length;i++){%>
+			<%if(list[i].bannerPic==""){%>
+				<a href="<%=list[i].tourl%>"><img src="//img.macaoeasybuy.com/img/common/loadnow.jpg"></a>
+			<%}else{%>
+				<a href="<%=list[i].tourl%>"><img src=http://wap.macaoeasybuy.com/<%=list[i].bannerPic%>></a>
+			<%}%>
+		<%}%>
+	</script>
+	<!--商品列表模板-->
+	<script type="text/html" id="showDiscountList" data-array = "discountListList">
+		<%for(var i = 0;i <list.length;i++){%>
+			<%if(list[i].kucun == 0){%>
+				<div class="discount_goodEach discount_goodEach_sellOut noPic" data-id = <%=list[i].id%>>
+			<%}else{%>
+				<div class="discount_goodEach noPic"data-id = <%=list[i].id%> >
+			<%}%>
+				<div class="discount_goodEach_pic"><img onclick="goDetail(this,event)" data-src='//wap.macaoeasybuy.com/<%=list[i].pic2%>' src='//wap.macaoeasybuy.com/<%=list[i].pic2%>'></div>
+				<div class="discount_goodEach_mess">
+					<div class="discount_goodEach_size clearfloat">
+						<%for(var k = 0;k <list[i].tupianlist.length;k++){%>
+							<div class="discount_goodEach_sizeBox discount_goodEach_sizeShow"><img data-src='//wap.macaoeasybuy.com/<%=list[i].tupianlist[k]%>' src='//wap.macaoeasybuy.com/<%=list[i].tupianlist[k]%>'></div>
+						<%}%>
+						<div class="discount_goodEach_sizeBox discount_goodEach_sizeNum">
+							<p><span><%=list[i].guigeCount%></span>款</p>
+							<p>選購</p>
+						</div>
+					</div>
+					<div class="discount_goodEach_title hiddenText"><%=list[i].title%></div>
+					<div class="discount_goodEach_data clearfloat">
+						<div class="discount_goodEach_dataLeft">
+							<p>MOP<%=list[i].price - list[i].depreciate%></p>
+							<p>平日價MOP<%=list[i].price%></p>
+							<div class="discount_goodEach_dataEach discount_goodEach_dataSee">
+								<span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=list[i].seeNumber%>人查看</span>
+							</div>
+							<div class="discount_goodEach_dataEach discount_goodEach_dataLike">
+								<span><img src="/img/common/icon/likeIcon_dark.png"></span><span><%=list[i].loveNumber%>人心動</span>
+							</div>
+						</div>
+						<div class="discount_goodEach_dataRight">
+							<div class="discount_goodEach_count">
+								<div class="countPriceIcon"><img src="/img/easybuy/discount/countPriceIcon.png"></div>
+								<p>只限今天</p>
+								<p class="discountPrice">-MOP<%=list[i].depreciate%></p>
+							</div>
+						</div>
+					</div>
+					<div class="discount_goodEach_visitBox clearfloat">
+						<div class="discount_goodEach_visitBoxLeft">
+							<p>最近</p>
+							<p>查看</p>
+						</div>
+						<div class="discount_goodEach_visitBoxRight">
+							<%for(var j = 0;j <list[i].userpiclist.length;j++){%>
+								<%if(list[i].userpiclist[j] == ""){%>
+									<div class="discount_goodEach_visitEach"><img src="/img/common/headPic.png"></div>
+								<%}else{%>
+									<div class="discount_goodEach_visitEach"><img data-type="userAvatar" src='//wap.macaoeasybuy.com/<%=list[i].userpiclist[j]%>' onerror="this.src='/img/common/headPic.png'"></div>
+								<%}%>
+							<%}%>
+							<a href="#"><img src="/img/easybuy/discount/discount_headPicHidden.png"></a>
+						</div>
+					</div>
+				</div>
+				<div class="discount_goodEach_cover"><img src="/img/easybuy/discount/discount_sellOut.png"></div>
+			</div>
+		<%}%>
+	</script>
+	<!-- 页面点击事件 -->
+	<script src="/js/common/clickEvent.js"></script>
+</html>

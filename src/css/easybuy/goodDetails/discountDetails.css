@@ -1,0 +1,46 @@
+.museumDetails_goodMessBox_leftTop{
+	position: relative;
+}
+.disconutIcon{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width:90px;
+}
+.disconutIcon img{
+	width: 100%;
+}
+.disconutDetails_countTime{
+	padding: 20px 100px;
+	background-color: #FF527C;
+}
+.disconutDetails_countTimeLeft {
+	float: left;
+	font-size: 30px;
+	letter-spacing: 4px;
+	color: #FFFFFF;
+}
+
+.disconutDetails_countTimeLeft span{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius:10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius:10px;
+	color: #000;
+	text-align: center;
+	line-height: 50px;
+	background-color: #FFFFFF;
+	margin-right: 10px;
+	font-weight: bold;
+}
+.disconutDetails_countTimeRight{
+	float: left;
+	margin-left: 20px;
+}
+.disconutDetails_countTimeRight p{
+	font-size: 16px;
+	color: #FFFFFF;
+	line-height: 26px;
+}

@@ -1,0 +1,438 @@
+#mine-mess-name{
+    display: block;
+}
+.album-list.mine .album-poster .laster-look .laster-head{
+	display:none;
+}
+.album-list.mine .album-poster .laster-look .laster-text .laster-text-name{
+	display:none;
+}
+.album-list.mine .album-poster .laster-look .laster-text{
+	float:right;
+}
+#other-mess-name{
+	display:none;
+}
+.messBox_logo{
+	display:none;
+}
+.atricle_title-right{
+	display:none;
+}
+#violation{
+	display:none;
+}
+.nohas-album .title:first-of-type{
+	display:none;
+}
+.nohas-album .no-btn{
+	display:none;
+}
+/*專輯移動*/
+#album-move{
+	display:none;
+}
+#album-move .album-move-shadow{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: rgba(0,0,0,.4);
+    z-index: 988;
+}
+#album-move .album-move-box{
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+    z-index: 988;
+    width: 570px;
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+#album-move .album-move-box .album-move-box-inner{
+	padding:0px 30px;
+}
+#album-move .album-move-box .album-move-text-title{
+	padding:15px 0px;
+	color:#555;
+	font-size:16px;
+}
+#album-move .album-move-box .close-btn{
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    -webkit-transform: translate(50%,-50%);
+    -moz-transform: translate(50%,-50%);
+    -ms-transform: translate(50%,-50%);
+    -o-transform: translate(50%,-50%);
+    transform: translate(50%,-50%);
+    cursor: pointer;
+    cursor: -ms-pointer;
+}
+#album-move .album-move-box .album-move-title{
+    background-color: #E98900;
+    font-size: 16px;
+    color: #fff;
+    padding: 8px 30px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -ms-border-radius: 10px 10px 0px 0px;
+    -o-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
+}
+#album-move .album-move-box .album-move-list{
+	height:120px;
+	overflow-y: hidden;
+	overflow-x: auto;
+	padding-bottom:20px;
+}
+#album-move .album-move-box .move-list{
+	height:100%;
+}
+#album-move .album-move-box .move-list li{
+	float:left;
+	width:100px;
+	height:100px;
+	margin-right:10px;
+	position:relative;
+	overflow: hidden;
+	border:1px solid #aaa;
+}
+#album-move .album-move-box .move-list li:last-of-type{
+	margin-right:0px;
+}
+#album-move .album-move-box .move-list li img.album-close-btn{
+	position:absolute;
+	top:2px;
+	right:2px;
+	cursor: pointer;
+	z-index:30;
+}
+#album-move .album-move-box .album-create{
+    height: 40px;
+    width: 100%;
+    position: relative;
+    background: #fff;
+    border:1px solid #ccc;
+}
+#album-move .album-move-box .album-create .input-count{
+	position:absolute;
+	top:50%;
+	-webkit-transform: translate(0px,-50%);
+	-moz-transform: translate(0px,-50%);
+	-ms-transform: translate(0px,-50%);
+	-o-transform: translate(0px,-50%);
+	transform: translate(0px,-50%);
+	right:110px;
+}
+#album-move .album-move-box .album-create .input-count span{
+	color:#E98900;
+}
+#album-move .album-move-box .album-create input{
+    float: left;
+    width: 80%;
+    height: 100%;
+    outline: 0px;
+    border: 0px;
+    line-height: 40px;
+    padding: 0px 10px;
+    color: #E98900;
+    letter-spacing: 1px;
+    background-color:#FDF5EA;
+}
+#album-move .album-move-box .album-create div{
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 20%;
+    background-color: #E98900;
+    line-height: 40px;
+    text-align: center;
+    text-indent: 24px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #fff;
+    cursor: pointer;
+    cursor: -ms-pointer;
+    background: url(//img.macaoeasybuy.com/img/social/easylive/focus-white.png) 24px 10px no-repeat #E98900;
+    background-size: 18px 18px;
+    -webkit-background-size: 18px 18px;
+    -moz-background-size: 18px 18px;
+    -ms-background-size: 18px 18px;
+    -o-background-size: 18px 18px;
+}
+#album-move .album-move-box .album-create div.no-select{
+	background-color:#ccc;
+}
+#album-move .album-move-box .album-select{
+	width:100%;
+	height:270px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+#album-move .album-move-box .album-select ul{
+
+}
+#album-move .album-move-box .album-select ul li{
+	float: left;
+    width: 18.4%;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    cursor: -ms-pointer;
+    position: relative;
+}
+#album-move .album-move-box .album-select ul li:nth-of-type(5n){
+	margin-right:0px;
+}
+#album-move .album-move-box .album-select ul li .collect-list-div{
+    width: 100%;
+    height: 95px;
+    overflow: hidden;
+    position: relative;
+}
+#album-move .album-move-box .album-select ul li .collect-list-div .collect-list-div-img{
+	width: 100%;
+}
+#album-move .album-move-box .album-select ul li .collect-list-div:first-of-type div.img-number {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: #E98900;
+    color: #fff;
+    line-height: 30px;
+    font-size: 16px;
+}
+#album-move .album-move-box .album-select ul li.select .collect-list-div:first-of-type div.collect-select{
+	display:block;
+}
+#album-move .album-move-box .album-select ul li .collect-list-div:first-of-type div.collect-select {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgba(0,0,0,.5);
+    display: none;
+}
+#album-move .album-move-box .album-select ul li .collect-list-div:first-of-type div img {
+    display: block;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+#album-move .album-move-box .album-select ul li .collect-list-div:nth-of-type(2) {
+    color: #666;
+    text-align: center;
+    height: 20px;
+    overflow: hidden;
+}
+#album-move .album-move-box .move-btn-outer{
+	border-top:1px solid #ccc;
+	padding:15px 0px;
+	text-align: center;
+	margin-top:15px;
+}
+#album-move .album-move-box .move-btn{
+	display:inline-block;
+    padding: 4px 15px;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    cursor: -ms-pointer;
+    background-color:#E98900;
+}
+/*刪除帖子*/
+#delete-post{
+	display:none;
+}
+#delete-post .delete-post-shadow{
+	position:fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	z-index:889;
+	background-color:rgba(0,0,0,.4);
+}
+.yez-tips-box {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#delete-post .cancel-tips-box {
+    position: fixed;
+    z-index: 890;
+    box-shadow: 4px 4px 30px #aaa;
+    background-color: #fff;
+    text-align: center;
+    width: 510px;
+}
+#delete-post .cancels-title {
+    padding: 10px 0px;
+    font-size: 18px;
+    background-color: #FF527C;
+    color: #fff;
+}
+#delete-post .cancels-xc {
+    margin-top: 20px;
+}
+#delete-post .cancel-tips-text {
+    padding: 15px 0px 4px 0px;;
+    font-size: 18px;
+}
+#delete-post .sure-button {
+    display: inline-block;
+    margin:15px 0px;
+}
+#delete-post .sure-cancel,
+#delete-post .cancel-sure{
+    background-color: #FF527C;
+    color: #FFFFFF;
+    padding: 8px 45px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 16px;
+    float: left;
+}
+#delete-post .cancel-sure {
+    margin-left: 20px;
+    background-color: #b3b3b3;
+}
+/*設為封面成功提示*/
+#set-cover{
+	display:none;
+}
+#set-cover .success-tips-box{
+	position: fixed;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+    background-color: #fff;
+    border: 2px solid #e98900;
+    padding: 10px 40px;
+    color: #e98900;
+    font-size: 16px;
+    z-index: 888;
+    box-shadow: 4px 4px 30px #aaa;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#set-cover .success-tips-box img{
+	width:28px;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top:-2px;
+}
+/*編輯按鈕*/
+#second-state{
+	float:right;
+	margin:36px 0px 0px 0px;
+	color:#aaa;
+	font-size:16px;
+	letter-spacing: 2px;
+    position:relative;
+    display: block;
+}
+#second-state .state-bg{
+	position:fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	z-index:888;
+	display:none;
+}
+#second-state .select-btn{
+	border:1px solid #aaa;
+	padding:7px 13px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+	position:relative;
+	cursor: pointer;
+	background-color:#fff;
+	z-index:889;
+}
+#second-state .select-btn .state-arrow{
+	width:15px;
+}
+#second-state .select-btn img{
+	margin-top:-2px;
+}
+#second-state ul{
+	width:100%;
+	position:absolute;
+	top:150%;
+	left:0px;
+	z-index: 889;
+	background-color:#fff;
+	box-shadow: 0px 4px 15px #ccc;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+	padding:10px 20px;
+	display:none;
+}
+#second-state ul li{
+	text-align: center;
+	padding:10px 0px;
+	border-bottom:1px solid #222;
+	cursor: pointer;
+}
+#second-state ul li:last-of-type{
+	border-bottom: 0px;
+}
+#second-state ul img{
+	position:absolute;
+	top:-2px;
+	left:50%;
+	-webkit-transform: translate(-50%,-82%);
+	-moz-transform: translate(-50%,-82%);
+	-ms-transform: translate(-50%,-82%);
+	-o-transform: translate(-50%,-82%);
+	transform: translate(-50%,-82%);
+}

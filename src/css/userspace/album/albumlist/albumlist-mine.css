@@ -1,0 +1,187 @@
+.album-list.mine .album-poster .laster-look .laster-head{
+	display:none;
+}
+.album-list.mine .album-poster .laster-look .laster-text .laster-text-name{
+	display:none;
+}
+.album-list.mine .album-poster .laster-look .laster-text{
+	float:right;
+}
+.mine-sort-menu{
+	display:none;
+}
+/*刪除帖子*/
+#delete-post{
+	display:none;
+}
+.yez-tips-box {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#delete-post .delete-post-shadow{
+	position:fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	z-index:889;
+	background-color:rgba(0,0,0,.4);
+}
+#delete-post .cancel-tips-box {
+    position: fixed;
+    z-index: 900;
+    box-shadow: 4px 4px 30px #aaa;
+    background-color: #fff;
+    text-align: center;
+    width: 510px;
+}
+#delete-post .cancels-title {
+    padding: 10px 0px;
+    font-size: 18px;
+    background-color: #FF527C;
+    color: #fff;
+}
+#delete-post .cancels-xc {
+    margin-top: 20px;
+    text-indent: -30px;
+}
+#delete-post .cancels-xc img{
+	width: 180px;
+}
+#delete-post .cancel-tips-text {
+    padding: 15px 0px 4px 0px;;
+    font-size: 18px;
+}
+#delete-post .cancel-tips-text-tips{
+	color:#FF527C;
+}
+#delete-post .sure-button {
+    display: inline-block;
+    margin:15px 0px;
+}
+#delete-post .sure-cancel,
+#delete-post .cancel-sure{
+    background-color: #FF527C;
+    color: #FFFFFF;
+    padding: 8px 45px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 16px;
+    float: left;
+}
+#delete-post .cancel-sure {
+    margin-left: 20px;
+    background-color: #b3b3b3;
+}
+/*按鈕樣式*/
+#album-delete{
+	margin-top:8px;
+	width:150px;
+	float:left;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+	text-align: center;
+	padding:10px 0px;
+	font-size:16px;
+	cursor: default;
+    color: #aaa;
+    letter-spacing: 2px;
+    border: 1px solid #aaa;
+}
+#album-delete img{
+	margin-top:-3px;
+	margin-right:5px;
+}
+/*菜單*/
+.sort-menu{
+	background-color:#fff;
+	height:60px;
+	display: block;
+}
+.sort-menu .sort-menu-select{
+	float:left;
+	position:relative;
+	width:200px;
+	text-align: center;
+	color:#666;
+	font-size:16px;
+	z-index: 889;
+}
+.sort-menu .sort-menu-select .sort-menu-select-top{
+	width:100%;
+	height:100%;
+	line-height:60px;
+	background-color:#fefefe;
+	border-right:1px solid #ccc;
+	cursor: pointer;
+}
+.sort-menu .sort-menu-select .sort-menu-select-top div{
+	display:inline-block;
+}
+.sort-menu .sort-menu-select .sort-menu-select-top div.sort-menu-icon img{
+	margin-top:-3px;
+}
+.sort-menu .sort-menu-select .sort-menu-select-top div.sort-menu-arrow{
+	width:12px;
+	margin-left:5px;
+}
+.sort-menu .sort-menu-select .sort-menu-select-top div.sort-menu-arrow img{
+	margin-top:-2px;
+	width:100%;
+}
+.sort-menu .sort-menu-select .sort-menu-select-bottom{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0px;
+	width:100%;
+	background-color:#fff;
+	z-index:997;
+	border:1px solid #ccc;
+	text-align: left;
+	text-indent: 20px;
+}
+.sort-menu .sort-menu-select .sort-menu-select-bottom div{
+	height:60px;
+	line-height:60px;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+}
+.sort-menu .sort-menu-select .sort-menu-select-bottom div:hover{
+	background-color:#efefef;
+}
+.sort-menu .sort-menu-select .sort-menu-select-bottom div img{
+	margin-top:-3px;
+	margin-right:5px;
+}
+.sort-menu .sort-menu-select .sort-menu-select-bottom div:last-of-type{
+	border-bottom: 0px;
+}
+.sort-menu .operation-btn{
+	height:100%;
+	float:right;
+	margin-right:20px;
+	z-index:889;
+}
+.sort-menu .sort-shadow{
+	position:fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	display:none;
+	z-index:888;
+}

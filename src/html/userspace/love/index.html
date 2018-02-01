@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>用戶空間-心動</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" type="text/css" href="/css/userspace/userlove/userlove.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script>easyBuy.userSpaceGlobal.whiteNavName = 'AllLoveNumber';</script>
+		<!--userid 頁面所屬用戶id-->
+	</head>
+
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu"></ul>
+							<ul id="news-push"></ul>
+						</div>
+						<div id="userspace-content">
+							<div class="userlove_chooseType clearfloat">
+								<ul>
+									<li class="userlove_chooseTypes_curr">
+										<p>量販團</p>
+										<p>(<span id="groupByCount">0</span>)</p>
+									</li>
+									<li>
+										<p>限量</p>
+										<p>(<span id="freeCount">0</span>)</p>
+									</li>
+									<li>
+										<p>降價</p>
+										<p>(<span id="cutCount">0</span>)</p>
+									</li>
+									<li>
+										<p>換領</p>
+										<p>(<span id="changeCount">0</span>)</p>
+									</li>
+									<li>
+										<p>宜品館</p>
+										<p>(<span id="yiCount">0</span>)</p>
+									</li>
+									<li>
+										<p>市集</p>
+										<p>(<span id="fairCount">0</span>)</p>
+									</li>
+									<li>
+										<p>其他商品</p>
+										<p>(<span id="otherCount">0</span>)</p>
+									</li>
+								</ul>
+							</div>
+
+							<div class="userlove_chooseSort clearfloat">
+								<div class="userlove_chooseSort_left">
+									<ul>
+										<li class="userlove_chooseSort_left_curr"><span><img src="/img/userspace/userlove/userlove_clockIcon.png"><img src="/img/userspace/userlove/userlove_clockIcon_curr.png"></span><span>按心動時間</span></li>
+										<li><span><img src="/img/userspace/userlove/userlove_sellIcon.png"><img src="/img/userspace/userlove/userlove_sellIcon_curr.png"></span><span>按銷量</span></li>
+										<li><span><img src="/img/userspace/userlove/userlove_loveIcon.png"><img src="/img/userspace/userlove/userlove_loveIcon_curr.png"></span><span>按心動數</span></li>
+										<li><span><img src="/img/userspace/userlove/userlove_priceIcon.png"><img src="/img/userspace/userlove/userlove_priceIcon_curr.png"></span><span>按價格</span></li>
+									</ul>
+								</div>
+								<div class="userlove_chooseSort_right">
+									<div id="userlove_cancelLove" class="userlove_cancelLove"><span>取消心動</span> (<span id="selectNum_view">0</span>)</div>
+								</div>
+							</div>
+
+							<div class="userlove_mainBox">
+
+								<!--量販團-->
+								<div class="userlove_mainEach clearfloat" id="groupBuy_box">
+									<div class="userlove_mainEach_inner"></div>
+									<div class="no-more">~沒有更多內容了哦~</div>
+								</div>
+								<!--限量搶購-->
+								<div class="userlove_mainEach clearfloat" id="limited_box">
+									<div class="userlove_mainEach_inner"></div>
+									<div class="no-more">~沒有更多內容了哦~</div>
+								</div>
+								<!--降價商品-->
+								<div class="userlove_mainEach clearfloat" id="discount_box">
+									<div class="userlove_mainEach_inner"></div>
+									<div class="no-more">~沒有更多內容了哦~</div>
+								</div>
+								<!--著數換領-->
+								<div class="userlove_mainEach clearfloat" id="exchange_box">
+									<div class="userlove_mainEach_inner"></div>
+									<div class="no-more">~沒有更多內容了哦~</div>
+								</div>
+								<!--宜品館-->
+								<div class="userlove_mainEach clearfloat" id="museum_box">
+									<div class="userlove_mainEach_inner"></div>
+									<div class="no-more">~沒有更多內容了哦~</div>
+								</div>
+								<!--市集-->
+								<div class="userlove_mainEach clearfloat" id="fair_box">
+									<div class="userlove_mainEach_inner"></div>
+									<div class="no-more">~沒有更多內容了哦~</div>
+								</div>
+								<!--其他商品-->
+								<div class="userlove_mainEach clearfloat" id="other_box">
+									<div class="userlove_mainEach_inner"></div>
+									<div class="no-more">~沒有更多內容了哦~</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer></footer>
+		</div>
+		<!--取消心動提示彈框-->
+		<div id="delete-post">
+			<div class="delete-post-shadow"></div>
+			<div class="cancel-tips-box on-middle yez-tips-box">
+				<div class="cancels-title">批量操作</div>
+				<div>
+					<div class="cancels-xc"><img src="/img/common/02.png" alt=""></div>
+					<div class="cancel-tips-text">您不再心動這些商品了嗎？</div>
+					<div class="clearfloat sure-button">
+						<div class="sure-cancel">確認</div>
+						<div class="cancel-sure">取消</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--取消心動成功提示-->
+
+		<script src="/js/plug/yez_js_Reset.js"></script>
+		<script src="/js/common/vendor/template-native.js"></script>
+		<script src="/js/userspace/common/userinfo.js" async></script>
+		<script src="/js/userspace/common/leftmenu.js" async></script>
+		<script src="/js/userspace/common/whitemenu.js" async></script>
+		<script src="/js/userspace/common/newspush.js" async></script>
+		<script src="/js/common/header&search&footer/footer.js" async></script>
+		<script src="/js/common/header&search&footer/header.js"></script>
+		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+		<script src="/js/userspace/userlove/userlove.js"></script>
+		<script src="/js/userspace/userlove/userlove_data.js"></script>
+		<!--量販團-->
+		<!--groupBuy_goodsEach_begin 已經開團人數不夠-->
+		<!--groupBuy_begin_finishBox 團購開始，人數夠，時間到了-->
+		<!--groupBuy_goodsEach_notice  還沒到開團時間-->
+		<!--groupBuy_end_goodsEach  團購已經結束了-->
+		<script id="groupBuy_template" type="text/html" data-type="template">
+			<%if(result.length != 0){%>
+			<%for(var i=0,leni=result.length;i<leni;i++){%>
+			<%if(result[i].groupBuyState == 0){%>
+			<div class="userLoveItem groupBuy_goodsEach groupBuy_end_goodsEach groupBuyItem<%=result[i].id%>">
+			<%}else if(result[i].groupBuyState == 1){%>
+			<div class="userLoveItem groupBuy_goodsEach groupBuy_goodsEach_notice groupBuyItem<%=result[i].id%>">
+			<%}else if(result[i].groupBuyState == 2){%>
+			<div class="userLoveItem groupBuy_goodsEach groupBuy_goodsEach_begin groupBuyItem<%=result[i].id%>">
+			<%}else if(result[i].groupBuyState == 3){%>
+			<div class="userLoveItem groupBuy_goodsEach groupBuy_begin_finishBox groupBuyItem<%=result[i].id%>">
+			<%}%>
+				<div>
+					<div class="groupBuy_goodsEach_pic">
+						<img src="<%=osURL%><%=result[i].pic%>" alt="">
+					</div>
+
+					<div class="groupBuy_goodsEach_messBox">
+						<div class="groupBuy_goodsEach_title"><%=result[i].title%></div>
+					</div>
+
+					<%if(result[i].groupBuyState == 1){%>
+					<div class="groupBuy_goodsEach_oldPrice">
+						<div class="del_line"><img src="/img/easybuy/groupBuy/del_line.png"></div>MOP<span><%=result[i].oldPrice%></span>
+					</div>
+					<%}else{%>
+					<div class="groupBuy_begin_price">
+						<div class="groupBuy_begin_newprice">MOP<span><%=result[i].nowPrice%></span></div>
+						<div class="groupBuy_begin_oldprice"><del>MOP&nbsp;<%=result[i].oldPrice%></del></div>
+					</div>
+					<%}%>
+
+					<%if(result[i].groupBuyState == 0){%>
+					<div class="groupBuy_goodsEach_bottom clearfloat">
+						<div class="groupBuy_goodsEach_bottomLeft">
+							<div><img src="/img/common/curr_right_end.png"></div>
+							<p>開團</p>
+							<p>結束</p>
+						</div>
+						<div class="groupBuy_goodsEach_bottomRight">
+							<p class="groupBuy_goodsEach_beginTime GroupBuy_end_overTimeBox">
+								<span class="end_overTime_month"><%=result[i].tuanEnd.substring(5,result[i].tuanEnd.length)%>已結束</span>
+							</p>
+						</div>
+					</div>
+					<%}else if(result[i].groupBuyState == 1){%>
+					<div class="groupBuy_goodsEach_bottom clearfloat">
+						<div class="groupBuy_goodsEach_bottomLeft">
+							<div><img src="/img/common/curr_right.png"></div>
+							<p>開團</p>
+							<p>在即</p>
+						</div>
+						<div class="groupBuy_goodsEach_bottomRight">
+							<p class="groupBuy_goodsEach_reciprocal">
+								<span class="group_notice_days"><%=result[i].diffTime[0]%></span><span>天</span>
+								<span class="group_notice_hours"><%=result[i].diffTime[1]%></span><span>小時</span>
+								<span class="group_notice_mins"><%=result[i].diffTime[2]%></span><span>分</span>
+								<span class="group_notice_seconds"><%=result[i].diffTime[3]%></span><span>秒</span>
+							</p>
+							<p class="groupBuy_goodsEach_beginTime">
+								<span class="beginTime_month"><%=result[i].startTime.substring(5,result[i].startTime.length)%>開團</p>
+						</div>
+					</div>
+					<%}else if(result[i].groupBuyState == 2){%>
+					<div class="groupBuy_begin_status">
+						<div class="begin_status_left">
+							<div class="begin_status_btn">
+								<p>我要參團</p>
+								<p>湊人中(<span class="joinPeopleNunber"><%=result[i].inTuanNum%></span>/<span class="allPeopleNunber"><%=result[i].tuanNum%></span>)</p>
+							</div>
+						</div>
+						<div class="begin_status_right">
+							<p>再湊<span><%=result[i].tuanNum - result[i].inTuanNum%></span>人</p>
+							<p>馬上開團</p>
+						</div>
+						<div class="groupBuy_begin_status_shadow"></div>
+					</div>
+					<%}else if(result[i].groupBuyState == 3){%>
+					<div class="groupBuy_begin_finishBox"><img src="/img/easybuy/groupBuy/groupBuy_begin_finish.png"></div>
+					<%}%>
+
+
+					<%if(result[i].groupBuyState == 0){%>
+					<div class="userlove_groupbuy_over_num">
+						<span><img src="/img/userspace/userlove/userlove_group_over.png"></span><span><%=result[i].inTuanNum%>人已參加團購！</span>
+					</div>
+					<%}else if(result[i].groupBuyState == 1){%>
+					<div class="userlove_groupbuy_over_num">
+						<span><img src="/img/common/goodEach_seeIcon.png"></span><span><%=result[i].inTuanNum%>人期待中！</span>
+					</div>
+					<%}else if(result[i].groupBuyState == 2 || result[i].groupBuyState == 3){%>
+					<div class="progressBar">
+						<div class="progressBar_curr" style="width:<%=result[i].timeBarWidth%>%"></div>
+					</div>
+					<div class="groupBuy_begin_leastTime">
+						<ul>
+							<li>剩&nbsp;</li>
+							<li class="group_days_box">
+								<span class="group_days group_number"><%=result[i].diffTime[0]%></span><span>天</span>
+							</li>
+							<li class="group_hours_box">
+								<span class="group_hours group_number"><%=result[i].diffTime[1]%></span><span>小時</span>
+							</li>
+							<li class="group_mins_box">
+								<span class="group_mins group_number"><%=result[i].diffTime[2]%></span><span>分</span>
+							</li>
+							<li class="group_seconds_box">
+								<span class="group_seconds group_number"><%=result[i].diffTime[3]%></span><span>秒</span>
+							</li>
+						</ul>
+					</div>
+					<%}%>
+					<%if(easyState == 1){%>
+					<div class="hover-check-box-outer">
+						<div class="hover-check-box"></div>
+					</div>
+					<%}%>
+
+					<div class="shadow"></div>
+					<%if(result[i].groupBuyState == 0){%>
+					<div class="sticker"><img src="/img/easybuy/groupBuy/groupBuy_end_hover.png" alt=""></div>
+					<%}%>
+				</div>
+			</div>
+			<%}%>
+			<%}else if(result.length == 0 && page == 0){%>
+				<div class="no_more_result">
+					<div><img src="/img/common/05.png" alt=""></div>
+					<div>該欄目沒有任何內容哦！</div>
+				</div>
+			<%}%>
+		</script>
+		<!--限量搶購-->
+		<script id="limited_template" type="text/html" data-type="template">
+			<%if(result.length != 0){%>
+			<%for(var i=0,leni=result.length;i<leni;i++){%>
+			<div class="userLoveItem ListBox_goodsEach limitedItem<%=result[i].id%>">
+				<div class="ListBox_goodsEach_inner">
+					<div class="ListBox_goodsEach_pic">
+						<div class="ListBox_goodsEach_picCover">
+							<img src="/img/easybuy/limited/snap_up.png">
+						</div>
+						<img src="<%=osURL%><%=result[i].pic%>">
+						<%if(result[i].leftNum == 0){%>
+						<div class="sticker"><img src="/img/easybuy/limited/snap_up.png" alt=""></div>
+						<%}%>
+						<div class="limitedIcon"><img src="/img/easybuy/limited/limitedIcon.png"></div>
+						<div class="ListBox_goodsEach_date clearfloat">
+							<div class="ListBox_goodsEach_dateEach">
+								<span><img src="/img/common/icon/likeIcon_white.png"></span><span><%=formatNum(result[i].loveCount)%></span>
+							</div>
+							<div class="ListBox_goodsEach_dateEach">
+								<span><img src="/img/common/icon/seeIcon2_white.png"></span><span><%=formatNum(result[i].seeCount)%></span>
+							</div>
+						</div>
+					</div>
+					<div class="hottestBox_each_title ListBox_goodsEach_title hiddenText"><%=result[i].title%></div>
+					<div class="ListBox_goodsEach_schedule clearfloat">
+						<p>限量<span class="ListBox_goodsEach_allNum"><%=formatNum(result[i].initNum)%></span>件</p>
+						<div class="ListBox_goodsEach_scheduleBox">
+							<div class="ListBox_goodsEach_scheduleCurr" style="width: <%= formatNum(result[i].robNum/result[i].initNum * 100)%>%;"></div>
+						</div>
+						<div class="ListBox_goodsEach_number">
+							<div class="ListBox_goodsEach_numberLeft">剩餘<span class="ListBox_goodsEach_lastNum"><%=formatNum(result[i].leftNum)%></span></div>
+							<div class="ListBox_goodsEach_numberRight">已搶<span><%=formatNum(result[i].robNum)%></span></div>
+						</div>
+					</div>
+					<div class="ListBox_goodsEach_price clearfloat">
+						<div class="ListBox_goodsEach_old">MOP<span><%=formatNum(result[i].nowPrice)%></span></div>
+						<div class="ListBox_goodsEach_new">MOP<%=formatNum(result[i].oldPrice)%></div>
+					</div>
+					<div class="ListBox_goodsEach_buttonBox">
+						<div class="ListBox_goodsEach_button ListBox_goodsEach_buy">立即搶購</div>
+						<div class="ListBox_goodsEach_button ListBox_goodsEach_over">已搶光</div>
+					</div>
+
+					<%if(easyState == 1){%>
+					<div class="hover-check-box-outer">
+						<div class="hover-check-box"></div>
+					</div>
+					<%}%>
+
+					<div class="shadow"></div>
+
+
+
+				</div>
+			</div>
+			<%}%>
+			<%}else if(result.length == 0 && page == 0){%>
+				<div class="no_more_result">
+					<div><img src="/img/common/05.png" alt=""></div>
+					<div>該欄目沒有任何內容哦！</div>
+				</div>
+			<%}%>
+		</script>
+		<!--降價商品-->
+		<script id="discount_template" type="text/html" data-type="template">
+
+			<%if(result.length != 0){%>
+			<%for(var i=0,leni=result.length;i<leni;i++){%>
+			<div class="userLoveItem discount_goodEach discountItem<%=result[i].id%>">
+				<div class="discount_goodEach_pic"><img src="<%=osURL%><%=result[i].pic%>"></div>
+				<div class="discount_goodEach_mess">
+					<div class="discount_goodEach_size clearfloat">
+						<%if(result[i].samePicList.length <= 2){%>
+						<%for(var j=0,lenj=result[i].samePicList.length;j<lenj;j++){%>
+						<div class="discount_goodEach_sizeBox discount_goodEach_sizeShow"><img src="<%=osURL%><%=result[i].samePicList[j]%>"></div>
+						<%}%>
+						<%}else{%>
+						<%for(var j=0;j<2;j++){%>
+						<div class="discount_goodEach_sizeBox discount_goodEach_sizeShow"><img src="<%=osURL%><%=result[i].samePicList[j]%>"></div>
+						<%}%>
+						<%}%>
+						<div class="discount_goodEach_sizeBox discount_goodEach_sizeNum">
+							<p><span><%=formatNum(result[i].samePicList.length)%></span>款</p>
+							<p>選購</p>
+						</div>
+					</div>
+					<div class="discount_goodEach_title hiddenText"><%=result[i].title%></div>
+					<div class="discount_goodEach_data clearfloat">
+						<div class="discount_goodEach_dataLeft">
+							<p>MOP<%=formatNum(result[i].nowPrice)%></p>
+							<p>平日價MOP<%=formatNum(result[i].oldPrice)%></p>
+							<div class="discount_goodEach_dataEach discount_goodEach_dataSee">
+								<span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=formatNum(result[i].seeCount)%>人查看</span>
+							</div>
+							<div class="discount_goodEach_dataEach discount_goodEach_dataLike">
+								<span><img src="/img/common/icon/likeIcon_dark.png"></span><span><%=formatNum(result[i].loveCount)%>人心動</span>
+							</div>
+						</div>
+						<div class="discount_goodEach_dataRight">
+							<div class="discount_goodEach_count">
+								<div class="countPriceIcon"><img src="/img/easybuy/discount/countPriceIcon.png"></div>
+								<p>只限今天</p>
+								<p class="discountPrice">-MOP<%=formatNum(result[i].oldPrice - result[i].nowPrice)%></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="discount_goodEach_cover"><img src="/img/easybuy/discount/discount_sellOut.png"></div>
+
+				<%if(result[i].kuncunSum == 0){%>
+					<div class="sticker"><img src="/img/easybuy/discount/discount_sellOut.png" alt=""></div>
+				<%}%>
+
+				<%if(easyState == 1){%>
+				<div class="hover-check-box-outer">
+					<div class="hover-check-box"></div>
+				</div>
+				<%}%>
+
+				<div class="shadow"></div>
+			</div>
+			<%}%>
+			<%}else if(result.length == 0 && page == 0){%>
+				<div class="no_more_result">
+					<div><img src="/img/common/05.png" alt=""></div>
+					<div>該欄目沒有任何內容哦！</div>
+				</div>
+			<%}%>
+
+
+		</script>
+		<!--著數換領-->
+		<script id="exchange_template" type="text/html" data-type="template">
+			<%if(result.length != 0){%>
+			<%for(var i=0,leni=result.length;i<leni;i++){%>
+			<div class="userLoveItem interchange_each exchangeItem<%=result[i].id%>">
+
+				<div class="interchange_each_inner clearfloat">
+					<div class="interchange_eachLeft">
+						<div class="willbeShelves_EachTop">
+							<div class="willbeShelves_sellOut_cover"><img src="/img/easybuy/exchange/exchange_sellOut.png"></div>
+							<img src="<%=osURL%><%=result[i].pic%>">
+							<div class="interchange_each_like">
+								<span><img src="/img/easybuy/exchange/filling_like.png"></span><span><%=formatNum(result[i].loveCount)%>人心動</span>
+							</div>
+							<div class="redBagCostIcon">
+								<p>mop<span><%=formatNum(result[i].mop)%></span></p>
+							</div>
+						</div>
+						<div class="willbeShelves_EachMess clearfloat">
+							<div class="willbeShelves_EachMess_title hiddenText"><%=result[i].title%></div>
+							<div class="willbeShelves_EachMess_oldprice clearfloat">
+								<div class="EachMess_priceLeft">原售價</div>
+								<div class="EachMess_priceRight">MOP<%=result[i].nowPrice%></div>
+							</div>
+							<div class="willbeShelves_EachMess_newprice clearfloat">
+								<div class="EachMess_priceLeft">紅包抵後只付</div>
+								<div class="EachMess_priceRight">MOP<%= result[i].nowPrice - result[i].mop%></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="interchange_eachRight">
+						<%for(var j=0,lenj=result[i].detailPicList.length;j<lenj;j++){%>
+						<div class="interchange_eachRightsEach">
+							<img src="<%=osURL%><%=result[i].detailPicList[j]%>">
+							<!--<div class="eachRightsEach_cover">
+								<div class="eachRightsEach_cover_num">
+									<p>僅剩</p>
+									<p>1件</p>
+								</div>
+								<img src="/img/easybuy/exchange/grapUp.png">
+							</div>-->
+						</div>
+						<%}%>
+					</div>
+					<%if(result[i].kuncunSum == 0){%>
+						<div class="sticker"><img src="/img/easybuy/discount/discount_sellOut.png" alt=""></div>
+					<%}%>
+					<%if(easyState == 1){%>
+					<div class="hover-check-box-outer">
+						<div class="hover-check-box"></div>
+					</div>
+					<%}%>
+
+					<div class="shadow"></div>
+				</div>
+
+			</div>
+			<%}%>
+			<%}else if(result.length == 0 && page == 0){%>
+				<div class="no_more_result">
+					<div><img src="/img/common/05.png" alt=""></div>
+					<div>該欄目沒有任何內容哦！</div>
+				</div>
+			<%}%>
+		</script>
+		<!--宜品館-->
+		<script id="museum_template" type="text/html" data-type="template">
+			<%if(result.length != 0){%>
+			<%for(var i=0,leni=result.length;i<leni;i++){%>
+			<div class="userLoveItem item museumItem<%=result[i].id%>">
+				<div class="item-img">
+					<img src="<%=osURL%><%=result[i].pic%>" alt="">
+				</div>
+				<div class="item-price">
+					<div class="item-price-title hiddenText"><%=result[i].title%></div>
+					<div class="item-price-newPrice"><span>MOP</span><span><%=formatNum(result[i].nowPrice)%></span></div>
+					<div class="item-price-oldPrice"><span>MOP&nbsp;</span><span><%=formatNum(result[i].oldPrice)%></span></div>
+				</div>
+				<div class="item-info">
+					<ul class="clearfloat">
+						<li>
+							<div class="icon icon1"></div>
+							<div class="icon-num"><%=formatNum(result[i].seeCount)%></div>
+						</li>
+						<li>
+							<div class="icon icon2"></div>
+							<div class="icon-num"><%=formatNum(result[i].loveCount)%></div>
+						</li>
+						<li>
+							<div class="icon icon3"></div>
+							<div class="icon-num"><%=formatNum(result[i].saleCount)%></div>
+						</li>
+					</ul>
+				</div>
+
+				<%if(result[i].kuncunSum == 0){%>
+					<div class="sticker"><img src="/img/easybuy/discount/discount_sellOut.png" alt=""></div>
+				<%}%>
+
+				<%if(easyState == 1){%>
+				<div class="hover-check-box-outer">
+					<div class="hover-check-box"></div>
+				</div>
+				<%}%>
+
+				<div class="shadow"></div>
+			</div>
+			<%}%>
+			<%}else if(result.length == 0 && page == 0){%>
+				<div class="no_more_result">
+					<div><img src="/img/common/05.png" alt=""></div>
+					<div>該欄目沒有任何內容哦！</div>
+				</div>
+			<%}%>
+		</script>
+		<!--市集-->
+		<script id="fair_template" type="text/html" data-type="template">
+			<%if(result.length != 0){%>
+			<%for(var i=0,leni=result.length;i<leni;i++){%>
+			<div class="userLoveItem userlove_marketEachBox fairItem<%=result[i].id%>">
+				<div class="userlove_marketEach">
+					<%if(result[i].pic != ''){%>
+					<div class="userlove_marketEach_pic">
+						<img src="<%=osURL%><%=result[i].pic%>">
+					</div>
+					<%}%>
+					<div class="userlove_marketEach_title">
+						<p><%=result[i].title%></p>
+						<div class="userlove_marketEach_price">
+							原價 -<%=result[i].resNum%>%
+						</div>
+					</div>
+					<div class="userlove_marketEach_data clearfloat">
+						<ul>
+							<li>
+								<div class="userlove_marketEach_data_icon"><img src="/img/common/icon/loveIocn_red.png"></div>
+								<p><%=formatNum(result[i].loveCount)%></p>
+							</li>
+							<li>
+								<div class="userlove_marketEach_data_icon"><img src="/img/common/icon/eyeIcon_red.png"></div>
+								<p><%=formatNum(result[i].seeCount)%></p>
+							</li>
+							<li>
+								<div class="userlove_marketEach_data_icon"><img src="/img/common/icon/mopIcon_red.png"></div>
+								<p><%=formatNum(result[i].nowPrice)%></p>
+							</li>
+						</ul>
+					</div>
+					<div class="userlove_marketEach_intro">
+						<p><%=result[i].content%></p>
+					</div>
+					<div class="userlove_marketEach_visit clearfloat">
+						<ul>
+							<%for(var j=0,lenj=result[i].seeUserPics.length;j<lenj;j++){%>
+							<li class="myborder-radius"><img src="<%=osURL%><%=result[i].seeUserPics[j]%>"></li>
+							<%}%>
+						</ul>
+					</div>
+					<div class="userlove_marketEach_time"><%=result[i].uptime%>前發佈</div>
+				</div>
+				<div class="userlove_marketEach_shadow">
+					<img src="/img/social/label/labeldetail/hobg.png" alt="">
+				</div>
+
+
+				<%if(easyState == 1){%>
+				<div class="hover-check-box-outer">
+					<div class="hover-check-box"></div>
+				</div>
+				<%}%>
+
+				<div class="shadow"></div>
+			</div>
+			<%}%>
+			<%}else if(result.length == 0 && page == 0){%>
+				<div class="no_more_result">
+					<div><img src="/img/common/05.png" alt=""></div>
+					<div>該欄目沒有任何內容哦！</div>
+				</div>
+			<%}%>
+		</script>
+		<!--其他商品-->
+		<script id="other_template" type="text/html" data-type="template">
+			<%if(result.length != 0){%>
+			<%for(var i=0,leni=result.length;i<leni;i++){%>
+			<div class="userLoveItem otherGoods otherItem<%=result[i].id%>">
+				<div class="otherGoods_pic"><img src="<%=osURL%><%=result[i].pic%>" onerror="this.src='/img/common/loading_pc_220.jpg'"></div>
+				<div class="otherGoods_mess">
+					<div class="otherGoods_mess_title hiddenText"><%=result[i].title%></div>
+					<p class="otherGoods_mess_nowPrice">MOP<%=result[i].nowPrice%></p>
+					<p class="otherGoods_mess_oldPrice">MOP<%=result[i].oldPrice%></p>
+				</div>
+				<div class="otherGoods_data clearfloat">
+					<div class="otherGoods_dataEach clearfloat">
+						<span><img src="/img/common/icon/bagIcon_dark.png"></span>
+						<span><%=formatNum(result[i].saleCount)%></span>
+					</div>
+					<div class="otherGoods_dataEach clearfloat">
+						<span><img src="/img/common/icon/likeIcon_dark.png"></span>
+						<span><%=formatNum(result[i].loveCount)%></span>
+					</div>
+				</div>
+				<%if(easyState == 1){%>
+				<div class="hover-check-box-outer">
+					<div class="hover-check-box"></div>
+				</div>
+				<%}%>
+				<%if(result[i].kuncunSum == 0){%>
+					<div class="sticker"><img src="/img/easybuy/discount/discount_sellOut.png" alt=""></div>
+				<%}%>
+				<div class="shadow"></div>
+			</div>
+			<%}%>
+			<%}else if(result.length == 0 && page == 0){%>
+				<div class="no_more_result">
+					<div><img src="/img/common/05.png" alt=""></div>
+					<div>該欄目沒有任何內容哦！</div>
+				</div>
+			<%}%>
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>足跡-我看過誰</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/css/common/dateRange.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/footprint/footprintwhos/footprintwhos.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script>easyBuy.global.hasNav = false;</script>
+		<!--不需要任何參數進來-->
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="searchBar">
+				<div class="searchBox">
+					<div class="searchBox_mainBox clearfloat">
+						<div class="searchBox_left">
+							<img src="/img/common/header&search&footer/easybuy_Logo.png">
+						</div>
+						<div class="searchBox_right" id="searchBox_rightBox"></div>
+					</div>
+				</div>
+			</div>
+			<div class="navBar_borderBox">
+				<div class="navBar">
+					<ul>
+						<li><a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+						<li><a href="http://social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
+						<li><a href="http://social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
+						<li><a href="http://social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="container">
+				<div class="container-swapper">
+					<div class="footprint-left">
+						<div class="footprint-menu">
+							<div class="footprint-logo">
+								<img src="/img/userspace/footprint/mine-print.png" alt="">我的足跡：
+							</div>
+							<div class="footprint-nav-box">
+								<a class="footprint-nav" href="/page/userspace/footprint/footprintgoods/footprintgoods.html">
+									<div>
+										<img src="/img/userspace/footprint/goods.png" class="no-select" alt="">
+									</div>
+									<div>看過的商品</div>
+								</a>
+								<a class="footprint-nav" href="/page/userspace/footprint/footprintshops/footprintshops.html">
+									<div>
+										<img src="/img/userspace/footprint/stores.png" class="select" alt="">
+									</div>
+									<div>逛過的商店</div>
+								</a>
+								<a class="footprint-nav select">
+									<div>
+										<img src="/img/userspace/footprint/whos-s.png" class="no-select" alt="">
+									</div>
+									<div>我看過誰</div>
+								</a>
+							</div>
+						</div>
+						<div class="date-select clearfloat">
+							<div id="date-select-btn"></div>
+							<div id="sex-select" class="clearfloat">
+								<div class="select">
+									<img src="/img/userspace/friendsfans/boygirl.png" alt="" class="no-select">
+									<img src="/img/userspace/friendsfans/boygirl-h.png" alt="" class="select">
+								</div>
+								<div>
+									<img src="/img/userspace/friendsfans/girl.png" alt="" class="no-select">
+									<img src="/img/userspace/friendsfans/girl-h.png" alt="" class="select">
+								</div>
+								<div>
+									<img src="/img/userspace/friendsfans/boy.png" alt="" class="no-select">
+									<img src="/img/userspace/friendsfans/boy-h.png" alt="" class="select">
+								</div>
+							</div>
+						</div>
+						<div class="data-show">
+							<div id="data-box"></div>
+							<p class="no-more">~沒有更多內容了~</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+
+	<script src="/js/plug/yez_js_Reset.js"></script>
+	<script src="/js/common/vendor/template-native.js"></script>
+    <script src="/js/common/header&search&footer/searchBar.js" async></script>
+    <script src="/js/common/header&search&footer/footer.js" async></script>
+    <script src="/js/common/header&search&footer/header.js"></script>
+    <script src="/js/plug/dateRange.js"></script>
+	<script src="/js/userspace/footprint/footprintwhos/footprintwhos.js"></script>
+	<script id="user-template" type="text/html" data-type="template">
+		<%for(var i=0;i<seeFoot.length;i++){%>
+			<ul class="clearfloat">
+				<div class="date-time">
+					<img src="/img/userspace/footprint/line.png" alt="">
+					<span><%=seeFoot[i].uptime%></span>
+					<img src="/img/userspace/footprint/line.png" alt="">
+				</div>
+				<div class="date-num">我到訪過<span><%=seeFoot[i].count%></span>個宜粉空間</div>
+				<%for(var j=0;j<seeFoot[i].seeList.length;j++){%>
+					<li data-id="<%=seeFoot[i].seeList[j].id%>">
+						<div>
+							<img src="<%=osURL%><%=seeFoot[i].seeList[j].pic%>" alt="">
+						</div>
+						<div>
+							<span><%=seeFoot[i].seeList[j].name%></span>
+							<%if(seeFoot[i].seeList[j].sex == 'Girl'){%>
+								<img src="/img/common/girl.png" alt="">
+							<%}else{%>
+								<img src="/img/common/boy.png" alt="">
+							<%}%>
+						</div>
+					</li>
+				<%}%>
+			</ul>
+		<%}%>
+	</script>
+	<script id="user-list-template" type="text/html" data-type="template">
+		<%for(var i=0;i<seeList.length;i++){%>
+			<li>
+				<div><img src="<%=osURL%><%=seeList[i].pic%>" alt=""></div>
+				<div>
+					<span><%=seeList[i].name%></span>
+					<%if(seeList[i].sex == 'Girl'){%>
+						<img src="/img/common/girl.png" alt="">
+					<%}else{%>
+						<img src="/img/common/boy.png" alt="">
+					<%}%>
+				</div>
+			</li>
+		<%}%>
+	</script>
+	</body>
+</html>

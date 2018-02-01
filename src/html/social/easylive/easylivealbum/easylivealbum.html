@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>宜生活-專輯</title>
+    <link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+    <link rel="stylesheet" href="/css/common/common.css">
+    <link rel="stylesheet" href="/css/social/easylive/easylivealbum/easylivealbum.css">
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="/js/common/frameDomainJSON.js"></script>
+    <script src="/js/common/getData/getData_sinple.js"></script>
+    <script>
+        easyBuy.social.isEasyLife = true;easyBuy.global.hasNav = false;
+    </script>
+</head>
+<body>
+    <div id="swapper">
+        <header></header>
+        <div id="searchBar">
+				<div class="searchBox">
+					<div class="searchBox_mainBox clearfloat">
+						<div class="searchBox_left">
+							<ul class="clearfloat">
+								<li><a href="//social.macaoeasybuy.com/easylive/easyliveglobalgoods/globalgoods.html">全球筍貨</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivewelfare/easylivewelfare.html">福利社</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivebuytopic/easylivebuytopic.html">宜買話題</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivelifecircle/easylivelifecircle.html">生活圈</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivelog/easylivelog.html">宜粉日誌</a></li>
+								<li class="select"><a href="//social.macaoeasybuy.com/easylive/easylivealbum/easylivealbum.html">宜粉專輯</a></li>
+							</ul>
+						</div>
+						<div class="searchBox_right" id="searchBox_rightBox"></div>
+					</div>
+				</div>
+		</div>
+        <div class="container">
+            <div class="container-swapper">
+                <!-- 渲染 -->
+                <div class="album-classifcation">
+                    <div class="album-title"><img src="/img/social/easylive/album-classification.png" alt=""></div>
+                    <div class="classification-lister clearfloat content-container"></div>
+                </div>
+                <div class="album-recommend">
+                    <div class="album-title"><img src="/img/social/easylive/album-recommend.png" alt=""></div>
+                    <div class="recommend-lister clearfloat content-container"></div>
+                </div>
+            </div>
+        </div>
+        <footer></footer>
+    </div>
+    <script src="/js/plug/yez_js_Reset.js"></script>
+    <script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+    <script src="/js/common/header&search&footer/searchBar.js" async></script>
+    <script src="/js/common/header&search&footer/footer.js" async></script>
+    <script src="/js/common/header&search&footer/header.js"></script>
+    <script src="/js/social/easylive/easylivealbum/easylivealbum.js"></script>
+    <script id="classifcation" type="text/html" data-type="template">
+        <% for (var i=0,j=list.length; i < j; i++) { %>
+            <div class="classification-list" id="<%=list[i].id%>">
+                <div class="list-inner clearfloat">
+                    <div class="inner-img myborder-radius"><img src="//wap.macaoeasybuy.com<%=list[i].thealbumClassPic%>"></div>
+                    <div class="inner-text">
+                        <div class="text-name"><%=list[i].thealbumClassName%></div>
+                        <div class="text-num"><%=list[i].thealbummSum%>張專輯</div>
+                    </div>
+                </div>
+                <div class="classification-list-shadow"></div>
+            </div>
+        <% } %>
+    </script>
+    <script id="recommend" type="text/html" data-type="template">
+        <div id="page<%=page%>" class="clearfloat">
+            <% for (var i=0,j=list.length; i < j; i++) { %>
+                <div class="recommend-list" id="<%=list[i].userId%>">
+                    <%if(list[i].thecoverpictureurl==""){%>
+                        <img src="/img/common/loading_pc_220.jpg">
+                    <%}else{%>
+                        <img src="//wap.macaoeasybuy.com<%=list[i].thecoverpictureurl%>">
+                    <%}%>
+                    <div class="recommend-list-number"><%=list[i].topicNum%></div>
+                    <div class="recommend-mask">
+                        <div class="mask-title">"<%=list[i].thealbumName%>"</div>
+                        <div class="mask-data">
+                            <div><img src="/img/social/easylive/album-classification-eye.png"><span><%=list[i].seeNum%></span>宜粉查看</div>
+                            <div><img src="/img/social/easylive/album-classification-mes.png"><span><%=list[i].thealbumSum%></span>宜粉回應</div>
+                            <div><img src="/img/social/easylive/album-classification-good.png"><span><%=list[i].loveNum%></span>宜粉讃好</div>
+                        </div>
+                        <div class="mask-head"><img src="//wap.macaoeasybuy.com<%=list[i].userPic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'"></div>
+                        <div class="mask-name"><%=userName%></div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </script>
+</body>
+</html>

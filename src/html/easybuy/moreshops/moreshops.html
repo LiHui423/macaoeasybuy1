@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>好店街</title>
+		<!-- <link rel="stylesheet" type="text/css" href="/css/common/bootstrap.min.css"> -->
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/moreshops/moreshops.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<!-- <script src="/js/common/bootstrap.min.js"></script> -->
+	</head>
+	<body>
+		<header></header>
+		<div id ="searchBar">
+			<div class="searchBox">
+				<div class="searchBox_mainBox">
+					<div class="searchBox_left">
+						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+					</div>
+					<div class="searchBox_right" id="searchBox_rightBox"></div>
+				</div>
+			</div>
+		</div>
+		<div class="containerBox">
+			<!--橫條導航欄-->
+			<div class="navBar">
+				<ul>
+					<li><a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a></li>
+					<li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+					<li><a href="//social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
+					<li><a href="//social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
+					<li><a href="//social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
+				</ul>
+			</div>
+			<div class="moreshopsBox">
+				<div class="moreshopsBox_banner"><img src="/img/easybuy/moreshops/moreshop_banner.png"></div>
+				<div class="moreshopsBox_main">
+					<div class="moreshopsBox_menu clearfloat">
+						<div class="moreshopsBox_menuLeft"><img src="/img/easybuy/moreshops/moreshop_menu.png"></div>
+						<div class="moreshopsBox_menuRight">
+							<ul>
+								<li class="moreshopsBox_menuCurr" data-id = "0">全部店</li>
+							</ul>
+						</div>
+					</div>
+					<div class="moreshopsBox_shopBox clearfloat"></div>
+					<div class="moreshopsBox_noMore">~沒有更多內容了哦~</div>
+				</div>
+			</div>
+		</div>
+		<footer></footer>
+	</body>
+	<!--模板文件和模擬數據-->
+	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/js/easybuy/moreshops/moreshops.data.js"></script>
+	<!--頭部文件的js-->
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/common/header&search&footer/footer.js"></script>
+	<!--搜索框部份的js-->
+	<script src="/js/common/header&search&footer/searchBar.js"></script>
+	<!--好店街的js-->
+	<script src="/js/easybuy/moreshops/moreshops.js"></script>
+	<!--好店街的分類模板-->
+	<script id="moreShopMenu" type="text/html" data-array="moreShopMenuData">
+		<%for(var i=0; i<list.length;i++){%>
+			<li data-id = "<%=list[i].id%>"><%=list[i].name%></li>
+		<%}%>
+	</script>
+
+	<!--商店列表的模板-->
+	<script id="moreShopEach" type="text/html" data-array="moreShopEachData">
+		<%for(var i=0; i<list.length;i++){%>
+			<div class="moreshopsBox_shopEach" data-id = "<%=list[i].id%>">
+				<div class="moreshopsBox_shopMess clearfloat">
+					<div class="moreshopsBox_shopMess_logo" onclick="goShopDetail(this,event)">
+						<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].logo%>' onerror="this.src='/img/common/loading_pc_shop.png'">
+					</div>
+					<div class="moreshopsBox_shopMess_data">
+						<div class="moreshopsBox_shopMess_dataEach"><span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=list[i].seeNumber%>次查看</span></div>
+						<div class="moreshopsBox_shopMess_dataEach"><span><img src="/img/common/icon/buyIcon_dark.png"></span><span><%=list[i].buyNumber%>件累計售出</span></div>
+					</div>
+				</div>
+				<div class="moreshopsBox_goodShowBox clearfloat">
+					<%for(var j=0; j<list[i].spPiclist.length;j++){%>
+						<div class="moreshopsBox_goodShowEach">
+							<%if(list[i].spPiclist[j]==""){%>
+								<img src='/img/common/loading_pc_600.jpg'>
+							<%}else{%>
+								<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].spPiclist[j]%>' onerror="this.src='/img/common/loading_pc_600.jpg'">
+							<%}%>
+						</div>
+					<%}%>
+				</div>
+			</div>
+		<%}%>
+	</script>
+</html>

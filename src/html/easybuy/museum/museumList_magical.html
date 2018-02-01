@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<title>宜品館-分類列表頁(奇趣館)</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/header&search&footer.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/museum/museum.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/museum/museumList.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<script src="/js/common/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.museumHome_head{
+				border:none;
+			}
+			#container .selecter{
+				background: url(/img/easybuy/museum/listHead_magical.png)
+			}
+		</style>
+	</head>
+	<body>
+		<header></header>
+		<div class="museumHome_head museumHome_head_slideUp">
+			<!--宜品館logo-->
+			<div class="museum_logoBox"><img src="/img/easybuy/museum/museum_logo.png"></div>
+			<div class="museum_navSlide_btn"><img src="/img/easybuy/museum/icon/museum_top_down.png"></div>
+			<!--橫條導航欄-->
+			<div class="navBar">
+				<ul>
+					<li><a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a></li>
+					<li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+					<li><a href="//social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
+					<li><a href="//social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
+					<li class="navBarLi_curr"><a href="//shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
+					<li><a href="//social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="container">
+			<div class="selecter"></div>
+			<div class="sbtn">
+				<ul class="selecter-sbtn clearfloat">
+					<li data-id = "10113"><a href="museumList_practical.html">實用館</a></li>
+					<li data-id = "10117"><a href="museumList_beautiful.html">唯美館</a></li>
+					<li class="select" data-id = "10111"><a href="museumList_magical.html">奇趣館</a></li>
+				</ul>
+			</div>
+			<div id="shopSelect">
+				<div class="shop">
+					<div class="shop-main">
+						<div class="shop-main-interest clearfloat" id="shop-main-interest">
+							<script id="recentlyLook" type="text/html" data-array="recentlyLook">
+								<div class="interest-left">
+									<p class="number"><%=list[0].sumSeeNum%></p>
+									<p class="text">宜粉感興趣</p>
+								</div>
+								<p class="recently">最近查看</p>
+								<ul class="head-img clearfloat">
+									<%for(var i=0; i<list[0].listmap.length;i++){%>
+										<%if(list[0].listmap[i].userpic == ""){%>
+											<li data-type = "<%=list[0].listmap[i].userid%>"><img src="/img/common/loading_pc_headPic.png"></li>
+										<%}else{%>
+											<li data-type = "<%=list[0].listmap[i].userid%>"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[0].listmap[i].userpic%>" alt=""></li>
+										<%}%>
+									<%}%>
+								</ul>
+							</script>
+						</div>
+						<div class="shop-main-contain">
+							<ul class="clearfloat listUl" id="my-shopping">
+								<script id="shopData" type="text/html" data-array="shopData">
+								    <%for(var i=0;i<list.length;i++){%>
+										<li class="item" data-id = "<%=list[i].spid%>">
+											<div class="item-img">
+												<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].sppic%>" alt="">
+											</div>
+											<div class="item-price">
+												<div class="item-price-title hiddenText"><%=list[i].sptitle%></div>
+												<div class="item-price-newPrice"><span>MOP</span><span><%=list[i].newprice%></span></div>
+												<div class="item-price-oldPrice"><span>MOP&nbsp;</span><span><%=list[i].oldprice%></span></div>
+											</div>
+											<div class="item-info">
+												<ul class="clearfloat">
+													<li>
+														<div class="icon icon1"></div>
+														<div class="icon-num"><%=list[i].seeNumber%></div>
+													</li>
+													<li>
+														<div class="icon icon2"></div>
+														<div class="icon-num"><%=list[i].loveNumber%></div>
+													</li>
+													<li>
+														<div class="icon icon3"></div>
+														<div class="icon-num"><%=list[i].buyNumber%></div>
+													</li>
+												</ul>
+											</div>
+										</li>
+								    <%}%>
+								</script>
+							</ul>
+						</div>
+						<div class="noMore">~沒有更多商品了哦~</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<footer></footer>
+	</body>
+	<!--頭部文件的js-->
+	<script src="/js/header&search&footer/header.js" type="text/javascript" charset="utf-8"></script>
+	<!--頭部文件的js-->
+	<script src="/js/easybuy/museum/museumList.js" type="text/javascript" charset="utf-8"></script>
+	<!--模板文件和假數據-->
+	<script src="/js/common/template-native.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/easybuy/museum/museumListData.js" type="text/javascript" charset="utf-8"></script>
+	<!--將底部加載進來-->
+	<script type="text/javascript">
+		$("footer").load('../../page/header&search&footer/footer.html');
+		$(function(){
+			lookList(10111);
+			queryList(10111);
+			museumListScroll(10111);
+		});
+	</script>
+</html>

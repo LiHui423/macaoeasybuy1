@@ -1,0 +1,195 @@
+#labeler-header{
+	display:none;
+}
+#editor-label-btn div:first-of-type{
+	color: #aaa;
+}
+#editor-label-btn div:first-of-type span:last-of-type {
+    padding-left: 8px;
+}
+#editor-label-btn .btn-inner{
+	width:140px;
+	padding:8px 0px;
+    border: 1px solid #aaa;
+    color: #aaa;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    margin-top:6px;
+}
+#editor-label-btn .btn-inner img{
+	margin:-5px 4px 0px 0px;
+}
+#userspace-content{
+	position:relative;
+}
+#content-box{
+	/*position:absolute;
+	top:0px;
+	left:0px;*/
+}
+#editor-box{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	padding:25px;
+	background-color:#fff;
+	display:none;
+}
+#editor-box .label-top-right-box{
+	margin-top:23px;
+	float:right;
+}
+#editor-box .label-top-right-box div{
+	float:left;
+    width: 140px;
+    padding: 8px 0px;
+    border: 1px solid #aaa;
+    color: #aaa;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+#editor-box .label-top-right-box div img{
+	margin: -4px 4px 0px 0px;
+}
+#editor-box .label-top{
+	padding-bottom: 0;
+}
+#editor-box .label-top-right-box div:first-of-type{
+	border-color:#FF567C;
+	background-color:#FF567C;
+	color:#fff;
+	margin-right:10px;
+}
+#editor-box .upload-label-img{
+	width:100%;
+	height:550px;
+	border: 2px dashed #B3B3B3;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+	padding:25px;
+}
+#editor-box .upload-label-img>div{
+	width:100%;
+	height:100%;
+	position:relative;
+	background: url(/img/common/icon/img-uploader.png) center 100px no-repeat;
+	text-align: center;
+}
+#editor-box .upload-label-img>div .close-btn{
+	position:absolute;
+	top:0px;
+	right:0px;
+	cursor: pointer;
+}
+#editor-box .upload-label-img>div p{
+	text-align: center;
+	font-size:16px;
+	color:#aaa;
+	padding-top:250px;
+}
+#editor-box .upload-label-img .upload-img-box{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0px;
+	left:0px;
+	background-color:#fff;
+}
+#editor-box #upload-btn{
+	width:120px;
+	margin:20px auto 0px auto;
+	color:#fff;
+	background-color:#FF567C;
+	text-align: center;
+	padding:5px 0px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-o-border-radius: 6px;
+	border-radius: 6px;
+	font-size:16px;
+	cursor: pointer;
+	position:relative;
+}
+#editor-box .upload-describe{
+	margin-top:25px;
+	height:280px;
+	width:100%;
+	border: 2px dashed #B3B3B3;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+	padding:25px;
+	position:relative;
+}
+#editor-box .upload-describe .editor-input{
+	width:100%;
+	height:100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	resize: none;
+	font-size:16px;
+	border:0px;
+	outline: none;
+}
+#editor-box .upload-describe .upload-describe-count{
+	position:absolute;
+	bottom:2px;
+	right:10px;
+	color:#aaa;
+	font-size:16px;
+}
+/*看自己的帖子樣式*/
+/*相關帖子  日誌*/
+/*.related-posts-page .post-log .log-mine .laster .laster-look .laster-text{
+	margin:0px;
+}
+.related-posts-page .post-log .log-mine .laster-head{
+	display:none;
+}
+.related-posts-page .post-log .log-mine .laster-text-name{
+	display:none;
+}
+.related-posts-page .post-log .log-mine .laster-text-num{
+	text-indent:100px;
+}*/
+/*生活圈*/
+/*.related-posts-page .post-live .live-mine .laster-look{
+	display:none;
+}
+.related-posts-page .post-live .live-mine .post-number{
+	display:block;
+}*/
+/*二手*/
+/*.related-posts-page .post-second .second-mine .post-main-text .post-number{
+	display:block;
+}
+.related-posts-page .post-second .second-mine .post-main-text{
+	margin-top:34px;
+}
+.related-posts-page .post-second .second-mine .page-main .laster-look{
+	display:none;
+}
+.related-posts-page .post-second .second-mine .page-main .post-second-line{
+	display:none;
+}*/
+/*敗家志*/
+/*.related-posts-page .post-shot .shot-mine .laster-look{
+	display:none;
+}*/

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>用戶空間-個人信息查看-信息</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/css/userspace/personalinfo/infoview/information/information.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script>
+			easyBuy.userSpaceGlobal.afterSetIsSelf = function(state){
+				if(state){
+					easyFrame.loadCss('/css/userspace/personalinfo/infoview/information/information-mine.css');
+				}else{
+					easyFrame.loadCss('/css/userspace/personalinfo/infoview/information/information-other.css');
+				}
+			}
+		</script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<!--userid  帖子主人id-->
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu">
+								<li class="select"><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica13.png" alt=""></div><span>信息</span><span>3/10</span></a></li>
+								<li><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica14.png" alt=""></div><span>興趣</span><span>10/11</span></a></li>
+								<li><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica15.png" alt=""></div><span>技能</span><span>6/6</span></a></li>
+								<li id="sentiment"><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica16.png" alt=""></div><span>人氣</span><span>248/1000</span></a></li>
+								<li id="growth"><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica17.png" alt=""></div><span>成長</span><span>LV2</span></a></li>
+							</ul>
+						</div>
+						<div id="userspace-content">
+							<!--這裡是內容-->
+								<!--關於我-->
+								<div class="content-title"><img src="/img/userspace/personalinfo/about-icon.png" alt="">關於<span></span></div>
+								<ul class="content-lister clearfloat">
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/about-icon01.png" alt=""></div>
+										<span>宜粉賬號：</span>
+										<div class="info-content" id="user-account">&nbsp;</div>
+									</li>
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/about-icon02.png" alt=""></div>
+										<span>宜粉暱稱：</span>
+										<div class="info-content" id="user-name">&nbsp;</div>
+									</li>
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/about-icon03.png" alt=""></div>
+										<span>性別：</span>
+										<div class="info-content" id="user-sex"><img src="" alt=""><span>&nbsp;</span></div>
+									</li>
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/about-icon04.png" alt=""></div>
+										<span>生日日期：</span>
+										<div class="info-content" id="user-birthday">&nbsp;</div>
+									</li>
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/about-icon05.png" alt=""></div>
+										<span>星座：</span>
+										<div class="info-content" id="user-constellation">&nbsp;</div>
+									</li>
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/about-icon06.png" alt=""></div>
+										<span>感情狀況：</span>
+										<div class="info-content" id="user-feelings">
+											<span>&nbsp;</span>
+											<!--<img src="/img/userspace/personalinfo/fellings-icon.png" alt="">-->
+										</div>
+									</li>
+								</ul>
+								<!--我的經歷-->
+								<div class="content-title"><img src="/img/userspace/personalinfo/experience-icon.png" alt=""><span></span>的經歷</div>
+								<ul class="content-lister clearfloat">
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/experience-icon01.png" alt=""></div>
+										<span>曾經歷過：</span>
+										<div class="info-content" id="user-experience"><span>&nbsp;</span></div>
+									</li>
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/experience-icon02.png" alt=""></div>
+										<span>成就經歷：</span>
+										<div class="info-content" id="user-achievement"><span>&nbsp;</span></div>
+									</li>
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/experience-icon03.png" alt=""></div>
+										<span>幸福經歷：</span>
+										<div class="info-content" id="user-happiness"><span>&nbsp;</span></div>
+									</li>
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/experience-icon04.png" alt=""></div>
+										<span>想去經歷：</span>
+										<div class="info-content" id="user-wantgo"><span>&nbsp;</span></div>
+									</li>
+								</ul>
+								<!--我的動態-->
+								<div class="content-title"><img src="/img/userspace/personalinfo/dynamic-icon.png" alt=""><span></span>的動態</div>
+								<ul class="content-lister clearfloat">
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/dynamic-icon01.png" alt=""></div>
+										<span>註冊時間：</span>
+										<div class="info-content" id="user-registration">&nbsp;</div>
+									</li>
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/dynamic-icon02.png" alt=""></div>
+										<span>上次發表：</span>
+										<div class="info-content" id="user-publish">&nbsp;</div>
+									</li>
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/dynamic-icon03.png" alt=""></div>
+										<span>宜買年齡：</span>
+										<div class="info-content" id="user-age"><span>&nbsp;</span>歲</div>
+									</li>
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/dynamic-icon04.png" alt=""></div>
+										<span>最後訪問：</span>
+										<div class="info-content" id="user-lastlogin">&nbsp;</div>
+									</li>
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/dynamic-icon05.png" alt=""></div>
+										<span>在線時間：</span>
+										<div class="info-content" id="user-login"><span>&nbsp;</span>小時</div>
+									</li>
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/dynamic-icon06.png" alt=""></div>
+										<span>更新資料：</span>
+										<div class="info-content" id="user-update">&nbsp;</div>
+									</li>
+								</ul>
+								<!--誰來看過-->
+								<div class="content-title whos"><img src="/img/userspace/personalinfo/whos-icon.png" alt="">誰來看過</div>
+								<ul id="whos-look-me" class="clearfloat"></ul>
+							<!--內容的結束標識-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+		<script src="/js/plug/yez_js_Reset.js"></script>
+		<script src="/js/userspace/common/userinfo.js" async></script>
+		<script src="/js/userspace/common/leftmenu.js" async></script>
+		<script src="/js/common/header&search&footer/footer.js" async></script>
+		<script src="/js/common/header&search&footer/header.js"></script>
+		<script src="/js/userspace/personalinfo/infoview/information/information.js"></script>
+	</body>
+</html>

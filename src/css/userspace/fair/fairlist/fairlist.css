@@ -1,0 +1,283 @@
+/*內容*/
+.sort-box{
+	padding:20px;
+	padding-bottom:30px;
+	position:relative;
+	display: none;
+}
+.sort-box.select{
+	display: block;
+}
+.content-box-class {
+    min-height: 400px;
+    width: 100%;
+    position: relative;
+}
+/*帖子樣式*/
+.pillar-all{
+    width: 220px;
+    position:absolute;
+    visibility: hidden;
+}
+.pillar-all:hover .pillar .pillar-inner .pillar-shadow{
+	display:block;
+}
+.pillar{
+    width: 100%;
+}
+.pillar .pillar-inner{
+	position:relative;
+	border:1px solid #ccc;
+	border-bottom:0px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.pillar .pillar-inner .pillar-shadow{
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	background-color:rgba(0,0,0,.1);
+	z-index: 10;
+	cursor: pointer;
+	display:none;
+}
+.pillar .pillar-height{
+	width:98%;
+	margin:0 auto;
+}
+.pillar .pillar-height img{
+	vertical-align: top;
+	width:100%;
+}
+.page-main {
+    overflow: hidden;
+    border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -ms-border-radius: 10px 10px 0px 0px;
+    -o-border-radius: 10px 10px 0px 0px;
+}
+.page-main a{
+    display: block;
+    position:relative;
+}
+.page-main .top-banner{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding:5px 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    background-color: #FF5A78;
+}
+.page-main .top-banner.not{
+	bottom:-30px;
+}
+.page-main img.page-main-head-img{
+    width: 100%;
+}
+.post-main-text {
+	background-color:#fff;
+    padding:14px;
+}
+.page-main .post-description{
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 20px;
+    color: #c4b48b;
+}
+.page-main .post-description.not{
+	margin-top:30px;
+}
+.laster{
+    overflow: hidden;
+    border-bottom: 0px;
+}
+.laster .laster-num li{
+    float: left;
+    width: 33.333333%;
+    text-align: center;
+    color: #FF5A78;
+    padding: 32px 0px 10px 0px;
+}
+.laster .laster-num li:first-of-type{
+    background: url(//img.macaoeasybuy.com/img/social/market/treasureclassifydetail/shopin_heart.png) center 9px / 20px 20px no-repeat #f8f4ea;
+}
+.laster .laster-num li:nth-of-type(2){
+    background: url(//img.macaoeasybuy.com/img/social/market/treasureclassifydetail/red-eyes.png) center 13px no-repeat #f8f4ea;
+}
+.laster .laster-num li:last-of-type{
+    background: url(//img.macaoeasybuy.com/img/social/market/treasureclassifydetail/red-mop.png) center 13px no-repeat #f8f4ea;
+}
+.laster-look {
+    background-color: #fff;
+	padding: 15px;
+}
+.laster-look .laster-head {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+    margin-left: 5px;
+}
+.laster-look .laster-head img {
+    width: 100%;
+    height:100%;
+}
+.laster-look .laster-text {
+    margin: 10px 0px 0px 14px;
+    float: left;
+}
+.laster-look .laster-text .laster-text-name {
+	width:88px;
+	height:22px;
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+}
+.laster-look .laster-text .laster-text-name div{
+	max-width:68px;
+	height:22px;
+	float:left;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.laster-look .laster-text .laster-text-name img {
+    width: 20px;
+    float:left;
+}
+.laster-look .laster-text .laster-text-num {
+    font-size: 13px;
+    color: #999;
+    font-weight: 600;
+}
+.laster-add{
+	background-color:#c4b48b;
+	position:relative;
+	padding:10px;
+}
+.laster-add .laster-main{
+	color:#fff;
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.laster-add .add-arrow{
+	position:absolute;
+	top:-7px;
+	left:43px;
+}
+.mine-main .laster-add{
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-ms-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+}
+.mine-main .laster-look .laster-text{
+	margin:0px;
+}
+#content-box{
+	width:100%;
+	position:relative;
+}
+#content-box .pillar-all{
+	position:absolute;
+}
+/*菜單樣式*/
+.mine-sort-menu{
+	height:60px;
+	background-color:#fff;
+}
+.mine-sort-menu>div{
+	width:21%;
+	float:left;
+	color:#7c7c7c;
+	font-size:18px;
+	line-height:60px;
+	text-align: center;
+	border-right:1px solid #ccc;
+	cursor:pointer;
+	position:relative;
+}
+.mine-sort-menu>div img{
+	margin:-2px 6px 0px 0px;
+}
+.mine-sort-menu>div img.no-select{
+	display: inline-block;
+}
+.mine-sort-menu>div img.select{
+	display:none;
+}
+.mine-sort-menu>div.select img.no-select{
+	display: none;
+}
+.mine-sort-menu>div.select img.select{
+	display: inline-block;
+}
+.mine-sort-menu>div>div{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:100%;
+	height:8px;
+	background-color:#e98900;
+	display:none;
+}
+.mine-sort-menu>div.select{
+	color:#E98900;
+}
+.mine-sort-menu>div.select>div{
+	display:block;
+}
+.mine-sort-menu>div:last-of-type img{
+	width: 24px;
+	margin-top:-4px;
+}
+/*沒有更多*/
+.no-more {
+    position: absolute;
+    bottom:10px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    -o-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    -moz-transform: translate(-50%, 0%);
+    -webkit-transform: translate(-50%, 0%);
+    color: #aaa;
+    display: none;
+    font-size:18px;
+}
+/*一篇帖子都沒有*/
+#no-post{
+	text-align: center;
+	font-size:20px;
+	color:#aaa;
+	padding-top:90px;
+}
+#no-post div{
+	margin-bottom: 15px;
+}
+#no-post img{
+	width: 120px;
+}
+#delete-post,
+#album-delete{
+	display: none;
+}

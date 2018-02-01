@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>紅包積分</title>
+		<link rel="stylesheet" href="/css/common/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/header&search&footer.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/easybuy/envelopeintegral/envelopeintegral.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/bootstrap.min.js"></script>
+		<script src="/js/common/yez_js_Reset.js"></script>
+		<script src="/js/common/linegraph.js"></script>
+		<script src="/js/common/template-native.js"></script>
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container">
+				<div class="container-swapper">
+					<div class="container-head clearfloat">
+						<div class="envelope">
+							<div class="head-position clearfloat">
+								<div class="head-position-float">
+									<img src="/img/easybuy/envelopeintegral/envelopesubsidiary.png" alt="">
+								</div>
+								<div class="head-position-float">
+									<div class="big-text">
+										<span>您的紅包</span>
+										<span class="mop first">MOP</span>
+										<span class="mop"></span>
+									</div>
+									<div class="small-text"><span></span>到期清零，還剩<span></span>天</div>
+								</div>
+							</div>
+						</div>
+						<div class="integral">
+							<!--<img src="/img/easybuy/envelopeintegral/integral-logo.png" alt="" class="integral-img">-->
+							<img src="/img/easybuy/envelopeintegral/dt.gif" alt="" class="integral-img">
+							<div class="head-position clearfloat">
+								<div class="head-position-float">
+									<img src="/img/easybuy/envelopeintegral/integralsubsidiary.png" alt="">
+								</div>
+								<div class="head-position-float">
+									<div class="big-text clearfloat">
+										<span>您的積分</span>
+										<span class="score">分</span>
+										<span class="exchange">可兌換MOP<span></span></span>
+									</div>
+									<div class="small-text"><span></span>到期清零，還剩<span></span>天</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="content-box clearfloat">
+						<ul class="nav-box" id="slider-nav">
+							<li class="anchor select">
+								<div>
+									<img src="/img/easybuy/envelopeintegral/envelopesubsidiary.png" class="select" alt="">
+									<img src="/img/easybuy/envelopeintegral/envelopesubsidiary-n.png" class="no-select" alt="">
+								</div>
+								<div>紅包明細</div>
+							</li>
+							<li class="anchor">
+								<div>
+									<img src="/img/easybuy/envelopeintegral/integralsubsidiary.png" class="select" alt="">
+									<img src="/img/easybuy/envelopeintegral/integralsubsidiary-n.png" class="no-select" alt="">
+								</div>
+								<div>積分明細</div>
+							</li>
+							<li class="anchor">
+								<div>
+									<img src="/img/easybuy/envelopeintegral/strategy.png" class="select" alt="">
+									<img src="/img/easybuy/envelopeintegral/strategy-n.png" class="no-select" alt="">
+								</div>
+								<div>著數攻略</div>
+							</li>
+							<li class="anchor">
+								<div>
+									<img src="/img/easybuy/envelopeintegral/instructions.png" class="select" alt="">
+									<img src="/img/easybuy/envelopeintegral/instructions-n.png" class="no-select" alt="">
+								</div>
+								<div>使用說明</div>
+							</li>
+							<li>
+								<a href="//shopping.macaoeasybuy.com/exchange/exchange.html">
+									<div>
+										<img src="/img/easybuy/envelopeintegral/redemption.png" class="select" alt="">
+										<img src="/img/easybuy/envelopeintegral/redemption-n.png" class="no-select" alt="">
+									</div>
+									<div>著數換領</div>
+								</a>
+							</li>
+						</ul>
+						<div class="content-box-right">
+							<div class="envelopesubsidiary-box red">
+								<div class="easy-table">
+									<div id="canvas-box">
+										<div id="envelopesubsidiary-table-red-year" class="easy-canvas select"></div>
+										<div id="envelopesubsidiary-table-red-month" class="easy-canvas"></div>
+										<div id="envelopesubsidiary-table-red-lastyear" class="easy-canvas"></div>
+										<div id="envelopesubsidiary-table-red-lastmonth" class="easy-canvas"></div>
+									</div>
+									<div class="table-btn">
+										<span class="time-select this-year select">本年</span>
+										<span class="time-select this-month">本月</span>
+										<span class="time-select last-year">去年</span>
+										<span class="time-select last-month">上月</span>
+										<span class="table-name">紅包變動走勢圖</span>
+									</div>
+								</div>
+								<div class="detail-info">
+									<div class="detail-title">
+										<hr>
+										<span>紅包明細</span>
+										<hr>
+									</div>
+									<div class="table-detail">
+										<ul class="clearfloat table-head">
+											<li>來源/用途</li>
+											<li>詳細說明</li>
+											<li>紅包變化(MOP)</li>
+											<li>日期</li>
+										</ul>
+										<div class="scrollBox scrollIe scrollOther">
+											<div class="select"></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+										</div>
+									</div>
+									<div class="table-detail-btn clearfloat">
+										<ul class="month-select clearfloat">
+											<li class="select">01月</li>
+											<li>02月</li>
+											<li>03月</li>
+											<li>04月</li>
+											<li>05月</li>
+											<li>06月</li>
+											<li>07月</li>
+											<li>08月</li>
+											<li>09月</li>
+											<li>10月</li>
+											<li>11月</li>
+											<li>12月</li>
+										</ul>
+										<span class="all-mop">當月紅包結算：<span>+MOP0</span></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="envelopesubsidiary-box integrals">
+								<div class="easy-table">
+									<div id="envelopesubsidiary-table-blue-year" class="easy-canvas select"></div>
+									<div id="envelopesubsidiary-table-blue-month" class="easy-canvas"></div>
+									<div id="envelopesubsidiary-table-blue-lastyear" class="easy-canvas"></div>
+									<div id="envelopesubsidiary-table-blue-lastmonth" class="easy-canvas"></div>
+									<div class="table-btn">
+										<span class="time-select this-year select">本年</span>
+										<span class="time-select this-month">本月</span>
+										<span class="time-select last-year">去年</span>
+										<span class="time-select last-month">上月</span>
+										<span class="table-name">積分變動走勢圖</span>
+									</div>
+								</div>
+								<div class="detail-info">
+									<div class="detail-title">
+										<hr>
+										<span>積分明細</span>
+										<hr>
+									</div>
+									<div class="table-detail">
+										<ul class="clearfloat table-head">
+											<li>來源/用途</li>
+											<li>詳細說明</li>
+											<li>積分變化(分)</li>
+											<li>日期</li>
+										</ul>
+										<div class="scrollBox scrollIe scrollOther">
+											<div class="select"></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+											<div></div>
+										</div>
+									</div>
+									<div class="table-detail-btn clearfloat">
+										<ul class="month-select clearfloat">
+											<li class="select">01月</li>
+											<li>02月</li>
+											<li>03月</li>
+											<li>04月</li>
+											<li>05月</li>
+											<li>06月</li>
+											<li>07月</li>
+											<li>08月</li>
+											<li>09月</li>
+											<li>10月</li>
+											<li>11月</li>
+											<li>12月</li>
+										</ul>
+										<span class="all-mop">當月積分結算：<span>+0分</span></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="instructions post">
+								<div class="instructions-title">
+									<hr>
+									<span>獲取積分攻略</span>
+									<hr>
+								</div>
+								<div class="instructions-describe">對帖子進行發佈、回覆、讃好、心動、完成購物商品的評價等都可獲得大量積分哦</div>
+								<div class="instructions-describe">在某些頁面也可以找到領取當日積分的按鈕哦！在easyBuy中四處逛逛吧！</div>
+								<ul class="other-integrals clearfloat">
+									<li>
+										<div><img src="/img/userspace/common/leftmenu/userin_ica4.png" alt=""></div>
+										<div>發佈日誌</div>
+										<div id="releaselog-release">+分</div>
+									</li>
+									<li>
+										<div><img src="/img/userspace/common/leftmenu/userin_ica5.png" alt=""></div>
+										<div>發佈專輯</div>
+										<div id="releaseTheAlbum-release">+分</div>
+									</li>
+									<li>
+										<div><img src="/img/userspace/common/leftmenu/userin_ica6.png" alt=""></div>
+										<div>發佈生活圈</div>
+										<div id="releaseSuitableLife-release">+分</div>
+									</li>
+									<li>
+										<div><img src="/img/userspace/common/leftmenu/userin_ica7.png" alt=""></div>
+										<div>發佈敗家誌</div>
+										<div id="releaseSentVolunteers-release">+分</div>
+									</li>
+								</ul>
+								<ul class="other-integrals clearfloat">
+									<li>
+										<div><img src="/img/userspace/common/leftmenu/userin_ica8.png" alt=""></div>
+										<div>發佈二手</div>
+										<div id="releaseUsed-release">+分</div>
+									</li>
+									<li>
+										<div><img src="/img/userspace/common/leftmenu/userin_ica9.png" alt=""></div>
+										<div>發佈市集</div>
+										<div id="releaseFair-release">+分</div>
+									</li>
+									<li>
+										<div><img src="/img/userspace/common/leftmenu/userin_ica14.png" alt=""></div>
+										<div>評價商品</div>
+										<div id="comment-release">+分</div>
+									</li>
+									<li>
+										<div><img src="/img/userspace/common/leftmenu/userin_ica18.png" alt=""></div>
+										<div>評論帖子</div>
+										<div id="replylog-release">+分</div>
+									</li>
+								</ul>
+							</div>
+
+							<div class="instructions exchange">
+								<div class="instructions-title">
+									<hr>
+									<span>使用說明</span>
+									<hr>
+								</div>
+								<div class="instructions-describe">紅包不夠用？來將積分兌換成紅包吧，每100分就可以兌換MOP 1紅包哦</div>
+								<div class="instructions-describe gray">您當前擁有<span>1800分</span>積分，最多可兌換成<span>MOP18</span>紅包</div>
+								<div class="title">例子說明：</div>
+								<div class="title-describe clearfloat">
+									<div>
+										<img src="/img/easybuy/envelopeintegral/describe01.png" alt="">
+										<img src="/img/easybuy/envelopeintegral/describe02.png" alt="">
+									</div>
+									<div class="machine">
+										<div class="machine-title">快兌換紅包,再去著數換領區掃貨吧！</div>
+										<div class="machine-content">
+											<div class="icon">
+												<div>
+													<img src="/img/easybuy/envelopeintegral/describe03.png" alt="">
+												</div>
+												<div>積分紅包兌換器</div>
+											</div>
+											<div class="input-box">
+												<input type="text" placeholder="請輸入兌換的積分" id="instructions-input">
+												<div>分</div>
+											</div>
+											<div class="result-tips">可兌換MOP<span>0</span>紅包</div>
+											<div class="clearfloat btn-box">
+												<div class="instructions-btn">全部積分</div>
+												<div class="instructions-btn">重新輸入</div>
+											</div>
+											<div class="instructions-btn">確認兌換成紅包</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+			<footer></footer>
+		</div>
+		<div id="machine-succeed" class="machine-tips-box">兌換成功</div>
+		<div id="machine-fail" class="machine-tips-box">兌換失敗</div>
+		<script src="/js/common/header&search&footer/header.js"></script>
+		<script src="/js/common/header&search&footer/footer.js"></script>
+		<script src="/js/easybuy/envelopeintegral/envelopeintegral.js"></script>
+		<script src="/js/easybuy/envelopeintegral/envelopeintegral_data.js"></script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//服務器返回結果引入這個頁面，在引入的時候在url路徑傳遞參數
+			window.onload = function(){
+			    //調用同域名下的函數，並且在url上獲取服務器傳回來的信息，傳遞參數
+				var url = location.search; //获取url中"?"符后的字串 
+				var theRequest = new Object(); 
+				if (url.indexOf("?") != -1) { 
+					var str = url.substr(1); 
+					strs = str.split("&"); 
+					for(var i = 0; i < strs.length; i ++) { 
+						theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]); 
+					} 
+				}
+				parent.parent.formCallbackData(theRequest);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

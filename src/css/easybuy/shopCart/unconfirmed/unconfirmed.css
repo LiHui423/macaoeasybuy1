@@ -1,0 +1,316 @@
+.unprocessed_status_pop_sending{
+	width: 350px;
+}
+.unprocessed_status_pop_sending p:nth-of-type(1){
+	color: #FF527C;
+}
+.unprocessed_status_pop_sending p:nth-of-type(2){
+	color: #FF527C;
+}
+.unprocessed_status_pop_sending p:nth-of-type(3){
+	color: #FF527C;
+}
+.unprocessed_status_pop_waitSign{
+	/*width: 350px;*/
+	color: #FF527C;
+}
+.unprocessed_status_pop_waitSign p:nth-last-of-type(1){
+	color: #d3d3d3;
+}
+.unprocessed_status_pop_change{
+	width: 430px;
+	color: #FF527C;
+}
+.unprocessed_status_pop_change p:nth-last-of-type(1){
+	color: #d3d3d3;
+}
+.unprocessed_status_pop_change p:nth-last-of-type(2){
+	color: #d3d3d3;
+}
+.unprocessed_status_pop_changed{
+	/*width: 430px;*/
+	color: #FF527C;
+}
+.unprocessed_status_pop_changed p:nth-last-of-type(1){
+	color: #d3d3d3;
+}
+.unprocessed_status_pop_return{
+	width: 400px;
+	color: #FF527C;
+}
+.unprocessed_status_pop_return p:nth-last-of-type(1){
+	color: #d3d3d3;
+}
+.goodEach_opteraing_sign{
+	width:100px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	border-radius:5px;
+	background-color: #FF527C;
+	-webkit-border-radius: 5px;
+	-moz-border-radius:5px;
+	color: #FFFFFF;
+	margin-top: 40px;
+	margin-left: 35px;
+	letter-spacing: 1px;
+	cursor: pointer;
+	font-size: 16px;
+}
+.unprocessed_main_goodEach_opteraing p{
+	display: none;
+}
+.uncofirmed_goodEach_opteraing_sign{
+	line-height:35px;
+}
+.uncofirmed_goodEach_opteraing_sign .goodEach_opteraing_sign{
+	margin-top: 30px;
+}
+.uncofirmed_goodEach_opteraing_sign p{
+	color: #A8A8A8;
+	display: block;
+}
+.uncofirmed_goodEach_opteraing_sign p a{
+	color: #A8A8A8;
+}
+/*簽收彈窗*/
+
+.wantSignUp{
+	position: fixed;
+    -webkit-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+    z-index: 6;
+    padding: 20px 25px;
+    top: 50%;
+	margin-top:-280px;
+}
+.wantSignUp_closeIcon{
+	width: 20px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+.wantSignUp_closeIcon img{
+	width: 100%;
+}
+.wantSignUp_closeIcon:hover img{
+	 transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+	transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+.wantSignUp_title{
+	font-size: 24px;
+	text-align: center;
+	letter-spacing: 2px;
+}
+.wantSignUp_icon{
+	width: 180px;
+	margin: auto;
+	margin-top: 20px;
+}
+.wantSignUp_icon img{
+	width:100%;
+}
+.wantSignUp_mess{
+	width: 300px;
+	margin: auto;
+	margin-top: 20px;
+}
+.wantSignUp_mess_img{
+	float: left;
+	width: 70px;
+	height: 70px;
+	overflow: hidden;
+	position:relative;
+}
+.wantSignUp_mess_img img{
+	width: 100%;
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.wantSignUp_mess_size{
+	float: left;
+	margin-left: 15px;
+}
+.wantSignUp_mess_size p{
+	font-size: 16px;
+	margin-bottom: 2px;
+}
+.wantSignUp_mess_size p:first-of-type{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	max-width: 215px;
+	cursor: default;
+}
+.wantSignUp_intro{
+	margin-top: 20px;
+}
+.wantSignUp_intro_icon{
+	width: 30px;
+	margin: auto;
+}
+.wantSignUp_intro_icon img{
+	width: 100%;
+}
+.wantSignUp_intro p:nth-of-type(1){
+	font-size: 16px;
+	color: #333333;
+	text-align: center;
+	margin-top: 10px;
+}
+.wantSignUp_intro p:nth-of-type(2){
+	font-size: 14px;
+	color: #A8A8A8;
+	text-align: center;
+	margin-top: 5px;
+}
+.wantSignUp_bth{
+	margin: auto;
+	background-color: #FF527C;
+	color: #FFFFFF;
+	width: 150px;
+	height: 45px;
+	text-align: center;
+	line-height: 45px;
+	border-radius:8px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	font-size:16px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.hadSignUp{
+	position: fixed;
+    -webkit-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+    z-index: 6;
+    padding: 20px 25px;
+    top: 50%;
+	margin-top:-280px;
+}
+.hadSignUp_close{
+	width: 20px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+.hadSignUp_close img{
+	width: 100%;
+}
+.hadSignUp_close:hover img{
+	 transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+	transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+.hadSignUp_title{
+	text-align: center;	
+}
+.hadSignUp_title span{
+	display: inline-block;
+	vertical-align: middle;
+}
+.hadSignUp_title span:nth-child(1){
+	width: 30px;
+}
+.hadSignUp_title span:nth-child(1) img{
+	width: 100%;
+}
+.hadSignUp_title span:nth-child(2){
+	font-size: 22px;
+	margin-left: 10px;
+}
+.hadSignUp_Evalua{
+	margin-top: 25px;
+	padding: 0 45px;
+}
+.hadSignUp_Evalua_title{
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 1px;
+	margin-bottom: 15px;
+}
+.hadSignUp_Evalua p{
+	line-height: 25px;
+	color: #FF527C;
+}
+.hadSignUp_Evalua p span:nth-child(1){
+	float: left;
+}
+.hadSignUp_Evalua p span:nth-child(2){
+	float: right;
+}
+.hadSignUp_btn{
+	margin: auto;
+	background-color: #FF527C;
+	color: #FFFFFF;
+	width: 150px;
+	height: 45px;
+	text-align: center;
+	line-height: 45px;
+	border-radius:8px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	font-size:16px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.hadSignUp_other_btn_box{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.hadSignUp_other_btn{
+	display: inline-block;
+	cursor: pointer;
+	color: #666;
+}
+.hadSignUp_other_btn:hover{
+	text-decoration: underline;
+}
+.unprocessed_orderMess_wait .unprocessed_orderMess_wait_p span:nth-of-type(2){
+	color: #FF527C;
+}
+.unprocessed_orderMess_refuse .unprocessed_orderMess_refuse_p span:nth-of-type(2){
+	color: #55a203;
+}

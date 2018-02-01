@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>用戶空間-專輯詳細頁</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/css/userspace/common/postCommon.css">
+		<link rel="stylesheet" href="/css/userspace/common/PostDetailEditor.css">
+		<link rel="stylesheet" href="/css/common/yez_Editor.css">
+		<link rel="stylesheet" href="/css/userspace/album/albumpostdetail/albumpostdetail.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script>
+			easyBuy.userSpaceGlobal.afterSetIsSelf = function(state){
+				if(state){
+					easyFrame.loadCss('/css/userspace/album/albumpostdetail/albumpostdetail-mine.css');
+				}else{
+					easyFrame.loadCss('/css/userspace/album/albumpostdetail/albumpostdetail-other.css');
+				}
+			}
+		</script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script>easyBuy.userSpaceGlobal.whiteNavName = 'AlbumNumber';</script>
+		<!-- albumid 专辑Id postid  帖子id  userid頁面所屬主人的id -->
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu"></ul>
+							<ul id="news-push"></ul>
+						</div>
+						<div id="userspace-content">
+							<!--這裡是內容-->
+							<div class="userspace-content-inner">
+
+								<div class="person-swapper">
+									<!-- 头部 -->
+									<div class="publisherMessBox clearfloat">
+										<!-- 帖子头像 -->
+										<div class="messBox_pic">
+											<!-- <img src="/img/common/headPic.png"> -->
+										</div>
+										<div class="messBox_mess">
+
+											<div class="messBox_mess_name" id="mine-mess-name"><span>我的專輯</span></div>
+											<div class="messBox_mess_name" id="other-mess-name"><span>思思</span>
+												<div><img src="/img/common/sex.png"></div>
+											</div>
+
+											<div class="messBox_mess_time clearfloat">
+												<p class="articleType">發佈自：<span></span></p>
+												<p>創建時間：<span></span></p>
+											</div>
+
+										</div>
+
+										<div class="messBox_logo">
+											<img src="/img/social/easylive/albumlistdetail/photo-detail-logo.png" alt="">
+										</div>
+
+										<div id="second-state">
+											<div class="state-bg"></div>
+											<div class="select-btn">
+												<img src="/img/userspace/album/operation-icon.png" alt="">
+												<span>編輯該圖</span>
+												<img src="/img/userspace/secondhand/state-arrow.png" alt="" class="state-arrow">
+											</div>
+											<ul>
+												<img src="/img/userspace/album/operation-arrow.png" alt="">
+												<li id="album-move-btn">移動至</li>
+												<li>編輯描述</li>
+												<li id="post-delete">刪除該圖</li>
+											</ul>
+										</div>
+
+									</div>
+
+									<!-- 图片 -->
+									<div class="showPicBox">
+										<div class="foodBanner">
+											<ul id="foodBannerul">
+												<li>
+													<img middle="true" src="/img/e8f08dcc7ec6e4a62d7add2bf6689dca6d5474e572992-9eTnKp.jpg">
+												</li>
+											</ul>
+											<div id="big-grass"></div>
+										</div>
+									</div>
+
+									<!-- 图片描述 -->
+									<div class="articleBox">
+										<div class="atricle_title clearfloat">
+											<div class="atricle_title-left">
+												<div class="atricle-from">圖片來源：採集自
+													<span></span>的專輯
+													<span></span>
+												</div>
+												<div class="atricle-time">採集時間：
+													<span></span>
+													<span></span>
+												</div>
+											</div>
+											<div class="atricle_title-right">
+												<div class="no-btn">我要採集</div>
+											</div>
+										</div>
+										<div class="articleMain">
+											<p>簡直是帥呆了！昨天有人說那店搞特價，只賣一天，迫我馬上連夜坐船去香港旺角，排了三個小時的隊，終於終於買到了。簡直是帥呆了！昨天有人說那店搞特價，只賣一天，迫我馬上連夜坐船去香港旺角，排了三個小時的隊，終於終於買到了。</p>
+										</div>
+									</div>
+									<!-- 专辑其他图片 -->
+									<div class="album-box">
+										<div class="arrow">
+											<img src="/img/userspace/album/albumBox_top.png" alt="" class="arrow">
+										</div>
+										<div class="album-info clearfloat">
+											<div class="album-cover"></div>
+											<div class="album-detail-info">
+												<div class="album-detail-info-title">
+													來自：
+													<span></span>
+												</div>
+												<div class="clearfloat album-detail-info-come">
+													<div>專輯圈：<span></span>張</div>
+													<div>分類：<span></span></div>
+												</div>
+												<ul>
+													<li>
+														<div></div>
+														<div>宜粉查看</div>
+													</li>
+													<li>
+														<div></div>
+														<div>宜粉回應</div>
+													</li>
+													<li>
+														<div></div>
+														<div>宜粉讃好</div>
+													</li>
+													<li>
+														<div>1234</div>
+														<div>宜粉採集</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div id='scrollDiv' class="album-photo scrollIe scrollOther">
+											<div class="album-photo-inner">
+											<!-- 从后台读取图片数据插入其中 -->
+
+									
+
+											</div>
+										</div>
+									</div>
+									<!-- 操作按钮 -->
+									<div class="articleOpera">
+										<ul>
+											<li>
+												<div class="thumbs_up no-click">
+													<img src="/img/social/liveshot/ProdigalPostDetail/thumbs.png">
+												</div>
+												<div class="thumbs_up click">
+													<img src="/img/social/liveshot/ProdigalPostDetail/thumbsup.png">
+												</div>
+												<p>值得讚好</p>
+											</li>
+											<li>
+												<div class="article_share">
+													<img src="/img/social/liveshot/ProdigalPostDetail/share.png">
+												</div>
+												<p>分享好友</p>
+											</li>
+											<li id="violation">
+												<div class="article_report">
+													<img src="/img/social/liveshot/ProdigalPostDetail/report.png">
+												</div>
+												<p>違規舉報</p>
+											</li>
+										</ul>
+									</div>
+									<!-- 宜粉采集到 -->
+									<div class="suggestCollect">
+
+										<div class="suggestCollect_title">
+											<div class="suggestCollect_titleLeft">宜粉採集到</div>
+										</div>
+
+										<div class="CollectedBox scrollIe scrollOther">
+											<div class="CollectedBox-inner">
+												<!-- 这里放内容 -->
+											</div>
+										</div>
+
+									</div>
+									<!-- 我想说说 -->
+									<div class="replyBox_title">我想說說...</div>
+								</div>
+								<!-- 编辑框 -->
+								<div id="editor-box"></div>
+								<!-- 查看 ，赞好，评论 -->
+								<div class="statistics">
+									<ul class="statistics-title clearfloat" id="statistics-title">
+										<li class="select">
+											<div class="statistics-bubble">
+												<div></div>
+												<div><img src="/img/common/message.png" alt="">宜粉回應</div>
+												<img src="/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/arrow.png" alt="" class="arrow">
+											</div>
+										</li>
+										<li>
+											<div class="statistics-bubble">
+												<div></div>
+												<div><img src="/img/common/eye.png" alt="">宜粉查看</div>
+												<img src="/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/arrow.png" alt="" class="arrow">
+											</div>
+										</li>
+										<li>
+											<div class="statistics-bubble">
+												<div></div>
+												<div><img src="/img/common/good.png" alt="">宜粉讃好</div>
+												<img src="/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/arrow.png" alt="" class="arrow">
+											</div>
+										</li>
+									</ul>
+									<div class="statistics-page">
+										<ul class="person-messaage statistics-page-item">
+											<div class="innerDiv" id="response-list"></div>
+											<div class="no-more">~沒有更多內容了哦~</div>
+											<div class="click-upload-more"><span>點擊加載更多<img src="/img/common/down-icon.png" alt=""></span></div>
+										</ul>
+										<ul class="person-check checkAndGood clearfloat statistics-page-item">
+											<p>最近查看の宜粉</p>
+											<div class="innerDiv clearfloat" id="check-list"></div>
+											<div class="no-more">~沒有更多內容了哦~</div>
+											<div class="click-upload-more"><span>點擊加載更多<img src="/img/common/down-icon.png" alt=""></span></div>
+										</ul>
+										<ul class="person-good checkAndGood clearfloat statistics-page-item">
+											<p>最近讃好の宜粉</p>
+											<div class="innerDiv clearfloat" id="good-list">
+												<div class="no-more-good">
+													<div class="img"><img src="/img/common/06.png" alt=""></div>
+													<div class="title">暫無宜粉讃好</div>
+													<div class="title">給帖主一點點鼓勵吧</div>
+													<div class="no-btn" id="second-good">值得讃好</div>
+												</div>
+											</div>
+											<div class="no-more">~沒有更多內容了哦~</div>
+											<div class="click-upload-more"><span>點擊加載更多<img src="/img/common/down-icon.png" alt=""></span></div>
+										</ul>
+									</div>
+								</div>
+
+								<!-- 上下篇 -->
+								<div class="other-post">
+									<div class="other-post-title"></div>
+									<div class="other-post-inner clearfloat">
+										<div class="arrow-select arrow-select-left">
+											<a href="#" class="disabled">
+												<img src="/img/easybuy/museum/icon/todayDesign_leftBtn.png" alt="">
+											</a>
+										</div>
+										<div class="other-box">
+											<div id='upDown' class="other-box-inner">
+												<!-- item begin -->
+												<!-- item end -->
+											</div>
+										</div>
+										<div class="arrow-select arrow-select-right">
+											<a href="#">
+												<img src="/img/easybuy/museum/icon/todayDesign_rightBtn.png" alt="">
+											</a>
+										</div>
+									</div>
+								</div>
+								<!-- 返回列表 -->
+								<div class="return-list"><a href="">返回專輯列表</a></div>
+
+							</div>
+							<!--內容的結束標識-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+		<!--放大鏡-->
+		<div id="big-grass-page">
+			<div class="big-grass-page-inner">
+				<div class="big-grass-ul"></div>
+			</div>
+			<div class="big-grass-bg"></div>
+			<a class="prev">
+				<div><img src="/img/social/liveshot/ProdigalPostDetail/prev.png" border="0"></div>
+			</a>
+			<a class="next">
+				<div><img src="/img/social/liveshot/ProdigalPostDetail/next.png" border="0"></div>
+			</a>
+			<div class="BannerCountBox">
+				<span class="now">1</span>/<span class="count">1</span>
+			</div>
+			<div class="close-grass"><img src="/img/common/tips-box/img-upload-close.png" alt=""></div>
+		</div>
+		<!--刪除帖子-->
+		<div id="delete-post">
+			<div class="delete-post-shadow"></div>
+			<div class="cancel-tips-box on-middle yez-tips-box">
+				<div class="cancels-title">刪除帖子</div>
+				<div>
+					<div class="cancels-xc"><img src="/img/common/02.png" alt=""></div>
+					<div class="cancel-tips-text">是否刪除該敗家誌帖子？</div>
+					<div class="cancel-tips-text-tips">提示：刪除敗家誌帖子會扣除<span></span>分積分哦！</div>
+					<div class="clearfloat sure-button">
+						<div class="sure-cancel">確認</div>
+						<div class="cancel-sure">取消</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--點讚取消點讚-->
+		<div id="praise-post">
+			<div class="praise on-middle yez-tips-box click">
+				<div><img src="/img/common/tips-box/good-icon.png" alt="">謝謝您的鼓勵哦！</div>
+			</div>
+			<div class="praise on-middle yez-tips-box cancel">
+				<div><img src="/img/common/tips-box/good-icon1.png" alt="">您已取消讃好。</div>
+			</div>
+		</div>
+		<!--回復成功加分提示-->
+		<div id="comment-success-tips" class="comment-success-tips">
+			<div class="praise on-middle yez-tips-box">
+				<div><img src="/img/common/icon/focusShop_icon.png" alt="">已成功回復帖子！</div>
+				<div>已獲得積分獎勵</div>
+				<div><span>0</span>分</div>
+			</div>
+		</div>
+		<!--回復成功加分失敗提示-->
+		<div id="comment-success-tips-error" class="comment-success-tips">
+			<div class="praise on-middle yez-tips-box">
+				<div>評論回復失敗！</div>
+			</div>
+		</div>
+		<!--評論內容不能為空-->
+		<div id="comment-success-tips-empty" class="comment-success-tips">
+			<div class="praise on-middle yez-tips-box">
+				<div>評論回復內容不能為空！</div>
+			</div>
+		</div>
+		<!--移動專輯-->
+		<div id="album-move">
+			<div class="album-move-shadow"></div>
+			<div class="album-move-box">
+				<img src="/img/social/easylive/close-collect.png" alt="" class="close-btn">
+				<div class="album-move-title">移動圖片</div>
+				<div class="album-move-box-inner">
+					<div class="album-move-text-title">已選的圖片(<span>1</span>)：</div>
+					<div class="album-move-list">
+						<ul class="clearfloat move-list">
+							<li>
+								<img src="/img/e8f08dcc7ec6e4a62d7add2bf6689dca6d5474e572992-9eTnKp.jpg" alt="" class="move-list-img" middle="true">
+							</li>
+						</ul>
+					</div>
+					<div class="album-move-text-title">我要把圖片移動至新專輯：</div>
+					<div class="album-create clearfloat">
+						<input type="text" placeholder="輸入新專輯名稱">
+						<div class="no-select">創建</div>
+						<p class="input-count"><span>0</span>/10</p>
+					</div>
+					<div class="album-move-text-title">我要把圖片移動至專輯：</div>
+					<div class="album-select scrollIe scrollOther">
+						<ul>
+							<li>
+								<div class="collect-list-div">
+									<img class="collect-list-div-img" src="/img/social/easylive/album-recommend-list1.png" alt="">
+									<div class="img-number">12</div>
+									<div class="collect-select"><img src="/img/social/easylive/collect-select.png" alt=""></div>
+								</div>
+								<div class="collect-list-div">吃飯啦</div>
+							</li>
+							<li>
+								<div class="collect-list-div">
+									<img class="collect-list-div-img" src="/img/social/easylive/album-recommend-list1.png" alt="">
+									<div class="img-number">12</div>
+									<div class="collect-select"><img src="/img/social/easylive/collect-select.png" alt=""></div>
+								</div>
+								<div class="collect-list-div">吃飯啦</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="move-btn-outer">
+					<div class="move-btn">確定移動</div>
+				</div>
+			</div>
+		</div>
+		<!--設置圖片為專輯封面-->
+		<div id="set-cover">
+			<div class="success-tips-box"><img src="/img/social/easylive/collect-select.png" alt="">已成功設此圖為該專輯封面！</div>
+		</div>
+
+
+
+		<script src="/js/plug/yez_js_Reset.js"></script>
+		<script src="//js.macaoeasybuy.com/js/common/vendor/art-template-3.1.0.min.js"></script>
+		<script src="//js.macaoeasybuy.com/js/common/vendor-extend/atr-template.extend.js"></script>
+		<script src="/js/userspace/common/userinfo.js" async></script>
+		<script src="/js/userspace/common/leftmenu.js" async></script>
+		<script src="/js/userspace/common/whitemenu.js" async></script>
+		<script src="/js/userspace/common/newspush.js" async></script>
+		<script src="/js/common/header&search&footer/footer.js" async></script>
+		<script src="/js/common/header&search&footer/header.js"></script>
+		<script src="//js.macaoeasybuy.com/js/plug/yez_Editor.js"></script>
+		<script src="/js/userspace/common/postDetailEditorSend.js"></script>
+		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+		<script src="/js/userspace/common/post_common.js"></script>
+
+		<script src="/js/userspace/album/albumpostdetail/albumpostdetail.js"></script>
+
+		<!-- 专辑图片详情 -->
+		<script id='imgDetails' type='text/html'>
+			<%for(var i=0;i<albumPics.length;i++){%>
+				<div class='photo-items'>
+					<img src="//wap.macaoeasybuy.com<%=albumPics[i].pic%>"  style='width:213px;height:213px'alt="">
+					<div class='photo-items-filter'></div>
+				</div>
+			<%}%>
+		</script>
+		<!--最近查看宜粉-->
+		<script id="check" type="text/html">
+			<% for(var k=0;k<userList.length;k++){%>
+			<li id="<%=userList[k].id%>">
+				<a href="">
+					<div class="respondBox_fandPic">
+						<img src="<%=osURL%><%=userList[k].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+					</div>
+					<div class="respondBox_fansMess clearfloat">
+						<div>
+							<%=userList[k].name%>
+						</div>
+						<div>
+							<% if(userList[k].sex == 'Boy'){ %>
+							<img src="/img/common/boy.png" alt="">
+							<% }else if(userList[k].sex == 'Girl'){%>
+							<img src="/img/common/girl.png" alt="">
+							<%}%>
+						</div>
+					</div>
+				</a>
+			</li>
+			<%}%>
+		</script>
+		<!--最近讃好宜粉-->
+		<script id="good" type="text/html" data-type="template">
+			<% for(var a=0;a<loveList.length;a++){%>
+				<li id="<%=loveList[a].id%>good-id">
+					<a href="">
+						<div class="respondBox_fandPic">
+							<img src="<%=osURL%><%=loveList[a].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+						</div>
+						<div class="respondBox_fansMess clearfloat">
+							<div>
+								<%=loveList[a].name%>
+							</div>
+							<div>
+								<% if(loveList[a].sex == 'Boy'){ %>
+								<img src="/img/common/boy.png" alt="">
+								<% }else if(loveList[a].sex == 'Girl'){%>
+								<img src="/img/common/girl.png" alt="">
+								<%}%>
+							</div>
+						</div>
+					</a>
+				</li>
+			<%}%>
+		</script>
+		<!--回復評論帖子-->
+	<script id="response" type="text/html" data-type="template">
+			<%if(replyList.length > 0){%>
+				<%for(var i=0;i<replyList.length;i++){%>
+				<li class="clearfloat" id="<%=replyList[i].id%>response">
+					<div class="person-head" id="replyList[i].userid"><img src="<%=osURL%><%=replyList[i].pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+					<div class="person-info">
+						<div class="person-info-name">
+							<%=replyList[i].name%>
+							<% if(replyList[i].sex == 'Boy'){ %>
+							<img src="/img/common/boy.png" alt="">
+							<% }else if(replyList[i].sex == 'Girl'){%>
+							<img src="/img/common/girl.png" alt="">
+							<%}%>
+						</div>
+						<div class="person-info-contain clearfloat">
+							<div class="person-info-text"></div>
+							<div class="person-info-revert">回應</div>
+						</div>
+						<div class="big-expression">
+							<%if(replyList[i].bigexpressionGroup != undefined){%>
+								<%for(var k=0; k<replyList[i].bigexpressionGroup.length; k++){%>
+									<img src="<%=osURL%><%=replyList[i].bigexpressionGroup[k]%>" alt="">
+								<%}%>
+							<%}%>
+						</div>
+						<div class="person-info-time"><span><%=replyList[i].addtime%></span>前發佈</div>
+						<ul class="person-info-record">
+							<% if(replyList[i].reply != undefined){ %>
+								<li class="clearfloat" id="<%=replyList[i].reply.id%>response-reply">
+									<div class="person-info-record-head">
+										<img src="<%=osURL%><%=replyList[i].reply.pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'">
+									</div>
+									<div class="person-info-record-info">
+										<div class="person-info-name">
+											<%=replyList[i].reply.name%>
+											<% if(replyList[i].reply.sex == 'Boy'){ %>
+											<img src="/img/common/boy.png" alt="">
+											<% }else if(replyList[i].reply.sex == 'Girl'){%>
+											<img src="/img/common/girl.png" alt="">
+											<%}%>
+										</div>
+										<div class="person-info-contain clearfloat">
+											<div class="person-info-text"></div>
+										</div>
+										<div class="big-expression">
+											<%if(replyList[i].reply.bigexpressionGroup != undefined){%>
+											<%for(var k=0; k<replyList[i].reply.bigexpressionGroup.length; k++){%>
+												<img src="<%=osURL%><%=replyList[i].reply.bigexpressionGroup[k]%>" alt="">
+											<%}%>
+											<%}%>
+										</div>
+										<div class="person-info-time"><span><%=replyList[i].reply.addtime%></span>前發佈</div>
+									</div>
+								</li>
+							<%}%>
+						</ul>
+					</div>
+				</li>
+				<%}%>
+			<%}else if(replyList.length == 0 && page == 0){%>
+				<div class="no-more-good">
+					<div class="img"><img src="/img/common/09.png" alt=""></div>
+					<div class="title">暫無宜粉回應</div>
+					<div class="title">來成為第一個回應的宜粉吧</div>
+					<div class="no-btn">去回應</div>
+				</div>
+			<%}%>
+		</script>
+		<!--at人的模板-->
+		<script id="at-person-template" type="text/html" data-type="template">
+			<%if(data.length != 0){%>
+			<%for(var i=0;i<data.length;i++){%>
+				<li id="<%=data[i].id%>user" class="<%=data[i].id%>userclass">
+					<div class="fandPic"><img src="<%=osURL%><%=data[i].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+					<div class="fansMess clearfloat">
+						<span><%=data[i].name%></span>
+						<%if(data[i].sex == 'Girl'){%>
+							<span><img src="/img/common/girl.png"></span>
+						<%}else if(data[i].sex == 'Boy'){%>
+							<span><img src="/img/common/boy.png"></span>
+						<%}%>
+					</div>
+					<div class="fandPic_Filter"></div>
+					<span class="metiond_checked"><img src="/img/social/label/labeldetail/fancurr.png"></span>
+				</li>
+			<%}%>
+			<%}else if(data.length == 0 && page == 0){%>
+				<div class="no-res-content">
+					<div><img src="/img/common/05.png" alt=""></div>
+					<div>暫無內容</div>
+				</div>
+			<%}%>
+		</script>
+		<!--標籤的模板-->
+		<script id="label-template" type="text/html" data-type="template">
+			<%if(labelList.length != 0){%>
+			<%for(var i=0;i<labelList.length;i++){%>
+				<li id="<%=labelList[i].id%>label" class="<%=labelList[i].id%>labelclass" label="<%=labelList[i].labelName%>" type="<%=labelList[i].type%>" author="<%=labelList[i].userId%>">
+					<div class="LabelList_Filter"></div>
+					<span class="LabelList_checked"><img src="/img/social/label/labeldetail/fancurr.png"></span>
+					<div class="labelList_left"><img src="<%=osURL%><%=labelList[i].picture%>" onerror="this.src='/img/common/loading_pc_80.png';this.style.width='120px'"></div>
+					<div class="labelList_right">
+						<div class="labelList_title"><%=labelList[i].labelName%></div>
+						<div class="labelList_main">
+							<p><%=labelList[i].describe%></p>
+						</div>
+						<div class="labelList_DataBox clearfloat">
+							<div class="labelList_DataEach">
+								<div><img src="/img/social/liveshot/ProdigalTopicList/eye.png"></div>
+								<p><span><%=labelList[i].seeNums%></span>個宜粉查看</p>
+							</div>
+							<div class="labelList_DataEach">
+								<div><img src="/img/social/liveshot/ProdigalTopicList/good.png"></div>
+								<p><span><%=labelList[i].loveNums%></span>個宜粉贊好</p>
+							</div>
+							<!--<div class="labelList_DataEach">
+								<div><img src="/img/social/label/labeldetail/about (1).png"></div>
+								<p><span>50</span>相關帖子</p>
+							</div>-->
+						</div>
+					</div>
+				</li>
+			<%}%>
+			<%}else if(labelList.length == 0 && page == 0){%>
+				<div class="no-res-content">
+					<div><img src="/img/common/05.png" alt=""></div>
+					<div>暫無內容</div>
+				</div>
+			<%}%>
+		</script>
+		<!-- 上下篇 -->
+		<script id="albumOther" type="text/html" data-type='template'>
+			<%for(var i=0;i<albumList.length;i++){%>
+				<div class="album-list mine">
+					<div class="album-relative">
+						<div class="album-list-title"><%=albumList[i].thealbumname%></div>
+						<div class="album-top-img"><img src="<%=osURL%><%=albumList[i].coverPic%>" style="width:205px;height:205px;"></div>
+						<div class="album-img-list clearfloat">
+							<img src="<%=osURL%><%=albumList[i].extra_Pic[0]%>" style="width:97px;height:97px;">
+							<img src="<%=osURL%><%=albumList[i].extra_Pic[1]%>" style="width:97px;height:97px;">
+							<img src="<%=osURL%><%=albumList[i].extra_Pic[2]%>" style="width:97px;height:97px;">
+							<img src="<%=osURL%><%=albumList[i].extra_Pic[3]%>" style="width:97px;height:97px;">
+						</div>
+						<div class="album-state clearfloat">
+							<div><img src="/img/social/easylive/album-classification-eye.png" alt=""><%=albumList[i].seeNums%></div>
+							<div><img src="/img/social/easylive/album-classification-mes.png" alt=""><%=albumList[i].backNums%></div>
+							<div><img src="/img/social/easylive/album-classification-good.png" alt=""><%=albumList[i].loveNums%></div>
+							<div><img src="/img/social/easylive/album-classification-cai.png" alt=""><%=albumList[i].collectNums%></div>
+						</div>
+						<div class="album-poster">
+							<div class="laster-look clearfloat">
+								<div class="laster-head"><img src="<%=osURL%><%=user.pic%>" style="width:60px;height:60px;"></div>
+								<div class="laster-text">
+									<div class="laster-text-name"><%=user.name%><img src="/img/common/<%=user.sex%>.png" alt=""></div>
+									<div class="laster-text-num"><span><%=albumList[i].uptime%></span>前發佈</div>
+								</div>
+							</div>
+						</div>
+						<div class="album-shadow-box"></div>
+					</div>
+					<div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+				</div>
+			<%}%>
+		</script>
+		<!-- 宜粉采集到 -->
+		<script id="collect-photo" type="text/html" data-type='template'>
+			<%if(result.length == 0){%>
+				<div class="nohas-album">
+					<div class="img"><img src="/img/common/05.png" alt=""></div>
+					<div class="title">暫無宜粉採集哦！</div>
+					<div class="title">來成為第一個採集的宜粉吧</div>
+					<div class="no-btn">我要採集</div>
+				</div>
+			<%}else{%>
+				<%for(var i=0;i<result.length;i++){%>
+					<div class="CollectedBoxEach clearfloat">
+						<div class="CollectedBox_left">
+							<img src="<%=osURL%><%=result[i].thecoverpictureurl%>" style="width:170px;;height:170px;">
+						</div>
+						<div class="CollectedBox_right">
+							<div class="CollectedBox_mess">
+								<div class="CollectedBox_messPic">
+									<img src="<%=osURL%><%=result[i].userPic%>"style='width:60px;height:60px;border-radius:50%'>
+								</div>
+								<div class="CollectedBox_messName"><%=result[i].userName%></div>
+								<div class="CollectedBox_messSex">
+									<%if(result[i].sex==='Girl'){%>
+										<img src="/img/common/girl.png">
+									<%}else{%>
+										<img src="/img/common/boy.png">
+									<%}%>
+								</div>
+								<div class="CollectedBox_messTime"><%=result[i].uptime%>前</div>
+							</div>
+							<div class="albumPic_albumtext">
+								採集到：<span class="albumPic_albumName">《<%=result[i].thealbumName%>》</span>
+							</div>
+							<div class="albumPic_albumtext">
+								專輯圖：<span><%=result[i].groupIMgSum%></span>張
+							</div>
+							<div class="labelList_DataBox clearfloat">
+								<div class="labelList_DataEach clearfloat">
+									<div><img src="/img/userspace/userspace_postDetails/icon/respond_answer.png"></div>
+									<p><span><%=result[i].topicSum%></span>個宜粉留言</p>
+								</div>
+								<div class="labelList_DataEach clearfloat">
+									<div><img src="/img/userspace/userspace_postDetails/icon/respond_thumbsup.png"></div>
+									<p><span><%=(result[i].sSeeNum+result[i].seeNum)%></span>個宜粉查看</p>
+								</div>
+								<div class="labelList_DataEach clearfloat">
+									<div><img src="/img/userspace/userspace_postDetails/icon/respond_see.png"></div>
+									<p><span><%=(result[i].sLoveNum+result[i].loveNum)%></span>個宜粉贊好</p>
+								</div>
+								<div class="labelList_DataEach clearfloat">
+									<div><img src="/img/userspace/userspace_postDetails/icon/cai.png"></div>
+									<p><span><%=result[i].collectionNum%></span>個宜粉採集</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				<%}%>
+			<%}%>
+		</script>
+
+	</body>
+
+</html>
+

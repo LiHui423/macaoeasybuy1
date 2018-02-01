@@ -1,0 +1,349 @@
+.exchangeBox{
+	background: url(//img.macaoeasybuy.com/img/easybuy/exchange/exchange_bg.png) fixed;
+	min-width: 1397px;
+}
+.exchange_main{
+
+}
+.willbeShelves{
+	width: 1397px;
+	margin: auto;
+	padding-top: 100px;
+}
+.willbeShelves_title{
+	font-size: 34px;
+	font-weight: 100;
+	letter-spacing: 8px;
+	position: relative;
+	width: 711px;
+	margin: auto;
+}
+.willbeShelves_main{
+	width: 1397px;
+	margin: auto;
+	margin-top: 50px;
+	position: relative;
+}
+.willbeShelves_btn{
+	position: absolute;
+	width: 45px;
+	top: 140px;
+	display: block;
+	height: 100px;
+	background-color:transparent;
+}
+.willbeShelves_btn:hover{
+	background-color: rgba(0,0,0,0.3);
+	transition: all 0.2s linear;
+}
+.willbeShelves_btn img{
+	width: 25px;
+	margin-top: 30px;
+}
+.willbeShelves_btnLeft{
+	left: 20px;
+}
+.willbeShelves_btnLeft img{
+	margin-left: 7px;
+}
+.willbeShelves_btnRight{
+	right: 20px;
+}
+.willbeShelves_btnRight img{
+	margin-left: 13px;
+}
+.willbeShelves_scroll{
+	width: 1235px;
+	margin: auto;
+	height: 410px;
+	overflow: hidden;
+	position: relative;
+}
+.willbeShelves_scroll ul{
+	width: 9999px;
+	position: absolute;
+	left: 0;
+}
+.willbeShelves_scroll ul li{
+	float: left;
+	margin-left: 25px;
+}
+.willbeShelves_scroll ul li:nth-child(1){
+	margin-left: 10px;
+}
+.willbeShelves_Each{
+	float: left;
+	border: 1px solid #E3E3E3;
+	margin-left: 35px;
+}
+.willbeShelves_scroll ul li .willbeShelves_Each:nth-child(1){
+	margin-left: 0px;
+}
+.willbeShelves_EachTop{
+	width: 220px;
+	height: 300px;
+	position: relative;
+	cursor: pointer;
+}
+.willbeShelves_EachTop img{
+	width: 220px;
+	max-height: 300px;
+}
+.willbeShelves_sellOut_cover{
+	position: absolute;
+	width: 220px;
+	height: 300px;
+	background: rgba(0,0,0,0.7);
+	z-index: 5;
+}
+.willbeShelves_sellOut_cover img{
+	width: 70%;
+	margin-left: 15%;
+	margin-top: 50px;
+}
+.redBagCostIcon{
+	position: absolute;
+	width: 115px;
+	height: 65px;
+	background: url(//img.macaoeasybuy.com/img/easybuy/exchange/redBagCost.png) no-repeat;
+	bottom: 0px;
+	right: 5px;
+}
+.redBagCostIcon p{
+	position: absolute;
+	bottom: 7px;
+	width: 85px;
+	text-align: center;
+	color: #ff184a;
+	font-size: 20px;
+	right: 0;
+}
+.willbeShelves_EachMess{
+	padding: 10px;
+	background: #FFFFFF;
+}
+.willbeShelves_EachMess_title{
+	color: #989898;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+.willbeShelves_EachMess_oldprice{
+	margin-top: 10px;
+	color: #989898;
+	font-size: 16px;
+}
+.willbeShelves_EachMess_oldprice .EachMess_priceLeft{
+	float: left;
+}
+.willbeShelves_EachMess_oldprice .EachMess_priceRight{
+	float: right;
+	text-decoration: line-through;
+}
+.willbeShelves_EachMess_newprice{
+	color: #FF527C;
+	font-size: 18px;
+	margin-top: 3px;
+}
+.willbeShelves_EachMess_newprice .EachMess_priceLeft{
+	float: left;
+}
+.willbeShelves_EachMess_newprice .EachMess_priceRight{
+	float: right;
+}
+.interchange{
+	margin-top: 80px;
+}
+.interchange_title{
+	width: 750px;
+	margin: auto;
+}
+.interchange_main{
+	background-color: #f8ded1;
+	width: 1399px;
+	margin: auto;
+	margin-top: 60px;
+	position: relative;
+	padding-top: 95px;
+}
+.interchange_head{
+	position: absolute;
+	width: 1425px;
+	height: 103px;
+	background: url(//img.macaoeasybuy.com/img/easybuy/exchange/head_bg.png) no-repeat;
+	margin: auto;
+	top: 0;
+	left: -14px;
+	padding: 10px 0;
+}
+.interchange_headLeft{
+	float: left;
+	width: 180px;
+	padding: 0px 30px;
+	border-right:1px solid #A5A5A5;
+}
+.interchange_headLeft p{
+	font-size: 30px;
+	color: #a8a5a4;
+	text-align: center;
+}
+.interchange_headLeft_num{
+	text-align: center;
+}
+.interchange_headLeft_num span:nth-child(1){
+	width: 30px;
+	display: inline-block;
+}
+.interchange_headLeft_num span:nth-child(2){
+	font-size: 16px;
+	width: 60px;
+	color: #a8a5a4;
+	letter-spacing: 1px;
+}
+.interchange_headRight{
+	float: left;
+}
+.interchange_headRight ul{
+	padding: 4px 20px;
+}
+.interchange_headRight ul li{
+	float: left;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.interchange_headRight ul li{
+	width: 60px;
+}
+.interchange_headRight ul li img{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+}
+.interchange_nav{
+	background-color: #fdebe2;
+}
+.interchange_nav ul{
+	width:510px;
+	margin: auto;
+}
+.interchange_nav ul li{
+	float: left;
+	width: 150px;
+	margin-left: 15px;
+	padding: 30px 0 25px 0;
+	font-size: 20px;
+	color: #a8a5a4;
+	text-align: center;
+	letter-spacing: 2px;
+	cursor: pointer;
+}
+.interchange_nav ul .interchange_navCurr{
+	border-bottom: 5px solid #FF527C;
+	color: #000000;
+}
+.interchange_goods{
+	padding: 20px;
+}
+.interchange_each{
+	width: 325px;
+	height: 430px;
+	padding: 10px;
+	background-color: #FFFFFF;
+	margin-left: 19px;
+	float: left;
+	margin-bottom: 20px;
+}
+.interchange_each:nth-child(4n+1){
+	margin-left: 0px;
+}
+.interchange_eachLeft{
+	float: left;
+	width: 220px;
+}
+.interchange_each_like{
+	position: absolute;
+	bottom: 8px;
+	left: 2px;
+	width: 100px;
+	height: 30px;
+	background: rgba(171,171,171,0.5);
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+.interchange_each_like span{
+	display: inline-block;
+	float: left;
+}
+.interchange_each_like span:nth-child(1) img{
+	width: 12px;
+}
+
+.interchange_each_like span:nth-child(2){
+	color: #FFFFFF;
+	margin-top: 1px;
+	margin-left: 2px;
+}
+.interchange_eachRight{
+	float: left;
+	margin-left: 2px;
+}
+.interchange_eachRightsEach{
+	width: 80px;
+	height: 80px;
+	margin-bottom: 2px;
+	position: relative;
+	cursor: pointer;
+}
+.interchange_eachRightsEach img{
+	width: 80px;
+	max-height: 80px;
+}
+.eachRightsEach_cover{
+	position: absolute;
+	background: rgba(0,0,0,0.5);
+	width: 80px;
+	height: 80px;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+.eachRightsEach_cover img{
+	width: 70%;
+	margin-left: 15%;
+	margin-top: 25px;
+	display: none;
+}
+.eachRightsEach_cover_num{
+	width: 60px;
+	height: 60px;
+	margin-left: 10px;
+	margin-top: 10px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	color: #FFFFFF;
+	font-size: 16px;
+	text-align: center;
+	border: 1px solid #FFFFFF;
+	padding-top: 10px;
+	letter-spacing: 2px;
+}
+.interchange_goods_see{
+	display: none;
+}
+.interchange_goods_redbag{
+	display: none;
+}
+.willbeShelves_sellOut_cover{
+	display: none;
+}
+.exchange_sellOut .willbeShelves_sellOut_cover{
+	display: block;
+}
+.interchange_eachRightsEach_sellOut .eachRightsEach_cover img{
+	display: block;
+}

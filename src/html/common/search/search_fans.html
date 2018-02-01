@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Pragma" content="no-cache">
+		<title>搜索結果(宜粉)</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/search/searchCommon.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/search/search_fans.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+	</head>
+	<body>
+		<header></header>
+		<div id ="searchBar">
+			<div class="searchBox">
+				<div class="searchBox_mainBox">
+					<div class="searchBox_left">
+						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+					</div>
+					<div class="searchBox_right" id="searchBox_rightBox"></div>
+				</div>
+			</div>
+		</div>
+		<div class="searchMainBox">
+			<div class="searchMain">
+				<div class="search_result_title"></div>
+				<div class="search_result_main">
+					<div class="search_result_null">
+						<div class="search_result_nullIcon"><img src="/img/common/05.png"></div>
+						<p>沒有搜索到“<span></span>”的相關宜粉哦！</p>
+					</div>
+					<div class="search_resultBox">
+						<div class="search_fansList clearfloat">
+							<ul id="search_fansList_ul"></ul>
+						</div>
+						<div class="loadNow"><img src="/img/common/loadingnow .gif"></div>
+						<div class="noMore">~沒有更多內容了哦~</div>
+					</div>
+				</div>
+			</div>
+			<!--隨便看看-->
+			<!--<div class="seeOtherFans">
+				<div class="search_result_seeOther_title"><img src="/img/easybuy/moreshops/seeOther_title.png"></div>
+				<div class="seeOtherShop_mian">
+					<ul></ul>
+				</div>
+			</div>-->
+		</div>
+		<footer></footer>
+	</body>
+	<!--模板文件和模擬數據-->
+	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/js/common/search/search_fans/search_fans.data.js"></script>
+	<!--頭部文件的js-->
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<!--搜索框部份的js-->
+	<script src="/js/common/header&search&footer/searchBar.js"></script>
+	<!--粉絲搜索的js-->
+	<script src="/js/common/search/search_fans/search_fans.js"></script>
+	<script src="/js/common/header&search&footer/footer.js"></script>
+
+	<!--搜索結果宜粉結果-->
+	<script type="text/html" id="fansList" data-array = "labelListData">
+		<%for(var i = 0;i <list.classList.length;i++){%>
+			<li class="result-box-item" data-id = "<%=list.classList[i].userid%>">
+				<%if(list.classList[i].isrecommend=='0'){%>
+					<div class="result-box-item-inner">
+				<%}else{%>
+					<div class="result-box-item-inner special">
+				<%}%>
+					<div class="recommen-label"><img src="/img/userspace/friendsfans/recommen-label.png" alt=""></div>
+					<div class="head myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.classList[i].userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+					<div class="name">
+						<%=list.classList[i].userName%>
+						<%if(list.classList[i].sex=="Girl"){%>
+							<img src="/img/common/sex.png">
+						<%}else{%>
+							<img src="/img/common/boy.png">
+						<%}%>
+					</div>
+					<div class="identity-level user">用戶身份：
+						<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].expertPic%>" alt="" onerror="this.onerror=null;this.parentNode.removeChild(this);">
+					</div>
+					<div class="identity-level pet">寵物等級：<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.classList[i].petPic%>"><span><%=list.classList[i].petName%></span><span>LV.<%=list.classList[i].petlevel%></span></div>
+					<ul class="clearfloat user-info">
+						<li>
+							<div><%=list.classList[i].attentionCount%></div>
+							<div>好友</div>
+						</li>
+						<li>
+							<div><%=list.classList[i].fansCount%></div>
+							<div>粉絲</div>
+						</li>
+						<li>
+							<div><%=list.classList[i].postCount%></div>
+							<div>發佈</div>
+						</li>
+						<li>
+							<div><%=list.classList[i].loveCount%></div>
+							<div>心動</div>
+						</li>
+					</ul>
+					<div class="user-skills clearfloat">
+						<%if(list.classList[i].infos.length == 0){%>
+						<p>暫無任何興趣和技能</p>
+						<%}else{%>
+						<div class="user-skills-inner clearfloat">
+							<%for(var j=0;j<list.classList[i].infos.length;j++){%>
+							<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow"><%=list.classList[i].infos[j]%></div>
+							<%}%>
+						</div>
+						<%}%>
+					</div>
+					<div class="shadow-box"></div>
+				</div>
+				<div class="result-box-bottom"><img src="/img/social/market/treasureclassifydetail/mdetail-shadow.png" alt=""></div>
+			</li>
+		<%}%>
+	</script>
+
+	<!--搜索結果數量-->
+	<script type="text/html" id="searchFansNum" data-array = "searchFansNumData">
+		您搜索的 “<span></span>” 一共有 <span><%=list.numFound%></span> 個相關宜粉：
+	</script>
+
+
+</html>

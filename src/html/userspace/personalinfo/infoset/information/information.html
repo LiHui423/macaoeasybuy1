@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>用戶空間-個人信息設置-信息</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/css/userspace/personalinfo/infoset/information/information.css">
+		<!--[if IE 9]>
+		<style>
+			#birthday-select .select-box select{
+				background:#fff !important;
+			}
+		</style>
+		<![endif]-->
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<!--不需要參數 需要用戶登錄-->
+	</head>
+
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu">
+								<li class="select">
+									<a href="#">
+										<div><img src="/img/userspace/common/leftmenu/userin_ica13.png" alt=""></div><span>信息</span><span>3/10</span></a>
+								</li>
+								<li>
+									<a href="#">
+										<div><img src="/img/userspace/common/leftmenu/userin_ica14.png" alt=""></div><span>興趣</span><span>10/11</span></a>
+								</li>
+								<li>
+									<a href="#">
+										<div><img src="/img/userspace/common/leftmenu/userin_ica15.png" alt=""></div><span>技能</span><span>10/10</span></a>
+								</li>
+								<li>
+									<a href="#">
+										<div><img src="/img/userspace/common/leftmenu/userin_ica18.png" alt=""></div><span>基本</span><span>3/3</span></a>
+								</li>
+							</ul>
+						</div>
+						<div id="userspace-content">
+							<!--這裡是內容-->
+							<div class="content-title" id="about-me-title">
+								<img src="/img/userspace/personalinfo/about-icon.png" alt="">
+								<span>關於我</span>
+								<div class="info-progress">
+									<div></div>目前已完成<span>&nbsp;</span>/<span>&nbsp;</span>
+								</div>
+							</div>
+							<ul class="skill-lister clearfloat" id="about-me-content">
+								<li class="clearfloat" id="easybuy-account">
+									<div class="icon-box">
+										<img src="/img/userspace/personalinfo/about-icon01.png" alt="">
+									</div>
+									<div class="list-title">
+										<span>宜粉賬號：</span>
+									</div>
+									<div class="info-content"><span>&nbsp;</span></div>
+								</li>
+								<li class="clearfloat" id="easybuy-nickname">
+									<div class="icon-box">
+										<img src="/img/userspace/personalinfo/about-icon02.png" alt="">
+									</div>
+									<div class="list-title">
+										<span>宜粉暱稱：</span>
+									</div>
+									<div class="info-content">
+										<div>
+											<input type="text" value="&nbsp;" placeholder="請填寫您的暱稱">
+										</div>
+									</div>
+								</li>
+								<li class="clearfloat" id="easybuy-sex">
+									<div class="icon-box">
+										<img src="/img/userspace/personalinfo/about-icon03.png" alt="">
+									</div>
+									<div class="list-title">
+										<span>性別：</span>
+									</div>
+									<div class="info-content clearfloat">
+										<div class="man"><img src="/img/userspace/friendsfans/boy-b.png" alt="" class="select"><img src="/img/userspace/friendsfans/boy.png" alt="" class="no-select">男性</div>
+										<div class="girl"><img src="/img/userspace/friendsfans/girl-r.png" alt="" class="select"><img src="/img/userspace/friendsfans/girl.png" alt="" class="no-select">女性</div>
+									</div>
+								</li>
+								<li class="clearfloat" id="easybuy-birthday">
+									<div class="icon-box">
+										<img src="/img/userspace/personalinfo/about-icon03.png" alt="">
+									</div>
+									<div class="list-title">
+										<span>生日日期：</span>
+									</div>
+									<div class="info-content clearfloat" id="birthday-select">
+										<div class="select-box">
+											<select name="year" id="birthday-year"></select>
+										</div>
+										<div class="select-box">
+											<select name="month" id="birthday-month"></select>
+										</div>
+										<div class="select-box">
+											<select name="day" id="birthday-day"></select>
+										</div>
+
+									</div>
+								</li>
+
+								<li class="clearfloat check-box no-bottom" id="easybuy-constellation">
+									<div class="icon-box">
+										<img src="/img/userspace/personalinfo/about-icon05.png" alt="">
+									</div>
+									<div class="list-title">
+										<span>星座：</span>
+									</div>
+									<div class="info-content clearfloat">
+										<span><span>請選擇</span><img src="/img/userspace/personalinfo/arrow-down.png" alt=""></span>
+
+										<div class="radio-box">
+											<div class="shadow-box"></div>
+											<div class="ul-box">
+												<img src="/img/userspace/personalinfo/arrow.png" alt="" class="arrow">
+												<ul class="scrollIe scrollOther"></ul>
+											</div>
+										</div>
+
+									</div>
+								</li>
+								<li class="clearfloat check-box no-bottom" id="easybuy-state">
+									<div class="icon-box">
+										<img src="/img/userspace/personalinfo/about-icon06.png">
+									</div>
+									<div class="list-title">
+										<span>感情狀況：</span>
+									</div>
+									<div class="info-content clearfloat">
+										<span><span>請選擇</span><img src="/img/userspace/personalinfo/arrow-down.png" alt=""></span>
+
+										<div class="radio-box">
+											<div class="shadow-box"></div>
+											<div class="ul-box">
+												<img src="/img/userspace/personalinfo/arrow.png" alt="" class="arrow">
+												<ul class="scrollIe scrollOther"></ul>
+											</div>
+										</div>
+									</div>
+								</li>
+
+							</ul>
+							<div class="content-title" id="live-title">
+								<img src="/img/userspace/personalinfo/experience-icon.png" alt="">
+								<span>我的經歷</span>
+								<div class="info-progress">
+									<div></div>目前已完成<span>&nbsp;</span>/<span>&nbsp;</span>
+								</div>
+							</div>
+							<ul class="skill-lister clearfloat check-select" id="live-content">
+								<li class="clearfloat check-box">
+									<div class="icon-box">
+										<img src="/img/userspace/personalinfo/experience-icon01.png" alt="">
+									</div>
+									<div class="list-title">
+										<span>&nbsp;</span>
+									</div>
+								</li>
+								<li class="clearfloat check-box">
+									<div class="icon-box">
+										<img src="/img/userspace/personalinfo/experience-icon02.png" alt="">
+									</div>
+									<div class="list-title">
+										<span>&nbsp;</span>
+									</div>
+								</li>
+								<li class="clearfloat check-box no-bottom">
+									<div class="icon-box">
+										<img src="/img/userspace/personalinfo/experience-icon03.png" alt="">
+									</div>
+									<div class="list-title">
+										<span>&nbsp;</span>
+									</div>
+								</li>
+								<li class="clearfloat check-box no-bottom">
+									<div class="icon-box">
+										<img src="/img/userspace/personalinfo/experience-icon04.png" alt="">
+									</div>
+									<div class="list-title">
+										<span>&nbsp;</span>
+									</div>
+								</li>
+							</ul>
+							<div class="submit-btn-box">
+								<div id="submit-btn" class="can-not-save">確認保存</div>
+							</div>
+							<!--內容的結束標識-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+		<!--成功提示-->
+		<div id="praise-post">
+			<div class="praise on-middle yez-tips-box click">
+				<div><img src="/img/social/easylive/collect-select.png" alt="">修改成功！</div>
+			</div>
+		</div>
+		<!--沒保存-->
+		<div id="no-save">
+			<div class="shadow-box"></div>
+			<div class="cancel-tips-box on-middle yez-tips-box">
+				<div class="cancels-title">確認保存</div>
+				<div>
+					<div class="cancels-xc"><img src="/img/common/02.png" alt=""></div>
+					<div class="cancel-tips-text">你還沒有保存哦，確定要離開嗎？</div>
+					<div class="clearfloat sure-button">
+						<div class="sure-cancel">保存并離開</div>
+						<div class="cancel-sure">取消</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script src="/js/plug/yez_js_Reset.js"></script>
+		<script src="/js/common/vendor/template-native.js"></script>
+		<script src="/js/userspace/common/userinfo.js" async></script>
+		<script src="/js/userspace/common/leftmenu.js" async></script>
+		<script src="/js/common/header&search&footer/footer.js" async></script>
+		<script src="/js/common/header&search&footer/header.js"></script>
+		<script src="/js/plug/YMDClass.js"></script>
+		<script src="/js/userspace/personalinfo/infoset/information/information.js"></script>
+
+		<script id="through-template" type="text/html">
+			<%for(var i=0;i<nextClassList.length;i++){%>
+			<%if(nextClassList[i].choosedList.length == 0){%>
+			<li class="clearfloat check-box second-list">
+				<%}else{%>
+				<li class="clearfloat check-box select second-list">
+					<%}%>
+					<div class="icon-box">
+						<img src="/img/userspace/personalinfo/experience-icon0<%=i+1%>.png" alt="">
+					</div>
+					<div class="list-title">
+						<span><%=nextClassList[i].name%>：</span>
+					</div>
+					<div class="info-content clearfloat">
+						<span>
+							<%if(nextClassList[i].choosedList.length == 1){%>
+								<span><%=nextClassList[i].choosedList[0].name%></span>
+						<%}else if(nextClassList[i].choosedList.length >1){%>
+						<span><%=nextClassList[i].choosedList[0].name%>...</span>
+						<%}else if(nextClassList[i].choosedList.length == 0){%>
+						<span>未選擇</span>
+						<%}%>
+						<img src="/img/userspace/personalinfo/arrow-down.png" alt="">
+						</span>
+					</div>
+					<div class="list-select">
+						<div class="shadow-box"></div>
+						<img src="/img/userspace/personalinfo/arrow.png" alt="" class="arrow">
+						<div class="ul-box">
+							<ul class="scrollIe scrollOther"></ul>
+						</div>
+					</div>
+				</li>
+				<%}%>
+		</script>
+
+		<script id="list-template" type="text/html">
+			<%for(var i=0;i<selectList.length;i++){%>
+			<%if(selectList[i].isSelect == 0){%>
+			<li class="clearfloat">
+				<%}else{%>
+				<li class="clearfloat select">
+					<%}%>
+					<div></div>
+					<span><%=selectList[i].name%></span>
+				</li>
+				<%}%>
+		</script>
+
+	</body>
+
+</html>

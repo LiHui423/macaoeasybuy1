@@ -1,0 +1,137 @@
+/*刪除帖子*/
+#delete-post{
+	display:none;
+}
+.yez-tips-box {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#delete-post .delete-post-shadow{
+	position:fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	z-index:889;
+	background-color:rgba(0,0,0,.4);
+}
+#delete-post .cancel-tips-box {
+    position: fixed;
+    z-index: 900;
+    box-shadow: 4px 4px 30px #aaa;
+    background-color: #fff;
+    text-align: center;
+    width: 510px;
+}
+#delete-post .cancels-title {
+    padding: 10px 0px;
+    font-size: 18px;
+    background-color: #FF527C;
+    color: #fff;
+}
+#delete-post .cancels-xc {
+    margin-top: 20px;
+    text-indent: -30px;
+}
+#delete-post .cancels-xc img{
+	width:180px;
+}
+#delete-post .cancel-tips-text {
+    padding: 15px 0px 4px 0px;;
+    font-size: 18px;
+}
+#delete-post .cancel-tips-text-tips{
+	color:#FF527C;
+}
+#delete-post .sure-button {
+    display: inline-block;
+    margin:15px 0px;
+}
+#delete-post .sure-cancel,
+#delete-post .cancel-sure{
+    background-color: #FF527C;
+    color: #FFFFFF;
+    padding: 8px 45px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 16px;
+    float: left;
+}
+#delete-post .cancel-sure {
+    margin-left: 20px;
+    background-color: #b3b3b3;
+}
+/*按鈕樣式*/
+#album-delete{
+	width:150px;
+	float:right;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+	text-align: center;
+	padding:10px 0px;
+	font-size:16px;
+	cursor: default;
+    color: #aaa;
+    letter-spacing: 2px;
+    border: 1px solid #aaa;
+    margin:8px 16px 0px 0px;
+    display: block;
+}
+#album-delete img{
+	margin-top:-3px;
+	margin-right:5px;
+}
+/*帖子*/
+.pillar-all.mine .laster .laster-look .laster-text{
+	margin:0px;
+}
+.pillar-all.mine .laster-head{
+	display:none;
+}
+.pillar-all.mine .laster-text-name{
+	display:none;
+}
+.pillar-all.mine .laster-text-num{
+	text-indent:100px;
+}
+/*複選框*/
+.pillar-all .hover-check-box-outer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    z-index: 888;
+    display: none;
+}
+.pillar-all .hover-check-box-outer .hover-check-box {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    cursor: -ms-pointer;
+    background: #fff;
+}
+.pillar-all.select .hover-check-box-outer .hover-check-box {
+    background: url(/img/social/easylive/check-select.png) center center no-repeat #fff;
+}

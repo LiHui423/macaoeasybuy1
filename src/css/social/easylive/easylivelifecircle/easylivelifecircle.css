@@ -1,0 +1,557 @@
+body{
+	background:url(//img.macaoeasybuy.com/img/social/easylive/lifecircle-bg.png) center center no-repeat;
+	background-attachment: fixed;
+}
+.navBar{
+	border-bottom: 0px;
+}
+.footBaner{
+	margin-top:-92px;
+}
+.log-banner{
+    background: #00ff8b;
+    margin-bottom: 80px;
+}
+.log-banner .log-cover{
+	width:1397px;
+	margin:0 auto;
+	height:410px;
+}
+.log-banner .log-banner-left{
+	float:left;
+	width:57.3%;
+	height:100%;
+	position:relative;
+}
+.log-banner .log-banner-left img:first-of-type{
+	position:absolute;
+	display:block;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.log-banner .log-banner-left img.log-arrow{
+	position:absolute;
+	right:-60px;
+	top:150px;
+}
+.log-banner .log-banner-right{
+	float:left;
+	width:42.7%;
+	height:100%;
+	background:url(//img.macaoeasybuy.com/img/social/easylive/log-symbol-lifecircle.png) center 50px no-repeat;
+	position:relative;
+}
+.log-banner .log-banner-right p{
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	font-size:16px;
+	color:#000;
+	line-height:34px;
+	text-align: center;
+}
+.container-swapper{
+	width:1397px;
+	margin:0 auto;
+	padding-bottom:80px;
+}
+
+/**
+ * ===================================================================
+ *                  生活圈分类 end
+ * ===================================================================
+**/
+.livingCircle {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    *zoom: 1;
+    margin: 0 auto;
+    width: 912px;
+}
+.livingCircle:after {
+    content: " ";
+    clear: both;
+    display: table;
+}
+.livingCircle li{
+    float: left;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    margin: 0 25px 25px;
+}
+.livingCircle li:after {
+    background: rgba(255, 255, 255, 0.6);
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.livingCircle li.yez-active:after,
+.livingCircle li:hover:after {
+    background: transparent !important;
+}
+.livingCircle li img {
+    height: 64px;
+    width: 64px;
+    display: block;
+}
+/**
+ * ===================================================================
+ *                  生活圈分类 end
+ * ===================================================================
+**/
+
+.hot-post .title img,
+.all-say .title img,
+.having-look .title img{
+	display:block;
+	margin:0 auto;
+	padding:35px 0px;
+	margin-top:50px;
+}
+.hot-post .hot-post-inner {
+    position:relative;
+    width:100%;
+    overflow: hidden;
+    height: 688px;
+}
+.all-say .all-say-post-inner{
+	position:relative;
+	width:100%;
+	height:632px;
+	overflow: hidden;
+}
+.hot-post .hot-post-list,
+.all-say .all-say-list{
+	position:absolute;
+	left:0px;
+}
+.hot-post .hot-post-list .hot-post-list-li{
+	background-color:#fff;
+    float:left;
+    margin-right: 40px;
+    width: 439px;
+}
+.hot-post .hot-post-list .hot-post-list-li:nth-of-type(3n),
+.all-say .all-say-list .all-say-list-li:nth-of-type(4n){
+	margin-right:0px;
+}
+.all-say .all-say-list .all-say-list-li{
+	width:335px;
+	background-color:#fff;
+	float:left;
+	margin-right:19px;
+}
+
+.prev,
+.next{
+	top:50%;
+	transform: translate(0px,-50%);
+	-webkit-transform: translate(0px,-50%);
+	-moz-transform: translate(0px,-50%);
+	-ms-transform: translate(0px,-50%);
+	-o-transform: translate(0px,-50%);
+	cursor: pointer;
+}
+.prev{
+    position: absolute;
+    left: 0px;
+}
+.next {
+    position: absolute;
+    right: 0px;
+}
+.prev div,
+.next div {
+    width: 50px;
+    height: 100px;
+    padding-top: 50px;
+	opacity: .4;
+	filter: alpha(opacity=40);
+}
+.prev .shadow,
+.next .shadow {
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+ 	background-color:rgba(255,255,255,.4);
+}
+.prev div img,
+.next div img {
+    width: 15px;
+    display: block;
+    position:absolute;
+   	top:50%;
+   	left:50%;
+   	transform: translate(-50%,-50%);
+   	-webkit-transform: translate(-50%,-50%);
+   	-moz-transform: translate(-50%,-50%);
+   	-ms-transform: translate(-50%,-50%);
+   	-o-transform: translate(-50%,-50%);
+}
+.all-say .prev div,
+.all-say .next div {
+	opacity: .6;
+	filter: alpha(opacity=60);
+}
+.all-say .prev,
+.all-say .next{
+	top:58%;
+}
+.all-say .prev{
+    left: -60px;
+}
+.all-say .next {
+    right: -60px;
+}
+@media screen and (max-width: 1500px) {
+	.all-say .prev{
+	    left: 0px;
+	}
+	.all-say .next {
+	    right: 0px;
+	}
+}
+.post-topic-box {
+    width: 100%;
+}
+.post-topic-box .box-img {
+    height: 439px;
+    width: 439px;
+    background-color:#666;
+    overflow: hidden;
+}
+.post-topic-box .box-img img {
+    width: 100%;
+}
+.post-topic-box .box-main {
+    padding: 20px;
+    width: 100%;
+    height: 233px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.post-topic-box .box-main .box-main-head{
+    margin-bottom: 20px;
+}
+.post-topic-box .box-main .box-main-head-img{
+	float:left;
+	width:64px;
+	height:64px;
+	overflow: hidden;
+	background-color:#ccc;
+	margin-right:10px;
+}
+.post-topic-box .box-main .box-main-head-img img {
+    width: 100%;
+    display: block;
+}
+.post-topic-box .box-main .box-main-head-info{
+    float:left;
+    padding: 9px 10px;
+}
+.post-topic-box .box-main-head-info-title {
+    font-size: 16px;
+    color: #444;
+    font-weight: bold;
+    padding-top:6px;
+}
+.post-topic-box .box-main-head-info-title img{
+	width:18px;
+	margin:-3px 0px 0px 8px;
+}
+.post-topic-box .box-main-head-info-time{
+	font-size:14px;
+	color:#aaa;
+}
+.box-main-head-info-instruc {
+    *zoom: 1;
+}
+.box-main-head-info-instruc:after {
+    content: " ";
+    clear: both;
+    display: table;
+}
+.box-main-head-info-instruc span:first-child {
+	font-weight:bold;
+	color:#000;
+    font-size:16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 338px;
+    display: block;
+    float: left;
+    height: 22px;
+}
+.all-say-list-li .box-main-head-info-instruc span:first-child {
+    max-width: 248px;
+}
+.box-main-head-info-instruc span:last-child {
+	color:#00bb8b;
+    font-size:13px;
+    display: block;
+    float: left;
+    height: 22px;
+    line-height: 26px;
+}
+.post-topic-box .box-main .box-main-head-info-article {
+    width: 100%;
+    line-height: 24px;
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    height: 44px;
+    -webkit-line-clamp: 2;
+    color: #aaa;
+    letter-spacing: 2px;
+}
+.post-topic-box .box-main .info {
+    width: 100%;
+    text-align: left;
+    margin-top:20px;
+}
+.post-topic-box .box-main .info li {
+    width: 33.333333333%;
+    float: left;
+    text-align: left;
+    color: #aaa;
+}
+.post-topic-box .box-main .info li img {
+    margin: -2px 4px 0px 0px;
+}
+.post-topic-box .box-main .info li:nth-of-type(2) {
+    text-align: center;
+}
+.post-topic-box .box-main .info li:last-of-type {
+    text-align: right;
+}
+.all-say{
+	position:relative;
+}
+.all-say-record{
+	padding:10px 0px;
+	border-top: 1px solid #eee;
+	border-bottom:1px solid #eee;
+	margin-top:20px;
+}
+.all-say .all-say-post-inner{
+	height:642px;
+}
+.all-say-record .all-say-item{
+	margin-bottom:10px;
+}
+.all-say-record .all-say-item:last-of-type{
+	margin-bottom:0px;
+}
+.all-say-record .all-say-item-head{
+	float:left;
+	width:35px;
+	height:35px;
+	overflow: hidden;
+	background-color:#ccc;
+	margin-right:8px;
+}
+.all-say-record .all-say-item-context{
+	float:left;
+	color:#aaa;
+	line-height:35px;
+	overflow: hidden;
+	height:35px;
+	width:250px;
+    display: -webkit-box !important;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.all-say-record .all-say-item-context span{
+	padding-left:8px;
+}
+.all-say .post-topic-box .box-main{
+	padding-bottom:15px;
+}
+.all-say .post-topic-box .box-img{
+    height:220px;
+    width: 335px;
+}
+.all-say .post-topic-box .box-main .box-main-head-info-article{
+	height:68px;
+	-webkit-line-clamp: 3;
+	letter-spacing: 3px;
+}
+
+.lifecircle-having-look{
+	height:600px;
+	position:relative;
+}
+
+.pillar-all {
+    width: 220px;
+}
+.pillar-all .pillar {
+    width: 100%;
+    background-color: #fff;
+}
+.pillar-all .page-main {
+    border: 1px solid #ccc;
+    overflow: hidden;
+    border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -ms-border-radius: 10px 10px 0px 0px;
+    -o-border-radius: 10px 10px 0px 0px;
+}
+.pillar-all .laster-look {
+	padding: 15px;
+}
+.pillar-all .laster-look .laster-head {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+    margin-left: 5px;
+}
+.pillar-all .laster-look .laster-head img {
+    width: 100%;
+}
+.pillar-all .laster-look .laster-text {
+    margin: 10px 0px 0px 14px;
+    float: left;
+}
+.pillar-all .laster-look .laster-text .laster-text-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+.pillar-all .laster-look .laster-text .laster-text-name img {
+    vertical-align: top;
+    margin-left: 8px;
+    width: 22px;
+}
+.pillar-all .laster-look .laster-text .laster-text-num {
+    font-size: 14px;
+    color: #999;
+    font-weight: 600;
+}
+.pillar-all .page-main a {
+    display: block;
+}
+.pillar-all .page-main img.page-main-head-img {
+    width: 100%;
+}
+.pillar-all .post-main-text {
+    padding: 14px 14px 18px 14px;
+}
+.pillar-all .page-main .post-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 2px;
+}
+.pillar-all .post-title span {
+    color: #E98900;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-left: 5px;
+}
+.pillar-all .page-main .post-description {
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 20px;
+    color: #aaa;
+}
+.pillar-all .laster {
+    border: 1px solid #ccc;
+    border-top: 0px;
+    border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    -moz-border-radius: 0px 0px 10px 10px;
+    -ms-border-radius: 0px 0px 10px 10px;
+    -o-border-radius: 0px 0px 10px 10px;
+    overflow: hidden;
+}
+.pillar-all .laster .laster-num li {
+    float: left;
+    width: 33.333333%;
+    text-align: center;
+    color: #aaa;
+    padding: 32px 0px 10px 0px;
+}
+.pillar-all .laster .laster-num li:first-of-type {
+    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/eye.png) 28px 14px no-repeat;
+}
+.pillar-all .laster .laster-num li:nth-of-type(2) {
+    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/good.png) 30px 10px no-repeat;
+}
+.pillar-all .laster .laster-num li:last-of-type {
+    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/message.png) 27px 13px no-repeat;
+}
+.shadow-box {
+    position: absolute;
+    z-index: 49;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgba(0,0,0,.1);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    display: none;
+}
+.pillar-all:hover .shadow-box {
+    display: block;
+}
+.post-shadow {
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+}
+.post-shadow img {
+    width: 98%;
+    display: block;
+    margin: 0 auto;
+    vertical-align: top;
+}
+.no-more {
+    position: absolute;
+    bottom: -60px;
+    color: #888;
+    font-size: 18px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+.icon {
+    height: 20px !important;
+    width: 20px !important;
+    margin: -4px 0;
+}

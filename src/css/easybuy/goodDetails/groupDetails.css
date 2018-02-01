@@ -1,0 +1,172 @@
+.museumDetails_goodMessBox_leftTop{
+	position: relative;
+}
+.disconutIcon{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width:90px;
+}
+.disconutIcon img{
+	width: 100%;
+}
+.disconutDetails_countTime{
+	padding: 20px 85px;
+	background-color: #fff900;
+}
+.disconutDetails_countTimeLeft {
+	float: left;
+	font-size: 30px;
+	letter-spacing: 4px;
+	color: #000;
+}
+
+.disconutDetails_countTimeLeft span{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius:10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius:10px;
+	color: #000;
+	text-align: center;
+	line-height: 50px;
+	background-color: #FFFFFF;
+	margin-right: 10px;
+	font-weight: bold;
+}
+.disconutDetails_countTimeRight{
+	float: left;
+	margin-left: 30px;
+}
+.disconutDetails_countTimeRight p{
+	font-size: 18px;
+	color: #000;
+	line-height: 26px;
+}
+.museumDetails_TabEach_curr{
+	border-top:5px solid #01dbb9;
+	background-color:#ffffff;
+	color: #01dbb9;
+}
+.groupBuy_goodTab{
+	margin-top: 30px;
+}
+
+.groupBuy_joinGroup{
+	width: 330px;
+	height: 55px;
+	background: url(/img/easybuy/goodDetails/groupBuy_btnBg.png) no-repeat;
+	background-position-x:right;
+	-ms-background-position-x: right;
+	position: relative;
+}
+.groupBuy_joinBtn{
+	width: 200px;
+    height: 55px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    cursor: pointer;
+    background-color: #FF527C;
+    color: #FFFFFF;
+    font-size: 22px;
+    line-height: 55px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.groupBuy_joinNumBox{
+	position: absolute;
+	top: -2px;
+	right:30px;
+}
+.groupBuy_joinNumBox p:nth-child(1) {
+    color: #333333;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.groupBuy_joinNumBox p:nth-child(1) span{
+	color: #FF527C;
+	 font-size: 22px;
+}
+.groupBuy_joinNumBox p:nth-child(2) {
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.museumDetails_goodMessBox_dark{
+	background-color: #efefef;
+	border: transparent;
+	 color: #FFFFFF;
+}
+.museumDetails_goodMessBox_dark span:nth-child(2){
+	 color: #FFFFFF;
+}
+.groupDetailsIntro{
+	font-size: 16px;
+	color: #000;
+	line-height: 30px;
+	width: 290px;
+	margin: auto;
+	margin-top: 20px;
+	border-bottom: 1px solid #E3E3E3;
+	padding-bottom: 5px;
+}
+.shopMess{
+	margin-top: 20px;	
+}
+.museumDetails_goodMessBox_rightGift{
+	padding: 40px 10px;
+}
+.notBeginBox{
+	margin-bottom: 70px;
+}
+.notBeginBox .nobegin{
+	display: none;
+}
+.beginGroup{
+	display: none;
+}
+.notBeginBox .beginGroup{
+	display: block;
+}
+.groupBuy_joinBtn a{
+	color: #FFFFFF;
+}
+.hadJoinGroup .groupBuy_joinBtn{
+	line-height: 36px;
+	background-color:#cdcdcd;
+}
+
+.hadJoinGroup .groupBuy_joinBtn p{
+	font-size: 14px;
+	line-height: 10px;
+	color: #000000;
+}
+.groupBuy_goodsEach_group{
+	position: relative;
+	width: 300px;
+	height: 510px;
+}
+.groupBuy_goodsEach_group .groupBuy_goodsEach_begin{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	margin-left: 0px;
+}
+.groupBuy_goodsEach_group{
+	margin-left: 65px;
+	float: left;
+}
+.groupBuy_goodsEach_group:nth-child(1){
+	margin-left: 0px;
+}
+.groupDetailsone .groupBuy_goodsEach_group .groupBuy_goodsEach_begin:nth-child(1){
+	display: block;
+}
+.groupDetailstwo .groupBuy_goodsEach_group .groupBuy_goodsEach_begin:nth-child(2){
+	display: block;
+}
+.groupDetailsthree .groupBuy_goodsEach_group .groupBuy_goodsEach_begin:nth-child(3){
+	display: block;
+}

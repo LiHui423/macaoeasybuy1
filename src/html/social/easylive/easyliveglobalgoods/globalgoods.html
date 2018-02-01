@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>宜生活-全球筍貨</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/header&search&footer.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/social/easylive/easyliveglobalgoods/globalgoods.css">
+    	<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    	<script src="/js/common/frameDomainJSON.js"></script>
+    	<script src="/js/common/getData/getData_sinple.js"></script>
+    	<script>
+        	easyBuy.social.isEasyLife = true;easyBuy.global.hasNav = false;
+   	 	</script>
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="searchBar">
+				<div class="searchBox">
+					<div class="searchBox_mainBox clearfloat">
+						<div class="searchBox_left">
+							<ul class="clearfloat">
+								<li><a href="http://social.macaoeasybuy.com/easylive/easyliveglobalgoods/globalgoods.html">全球筍貨</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivewelfare/easylivewelfare.html">福利社</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivebuytopic/easylivebuytopic.html">宜買話題</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivelifecircle/easylivelifecircle.html">生活圈</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivelog/easylivelog.html">宜粉日誌</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivealbum/easylivealbum.html">宜粉專輯</a></li>
+							</ul>
+						</div>
+						<div class="searchBox_right" id="searchBox_rightBox"></div>
+					</div>
+				</div>
+			</div>
+
+			<div id="container">
+				<div class="container-swapper">
+
+					<!--頭部-->
+					<div class="global-nav clearfloat">
+						<div class="global-logo"><img src="/img/social/easylive/global-logo.png" alt=""></div>
+						<ul class="global-list clearfloat" id="golbal-list-item">
+							<div class="clearfloat"></div>
+							<div class="clearfloat"></div>
+						</ul>
+					</div>
+
+					<!--熱門-->
+					<div class="global-top-one">
+						<div class="top-one-top clearfloat">
+							<div class="top-img" id="top-image"></div>
+							<div class="top-artical">
+								<p id="top-artical-title"></p>
+							</div>
+						</div>
+						<div class="top-one-bottom">
+							<div class="shop-main-interest clearfloat">
+								<div class="interest-left">
+									<p class="number" id="best-count">&nbsp;</p>
+									<p class="text"><img src="/img/common/good.png" alt="">宜粉讃好</p>
+								</div>
+								<div class="interest-left">
+									<p class="number" id="see-number">&nbsp;</p>
+									<p class="text"><img src="/img/common/eye.png" alt="">宜粉感興趣</p>
+								</div>
+								<p class="recently">最近查看:</p>
+								<ul class="head-img clearfloat" id="header-head-img"></ul>
+							</div>
+						</div>
+					</div>
+
+					<ul class="list clearfloat" id="list"></ul>
+					<p class="no-more">~沒有更多內容了~</p>
+				</div>
+
+			</div>
+			<footer></footer>
+		</div>
+	</body>
+    <script src="/js/plug/yez_js_Reset.js"></script>
+    <script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+    <script src="/js/common/header&search&footer/searchBar.js" async></script>
+    <script src="/js/common/header&search&footer/footer.js" async></script>
+    <script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/social/easylive/easyliveglobalgoods/globalgoods.js"></script>
+	<!--更多選項模板-->
+	<script id="arrow-template" type="text/html" data-type="template">
+		<li class="more" id="more-class-btn">
+			<div class="global-list-logo">
+				<img src="/img/common/more.png" alt="">
+			</div>
+			<div class="global-list-text"><img src="/img/userspace/personalinfo/arrow-down-b.png"></div>
+		</li>
+	</script>
+	<!--頭部選項卡模板-->
+	<script id="head-template" type="text/html" data-type="template">
+		<%for(var i=0;i<list.length;i++){%>
+			<li class="global-list-item" id="<%=list[i].id%>-list-item">
+				<a id=<%=list[i].id%>">
+				<!-- <a href="http://192.168.3.38:8080/social/easylive/easyliveglobalgoods/globalgoods.html?id=<%=list[i].id%>"> -->
+					<div class="global-list-logo">
+						<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].shouldbuyClassPic%>" alt="" >
+						<div></div>
+					</div>
+					<div class="global-list-text"><%=list[i].shouldbuyClassName%></div>
+				</a>
+			</li>
+		<%}%>
+	</script>
+	<!--其他帖子-->
+	<script id="other-post" type="text/html" data-type="template">
+		<%for(var i=0;i<list.length;i++){%>
+			<li class="list-num">
+				<div class="header">
+					<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].shouldbuygroupPic%>" alt="">
+					<div class="head-radius myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].adminpic%>"></div>
+					<div class="name">
+						<div class="name-title"><%=list[i].adminName%></div>
+					</div>
+				</div>
+				<div class="main">
+					<div class="main-title"><%=list[i].title%></div>
+					<div class="main-container"><%=list[i].content%></div>
+					<div class="name-time"><span><%=list[i].timeDiff%></span>前發布</div>
+					<div class="main-new">最新查看の宜粉：</div>
+					<ul class="main-head-img clearfloat">
+						<%for(var j = 0;j<list[i].userSeeInfolist.length;j++){%>
+							<li><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].userSeeInfolist[j].Pic%>"></li>
+						<%}%>
+					</ul>
+					<ul class="info clearfloat">
+						<li><img src="/img/common/eye.png" alt=""><span><%=list[i].seeNumber%></span>宜粉查看</li>
+						<li><img src="/img/common/message.png" alt=""><span><%=list[i].disCount%></span>宜粉討論</li>
+						<li><img src="/img/common/good.png" alt=""><span><%=list[i].loveNum%></span>宜粉讃好</li>
+					</ul>
+				</div>
+			</li>
+		<%}%>
+	</script>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>宜生活-生活圈</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/social/easylive/easylivelifecircle/easylivelifecircle.css">
+	    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+	    <script src="/js/common/frameDomainJSON.js"></script>
+	    <script src="/js/common/getData/getData_sinple.js"></script>
+	    <script> easyBuy.social.isEasyLife = true;easyBuy.global.hasNav = false;</script>
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="searchBar">
+				<div class="searchBox">
+					<div class="searchBox_mainBox clearfloat">
+						<div class="searchBox_left">
+							<ul class="clearfloat">
+								<li><a href="//social.macaoeasybuy.com/easylive/easyliveglobalgoods/globalgoods.html">全球筍貨</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivewelfare/easylivewelfare.html">福利社</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivebuytopic/easylivebuytopic.html">宜買話題</a></li>
+								<li class="select"><a href="//social.macaoeasybuy.com/easylive/easylivelifecircle/easylivelifecircle.html">生活圈</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivelog/easylivelog.html">宜粉日誌</a></li>
+								<li><a href="//social.macaoeasybuy.com/easylive/easylivealbum/easylivealbum.html">宜粉專輯</a></li>
+							</ul>
+						</div>
+						<div class="searchBox_right" id="searchBox_rightBox"></div>
+					</div>
+				</div>
+			</div>
+			<div id="container">
+				<div class="log-banner">
+					<div class="log-cover clearfloat">
+						<div class="log-banner-left">
+							<img src="/img/social/easylive/lifecircle-banner.png" alt="">
+							<img src="/img/social/easylive/log-arrow-lifecircle.png" alt="" class="log-arrow">
+						</div>
+						<div class="log-banner-right">
+							<p>
+								台北不僅是文藝範兒的標桿地<br>
+								也是購物狂的大天堂<br>
+								購物商圈一大把，信義商圈、<br>
+								人文氣息與潮流時尚交融的臺北東區<br>
+								最年輕最潮流的西門<br>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="container-swapper">
+					<ul class="livingCircle"></ul>
+					<div class="hot-post">
+						<div class="title"><img src="/img/social/easylive/circle-hot-post.png" alt=""></div>
+						<div class="hot-post-inner">
+							<ul class="hot-post-list clearfloat"></ul>
+							<a class="next" id="goRight">
+								<div><img src="/img/social/easylive/next.png" border="0"></div>
+								<p class="shadow"></p>
+							</a>
+							<a class="prev" id="goLeft">
+								<div><img src="/img/social/easylive/prev.png" border="0"></div>
+								<p class="shadow"></p>
+							</a>
+						</div>
+					</div>
+					<div class="all-say">
+						<div class="title"><img src="/img/social/easylive/circle-all-say.png" alt=""></div>
+						<div class="all-say-post-inner">
+							<ul class="all-say-list clearfloat"></ul>
+						</div>
+						<a class="next" id="allsay-goRight">
+							<div><img src="/img/social/easylive/next.png" border="0"></div>
+						</a>
+						<a class="prev" id="allsay-goLeft">
+							<div><img src="/img/social/easylive/prev.png" border="0"></div>
+						</a>
+					</div>
+					<div class="having-look">
+						<div class="title"><img src="/img/social/easylive/circle-having-look.png" alt=""></div>
+						<div class="lifecircle-having-look">
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<footer></footer>
+		</div>
+    	<script src="/js/plug/yez_js_Reset.js"></script>
+    	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+		<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	    <script src="/js/common/header&search&footer/searchBar.js" async></script>
+	    <script src="/js/common/header&search&footer/footer.js" async></script>
+		<script src="/js/common/header&search&footer/header.js"></script>
+		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+		<script src="/js/common/ebtemplate-jquery.js"></script>
+		<script src="/js/social/easylive/easylivelifecircle/easylivelifecircle.js"></script>
+		<script id="lifeType" type="text/html" data-eb-template>
+			<%for(var i=0, item; (item = content[i++]);) {
+				if(i===0) {%>
+					<li id="<%=item.id%>" class="yez-active">
+				<%} else {%>
+					<li id="<%=item.id%>">
+				<%}%>
+					<img src="//wap.macaoeasybuy.com<%=item.classPic%>">
+					<span><%=item.className%></span>
+				</li>
+			<%}%>
+		</script>
+		<!-- lifeId: 518-->
+		<script id="hotTopic" type="text/html" data-eb-template>
+			<%for(var i=0, il=content.length; i < il; i++){%>
+				<li class="hot-post-list-li" id="<%=content[i].lifeId%>">
+					<div class="post-topic-box">
+						<div class="box-img">
+							<%if(content[i].lifePic==""){%>
+								<img src="/img/common/loading_pc_220.jpg">
+							<%}else{%>
+								<img src="//wap.macaoeasybuy.com<%=content[i].lifePic%>">
+							<%}%>
+						</div>
+						<div class="box-main">
+							<div class="box-main-head clearfloat">
+								<div class="box-main-head-img myborder-radius" id="<%=content[i].userId%>">
+									<img src="//wap.macaoeasybuy.com<%=content[i].userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+								</div>
+								<div class="box-main-head-info">
+									<div class="box-main-head-info-title"><%=content[i].userName%><i class="icon <%=content[i].sex%>"></i></div>
+									<div class="box-main-head-info-time"><span><%=content[i].uptime%></span>前發佈</div>
+								</div>
+							</div>
+							<div class="box-main-head-info-instruc"><span><%=content[i].title%></span><span>/<%=content[i].className%>/</span></div>
+							<div class="box-main-head-info-article"><%=content[i].content%></div>
+							<ul class="info clearfloat">
+								<li><img src="/img/common/eye.png" alt=""><%=content[i].seeCount%></li>
+								<li><img src="/img/common/message.png" alt=""><%=content[i].commentCount%></li>
+								<li><img src="/img/common/good.png" alt=""><%=content[i].loveCount%></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			<%}%>
+		</script>
+		<script id="everybody" type="text/html" data-eb-template>
+			<%for(var i=0, il=content.length; i < il; i++) {%>
+				<li class="all-say-list-li" id="<%=content[i].lifeId%>">
+					<div class="post-topic-box">
+						<div class="box-img">
+							<%if(content[i].lifePic==""){%>
+								<img src="/img/common/loading_pc_220.jpg">
+							<%}else{%>
+								<img src="//wap.macaoeasybuy.com<%=content[i].lifePic%>">
+							<%}%>
+						</div>
+						<div class="box-main">
+							<div class="box-main-head clearfloat">
+								<div class="box-main-head-img myborder-radius">
+									<img src="//wap.macaoeasybuy.com<%=content[i].userPic%>" onerror="this.src:'/img/common/loading_pc_220.jpg'">
+								</div>
+								<div class="box-main-head-info">
+									<div class="box-main-head-info-title"><%=content[i].userName%><i class="icon <%=content[i].sex%>"></i></div>
+									<div class="box-main-head-info-time"><span><%=content[i].uptime%></span>前發佈</div>
+								</div>
+							</div>
+							<div class="box-main-head-info-instruc"><span><%=content[i].title%></span><span>/<%=content[i].className%>/</span></div>
+							<div class="box-main-head-info-article"><%=content[i].content%></div>
+							<div class="all-say-record">
+								<div class="all-say-item clearfloat">
+									<div class="myborder-radius all-say-item-head"></div>
+									<div class="all-say-item-context">:<span>texttexttexttexttexextttexttexttettexttexttettexttextteexttex</span></div>
+								</div>
+								<div class="all-say-item clearfloat">
+									<div class="myborder-radius all-say-item-head"></div>
+									<div class="all-say-item-context">:<span>texttexttexttexttexextttexttexttettexttexttettexttextteexttex</span></div>
+								</div>
+								<div class="all-say-item clearfloat">
+									<div class="myborder-radius all-say-item-head"></div>
+									<div class="all-say-item-context">:<span>texttexttexttexttexextttexttexttettexttexttettexttextteexttex</span></div>
+								</div>
+							</div>
+							<ul class="info clearfloat">
+								<li><img src="/img/common/eye.png" alt=""><%=content[i].seeCount%></li>
+								<li><img src="/img/common/message.png" alt=""><%=content[i].commentCount%></li>
+								<li><img src="/img/common/good.png" alt=""><%=content[i].loveCount%></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			<%}%>
+		</script>
+		<script id="random" type="text/html" data-eb-template>
+			<%for(var i=0; i < content.length; i++) {%>
+				<div class="pillar-all" id="<%=content[i].lifeId%>">
+					<div class="pillar">
+						<div class="page-main">
+							<div class="laster-look clearfloat">
+								<div class="laster-head">
+									<%if(content[i].lifePic==""){%>
+										<img src="/img/common/loading_pc_headPic.png">
+									<%}else{%>
+										<img src="//wap.macaoeasybuy.com<%=content[i].lifePic%>">
+									<%}%>
+								</div>
+								<div class="laster-text">
+									<div class="laster-text-name"><%=content[i].userName%><i class="icon <%=content[i].sex%>"></i></div>
+									<div class="laster-text-num"><span><%=content[i].uptime%></span>前發佈</div>
+								</div>
+							</div>
+							<a href="">
+								<%if(content[i].lifePic==""){%>
+									<img src="/img/common/loading_pc_220.jpg">
+								<%}else{%>
+									<img src="//wap.macaoeasybuy.com<%=content[i].lifePic%>" class="page-main-head-img">
+								<%}%>
+							</a>
+							<div class="post-main-text">
+								<div class="post-title"><%=content[i].title%><span>/<%=content[i].className%>/</span></div>
+								<div class="post-description"><%=content[i].content%></div>
+							</div>
+						</div>
+						<div class="laster">
+							<ul class="laster-num clearfloat">
+								<li><%=content[i].seeCount%></li>
+								<li><%=content[i].loveCount%></li>
+								<li><%=content[i].commentCount%></li>
+							</ul>
+						</div>
+						<div class="shadow-box"></div>
+					</div>
+					<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+				</div>
+			<%}%>
+		</script>
+	</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>主題廣告詳細頁</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/moreTheme/themeDetails/themeDetails.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script>
+			var fr = new FrameDomain();
+			//不需要用戶信息，頁面一加載就去請求數據
+			fr.getUserInfo.go();
+			var dataId = 17;
+			var userId = null;
+		</script>
+	</head>
+	<body>
+		<header></header>
+
+		<div id ="searchBar">
+			<div class="searchBox">
+				<div class="searchBox_mainBox">
+					<div class="searchBox_left">
+						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+					</div>
+					<div class="searchBox_right" id="searchBox_rightBox"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="containerBox">
+			<!--橫條導航欄-->
+			<div class="navBar_borderBox">
+				<div class="navBar">
+					<ul>
+						<li><a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+						<li><a href="//social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
+						<li><a href="//social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
+						<li><a href="//social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--更多主題主體內容-->
+			<div class="themeDetailsBox">
+				<div class="themeDetailsMain clearfloat">
+
+					<div class="themeDetails_top">
+						<div class="themeDetails_top_logo">
+							<img src="/img/easybuy/moreTheme/themeDetails/themeLogo.png">
+						</div>
+						<div class="themeDetails_top_name"></div>
+						<div class="themeDetails_top_intro"></div>
+					</div>
+
+					<div class="themeDetails_banner"></div>
+
+					<div class="findNew_main_visitBox clearfloat"></div>
+
+					<div class="themeDetails_mainDetails clearfloat" id="more_list_box">
+						<div class="themeDetails_each" style="height: 30px;"></div>
+						<div class="themeDetails_each" style="height: 160px;"></div>
+						<div class="themeDetails_each" style="height: 2px;"></div>
+						<div class="themeDetails_each" style="height: 160px;"></div>
+						<div class="themeDetails_each" style="height: 50px;"></div>
+					</div>
+
+					<div class="noMore">~沒有更多內容了哦！~</div>
+
+					<div class="themeDetails_redbag">
+						<div class="redbagBanner">
+							<img src="/img/easybuy/moreTheme/themeDetails/redbag_banner.png">
+							<div class="redbagBox">
+								<div class="redbag_notOpen"><img src="/img/easybuy/moreTheme/themeDetails/redbag_text.png"></div>
+								<div class="redbag_openIng">
+									<div class="redbag_openHead"><img src="/img/easybuy/moreTheme/themeDetails/redbag_head.png"></div>
+								</div>
+								<div class="redbag_openUp"><img src="/img/easybuy/moreTheme/themeDetails/redbag_openUp.png"></div>
+								<div class="redbag_openOver"><img src="/img/easybuy/moreTheme/themeDetails/redbag_openOver.png"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+
+			</div>
+
+
+		</div>
+		<footer></footer>
+	</body>
+	<!--模板文件和數據文件-->
+	<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+	<script src="/js/plug/yez_js_Reset.js"></script>
+	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/common/header&search&footer/footer.js"></script>
+	<script src="/js/common/header&search&footer/searchBar.js"></script>
+	<script src="/js/easybuy/moreTheme/themeDetails/themeDetails.js"></script>
+	<script src="/js/easybuy/moreTheme/themeDetails/themeDetails.data.js"></script>
+
+	<!--內容模板-->
+	<script id="more_list_template" type="text/html">
+		<%for(var i=0;i<list.length;i++){%>
+		<div class="themeDetails_each" id="<%=list[i].id%>data_id">
+			<div class="themeDetails_eachPic myborder-radius">
+				<div class="themeDetails_eachPic_border myborder-radius">
+					<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].pic%>">
+					<div class="themeDetails_eachPic_cover myborder-radius">
+						<p>至少慳MOP<%=list[i].saveMoney%></p>
+						<div class="themeDetails_buyRightNow">馬上搶購</div>
+						<div class="themeDetails_eachPic_hadBuy">
+							<span><img src="/img/common/icon/hadBuyIcon_white.png"></span>
+							<span><%=list[i].buyNumbers%>人已搶購</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="themeDetails_love">
+				<span><img src="/img/common/small-love.png"></span>
+				<span><%=list[i].loveNumbers%></span>
+			</div>
+			<div class="themeDetails_eachTitle hiddenText"><%=list[i].title%></div>
+			<div class="themeDetails_eachIntro"><%=list[i].intro%></div>
+		</div>
+		<%}%>
+	</script>
+
+	<!--發現新品最近查看模板-->
+	<script type="text/html" id="showFindNewVisit" data-array="findNewVisitList">
+
+		<div class="findNew_main_visitBoxLeft">
+			<p><%=UserInterestCount%></p>
+			<p>宜粉到訪</p>
+		</div>
+		<div class="findNew_main_visitBoxRight">
+			<ul>
+				<%for(var i = 0;i<messUser.length;i++){%>
+					<li><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=messUser[i].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'"></li>
+				<%}%>
+			</ul>
+		</div>
+
+	</script>
+
+</html>

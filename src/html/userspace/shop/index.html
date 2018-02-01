@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>關注店鋪</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" type="text/css" href="/css/userspace/userFocusShop/userFocusShop.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script>
+			easyBuy.userSpaceGlobal.whiteNavName = 'AttentionShopNumber';
+		</script>
+		<!--userid 頁面所屬用戶id-->
+	</head>
+	<body>
+		<div class="transparent_bg"></div>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu"></ul>
+							<ul id="news-push"></ul>
+						</div>
+						<div id="userspace-content">
+							<div class="focusShopList clearfloat" id="focusShopList"></div>
+							<div class="noMore">~沒有更多內容了哦~</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer></footer>
+		</div>
+		<!--關注商店的彈框-->
+		<div class="focusShop" id="focusShop">
+			<p><span><img src="/img/common/icon/focusShop_icon.png"></span><span>已成功關注該商店！</span></p>
+			<!--<p>已獲得積分獎勵</p>
+			<p>+5分</p>-->
+		</div>
+		<!--取消關注商店的彈框-->
+		<div class="cancelPop cancelFocus" id="cancelFocus">
+			<div class="cancelThumbsPop_title">取消關注商店</div>
+			<div class="cancelThumbsPop_Main">
+				<div class="cancelThumbsPop_top">
+					<img src="/img/common/02.png">
+				</div>
+				<div class="cancelThumbsPop_bottom">
+					<p>不再關注該商店了嗎？</p>
+					<!--<p>提示:取消關注商店會被扣除五分積分哦！</p>-->
+				</div>
+			</div>
+			<div class="cancelThumbsPop_button">
+				<a class="sureCancel">確認</a>
+				<a class="notSureCancel">取消</a>
+			</div>
+		</div>
+		<!--商店結業的彈窗-->
+		<div class="cancelPop cancelPop_end">
+			<div class="cancelPop_close"><img src="/img/common/icon/cancelCloseIcon.png"></div>
+			<div class="cancelThumbsPop_title">該商店已結業</div>
+			<div class="cancelThumbsPop_Main">
+				<div class="cancelThumbsPop_top">
+					<img src="/img/common/04.png">
+				</div>
+				<div class="cancelThumbsPop_bottom">
+					<p>可能原因：</p>
+					<p>1.該商店暫時停止營業</p>
+					<p>2.該商店約滿未續約而停止營業</p>
+				</div>
+			</div>
+			<div class="cancelThumbsPop_button">
+				<a href="/page/easybuy_index.html">前往首頁</a>
+				<a href="//shopping.macaoeasybuy.com/museum/museum.html">前往好店街</a>
+			</div>
+		</div>
+
+		<script src="/js/plug/yez_js_Reset.js"></script>
+		<script src="/js/common/vendor/template-native.js"></script>
+		<script src="/js/userspace/common/userinfo.js" async></script>
+		<script src="/js/userspace/common/leftmenu.js" async></script>
+		<script src="/js/userspace/common/whitemenu.js" async></script>
+		<script src="/js/userspace/common/newspush.js" async></script>
+		<script src="/js/common/header&search&footer/footer.js" async></script>
+		<script src="/js/common/header&search&footer/header.js"></script>
+		<script src="/js/userspace/userFocusShop/userFocusShop.js"></script>
+		<script src="/js/userspace/userFocusShop/userFocusShop.data.js"></script>
+		<!--關注的商店的模板-->
+		<script type="text/html" id="focusShop_template" data-array="focusShopData" data-type="template">
+			<%if(shop.length != 0){%>
+			<%for(var i = 0;i <shop.length;i++){%>
+			<%if(shop[i].state == "3"){%>
+			<div class="focusShopEach focusShopEach_end" data-id="<%=shop[i].id%>" id="focusShopEach<%=shop[i].id%>">
+				<%}else{%>
+				<div class="focusShopEach" data-id="<%=shop[i].id%>" id="focusShopEach<%=shop[i].id%>">
+					<%}%>
+					<div class="focusShopEach_top clearfloat">
+						<div class="focusShopEach_logo"><img src='<%=osURl%><%=shop[i].logo%>' onerror="this.onerror = null;this.src = '/img/common/loading_pc_shop.png'"></div>
+						<div class="focusShopEach_title">
+							<%=shop[i].shopName%>
+						</div>
+						<div class="focusShopEach_intro clearfloat">
+							<span><img src="/img/userspace/userFocusShop/focus_commaLeft.png"></span>
+							<%if(shop[i].des == ""){%>
+							<span>店主很懶還沒有為商店寫介紹哦</span>
+							<%}else{%>
+							<span><%=shop[i].des%></span>
+							<%}%>
+							<span><img src="/img/userspace/userFocusShop/focus_commaRight.png"></span>
+						</div>
+						<div class="focusShopEach_num clearfloat">
+							<div class="focusShopEach_numEach">
+								<span>銷售數</span><span><%=formatNum(shop[i].salesCount)%></span>
+							</div>
+							<div class="focusShopEach_numEach">
+								<span>粉絲數</span><span><%=formatNum(shop[i].fansCount)%></span>
+							</div>
+						</div>
+						<div class="focusShopEach_seeMore">
+							<div class="focusShopEach_seeMore_btn">
+								<span>展開更多信息</span><span><img src="/img/userspace/userFocusShop/focus_slide.png"></span>
+							</div>
+							<div class="focusShopEach_seeMore_slide">
+								<div class="focusShopEach_seeMore_mess">
+									<div class="focusShopEach_seeMore_messEach clearfloat">
+										<div class="focusShopEach_seeMore_messEach_title">商品類型</div>
+										<div class="focusShopEach_seeMore_messEach_main">
+											<%=shop[i].shopType%>
+										</div>
+									</div>
+									<div class="focusShopEach_seeMore_messEach clearfloat">
+										<div class="focusShopEach_seeMore_messEach_title">商品數量</div>
+										<div class="focusShopEach_seeMore_messEach_main">
+											<%=formatNum(shop[i].shangpinCount)%>件</div>
+									</div>
+									<div class="focusShopEach_seeMore_messEach clearfloat">
+										<div class="focusShopEach_seeMore_messEach_title">商家評級</div>
+										<div class="focusShopEach_seeMore_messEach_main">
+											<%if(shop[i].isCredit == "1"){%>
+											<span><img src="/img/userspace/userFocusShop/focus_comment-6.png"></span>
+											<%}%>
+											<%if(shop[i].isGuarant == "1"){%>
+											<span><img src="/img/userspace/userFocusShop/focus_comment-2.png"></span>
+											<%}%>
+											<%if(shop[i].isHeart == "1"){%>
+											<span><img src="/img/userspace/userFocusShop/focus_comment-1.png"></span>
+											<%}%>
+											<%if(shop[i].isManner == "1"){%>
+											<span><img src="/img/userspace/userFocusShop/focus_comment-3.png"></span>
+											<%}%>
+											<%if(shop[i].isReal == "1"){%>
+											<span><img src="/img/userspace/userFocusShop/focus_comment-4.png"></span>
+											<%}%>
+										</div>
+									</div>
+								</div>
+								<div class="focusShopEach_data clearfloat">
+									<div class="focusShopEach_dataEach">
+										<div class="focusShopEach_dataEach_border myborder-radius">
+											<p>
+												<%=shop[i].miaoPoint%>
+											</p>
+											<p>5.0</p>
+										</div>
+										<p class="focusShopEach_dataEach_title">描述相符</p>
+									</div>
+									<div class="focusShopEach_dataEach">
+										<div class="focusShopEach_dataEach_border myborder-radius">
+											<p>
+												<%=shop[i].jiaPoint%>
+											</p>
+											<p>5.0</p>
+										</div>
+										<p class="focusShopEach_dataEach_title">價格合理</p>
+									</div>
+									<div class="focusShopEach_dataEach">
+										<div class="focusShopEach_dataEach_border myborder-radius">
+											<p>
+												<%=shop[i].shangPoint%>
+											</p>
+											<p>5.0</p>
+										</div>
+										<p class="focusShopEach_dataEach_title">商品質量</p>
+									</div>
+								</div>
+								<div class="focusShopEach_favorable"><span>好評率</span><span><p><%=shop[i].goodRate%>%</p></span></div>
+							</div>
+						</div>
+						<div class="focusShopEach_showBox">
+							<%if(shop[i].shangpinPicList.length != 0){%>
+							<div class="focusShopEach_showBox_title">商品展示</div>
+							<div class="focusShopEach_showBox_main clearfloat">
+								<ul>
+									<%for(var k = 0;k <shop[i].shangpinPicList.length;k++){%>
+									<li><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=shop[i].shangpinPicList[k]%>' onerror="this.src = '/img/common/loading_pc_80.png'"></li>
+									<%}%>
+								</ul>
+							</div>
+							<%}%>
+						</div>
+					</div>
+					<div class="focusShopEach_btnBox clearfloat">
+						<div class="focusShopEach_btn focusShopEach_btn_intoshop"><span><img src="/img/userspace/userFocusShop/focus_shopIcon.png"></span><span>進店看看</span></div>
+						<%if(shop[i].isMark == 1){%>
+						<div class="focusShopEach_btn_focus_box cancel">
+						<%}else{%>
+						<div class="focusShopEach_btn_focus_box focus">
+						<%}%>
+								<div class="focusShopEach_btn focusShopEach_btn_focus">
+									<div><span><img src="/img/userspace/userFocusShop/focus_addIcon.png"></span><span>關注商店</span></div>
+								</div>
+								<div class="focusShopEach_btn focusShopEach_btn_focus">
+									<div><span><img src="/img/userspace/userFocusShop/cancelFocusIcon.png"></span><span>已關注</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<%}%>
+			<%}else if(shop.length == 0 && page == 0){%>
+				<div class="no_more_result">
+					<div><img src="/img/common/05.png" alt=""></div>
+					<div>該欄目沒有任何內容哦！</div>
+				</div>
+			<%}%>
+		</script>
+	</body>
+</html>

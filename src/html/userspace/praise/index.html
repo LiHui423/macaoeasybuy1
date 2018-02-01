@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>讃好</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" type="text/css" href="/css/userspace/praise/praise.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script>easyBuy.userSpaceGlobal.whiteNavName = 'LikeNumber';</script>
+		<!--userid要傳 頁面所屬用戶的id-->
+	</head>
+
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu"></ul>
+							<ul id="news-push"></ul>
+						</div>
+						<div id="userspace-content">
+
+							<div class="praise_filterBox clearfloat">
+
+								<div class="praise_filterBox_left clearfloat">
+									<div class="praise_filterBox_name">
+										<div class="praise_filterBox_name_show">
+											<span><img src="/img/common/icon/menuIcon_white.png"></span><span>日誌</span><span><img src="/img/common/icon/downIcon2_white.png"></span>
+										</div>
+										<div class="praise_filterBox_slide hideSlide">
+											<ul>
+												<li class="praise_filterBox_slide_curr" data-curr = "" data-type = "001">日誌</li>
+												<li data-curr = "" data-type = "002">專輯</li>
+												<li data-curr = "" data-type = "003">生活圈</li>
+												<li data-curr = "" data-type = "004">敗家誌</li>
+												<li data-curr = "" data-type = "005">二手</li>
+												<li data-curr = "" data-type = "006">福利社</li>
+												<li data-curr = "" data-type = "007">話題</li>
+												<li data-curr = "" data-type = "008">標籤</li>
+											</ul>
+										</div>
+									</div>
+									<div class="praise_filterBox_num" id="praise_filterBox_num"><span>0</span></div>
+								</div>
+
+								<div class="praise_filterBox_right clearfloat">
+									<ul class="clearfloat">
+										<li class="praise_filterBox_right_curr" data-type = "01"><span><img src="/img/userspace/userlove/userlove_clockIcon.png"><img src="/img/userspace/userlove/userlove_clockIcon_curr.png"></span><span>按發佈時間排序</span><div></div></li>
+										<li data-type = "02"><span><img src="/img/common/icon/messageIcon_dark.png"><img src="/img/userspace/album/mes-sort-w.png"></span><span>按回覆數排序</span><div></div></li>
+										<li data-type = "03"><span><img src="/img/common/icon/thumbsupIcon_dark.png"><img src="/img/userspace/album/goods-sort-w.png"></span><span>按贊好數排序</span><div></div></li>
+									</ul>
+								</div>
+
+							</div>
+
+							<div class="praise_tabBox">
+
+								<!--日誌-->
+								<div class="praise_tabEach praise_tabEach_diary">
+									<div class="dynamic_mainBox clearfloat">
+										<div class="dynamic_mainList clearfloat dynamic_mainList_diary" id="praise_diary_box"></div>
+									</div>
+									<div class="no-more">~沒有更多內容了~</div>
+								</div>
+								<!--專輯-->
+								<div class="praise_tabEach praise_tabEach_album">
+									<div class="dynamic_mainBox clearfloat">
+										<div class="dynamic_mainList clearfloat dynamic_mainList_album">
+											<ul id="praise_album_box"></ul>
+										</div>
+									</div>
+									<div class="no-more">~沒有更多內容了~</div>
+								</div>
+								<!--生活圈-->
+								<div class="praise_tabEach praise_tabEach_group">
+									<div class="dynamic_mainBox clearfloat">
+										<div class="dynamic_mainList clearfloat dynamic_mainList_group" id="praise_group_box"></div>
+									</div>
+									<div class="no-more">~沒有更多內容了~</div>
+								</div>
+								<!--敗家志-->
+								<div class="praise_tabEach praise_tabEach_liveshot">
+									<div class="dynamic_mainBox clearfloat">
+										<div class="dynamic_mainList clearfloat dynamic_mainList_liveshot" id="praise_liveshot_box"></div>
+									</div>
+									<div class="no-more">~沒有更多內容了~</div>
+								</div>
+								<!--二手-->
+								<div class="praise_tabEach praise_tabEach_secondHand">
+									<div class="dynamic_mainBox clearfloat">
+										<div class="dynamic_mainList clearfloat dynamic_mainList_secondHand" id="praise_secondHand_box"></div>
+									</div>
+									<div class="no-more">~沒有更多內容了~</div>
+								</div>
+								<!--福利社-->
+								<div class="praise_tabEach praise_tabEach_welfare">
+									<div class="dynamic_mainBox clearfloat">
+										<div class="dynamic_mainList clearfloat dynamic_mainList_welfare" id="praise_welfare_box"></div>
+									</div>
+									<div class="no-more">~沒有更多內容了~</div>
+								</div>
+								<!--話題-->
+								<div class="praise_tabEach praise_tabEach_topic">
+									<div class="dynamic_mainBox clearfloat">
+										<div class="dynamic_mainList clearfloat dynamic_mainList_topic" id="praise_topic_box"></div>
+									</div>
+									<div class="no-more">~沒有更多內容了~</div>
+								</div>
+								<!--標籤-->
+								<div class="praise_tabEach praise_tabEach_label">
+									<div class="dynamic_mainBox clearfloat">
+										<div class="dynamic_mainList clearfloat dynamic_mainList_label" id="praise_label_box"></div>
+									</div>
+									<div class="no-more">~沒有更多內容了~</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+
+
+	<script src="/js/plug/yez_js_Reset.js"></script>
+	<script src="/js/common/vendor/template-native.js"></script>
+
+
+	<script src="/js/userspace/common/userinfo.js" async></script>
+	<script src="/js/userspace/common/leftmenu.js" async></script>
+	<script src="/js/userspace/common/whitemenu.js" async></script>
+	<script src="/js/userspace/common/newspush.js" async></script>
+	<script src="/js/common/header&search&footer/footer.js" async></script>
+
+	<script src="/js/common/header&search&footer/header.js"></script>
+
+	<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+	<!--贊好的js-->
+	<script src="/js/userspace/praise/praise.js"></script>
+	<script src="/js/userspace/praise/praise_data.js"></script>
+
+	<!--日誌的模板-->
+	<script id="praise_diary_template" type="text/html" data-type="template">
+		<%if(returnList.length != 0){%>
+		<%for(var i=0,len=returnList.length;i<len;i++){%>
+			<div class="pillar-all mine clearfloat praise_item_box" id="<%=returnList[i].diaryId%>_diaryItem">
+				<div class="pillar">
+					<div class="page-main">
+						<%if(returnList[i].diaryPic != ''){%>
+						<a href=""><img src="<%=osURL%><%=returnList[i].diaryPic%>" class="page-main-head-img"></a>
+						<%}%>
+						<div class="post-main-text">
+							<div class="post-title"><%=returnList[i].title%></div>
+							<div class="post-description"><%=cutContent(returnList[i].content,90)%></div>
+						</div>
+					</div>
+					<div class="laster">
+						<ul class="laster-num clearfloat">
+							<li><%=formatNum(returnList[i].seeCount)%></li>
+							<li><%=formatNum(returnList[i].loveCount)%></li>
+							<li><%=formatNum(returnList[i].commentCount)%></li>
+						</ul>
+						<div class="laster-look clearfloat">
+							<div class="laster-head"><img src="<%=osURL%><%=returnList[i].userPic%>" alt="" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'"></div>
+							<div class="laster-text">
+								<div class="laster-text-name">
+									<span><%=returnList[i].userName%></span>
+									<%if(returnList[i].sex == 'Girl'){%>
+									<img src="/img/common/girl.png" alt=""></div>
+									<%}else{%>
+									<img src="/img/common/boy.png" alt=""></div>
+									<%}%>
+								<div class="laster-text-num"><span><%=returnList[i].uptime%></span>前發佈</div>
+							</div>
+						</div>
+					</div>
+					<div class="shadow-box"></div>
+				</div>
+				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+			</div>
+		<%}%>
+		<%}else if(returnList.length == 0 && page ==0){%>
+			<div class="praise_tabEach_none">
+				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<p>該欄目暫時沒有任何內容哦~</p>
+			</div>
+		<%}%>
+	</script>
+
+	<!--專輯模板-->
+	<script id="praise_album_template" type="text/html" data-type="template">
+		<%if(returnList.length != 0){%>
+		<%for(var i=0,len=returnList.length;i<len;i++){%>
+		<li class="sort-box-items sort-box-news clearfloat praise_item_box" id="<%=returnList[i].albumId%>_albumItem">
+			<div class="album-list">
+				<div class="album-relative">
+					<div class="album-list-title"><%=returnList[i].albumName%></div>
+
+					<div class="album-img-none-box">
+						<%if(returnList[i].detailPicList.length != 0){%>
+							<%if(returnList[i].detailPicList.length == 1){%>
+								<div class="album-top-img">
+									<img src="<%=osURL%><%=returnList[i].coverPic%>" alt="">
+								</div>
+								<div class="album-img-list clearfloat">
+									<div><img src="<%=osURL%><%=returnList[i].detailPicList[0]%>" alt=""></div>
+								</div>
+							<%}else{%>
+								<div class="album-top-img">
+									<img src="<%=osURL%><%=returnList[i].coverPic%>" alt="">
+								</div>
+								<div class="album-img-list clearfloat">
+									<%for(var j=0,lenj=returnList[i].detailPicList.length;j<lenj;j++){%>
+									<div><img src="<%=osURL%><%=returnList[i].detailPicList[j]%>" alt=""></div>
+									<%}%>
+								</div>
+							<%}%>
+						<%}else{%>
+							<div class="album-img-none-box-img"><img src="/img/userspace/album/album-no-img.png" alt=""></div>
+							<div class="album-img-none-box-tips">該專輯目前沒有圖片</div>
+						<%}%>
+					</div>
+
+					<div class="album-state clearfloat">
+						<div><img src="/img/social/easylive/album-classification-eye.png" alt=""><%=formatNum(returnList[i].seeCount)%></div>
+						<div><img src="/img/social/easylive/album-classification-mes.png" alt=""><%=formatNum(returnList[i].commentCount)%></div>
+						<div><img src="/img/social/easylive/album-classification-good.png" alt=""><%=formatNum(returnList[i].loveCount)%></div>
+						<div><img src="/img/social/easylive/album-classification-cai.png" alt=""><%=formatNum(returnList[i].collectCount)%></div>
+					</div>
+
+					<div class="album-poster">
+						<div class="laster-look clearfloat">
+							<div class="laster-head"><img src="<%=osURL%><%=returnList[i].userPic%>" alt="" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'" ></div>
+							<div class="laster-text">
+								<div class="laster-text-name">
+									<span><%=returnList[i].userName%></span>
+									<%if(returnList[i].sex == 'Girl'){%>
+									<img src="/img/common/girl.png" alt=""></div>
+									<%}else{%>
+									<img src="/img/common/boy.png" alt=""></div>
+									<%}%>
+								<div class="laster-text-num"><span><%=returnList[i].uptime%></span>前發佈</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="shadow-box"></div>
+				</div>
+				<div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+			</div>
+		</li>
+		<%}%>
+		<%}else if(returnList.length == 0 && page ==0){%>
+			<div class="praise_tabEach_none">
+				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<p>該欄目暫時沒有任何內容哦~</p>
+			</div>
+		<%}%>
+	</script>
+
+	<!--生活圈的模板-->
+	<script id="praise_group_template" type="text/html" data-type="template">
+		<%if(returnList.length != 0){%>
+		<%for(var i=0,len=returnList.length;i<len;i++){%>
+			<div class="pillar-all mine praise_item_box" id="<%=returnList[i].lifeId%>_groupItem">
+				<div class="pillar">
+					<div class="page-main">
+						<div class="laster-look clearfloat">
+							<div class="laster-head"><img src="<%=osURL%><%=returnList[i].userPic%>" alt="" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'"></div>
+							<div class="laster-text">
+								<div class="laster-text-name">
+									<span><%=returnList[i].userName%></span>
+									<%if(returnList[i].sex == 'Girl'){%>
+									<img src="/img/common/girl.png" alt=""></div>
+									<%}else{%>
+									<img src="/img/common/boy.png" alt=""></div>
+									<%}%>
+								<div class="laster-text-num"><span><%=returnList[i].uptime%></span>前發佈</div>
+							</div>
+						</div>
+						<%if(returnList[i].lifePic != ''){%>
+						<a href=""><img src="<%=osURL%><%=returnList[i].lifePic%>" class="page-main-head-img"></a>
+						<%}%>
+						<div class="post-main-text">
+							<div class="post-title"><%=returnList[i].title%><span>/<%=returnList[i].type%>/</span></div>
+							<div class="post-description"><%=cutContent(returnList[i].content,90)%></div>
+						</div>
+					</div>
+					<div class="laster">
+						<ul class="laster-num clearfloat">
+							<li><%=formatNum(returnList[i].seeCount)%></li>
+							<li><%=formatNum(returnList[i].loveCount)%></li>
+							<li><%=formatNum(returnList[i].commentCount)%></li>
+						</ul>
+					</div>
+					<div class="shadow-box"></div>
+				</div>
+				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+			</div>
+		<%}%>
+		<%}else if(returnList.length == 0 && page ==0){%>
+			<div class="praise_tabEach_none">
+				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<p>該欄目暫時沒有任何內容哦~</p>
+			</div>
+		<%}%>
+	</script>
+
+	<!--敗家誌的模板-->
+	<script id="praise_liveshot_template" type="text/html" data-type="template">
+		<%if(returnList.length != 0){%>
+		<%for(var i=0,len=returnList.length;i<len;i++){%>
+			<div class="pillar-all mine praise_item_box" id="<%=returnList[i].dissipateId%>_liveshotItem">
+				<div class="pillar">
+					<div class="page-main">
+						<%if(returnList[i].sPic != ''){%>
+						<a href=""><img src="<%=osURL%><%=returnList[i].sPic%>" class="page-main-head-img"></a>
+						<%}%>
+						<div class="post-main-text">
+							<div class="post-title"><%=returnList[i].title%></div>
+							<div class="post-description"><%=cutContent(returnList[i].content,80)%></div>
+							<div class="post-description-other">
+								<div class="post-description-other-right">
+									<%for(var j=0,lenj=returnList[i].labelList.length;j<lenj;j++){%>
+									<p><%=returnList[i].labelList[j]%></p>
+									<%}%>
+								</div>
+								<div class="post-other-time clearfloat">
+									<div><span><%=returnList[i].uptime%></span>前發佈</div>
+									<img src="/img/social/label/labeldetail/shot.png" alt="" class="post-other-img">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="laster">
+						<ul class="laster-num clearfloat">
+							<li><%=formatNum(returnList[i].seeCount)%></li>
+							<li><%=formatNum(returnList[i].loveCount)%></li>
+							<li><%=formatNum(returnList[i].commentCount)%></li>
+						</ul>
+						<div class="laster-look">
+							<div class="laster-head"><img src="<%=osURL%><%=returnList[i].userPic%>" alt="" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'"></div>
+							<div class="laster-text">
+								<div class="laster-text-name">
+									<span><%=returnList[i].userName%></span>
+									<%if(returnList[i].sex == 'Girl'){%>
+									<img src="/img/common/girl.png" alt=""></div>
+									<%}else{%>
+									<img src="/img/common/boy.png" alt=""></div>
+									<%}%>
+							</div>
+						</div>
+					</div>
+					<div class="shadow-box"></div>
+				</div>
+				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+			</div>
+		<%}%>
+		<%}else if(returnList.length == 0 && page ==0){%>
+			<div class="praise_tabEach_none">
+				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<p>該欄目暫時沒有任何內容哦~</p>
+			</div>
+		<%}%>
+	</script>
+
+	<!--二手的模板-->
+	<script id="praise_secondHand_template" type="text/html" data-type="template">
+		<%if(returnList.length != 0){%>
+		<%for(var i=0,len=returnList.length;i<len;i++){%>
+			<div class="pillar-all praise_item_box" id="<%=returnList[i].secondHandId%>_secondHandItem">
+				<div class="close-bg"></div>
+				<div class="pillar">
+					<div class="page-main">
+						<div class="box-shadow"></div>
+						<div class="top-banner"><%=returnList[i].fineness%>&nbsp;/&nbsp;MOP&nbsp;<%=formatNum(returnList[i].price)%></div>
+						<%if(returnList[i].usedPic != ''){%>
+						<a href=""><img src="<%=osURL%><%=returnList[i].usedPic%>" class="page-main-head-img"></a>
+						<%}%>
+						<div class="laster-look clearfloat">
+							<div class="laster-head">
+								<img src="<%=osURL%><%=returnList[i].userPic%>" alt="" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'" >
+							</div>
+							<div class="laster-text">
+								<div class="laster-text-name clearfloat">
+									<div><%=returnList[i].userName%></div>
+									<%if(returnList[i].sex == 'Girl'){%>
+									<img src="/img/common/girl.png" alt="">
+									<%}else{%>
+									<img src="/img/common/boy.png" alt="">
+									<%}%>
+								</div>
+								<div class="laster-text-num"><span><%=returnList[i].uptime%></span>前發佈</div>
+							</div>
+						</div>
+						<div class="post-second-line"></div>
+
+						<div class="post-main-text">
+							<p><%=returnList[i].title%></p>
+							<div class="post-title"><%=cutContent(returnList[i].content,80)%></div>
+							<ul>
+								<li>功能：<span><%=returnList[i].usedFunction%></span></li>
+								<li>外觀：<span><%=returnList[i].fineness%></span></li>
+								<li>私保：<span><%=returnList[i].insurance%></span></li>
+								<li>保養期：<span><%=returnList[i].period%></span></li>
+								<!--<li class="area"><span>名治交院无率</span></li>-->
+							</ul>
+						</div>
+					</div>
+					<div class="laster">
+						<div class="box-shadow"></div>
+						<ul class="laster-num clearfloat">
+							<li><%=formatNum(returnList[i].seeCount)%></li>
+							<li><%=formatNum(returnList[i].loveCount)%></li>
+							<li><%=formatNum(returnList[i].commentCount)%></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		<%}%>
+		<%}else if(returnList.length == 0 && page ==0){%>
+			<div class="praise_tabEach_none">
+				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<p>該欄目暫時沒有任何內容哦~</p>
+			</div>
+		<%}%>
+	</script>
+
+	<!--福利社模板-->
+	<script id="praise_welfare_template" type="text/html" data-type="template">
+		<%if(returnList.length != 0){%>
+		<%for(var i=0,len=returnList.length;i<len;i++){%>
+		<div class="praise_mainList_welfareEach praise_item_box" id="<%=returnList[i].welfareId%>_welfareItem">
+			<div class="praise_welfareEach_top"><img src="<%=osURL%><%=returnList[i].topicPic%>"></div>
+			<div class="praise_welfareEach_author">
+				<div class="praise_welfareEach_author_head myborder-radius">
+					<img class="myborder-radius" src="<%=osURL%><%=returnList[i].adminPic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'">
+				</div>
+				<p>小編<%=returnList[i].adminName%></p>
+			</div>
+			<div class="praise_welfareEach_mess">
+				<div class="praise_welfareEach_title hiddenText"><%=returnList[i].title%></div>
+				<div class="praise_welfareEach_intro"><%=cutContent(cutModify(returnList[i].content),80)%> </div>
+				<div class="praise_welfareEach_time"><%=returnList[i].uptime%>前發佈</div>
+				<div class="praise_welfareEach_visitor clearfloat">
+					<p>最近查看の宜粉：</p>
+					<ul>
+						<%for(var j=0,lenj=returnList[i].visitorPics.length;j<lenj;j++){%>
+							<li class="myborder-radius"><img src="<%=osURL%><%=returnList[i].visitorPics[j]%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'"></li>
+						<%}%>
+					</ul>
+				</div>
+			</div>
+			<div class="praise_welfareEach_data clearfloat">
+				<ul>
+					<li><span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=formatNum(returnList[i].seeCount)%></span></li>
+					<li><span><img src="/img/common/icon/messageIcon_dark.png"></span><span><%=formatNum(returnList[i].commentCount)%></span></li>
+					<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=formatNum(returnList[i].loveCount)%></span></li>
+				</ul>
+			</div>
+			<div class="shadow-box"></div>
+		</div>
+		<%}%>
+		<%}else if(returnList.length == 0 && page ==0){%>
+			<div class="praise_tabEach_none">
+				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<p>該欄目暫時沒有任何內容哦~</p>
+			</div>
+		<%}%>
+	</script>
+
+	<!--話題模板-->
+	<script id="praise_topic_template" type="text/html" data-type="template">
+		<%if(returnList.length != 0){%>
+		<%for(var i=0,len=returnList.length;i<len;i++){%>
+		<div class="praise_topicEach clearfloat praise_item_box" id="<%=returnList[i].welfareId%>_topicItem">
+			<div class="praise_topicEach_left"><img src="<%=osURL%><%=returnList[i].topicPic%>"></div>
+			<div class="praise_topicEach_right">
+				<div class="praise_topicEach_mess clearfloat">
+					<div class="praise_topicEach_mess_pic myborder-radius">
+						<img src="<%=osURL%><%=returnList[i].adminPic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'">
+					</div>
+					<div class="praise_topicEach_mess_right">
+						<p><%=returnList[i].title%></p>
+						<p><span>小編<%=returnList[i].adminName%></span><span><%=returnList[i].uptime%>發佈</span></p>
+					</div>
+				</div>
+				<div class="praise_topicEach_intro"><%=cutContent(cutModify(returnList[i].content),80)%></div>
+				<div class="praise_topicEach_data clearfloat">
+					<ul>
+						<li><span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=formatNum(returnList[i].seeCount)%>宜粉查看</span></li>
+						<li><span><img src="/img/common/icon/messageIcon_dark.png"></span><span><%=formatNum(returnList[i].commentCount)%>宜粉回應</span></li>
+						<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=formatNum(returnList[i].loveCount)%>宜粉讃好</span></li>
+					</ul>
+				</div>
+				<div class="praise_topicEach_visitor clearfloat">
+					<p>最近查看の宜粉：</p>
+					<ul>
+						<%for(var j=0,lenj=returnList[i].visitorPics.length;j<lenj;j++){%>
+							<li class="myborder-radius"><img src="<%=osURL%><%=returnList[i].visitorPics[j]%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'"></li>
+						<%}%>
+					</ul>
+				</div>
+			</div>
+			<div class="shadow-box"></div>
+		</div>
+		<%}%>
+		<%}else if(returnList.length == 0 && page ==0){%>
+			<div class="praise_tabEach_none">
+				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<p>該欄目暫時沒有任何內容哦~</p>
+			</div>
+		<%}%>
+	</script>
+
+	<!--標籤的模板-->
+	<script id="praise_label_template" type="text/html" data-type="template">
+		<%if(returnList.length != 0){%>
+		<%for(var i=0,len=returnList.length;i<len;i++){%>
+		<div class="praise_labelEach clearfloat praise_item_box" id="<%=returnList[i].labelId%>">
+			<div class="search_label_resultEach_left">
+				<div class="search_label_resultEach_left_image">
+					<%if(returnList[i].labelPic != ''){%>
+					<img src="<%=osURL%><%=returnList[i].labelPic%>" alt="">
+					<%}else{%>
+					<p><%=returnList[i].labelName%></p>
+					<%}%>
+				</div>
+				<div class="search_label_resultEach_left_hover">
+					<div>
+						<div class="label_resultEach_left_intro"><%=returnList[i].describe%></div>
+						<div class="label_resultEach_left_btn"><span>查看該標籤的相關帖子</span><span><img src="/img/common/icon/nextIcon_black.png"></span></div>
+					</div>
+				</div>
+			</div>
+			<div class="search_label_resultEach_right">
+				<div class="search_label_resultEach_rightTop">
+					<p class="hiddenText"><%=returnList[i].labelName%></p>
+					<div class="search_label_resultEach_ranking">排名：<%=returnList[i].rank%></div>
+					<div class="search_label_resultEach_data clearfloat">
+						<ul>
+							<li><span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=formatNum(returnList[i].seeCount)%>宜粉人查看</span></li>
+							<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=formatNum(returnList[i].loveCount)%>宜粉讚好</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="search_label_resultEach_rightBottom clearfloat">
+					<div class="search_label_resultEach_headpic myborder-radius">
+						<img src="<%=osURL%><%=returnList[i].userPic%>">
+					</div>
+					<div class="search_label_resultEach_mess">
+						<p>
+							<span><%=returnList[i].userName%></span>
+							<%if(returnList[i].sex == 'Girl'){%>
+							<span><img src="/img/common/girl.png"></span>
+							<%}else{%>
+							<span><img src="/img/common/boy.png"></span>
+							<%}%>
+						</p>
+						<p>
+							<span><img src="/img/common/icon/clockIcon_dark.png"></span>
+							<span><%=returnList[i].uptime%>前創建於</span>
+						</p>
+					</div>
+					<div class="search_label_resultEach_type">#<%=returnList[i].type%>#</div>
+				</div>
+			</div>
+		</div>
+		<%}%>
+		<%}else if(returnList.length == 0 && page ==0){%>
+			<div class="praise_tabEach_none">
+				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<p>該欄目暫時沒有任何內容哦~</p>
+			</div>
+		<%}%>
+	</script>
+	</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>用戶空間-通知</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" type="text/css" href="/css/userspace/usermessage/usermessage.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+	</head>
+
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu"></ul>
+							<ul id="news-push"></ul>
+						</div>
+						<div id="userspace-content">
+							<div class="usermess_nav clearfloat">
+								<ul>
+									<li class="noslideLi noslideLi_easy usermess_nav_curr" data-type="0" data-receivetype="0">宜買<div class="newMessIcon myborder-radius hide"><div class="newMessIcon_curr myborder-radius"></div></div></li>
+									<li class="noslideLi noslideLi_shop slideLi" data-type="0" data-receivetype="3">
+										<span class="slideLiText">推送</span>
+										<span><img src="/img/userspace/usermessage/usermess_slide_icon.png"><img src="/img/userspace/usermessage/usermess_slide_icon2.png"></span>
+										<div class="newMessIcon myborder-radius"></div>
+										<div class="usermess_nav_slide">
+											<ul>
+												<li><span>推送</span></li>
+												<li><span>店主推送</span></li>
+												<li><span>好友推送</span></li>
+											</ul>
+										</div>
+									</li>
+									<li class="noslideLi noslideLi_love" data-type="0" data-receivetype="4">心動<div class="newMessIcon myborder-radius"><div class="newMessIcon_curr myborder-radius"></div></div></li>
+									<li class="noslideLi noslideLi_contact" data-type="1" data-receivetype="1">＠我<div class="newMessIcon myborder-radius"><div class="newMessIcon_curr myborder-radius"></div></div></li>
+									<li class="noslideLi noslideLi_good" data-type="1" data-receivetype="3">讚我<div class="newMessIcon myborder-radius"><div class="newMessIcon_curr myborder-radius"></div></div></li>
+									<li class="noslideLi noslideLi_reply slideLi" data-type="0" data-receivetype="6">
+										<span class="slideLiText">回復</span>
+										<span><img src="/img/userspace/usermessage/usermess_slide_icon.png"><img src="/img/userspace/usermessage/usermess_slide_icon2.png"></span>
+										<div class="newMessIcon myborder-radius"><div class="newMessIcon_curr myborder-radius"></div></div>
+										<div class="usermess_nav_slide">
+											<ul>
+												<li><span>回復</span></li>
+												<li data-type="1" data-receivetype="4"><span>收到回復</span></li>
+												<li data-type="1" data-receivetype="5"><span>發出回復</span></li>
+											</ul>
+										</div>
+									</li>
+									<li class="slideLi">
+										<span class="slideLiText">全部</span>
+										<span><img src="/img/userspace/usermessage/usermess_slide_icon.png"><img src="/img/userspace/usermessage/usermess_slide_icon2.png"></span>
+										<div class="usermess_nav_slide">
+											<ul class="choosesee">
+												<li data-iflook = "3" class="usermess_nav_slide_curr"><span>全部</span></li>
+												<li data-iflook = "0"><span>未查閱</span><span></span></li>
+												<li data-iflook = "1"><span>已查閱</span></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="usermess_mainBox">
+								<div class="usermess_main_system">
+									<div class="usermess_main_choose clearfloat">
+										<div class="usermess_main_choose_left">
+											<div class="usermess_check_all myborder-radius"><img src="/img/easybuy/shopCart/check.png"></div>
+											<div class="usermess_check_allText">全選</div>
+										</div>
+										<div class="usermess_main_choose_right">
+											<div class="mark_btn"><span>標記為已查閱</span>(<span>0</span>)</div>
+											<div class="delete_btn"><span><img src="/img/easybuy/shopCart/delete.png"></span><span>批量刪除</span>(<span>0</span>)</div>
+										</div>
+									</div>
+									<div class="usermess_main_list"></div>
+									<div class="nomess">
+										<div class="noshowgood">
+											<div class="noshowgood_pic"><img src="/img/common/05.png"></div>
+											<p>暫時沒有相關的通知</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+	</body>
+
+	<script src="/js/plug/yez_js_Reset.js"></script>
+	<script src="/js/common/vendor/template-native.js"></script>
+	<script src="/js/userspace/common/userinfo.js" async></script>
+	<script src="/js/userspace/common/leftmenu.js" async></script>
+	<script src="/js/userspace/common/whitemenu.js" async></script>
+	<script src="/js/userspace/common/newspush.js" async></script>
+	<script src="/js/common/header&search&footer/footer.js" async></script>
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/userspace/usermessage/grayscale.js"></script>
+	<script src="/js/userspace/usermessage/usermessage.js"></script>
+	<script src="/js/userspace/usermessage/usermessage.data.js"></script>
+
+	<!--宜買通知模板-->
+	<script type="text/html" id="easybuymess" data-array = "easybuymessData" data-type="template">
+		<%for(var i = 0;i <list.length;i++){%>
+			<!--判斷是不是已經查看過-->
+			<%if(list[i].issee=="1"){%>
+				<div class="usermess_main_listEach usermess_main_listEach_dark usermess_main_listEach_up clearfloat" data-id='<%=list[i].id%>'>
+			<%}else{%>
+				<div class="usermess_main_listEach usermess_main_listEach_up clearfloat" data-id='<%=list[i].id%>'>
+			<%}%>
+				<div class="usermess_main_listEach_left">
+					<div class="usermess_check_each myborder-radius"><img src="/img/easybuy/shopCart/check.png"></div>
+				</div>
+				<div class="usermess_main_listEach_right clearfloat">
+					<div class="usermess_main_listEach_readIcon">已讀</div>
+					<div class="usermess_main_listEach_slideBox">這裡顯示輸入框的內容</div>
+					<div class="usermess_main_listEach_pic" style="background-image: url(http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list[i].pic%>);">
+						<div class="usermess_main_listEach_picCover"></div>
+					</div>
+					<div class="usermess_main_listEach_main">
+						<div class="usermess_main_listEach_title"><%=list[i].systemTitle%></div>
+						<div class="usermess_main_listEach_intro">
+							<p>我哭了因為我寂寞我寂寞有誰來安慰只有你我哭了因為我寂寞我寂寞有誰來安慰只有你我哭了因為我寂寞我寂寞有誰來安慰只有你我哭了因為我寂寞我寂寞有誰來安慰只有你我哭了因為我寂寞我寂寞有誰來安慰只有你我哭了因為我寂寞我寂寞有誰來安慰只有你</p>
+						</div>
+						<div class="usermess_main_listEach_other clearfloat">
+							<div class="usermess_main_listEach_type">話題通知</div>
+							<div class="usermess_main_listEach_time"><%=list[i].time%>前</div>
+						</div>
+					</div>
+					<div class="usermess_main_listEach_btn">
+						<div class="usermess_main_listEach_slideup">收起詳情</div>
+					</div>
+				</div>
+			</div>
+		<%}%>
+	</script>
+	<!--心動的模板-->
+	<script type="text/html" id="movemess" data-array = "movemessData" data-type="template">
+		<%for(var i = 0;i <list.length;i++){%>
+			<!--判斷是不是已經查看過-->
+			<%if(list[i].issee=="1"){%>
+				<div class="usermess_main_listEach usermess_main_listEachMove usermess_main_listEach_dark usermess_main_listEach_up clearfloat" data-id='<%=list[i].id%>'>
+			<%}else{%>
+				<div class="usermess_main_listEach usermess_main_listEachMove usermess_main_listEach_up clearfloat" data-id='<%=list[i].id%>'>
+			<%}%>
+				<div class="usermess_main_listEach_left">
+					<div class="usermess_check_each myborder-radius"><img src="/img/easybuy/shopCart/check.png"></div>
+				</div>
+				<div class="usermess_main_listEach_right clearfloat">
+					<div class="usermess_main_listEach_readIcon">已讀</div>
+					<div class="usermess_main_listEach_pic" style="background-image: url(/img/e8f08dcc7ec6e4a62d7add2bf6689dca6d5474e572992-9eTnKp.jpg);">
+						<div class="usermess_main_listEach_picCover"></div>
+					</div>
+					<div class="usermess_main_listEach_main">
+						<div class="usermess_main_listEach_title">滿5減2才是最實惠的！！！</div>
+						<div class="usermess_main_listEach_intro">
+							<p>您心動的今日降價商品“洛馬克風木底鞋”即將恢復正價哦！</p>
+						</div>
+						<div class="usermess_main_listEach_other clearfloat">
+							<div class="usermess_main_listEach_type">心動收藏</div>
+							<div class="usermess_main_listEach_time">1小時前</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<%}%>
+	</script>
+	<!--別人@我的通知模板-->
+	<script type="text/html" id="listMetion" data-array = "listMetionData" data-type="template">
+		<%for(var i = 0;i <list.length;i++){%>
+			<!--判斷是不是已經查看過-->
+			<%if(list[i].issee=="1"){%>
+				<%if(list[i].type=="1"){%>
+					<div class="usermess_main_listEach usermess_main_listEachMetion usermess_main_listEachMetion_minHeight usermess_main_listEach_dark usermess_main_listEach_up clearfloat" data-id='<%=list[i].id%>'>
+				<%}else{%>
+					<div class="usermess_main_listEach usermess_main_listEachMetion usermess_main_listEach_dark usermess_main_listEach_up clearfloat" data-id='<%=list[i].id%>'>
+				<%}%>
+			<%}else{%>
+				<%if(list[i].type=="1"){%>
+					<div class="usermess_main_listEach usermess_main_listEachMetion usermess_main_listEachMetion_minHeight usermess_main_listEach_up clearfloat" data-id='<%=list[i].id%>'>
+				<%}else{%>
+					<div class="usermess_main_listEach usermess_main_listEachMetion usermess_main_listEach_up clearfloat" data-id='<%=list[i].id%>'>
+				<%}%>
+			<%}%>
+				<div class="usermess_main_listEach_left">
+					<div class="usermess_check_each myborder-radius"><img src="/img/easybuy/shopCart/check.png"></div>
+				</div>
+				<div class="usermess_main_listEach_right clearfloat">
+					<div class="usermess_main_listEach_readIcon">已讀</div>
+					<div class="usermess_main_listEach_headPic myborder-radius">
+						<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list[i].userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+						<div class="usermess_main_listEach_headPic_cover myborder-radius"></div>
+					</div>
+					<div class="usermess_main_listEach_metionBox">
+						<div class="usermess_main_listEach_metionTitle"><%=list[i].systemTitle%></div>
+						<!--判斷是帖子中@我還是回復中@我-->
+						<%if(list[i].type=="1"){%>
+
+						<%}else{%>
+							<div class="usermess_main_listEach_intro">
+								<p>我哭了因為我寂寞我寂寞有誰來安慰只有你我哭了因為我寂寞我寂寞有誰來安慰只有你我哭了因為我寂寞我寂寞有誰來安慰只有你我哭了因為我寂寞我寂寞有誰來安慰只有你我哭了因為我寂寞我寂寞有誰來安慰只有你我哭了因為我寂寞我寂寞有誰來安慰只有你</p>
+							</div>
+						<%}%>
+						<div class="usermess_main_listEach_sendTime"><%=list[i].time%>前</div>
+						<div class="usermess_main_listEach_sendMain clearfloat">
+							<!--這裡的內容填充是content,後期再修改-->
+							<div class="usermess_main_listEach_sendMain_pic" style="background-image: url(/img/e8f08dcc7ec6e4a62d7add2bf6689dca6d5474e572992-9eTnKp.jpg);">
+								<div class="usermess_main_listEach_picCover"></div>
+							</div>
+							<div class="usermess_main_listEach_sendMain_title">絲質碎花連衣長裙</div>
+							<div class="usermess_main_listEach_sendMain_type">日誌</div>
+						</div>
+						<div class="usermess_main_listEach_sendBtn">
+							<div class="usermess_main_listEach_see"><a>好奇看看</a></div>
+							<div class="usermess_main_listEach_slideup">收起通知</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<%}%>
+	</script>
+	<!--商家推送的模板-->
+	<script type="text/html" id="listSendshoper" data-array = "lstSendshoperData" data-type="template">
+		<%for(var i = 0;i <list.length;i++){%>
+			<!--判斷是不是已經查看過-->
+			<%if(list[i].issee=="1"){%>
+				<div class="usermess_main_listEach usermess_main_listEach_up usermess_main_listEach_dark usermess_main_listEach_up clearfloat" data-id='<%=list[i].id%>'>
+			<%}else{%>
+				<div class="usermess_main_listEach usermess_main_listEach_up clearfloat" data-id='<%=list[i].id%>'>
+			<%}%>
+				<div class="usermess_main_listEach_left">
+					<div class="usermess_check_each myborder-radius"><img src="/img/easybuy/shopCart/check.png"></div>
+				</div>
+				<div class="usermess_main_listEach_right clearfloat">
+					<div class="usermess_main_listEach_readIcon">已讀</div>
+					<div class="usermess_main_listEach_pic" style="background-image: url(http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list[i].pic%>);">
+						<div class="usermess_main_listEach_picCover"></div>
+					</div>
+					<div class="usermess_main_listEach_main">
+						<div class="usermess_main_listEach_title"><%=list[i].systemTitle%></div>
+						<div class="usermess_main_listEach_shopMess clearfloat">
+							<div class="usermess_main_listEach_shopMess_left myborder-radius">
+								<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list[i].userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+								<div class="usermess_main_listEach_headPic_cover myborder-radius"></div>
+							</div>
+							<div class="usermess_main_listEach_shopMess_right">
+								<div class="usermess_main_listEach_shopMess_name">家電閣店主Mary:</div>
+								<div class="usermess_main_listEach_shopMess_intro">
+									<p><%=list[i].msg%></p>
+								</div>
+								<div class="usermess_main_listEach_shopMess_time"><%=list[i].time%>前</div>
+							</div>
+						</div>
+						<div class="usermess_main_listEach_slideBox"><%=#list[i].content%></div>
+					</div>
+					<div class="usermess_main_listEach_btn">
+						<div class="usermess_main_listEach_slideup">收起詳情</div>
+					</div>
+				</div>
+			</div>
+		<%}%>
+	</script>
+	<!--讚我的模板-->
+	<script type="text/html" id="listGreat" data-array = "listGreatData" data-type="template">
+		<%for(var i = 0;i <list.length;i++){%>
+			<!--判斷是不是已經查看過-->
+			<%if(list[i].issee=="1"){%>
+				<div class="usermess_main_listEach usermess_main_listEachGreat usermess_main_listEach_dark usermess_main_listEach_up clearfloat" data-id='<%=list[i].id%>'>
+			<%}else{%>
+				<div class="usermess_main_listEach usermess_main_listEachGreat usermess_main_listEach_up clearfloat" data-id='<%=list[i].id%>'>
+			<%}%>
+				<div class="usermess_main_listEach_left">
+					<div class="usermess_check_each myborder-radius"><img src="/img/easybuy/shopCart/check.png"></div>
+				</div>
+				<div class="usermess_main_listEach_right clearfloat">
+					<div class="usermess_main_listEach_readIcon">已讀</div>
+					<div class="usermess_main_listEach_headPic myborder-radius">
+						<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list[i].userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+						<div class="usermess_main_listEach_headPic_cover myborder-radius"></div>
+					</div>
+					<div class="usermess_main_listEach_greatBox">
+						<div class="usermess_main_listEach_greatTitle">Mary<%=list[i].systemTitle%>帖</div>
+						<div class="usermess_main_listEach_sendTime"><%=list[i].time%>前</div>
+						<div class="usermess_main_listEach_sendMain clearfloat">
+							<div class="usermess_main_listEach_sendMain_pic" style="background-image: url(/img/e8f08dcc7ec6e4a62d7add2bf6689dca6d5474e572992-9eTnKp.jpg);">
+								<div class="usermess_main_listEach_picCover"></div>
+							</div>
+							<div class="usermess_main_listEach_greatMess">
+								<div class="usermess_main_listEach_greatMess_top clearfloat">
+									<div class="usermess_main_listEach_greatMain_title">絲質碎花連衣長裙</div>
+									<div class="usermess_main_listEach_greatMain_type">日誌</div>
+								</div>
+								<div class="usermess_main_listEach_greatMess_bottom clearfloat">
+									<div class="usermess_main_listEach_greatMess_data"><span><img src="/img/common/icon/seeIcon_dark.png"></span><span>11023</span></div>
+									<div class="usermess_main_listEach_greatMess_data"><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span>11023</span></div>
+									<div class="usermess_main_listEach_greatMess_addIcon"><img src="/img/userspace/usermessage/usermess_addGreat.png"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<%}%>
+	</script>
+	<!--別人回復我的模板<-->
+	<script type="text/html" id="listrespond" data-array = "listrespondData" data-type="template">
+		<%for(var i = 0;i <list.length;i++){%>
+			<!--判斷是不是已經查看過-->
+			<%if(list[i].issee=="1"){%>
+				<div class="usermess_main_listEach usermess_main_listEachMetion usermess_main_listEach_dark usermess_main_listEach_up clearfloat" data-id='<%=list[i].id%>'>
+			<%}else{%>
+				<div class="usermess_main_listEach usermess_main_listEachMetion usermess_main_listEach_up clearfloat" data-id='<%=list[i].id%>'>
+			<%}%>
+				<div class="usermess_main_listEach_left">
+					<div class="usermess_check_each myborder-radius"><img src="/img/easybuy/shopCart/check.png"></div>
+				</div>
+				<div class="usermess_main_listEach_right clearfloat">
+					<div class="usermess_main_listEach_readIcon">已讀</div>
+					<div class="usermess_main_listEach_headPic myborder-radius">
+						<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list[i].userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+						<div class="usermess_main_listEach_headPic_cover myborder-radius"></div>
+					</div>
+					<div class="usermess_main_listEach_metionBox">
+						<div class="usermess_main_listEach_metionTitle">Mary<%=list[i].systemTitle%>：</div>
+						<div class="usermess_main_listEach_intro">
+							<p><%=list[i].msg%></p>
+						</div>
+						<div class="usermess_main_listEach_sendTime"><%=list[i].time%>前</div>
+						<div class="usermess_main_listEach_sendMain clearfloat">
+							<div class="usermess_main_listEach_sendMain_pic" style="background-image: url(/img/e8f08dcc7ec6e4a62d7add2bf6689dca6d5474e572992-9eTnKp.jpg);">
+								<div class="usermess_main_listEach_picCover"></div>
+							</div>
+							<div class="usermess_main_listEach_sendMain_title">絲質碎花連衣長裙</div>
+							<div class="usermess_main_listEach_sendMain_type">日誌</div>
+						</div>
+						<div class="usermess_main_listEach_sendBtn">
+							<div class="usermess_main_listEach_see"><a>好奇看看</a></div>
+							<div class="usermess_main_listEach_slideup">收起通知</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<%}%>
+	</script>
+
+</html>

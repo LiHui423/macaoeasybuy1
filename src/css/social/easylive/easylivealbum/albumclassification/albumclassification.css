@@ -1,0 +1,388 @@
+.yez-container {
+    max-width: 1397px;
+    margin: 0 auto;
+    position: relative;
+}
+main.page-content {
+    background: #eae5e5;
+    padding-bottom: 150px;
+}
+.info{
+	border-top:2px solid #eae5e5;
+	background-color:#fff;
+    margin-bottom: 40px;
+}
+.info-content{
+	padding:30px 0px;
+}
+.info-content .class-icon{
+	float:left;
+	margin-left:20px;
+	height: 70px;
+	width: 70px;
+}
+.info-content .class-icon img {
+	height: 100%;
+	width: 100%;
+}
+.info-content .class-detail {
+	float:left;
+	color:#e98900;
+	margin-left:30px;
+}
+.class-detail .detail-classname {
+	font-size:24px;
+	font-weight:bold;
+}
+.class-detail .detail-classdetail{
+	margin-top:12px;
+	font-size:16px;
+	font-weight:bold;
+}
+.class-detail .detail-classdetail li{
+	float:left;
+	border-right:1px solid #e98900;
+	padding:0px 20px;
+}
+.class-detail .detail-classdetail li:first-child{
+	padding-left:0px;
+}
+.class-detail .detail-classdetail li:last-child{
+	border-right:0px;
+	margin-right:0px;
+}
+.list{
+	width:1011px;
+	float:left;
+	margin-right:35px;
+}
+.hot{
+	width:350px;
+	float:left;
+}
+.list-item {
+	width: 228px;
+	overflow: hidden;
+    position: relative;
+	float:left;
+	margin: 0 33px 20px 0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.list-item:after {
+    background: url("/img/social/label/labeldetail/hobg.png") no-repeat;
+    background-size: 100% 100%;
+    width: 228px;
+    height: 18px;
+    content: " ";
+    display: block;
+}
+.list-item:nth-of-type(4n){
+	margin-right: 0;
+}
+.list-item .item-title{
+	background-color:#e98900;
+	color:#fff;
+	padding:5px 0px 5px 10px;
+	font-size:15px;
+	letter-spacing: 2px;
+}
+.list-item .item-img {
+	font-size: 0;
+	width: 228px;
+	height: 455px;
+    background-color:#fff;
+    border-bottom:1px solid #ddd;
+}
+.item-img.nothing {
+    background-image: url("/img/userspace/album/album-no-img.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.item-img .img-banner {
+    width: 100%;
+    height: 228px;
+    overflow: hidden;
+}
+.item-img .img-banner img{
+	width: 100%;
+}
+.item-img .img-other {
+	width: 100%;
+	height: 228px;
+	padding:4px;
+    overflow: hidden;
+}
+.item-img .img-other li {
+    width: 108px;
+    height: 108px;
+    display: block;
+    overflow: hidden;
+    float: left;
+    position: relative;
+}
+.item-img .img-other li:first-child {
+    margin-right: 4px;
+}
+.item-img .img-other li:nth-child(2) {
+    margin-bottom: 4px;
+}
+.item-img .img-other li:last-child {
+    margin-left: 4px;
+}
+.item-img .img-other li img {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.item-details {
+    color:#e98900;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    background-color:#fff;
+}
+.item-details table {
+    width: 100%;
+}
+.item-details table tr td {
+    width: 50%;
+    line-height: 25px;
+    padding: 0 10px;
+    font-size: 17px;
+    overflow: hidden;
+}
+.icon {
+    display: block;
+    width: 25px;
+    height: 25px;
+    float: left;
+}
+.icon.icon-see {
+    background: url("/img/social/easylive/album-classification-eye.png") no-repeat 2px 6px;
+}
+.icon.icon-comment {
+    background: url("/img/social/easylive/album-classification-mes.png") no-repeat 2px 4px;
+}
+.icon.icon-likes {
+    background: url("/img/social/easylive/album-classification-good.png") no-repeat 2px 2px;
+}
+.icon.icon-collect {
+    background: url("/img/social/easylive/album-classification-cai.png") no-repeat 0 2px;
+}
+.icon.left {
+    margin-right: 10px;
+}
+.icon.right {
+    margin-left: 10px;
+}
+.item-poster{
+	width:100%;
+	overflow: hidden;
+	border:1px solid #ddd;
+    border-top: 0;
+    background-color: #F2F2F2;
+    padding: 15px;
+}
+.item-poster .poster-avatar {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+}
+.item-poster .poster-avatar img {
+    width: 100%;
+    height: 100%;
+}
+.item-poster .poster-info {
+    width: 129px;
+    float: left;
+    padding: 5px 0 5px 15px;
+}
+.item-poster .poster-name {
+    line-height: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.item-poster .poster-name span:first-child {
+    float: left;
+    display: block;
+    max-width: 89px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.item-poster .poster-name span:last-child {
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+}
+.item-poster .poster-name span:last-child img {
+    height: 100%;
+    width:100%;
+}
+.item-poster .poster-date {
+    font-size: 14px;
+    color: #999;
+}
+.album-list .bottom-shadow{
+	height:30px;
+}
+.album-list .bottom-shadow img{
+	width: 98%;
+    display: block;
+    margin: 0 auto;
+    vertical-align: top;
+}
+.album-relative{
+	position:relative;
+    overflow: hidden;
+}
+.shadow-box{
+	position: absolute;
+    z-index: 49;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgba(0,0,0,.1);
+    border-radius: 10px;
+    display:none;
+}
+.hot .hot-title{
+	width:60%;
+	text-align: center;
+	margin:0 auto 20px;
+	color:#000;
+	border-bottom: 1px solid #000;
+	font-size:20px;
+	font-weight:600;
+	padding-bottom:10px;
+}
+.album-hot-list{
+	width:100%;
+}
+.hot-list-top-img{
+	width:350px;
+	height: 350px;
+	position:relative;
+	overflow: hidden;
+}
+.hot-list-top-img img{
+	display:block;
+	width:100%;
+}
+.hot-list-top-img .hot-list-top-number{
+    width: 56px;
+    height: 56px;
+    background-color: #fff;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 56px;
+    color: #e98900;
+    z-index: 11;
+}
+.album-hot-list:hover .hot-list-top-number{
+	background-color: #e98900;
+    color: #fff;
+}
+.album-hot-list .hot-list-poster-position{
+	position:relative;
+	background-color:#fff;
+	overflow: hidden;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+}
+.album-hot-list .hot-list-poster .hot-list-poster-title{
+	font-size:18px;
+	font-weight:700;
+	padding-top:15px;
+    text-align: center;
+}
+.album-hot-list .hot-list-poster .hot-list-poster-state{
+	padding:10px;
+}
+.hot-list-poster-state table {
+    width: 100%;
+}
+.hot-list-poster-state table tr td {
+    width: 25%;
+    line-height: 25px;
+    font-size: 17px;
+    overflow: hidden;
+    color:#e98900;
+}
+.album-hot-list .hot-list-poster .hot-list-poster-head{
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    margin:0 auto;
+}
+.album-hot-list .hot-list-poster .hot-list-poster-head img{
+	width:100%;
+	height:100%;
+}
+.album-hot-list .hot-list-poster .hot-list-poster-name{
+	font-size:16px;
+	text-align: center;
+	padding:10px 0px 20px 0px;
+}
+.album-hot-list .hot-list-poster .hot-list-poster-name img{
+	width:20px;
+	margin-top:-6px;
+	margin-left:4px;
+}
+.album-hot-list .hot-list-bottom-shadow{
+	height:30px;
+}
+.album-hot-list .hot-list-bottom-shadow img{
+	display:block;
+	width:95%;
+	margin:0 auto;
+	vertical-align: top;
+}
+.album-hot-list:hover .shadow-box{
+	display:block;
+}
+
+.no-more {
+    position: absolute;
+    bottom: -60px;
+    color: #888;
+    font-size: 18px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+.yez-mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.15);
+}
+.list-item:hover .yez-mask {
+    display: block;
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>足跡-看過的商店</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/css/common/dateRange.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/footprint/footprintshops/footprintshops.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script>easyBuy.global.hasNav = false;</script>
+		<script>
+		function goOtherPage(obj){
+			var dataUrl = 'http://userspace.macaoeasybuy.com/userFootprintsController/queryShopStatus.easy?id='+$(obj).data('data-id')+'&easybuyCallback=?';
+			$.getJSON(dataUrl,function(data){
+				if(data.status == 0){
+					//結業
+					console.log('結業')
+					$('#shop-bought').css('display','block');
+				}else if(data.status == 1){
+					//開業
+					console.log('開業跳轉')
+				}
+			});
+		}
+		</script>
+		<!--不需要任何參數進來-->
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="searchBar">
+				<div class="searchBox">
+					<div class="searchBox_mainBox clearfloat">
+						<div class="searchBox_left">
+							<img src="/img/common/header&search&footer/easybuy_Logo.png">
+						</div>
+						<div class="searchBox_right" id="searchBox_rightBox"></div>
+					</div>
+				</div>
+			</div>
+			<div class="navBar_borderBox">
+				<div class="navBar">
+					<ul>
+						<li><a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+						<li><a href="http://social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
+						<li><a href="http://social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
+						<li><a href="http://social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="container">
+				<div class="container-swapper clearfloat">
+					<div class="footprint-left">
+						<div class="footprint-menu clearfloat">
+							<div class="footprint-logo">
+								<img src="/img/userspace/footprint/mine-print.png" alt="">我的足跡：
+							</div>
+							<a class="footprint-nav" href="/page/userspace/footprint/footprintgoods/footprintgoods.html">
+								<div>
+									<img src="/img/userspace/footprint/goods.png" class="no-select" alt="">
+								</div>
+								<div>看過的商品</div>
+							</a>
+							<a class="footprint-nav select">
+								<div>
+									<img src="/img/userspace/footprint/stores-s.png" class="select" alt="">
+								</div>
+								<div>逛過的商店</div>
+							</a>
+							<a class="footprint-nav" href="/page/userspace/footprint/footprintwhos/footprintwhos.html">
+								<div>
+									<img src="/img/userspace/footprint/whos.png" class="no-select" alt="">
+								</div>
+								<div>我看過誰</div>
+							</a>
+						</div>
+						<div class="date-select clearfloat">
+							<!--日曆-->
+							<div id="date-select-btn"></div>
+							<!--商城-->
+							<div id="shop-select" class="clearfloat select">
+								<!--<div class="checkit-box"></div>-->
+								<div class="shop-select-btn">
+									<span>宜買商城/<span>全部</span></span>
+									<img src="/img/userspace/album/state-arrow.png" alt="">
+								</div>
+								<ul class="shop-select-item">
+									<li id="0shopSelect">全部</li>
+								</ul>
+							</div>
+							<div class="box-shadow"></div>
+						</div>
+						<div class="data-show">
+							<div id="data-box">
+								<!--內容-->
+							</div>
+							<p class="no-more">~沒有更多內容了~</p>
+						</div>
+					</div>
+
+					<div class="footprint-right">
+						<div class="right-title clearfloat">
+							<div><img src="/img/userspace/footprint/shop-icon.png" alt="">隨便看看</div>
+							<div>換一批<img src="/img/userspace/footprint/arrow.png" alt=""></div>
+						</div>
+						<div class="right-list">
+							<div class="right-item">
+								<div class="item-top clearfloat">
+									<div class="top-logo">
+										<img src="/img/userspace/footprint/shop-logo.png" alt="">
+									</div>
+									<div class="top-info">
+										<div class="top-name">FRANC BOUTIQUE</div>
+										<div class="top-class">服裝飾物</div>
+										<div class="goods"><span>98%</span>的好評率</div>
+									</div>
+								</div>
+								<div class="item-bottom clearfloat">
+									<div><img src="/img/easybuy/museum/museum_willSellBoxEach_topLeft.png" alt=""></div>
+									<div><img src="/img/easybuy/museum/museum_willSellBoxEach_topLeft.png" alt=""></div>
+									<div><img src="/img/easybuy/museum/museum_willSellBoxEach_topLeft.png" alt=""></div>
+								</div>
+							</div>
+							<div class="right-item">
+								<div class="item-top clearfloat">
+									<div class="top-logo">
+										<img src="/img/userspace/footprint/shop-logo.png" alt="">
+									</div>
+									<div class="top-info">
+										<div class="top-name">FRANC BOUTIQUE</div>
+										<div class="top-class">服裝飾物</div>
+										<div class="goods"><span>98%</span>的好評率</div>
+									</div>
+								</div>
+								<div class="item-bottom clearfloat">
+									<div><img src="/img/easybuy/museum/museum_willSellBoxEach_topLeft.png" alt=""></div>
+									<div><img src="/img/easybuy/museum/museum_willSellBoxEach_topLeft.png" alt=""></div>
+									<div><img src="/img/easybuy/museum/museum_willSellBoxEach_topLeft.png" alt=""></div>
+								</div>
+							</div>
+							<div class="right-item">
+								<div class="item-top clearfloat">
+									<div class="top-logo">
+										<img src="/img/userspace/footprint/shop-logo.png" alt="">
+									</div>
+									<div class="top-info">
+										<div class="top-name">FRANC BOUTIQUE</div>
+										<div class="top-class">服裝飾物</div>
+										<div class="goods"><span>98%</span>的好評率</div>
+									</div>
+								</div>
+								<div class="item-bottom clearfloat">
+									<div><img src="/img/easybuy/museum/museum_willSellBoxEach_topLeft.png" alt=""></div>
+									<div><img src="/img/easybuy/museum/museum_willSellBoxEach_topLeft.png" alt=""></div>
+									<div><img src="/img/easybuy/museum/museum_willSellBoxEach_topLeft.png" alt=""></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+		<!--商品下架-->
+		<div id="shop-bought">
+			<div class="delete-post-shadow"></div>
+			<div class="cancel-tips-box on-middle yez-tips-box">
+				<img src="/img/userspace/userspace_postDetails/icon/showPic-back.png" class="cancel-btn" alt="">
+				<div class="cancels-title">該商店已結業</div>
+				<div>
+					<div class="cancels-xc"><img src="/img/common/04.png" alt=""></div>
+					<div class="cancel-tips-text">原因可能：</div>
+					<div>1.該商店暫時停止營業</div>
+					<div>2.該商品約滿未續而停止營業</div>
+					<div class="clearfloat sure-button">
+						<div class="sure-cancel">前往首頁</div>
+						<div class="cancel-sure">前往好店街</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<script src="/js/plug/yez_js_Reset.js"></script>
+	<script src="/js/common/vendor/template-native.js"></script>
+    <script src="/js/common/header&search&footer/searchBar.js" async></script>
+    <script src="/js/common/header&search&footer/footer.js" async></script>
+    <script src="/js/common/header&search&footer/header.js"></script>
+    <script src="/js/plug/dateRange.js"></script>
+	<script src="/js/userspace/footprint/footprintshops/footprintshops.js"></script>
+	<script id="shop-template" type="text/html" data-type="template">
+		<%for(var i=0;i<shopList.length;i++){%>
+			<ul class="clearfloat">
+				<div class="date-time"><img src="/img/userspace/footprint/line.png" alt=""><span><%=shopList[i].uptime%></span><img src="/img/userspace/footprint/line.png" alt=""></div>
+				<%for(var j=0;j<shopList[i].shopList.length;j++){%>
+					<li id="<%=shopList[i].shopList[j].id%><%=shopList[i].shopList[j].uptime%>" data-id="<%=shopList[i].shopList[j].id%>" onclick="goOtherPage(this)">
+						<a>
+							<p class="shop-name"><%=shopList[i].shopList[j].shopname%></p>
+							<p class="shop-class"><%=shopList[i].shopList[j].typename%></p>
+							<div class="clearfloat shop-info">
+								<div>
+									<div><%=shopList[i].shopList[j].fanscount%></div>
+									<div>粉絲</div>
+								</div>
+								<div>
+									<div><%=shopList[i].shopList[j].favorableRate%>%</div>
+									<div>好評率</div>
+								</div>
+							</div>
+						</a>
+						<img src="<%=osURL%><%=shopList[i].shopList[j].logo%>" alt="">
+					</li>
+				<%}%>
+			</ul>
+		<%}%>
+	</script>
+	<script id="li-template" type="text/html" data-type="template">
+		<%for(var i=0;i<shopList.length;i++){%>
+			<li id="<%=shopList[i].id%><%=shopList[i].uptime%>" data-id="<%=shopList[i].id%>" onclick="goOtherPage(this)">
+				<a>
+					<p class="shop-name"><%=shopList[i].shopname%></p>
+					<p class="shop-class"><%=shopList[i].typename%></p>
+					<div class="clearfloat shop-info">
+						<div>
+							<div><%=shopList[i].fanscount%></div>
+							<div>粉絲</div>
+						</div>
+						<div>
+							<div><%=shopList[i].favorableRate%>%</div>
+							<div>好評率</div>
+						</div>
+					</div>
+				</a>
+				<img src="<%=osURL%><%=shopList[i].logo%>" alt="">
+			</li>
+		<%}%>
+	</script>
+	</body>
+</html>

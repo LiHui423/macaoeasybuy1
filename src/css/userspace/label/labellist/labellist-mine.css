@@ -1,0 +1,153 @@
+#label-add{
+	height:100%;
+	display: inline-block;
+	padding-left:30px;
+	position:relative;
+}
+#label-add .add-btn{
+	cursor: pointer;
+}
+#label-add .add-box{
+    position: absolute;
+    top: 84%;
+    left: -305px;
+    line-height: normal;
+    display: none;
+}
+#label-add .add-box>img{
+	margin-left:308px;
+	vertical-align: bottom;
+}
+#label-add .add-box .add-box-inner,
+#label-add .add-box .after-select{
+    width: 400px;
+    background-color: #fff;
+	-webkit-box-shadow: 0 1px 30px 5px rgba(169, 169, 169, 0.73);
+    -moz-box-shadow: 0 1px 30px 5px rgba(169, 169, 169, 0.73);
+    box-shadow: 0 1px 30px 5px rgba(169, 169, 169, 0.73);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    overflow: hidden;
+    display: none;
+}
+#label-add .add-box .add-box-inner.select,
+#label-add .add-box .after-select.select{
+	display: block;
+}
+#label-add .add-box .add-nav-input{
+	background-color:#e98900;
+	padding:12px;
+}
+#label-add .add-box .add-nav{
+	width: 100%;
+	background-color:rgba(255,255,255,.5);
+}
+#label-add .add-box .add-nav li{
+	width:33.33333%;
+	float:left;
+	padding:10px 0px;
+	color:#fff;
+	font-size:16px;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+#label-add .add-box .add-nav li.select{
+	background-color:#ff567c;
+}
+#label-add .add-box .add-nav-input input{
+	margin-top:12px;
+	padding:0px 12px;
+	width: 100%;
+	height:36px;
+	border:0px;
+	outline: 0px;
+	color:#000 !important;
+}
+#label-add .add-box .add-lister{
+	width:96%;
+	margin:0px auto;
+	max-height: 262px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding:0px 10px 0px 15px;
+}
+#label-add .add-box .add-lister>div{
+	text-align: left;
+	border-bottom:1px solid #ccc;
+	padding:10px 0px 10px 0px;
+}
+#label-add .add-box .add-lister>div.label-result{
+	cursor: pointer;
+}
+#label-add .add-box .add-lister>div.label-result span{
+	color:#ff567c;
+}
+#label-add .add-box .add-lister>div:last-of-type{
+	border-bottom:0px;
+	margin-bottom:6px;
+}
+#new-label{
+	line-height:29px;
+}
+#new-label span:first-of-type{
+	color:#ff567c;
+	cursor: default;
+}
+#new-label span:last-of-type{
+	float:right;
+	text-align: right;
+	color:#fff;
+	background-color:#ff567c;
+	padding:0px 8px;
+	cursor: pointer;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-o-border-radius: 6px;
+	border-radius: 6px;
+}
+#label-add .add-box .after-select{
+	background-color:#fff;
+	letter-spacing: 1px;
+}
+#label-add .add-box .after-select-cap{
+	height:25px;
+	background-color:#e98900;
+}
+#label-add .add-box .black-text.first{
+	font-size:16px;
+	padding:10px 0px;	
+}
+#label-add .add-box .after-select-label{
+	color:#ff567c;
+	font-size:20px;
+	padding-bottom:20px;
+}
+#label-add .add-box .black-text.second{
+	font-weight: 500;
+	font-size:18px;
+}
+#label-add .add-box .gray-text{
+	font-size:16px;
+	color:#aaa;
+	padding:6px 0px;
+}
+#label-add .add-box .after-select ul{
+	width:66%;
+	margin:10px auto 0px auto;
+	text-align: center;
+}
+#label-add .add-box .after-select ul li{
+	width:50%;
+	height:110px;
+	float:left;
+	color:#e98900;
+	font-weight: bold;
+	cursor: pointer;
+}
+#label-content .use-label-post .post-item .post-content .title .head{
+	display: none;
+}

@@ -1,0 +1,214 @@
+/*內容*/
+.dynamic_mainBox{
+	padding:30px;
+}
+/*帖子樣式*/
+.album-list{
+    width: 208px;
+    overflow: hidden;
+    float: left;
+}
+.album-list:nth-of-type(4n){
+	margin-right:0px;
+}
+.album-list:hover .shadow-box{
+	display:block;
+}
+.album-relative {
+    position: relative;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    overflow: hidden;
+}
+.album-list .album-list-title {
+    background-color: #e98900;
+    color: #fff;
+    padding: 5px 0px 5px 10px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -ms-border-radius: 10px 10px 0px 0px;
+    -o-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
+}
+.album-list .album-img-none-box{
+	height:415.81px;
+	overflow: hidden;
+	background-color:#fff;
+    border-bottom: 1px solid #ddd;
+}
+.album-list .album-img-none-box .album-img-none-box-img{
+	margin:110px 0px 20px 0px;
+	text-align: center;
+}
+.album-list .album-img-none-box .album-img-none-box-tips{
+	color:#888;
+	text-align: center;
+}
+.album-list .album-img-none-box .album-img-none-box-btn{
+    width: 110px;
+    margin:15px auto 0px auto;
+    background-color: #E98900;
+    padding:8px 0px;
+    text-align: center;
+    text-indent: 24px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #fff;
+    cursor: pointer;
+    cursor: -ms-pointer;
+    background: url(//img.macaoeasybuy.com/img/social/easylive/focus-white.png) 10px 9px no-repeat #E98900;
+    background-size: 18px 18px;
+    -webkit-background-size: 18px 18px;
+    -moz-background-size: 18px 18px;
+    -ms-background-size: 18px 18px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    position: relative;
+    z-index:50;
+}
+.album-list .album-top-img img {
+    width: 100%;
+}
+.album-list .album-img-list {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ddd;
+}
+.album-list .album-img-list img {
+    display: block;
+    float: left;
+    width: 48.95%;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+.album-list .album-img-list img:nth-of-type(2n) {
+    margin-right: 0px;
+}
+.album-list .album-img-list img:nth-of-type(3) {
+    margin-bottom: 0px;
+}
+.album-list .album-img-list img:nth-of-type(4) {
+    margin-bottom: 0px;
+}
+.album-list .album-state {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom: 0px;
+    border-top: 0px;
+    padding-bottom: 5px;
+}
+.album-list .album-state div {
+    width: 50%;
+    float: left;
+    text-align: left;
+    padding: 8px 0px;
+    color: #e98900;
+    padding-left: 18px;
+}
+.album-list .album-state div img {
+    margin-right: 5px;
+}
+.album-poster {
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+.album-poster .laster-look {
+    padding: 15px;
+    background-color: #F2F2F2;
+}
+.album-poster .laster-look .laster-head {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+    margin-left: 5px;
+}
+.album-poster .laster-look .laster-head img {
+    width: 100%;
+}
+.album-poster .laster-look .laster-text {
+    margin: 10px 0px 0px 14px;
+    float: left;
+}
+.album-poster .laster-look .laster-text .laster-text-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+.album-poster .laster-look .laster-text .laster-text-name img {
+    vertical-align: top;
+    margin-left: 8px;
+    width: 22px;
+}
+.album-poster .laster-look .laster-text .laster-text-num {
+    font-size: 14px;
+    color: #999;
+}
+.shadow-box {
+    position: absolute;
+    z-index: 49;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgba(0,0,0,.1);
+    border-radius: 10px;
+    display: none;
+}
+.album-list .hover-check-box-outer{
+    position: absolute;
+    top: 38px;
+    left: 8px;
+    width: 30px;
+    height: 30px;
+    z-index: 888;
+    display: none;
+}
+.album-list .hover-check-box-outer .hover-check-box{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    cursor: -ms-pointer;
+    background: #fff;
+}
+.album-list.select .hover-check-box-outer .hover-check-box {
+    background: url(//img.macaoeasybuy.com/img/social/easylive/check-select.png) center center no-repeat #fff;
+}
+.album-list .bottom-shadow {
+    width: 98%;
+    margin: 0 auto;
+}
+.album-list .bottom-shadow img {
+    width: 100%;
+    vertical-align: top;
+}
+.dynamic_mainList ul li{
+	float: left;
+	margin-right: 25px;
+	cursor: pointer;
+}
+.dynamic_mainList ul li:nth-of-type(4n){
+	margin-right: 0px;
+}

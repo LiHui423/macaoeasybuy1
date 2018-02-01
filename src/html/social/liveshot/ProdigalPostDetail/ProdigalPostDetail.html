@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>敗家誌-帖子詳細頁</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/common/yez_Editor.css">
+		<link rel="stylesheet" href="/css/social/common/post_common.css">
+		<link rel="stylesheet" href="/css/social/common/post_editor.css">
+		<link rel="stylesheet" href="/css/social/liveshot/ProdigalPostDetail/ProdigalPostDetail.css">
+    	<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    	<script src="/js/common/frameDomainJSON.js"></script>
+    	<script src="/js/common/getData/getData_sinple.js"></script>
+    	<!--userid頁面所屬用戶id   id帖子Id-->
+	</head>
+
+	<body>
+		<div id="swapper">
+			<header></header>
+
+			<div id="searchBar">
+				<div class="searchBox">
+					<div class="searchBox_mainBox clearfloat">
+						<div class="searchBox_left">
+							<img src="/img/common/header&search&footer/easybuy_Logo.png">
+						</div>
+						<div class="searchBox_right" id="searchBox_rightBox"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="navBar_borderBox">
+				<div class="navBar">
+					<ul>
+						<li>
+							<a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a>
+						</li>
+						<li>
+							<a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a>
+						</li>
+						<li>
+							<a href="http://shopping.macaoeasybuy.com/findNew/new.html">發現新品</a>
+						</li>
+						<li>
+							<a href="http://shopping.macaoeasybuy.com/discount/discount.html">今日降價</a>
+						</li>
+						<li>
+							<a href="http://shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a>
+						</li>
+						<li class="navBarLi_curr">
+							<a href="http://social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a>
+						</li>
+						<li>
+							<a href="http://social.macaoeasybuy.com/market/market.html">尋寶市集</a>
+						</li>
+						<li>
+							<a href="http://shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a>
+						</li>
+						<li>
+							<a href="http://shopping.macaoeasybuy.com/museum/museum.html">宜品館</a>
+						</li>
+						<li>
+							<a href="http://shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a>
+						</li>
+						<li>
+							<a href="http://social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="container">
+				<div class="container-swapper">
+					<div class="person clearfloat">
+
+						<div class="person-left" id="person-left">
+
+							<div class="person-swapper">
+								<!--頭像-->
+								<div class="publisherMessBox clearfloat">
+									<div class="messBox_pic" id="messBox_pic"><img src="" alt=""></div>
+									<div class="messBox_mess">
+										<div class="messBox_mess_name" id="other-mess-name">
+											<span>&nbsp;</span>
+											<div><img src="" alt=""></div>
+										</div>
+										<div class="messBox_mess_time" id="messBox_mess_time">
+											<p>發佈時間：<span></span></p>
+										</div>
+									</div>
+									<div class="messBox_logo">
+										<img src="/img/social/liveshot/ProdigalPostDetail/shot-logo.png" alt="">
+									</div>
+								</div>
+
+
+								<!--輪播圖-->
+								<div class="showPicBox">
+									<div class="foodBanner">
+										<ul id="foodBannerul"></ul>
+										<a class="prev" id="goLeft">
+											<div><img src="/img/social/liveshot/ProdigalPostDetail/prev.png" border="0"></div>
+										</a>
+										<a class="next" id="goRight">
+											<div><img src="/img/social/liveshot/ProdigalPostDetail/next.png" border="0"></div>
+										</a>
+										<div id="big-grass"></div>
+									</div>
+									<div class="BannerCountBox">
+										<span class="now">1</span>/<span class="count">1</span>
+									</div>
+								</div>
+								<!--內容-->
+								<div class="articleBox">
+									<div class="atricle_title" id="atricle_title"></div>
+									<div class="articleMain">
+										<p id="articleMain"></p>
+									</div>
+									<div class="atricle_emjo">
+										<ul id="atricle_emjo" class="clearfloat"></ul>
+									</div>
+									<div class="atricle_label">
+										<ul id="atricle_label">
+											<li class="placeLabel">
+												<span>地點 ：</span>
+											</li>
+											<li class="brandLabel">
+												<span>品牌 ：</span>
+											</li>
+											<li class="hotLabel">
+												<span>熱點 ：</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="otherMessBox">
+									<div class="otherMess_commodity">
+										<div class="otherMess_title">相關商品:</div>
+										<div class="otherMess_commodityBox clearfloat" id="otherMess_commodityBox"></div>
+									</div>
+									<div class="otherMess_shop">
+										<div class="otherMess_title">相關商店:</div>
+										<ul class="clearfloat" id="otherMess_shop"></ul>
+									</div>
+								</div>
+
+								<div class="articleOpera">
+									<ul class="clearfloat">
+										<li id="good-for-post">
+											<div class="thumbs_up no-click">
+												<img src="/img/social/liveshot/ProdigalPostDetail/thumbs.png">
+											</div>
+											<div class="thumbs_up click">
+												<img src="/img/social/liveshot/ProdigalPostDetail/thumbsup.png">
+											</div>
+											<p>值得讚好</p>
+										</li>
+										<li>
+											<div class="article_share">
+												<img src="/img/social/liveshot/ProdigalPostDetail/share.png">
+											</div>
+											<p>分享好友</p>
+										</li>
+										<li id="violation">
+											<div class="article_report">
+												<img src="/img/social/liveshot/ProdigalPostDetail/report.png">
+											</div>
+											<p>違規舉報</p>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+
+							<div id="editor-box"></div>
+
+						</div>
+
+						<div class="person-right" id="person-right">
+
+							<div class="statistics">
+								<ul class="statistics-title clearfloat" id="statistics-title">
+									<li class="select">
+										<div class="statistics-bubble">
+											<div>&nbsp;</div>
+											<div><img src="/img/common/message.png" alt="">宜粉回應</div>
+											<img src="/img/social/liveshot/ProdigalPostDetail/arrow.png" alt="" class="arrow">
+										</div>
+									</li>
+									<li>
+										<div class="statistics-bubble">
+											<div>&nbsp;</div>
+											<div><img src="/img/common/eye.png" alt="">宜粉查看</div>
+											<img src="/img/social/liveshot/ProdigalPostDetail/arrow.png" alt="" class="arrow">
+										</div>
+									</li>
+									<li>
+										<div class="statistics-bubble">
+											<div>&nbsp;</div>
+											<div><img src="/img/common/good.png" alt="">宜粉讃好</div>
+											<img src="/img/social/liveshot/ProdigalPostDetail/arrow.png" alt="" class="arrow">
+										</div>
+									</li>
+								</ul>
+								<div class="statistics-page">
+									<ul class="person-messaage statistics-page-item select">
+										<div class="innerDiv scrollIe scrollOther" id="response-list">
+											<div id="response-list-inner">
+												<div class="no-more">~沒有更多內容了哦~</div>
+											</div>
+										</div>
+									</ul>
+									<ul class="person-check checkAndGood clearfloat statistics-page-item">
+										<p>最近查看の宜粉</p>
+										<div class="innerDiv clearfloat scrollIe scrollOther" id="check-list">
+											<div id="check-list-inner" class="clearfloat">
+												<div class="no-more">~沒有更多內容了哦~</div>
+											</div>
+										</div>
+									</ul>
+									<ul class="person-good checkAndGood clearfloat statistics-page-item">
+										<p>最近讃好の宜粉</p>
+										<div class="innerDiv clearfloat scrollIe scrollOther" id="good-list">
+											<div id="good-list-inner" class="clearfloat">
+
+												<div class="no-more-good">
+													<div class="img"><img src="/img/common/06.png" alt=""></div>
+													<div class="title">暫無宜粉讃好</div>
+													<div class="title">給帖主一點點鼓勵吧</div>
+													<div class="no-btn" id="second-good">值得讃好</div>
+												</div>
+												<div class="no-more">~沒有更多內容了哦~</div>
+
+											</div>
+										</div>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="mine-other" id="mine-other-post">
+						<div class="title"><span class="poster-name"></span>還有<span class="poster-number"></span>篇敗家誌</div>
+						<div class="mine-other-outer scrollIe scrollOther" id="masonry-box">
+							<div class="mine-main clearfloat" id="masonry">
+								<div class="mine_main_inner"></div>
+								<p class="no-more">~沒有更多內容了~</p>
+							</div>
+						</div>
+						<div class="mine-other-bottom" id="mine-other-poster">
+							<a href="">
+								<img src="" alt="" class="head-img">
+								<span class="poster-name"></span>空間看看<img src="/img/social/liveshot/ProdigalPostDetail/my-arrow.png" alt="" class="my-arrow">
+							</a>
+						</div>
+					</div>
+
+					<div class="all-look">
+						<div class="title">宜粉們都在看</div>
+						<div class="all-main scrollIe scrollOther" id="all-look-post-inner-box">
+							<div class="all-main-container clearfloat" id="all-look-post-inner">
+								<div class="all_main_container_inner"></div>
+								<p class="no-more">~沒有更多內容了~</p>
+							</div>
+						</div>
+						<div class="all-look-bottom">
+							<a href="">查看更多敗家誌帖子<span class="bottom-arrow">>></span></a>
+						</div>
+					</div>
+
+				</div>
+
+
+			</div>
+			<footer></footer>
+		</div>
+		<!--點讚取消點讚-->
+		<div id="praise-post">
+			<div class="praise on-middle yez-tips-box click">
+				<div><img src="/img/common/tips-box/good-icon.png" alt="">謝謝您的鼓勵哦！</div>
+			</div>
+			<div class="praise on-middle yez-tips-box cancel">
+				<div><img src="/img/common/tips-box/good-icon1.png" alt="">您已取消讃好。</div>
+			</div>
+		</div>
+		<!--放大鏡-->
+		<div id="big-grass-page">
+			<div class="big-grass-page-inner">
+				<div class="big-grass-ul"></div>
+			</div>
+			<div class="big-grass-bg"></div>
+			<a class="prev">
+				<div><img src="/img/social/liveshot/ProdigalPostDetail/prev.png" border="0"></div>
+			</a>
+			<a class="next">
+				<div><img src="/img/social/liveshot/ProdigalPostDetail/next.png" border="0"></div>
+			</a>
+			<div class="BannerCountBox">
+				<span class="now">1</span>/<span class="count">1</span>
+			</div>
+			<div class="close-grass"><img src="/img/common/tips-box/img-upload-close.png" alt=""></div>
+		</div>
+		<!--回復帖子加分提示-->
+		<div id="comment-success-tips" class="comment-success-tips">
+			<div class="praise on-middle yez-tips-box">
+				<div><img src="/img/common/icon/focusShop_icon.png" alt="">已成功回復帖子！</div>
+				<div>已獲得積分獎勵</div>
+				<div><span>0</span>分</div>
+			</div>
+		</div>
+		<!--回復成功加失敗提示-->
+		<div id="comment-success-tips-error" class="comment-success-tips">
+			<div class="praise on-middle yez-tips-box">
+				<div>評論回復失敗！</div>
+			</div>
+		</div>
+		<!--評論內容不能為空-->
+		<div id="comment-success-tips-empty" class="comment-success-tips">
+			<div class="praise on-middle yez-tips-box">
+				<div>評論回復內容不能為空！</div>
+			</div>
+		</div>
+
+	    <script src="/js/plug/yez_js_Reset.js"></script>
+	    <script src="/js/common/vendor/template-native.js"></script>
+	    <script src="/js/common/header&search&footer/searchBar.js" async></script>
+	    <script src="/js/common/header&search&footer/footer.js" async></script>
+		<script src="/js/common/header&search&footer/header.js"></script>
+		<script src="//js.macaoeasybuy.com/img/js/plug/yez_Editor.js"></script>
+		<!--編輯回復(引入用戶空間)-->
+		<script src="/js/userspace/common/postDetailEditorSend.js"></script>
+		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+		<script src="/js/social/common/post_common.js"></script>
+		<script src="/js/social/liveshot/ProdigalPostDetail/ProdigalPostDetail.js"></script>
+
+		<!--最近讃好宜粉-->
+		<script id="good" type="text/html" data-type="template">
+			<% for(var a=0;a<loveList.length;a++){%>
+				<li id="<%=loveList[a].id%>good-id">
+					<a href="">
+						<div class="respondBox_fandPic">
+							<img src="<%=osURL%><%=loveList[a].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+						</div>
+						<div class="respondBox_fansMess clearfloat">
+							<div>
+								<%=loveList[a].name%>
+							</div>
+							<div>
+								<% if(loveList[a].sex == 'Boy'){ %>
+								<img src="/img/common/boy.png" alt="">
+								<% }else if(loveList[a].sex == 'Girl'){%>
+								<img src="/img/common/girl.png" alt="">
+								<%}%>
+							</div>
+						</div>
+					</a>
+				</li>
+			<%}%>
+		</script>
+		<!--最近查看宜粉-->
+		<script id="check" type="text/html" data-type="template">
+			<% for(var k=0;k<userList.length;k++){%>
+			<li id="<%=userList[k].id%>">
+				<a href="">
+					<div class="respondBox_fandPic">
+						<img src="<%=osURL%><%=userList[k].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+					</div>
+					<div class="respondBox_fansMess clearfloat">
+						<div>
+							<%=userList[k].name%>
+						</div>
+						<div>
+							<% if(userList[k].sex == 'Boy'){ %>
+							<img src="/img/common/boy.png" alt="">
+							<% }else if(userList[k].sex == 'Girl'){%>
+							<img src="/img/common/girl.png" alt="">
+							<%}%>
+						</div>
+					</div>
+				</a>
+			</li>
+			<%}%>
+		</script>
+		<!--回復評論帖子-->
+		<script id="response" type="text/html" data-type="template">
+			<%if(replyList.length > 0){%>
+				<%for(var i=0;i<replyList.length;i++){%>
+				<li class="clearfloat" id="<%=replyList[i].id%>response">
+					<div class="person-head" id="replyList[i].userid"><img src="<%=osURL%><%=replyList[i].pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+					<div class="person-info">
+						<div class="person-info-name">
+							<%=replyList[i].name%>
+							<% if(replyList[i].sex == 'Boy'){ %>
+							<img src="/img/common/boy.png" alt="">
+							<% }else if(replyList[i].sex == 'Girl'){%>
+							<img src="/img/common/girl.png" alt="">
+							<%}%>
+						</div>
+						<div class="person-info-contain clearfloat">
+							<div class="person-info-text"></div>
+							<div class="person-info-revert">回應</div>
+						</div>
+						<div class="big-expression">
+							<%if(replyList[i].bigexpressionGroup != undefined){%>
+								<%for(var k=0; k<replyList[i].bigexpressionGroup.length; k++){%>
+									<img src="<%=osURL%><%=replyList[i].bigexpressionGroup[k]%>" alt="">
+								<%}%>
+							<%}%>
+						</div>
+						<div class="person-info-time"><span><%=replyList[i].addtime%></span>前發佈</div>
+						<ul class="person-info-record">
+							<% if(replyList[i].reply != undefined){ %>
+								<li class="clearfloat" id="<%=replyList[i].reply.id%>response-reply">
+									<div class="person-info-record-head">
+										<img src="<%=osURL%><%=replyList[i].reply.pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'">
+									</div>
+									<div class="person-info-record-info">
+										<div class="person-info-name">
+											<%=replyList[i].reply.name%>
+											<% if(replyList[i].reply.sex == 'Boy'){ %>
+											<img src="/img/common/boy.png" alt="">
+											<% }else if(replyList[i].reply.sex == 'Girl'){%>
+											<img src="/img/common/girl.png" alt="">
+											<%}%>
+										</div>
+										<div class="person-info-contain clearfloat">
+											<div class="person-info-text"></div>
+										</div>
+										<div class="big-expression">
+											<%if(replyList[i].reply.bigexpressionGroup != undefined){%>
+											<%for(var k=0; k<replyList[i].reply.bigexpressionGroup.length; k++){%>
+												<img src="<%=osURL%><%=replyList[i].reply.bigexpressionGroup[k]%>" alt="">
+											<%}%>
+											<%}%>
+										</div>
+										<div class="person-info-time"><span><%=replyList[i].reply.addtime%></span>前發佈</div>
+									</div>
+								</li>
+							<%}%>
+						</ul>
+					</div>
+				</li>
+				<%}%>
+			<%}else if(replyList.length == 0 && page == 0){%>
+				<div class="no-more-good">
+					<div class="img"><img src="/img/common/09.png" alt=""></div>
+					<div class="title">暫無宜粉回應</div>
+					<div class="title">來成為第一個回應的宜粉吧</div>
+					<div class="no-btn">去回應</div>
+				</div>
+			<%}%>
+		</script>
+		<!--at人的模板-->
+		<script id="at-person-template" type="text/html" data-type="template">
+			<%if(data.length != 0){%>
+			<%for(var i=0;i<data.length;i++){%>
+				<li id="<%=data[i].id%>user" class="<%=data[i].id%>userclass">
+					<div class="fandPic"><img src="<%=osURL%><%=data[i].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+					<div class="fansMess clearfloat">
+						<span><%=data[i].name%></span>
+						<%if(data[i].sex == 'Girl'){%>
+							<span><img src="/img/common/girl.png"></span>
+						<%}else if(data[i].sex == 'Boy'){%>
+							<span><img src="/img/common/boy.png"></span>
+						<%}%>
+					</div>
+					<div class="fandPic_Filter"></div>
+					<span class="metiond_checked"><img src="/img/social/label/labeldetail/fancurr.png"></span>
+				</li>
+			<%}%>
+			<%}else if(data.length == 0 && page == 0){%>
+				<div class="no-res-content">
+					<div><img src="/img/common/05.png" alt=""></div>
+					<div>暫無內容</div>
+				</div>
+			<%}%>
+		</script>
+		<!--標籤的模板-->
+		<script id="label-template" type="text/html" data-type="template">
+			<%if(labelList.length != 0){%>
+			<%for(var i=0;i<labelList.length;i++){%>
+				<li id="<%=labelList[i].id%>label" class="<%=labelList[i].id%>labelclass" label="<%=labelList[i].labelName%>" type="<%=labelList[i].type%>" author="<%=labelList[i].userId%>">
+					<div class="LabelList_Filter"></div>
+					<span class="LabelList_checked"><img src="/img/social/label/labeldetail/fancurr.png"></span>
+					<div class="labelList_left"><img src="<%=osURL%><%=labelList[i].picture%>" onerror="this.src='/img/common/loading_pc_80.png';this.style.width='120px'"></div>
+					<div class="labelList_right">
+						<div class="labelList_title"><%=labelList[i].labelName%></div>
+						<div class="labelList_main">
+							<p><%=labelList[i].describe%></p>
+						</div>
+						<div class="labelList_DataBox clearfloat">
+							<div class="labelList_DataEach">
+								<div><img src="/img/social/liveshot/ProdigalTopicList/eye.png"></div>
+								<p><span><%=labelList[i].seeNums%></span>個宜粉查看</p>
+							</div>
+							<div class="labelList_DataEach">
+								<div><img src="/img/social/liveshot/ProdigalTopicList/good.png"></div>
+								<p><span><%=labelList[i].loveNums%></span>個宜粉贊好</p>
+							</div>
+							<!--<div class="labelList_DataEach">
+								<div><img src="/img/social/label/labeldetail/about (1).png"></div>
+								<p><span>50</span>相關帖子</p>
+							</div>-->
+						</div>
+					</div>
+				</li>
+			<%}%>
+			<%}else if(labelList.length == 0 && page == 0){%>
+				<div class="no-res-content">
+					<div><img src="/img/common/05.png" alt=""></div>
+					<div>暫無內容</div>
+				</div>
+			<%}%>
+		</script>
+		<!--相關商品-->
+		<script id="otherMess_commodityBox-template" type="text/html" data-type="template">
+			<%for(var i=0;i<shangpinList.length;i++){%>
+				<div class="otherMess_commodityEach" data-id="<%=shangpinList[i].id%>" data-num="<%=shangpinList[i].shangPinId%>">
+					<div class="commodityEach_left">
+						<img src="<%=osURL%><%=shangpinList[i].pic%>">
+					</div>
+					<div class="commodityEach_right">
+						<p><%=shangpinList[i].title%></p>
+						<ul>
+							<li>
+								<div>
+									<div class="commodityBox_indexBox">
+										<div><img src="/img/social/liveshot/ProdigalPostDetail/love.png"></div><span><%=shangpinList[i].loveNums%></span>
+									</div>
+									<p>宜粉心動</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<div class="commodityBox_indexBox">
+										<div><img src="/img/social/liveshot/ProdigalPostDetail/great.png"></div><span><%=shangpinList[i].favorableRate%>%</span>
+									</div>
+									<p>最近好評率</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<div class="commodityBox_indexBox">
+										<div><img src="/img/social/liveshot/ProdigalPostDetail/buy.png"></div><span><%=shangpinList[i].buyNums%></span>
+									</div>
+									<p>最近已購買</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			<%}%>
+		</script>
+		<!--其他帖子列表-->
+		<script id="post-template" type="text/html" data-type="template">
+			<%if(result.returnList.length != 0){%>
+				<%for(var i=0;i<result.returnList.length;i++){%>
+					<div class="pillar-all mine" id="<%=result.returnList[i].id%>-poster-<%=type%>">
+						<div class="pillar">
+
+							<div class="page-main">
+								<%if(result.returnList[i].pic){%>
+									<a href=""><img src="<%=osURL%><%=result.returnList[i].pic%>" class="page-main-head-img" onerror="$(this).remove()"></a>
+								<%}%>
+								<div class="post-main-text">
+									<div class="post-title"><%=result.returnList[i].titlename%></div>
+									<div class="post-description"><%=#result.returnList[i].purchasedfrom%></div>
+									<div class="post-description-other">
+										<div class="post-description-other-right">
+											<%for(var j=0;j<result.returnList[i].labelList.length;j++){%>
+												<p><%=result.returnList[i].labelList[j]%></p>
+											<%}%>
+										</div>
+										<div class="post-other-time clearfloat">
+											<div><span><%=result.returnList[i].uptime%></span>前發佈</div>
+											<img src="/img/social/label/labeldetail/shot.png" alt="" class="post-other-img">
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="laster">
+								<ul class="laster-num clearfloat">
+									<li><%=result.returnList[i].seeNumber%></li>
+									<li><%=result.returnList[i].loveNumber%></li>
+									<li><%=result.returnList[i].commentCount%></li>
+								</ul>
+								<%if(type == 'other' && result.returnList[i].user != null){%>
+									<div class="laster-look">
+										<div class="laster-head">
+											<img src="<%=osURL%><%=result.returnList[i].user.pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'">
+										</div>
+										<div class="laster-text">
+											<div class="laster-text-name">
+												<span><%=result.returnList[i].user.name%></span>
+												<img src="<%=easySex(result.returnList[i].user.sex)%>" alt="">
+											</div>
+										</div>
+									</div>
+								<%}%>
+							</div>
+
+							<div class="shadow-box"></div>
+						</div>
+						<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+					</div>
+				<%}%>
+			<%}else if(result.returnList.length == 0 && page == 0){%>
+				<div id="no-post">
+					<div>
+						<img src="/img/common/05.png" alt="">
+					</div>
+					<span>目前沒有任何內容哦!</span>
+				</div>
+			<%}%>
+		</script>
+
+	</body>
+
+</html>

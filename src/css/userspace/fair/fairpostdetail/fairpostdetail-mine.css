@@ -1,0 +1,79 @@
+#other-mess-name,
+.messBox_pic,
+.messBox_logo,
+#violation{
+	display:none;
+}
+/*刪除帖子*/
+#delete-post{
+	display:none;
+}
+#delete-post .delete-post-shadow{
+	position:fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	z-index:889;
+	background-color:rgba(0,0,0,.4);
+}
+.yez-tips-box {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#delete-post .cancel-tips-box {
+    position: fixed;
+    z-index: 890;
+    box-shadow: 4px 4px 30px #aaa;
+    background-color: #fff;
+    text-align: center;
+    width: 510px;
+}
+#delete-post .cancels-title {
+    padding: 10px 0px;
+    font-size: 18px;
+    background-color: #FF527C;
+    color: #fff;
+}
+#delete-post .cancels-xc {
+    margin-top: 20px;
+    text-indent: -30px;
+}
+#delete-post .cancels-xc img{
+	width:180px;
+}
+#delete-post .cancel-tips-text {
+    padding: 15px 0px 4px 0px;;
+    font-size: 18px;
+}
+#delete-post .cancel-tips-text-tips{
+	color:#FF527C;
+}
+#delete-post .sure-button {
+    display: inline-block;
+    margin:15px 0px;
+}
+#delete-post .sure-cancel,
+#delete-post .cancel-sure{
+    background-color: #FF527C;
+    color: #FFFFFF;
+    padding: 8px 45px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 16px;
+    float: left;
+}
+#delete-post .cancel-sure {
+    margin-left: 20px;
+    background-color: #b3b3b3;
+}

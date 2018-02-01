@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>普通廣告詳細頁</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/moreTheme/addetail/addetail.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script>
+			var fr = new FrameDomain();
+			fr.getUserInfo.go();
+			var dataId = 17;
+		</script>
+	</head>
+	<body>
+		<header></header>
+
+		<div id ="searchBar">
+			<div class="searchBox">
+				<div class="searchBox_mainBox">
+					<div class="searchBox_left">
+						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+					</div>
+					<div class="searchBox_right" id="searchBox_rightBox"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="containerBox">
+			<!--橫條導航欄-->
+			<div class="navBar_borderBox">
+				<div class="navBar">
+					<ul>
+						<li><a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+						<li><a href="//social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
+						<li><a href="//social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
+						<li><a href="//social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<!--普通主題廣告詳細頁-->
+			<div class="addetailBox">
+
+				<div class="addetailMain">
+
+					<div class="addetail_banner"></div>
+
+					<div class="addetail_mess">
+						<div class="addetail_messMain clearfloat">
+							<div class="addetail_mess_left"><img src="/img/easybuy/moreTheme/addetail/bracket_left.png"></div>
+							<div class="addetail_mess_middle">
+								<div class="addetail_mess_middleMain">
+									<p class="themeDetails_top_name"></p>
+									<div class="addetail_mess_intro"></div>
+								</div>
+							</div>
+							<div class="addetail_mess_right"><img src="/img/easybuy/moreTheme/addetail/bracket_right.png"></div>
+						</div>
+					</div>
+
+					<div class="findNew_main_visitBox clearfloat"></div>
+
+					<div class="addetail_eachBox clearfloat" id="list_box"></div>
+
+					<div class="noMore">~沒有更多的內容了哦~</div>
+				</div>
+
+
+			</div>
+		</div>
+		<footer></footer>
+	</body>
+	<!--模板文件和數據文件-->
+	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/js/plug/yez_js_Reset.js"></script>
+	<!--頭部文件的js-->
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/common/header&search&footer/footer.js"></script>
+	<!--搜索框部份的js-->
+	<script src="/js/common/header&search&footer/searchBar.js"></script>
+	<!--更多主題的js-->
+	<script src="/js/easybuy/moreTheme/addetail/addetail.js"></script>
+	<script src="/js/easybuy/moreTheme/addetail/addetail.data.js"></script>
+
+
+	<!--發現新品最近查看模板-->
+	<script type="text/html" id="showFindNewVisit" data-array="findNewVisitList">
+
+		<div class="findNew_main_visitBoxLeft">
+			<p><%=UserInterestCount%></p>
+			<p>宜粉到訪</p>
+		</div>
+		<div class="findNew_main_visitBoxRight">
+			<ul>
+				<%for(var i = 0;i<messUser.length;i++){%>
+					<li><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=messUser[i].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'"></li>
+				<%}%>
+			</ul>
+		</div>
+
+	</script>
+
+	<script id="list_box_template" type="text/html">
+		<%for(var i=0;i<list.length;i++){%>
+		<div class="addetail_each">
+			<div class="addetail_each_cover"></div>
+			<div class="addetail_each_top clearfloat">
+				<div class="addetail_each_topLeft">
+					<div class="addetail_each_topLeft_shop"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].logo%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_shop.png'"></div>
+					<div class="addetail_each_topLeft_pic"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].pic%>"></div>
+				</div>
+				<div class="addetail_each_topRight">
+					<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].pic2%>">
+				</div>
+			</div>
+			<div class="addetail_each_middle clearfloat">
+				<div class="addetail_each_middleLeft clearfloat">
+					<ul>
+						<li>
+							<div><img src="/img/common/icon/seeIcon_dark.png"></div>
+							<p><%=list[i].seeNumbers%></p>
+						</li>
+						<li>
+							<div><img src="/img/common/icon/likeIcon_dark.png"></div>
+							<p><%=list[i].loveNumbers%></p>
+						</li>
+						<li>
+							<div><img src="/img/common/icon/hadBuyIcon_dark.png"></div>
+							<p><%=list[i].buyNumbers%></p>
+						</li>
+					</ul>
+				</div>
+				<div class="addetail_each_middleRight">
+					<div class="addetail_each_nowPrice">MOP&nbsp;&nbsp;<%=list[i].price%></div>
+					<div class="addetail_each_oldPrice"><span>MOP&nbsp;<%=list[i].costPrice%></span><span><%=list[i].discount%>折</span></div>
+				</div>
+			</div>
+			<div class="addetail_each_bottom clearfloat">
+				<div class="addetail_each_bottomLeft">
+					<div class="addetail_each_headPic"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].shoppic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'"></div>
+					<div class="addetail_each_name"><p>店主<%=list[i].shopMan%>：</p></div>
+				</div>
+				<div class="addetail_each_bottomRight">
+					<div class="addetail_each_bottomRight_left"><img src="/img/easybuy/moreTheme/addetail/addetail_symbolLeft.png"></div>
+					<div class="addetail_each_bottomRight_middle">
+						<p><%=list[i].title%></p>
+						<div class="addetail_each_bottomRight_intro"><%=list[i].intro%></div>
+					</div>
+					<div class="addetail_each_bottomRight_right"><img src="/img/easybuy/moreTheme/addetail/addetail_symbolRight.png"></div>
+				</div>
+			</div>
+		</div>
+		<%}%>
+	</script>
+
+</html>

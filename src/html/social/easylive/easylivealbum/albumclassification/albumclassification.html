@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>宜生活-專輯分類詳細頁</title>
+	<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+	<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+	<link rel="stylesheet" href="/css/social/easylive/easylivealbum/albumclassification/albumclassification.css">
+	<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+	<script src="/js/common/frameDomainJSON.js"></script>
+	<script src="/js/common/getData/getData_sinple.js"></script>
+	<script>easyBuy.social.isEasyLife = true;easyBuy.global.hasNav = false;</script>
+</head>
+<body>
+
+<div id="swapper">
+	<header></header>
+	<div id="searchBar">
+		<div class="searchBox">
+			<div class="searchBox_mainBox clearfloat">
+				<div class="searchBox_left">
+					<ul class="clearfloat">
+						<li><a href="http://social.macaoeasybuy.com/easylive/easyliveglobalgoods/globalgoods.html">全球筍貨</a></li>
+						<li><a href="http://social.macaoeasybuy.com/easylive/easylivewelfare/easylivewelfare.html">福利社</a></li>
+						<li><a href="//social.macaoeasybuy.com/easylive/easylivebuytopic/easylivebuytopic.html">宜買話題</a></li>
+						<li><a href="//social.macaoeasybuy.com/easylive/easylivelifecircle/easylivelifecircle.html">生活圈</a></li>
+						<li><a href="//social.macaoeasybuy.com/easylive/easylivelog/easylivelog.html">宜粉日誌</a></li>
+						<li class="select"><a href="//social.macaoeasybuy.com/easylive/easylivealbum/easylivealbum.html">宜粉專輯</a></li>
+					</ul>
+				</div>
+				<div class="searchBox_right" id="searchBox_rightBox"></div>
+			</div>
+		</div>
+	</div>
+	<main class="page-content">
+		<div class="info">
+			<div class="yez-container">
+				<div class="info-content clearfloat"></div>
+			</div>
+		</div>
+		<div class="yez-container clearfloat">
+			<div class="list clearfloat">
+				<div class="list-content clearfloat"></div>
+			</div>
+			<div class="hot">
+				<div class="hot-title">人氣專輯</div>
+				<div class="hot-content"></div>
+			</div>
+		</div>
+	</main>
+
+	<footer></footer>
+</div>
+<script src="/js/plug/yez_js_Reset.js"></script>
+<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+<script src="/js/common/header&search&footer/searchBar.js" async></script>
+<script src="/js/common/header&search&footer/footer.js" async></script>
+<script src="/js/common/header&search&footer/header.js"></script>
+<script src="/js/social/easylive/easylivealbum/albumclassification/albumclassification.js"></script>
+<script src="/js/social/easylive/easylivealbum/albumclassification/albumclassification_data.js"></script>
+
+<script id="info" type="text/html" data-type="template">
+	<div class="class-icon"><img src="//wap.macaoeasybuy.com<%=list[0].thealbumClassPic%>"></div>
+	<div class="class-detail">
+		<div class="detail-classname"><%=list[0].thealbumClassName%></div>
+		<ul class="detail-classdetail clearfloat">
+			<li><span><%=list[0].thealbummSum%></span> 張專輯</li>
+			<li><span><%=list[0].seeNum%></span> 宜粉採集</li>
+			<li><span><%=list[0].loveNum%></span> 宜粉讃好</li>
+		</ul>
+	</div>
+</script>
+<script id="list" type="text/html" data-type="template">
+	<% for (var i=0,j=list.length; i<j; i++) { %>
+	<div class="list-item">
+		<div class="item-title"><%=list[i].thealbumName%></div>
+		<% if(list[i].thecoverpictureurl !== "") { %>
+		<div class="item-img">
+			<div class="img-banner">
+				<img src="//wap.macaoeasybuy.com<%=list[i].thecoverpictureurl%>" onerror="this.src='/img/userspace/album/album-no-img.png'">
+			</div>
+			<ul class="img-other clearfloat">
+				<% for(var img=0; img<4; img++) { %>
+				<% if(list[i].guropList[img] !== undefined) { %>
+				<li><img src="//wap.macaoeasybuy.com<%=list[i].guropList[img]%>" onerror="this.src='/img/userspace/album/album-no-img.png'"></li>
+				<% } else { %>
+				<li><img src="/img/userspace/album/album-no-img.png"></li>
+				<% } %>
+				<% } %>
+			</ul>
+		</div>
+		<% } else { %>
+		<div class="item-img nothing"></div>
+		<% } %>
+		<div class="item-details">
+			<table>
+				<tr>
+					<td><span class="icon icon-see left"></span><%=list[i].seeSum%></td>
+					<td><span class="icon icon-comment left"></span><%=list[i].topicSum%></td>
+				</tr>
+				<tr>
+					<td><span class="icon icon-likes left"></span><%=list[i].loveSum%></td>
+					<td><span class="icon icon-collect left"></span><%=list[i].collectSum%></td>
+				</tr>
+			</table>
+		</div>
+		<div class="item-poster">
+			<div class="poster-avatar"><img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=list[i].userpic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+			<div class="poster-info">
+				<div class="poster-name clearfloat">
+					<span><%=list[i].userName%></span>
+					<span><img src="<%=easySex(list[i].sex)%>"></span>
+				</div>
+				<div class="poster-date"><%=list[i].uptime%></div>
+			</div>
+		</div>
+        <span class="yez-mask"></span>
+	</div>
+	<% } %>
+</script>
+<script id="hot" type="text/html" data-type="template">
+	<% for (var i=0,j=list.length; i<j; i++) { %>
+	<div class="album-hot-list">
+		<div class="hot-list-poster-position">
+			<div class="hot-list-top-img">
+				<img src="//wap.macaoeasybuy.com<%=list[i].thealbumPic%>" onerror="this.src='/img/userspace/album/album-no-img.png'">
+				<div class="hot-list-top-number"><%=list[i].thealbums%></div>
+			</div>
+			<div class="hot-list-poster">
+				<div class="hot-list-poster-title"><%=list[i].thealbumname%></div>
+				<div class="hot-list-poster-state">
+					<table>
+						<tr>
+							<td><span class="icon icon-see left"></span><%=list[i].seeNum%></td>
+							<td><span class="icon icon-comment left"></span><%=list[i].topicNum%></td>
+							<td><span class="icon icon-likes left"></span><%=list[i].loveNum%></td>
+							<td><span class="icon icon-collect left"></span><%=list[i].collectionNum%></td>
+						</tr>
+					</table>
+				</div>
+				<div class="hot-list-poster-head"><img src="//wap.macaoeasybuy.com<%=list[i].userPic%>" alt=""></div>
+				<div class="hot-list-poster-name"><%=list[i].userName%><%if(list[i].userSex==='Girl'){%><img src="/img/common/girl.png" alt=""><%}%></div>
+				<div class="shadow-box"></div>
+			</div>
+		</div>
+		<div class="hot-list-bottom-shadow"><img src="/img/social/market/treasureclassifydetail/mdetail-shadow.png"></div>
+	</div>
+	<% } %>
+</script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>发现新品</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/findNew/findNew.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<style type="text/css">
+			.navBar_borderBox{
+				width: 100%;
+				border-bottom: 2px solid #FF527C;
+				padding-bottom: 15px;
+			}
+			#groupBuy_banner{
+				margin-top: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="transparent_bg"></div>
+		<header></header>
+		<div id ="searchBar">
+			<div class="searchBox">
+				<div class="searchBox_mainBox">
+					<div class="searchBox_left">
+						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+					</div>
+					<div class="searchBox_right" id="searchBox_rightBox"></div>
+				</div>
+			</div>
+		</div>
+		<div class="containerBox">
+			<!--橫條導航欄-->
+			<div class="navBar_borderBox">
+				<div class="navBar">
+					<ul>
+						<li><a href="/page/easybuy_index.html">首頁</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
+						<li class="navBarLi_curr"><a href="//shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+						<li><a href="//social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
+						<li><a href="//social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
+						<li><a href="//social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--輪播圖-->
+			<div id="groupBuy_banner">
+				<div class="bannerCon">
+					<div class="before"><img src="/img/common/bannerLeft.png" alt=""></div>
+					<div class="after"><img src="/img/common/bannerRight.png" alt=""></div>
+					<div class="scroll">
+						<a><img src="/img/common/loading_banner.jpg"></a>
+					</div>
+				</div>
+			</div>
+			<div class="findNewBox">
+				<div class="findNew_main">
+					<div class="findNew_main_visitBox clearfloat">
+						<div class="findNew_main_visitBoxLeft">
+							<p>75217</p>
+							<p>宜粉到訪</p>
+						</div>
+						<div class="findNew_main_visitBoxRight">
+							<ul>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+								<li><img src="/img/common/loading_pc_headPic.png"></li>
+							</ul>
+						</div>
+					</div>
+					<div class="findNew_main_goodBox clearfloat">
+						<div class="findNew_main_goodBox_title"><img src="/img/easybuy/findNew/findNew_title.png"></div>
+						<div class="findNew_main_goodBox_main">
+							<div class="findNew_main_goodBox_choose clearfloat">
+								<div class="goodBox_choose_type">
+									<div class="goodBox_choose_type_text">全部商品</div>
+									<div class="goodBox_choose_type_slide hideSlide" style="display: none;">
+										<ul>
+											<li data-id = "5" class="goodBox_choose_type_curr"><a>全部商品</a></li>
+											<li data-id = "0"><a>母嬰用品</a></li>
+											<li data-id = "1"><a>家居用品</a></li>
+											<li data-id = "2"><a>流行包箱</a></li>
+											<li data-id = "3"><a>服裝飾物</a></li>
+											<li data-id = "4"><a>型格鞋靴</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="goodBox_choose_sort">
+									<ul>
+										<li class="choose_sortCurr sortEach" data-id = "1">
+											<div class="goodBox_checkBox"><img src="/img/easybuy/findNew/findNew_checkCurr.png"></div>
+											<span>按最多销量</span>
+										</li>
+										<li class="sortEach" data-id = "2">
+											<div class="goodBox_checkBox"><img src="/img/easybuy/findNew/findNew_checkCurr.png"></div>
+											<span>按最多查看</span>
+										</li>
+										<li class="sortEach" data-id = "0">
+											<div class="goodBox_checkBox"><img src="/img/easybuy/findNew/findNew_checkCurr.png"></div>
+											<span>按最多心動</span>
+										</li>
+										<li class="sortEach" data-id = "3">
+											<div class="goodBox_checkBox"><img src="/img/easybuy/findNew/findNew_checkCurr.png"></div>
+											<span>按售價低至高</span>
+										</li>
+										<li class="trueEach">
+											<div class="goodBox_checkBox"><img src="/img/easybuy/findNew/findNew_checkCurr.png"></div>
+											<span>有驚喜紅包券</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="findNew_main_goodBox_themeBox clearfloat" style="display: none;">
+								<div class="goodBox_themeBox_title"><img src="/img/easybuy/findNew/findNew_icon.png"></div>
+								<div class="goodBox_themeBox_main"></div>
+							</div>
+							<div class="findNew_main_goodBox_goodList clearfloat">
+								<!--沒有內容時候的畫面-->
+								<div class="noshowgood">
+									<div class="noshowgood_pic"><img src="/img/common/05.png"></div>
+									<p>不好意思，暫時沒有內容哦！</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="loadingnow">
+						<img src="/img/common/loadingnow .gif">
+					</div>
+					<div class="noMore">~沒有更多內容了哦~</div>
+				</div>
+			</div>
+		</div>
+		<footer></footer>
+	</body>
+	<!--模板文件和數據文件-->
+	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/js/easybuy/findNew/findNew.data.js"></script>
+	<!--頭部文件的js-->
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/common/header&search&footer/footer.js"></script>
+	<!--輪播圖banner的js-->
+	<script src="/js/plug/gradientBanner.js"></script>
+	<!--搜索框部份的js-->
+	<script src="/js/common/header&search&footer/searchBar.js"></script>
+	<!--发现新品的js-->
+	<script src="/js/easybuy/findNew/findNew.js"></script>
+
+	<!--沒有數據的模板-->
+	<script type="text/html" id="showBannerNoPic">
+		<%for(var i = 0;i <list.length;i++){%>
+			<a href="#"><img src=<%=list[i].picUrl%>></a>
+		<%}%>
+	</script>
+	<!--banner模板-->
+	<!-- <script type="text/html" id="showBannerPic">
+		<%for(var i = 0;i <list.length;i++){%>
+			<a href="<%=list[i].tourl%>"><img src=http://wap.macaoeasybuy.com/<%=list[i].bannerPic%>></a>
+		<%}%>
+	</script> -->
+	<!--發現新品最近查看模板-->
+	<!-- <script type="text/html" id="showFindNewVisit" data-array = "findNewVisitList">
+		<div class="findNew_main_visitBoxLeft">
+			<p><%=list.SumSeeNumber%></p>
+			<p>宜粉到訪</p>
+		</div>
+		<div class="findNew_main_visitBoxRight">
+			<ul>
+				<%for(var i = 0;i <list.userinfolist.length;i++){%>
+					<%if(list.userinfolist[i].pic==""){%>
+						<li data-id="<%=list.userinfolist[i].UserId%>"><img src="/img/common/loading_pc_headPic.png"></li>
+					<%}else{%>
+						<li data-id="<%=list.userinfolist[i].UserId%>"><img src='http://wap.macaoeasybuy.com/<%=list.userinfolist[i].pic%>' onerror="this.src='/img/common/headPic.png'"></li>
+					<%}%>
+				<%}%>
+			</ul>
+		</div>
+	</script> -->
+	<!--發現新品的商品廣告圖模板-->
+	<script type="text/html" id="showFindNewBanner" data-array = "FindNewBannerList">
+		<div class="goodBox_themeBox_each clearfloat">
+			<a href="<%=list[0].adlink%>"><img src=//wap.macaoeasybuy.com/<%=list[0].adphoto%>></a>
+			<a href="<%=list[0].adlink2%>"><img src=//wap.macaoeasybuy.com/<%=list[0].adphoto2%>></a>
+		</div>
+	</script>
+	<!--發現新品的列表模板-->
+	<script type="text/html" id="showFindNewGood" data-array = "findNewGoodList">
+		<%for(var i = 0;i <list.length;i++){%>
+			<%if(list[i].kcState=="-1"){%>
+				<div class="findNew_main_goodBox_goodEach findNew_sellOut noPic" data-id = "<%=list[i].id%>">
+			<%}else{%>
+				<div class="findNew_main_goodBox_goodEach noPic" data-id = "<%=list[i].id%>">
+			<%}%>
+				<div class="findNew_main_goodBox_goodEachCurr">
+					<img src="/img/easybuy/findNew/findNew_sellOut.png">
+				</div>
+				<div class="findNew_goodBox_each_pic">
+					<img  src="//wap.macaoeasybuy.com/<%=list[i].pic%>" onclick="this.src='/img/common/loading_pc_220.jpg'">
+					<div class="findNew_goodBox_each_move">
+						<span><img src="/img/easybuy/exchange/filling_like.png"></span><span><%=list[i].loveNumber%>人心動</span>
+					</div>
+				</div>
+				<div class="findNew_goodBox_each_mess">
+					<div class="findNew_goodBox_each_title hiddenText"><%=list[i].title%></div>
+					<div class="findNew_goodBox_each_price">MOP<%=list[i].price%></div>
+					<div class="findNew_goodBox_each_cost">MOP<%=list[i].costPrice%></div>
+						<%if(list[i].labelPic==""){%>
+							<div class="findNew_goodBox_each_redBag clearfloat hide">
+						<%}else{%>
+							<div class="findNew_goodBox_each_redBag clearfloat">
+						<%}%>
+						<div class="redBag_pic"><img src=//wap.macaoeasybuy.com/<%=list[i].labelPic%>></div>
+						<%if(list[i].labelCount =="1"){%>
+							<div class="redBag_num"></div>
+						<%}else{%>
+							<div class="redBag_num">還有<%=list[i].labelCount%>款券</div>
+						<%}%>
+					</div>
+				</div>
+				<div class="findNew_goodBox_each_shadow"><img src="/img/easybuy/findNew/findNew_shadow.png"></div>
+			</div>
+		<%}%>
+	</script>
+</html>

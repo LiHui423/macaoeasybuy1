@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>用戶空間-添加圖片頁</title>
+        <link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+        <link rel="stylesheet" type="text/css" href="/css/common/common.css">
+        <link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+        <link rel="stylesheet" href="/css/userspace/album/albumaddimg/albumaddimg.css">
+        <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+        <script src="/js/common/frameDomainJSON.js"></script>
+        <script src="/js/common/getData/getData_needLogin.js"></script>
+        <script src="/js/userspace/common/userspacebg.js" async></script>
+		<script>easyBuy.userSpaceGlobal.AlbumNumber = 'AllLoveNumber';</script>
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu"></ul>
+							<ul id="news-push"></ul>
+						</div>
+						<div id="userspace-content">
+							<!--這裡是內容-->
+							<div class="userspace-content-inner">
+								<div class="editor-top-info">
+									<div class="editor-top clearfloat">
+										<div class="describe-title">
+											<div>我要添加圖片...</div>
+										</div>
+										<ul class="edtor-btns clearfloat">
+											<li id="save-btn"><img src="/img/userspace/userspace_postDetails/icon/sureBtn.png" alt="">保存并發佈</li>
+											<li id="exit-btn"><img src="/img/userspace/common/exit-btn.png" alt="">退出編輯</li>
+										</ul>
+									</div>
+									<div class="editor-bottom clearfloat">
+										<div class="album-cover">
+
+										</div>
+										<div class="album-info">
+											<div class="album-title">《少女打辦專輯》</div>
+											<div class="album-allnum">專輯數：28張</div>
+											<div class="album-classification clearfloat">
+												<div>分類：</div>
+												<div class="classification-top">
+													<div id="selecter"><span>精心打辦</span></div>
+												</div>
+											</div>
+											<ul class="album-info-num">
+												<li>
+													<div>1234</div>
+													<div>宜粉查看</div>
+												</li>
+												<li>
+													<div>1324</div>
+													<div>宜粉回應</div>
+												</li>
+												<li>
+													<div>1234</div>
+													<div>宜粉讃好</div>
+												</li>
+												<li>
+													<div>1234</div>
+													<div>宜粉採集</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="editor-upload">
+									<div class="upload-box">
+										<div class="upload-box-tips">
+											<span class="upload-count">上傳圖片(<span class="now-num">0</span>/<span class="max-num">6</span>)</span>
+											<span class="upload-tips">提示：適合上傳JPG、JPEG、GIF、PNG、APNG且每張不超過4MB大小的圖片</span>
+										</div>
+										<ul>
+											<li id="upload-btn"></li>
+										</ul>
+									</div>
+									<ul class="editor-lister"></ul>
+								</div>
+								<p class="no-more">~沒有更多內容了~</p>
+							</div>
+							<!--內容的結束標識-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+	</body>
+	<script src="/js/plug/yez_js_Reset.js"></script>
+	<script src="/js/common/vendor/template-native.js"></script>
+	<script src="/js/userspace/common/userinfo.js" async></script>
+	<script src="/js/userspace/common/leftmenu.js" async></script>
+	<script src="/js/userspace/common/whitemenu.js" async></script>
+	<script src="/js/userspace/common/newspush.js" async></script>
+	<script src="/js/common/header&search&footer/footer.js" async></script>
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/plug/webuploader.nolog.min.js"></script>
+	<script src="/js/common/uploadFrame/uploadFrame.js"></script>
+	<script src="/js/userspace/album/albumaddimg/albumaddimg.js"></script>
+</html>

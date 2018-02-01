@@ -1,0 +1,17 @@
+.publishBox_articleTitleRight{
+	background-color: #15d062;
+}
+.publishBox_articleTitleRight_slide{
+	border: 1px solid #15d062;
+}
+.publishBox_articleTitleRight_slide ul li{
+	color: #15d062;
+}
+.publishBox_articleTitleRight_slide ul li:hover{
+	background-color:#95f0ba;
+	color: #FFFFFF;
+}
+.publishBox_articleTitleRight_slide ul li.publish_slide_curr{
+	background-color:#15d062;
+	color: #FFFFFF;
+}

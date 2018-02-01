@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>動態(專輯)</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" type="text/css" href="/css/userspace/dynamic/dynamic_common.css">
+		<link rel="stylesheet" type="text/css" href="/css/userspace/dynamic/dynamic_album.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script>easyBuy.userSpaceGlobal.whiteNavName = 'dynamicWhiteNav';</script>
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu"></ul>
+							<ul id="news-push"></ul>
+						</div>
+						<div id="userspace-content">
+							<div class="dynamic_columnTab clearfloat">
+								<ul>
+									<li class="clearfloat">
+										<a href="/page/userspace/dynamic/dynamic_diary.html">
+											<div class="dynamic_columnTab_icon"><img src="/img/userspace/dynamic/dynamic_diaryIcon.png"></div>
+											<div class="dynamic_columnTab_mess">
+												<p class="dynamic_columnTab_mess_title">好友日誌</p>
+												<p>有<span>6</span>篇日誌新發佈</p>
+											</div>
+										</a>
+									</li>
+									<li class="clearfloat dynamic_columnTab_curr">
+										<a href="/page/userspace/dynamic/dynamic_album.html">
+											<div class="dynamic_columnTab_icon"><img src="/img/userspace/dynamic/dynamic_alnumIcon.png"></div>
+											<div class="dynamic_columnTab_mess">
+												<p class="dynamic_columnTab_mess_title">好友專輯</p>
+												<p>有<span>6</span>個專輯新發佈</p>
+											</div>
+										</a>
+									</li>
+									<li class="clearfloat ">
+										<a href="/page/userspace/dynamic/dynamic_group.html">
+											<div class="dynamic_columnTab_icon"><img src="/img/userspace/dynamic/dynamic_groupIcon.png"></div>
+											<div class="dynamic_columnTab_mess">
+												<p class="dynamic_columnTab_mess_title">好友生活圈</p>
+												<p>暫無新發佈</p>
+											</div>
+										</a>
+									</li>
+									<li class="clearfloat">
+										<a href="/page/userspace/dynamic/dynamic_liveshot.html">
+											<div class="dynamic_columnTab_icon"><img src="/img/userspace/dynamic/dynamic_liveshotIcon.png"></div>
+											<div class="dynamic_columnTab_mess">
+												<p class="dynamic_columnTab_mess_title">好友敗家誌</p>
+												<p>有<span>6</span>篇敗家誌新發佈</p>
+											</div>
+										</a>
+									</li>
+									<li class="clearfloat ">
+										<a href="/page/userspace/dynamic/dynamic_secondHand.html">
+											<div class="dynamic_columnTab_icon"><img src="/img/userspace/dynamic/dynamic_secondHandIcon.png"></div>
+											<div class="dynamic_columnTab_mess">
+												<p class="dynamic_columnTab_mess_title">好友二手</p>
+												<p>暫無新發佈</p>
+											</div>
+										</a>
+									</li>
+									<li class="clearfloat">
+										<a href="/page/userspace/dynamic/dynamic_market.html">
+											<div class="dynamic_columnTab_icon"><img src="/img/userspace/dynamic/dynamic_marketIcon.png"></div>
+											<div class="dynamic_columnTab_mess">
+												<p class="dynamic_columnTab_mess_title">好友市集</p>
+												<p>暫無新發佈</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="dynamic_sortBox clearfloat">
+								<ul>
+									<li class="userlove_chooseSort_left_curr"><span><img src="/img/userspace/userlove/userlove_clockIcon.png"><img src="/img/userspace/userlove/userlove_clockIcon_curr.png"></span><span>按發佈時間排序</span></li>
+									<li><span><img src="/img/common/icon/messageIcon_dark.png"><img src="/img/userspace/album/mes-sort-w.png"></span><span>按回覆數排序</span></li>
+									<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"><img src="/img/userspace/album/goods-sort-w.png"></span><span>按贊好數排序</span></li>
+								</ul>
+							</div>
+							<div class="dynamic_mainBox clearfloat">
+								<div class="dynamic_mainList clearfloat">
+									<ul>
+										<li class="sort-box-items sort-box-news clearfloat">
+											<div class="album-list" id="album00">
+												<div class="album-relative">
+													<div class="album-list-title">女生攝影</div>
+													<div class="album-img-none-box">
+														<div class="album-top-img">
+															<img src="/img/social/easylive/album-recommend-list1.png" alt="">
+														</div>
+														<div class="album-img-list clearfloat">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+														</div>
+													</div>
+													<div class="album-state clearfloat">
+														<div><img src="/img/social/easylive/album-classification-eye.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-mes.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-good.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-cai.png" alt="">1234</div>
+													</div>
+													<div class="album-poster">
+														<div class="laster-look clearfloat">
+															<div class="laster-head"><img src="/img/common/headPic.png" alt=""></div>
+															<div class="laster-text">
+																<div class="laster-text-name">Ada<img src="/img/common/girl.png" alt=""></div>
+																<div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+															</div>
+														</div>
+													</div>
+													<div class="shadow-box"></div>
+												</div>
+												<div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+											</div>
+										</li>
+										<li class="sort-box-items sort-box-news clearfloat">
+											<div class="album-list" id="album00">
+												<div class="album-relative">
+													<div class="album-list-title">女生攝影</div>
+													<div class="album-img-none-box">
+														<div class="album-top-img">
+															<img src="/img/social/easylive/album-recommend-list1.png" alt="">
+														</div>
+														<div class="album-img-list clearfloat">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+														</div>
+													</div>
+													<div class="album-state clearfloat">
+														<div><img src="/img/social/easylive/album-classification-eye.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-mes.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-good.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-cai.png" alt="">1234</div>
+													</div>
+													<div class="album-poster">
+														<div class="laster-look clearfloat">
+															<div class="laster-head"><img src="/img/common/headPic.png" alt=""></div>
+															<div class="laster-text">
+																<div class="laster-text-name">Ada<img src="/img/common/girl.png" alt=""></div>
+																<div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+															</div>
+														</div>
+													</div>
+													<div class="shadow-box"></div>
+												</div>
+												<div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+											</div>
+										</li>
+										<li class="sort-box-items sort-box-news clearfloat">
+											<div class="album-list" id="album00">
+												<div class="album-relative">
+													<div class="album-list-title">女生攝影</div>
+													<div class="album-img-none-box">
+														<div class="album-top-img">
+															<img src="/img/social/easylive/album-recommend-list1.png" alt="">
+														</div>
+														<div class="album-img-list clearfloat">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+														</div>
+													</div>
+													<div class="album-state clearfloat">
+														<div><img src="/img/social/easylive/album-classification-eye.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-mes.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-good.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-cai.png" alt="">1234</div>
+													</div>
+													<div class="album-poster">
+														<div class="laster-look clearfloat">
+															<div class="laster-head"><img src="/img/common/headPic.png" alt=""></div>
+															<div class="laster-text">
+																<div class="laster-text-name">Ada<img src="/img/common/girl.png" alt=""></div>
+																<div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+															</div>
+														</div>
+													</div>
+													<div class="shadow-box"></div>
+												</div>
+												<div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+											</div>
+										</li>
+										<li class="sort-box-items sort-box-news clearfloat">
+											<div class="album-list" id="album00">
+												<div class="album-relative">
+													<div class="album-list-title">女生攝影</div>
+													<div class="album-img-none-box">
+														<div class="album-top-img">
+															<img src="/img/social/easylive/album-recommend-list1.png" alt="">
+														</div>
+														<div class="album-img-list clearfloat">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+														</div>
+													</div>
+													<div class="album-state clearfloat">
+														<div><img src="/img/social/easylive/album-classification-eye.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-mes.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-good.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-cai.png" alt="">1234</div>
+													</div>
+													<div class="album-poster">
+														<div class="laster-look clearfloat">
+															<div class="laster-head"><img src="/img/common/headPic.png" alt=""></div>
+															<div class="laster-text">
+																<div class="laster-text-name">Ada<img src="/img/common/girl.png" alt=""></div>
+																<div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+															</div>
+														</div>
+													</div>
+													<div class="shadow-box"></div>
+												</div>
+												<div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+											</div>
+										</li>
+										<li class="sort-box-items sort-box-news clearfloat">
+											<div class="album-list" id="album00">
+												<div class="album-relative">
+													<div class="album-list-title">女生攝影</div>
+													<div class="album-img-none-box">
+														<div class="album-top-img">
+															<img src="/img/social/easylive/album-recommend-list1.png" alt="">
+														</div>
+														<div class="album-img-list clearfloat">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+														</div>
+													</div>
+													<div class="album-state clearfloat">
+														<div><img src="/img/social/easylive/album-classification-eye.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-mes.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-good.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-cai.png" alt="">1234</div>
+													</div>
+													<div class="album-poster">
+														<div class="laster-look clearfloat">
+															<div class="laster-head"><img src="/img/common/headPic.png" alt=""></div>
+															<div class="laster-text">
+																<div class="laster-text-name">Ada<img src="/img/common/girl.png" alt=""></div>
+																<div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+															</div>
+														</div>
+													</div>
+													<div class="shadow-box"></div>
+												</div>
+												<div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+											</div>
+										</li>
+										<li class="sort-box-items sort-box-news clearfloat">
+											<div class="album-list" id="album00">
+												<div class="album-relative">
+													<div class="album-list-title">女生攝影</div>
+													<div class="album-img-none-box">
+														<div class="album-top-img">
+															<img src="/img/social/easylive/album-recommend-list1.png" alt="">
+														</div>
+														<div class="album-img-list clearfloat">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+															<img src="/img/social/easylive/myimg.png" alt="">
+														</div>
+													</div>
+													<div class="album-state clearfloat">
+														<div><img src="/img/social/easylive/album-classification-eye.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-mes.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-good.png" alt="">1234</div>
+														<div><img src="/img/social/easylive/album-classification-cai.png" alt="">1234</div>
+													</div>
+													<div class="album-poster">
+														<div class="laster-look clearfloat">
+															<div class="laster-head"><img src="/img/common/headPic.png" alt=""></div>
+															<div class="laster-text">
+																<div class="laster-text-name">Ada<img src="/img/common/girl.png" alt=""></div>
+																<div class="laster-text-num"><span>1分鐘</span>前發佈</div>
+															</div>
+														</div>
+													</div>
+													<div class="shadow-box"></div>
+												</div>
+												<div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="dynamic_main_noMore">~沒有更多內容了哦~</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+	</body>
+	<script src="/js/plug/yez_js_Reset.js"></script>
+	<script src="/js/common/vendor/template-native.js"></script>
+	<script src="/js/userspace/common/userinfo.js" async></script>
+	<script src="/js/userspace/common/leftmenu.js" async></script>
+	<script src="/js/userspace/common/whitemenu.js" async></script>
+	<script src="/js/userspace/common/newspush.js" async></script>
+	<script src="/js/common/header&search&footer/footer.js" async></script>
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/userspace/dynamic/dynamic_album/dynamic_album.data.js"></script>
+	<script src="/js/userspace/dynamic/dynamic_album/dynamic_album.js"></script>
+</html>

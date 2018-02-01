@@ -1,0 +1,31 @@
+.publishBox_articleTitleRight{
+	background-color: #66b4e5;
+}
+.publishBox_articleTitleRight_slide{
+	border: 1px solid #66b4e5;
+}
+.publishBox_articleTitleRight_slide ul li{
+	color: #66b4e5;
+}
+.publishBox_articleTitleRight_slide ul li:hover{
+	background-color:#baddf3;
+	color: #FFFFFF;
+}
+.publishBox_articleTitleRight_slide ul li.publish_slide_curr{
+	background-color:#66b4e5;
+	color: #FFFFFF;
+}
+.publishBox_choosebtn{
+	background-color: #66b4e5;
+	width: 200px;
+}
+.publishBox_choosebtn_slide{
+	border: 1px solid #66b4e5;
+}
+.publishBox_choosebtn_slide ul li{
+	color: #66b4e5;
+}
+.publishBox_choosebtn_slide ul li:hover{
+	background-color: #66b4e5;
+	color: #fff;
+}

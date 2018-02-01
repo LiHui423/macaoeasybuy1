@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>搜索結果(話題)</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/search/searchCommon.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/search/search_topic.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="transparent_bg"></div>
+		<header></header>
+		<div id ="searchBar">
+			<div class="searchBox">
+				<div class="searchBox_mainBox">
+					<div class="searchBox_left">
+						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+					</div>
+					<div class="searchBox_right" id="searchBox_rightBox"></div>
+				</div>
+			</div>
+		</div>
+		<div class="searchMainBox">
+			<div class="searchMain">
+				<div class="search_result_title"></div>
+				<div class="search_result_main clearfloat">
+					<div class="search_result_mainLeft">
+						<div class="search_sortBox">
+							<div class="search_sortBox_left">
+								<ul>
+									<li data-icon = "0" class="search_sortBox_left_curr">
+										<p>全部話題</p>
+										<p>(0)</p>
+									</li>
+									<li data-icon = "1">
+										<p>福利社</p>
+										<p>(0)</p>
+									</li>
+									<li data-icon = "2">
+										<p>宜買話題</p>
+										<p>(0)</p>
+									</li>
+									<li data-icon = "3">
+										<p>全球筍貨</p>
+										<p>(0)</p>
+									</li>
+								</ul>
+							</div>
+							<div class="search_sortBox_right">
+								<div class="search_sortBoxEach search_sortBoxEach_time">
+									<span>不限時間</span><span><img src="/img/common/icon/downIcon_white.png"></span>
+									<div class="search_sortBox_right_slide">
+										<ul>
+											<li data-time = "0">不限時間</li>
+											<li data-time = "1">一個月內</li>
+											<li data-time = "2">三個月內</li>
+										</ul>
+									</div>
+								</div>
+								<div class="search_sortBoxEach search_sortBoxEach_sort">
+									<span>默認排序</span><span><img src="/img/common/icon/downIcon_white.png"></span>
+									<div class="search_sortBox_right_slide">
+										<ul>
+											<li data-order = "" data-asc = "">默認排序</li>
+											<li data-order = "topicSeeNumber" data-asc = "desc">查看多至少</li>
+											<li data-order = "topicLoveNumber" data-asc = "desc">讚好多至少</li>
+											<li data-order = "topicreplyCount" data-asc = "desc">評論多至少</li>
+											<li data-order = "shouldbuyUptime" data-asc = "desc">最新發佈</li>
+											<li data-order = "TopicLastreplyTime" data-asc = "desc">最新回復</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="search_topic_resultBox">
+							<div class="search_label_noResult">
+								<div class="search_result_nullIcon"><img src="/img/common/05.png"></div>
+								<p>沒有搜索到 “<span class=""></span>” 的相關話題哦！</p>
+							</div>
+							<div class="search_topic_resultListBox clearfloat"></div>
+							<div class="loadNow"><img src="/img/common/loadingnow .gif"></div>
+							<div class="noMore">~沒有更多內容了哦~</div>
+						</div>
+					</div>
+					<div class="search_result_mainRight"></div>
+				</div>
+			</div>
+
+		</div>
+		<footer></footer>
+	</body>
+	<!--模板文件和模擬數據-->
+	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/js/common/search/search_topic/search_topic.data.js"></script>
+	<!--頭部文件的js-->
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<!--搜索框部份的js-->
+	<script src="/js/common/header&search&footer/searchBar.js"></script>
+	<!--話題搜索結果頁js-->
+	<script src="/js/common/search/search_topic/search_topic.js"></script>
+
+	<script src="/js/common/header&search&footer/footer.js"></script>
+
+	<!--話題搜索結果-->
+	<script type="text/html" id="topicList" data-array = "topicListData">
+		<%for(var i = 0;i <list.classList.length;i++){%>
+			<div class="search_topic_resultEach clearfloat search_topic_resultEach_nopic">
+				<div class="search_topic_resultEach_left myborder-radius"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].topicadminpic%>' data-src = 'http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].topicadminpic%>' onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+				<div class="search_topic_resultEach_right">
+					<div class="search_topic_resultEach_mess">
+						<p><%=#list.classList[i].topicName%></p>
+						<p><span><%=list.classList[i].topicadmin%></span><span><%=list.classList[i].topicTimeDiff%>前發佈</span>
+							<%if(list.classList[i].shouldClassState == '1'){%>
+								<span>/ 福利社 /</span>
+							<%}else if(list.classList[i].shouldClassState == '2'){%>
+								<span>/ 宜买话题 /</span>
+							<%}else if(list.classList[i].shouldClassState == '3'){%>
+								<span>/ 全球筍貨 /</span>
+							<%}else{%>
+
+							<%}%>
+						</p>
+					</div>
+					<div class="search_topic_resultEach_intro"><%=#list.classList[i].topicContent%></div>
+					<%if(list.classList[i].topicPics.length != '0'){%>
+						<div class="search_topic_resultEach_pic clearfloat">
+							<ul>
+								<%for(var k = 0;k <list.classList[i].topicPics.length;k++){%>
+									<li style="background-image: url(http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.classList[i].topicPics[k]%>);"></li>
+								<%}%>
+							</ul>
+						</div>
+					<%}%>
+					<div class="search_topic_resultEach_data clearfloat">
+						<ul>
+							<li><span><img src="/img/common/eye.png"></span><span><%=list.classList[i].topicSeeNumber%>個粉絲查看</span></li>
+							<li><span><img src="/img/common/icon/messageIcon_dark.png"></span><span><%=list.classList[i].topicreplyCount%>個粉絲回應</span></li>
+							<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list.classList[i].topicLoveNumber%>個粉絲讚好</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		<%}%>
+	</script>
+	<!--搜索結果數量-->
+	<script type="text/html" id="searchTopicNum" data-array = "searchTopicNumData">
+		您搜索的 “<span></span>” 關鍵字一共有 <span><%=list.numFound%></span> 個相關話題：
+	</script>
+
+	<!--搜索結果數量分類-->
+	<script type="text/html" id="topicClassNum" data-array = "topicClassNumData">
+		<li data-icon = "0" class="search_sortBox_left_curr"><p>全部話題</p><p>(<%=list.numFound%>)</p></li>
+		<li data-icon = "1"><p>福利社</p><p>(<%=list.facetMap.ShouldClassState[1]%>)</p></li>
+		<li data-icon = "2"><p>宜買話題</p><p>(<%=list.facetMap.ShouldClassState[2]%>)</p></li>
+		<li data-icon = "3"><p>全球筍貨</p><p>(<%=list.facetMap.ShouldClassState[3]%>)</p></li>
+	</script>
+
+	<script type="text/html" id="topicRightPart" data-array = "topicRightPartData">
+		<div class="search_result_topicEach clearfloat">
+			<div class="search_result_topicEach_top clearfloat">
+				<div class="search_result_topicEach_topLeft"><span><img src="/img/common/search/search_topic_earth.png"></span><span>全球筍貨</span></div>
+				<div class="search_result_topicEach_topRight">
+					<a href="/page/social/easylive/easyliveglobalgoods/globalgoods.html"><span>更多筍貨</span><span><img src="/img/common/search/search_topic_more.png"></span></a>
+				</div>
+			</div>
+			<div class="search_result_topicEach_main">
+				<div class="search_result_topicEach_messMain">
+					<div class="search_result_topicEach_pic"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.Globalbambooshoots[0].shouldbuyPic%>"></div>
+					<div class="search_result_topicEach_mess">
+						<div class="search_result_topicEach_headpic myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.Globalbambooshoots[0].adminpic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+						<p><%=list.Globalbambooshoots[0].admin%></p>
+					</div>
+					<div class="search_result_topicEach_title"><%=list.Globalbambooshoots[0].title%></div>
+					<div class="search_result_topicEach_intro"><%=list.Globalbambooshoots[0].content%></div>
+					<div class="search_result_topicEach_time"><%=list.Globalbambooshoots[0].timeDiff%>前發佈</div>
+				</div>
+				<div class="search_result_topicEach_data clearfloat">
+					<ul>
+						<li><span><img src="/img/common/eye.png"></span><span><%=list.Globalbambooshoots[0].seeNumber%>宜粉查看</span></li>
+						<li><span><img src="/img/common/icon/messageIcon_dark.png"></span><span><%=list.Globalbambooshoots[0].topicCount%>宜粉回應</span></li>
+						<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list.Globalbambooshoots[0].loveNumber%>宜粉讚好</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="search_result_topicEach clearfloat">
+			<div class="search_result_topicEach_top clearfloat">
+				<div class="search_result_topicEach_topLeft"><span><img src="/img/common/search/search_topic_gift.png"></span><span>福利社</span></div>
+				<div class="search_result_topicEach_topRight">
+					<a href="/page/social/easylive/easylivewelfare/easylivewelfare.html"><span>更多福利</span><span><img src="/img/common/search/search_topic_more.png"></span></a>
+				</div>
+			</div>
+			<div class="search_result_topicEach_main">
+				<div class="search_result_topicEach_messMain">
+					<div class="search_result_topicEach_pic"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.WelfareAgency[0].shouldbuyPic%>"></div>
+					<div class="search_result_topicEach_mess">
+						<div class="search_result_topicEach_headpic myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.WelfareAgency[0].adminpic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+						<p><%=list.WelfareAgency[0].admin%></p>
+					</div>
+					<div class="search_result_topicEach_title"><%=list.WelfareAgency[0].title%></div>
+					<div class="search_result_topicEach_intro"><%=list.WelfareAgency[0].content%></div>
+					<div class="search_result_topicEach_time"><%=list.WelfareAgency[0].timeDiff%>前發佈</div>
+				</div>
+				<div class="search_result_topicEach_data clearfloat">
+					<ul>
+						<li><span><img src="/img/common/eye.png"></span><span><%=list.WelfareAgency[0].seeNumber%>宜粉查看</span></li>
+						<li><span><img src="/img/common/icon/messageIcon_dark.png"></span><span><%=list.WelfareAgency[0].topicCount%>宜粉回應</span></li>
+						<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list.WelfareAgency[0].loveNumber%>宜粉讚好</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="search_result_topicEach clearfloat">
+			<div class="search_result_topicEach_top clearfloat">
+				<div class="search_result_topicEach_topLeft"><span><img src="/img/common/search/search_topic_chat.png "></span><span>宜買話題</span></div>
+				<div class="search_result_topicEach_topRight">
+					<a href="/page/social/easylive/easylivebuytopic/easylivebuytopic.html"><span>更多話題</span><span><img src="/img/common/search/search_topic_more.png"></span></a>
+				</div>
+			</div>
+			<div class="search_result_topicEach_main">
+				<div class="search_result_topicEach_messMain">
+					<div class="search_result_topicEach_pic"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.BuyTopics[0].shouldbuyPic%>"></div>
+					<div class="search_result_topicEach_mess">
+						<div class="search_result_topicEach_headpic myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.BuyTopics[0].adminpic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+						<p><%=list.BuyTopics[0].admin%></p>
+					</div>
+					<div class="search_result_topicEach_title"><%=list.BuyTopics[0].title%></div>
+					<div class="search_result_topicEach_intro"><%=list.BuyTopics[0].content%></div>
+					<div class="search_result_topicEach_time"><%=list.BuyTopics[0].timeDiff%>前發佈</div>
+				</div>
+				<div class="search_result_topicEach_data clearfloat">
+					<ul>
+						<li><span><img src="/img/common/eye.png"></span><span><%=list.BuyTopics[0].seeNumber%>宜粉查看</span></li>
+						<li><span><img src="/img/common/icon/messageIcon_dark.png"></span><span><%=list.BuyTopics[0].topicCount%>宜粉回應</span></li>
+						<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list.BuyTopics[0].loveNumber%>宜粉讚好</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</script>
+</html>

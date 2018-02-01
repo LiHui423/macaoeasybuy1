@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>子分類詳細頁</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/sClassification/sClassification.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/common/detail_common.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script>
+			var fr = new FrameDomain();
+			var className = fr.getUrlParam('className');
+			className = decodeURIComponent(decodeURIComponent(className));
+			if(className == 'null') className = '母嬰用品';
+			var classId = fr.getUrlParam('classId') || 2;
+			var listId = fr.getUrlParam('listId') || 10042;
+			fr.getUserInfo.beforeInfo = function(){
+//				console.log('獲取用戶信息之前');
+			}
+			fr.getUserInfo.noInfo = function(){
+//				console.log('沒有用戶信息');
+//				alert('沒有登錄，請先登錄');
+			}
+			fr.getUserInfo.hasInfo = function(data){
+				window.userId = data.id;
+			}
+			fr.getUserInfo.go();
+		</script>
+	</head>
+	<body>
+		<header></header>
+
+		<div id ="searchBar">
+			<div class="searchBox">
+				<div class="searchBox_mainBox">
+					<div class="searchBox_left">
+						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+					</div>
+					<div class="searchBox_right" id="searchBox_rightBox"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="containerBox">
+
+			<!--子分類的菜單部分-->
+			<div class="Subclasses_menu_bg">
+				<div class="Subclasses_menu clearfloat">
+					<div class="Subclasses_title">
+						<div class="Subclasses_title_btn">
+							<span>&nbsp;</span>
+							<span><img src="/img/easybuy/sClassification/Subclasses_slideDown.png"></span>
+						</div>
+						<div class="Subclasses_title_slideBox hideSlide">
+							<ul></ul>
+						</div>
+					</div>
+					<ul class="Subclasses_menuUl clearfloat"></ul>
+				</div>
+			</div>
+
+
+			<!--子分類的標題顯示-->
+			<div class="Subclasses_intro">
+				<div class="Subclasses_titleName">&nbsp;</div>
+				<div class="Subclasses_titleIntro">&nbsp;</div>
+			</div>
+
+			<!--子分類的主要內容部分-->
+			<div class="Subclasses_main">
+				<!--子分類的展示內容部分-->
+
+				<div class="Subclasses_showBox clearfloat" id="hot-comment-box">
+					<div class="Subclasses_showBox_left"></div>
+					<div class="Subclasses_showBox_right"></div>
+				</div>
+
+				<!--子分類的列表內容部分-->
+				<div class="Subclasses_listBox clearfloat">
+					<ul id="subclasses_listBox_box"></ul>
+				</div>
+				<div class="noMore">~沒有更多商品了哦~</div>
+
+			</div>
+
+
+		</div>
+		<footer></footer>
+	</body>
+	<!--模板文件和數據文件-->
+	<script src="/js/plug/yez_js_Reset.js"></script>
+	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	<!--頭部文件的js-->
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/common/header&search&footer/footer.js"></script>
+	<!--搜索框部份的js-->
+	<script src="/js/common/header&search&footer/searchBar.js"></script>
+	<!--更多主題的js-->
+	<script src="/js/easybuy/sClassification/sClassification.js"></script>
+	<script src="/js/easybuy/sClassification/sClassification_data.js"></script>
+
+	<script id="subclasses_listBox_template" type="text/html">
+		<%for(var i=0;i<list.length;i++){%>
+		<li>
+			<img src="//wap.macaoeasybuy.com/<%=list[i].pic%>">
+			<%if(list[i].kucunState == 1){%>
+			<div class="Subclasses_listEach_cover">
+				<p class=""><%=list[i].title%></p>
+				<p>MOP<%=list[i].price%></p>
+				<p>MOP<%=list[i].costPrice%></p>
+				<div class="Subclasses_listEach_cover_data"><span><img src="/img/common/icon/buyIcon_dark.png"></span><span><%=list[i].buyNumbers%>件已售</span></div>
+				<div class="Subclasses_listEach_cover_data"><span><img src="/img/common/icon/loveIcon_dark.png"></span><span><%=list[i].loveNumbers%>心動</span></div>
+				<div class="Subclasses_listEach_cover_btn">進去看看</div>
+			</div>
+			<%}else if(list[i].kucunState == 0){%>
+			<div class="Subclasses_listEach_cover_kucun">
+				<img src="/img/easybuy/discount/discount_sellOut.png" alt="">
+			</div>
+			<%}%>
+		</li>
+		<%}%>
+	</script>
+
+	<!--宜粉熱評模板-->
+	<script id="hot-comment-template" type="text/html">
+		<div class="Subclasses_showBox_leftEach clearfloat" id="hot-comments-shop<%=id%>">
+			<div class="showBox_leftEach_pic">
+				<img src="//wap.macaoeasybuy.com/<%=pic2%>">
+			</div>
+			<div class="showBox_leftEach_mess">
+				<div class="showBox_leftEach_commentBox">
+					<%if(shangpinComments.length > 1){%>
+						<%for(var i=0;i<2;i++){%>
+						<div class="showBox_leftEach_comment clearfloat">
+							<div class="showBox_leftEach_commentLeft myborder-radius">
+								<img src="//wap.macaoeasybuy.com/<%=shangpinComments[i].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'">
+							</div>
+							<div class="showBox_leftEach_commentRight">
+								<div class="showBox_leftEach_comment_mess">
+									<span><%=shangpinComments[i].Name%></span>
+									<%if(shangpinComments[i].sex == 'Girl'){%>
+									<span><img src="/img/common/girl.png"></span>
+									<%}else{%>
+									<span><img src="/img/common/boy.png"></span>
+									<%}%>
+								</div>
+								<div class="showBox_leftEach_comment_main"><%=shangpinComments[i].Comment%></div>
+							</div>
+						</div>
+						<%}%>
+					<%}else if(shangpinComments.length == 1){%>
+						<div class="showBox_leftEach_comment clearfloat">
+							<div class="showBox_leftEach_commentLeft myborder-radius">
+								<img src="//wap.macaoeasybuy.com/<%=shangpinComments[0].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'">
+							</div>
+							<div class="showBox_leftEach_commentRight">
+								<div class="showBox_leftEach_comment_mess">
+									<span><%=shangpinComments[0].Name%></span>
+									<%if(shangpinComments[0].sex == 'Girl'){%>
+									<span><img src="/img/common/girl.png"></span>
+									<%}else{%>
+									<span><img src="/img/common/boy.png"></span>
+									<%}%>
+								</div>
+								<div class="showBox_leftEach_comment_main"><%=shangpinComments[0].Comment%></div>
+							</div>
+						</div>
+					<%}%>
+				</div>
+				<div class="showBox_leftEach_goodDetail">
+					<p><%=title%></p>
+					<div class="showBox_leftEach_goodDetail_price">
+						<span>MOP<%=price%></span><span>MOP<%=costPrice%></span>
+					</div>
+					<div class="showBox_leftEach_goodDetail_data clearfloat">
+						<ul>
+							<li><span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=seeNumbers%>查看</span></li>
+							<li><span><img src="/img/common/icon/loveIcon_dark.png"></span><span><%=loveNumbers%>心動</span></li>
+							<li><span><img src="/img/common/icon/buyIcon_dark.png"></span><span><%=buyNumbers%>件已售</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<!--宜粉熱評評論模板-->
+	<script id="hot-commentList-template" type="text/html">
+		<%for(var i=0;i<list.length;i++){%>
+		<div class="showBox_leftEach_comment clearfloat">
+			<div class="showBox_leftEach_commentLeft myborder-radius">
+				<img src="//wap.macaoeasybuy.com/<%=list[i].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'">
+			</div>
+			<div class="showBox_leftEach_commentRight">
+				<div class="showBox_leftEach_comment_mess">
+					<span><%=list[i].Name%></span>
+					<%if(list[i].sex == 'Girl'){%>
+					<span><img src="/img/common/girl.png"></span>
+					<%}else{%>
+					<span><img src="/img/common/boy.png"></span>
+					<%}%>
+				</div>
+				<div class="showBox_leftEach_comment_main"><%=list[i].Comment%></div>
+			</div>
+		</div>
+		<%}%>
+	</script>
+
+</html>

@@ -1,0 +1,284 @@
+.secondHandBox{
+	background: url(//img.macaoeasybuy.com/img/social/secondHand/secondHand_bg.png) fixed;
+}
+.secondHand_treaty{
+	width: 1397px;
+	margin: auto;
+	padding-top: 70px;
+}
+.secondHand_treaty_main{
+	background-color: #FFFFFF;
+	padding: 10px 20px 20px 20px;
+}
+.secondHand_treaty_mainLeft{
+	float: left;
+}
+.secondHand_treaty_mainRight{
+	float:left;
+	margin-left: 30px;
+	padding-top: 15px;
+}
+.secondHand_treaty_mainRight p{
+	color: #b8b8b8;
+	height: 27px;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+.secondHand_treaty_mainRight p span{
+	color: #FF527C;
+}
+.secondHand_chooseType{
+	width: 1397px;
+	margin: auto;
+	margin-top: 40px;
+	padding: 0 25px;
+}
+.secondHand_chooseType ul li{
+	float: left;
+	margin-left: 100px;
+	margin-bottom: 30px;
+}
+.secondHand_chooseType ul li:nth-child(8n+1){
+	margin-left: 0px;
+}
+.secondHand_chooseType ul li img{
+	width: 80px;
+}
+.secondHand_chooseType ul li p{
+	margin-top: 12px;
+	text-align: center;
+	font-size: 18px;
+	letter-spacing: 2px;
+}
+.secondHand_exampleBox{
+	width: 1397px;
+	margin: auto;
+}
+.secondHand_exampleEach{
+	margin-top: 50px;
+}
+.secondHand_exampleEach_title{
+	padding: 0 75px;
+}
+.secondHand_exampleEach_titleLeft{
+	float: left;
+	background: url(//img.macaoeasybuy.com/img/social/secondHand/secondHand_titleBorder.png);
+	background-size:100%;
+	width: 385px;
+	height: 83px;
+	position: relative;
+}
+.secondHand_exampleEach_titleName{
+	position: absolute;
+	color: #4e4e4e;
+	font-size: 30px;
+	top: 20px;
+	left: 45px;
+	font-weight: bold;
+}
+.secondHand_exampleEach_titleData{
+	position: absolute;
+	top: 5px;
+	left: 220px;
+}
+.secondHand_titleData_each{
+	margin-bottom: 5px;
+}
+.secondHand_titleData_each:nth-child(3) span:nth-child(1) img{
+	width:20px;
+}
+.secondHand_titleData_each span{
+	display: inline-block;
+	float: left;
+	color: #ababab;
+}
+.secondHand_titleData_each span:nth-child(1){
+	width: 25px;
+}
+.secondHand_exampleEach_titleRight{
+	float: right;
+	cursor: pointer;
+}
+.secondHand_exampleEach_titleRight span{
+	display: inline-block;
+	float:left;
+	font-size: 24px;
+	color: #4E4E4E;
+}
+.moreIcon{
+	width: 70px;
+	margin-right: 15px;
+}
+.moreIcon img{
+	width: 90%;
+}
+.secondHand_exampleEach_titleRight span:nth-child(2){
+	margin-top: 15px;
+	margin-right: 15px;
+}
+.secondHand_exampleEach_titleRight span:nth-child(3){
+	margin-top: 13px;
+}
+.secondHand_exampleEach_main{
+	margin-top: 40px;
+	position: relative;
+}
+.secondHand_exampleEach_left{
+	position: absolute;
+	top: 285px;
+	left:0px;
+	cursor: pointer;
+}
+.secondHand_exampleEach_right{
+	position: absolute;
+	top:285px ;
+	right:0px;
+	cursor: pointer;
+}
+.secondHand_exampleEach_scroll{
+	width: 1250px;
+	margin: auto;
+	overflow: hidden;
+	height: 630px;
+	position: relative;
+}
+.secondHand_exampleEach_main ul{
+	position: absolute;
+	width: 9999px;
+	left: 0;
+}
+.secondHand_exampleEach_main ul li{
+	float: left;
+	margin-left: 20px;
+}
+.secondHand_exampleEach_main ul li:nth-child(1){
+	margin-left: 0px;
+}
+.secondHand_goods{
+	width: 297px;
+	border-radius:10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius:10px;
+	overflow: hidden;
+	position: relative;
+}
+.secondHand_goods_cover{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 3;
+	background-color: rgba(0,0,0,0.5);
+
+}
+.secondHand_goods_cover img{
+	width: 60%;
+	margin-left: 20%;
+	margin-top: 180px;
+}
+.secondHand_goods_pic{
+	width: 297px;
+	height: 345px;
+	background-size:cover;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+	-o-background-size:cover;
+	position: relative;
+	border: 1px solid #E3E3E3;
+	border-bottom: none;
+	background-color: #FFFFFF;
+}
+.secondHand_goods_price{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border-top-left-radius:8px;
+	background-color: #ff5b77;
+	padding:10px 13px;
+	color: #FFFFFF;
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-align: center;
+}
+.secondHand_goods_mess{
+	padding: 0px 18px;
+	background-color: #FFFFFF;
+	border-left: 1px solid #E3E3E3;
+	border-right: 1px solid #E3E3E3;
+}
+.secondHand_goods_author{
+	padding-top: 5px;
+	border-bottom: 1px solid #02bbc2;
+	padding-bottom: 15px;
+}
+.secondHand_goods_messLeft{
+	float: left;
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+}
+.secondHand_goods_messLeft img{
+	width: 60px;
+
+}
+.secondHand_goods_messRight{
+	float: left;
+	margin-left: 10px;
+}
+.secondHand_goods_sellMess{
+	margin-top: 5px;
+}
+.secondHand_goods_sellMess span{
+	display: block;
+	float: left;
+}
+.secondHand_goods_sellMess span:nth-child(1){
+	font-size: 16px;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 3px;
+	margin-right: 3px;
+}
+.secondHand_goods_sellMess span:nth-child(2) img{
+	width: 15px;
+}
+.secondHand_goods_time{
+	color: #a8a8a8;
+	margin-top: 2px;
+	letter-spacing: 1px;
+}
+.secondHand_goods_title{
+	padding: 20px 0px 10px 0px;
+	color:#02bbc2;
+	font-size: 16px;
+}
+.secondHand_goods_intro{
+	padding-bottom: 30px;
+}
+.secondHand_goods_intro p{
+	overflow: hidden;
+ 	text-overflow: ellipsis;
+ 	display: -webkit-box;
+ 	-webkit-line-clamp: 2;
+ 	-webkit-box-orient: vertical;
+ 	line-height: 24px;
+ 	height:48px;
+}
+.secondHand_goods_data{
+	padding: 12px 20px;
+	background-color: #02bbc2;
+}
+.secondHand_goods_dataEach{
+	float: left;
+	width: 85px;
+}
+.secondHand_goods_dataEach div{
+	width: 20px;
+	margin: auto;
+}
+.secondHand_goods_dataEach p{
+	color: #FFFFFF;
+	text-align: center;
+	margin-top: 5px;
+}

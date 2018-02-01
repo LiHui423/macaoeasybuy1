@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>用戶空間-個人信息設置-基本</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/common/jquery.Jcrop.min.css">
+		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/css/userspace/personalinfo/infoset/baseinfo/baseinfo.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu">
+								<li><a href="#"><div><img src="/img/userspace/common/leftmenu/userin_ica13.png" alt=""></div><span>信息</span><span>3/10</span></a></li>
+								<li><a href="#"><div><img src="/img/userspace/common/leftmenu/userin_ica14.png" alt=""></div><span>興趣</span><span>10/11</span></a></li>
+								<li><a href="#"><div><img src="/img/userspace/common/leftmenu/userin_ica15.png" alt=""></div><span>技能</span><span>10/10</span></a></li>
+								<li class="select"><a href="#"><div><img src="/img/userspace/common/leftmenu/userin_ica18.png" alt=""></div><span>基本</span><span>3/3</span></a></li>
+							</ul>
+						</div>
+						<div id="userspace-content">
+							<!--這裡是內容-->
+								<div class="content-title" id="receiving-data">
+									<img src="/img/userspace/personalinfo/about-icon.png" alt="">
+									收貨資料
+									<div class="info-progress">
+										<div></div>目前已完成<span>&nbsp;</span>/<span>&nbsp;</span>
+									</div>
+								</div>
+								<ul class="content-lister clearfloat">
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/about-icon01.png" alt=""></div>
+										<span>收貨聯絡：</span>
+										<div class="info-content clearfloat" id="contact-phone">
+											<span class="area-num">+853</span>
+											<span class="phone-num">&nbsp;</span>
+											<span class="phone-num-change">修改</span>
+											<span class="phone-num-state">已綁定</span>
+										</div>
+									</li>
+									<li class="clearfloat">
+										<div class="icon"><img src="/img/userspace/personalinfo/about-icon02.png" alt=""></div>
+										<span>聯絡姓名：</span>
+										<div class="info-content" id="contact-name">
+											<div>
+												<input type="text" value="">
+											</div>
+										</div>
+									</li>
+									<li class="clearfloat linear">
+										<div class="icon"><img src="/img/userspace/personalinfo/experience-icon05.png" alt=""></div>
+										<span>收貨區域：</span>
+										<div class="info-content" id="receiving-area">
+											<span class="select-btn"><span>&nbsp;</span><img src="/img/userspace/personalinfo/arrow-down.png" alt=""></span>
+											<div class="receiving-area-selecter">
+												<div class="shadow-box"></div>
+												<div class="ul-box">
+													<img src="/img/userspace/personalinfo/arrow.png" alt="" class="arrow">
+													<ul class="scrollIe scrollOther"></ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="clearfloat linear">
+										<div class="icon"><img src="/img/userspace/personalinfo/experience-icon06.png" alt=""></div>
+										<span>收貨地址：</span>
+										<input type="text" class="info-content" id="receiving-address" placeholder="請準確填寫您常用收貨的澳門地址">
+									</li>
+									<li class="clearfloat linear">
+										<div class="icon"><img src="/img/userspace/personalinfo/dynamic-icon02.png" alt=""></div>
+										<span>收貨時段：</span>
+										<div class="info-content" id="receiving-time">
+											<div class="shadow-box"></div>
+
+											<div class="receiving-time-btn first">
+												<span class="select-btn"><span>&nbsp;</span><img src="/img/userspace/personalinfo/arrow-down.png" alt=""></span>
+												<div class="receiving-time-box">
+													<img src="/img/userspace/personalinfo/arrow.png" alt="" class="arrow">
+													<div class="ul-box scrollIe scrollOther">
+														<ul></ul>
+													</div>
+												</div>
+											</div>
+											<div class="receiving-time-btn second">
+												<span class="select-btn"><span>&nbsp;</span><img src="/img/userspace/personalinfo/arrow-down.png" alt=""></span>
+												<div class="receiving-time-box">
+													<img src="/img/userspace/personalinfo/arrow.png" alt="" class="arrow">
+													<div class="ul-box scrollIe scrollOther">
+														<ul></ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+
+								<!-- <div class="content-title" id="associated-application">
+									<img src="/img/userspace/personalinfo/experience-icon.png" alt="">
+									想關聯的應用
+									<span class="info-tips">（關聯應用後，您可以更方便找到認識的好友哦！）</span>
+									<div class="info-progress">
+										<div></div>目前已完成<span>0</span>/<span>3</span>
+									</div>
+								</div>
+								<div class="application-lister">
+									<div class="application-lister-inner clearfloat">
+										<div id="wechat"><img src="/img/userspace/personalinfo/wechat-icon.png" alt=""><span>關聯微信</span></div>
+										<div id="sina"><img src="/img/userspace/personalinfo/sina-icon.png" alt=""><span>關聯微博</span></div>
+										<div id="facebook"><img src="/img/userspace/personalinfo/facebook-icon.png" alt=""><span>關聯臉書</span></div>
+									</div>
+								</div> -->
+
+								<div class="content-title" id="cover-set">
+									<img src="/img/userspace/personalinfo/personality-icon.png" alt="">
+									個性化空間
+									<div class="info-progress">
+										<div></div>目前已完成<span>0</span>/<span>3</span>
+									</div>
+								</div>
+								<div class="change-cover">
+									<div class="change-cover-inner clearfloat">
+										<div id="head-img">
+											<div class="head-img-box">
+												<img src="/img/common/headPic.png" alt="">
+											</div>
+											<div class="change-tips">當前頭像</div>
+											<div class="change-btn">更換頭像</div>
+										</div>
+										<div id="cover-img">
+											<div class="cover-img-box">
+												<img src="/img/userspace/common/userin_1.png" alt="">
+											</div>
+											<div class="change-tips">當前封面</div>
+											<div class="change-btn">更換封面</div>
+										</div>
+										<div id="bg-img">
+											<div class="bg-img-box">
+												<img src="/img/userspace/common/Art-painting-meteor-planet-atmosphere-friction-fire_1920x1440.jpg" alt="">
+											</div>
+											<div class="change-tips">當前背景</div>
+											<div class="change-btn">更換背景</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="submit-btn-box">
+									<div id="submit-btn">確認保存</div>
+								</div>
+							<!--內容的結束標識-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+		<!--更換頭像-->
+		<div id="change-head-img">
+			<div class="shadow-box"></div>
+			<div class="change-head-img-box">
+				<div class="box-title clearfloat">
+					<span>更換頭像</span>
+					<div class="box-btn">宜買圖庫</div>
+					<div class="box-btn select">上傳圖片</div>
+				</div>
+				<div class="box-content upload-page select">
+					<div class="head clearfloat">
+						<div class="head-img">
+							<img id="preview-head-img" src="/img/common/headPic.png" alt="">
+						</div>
+						<div class="head-tips">
+							<div id="change-head-upload"><img src="/img/userspace/personalinfo/change-img-btn-icon.png" alt="">更換頭像</div>
+							<div class="tips-text">僅支持JPG、JPEG、GIF、PNG、APNG格式（4M以下）</div>
+						</div>
+					</div>
+					<div class="head-img-show">
+						<!--<img id="crop-head-img" src="/img/e8f08dcc7ec6e4a62d7add2bf6689dca6d5474e572992-9eTnKp.jpg" alt="">-->
+					</div>
+					<div class="change-btns">
+						<div id="change-head-submit">確認更新</div>
+						<div id="change-head-cancel">取消</div>
+					</div>
+				</div>
+				<div class="box-content select-page">
+					<div class="head">
+						<div class="head-img"></div>
+						<div class="select-tips">您還可以使用以下宜買圖庫<span>(已選)</span>：</div>
+					</div>
+					<div class="select-nav clearfloat">
+						<div class="select">搞笑</div>
+						<div>背影</div>
+						<div>表情</div>
+						<div>索女</div>
+						<div>型男</div>
+						<div>小朋友</div>
+						<div>手繪</div>
+						<div>線條</div>
+					</div>
+					<div class="pages scrollIe scrollOther">
+						<ul class="clearfloat select">
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+						</ul>
+						<ul class="clearfloat">
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+						</ul>
+						<ul class="clearfloat">
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+						</ul>
+						<ul class="clearfloat">
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+						</ul>
+						<ul class="clearfloat">
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+						</ul>
+						<ul class="clearfloat">
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+						</ul>
+						<ul class="clearfloat">
+							<li><div class="li-shadow"></div></li>
+							<li><div class="li-shadow"></div></li>
+						</ul>
+						<ul class="clearfloat">
+							<li><div class="li-shadow"></div></li>
+						</ul>
+					</div>
+					<div class="change-btns">
+						<div id="change-head-submit-s">確認更新</div>
+						<div id="change-head-cancel-s">取消</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--更換封面-->
+		<div id="change-cover-img">
+			<div class="shadow-box"></div>
+			<div class="change-cover-img-box">
+				<div class="box-title clearfloat">
+					<span>更換封面</span>
+					<div class="box-btn">宜買圖庫</div>
+					<div class="box-btn select">上傳圖片</div>
+				</div>
+				<div class="box-content upload-page select">
+					<div class="show-cover-box clearfloat">
+						<div class="show-cover-box-bgpre">
+							<img src="/img/userspace/personalinfo/head.png" alt="" class="bg-img">
+							<img src="/img/userspace/common/userin_1.png" alt="" id="preview-cover-img-scale">
+						</div>
+						<div class="show-cover-box-pre">
+							<img src="/img/userspace/common/userin_1.png" alt="" id="preview-cover-img">
+						</div>
+					</div>
+					<div class="upload-cover-change-btn" id="change-cover-upload"><img src="/img/userspace/personalinfo/change-img-btn-icon.png" alt="">更換封面</div>
+					<div class="upload-tips">僅支持JPG、JPEG、GIF、PNG、APNG格式（4M以下）</div>
+					<div class="upload-cover-show">
+						<img src="/img/userspace/common/userin_1.png" alt="" id="crop-cover-img">
+					</div>
+					<div class="change-btns">
+						<div id="change-cover-submit">確認更新</div>
+						<div id="change-cover-cancel">取消</div>
+					</div>
+				</div>
+				<div class="box-content select-page">
+					<div class="show-cover-box clearfloat">
+						<div>
+							<img class="first-img" src="/img/userspace/common/userin_1.png" alt="">
+							<img class="second-img" src="/img/userspace/personalinfo/head.png" alt="">
+						</div>
+						<div>
+							<img src="/img/userspace/common/userin_1.png" alt="">
+						</div>
+					</div>
+					<div class="select-tips">您還可以使用以下宜買圖庫<span>(已選)</span>：</div>
+					<div class="select-nav clearfloat">
+						<div class="select">澳門</div>
+						<div>節日</div>
+						<div>情感</div>
+						<div>創作</div>
+						<div>風景</div>
+						<div>雜錦</div>
+						<div>手繪</div>
+						<div>線條</div>
+					</div>
+					<div class="pages scrollIe scrollOther">
+						<ul class="clearfloat select">
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+						</ul>
+						<ul class="clearfloat">
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+						</ul>
+						<ul class="clearfloat">
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+						</ul>
+						<ul class="clearfloat">
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+						</ul>
+						<ul class="clearfloat">
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+						</ul>
+						<ul class="clearfloat">
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+						</ul>
+						<ul class="clearfloat">
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+						</ul>
+						<ul class="clearfloat">
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+						</ul>
+					</div>
+					<div class="change-btns">
+						<div id="change-cover-submit-s">確認更新</div>
+						<div id="change-cover-cancel-s">取消</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--更換背景-->
+		<div id="change-bg-img">
+			<div class="shadow-box"></div>
+			<div class="change-bg-img-box">
+				<div class="box-title clearfloat">
+					<span>更換背景</span>
+				</div>
+				<div class="box-content">
+					<div class="select-box scrollIe scrollOther">
+						<ul class="clearfloat">
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+							<li>
+								<div class="li-shadow"></div>
+							</li>
+						</ul>
+					</div>
+					<div class="change-btns">
+						<div id="change-bg-submit">確認更新</div>
+						<div id="change-bg-cancel">取消</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--沒保存-->
+		<div id="no-save">
+			<div class="shadow-box"></div>
+			<div class="cancel-tips-box on-middle yez-tips-box">
+				<div class="cancels-title">確認保存</div>
+				<div>
+					<div class="cancels-xc"><img src="/img/common/02.png" alt=""></div>
+					<div class="cancel-tips-text">你還沒有保存哦，確定要離開嗎？</div>
+					<div class="clearfloat sure-button">
+						<div class="sure-cancel">保存并離開</div>
+						<div class="cancel-sure">取消</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--修改號碼-->
+		<div id="change-num-box">
+			<div class="shadow-box"></div>
+			<div class="change-num-box">
+				<img src="/img/common/tips-box/img-upload-close.png" alt="" class="cancel-btn">
+				<div class="box-title">修改收貨聯絡號碼</div>
+				<div id="phone-num-box" class="input-box clearfloat">
+					<div class="input-box-left"><span>手機號碼：</span></div>
+					<input id="get-code-phone" type="text" placeholder="請輸入手機號碼">
+					<div class="get-code-btn" id="get-code-btn">獲取驗證碼<span>(30)</span></div>
+				</div>
+				<div id="phone-code-box" class="input-box clearfloat">
+					<div class="input-box-left"><span>驗證碼：</span></div>
+					<input type="text" placeholder="請輸入手機訊息中的驗證碼">
+					<div class="error-tips"><img src="/img/common/error-tips.png" alt="">您輸入的驗證碼有誤</div>
+				</div>
+				<div class="message-tips">短信驗證碼有效時間為10分鐘</div>
+				<div id="change-num-sure-btn">確認修改</div>
+			</div>
+		</div>
+		<!--修改成功-->
+		<div id="praise-post">
+			<div class="praise on-middle yez-tips-box click">
+				<div><img src="/img/social/easylive/collect-select.png" alt="">修改成功！</div>
+			</div>
+		</div>
+
+		<script src="/js/plug/yez_js_Reset.js"></script>
+		<script src="/js/common/vendor/template-native.js"></script>
+		<script src="/js/userspace/common/userinfo.js" async></script>
+		<script src="/js/userspace/common/leftmenu.js" async></script>
+		<script src="/js/userspace/common/newspush.js" async></script>
+		<script src="/js/common/header&search&footer/footer.js" async></script>
+		<script src="/js/common/header&search&footer/header.js"></script>
+
+		<script src="/js/plug/webuploader.nolog.min.js"></script>
+		<script src="/js/plug/jquery.Jcrop.min.js"></script>
+
+		<script src="/js/userspace/personalinfo/infoset/baseinfo/baseinfo.js"></script>
+		<script src="/js/userspace/personalinfo/infoset/baseinfo/baseinfo_crop.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>量販團商品詳情頁</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/goodDetails/goodCommon.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/goodDetails/groupDetails.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/groupBuy/groupBuy.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_sinple.js"></script>
+	</head>
+	<body>
+		<header></header>
+		<div id ="searchBar">
+			<div class="searchBox">
+				<div class="searchBox_mainBox clearfloat">
+					<div class="searchBox_left"></div>
+					<div class="searchBox_right" id="searchBox_rightBox"></div>
+				</div>
+			</div>
+		</div>
+		<div class="containerBox">
+			<div class="museumDetails_goodMessBox">
+				<div class="cancelPop noChooseSize">
+					<div class="cancelThumbsPop_title">操作失敗</div>
+					<div class="cancelThumbsPop_Main">
+						<div class="cancelThumbsPop_left">
+							<img src="/img/common/noResult.png">
+						</div>
+						<div class="cancelThumbsPop_right">
+							<p>你忘了選擇商品規格了哦!</p>
+							<p>提示：先選好想要的規格，再加入購物籃吧！</p>
+						</div>
+					</div>
+					<div class="noChooseSize_btn">我知道了</div>
+				</div>
+				<div class="museumDetails_goodMessBox_left"></div>
+				<div class="museumDetails_goodMessBox_middle">
+					<div class="museumDetails_goodMessBox_messBox">
+						<div class="goodMessBox_chooseSize"></div>
+						<div class="goodMessBox_messBox_ticketBox clearfloat"></div>
+					</div>
+					<div class="sizeAssistant">尺碼助手</div>
+					<!--<div class="sizeAssistantShow">
+						<div class="ticketPopBox_top sizeAssistant_top"><img src="/img/easybuy/goodDetails/ticketPopBox_top.png"></div>
+						<div class="ticketPopBox_mainBox sizeAssistant_mainBox">
+							<div class="sizeAssistant_title">
+								<p>選擇以下商品種類參考尺碼建議：</p>
+								<p>以下建議僅供參考，不構成退換貨理由，實際需視乎自己體形哦～</p>
+							</div>
+							<div class="sizeAssistant_chooseBox">
+								<div class="sizeAssistant_bigType">
+									<div class="sizeAssistant_bigType_left">男生</div>
+									<div class="sizeAssistant_bigType_left">
+										<ul>
+											<li class="sizeAssistant_eachType">上衣</li>
+											<li class="sizeAssistant_eachType">褲子</li>
+											<li class="sizeAssistant_eachType">外套</li>
+											<li class="sizeAssistant_eachType">西裝</li>
+											<li class="sizeAssistant_eachType">襯衫</li>
+											<li class="sizeAssistant_eachType">鞋子</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>-->
+				</div>
+				<div class="museumDetails_goodMessBox_right">
+					<div class="museumDetails_goodMessBox_rightTop"></div>
+					<div class="museumDetails_goodMessBox_right_main">
+
+					</div>
+				</div>
+			</div>
+			<div class="disconutDetails_countTime clearfloat">
+				<div class="disconutDetails_countTimeLeft">
+					距離結束只剩
+					<span class="disconutDetails_hours_first">0</span><span class="disconutDetails_hours_second">2</span>小時
+					<span class="disconutDetails_min_first">1</span><span class="disconutDetails_min_second">2</span>分鐘
+					<span class="disconutDetails_second_first">5</span><span class="disconutDetails_second_second">8</span>秒
+					<span class="disconutDetails_minsecond_first">5</span><span class="disconutDetails_minsecond_second">8</span>
+				</div>
+				<div class="disconutDetails_countTimeRight">
+					<p>報團時間結束後，將停止接受下單，</p>
+					<p>已發出的訂單即享有該團購優惠價！</p>
+				</div>
+			</div>
+			<div class="museumDetails_goodDataBox"></div>
+			<div class="museumDetails_introductionBox">
+				<div class="museumDetails_visitorBox"></div>
+				<div class="museumDetails_introductionBox_Tab">
+					<!--商品詳情切換標題-->
+				</div>
+				<div class="museumDetails_introductionBox_main">
+					<div class="introductionBox_each introductionBox_pic">
+						<div class="introductionBox_pic_main clearfloat"></div>
+						<div class="introductionBox_noResult">
+							<div class="introductionBox_noResult_icon">
+								<img src="/img/common/noResult.png">
+							</div>
+							<p>不好意思店主還沒有更新商品內容呢~</p>
+						</div>
+					</div>
+					<div class="introductionBox_each introductionBox_intro hide">
+						<ul></ul>
+					</div>
+					<div class="introductionBox_each introductionBox_evaluation hide">
+						<div class="introductionBox_evaluation_dataBox"></div>
+						<div class="evaluation_DetailsBox">
+
+						</div>
+						<div class="evaluation_noEvaluation">
+							<div class="evaluation_noEvaluation_icon"><img src="/img/easybuy/museum/no_eva.png"></div>
+							<p>還沒有宜粉進行評價。等您來評價哦～</p>
+						</div>
+						<div class="tcdPageCode"></div>
+					</div>
+					<div class="introductionBox_each introductionBox_showPic hide">
+						<div class="introductionBox_showPic_showBox">
+							<div class="all-look">
+								<div class="all-main scrollIe scrollOther">
+									<div class="all-main-container clearfloat">
+
+									</div>
+								</div>
+							</div>
+							<div class="introductionBox_showPic_showNothing">
+								<div class="evaluation_noEvaluation">
+									<div class="evaluation_noEvaluation_icon"><img src="/img/easybuy/museum/no_eva.png"></div>
+									<p>還沒有宜粉進行曬圖。等您來曬圖哦～</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="museumDetails_othersGood">
+				<div class="museumDetails_othersGoodBox_title">
+					<div class="museumDetails_othersGood_titleLeft">大家還看了</div>
+					<div class="museumDetails_othersGood_titleRight">換一換&nbsp;></div>
+				</div>
+				<div class="groupBuy_goodTab clearfloat groupDetailsone">
+
+				</div>
+			</div>
+		</div>
+		<footer></footer>
+
+		<script src="/js/plug/yez_js_Reset.js"></script>
+		<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+		<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+		<script src="/js/common/header&search&footer/searchBar.js" async></script>
+		<script src="/js/common/header&search&footer/footer.js" async></script>
+		<script src="/js/common/header&search&footer/header.js"></script>
+		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+		<!--規格選擇的js-->
+		<script src="/js/easybuy/goodDetails/guigeChange.js"></script>
+		<!--番薯：這個不知道幹啥的，到時候去看看-->
+		<script src="/js/easybuy/groupBuy_countDown.js"></script>
+		<!--商品詳情公共的js-->
+		<script src="/js/easybuy/goodDetails/goodDetailsCommon.js"></script>
+		<script src="/js/easybuy/goodDetails/goodDetailsCommon.data.js"></script>
+		<!--量販團商品詳情的js-->
+		<script src="/js/easybuy/goodDetails/groupDetails/goupDatails.js"></script>
+		<script src="/js/easybuy/goodDetails/groupDetails/goupDatails.data.js"></script>
+		<!--分頁js-->
+		<script src="/js/easybuy/goodDetails/jquery.page.js"></script>
+		<!--加入購物車動畫-->
+		<script src="/js/easybuy/goodDetails/jquery.fly.min.js"></script>
+		<!-- 點擊用戶頭像事件 -->
+		<script src="/js/common/clickEvent.js"></script>
+
+	<!--左上商店信息模板-->
+	<script type="text/html" id="shopMess" data-array = "shopMessData">
+		<div class="BusinessmenLeft">
+			<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[0].shoplogo%>' onerror="this.src='/img/common/loading_pc_shop.png'">
+		</div>
+		<div class="BusinessmenRight">
+			<p class="BusinessmenName"><%=list[0].shopname%></p>
+			<div class="BusinessmenEva">
+				<ul>
+					<li>
+						<p>描述相符</p>
+						<p><%=list[0].shopgradeInfo[0].Miao%>/5.0</p>
+					</li>
+					<li>
+						<p>價格合理</p>
+						<p><%=list[0].shopgradeInfo[0].JIA%>/5.0</p>
+					</li>
+					<li>
+						<p>商品質量</p>
+						<p><%=list[0].shopgradeInfo[0].Shang%>/5.0</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</script>
+	<!--左側商品信息模板-->
+	<script type="text/html" id="goodDetailsMess" data-array = "goodDetailsMessData">
+		<div class="museumDetails_goodMessBox_leftTop">
+			<img src=http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[0].sppic%>>
+			<div class="disconutIcon">
+				<img src="/img/easybuy/goodDetails/groupbuyIcon_new.png">
+			</div>
+		</div>
+			<div class="museumDetails_goodMessBox_intro">
+				<div class="goodMessBox_intro_name">
+					<p><%=list[0].title%></p>
+					<p>商品編號：&nbsp;&nbsp;&nbsp;<span class="goodMessBox_intro_number"><%=list[0].number%></span></p>
+				</div>
+				<div class="goodMessBox_intro_mess">
+					<div class="goodMessBox_intro_mess_title">商品描述：</div>
+					<div class="goodMessBox_intro_mess_intro"><%=list[0].intro%></div>
+				</div>
+				<div class="museumDetails_goodMessBox_operating">
+					<ul>
+						<li>
+							<div class="saveGoods">
+								<%if(list[0].lovestate == "1"){%>
+									<img src="/img/userspace/userspace_postDetails/icon/saveGoodsUp.png">
+								<%}else{%>
+									<img src="/img/easybuy/museum/icon/saveGoods.png">
+								<%}%>
+							</div>
+							<p>心動收藏</p>
+						</li>
+						<li>
+							<div class="article_share">
+								<img src="/img/easybuy/museum/icon/museumDetails_share.png">
+							</div>
+							<p>分享好友</p>
+						</li>
+						<li>
+							<div class="article_report">
+								<img src="/img/easybuy/museum/icon/museumDetails_wrong.png">
+							</div>
+							<p>違規舉報</p>
+						</li>
+					</ul>
+					<div class="successBox like_success">
+						<div><img src="/img/userspace/userspace_postDetails/icon/loveUp_success.png"></div><span>已成功收藏在您的心動頁了！</span>
+					</div>
+					<div class="cancelPop cancelLikePop">
+						<div class="cancelThumbsPop_title">取消心動商品</div>
+						<div class="cancelThumbsPop_Main">
+							<div class="cancelThumbsPop_top">
+								<img src="/img/userspace/userspace_postDetails/cancel_thumbsupPop.png">
+							</div>
+							<div class="cancelThumbsPop_bottom">
+								<p>不再心動該商品了嗎？</p>
+							</div>
+						</div>
+						<div class="cancelThumbsPop_button">
+							<a class="sureCancel">確認</a>
+							<a class="notSureCancel">取消</a>
+						</div>
+					</div>
+					<!--舉報彈窗-->
+					<!--<div id="bombBox">
+						<div class="bombBox_title">違規舉報</div>
+						<div class="bombBox_input">
+							<div class='textarea-block'>
+								<textarea class="textarea-item" name="content" placeholder="請描述一下舉報的理由還有具體詳情，以便跟進！！"></textarea>
+								<div class="textarea-count">
+									<span class="textareaInput">0</span>/<span class="textareaTotal">150</span>
+								</div>
+							</div>
+						</div>
+						<div id="fileImg" class="inputImg">
+
+						</div>
+						<div class="bombMainBox">
+							<div class="bombMain_title">我要舉報以下內容：</div>
+							<div class="bombMain">
+								<div class="bombMain_left"><img src="/img/userspace_details/reportCommodity.png"></div>
+								<div class="bombMain_right">
+									<div class="bombMain_leftTitle">
+										2折新球鞋，不敗不行！
+									</div>
+									<div class="bombMain_leftMain">
+										<p>簡直是帥呆了！昨天有人說那店搞特價，只賣一天，迫我馬上連夜坐船去香港旺角，排了三個小時的隊，終於終於買到了。簡直是帥呆了！昨天有人說那店搞特價，只賣一天終於終於終於買...</p>
+										<a>[詳情]</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="bombBox_footer"><a>發送舉報</a></div>
+						<div id="bombBox_back">
+							<img src="/img/userspace_details/icon/showPic-back.png">
+						</div>
+					</div>-->
+				</div>
+			</div>
+	</script>
+	<!--中間商品價格模板-->
+	<script type="text/html" id="goodDetailsPrice" data-array = "goodDetailsPriceData">
+		<div class="goodMessBox_messBox_each">
+			<div class="goodMessBox_messBox_eachTitle">原價 ：</div>
+			<div class="goodMessBox_messBox_eachMain"><p class="goodMessBox_messBox_eachOldPrice">MOP<%=list[0].costPrice%></p></div>
+		</div>
+		<div class="goodMessBox_messBox_each">
+			<div class="goodMessBox_messBox_eachTitle">團價 ：</div>
+			<div class="goodMessBox_messBox_eachMain">
+				<div class="goodMessBox_messBox_eachPrice">
+					<span class="goodMessBox_messBox_eachNowPrice">MOP<%=list[0].price%></span>
+				</div>
+				<div class="goodMessBox_messBox_eachLess">為您節省了MOP<%=list[0].costPrice - list[0].price%></div>
+			</div>
+		</div>
+	</script>
+
+	<!--中間商品規格模板-->
+	<script type="text/html" id="goodDetailsSize" data-array = "goodDetailsSizeData">
+		<div class="goodMessBox_messBox_each">
+			<div class="goodMessBox_messBox_eachTitle">規格 ：</div>
+			<div class="goodMessBox_messBox_eachPrice goodMessBox_messBox_sizePic picimg">
+				<ul>
+					<%for(var i = 0;i<list[0].tupianlist.length;i++){%>
+						<li class="guigeImg">
+							<div class="goodMessBox_messBox_eachType">
+								<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list[0].tupianlist[i]%>">
+								<div class="curr_icon"><img src="/img/easybuy/museum/icon/museumDetails_currIcon.png"></div>
+							</div>
+						</li>
+					<%}%>
+				</ul>
+			</div>
+		</div>
+		<%for(var i=0;i<list[0].guigelistSet.length;i++){%>
+			<div class="goodMessBox_messBox_each bgall">
+				<div class="goodMessBox_messBox_eachTitle">規格 ：</div>
+				<div class="goodMessBox_messBox_eachMain goodMessBox_messBox_chooseSize yListr">
+					<ul id="spguige<%=i%>">
+							<li class="clearfloat">
+								<%for(var j=0;j<list[0].guigelistSet[i].length;j++){%>
+									<div class="goodMessBox_messBox_eachSize btn-guige bg<%=j%>" title="<%=list[0].guigelistSet[i][j]%>"><%=list[0].guigelistSet[i][j]%></div>
+								<%}%>
+							</li>
+					</ul>
+				</div>
+			</div>
+		<%}%>
+		<!--<span class="jg"><$=list[0].price$></span>-->
+		<div class="goodMessBox_messBox_each">
+			<div class="goodMessBox_messBox_eachTitle">數量 ：</div>
+			<div class="goodMessBox_messBox_eachMain">
+				<div class="goodMessBox_messBox_calcBox">
+					<div class="messBox_calcBox_btn messBox_calcBox_btnLess">-</div>
+					<div class="messBox_calcBox_inputBox"><input type="text" id="goodChooseNumber" value="0"></div>
+					<div class="messBox_calcBox_btn messBox_calcBox_btnAdd">+</div>
+				</div>
+				<div class="remainingBox"><span class="kc"><%=list[0].sumKucun%></span>件存貨</div>
+			</div>
+		</div>
+	</script>
+
+	<!--中間商品優惠券模板-->
+	<script type="text/html" id="goodDetailsCoupon" data-array = "goodDetailsCouponData">
+		<div class="goodMessBox_messBox_ticketBox">本商品參與了 ：</div>
+			<ul>
+				<%for(var k = 0;k < list[0].labellist.length;k++){%>
+					<li><img src=http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[0].labellist[k].picture%>></li>
+				<%}%>
+			</ul>
+			<div class="goodMessBox_messBox_ticketPopBox">
+				<div class="ticketPopBox_top"><img src="/img/easybuy/goodDetails/ticketPopBox_top.png"></div>
+				<div class="ticketPopBox_mainBox">
+					<div class="ticketPopBox_mainBox_head">
+						<img src="/img/easybuy/goodDetails/ticketPopBox_head.png">
+					</div>
+					<div class="ticketPopBox_mainBox_title">商品<span><%=list[0].title%></span>參與了：</div>
+					<div class="ticketPopBox_mainBox_scroll scrollOther scrollIe">
+						<%for(var k = 0;k < list[0].labellist.length;k++){%>
+							<div class="ticketPopBox_mainBox_eachTicket clearfloat">
+								<div class="ticketPopBox_mainBox_eachTicketPic">
+									<img src=http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[0].labellist[k].picture%>>
+								</div>
+								<div class="ticketPopBox_mainBox_eachTicketIntro"><%=list[0].labellist[k].content%></div>
+							</div>
+						<%}%>
+					</div>
+					<div class="ticketPopBox_mainBox_foot">
+						<img src="/img/easybuy/goodDetails/ticketPopBox_foot.png">
+					</div>
+				</div>
+			</div>
+	</script>
+
+
+	<!--右側優惠券數據模板-->
+	<script type="text/html" id="goodCouponData" data-array = "goodCouponDataData">
+		<div class="museumDetails_goodMessBox_rightCount">
+			<div class="goodMessBox_rightCount_left">
+				<p>您的實付金額(MOP) ：</p>
+				<p>含券后實付</p>
+			</div>
+			<div class="goodMessBox_rightCount_right_hide hide jg"><%=list[0].price%></div>
+			<div class="goodMessBox_rightCount_right showPrice">0</div>
+		</div>
+		<div class="museumDetails_goodMessBox_rightGift">
+			<p>購買此商品將獲得：</p>
+			<div class="goodMessBox_rightGift_Btn goodMessBox_rightGift_BtnLeft"><img src="/img/easybuy/museum/icon/todayDesign_leftBtn.png"></div>
+			<div class="goodMessBox_rightGift_main">
+				<ul>
+					<%for(var m = 0;m < list[0].labellist.length/4;m ++){%>
+						<li>
+							<%for(var l = (4*m);l < list[0].labellist.length;l++){%>
+								<div class="goodMessBox_rightGift_Each">
+									<span><img src="/img/easybuy/museum/icon/museumDetails_giftIcon.png"></span>
+									<span><%=list[0].labellist[l].LabelName%></span>
+								</div>
+							<%}%>
+						</li>
+					<%}%>
+				</ul>
+			</div>
+			<div class="goodMessBox_rightGift_Btn goodMessBox_rightGift_BtnRight"><img src="/img/easybuy/museum/icon/todayDesign_rightBtn.png"></div>
+		</div>
+		<%if(list[0].makeGroupsize == list[0].tuanNum){%>
+			<div class="museumDetails_goodMessBox_BtnBox notBeginBox">
+		<%}else{%>
+			<div class="museumDetails_goodMessBox_BtnBox">
+		<%}%>
+			<div class="museumDetails_goodMessBox_Btn museumDetails_goodMessBox_buyBtn beginGroup">
+				<span><img src="/img/easybuy/museum/icon/museumDetails_willBuy.png"></span>
+				<span>我要買</span>
+			</div>
+			<div class="museumDetails_goodMessBox_Btn museumDetails_goodMessBox_addBtn addShopCart beginGroup">
+				<span><img src="/img/easybuy/museum/icon/museumDetails_Shopping basket.png"></span>
+				<span>加入購物籃</span>
+			</div>
+			<%if(list[0].meGroupOrNot == "1"){%>
+				<div class="groupBuy_joinGroup nobegin hadJoinGroup">
+					<div class="groupBuy_joinBtn">
+						已參團<p>您將收到開團通知</p>
+					</div>
+					<div class="groupBuy_joinNumBox">
+						<p>再湊<span>2</span>人</p>
+						<p>馬上開團</p>
+					</div>
+				</div>
+			<%}else if(list[0].meGroupOrNot == "0"){%>
+				<div class="groupBuy_joinGroup nobegin">
+					<div class="groupBuy_joinBtn">我要參團</div>
+					<div class="groupBuy_joinNumBox">
+						<p>再湊<span>2</span>人</p>
+						<p>馬上開團</p>
+					</div>
+				</div>
+			<%}else if(list[0].meGroupOrNot == "-1"){%>
+				<div class="groupBuy_joinGroup nobegin">
+					<div class="groupBuy_joinBtn"><a href="/page/common/loagin.html">我要參團</a></div>
+					<div class="groupBuy_joinNumBox">
+						<p>再湊<span>2</span>人</p>
+						<p>馬上開團</p>
+					</div>
+				</div>
+			<%}%>
+			<div class="museumDetails_goodMessBox_Btn museumDetails_goodMessBox_addBtn museumDetails_goodMessBox_dark nobegin">
+				<span><img src="/img/easybuy/goodDetails/shopCart_white.png"></span>
+				<span>加入購物籃</span>
+			</div>
+			<div class="groupDetailsIntro nobegin">
+				<p>當湊夠人數後，會馬上開放購物籃功能，另外，在倒數結束前發出的訂單，才能享有此團購價哦！</p>
+			</div>
+		</div>
+		<div class="museumDetails_goodMessBox_IocnBox">
+			<div class="shopMess">
+				<div class="shopMess_card">
+					<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[0].shoplogo%>' onerror="this.src='/img/common/loading_pc_shop.png'">
+				</div>
+				<ul>
+					<li data-id = "<%=list[0].shopid%>">進店逛逛</li>
+					<li data-id = "<%=list[0].shopid%>">關注收藏</li>
+				</ul>
+			</div>
+		</div>
+	</script>
+
+	<!--倒計時模板-->
+	<!--<script type="text/html" id="goodDataShow" data-array = "goodDataShowData">
+
+	</script>-->
+
+	<!--商品整體數據-->
+	<script type="text/html" id="goodDataShow" data-array = "goodDataShowData">
+		<div class="museumDetails_goodDataBox_main">
+			<ul>
+				<li>
+					<div class="museumDetails_goodData_icon"><img src="/img/easybuy/museum/icon/museumDetails_salesIcon.png"></div>
+					<div class="museumDetails_goodData_title">累計銷量</div>
+					<div class="museumDetails_goodData_number"><%=list[0].buyNumber%>件</div>
+				</li>
+				<li>
+					<div class="museumDetails_goodData_icon"><img src="/img/easybuy/museum/icon/museumDetails_thump.png"></div>
+					<div class="museumDetails_goodData_title">好評率</div>
+					<div class="museumDetails_goodData_number"><%=list[0].goodPercent%></div>
+				</li>
+				<li>
+					<div class="museumDetails_goodData_icon"><img src="/img/easybuy/museum/icon/museumDetails_joinGroup.png"></div>
+					<div class="museumDetails_goodData_number"><%=list[0].tuanNum%>人</div>
+					<div class="museumDetails_goodData_title">已參團下單</div>
+				</li>
+			</ul>
+		</div>
+	</script>
+
+	<!--商品宜粉到訪數據-->
+	<script type="text/html" id="goodfansShow" data-array = "goodfansShowData">
+		<div class="museumDetails_visitorBox_left">
+			<div class="museumDetails_visitorBox_visitDate">
+				<p><%=list[0].loveNumber%></p>
+				<div class="museumDetails_dataEach">
+					<span><img src="/img/easybuy/museum/icon/museumDetails_visit_like.png"></span>
+					<span>宜粉心動</span>
+				</div>
+			</div>
+			<div class="museumDetails_visitorBox_visitDate">
+				<p><%=list[0].seeNumber%></p>
+				<div class="museumDetails_dataEach">
+					<span><img src="/img/easybuy/museum/icon/museumDetails_visit_see.png"></span>
+					<span>宜粉感興趣</span>
+				</div>
+			</div>
+		</div>
+		<div class="museumShowBox_bottom_right_seeBox museumDetails_visitorBox_right">
+			<div class="museumDetails_visitorBox_right_title">最近查看該商品：</div>
+			<ul>
+				<%for(var j = 0;j < list[0].userpiclist.length;j++){%>
+					<li>
+						<a><div data-id="" class="museumShowBox_bottom_right_seeBox_head">
+							<img data-type="userAvatar" src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[0].userpiclist[j]%>' onerror="this.src='/img/common/headPic.png'"></div></a>
+					</li>
+				<%}%>
+			</ul>
+		</div>
+	</script>
+
+	<!--商品介紹數據-->
+	<script type="text/html" id="goodIntroShow" data-array = "goodIntroShowData">
+		<%for(var n = 0;n <list[0].productPicinfolist.length;n++){%>
+			<div class="introductionBox_picEach"><img src=http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[0].productPicinfolist[n]%>></div>
+		<%}%>
+	</script>
+
+	<!--商品切換目錄-->
+	<script type="text/html" id="introductionBoxab" data-array = "introductionBoxabData">
+		<div class="museumDetails_TabEach museumDetails_TabEach_curr" data-order = "1">商品圖片</div>
+		<div class="museumDetails_TabEach" data-order = "2">商品說明</div>
+		<div class="museumDetails_TabEach" data-order = "3">用戶評價(<%=list[0].shangpincommentCount%>)</div>
+		<div class="museumDetails_TabEach" data-order = "4">曬圖區(<%=list[0].saiMapCount %>)</div>
+		<div class="museumDetails_addShopCar">
+			<span><img src="/img/easybuy/museum/icon/shopBasket.png"></span>
+			<span>加入購物籃</span>
+			<span><img src="/img/easybuy/goodDetails/QRcode_button.png"></span>
+			<div class="addShopCar_QRshow">
+				<div class="addShopCar_QRshow_top"><img src="/img/easybuy/goodDetails/ticketPopBox_top.png"></div>
+				<div class="addShopCar_QRshow_main">
+					<img src="/img/easybuy/goodDetails/QRcode_show.png">
+				</div>
+			</div>
+		</div>
+	</script>
+
+
+	<!--商品詳細參數-->
+	<script type="text/html" id="goodParameter" data-array = "goodParameterData">
+		<%for(var key in list){%>
+			<li>
+				<span class="introductionBox_intro_title"><%=key%></span>
+				<%for(var n = 0;n <list[key].length;n++){%>
+					<span class="introductionBox_intro_choose"><%=list[key][n]%></span>
+				<%}%>
+			</li>
+		<%}%>
+	</script>
+
+	<!--評論區域數據-->
+	<script type="text/html" id="commentDataShow" data-array = "commentTopData">
+		<div class="evaluation_data">
+			<div class="evaluation_data_show">
+				<p><%=list.miaoAvg%></p>
+				<div class="evaluation_data_icon"><img src="/img/easybuy/museum/icon/evaluation_data_top.png"></div>
+			</div>
+			<p class="evaluation_data_title">描述相符</p>
+		</div>
+		<div class="evaluation_data">
+			<div class="evaluation_data_show">
+				<p><%=list.jiaAvg%></p>
+				<div class="evaluation_data_icon"><img src="/img/easybuy/museum/icon/evaluation_data_bottom.png"></div>
+			</div>
+			<p class="evaluation_data_title">價格合理</p>
+		</div>
+		<div class="evaluation_data">
+			<div class="evaluation_data_show">
+				<p><%=list.shangAvg%></p>
+				<div class="evaluation_data_icon"><img src="/img/easybuy/museum/icon/evaluation_data_top.png"></div>
+			</div>
+			<p class="evaluation_data_title">商品質量</p>
+		</div>
+		<div class="evaluation_data_good">
+			<div class="evaluation_data_good_number"><p><%=list.bestCountPercent%>%</p></div>
+			<div class="evaluation_data_icon"><img src="/img/easybuy/museum/icon/evaluation_data_top.png"></div>
+			<p class="evaluation_data_title">近期好評率</p>
+		</div>
+		<div class="introductionBox_evaluation_numberBox">
+			<div class="evaluation_number"><%=list.bestCommentCount + list.neutralCommentCount + list.badCommentCount%></div>
+			<div class="evaluation_choose evaluation_circle_curr" data-id = "2"><div class="evaluation_circleBorder " ><div class="evaluation_circle_circle"></div></div><span>全部</span></div>
+		</div>
+		<div class="introductionBox_evaluation_numberBox">
+			<div class="evaluation_number"><%=list.bestCommentCount%></div>
+			<div class="evaluation_choose" data-id = "1"><div class="evaluation_circleBorder"><div class="evaluation_circle_circle"></div></div><span>好評</span></div>
+		</div>
+		<div class="introductionBox_evaluation_numberBox">
+			<div class="evaluation_number"><%=list.neutralCommentCount%></div>
+			<div class="evaluation_choose" data-id = "0"><div class="evaluation_circleBorder"><div class="evaluation_circle_circle"></div></div><span>中評</span></div>
+		</div>
+		<div class="introductionBox_evaluation_numberBox">
+			<div class="evaluation_number"><%=list.badCommentCount%></div>
+			<div class="evaluation_choose" data-id = "-1"><div class="evaluation_circleBorder"><div class="evaluation_circle_circle"></div></div><span>差評</span></div>
+		</div>
+	</script>
+
+	<!--商品評論內容-->
+	<script type="text/html" id="commentMainShow" data-array = "commentMainData">
+		<%for(var i = 0;i <list.length;i){%>
+			<div class="evaluation_DetailsEach">
+				<div class="evaluation_DetailsEach_left">
+					<div class="evaluation_DetailsEach_left_eva">
+						<div data-id="" class="evaluation_DetailsEach_head">
+							<img data-type="userAvatar" src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].pic%>' onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+						<div class="evaluation_DetailsEach_mess">
+							<p class="DetailsEach_mess_name"><%=list[i].name%> ：</p>
+							<p class="DetailsEach_mess_intro"><%=list[i].comment%></p>
+							<p class="DetailsEach_mess_size">
+								<span><%=list[i].standard%></span>
+								<span><%=list[i].addtime%></span>
+							</p>
+						</div>
+						<div class="evaluation_DetailsEach_goodPic">
+							<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].guigePic%>' onerror="this.src='/img/common/loading_pc_80.png'">
+						</div>
+					</div>
+					<%if(list[i].reponseState=="0"){%>
+						<div class="evaluation_DetailsEach_left_respond hide">
+					<%}else{%>
+						<div class="evaluation_DetailsEach_left_respond">
+					<%}%>
+						<div data-id="" class="DetailsEach_left_respond_head">
+							<img data-type="userAvatar" src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].shoppic%>' onerror="this.src='/img/common/loading_pc_headPic.png'" class="myborder-radius"></div>
+						<div class="evaluation_DetailsEach_mess">
+							<p class="DetailsEach_mess_name">店主<%=list[i].shopMan%></p>
+							<p class="DetailsEach_mess_intro"><%=list[i].respone%></p>
+							<p class="DetailsEach_mess_size">
+								<span><%=list[i].reponseTime%></span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="evaluation_DetailsEach_right">
+					<div class="evaluation_icon">
+						<%if(list[i].bestOrNotState == "1"){%>
+							<img src="/img/easybuy/goodDetails/eva_levelIcon_good.png">
+						<%}else if(list[i].bestOrNotState == "0"){%>
+							<img src="/img/easybuy/goodDetails/eva_levelIcon_middle.png">
+						<%}else if(list[i].bestOrNotState == "-1"){%>
+							<img src="/img/easybuy/goodDetails/eva_levelIcon_bad.png">
+						<%}%>
+					</div>
+					<div class="evaluation_levelBox">
+						<div class="evaluation_levelEach">
+							<div class="evaluation_levelEach_title">描述相符</div>
+							<div class="evaluation_levelEach_startBox">
+								<div class="evaluation_levelEach_start_number hide"><%=list[i].miao%></div>
+								<div class="evaluation_levelEach_start_empty"><img src="/img/easybuy/museum/icon/eva_startLevel_empty.png"></div>
+								<div class="evaluation_levelEach_start_full evaluation_levelEach_start_intro"><img src="/img/easybuy/museum/icon/eva_startLevel_full.png"></div>
+							</div>
+						</div>
+						<div class="evaluation_levelEach">
+							<div class="evaluation_levelEach_title">價格合理</div>
+							<div class="evaluation_levelEach_startBox">
+								<div class="evaluation_levelEach_start_number hide"><%=list[i].jia%></div>
+								<div class="evaluation_levelEach_start_empty"><img src="/img/easybuy/museum/icon/eva_startLevel_empty.png"></div>
+								<div class="evaluation_levelEach_start_full evaluation_levelEach_start_price"><img src="/img/easybuy/museum/icon/eva_startLevel_full.png"></div>
+							</div>
+						</div>
+						<div class="evaluation_levelEach">
+							<div class="evaluation_levelEach_title">商品質量</div>
+							<div class="evaluation_levelEach_startBox">
+								<div class="evaluation_levelEach_start_number hide"><%=list[i].shang%></div>
+								<div class="evaluation_levelEach_start_empty"><img src="/img/easybuy/museum/icon/eva_startLevel_empty.png"></div>
+								<div class="evaluation_levelEach_start_full evaluation_levelEach_start_quality"><img src="/img/easybuy/museum/icon/eva_startLevel_full.png"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<%}%>
+	</script>
+
+	<!--商品敗家誌曬圖模板-->
+	<script type="text/html" id="blueprintMainShow" data-array = "blueprintMainData">
+		<%for(var i = 0;i < sentVolunteers.length;i++){%>
+			<div class="pillar-all">
+				<div class="pillar">
+					<div class="page-main">
+						<%if(sentVolunteers[i].sentVolunteersurl==""){%>
+							<a href="" class="hide">
+						<%}else{%>
+							<a href="">
+						<%}%>
+						<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com<%=sentVolunteers[i].sentVolunteersurl%>' class="page-main-head-img"></a>
+						<div class="post-main-text">
+							<div class="post-title"><%=sentVolunteers[i].titlename%></div>
+							<div class="post-description"><%=sentVolunteers[i].purchasedfrom%></div>
+							<div class="post-description-other">
+								<div class="post-description-other-top clearfloat">
+									<div class="post-description-other-left">購自</div>
+									<div class="post-description-other-right">
+										<p>#香港旺角</p>
+										<p>#NIKE旺角專賣店#</p>
+									</div>
+								</div>
+								<div class="post-description-other-bottom clearfloat">
+									<div class="post-description-other-left">品牌</div>
+									<div class="post-description-other-right">
+										<p>#NIKE#</p>
+									</div>
+								</div>
+								<div class="post-other-time clearfloat">
+									<div><span><%=sentVolunteers[i].addtime%> 發佈</div>
+									<img src="/img/social/label/labeldetail/shot.png" alt="" class="post-other-img">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="laster">
+						<ul class="laster-num clearfloat">
+							<li><%=sentVolunteers[i].seeNumber%></li>
+							<li><%=sentVolunteers[i].loverNumber%></li>
+							<li><%=sentVolunteers[i].replyCount%></li>
+						</ul>
+						<div class="laster-look">
+							<div class="laster-head"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=sentVolunteers[i].pic%>' onerror="this.src='/img/common/loading_pc_headPic.png'" class="page-main-head-img myborder-radius"></div>
+							<div class="laster-text">
+								<div class="laster-text-name">
+									<%=sentVolunteers[i].name%>
+									<%if(sentVolunteers[i].sex=="Girl"){%>
+										<img src="/img/common/girl.png" alt="">
+									<%}else{%>
+										<img src="/img/common/boy.png" alt="">
+									<%}%>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="shadow-box"></div>
+				</div>
+				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+			</div>
+		<%}%>
+	</script>
+
+	<!--團購詳細底部其他商品-->
+	<script type="text/html" id="showGroupBuyBegin" data-array = "GroupBuyBeginList">
+		<%for(var i = 0;i <list.length;i = i + 3){%>
+			<div class="groupBuy_goodsEach_group">
+				<div class="groupBuy_goodsEach groupBuy_goodsEach_begin" data-id = "<%=list[i].id%>">
+					<div class="groupBuy_goodsEach_pic" style="background-image:url(http://wap.macaoeasybuy.com<%=list[i].pic%>)">
+						<div class="goodsEach_begin_hover">
+							<div class="begin_hover_iconBox">
+								<div><img src="/img/common/groupBuy_share.png"></div>
+								<p>邀好友參團 </p>
+							</div>
+							<div class="begin_hover_iconBox begin_hover_seeGoodDetails">
+								<div><img src="/img/easybuy/groupBuy/groupBuy_details.png"></div>
+								<p>查看商品 </p>
+							</div>
+						</div>
+					</div>
+					<div class="groupBuy_goodsEach_messBox">
+						<div class="groupBuy_goodsEach_title"><%=list[i].title%></div>
+					</div>
+					<div class="groupBuy_begin_price">
+						<div class="groupBuy_begin_newprice">MOP<span><%=list[i].price%></span></div>
+						<div class="groupBuy_begin_oldprice"><del>MOP&nbsp;<%=list[i].costPrice%></del></div>
+					</div>
+					<div class="groupBuy_begin_status">
+						<div class="begin_status_left">
+							<div class="begin_status_btn">
+								<p>我要參團</p>
+								<p>湊人中(<span class="joinPeopleNunber"><%=list[i].makeGroupsize%></span>/<span class="allPeopleNunber"><%=list[i].tuanNum%></span>)</p>
+							</div>
+						</div>
+						<div class="begin_status_right">
+							<p>再湊<span><%=list[i].tuanNum -list[i].makeGroupsize%></span>人</p>
+							<p>馬上開團</p>
+						</div>
+					</div>
+					<div class="groupBuy_begin_finishBox"><img src="/img/easybuy/groupBuy/groupBuy_begin_finish.png"></div>
+					<div class="progressBar">
+						<div class="progressBar_curr"></div>
+					</div>
+					<div class="groupBuy_begin_leastTime">
+						<ul>
+							<li>剩&nbsp;</li>
+							<li>
+								<span class="group_days">00</span><span>天</span>
+							</li>
+							<li>
+								<span class="group_hours">00</span><span>小時</span>
+							</li>
+							<li>
+								<span class="group_mins">00</span><span>分</span>
+							</li>
+							<li>
+								<span class="group_seconds">00</span><span>秒</span>
+							</li>
+							<input type="hidden" class="begindate" value="<%=list[i].tuanStart%>">
+							<input type="hidden" class="overdate" value="<%=list[i].tuanEnd%>">
+							<input type="hidden" class="nowdate" value="<%=list[i].nowTime%>">
+						</ul>
+					</div>
+				</div>
+
+				<div class="groupBuy_goodsEach groupBuy_goodsEach_begin" data-id = "<%=list[i+1].id%>">
+					<div class="groupBuy_goodsEach_pic" style="background-image:url(http://wap.macaoeasybuy.com<%=list[i+1].pic%>)">
+						<div class="goodsEach_begin_hover">
+							<div class="begin_hover_iconBox">
+								<div><img src="/img/common/groupBuy_share.png"></div>
+								<p>邀好友參團 </p>
+							</div>
+							<div class="begin_hover_iconBox begin_hover_seeGoodDetails">
+								<div><img src="/img/easybuy/groupBuy/groupBuy_details.png"></div>
+								<p>查看商品 </p>
+							</div>
+						</div>
+					</div>
+					<div class="groupBuy_goodsEach_messBox">
+						<div class="groupBuy_goodsEach_title"><%=list[i+1].title%></div>
+					</div>
+					<div class="groupBuy_begin_price">
+						<div class="groupBuy_begin_newprice">MOP<span><%=list[i+1].price%></span></div>
+						<div class="groupBuy_begin_oldprice"><del>MOP&nbsp;<%=list[i+1].costPrice%></del></div>
+					</div>
+					<div class="groupBuy_begin_status">
+						<div class="begin_status_left">
+							<div class="begin_status_btn">
+								<p>我要參團</p>
+								<p>湊人中(<span class="joinPeopleNunber"><%=list[i+1].makeGroupsize%></span>/<span class="allPeopleNunber"><%=list[i+1].tuanNum%></span>)</p>
+							</div>
+						</div>
+						<div class="begin_status_right">
+							<p>再湊<span><%=list[i+1].tuanNum -list[i+1].makeGroupsize%></span>人</p>
+							<p>馬上開團</p>
+						</div>
+					</div>
+					<div class="groupBuy_begin_finishBox"><img src="/img/easybuy/groupBuy/groupBuy_begin_finish.png"></div>
+					<div class="progressBar">
+						<div class="progressBar_curr"></div>
+					</div>
+					<div class="groupBuy_begin_leastTime">
+						<ul>
+							<li>剩&nbsp;</li>
+							<li>
+								<span class="group_days">00</span><span>天</span>
+							</li>
+							<li>
+								<span class="group_hours">00</span><span>小時</span>
+							</li>
+							<li>
+								<span class="group_mins">00</span><span>分</span>
+							</li>
+							<li>
+								<span class="group_seconds">00</span><span>秒</span>
+							</li>
+							<input type="hidden" class="begindate" value="<%=list[i+1].tuanStart%>">
+							<input type="hidden" class="overdate" value="<%=list[i+1].tuanEnd%>">
+							<input type="hidden" class="nowdate" value="<%=list[i+1].nowTime%>">
+						</ul>
+					</div>
+				</div>
+
+				<div class="groupBuy_goodsEach groupBuy_goodsEach_begin" data-id = "<%=list[i+2].id%>">
+					<div class="groupBuy_goodsEach_pic" style="background-image:url(http://wap.macaoeasybuy.com<%=list[i+2].pic%>)">
+						<div class="goodsEach_begin_hover">
+							<div class="begin_hover_iconBox">
+								<div><img src="/img/common/groupBuy_share.png"></div>
+								<p>邀好友參團 </p>
+							</div>
+							<div class="begin_hover_iconBox begin_hover_seeGoodDetails">
+								<div><img src="/img/easybuy/groupBuy/groupBuy_details.png"></div>
+								<p>查看商品 </p>
+							</div>
+						</div>
+					</div>
+					<div class="groupBuy_goodsEach_messBox">
+						<div class="groupBuy_goodsEach_title"><%=list[i+2].title%></div>
+					</div>
+					<div class="groupBuy_begin_price">
+						<div class="groupBuy_begin_newprice">MOP<span><%=list[i+2].price%></span></div>
+						<div class="groupBuy_begin_oldprice"><del>MOP&nbsp;<%=list[i+2].costPrice%></del></div>
+					</div>
+					<div class="groupBuy_begin_status">
+						<div class="begin_status_left">
+							<div class="begin_status_btn">
+								<p>我要參團</p>
+								<p>湊人中(<span class="joinPeopleNunber"><%=list[i+2].makeGroupsize%></span>/<span class="allPeopleNunber"><%=list[i+2].tuanNum%></span>)</p>
+							</div>
+						</div>
+						<div class="begin_status_right">
+							<p>再湊<span><%=list[i+2].tuanNum -list[i+2].makeGroupsize%></span>人</p>
+							<p>馬上開團</p>
+						</div>
+					</div>
+					<div class="groupBuy_begin_finishBox"><img src="/img/easybuy/groupBuy/groupBuy_begin_finish.png"></div>
+					<div class="progressBar">
+						<div class="progressBar_curr"></div>
+					</div>
+					<div class="groupBuy_begin_leastTime">
+						<ul>
+							<li>剩&nbsp;</li>
+							<li>
+								<span class="group_days">00</span><span>天</span>
+							</li>
+							<li>
+								<span class="group_hours">00</span><span>小時</span>
+							</li>
+							<li>
+								<span class="group_mins">00</span><span>分</span>
+							</li>
+							<li>
+								<span class="group_seconds">00</span><span>秒</span>
+							</li>
+							<input type="hidden" class="begindate" value="<%=list[i+2].tuanStart%>">
+							<input type="hidden" class="overdate" value="<%=list[i+2].tuanEnd%>">
+							<input type="hidden" class="nowdate" value="<%=list[i+2].nowTime%>">
+						</ul>
+					</div>
+				</div>
+			</div>
+		<%}%>
+	</script>
+
+	</body>
+</html>

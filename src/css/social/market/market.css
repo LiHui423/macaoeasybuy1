@@ -1,0 +1,225 @@
+.marketBox{
+	background:url(//img.macaoeasybuy.com/img/social/market/market_bg.png) fixed;
+}
+.market_bannerBox{
+	width: 100%;
+	padding-top: 15px;
+}
+.market_bannerBox img{
+	width: 100%;
+}
+.market_main{
+	width: 1397px;
+	margin: auto;
+}
+.marketBlock{
+	border: 2px solid #d3cfc6;
+	margin-top: 60px;
+}
+.marketBlock_top{
+	border-bottom: 2px solid #d3cfc6;
+	height: 70px;
+	padding:0px 40px;
+}
+.marketBlock_top_left{
+	float: left;
+}
+.marketBlock_top_right{
+	float: right;
+}
+.marketBlock_top_left div{
+	float: left;
+}
+.marketBlock_top_icon{
+	margin-top: 10px;
+	width: 50px;
+}
+.marketBlock_top_icon img{
+	width: 100%;
+}
+.marketBlock_top_title{
+	font-size: 22px;
+	color: #c49e54;
+	margin-left: 10px;
+	line-height: 70px;
+}
+.marketBlock_top_right div{
+	float: right;
+}
+.marketBlock_top_data{
+	line-height: 70px;
+}
+.marketBlock_top_see{
+	margin-right: 25px;
+}
+.marketBlock_top_data span{
+	display: block;
+	float: left;
+	color:#c49e54 ;
+	font-size: 14px;
+}
+.marketBlock_top_data span:nth-child(1){
+
+}
+.marketBlock_top_data span:nth-child(2){
+	margin-left: 5px;
+}
+.marketBlock_main{
+	padding: 18px 15px 10px 15px;
+}
+.marketBlock_main_theme{
+	float: left;
+	width: 680px;
+	height: 605px;
+	position: relative;
+}
+.marketBlock_main_themeCover{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 680px;
+	height: 605px;
+	background-color: rgba(144,136,115,0.6);
+	opacity: 0;
+}
+.marketBlock_main_themeCover_see{
+	width: 165px;
+	height: 50px;
+	border-radius:50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius:50px;
+	background-color: #FFFFFF;
+	text-align: center;
+	line-height: 50px;
+	color:#6b5a34;
+	font-size: 24px;
+	letter-spacing: 2px;
+	margin: auto;
+	margin-top: 260px;
+}
+.marketBlock_main_themeCover p{
+	font-size: 26px;
+	letter-spacing: 2px;
+	color: #FFFFFF;
+	text-align: center;
+	margin-top: 10px;
+}
+.marketBlock_main_theme img{
+	width: 100%;
+}
+.marketBlock_main_goodsBox{
+
+}
+.marketBlock_main_each{
+	float: left;
+	margin-left: 12px;
+	margin-bottom: 15px;
+	position: relative;
+	width: 215px;
+	height: 294px;
+	cursor: pointer;
+	overflow: hidden;
+}
+.marketBlock_main_each img{
+	width: 100%;
+}
+.marketBlock_main_eachCover{
+	position: absolute;
+	width: 215px;
+	height: 150px;
+	bottom: -30px;
+	left: 0;
+	padding:20px 30px ;
+	background: rgba(152,118,52,0.6);
+	opacity: 0;
+
+}
+.marketBlock_main_eachCover p{
+	color: #FFFFFF;
+	font-size: 14px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	word-break: break-all;
+	overflow: hidden;
+	text-align: center;
+	height: 40px;
+}
+.marketBlock_main_eachCover_head{
+	width: 65px;
+	height: 65px;
+	margin: auto;
+	margin-top: 10px;
+	overflow: hidden;
+}
+.marketBlock_main_eachCover_head img{
+	width: 65px;
+	height: 65px;
+}
+
+/*預加載模塊*/
+.example{
+	border: 2px solid #d3cfc6;
+	margin-top: 60px;
+}
+.example_top{
+	border-bottom: 2px solid #d3cfc6;
+	height: 70px;
+	padding:20px 40px;
+}
+.example_top_left{
+	width: 130px;
+	height: 30px;
+	float: left;
+	background-color: #e3e3e3;
+}
+.example_top_right{
+	width: 150px;
+	height: 30px;
+	float: right;
+	background-color: #e3e3e3;
+}
+.example_main{
+	padding: 18px 15px 10px 15px;
+}
+.example_main_theme{
+	float: left;
+	width: 680px;
+	height: 605px;
+	background-color: #e3e3e3;
+}
+.example_main_eachgood{
+	float: left;
+	margin-left: 12px;
+	margin-bottom: 15px;
+	position: relative;
+	width: 215px;
+	height: 294px;
+	cursor: pointer;
+	overflow: hidden;
+	background-color: #e3e3e3;
+}
+.example_main_eachgoodmain{
+	position: absolute;
+	width: 215px;
+	height: 150px;
+	bottom: -30px;
+	left: 0;
+	bottom: 0;
+	padding:20px 30px ;
+	background-color: #A8A8A8;
+	text-align: center;
+}
+.example_main_eachgoodmain_p{
+	width: 150px;
+	height: 25px;
+	background-color: #e3e3e3;
+	display: inline-block;
+}
+.example_main_eachgoodmain_head{
+	width: 65px;
+	height: 65px;
+	margin-top: 10px;
+	background-color: #e3e3e3;
+	display: inline-block;
+}

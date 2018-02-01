@@ -1,0 +1,131 @@
+body{
+	background: url(/img/easybuy/moreshops/moreshop_bg.png) fixed;
+}
+.navBar_borderBox{
+	width: 100%;
+	border-bottom: 2px solid #FF527C;
+	padding-bottom: 10px;
+}
+#groupBuy_banner{
+	margin-top: 0px;
+}
+.moreshopsBox{
+	margin-top: 15px;
+}
+.moreshopsBox_banner{
+	width: 100%;
+}
+.moreshopsBox_banner img{
+	width: 100%;
+}
+.moreshopsBox_main{
+	width: 1397px;
+	margin: auto;
+	margin-top: 20px;
+	border: 1px solid #E3E3E3;
+	background: #fff;
+}
+.moreshopsBox_menu{
+	padding: 0 15px;
+	border-bottom: 1px solid #E3E3E3;
+}
+.moreshopsBox_menuLeft{
+	float: left;
+	width:130px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.moreshopsBox_menuRight{
+	float: left;
+	margin-left:120px;
+	width: 985px;
+}
+.moreshopsBox_menuRight ul li{
+	float: left;
+	width: 100px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	color: #A8A8A8;
+	float: left;
+	font-size: 16px;
+	margin: 0 20px;
+	letter-spacing: 2px;
+	cursor: pointer;
+}
+.moreshopsBox_menuRights_less ul{
+	margin-top: 30px;
+}
+.moreshopsBox_menuRight ul .moreshopsBox_menuCurr{
+	background-color: #FF527C;
+	color: #FFFFFF;
+}
+.moreshopsBox_shopEach{
+	width: 380px;
+	float: left;
+	margin-left: 70px;
+	margin-bottom: 70px;
+}
+.moreshopsBox_shopEach:nth-child(3n+1){
+	margin-left: 0px;
+}
+.moreshopsBox_shopMess_logo{
+	float: left;
+	width: 130px;
+	cursor:pointer;
+}
+.moreshopsBox_shopMess_logo img{
+	width: 130px;
+}
+.moreshopsBox_shopMess_data{
+	float: right;
+	margin-right: 15px;
+}
+.moreshopsBox_shopBox{
+	padding:57px 57px 0px 57px;
+}
+.moreshopsBox_goodShowBox{
+	margin-top: 25px;
+}
+.moreshopsBox_goodShowEach{
+	width: 125px;
+	height: 125px;
+	float: left;
+	margin-right: 1px;
+	margin-top: 1px;
+}
+.moreshopsBox_goodShowEach img{
+	width: 100%;
+}
+.moreshopsBox_shopMess_dataEach{
+	margin-top: 10px;
+}
+.moreshopsBox_shopMess_dataEach span{
+	display: inline-block;
+	color: #A8A8A8;
+	vertical-align:top;
+}
+.moreshopsBox_shopMess_dataEach span:nth-child(1){
+	width: 20px;
+}
+.moreshopsBox_shopMess_dataEach span:nth-child(2){
+	margin-left: 5px;
+}
+.moreshopsBox_shopMess_dataEach:nth-child(2) span:nth-child(1) img{
+	width: 15px;
+	margin-left: 2px;
+}
+.moreshopsBox_shopMess_dataEach:nth-child(2) span:nth-child(2){
+	margin-top: 2px;
+}
+.moreshopsBox_noMore{
+	font-size: 16px;
+	color: #B3B3B3;
+	text-align: center;
+	letter-spacing: 2px;
+	margin-bottom: 50px;
+	display: none;
+}
+.moreshopsBox_goodShowBox{
+	height: 380px;	
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>用戶空間-生活圈列表頁</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/css/userspace/lifecircle/lifecirclelist/lifecirclelist.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script>
+			easyBuy.userSpaceGlobal.afterSetIsSelf = function(state){
+				if(state){
+					easyFrame.loadCss('/css/userspace/lifecircle/lifecirclelist/lifecirclelist-mine.css');
+				}
+			}
+		</script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script>easyBuy.userSpaceGlobal.whiteNavName = 'SuitableLifeNumber';</script>
+		<!--參數要帶 userid 頁面所屬主人的id -->
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu"></ul>
+							<ul id="news-push"></ul>
+						</div>
+						<div id="userspace-content">
+							<!--這裡是內容-->
+							<div class="userspace-content-inner">
+								<div class="mine-sort-menu clearfloat">
+									<div class="select"><img src="/img/userspace/album/news-sort.png" alt="" class="no-select"><img src="/img/userspace/album/news-sort-w.png" alt="" class="select">按發佈時間排序<div></div></div>
+									<div><img src="/img/userspace/album/mes-sort.png" alt="" class="no-select"><img src="/img/userspace/album/mes-sort-w.png" alt="" class="select">按回覆數排序<div></div></div>
+									<div><img src="/img/userspace/album/goods-sort.png" alt="" class="no-select"><img src="/img/userspace/album/goods-sort-w.png" alt="" class="select">按讃好數排序<div></div></div>
+									<p id="album-delete"><img src="/img/userspace/common/deletebtn.png" alt="">批量刪除(<span>0</span>)</p>
+								</div>
+								<div class="sort-box select" id="uptime">
+									<div class="clearfloat content-box-class"></div>
+									<p class="no-more">~沒有更多內容了哦~</p>
+								</div>
+								<div class="sort-box" id="blackNum">
+									<div class="clearfloat content-box-class"></div>
+									<p class="no-more">~沒有更多內容了哦~</p>
+								</div>
+								<div class="sort-box" id="loveNums">
+									<div class="clearfloat content-box-class"></div>
+									<p class="no-more">~沒有更多內容了哦~</p>
+								</div>
+
+							</div>
+							<!--內容的結束標識-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+		<!--刪除提示-->
+		<div id="delete-post">
+			<div class="delete-post-shadow"></div>
+			<div class="cancel-tips-box on-middle yez-tips-box">
+				<div class="cancels-title">批量刪除</div>
+				<div>
+					<div class="cancels-xc"><img src="/img/common/02.png" alt=""></div>
+					<div class="cancel-tips-text">是否刪除選中的<span>0</span>篇生活圈？</div>
+					<div class="cancel-tips-text-tips">提示：刪除<span class="remove-num">0</span>篇生活圈帖子會扣除<span class="remove-num-math"></span>分積分哦！</div>
+					<div class="clearfloat sure-button">
+						<div class="sure-cancel">確認</div>
+						<div class="cancel-sure">取消</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="/js/plug/yez_js_Reset.js"></script>
+		<script src="/js/common/vendor/template-native.js"></script>
+		<script src="/js/userspace/common/userinfo.js" async></script>
+		<script src="/js/userspace/common/leftmenu.js" async></script>
+		<script src="/js/userspace/common/whitemenu.js" async></script>
+		<script src="/js/userspace/common/newspush.js" async></script>
+		<script src="/js/common/header&search&footer/footer.js" async></script>
+		<script src="/js/common/header&search&footer/header.js"></script>
+		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+		<script src="/js/userspace/lifecircle/lifecirclelist/lifecirclelist.js"></script>
+		<script id="post-template" type="text/html" data-type="template">
+			<%if(userSuitableLifeList.suitableLifeList.length != 0){%>
+				<%for(var i=0;i<userSuitableLifeList.suitableLifeList.length;i++){%>
+					<div class="pillar-all mine <%=userSuitableLifeList.suitableLifeList[i].id%>Class" id="<%=userSuitableLifeList.suitableLifeList[i].id%><%=order%>">
+						<div class="pillar">
+							<div class="page-main">
+								<%if(userSuitableLifeList.isSelf == 0){%>
+									<div class="laster-look clearfloat">
+										<div class="laster-head"><img src="<%=osURL%><%=userSuitableLifeList.seeUser.pic%>" alt=""></div>
+										<div class="laster-text">
+											<div class="laster-text-name">
+												<span><%=userSuitableLifeList.seeUser.name%></span>
+												<img src="<%=easySex(userSuitableLifeList.seeUser.sex)%>" alt="">
+											</div>
+											<div class="laster-text-num"><span><%=userSuitableLifeList.suitableLifeList[i].uptime%></span>前發佈</div>
+										</div>
+									</div>
+								<%}%>
+								<%if(userSuitableLifeList.suitableLifeList[i].pictureurl != undefined){%>
+									<a href=""><img src="<%=osURL%><%=userSuitableLifeList.suitableLifeList[i].pictureurl%>" class="page-main-head-img"></a>
+								<%}%>
+								<div class="post-main-text">
+									<div class="post-title"><%=userSuitableLifeList.suitableLifeList[i].titlename%><span>/<%=userSuitableLifeList.suitableLifeList[i].typename%>/</span></div>
+									<div class="post-description"><%=#userSuitableLifeList.suitableLifeList[i].lifecontent%></div>
+									<%if(userSuitableLifeList.isSelf == 1){%>
+										<div class="post-number"><span><%=userSuitableLifeList.suitableLifeList[i].uptime%></span>前發佈</div>
+									<%}%>
+								</div>
+							</div>
+							<div class="laster">
+								<ul class="laster-num clearfloat">
+									<li><%=formatNum(userSuitableLifeList.suitableLifeList[i].seeNums)%></li>
+									<li><%=formatNum(userSuitableLifeList.suitableLifeList[i].loveNums)%></li>
+									<li><%=formatNum(userSuitableLifeList.suitableLifeList[i].blackNum)%></li>
+								</ul>
+							</div>
+							<div class="shadow-box"></div>
+							<%if(userSuitableLifeList.isSelf == 1){%>
+								<div class="hover-check-box-outer">
+									<div class="hover-check-box"></div>
+								</div>
+							<%}%>
+						</div>
+						<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+					</div>
+				<%}%>
+			<%}else if(userSuitableLifeList.suitableLifeList.length == 0 && page == 0){%>
+				<div id="no-post">
+					<div>
+						<img src="/img/common/05.png" alt="">
+					</div>
+					<span>目前沒有任何內容哦!</span>
+				</div>
+			<%}%>
+		</script>
+	</body>
+</html>

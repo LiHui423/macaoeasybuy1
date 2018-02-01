@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>用戶空間-好友粉絲頁</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/css/userspace/friendsfans/friendsandfans/friendsandfans.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script>easyBuy.userSpaceGlobal.whiteNavName = 'friendsandfans';</script>
+		<!--userid  頁面所屬主人的id-->
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu"></ul>
+							<ul id="news-push"></ul>
+						</div>
+						<div id="userspace-content">
+							<!--這裡是內容-->
+								<div class="select-menu clearfloat">
+									<div id="friends-state" class="clearfloat">
+										<div class="select"><img src="/img/userspace/friendsfans/friends.png" alt="" class="no-select"><img src="/img/userspace/friendsfans/friends-s.png" alt="" class="select">好友(<span></span>)</div>
+										<div><img src="/img/userspace/friendsfans/fans.png" alt="" class="no-select"><img src="/img/userspace/friendsfans/fans-s.png" alt="" class="select">粉絲(<span></span>)</div>
+										<div><img src="/img/userspace/friendsfans/friendsfans.png" alt="" class="no-select"><img src="/img/userspace/friendsfans/friendsfans-s.png" alt="" class="select">互相關注(<span></span>)</div>
+									</div>
+									<div id="friends-sex">
+										<div class="select"><img src="/img/userspace/friendsfans/boygirl.png" alt="" class="no-select"><img src="/img/userspace/friendsfans/boygirl-s.png" alt="" class="select"></div>
+										<div><img src="/img/userspace/friendsfans/girl.png" alt="" class="no-select"><img src="/img/userspace/friendsfans/girl-s.png" alt="" class="select"></div>
+										<div><img src="/img/userspace/friendsfans/boy.png" alt="" class="no-select"><img src="/img/userspace/friendsfans/boy-s.png" alt="" class="select"></div>
+									</div>
+								</div>
+								<ul id="user-list" class="clearfloat result-box">
+
+									<div class="user-list-box friends-box select">
+										<div class="sex-change-box clearfloat select">
+											<div class="inner-boxing"></div>
+											<p class="no-more">~沒有更多內容了~</p>
+										</div>
+										<div class="sex-change-box clearfloat">
+											<div class="inner-boxing"></div>
+											<p class="no-more">~沒有更多內容了~</p>
+										</div>
+										<div class="sex-change-box clearfloat">
+											<div class="inner-boxing"></div>
+											<p class="no-more">~沒有更多內容了~</p>
+										</div>
+									</div>
+
+									<div class="user-list-box fans-box">
+										<div class="sex-change-box clearfloat">
+											<div class="inner-boxing"></div>
+											<p class="no-more">~沒有更多內容了~</p>
+										</div>
+										<div class="sex-change-box clearfloat">
+											<div class="inner-boxing"></div>
+											<p class="no-more">~沒有更多內容了~</p>
+										</div>
+										<div class="sex-change-box clearfloat">
+											<div class="inner-boxing"></div>
+											<p class="no-more">~沒有更多內容了~</p>
+										</div>
+									</div>
+
+									<div class="user-list-box friendsfans-box">
+										<div class="sex-change-box clearfloat">
+											<div class="inner-boxing"></div>
+											<p class="no-more">~沒有更多內容了~</p>
+										</div>
+										<div class="sex-change-box clearfloat">
+											<div class="inner-boxing"></div>
+											<p class="no-more">~沒有更多內容了~</p>
+										</div>
+										<div class="sex-change-box clearfloat">
+											<div class="inner-boxing"></div>
+											<p class="no-more">~沒有更多內容了~</p>
+										</div>
+									</div>
+
+								</ul>
+							<!--內容的結束標識-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+		<!--關注成功彈框-->
+		<div id="focus-tips"><img src="/img/social/label/labeldetail/fancurr.png" alt="">已成功關注該宜粉！</div>
+		<!--取消關注彈框-->
+		<div id="focus-box">
+			<div class="shadow"></div>
+			<div class="cancel-tips-box on-middle yez-tips-box">
+				<div class="cancels-title">取消關注好友</div>
+				<div>
+					<div class="cancels-xc"><img src="/img/common/02.png" alt=""></div>
+					<div class="cancel-tips-text">不再關注該好友了嗎？</div>
+					<div class="clearfloat sure-button">
+						<div class="sure-cancel">確認</div>
+						<div class="cancel-sure">取消</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="/js/plug/yez_js_Reset.js"></script>
+		<script src="/js/common/vendor/template-native.js"></script>
+		<script src="/js/userspace/common/userinfo.js" async></script>
+		<script src="/js/userspace/common/leftmenu.js" async></script>
+		<script src="/js/userspace/common/whitemenu.js" async></script>
+		<script src="/js/userspace/common/newspush.js" async></script>
+		<script src="/js/common/header&search&footer/footer.js" async></script>
+		<script src="/js/common/header&search&footer/header.js"></script>
+
+		<script src="/js/userspace/friendsfans/friendsandfans/friendsandfans.js"></script>
+		<script id="fans-template" type="text/html" data-type="template">
+			<%if(fan.length != 0){%>
+				<%for(var i=0;i<fan.length;i++){%>
+					<li class="result-box-item <%=fan[i].id%><%=fan[i].type%>" id="<%=fan[i].id%><%=fan[i].type%><%=fan[i].sexType%>">
+						<div class="result-box-item-inner">
+							<!--<div class="head special"><img src="/img/userspace/friendsfans/newfanspoint.png" alt="" class="point"></div>-->
+							<div class="head"><img src="<%=osURL%><%=fan[i].pic%>" alt="" class="head-img"></div>
+							<div class="name">
+								<span><%=fan[i].name%></span>
+								<%if(fan[i].sex == 'Girl'){%>
+									<img src="/img/common/girl.png">
+								<%}else{%>
+									<img src="/img/common/boy.png">
+								<%}%>
+							</div>
+							<div class="identity-level user special">用戶身份：<span><img src="/img/userspace/friendsfans/1-ico.png" alt="">普通百姓</span></div>
+							<div class="identity-level pet">寵物等級：<img src="/img/userspace/friendsfans/2-ico.png" alt=""><span>圈圈獸</span><span>LV.1</span></div>
+							<ul class="clearfloat user-info">
+								<li>
+									<div><%=fan[i].friendCount%></div>
+									<div>好友</div>
+								</li>
+								<li>
+									<div><%=fan[i].fanCount%></div>
+									<div>粉絲</div>
+								</li>
+								<li>
+									<div><%=fan[i].publishCount%></div>
+									<div>發佈</div>
+								</li>
+								<li>
+									<div><%=fan[i].loveCount%></div>
+									<div>心動</div>
+								</li>
+							</ul>
+							<div class="user-skills">
+								<!--<div class="user-skills-inner clearfloat">
+									<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">Ada</div>
+									<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">女性</div>
+									<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
+									<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
+									<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
+									<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
+								</div>-->
+								<p>暫無任何興趣和技能</p>
+							</div>
+							<div class="shadow-box">
+								<div>
+									<div class="shadow-box-btn share-btn"><div><img src="/img/userspace/friendsfans/share-icon.png" alt="">分享</div></div>
+									<%if(fan[i].isFocus == 0){%>
+										<div class="shadow-box-btn cancel-focus focus-btn"><div>已關注</div></div>
+									<%}else{%>
+										<div class="shadow-box-btn focus-it focus-btn"><div><img src="/img/userspace/friendsfans/add.png" alt="">關注</div></div>
+									<%}%>
+								</div>
+							</div>
+						</div>
+						<div class="result-box-bottom"><img src="/img/social/market/treasureclassifydetail/mdetail-shadow.png" alt=""></div>
+					</li>
+				<%}%>
+			<%}else if(fan.length == 0 && page == 0){%>
+				<div id="no-post">
+					<div>
+						<img src="/img/common/05.png" alt="">
+					</div>
+					<span>目前沒有任何內容哦!</span>
+				</div>
+			<%}%>
+		</script>
+	</body>
+</html>

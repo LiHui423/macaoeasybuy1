@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>激平二手-分類列表頁</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/social/secondHand/secondhandclassifydetail/secondhandclassifydetail.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_sinple.js"></script>
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="searchBar">
+				<div class="searchBox">
+					<div class="searchBox_mainBox clearfloat">
+						<div class="searchBox_left">
+							<img src="/img/common/header&search&footer/easybuy_Logo.png">
+						</div>
+						<div class="searchBox_right" id="searchBox_rightBox"></div>
+					</div>
+				</div>
+			</div>
+			<div class="navBar_borderBox">
+				<div class="navBar">
+					<ul>
+						<li><a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+						<li><a href="//social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
+						<li><a href="//social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
+						<li class="navBarLi_curr"><a href="//social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="container">
+				<div class="container-swapper">
+					<div class="banner" id="second-banner-bar"></div>
+					<div class="nav clearfloat" id="second-nav-bar">
+						<div class="navbtn">
+							<span>&nbsp;</span>
+						</div>
+						<div class="newes-items clearfloat check-box-swapper">
+							<div class="check-box select"></div>
+							<span>按最新物品</span>
+						</div>
+						<div class="maximum-view clearfloat check-box-swapper">
+							<div class="check-box"></div>
+							<span>按最多查看</span>
+						</div>
+						<ul class="price clearfloat">
+							<li>出讓價格(MOP)：</li>
+							<li><input type="text" class="search-input" id="begin-price"></li>
+							<li>至</li>
+							<li><input type="text" class="search-input" id="end-price"></li>
+						</ul>
+						<ul class="search-other clearfloat">
+							<li></li>
+							<li><input type="text" name="" id="search-content" value="" class="search-input" placeholder="請輸入關鍵字搜索閒置品"></li>
+							<li class="search-btn" id="search-btn-go">搜索</li>
+						</ul>
+						<ul class="slider-nav clearfloat" id="second-slider-nav"></ul>
+					</div>
+					<div id="show-result-tips">
+						<div class="no-result">
+							<span>沒有搜索到「<span class="result-title"></span>」的相關二手帖子哦！</span>
+						</div>
+						<div class="has-result">您搜索「<span class="result-title"></span>」的結果有<span class="result-number"></span>張二手帖子</div>
+					</div>
+					<div class="search-result" id="search-result">
+						<div class="search-result-inner"></div>
+					</div>
+					<p class="no-more">~沒有更多內容了~</p>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+	    <script src="/js/plug/yez_js_Reset.js"></script>
+	    <script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+		<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	    <script src="/js/common/header&search&footer/searchBar.js" async></script>
+	    <script src="/js/common/header&search&footer/footer.js" async></script>
+		<script src="/js/common/header&search&footer/header.js"></script>
+		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+		<script src="/js/social/secondHand/secondhandclassifydetail/secondhandclassifydetail.js"></script>
+		<!--二手分類-->
+		<script id="class-template" type="text/html" data-type="template">
+			<%for(var i=0;i<list.length;i++){%>
+			<li id="<%=list[i].id%>-second-class">
+				<a href="http://192.168.3.38:8080/page/social/secondhand/secondhandclassifydetail/secondhandclassifydetail.html?type=<%=list[i].id%>">
+					<div class="slider-image myborder-radius">
+						<img src="//wap.macaoeasybuy.com<%=list[i].usedClassPic%>">
+						<div></div>
+					</div>
+					<p><%=list[i].usedClassName%></p>
+				</a>
+			</li>
+			<%}%>
+		</script>
+		<!--模板-->
+		<script id="search-result-template" type="text/html" data-type="template">
+			<%for(var i=0;i<classList.length;i++){%>
+				<div class="pillar-all" id="<%=classList[i].postid%>-poster">
+					<div class="pillar">
+						<div class="page-main">
+							<div class="box-shadow"></div>
+							<div class="top-banner"><%=classList[i].fineness%>&nbsp;/&nbsp;MOP&nbsp;<%=classList[i].usedprice%></div>
+							<%if(classList[i].postPics.length != 0){%>
+								<a href=""><img src="//wap.macaoeasybuy.com<%=classList[i].postPics[0]%>" class="page-main-head-img"></a>
+							<%}%>
+							<div class="laster-look clearfloat">
+								<div class="laster-head">
+									<img src="//wap.macaoeasybuy.com<%=classList[i].postuserpic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'">
+								</div>
+								<div class="laster-text">
+									<div class="laster-text-name clearfloat">
+										<div><%=classList[i].postuserName%></div>
+										<%if(classList[i].postusersex == 'Girl'){%>
+											<img src="/img/common/girl.png" alt="">
+										<%}else{%>
+											<img src="/img/common/boy.png" alt="">
+										<%}%>
+									</div>
+									<div class="laster-text-num"><span><%=classList[i].postTimeDiff%></span>前發佈</div>
+								</div>
+							</div>
+							<div class="post-second-line"></div>
+							<div class="post-main-text">
+								<p><%=classList[i].postName%></p>
+								<div class="post-title"><%=classList[i].postContent%></div>
+								<ul>
+									<li>功能：<span><%=classList[i].usedfunction%></span></li>
+									<li>外觀：<span><%=classList[i].appearance%></span></li>
+									<li>私保：<span><%=classList[i].insurance%></span></li>
+									<li>保養期：<span><%=classList[i].period%></span></li>
+									<%if(classList[i].place != undefined){%>
+										<li class="area"><span><%=classList[i].place%></span></li>
+									<%}%>
+								</ul>
+							</div>
+						</div>
+						<div class="laster">
+							<div class="box-shadow"></div>
+							<ul class="laster-num clearfloat">
+								<li><%=classList[i].postSeeNumber%></li>
+								<li><%=classList[i].postLoveNumber%></li>
+								<li><%=classList[i].replyCount%></li>
+							</ul>
+						</div>
+					</div>
+					<%if(classList[i].state == '无效'){%>
+						<div class="close-bg"><img src="/img/social/secondHand/secondHand_finished.png" alt=""></div>
+					<%}else if(classList[i].state == '取消'){%>
+						<div class="close-bg"><img src="/img/social/secondHand/secondHand_cancel.png" alt=""></div>
+					<%}%>
+				</div>
+			<%}%>
+		</script>
+	</body>
+</html>

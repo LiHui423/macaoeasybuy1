@@ -1,0 +1,140 @@
+#container{
+	background:url(//img.macaoeasybuy.com/img/social/easylive/topic-post-bg.png) center center no-repeat #fff;
+	background-attachment: fixed;
+}
+/*帖子*/
+.post-list-content .post-topic-box {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 30px;
+    background-color:#fff;
+}
+.post-list-content .post-topic-box .box-img {
+    float: left;
+    height: 100%;
+    line-height: 250px;
+    width:33%;
+    overflow: hidden;
+    text-align: center;
+}
+.post-list-content .post-topic-box .box-img img{
+	width: 100%;
+}
+.post-list-content .post-topic-box .box-main {
+    float: left;
+    height: 100%;
+    width:37%;
+    padding: 20px;
+}
+.post-list-content .box-look{
+	width:30%;
+	float:left;
+	height:100%;
+	padding:20px;
+}
+.post-list-content .post-topic-box .box-main .box-main-head .box-main-head-img {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    float: left;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    margin-top: 6px;
+}
+.post-list-content .post-topic-box .box-main .box-main-head .box-main-head-img img{
+	width: 100%;
+}
+.post-list-content .post-topic-box .box-main .box-main-head .box-main-head-info {
+    float: left;
+    padding-left: 20px;
+}
+.post-list-content .post-topic-box .box-main .box-main-head .box-main-head-info-title {
+    font-size: 18px;
+    color: #bf2440;
+    font-weight: bold;
+    padding: 10px 0px;
+   	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	max-width: 395px;
+}
+.post-list-content .post-topic-box .box-main .box-main-head .box-main-head-info-time div:first-of-type {
+    float: left;
+    margin-right: 20px;
+    color: #000;
+    font-weight: bold;
+}
+.post-list-content .post-topic-box .box-main .box-main-head .box-main-head-info-time div:last-of-type {
+    float: left;
+    color: #aaa;
+}
+.post-list-content .post-topic-box .box-main-head-info-article {
+    padding-top: 15px;
+    width: 100%;
+    height: 83px;
+    line-height: 24px;
+    color: #aaa;
+    letter-spacing: 1px;
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.post-list-content .post-topic-box .box-main .info {
+    width: 100%;
+    padding-top: 15px;
+    margin-top:15px;
+    text-align: left;
+    border-top:1px dashed #ccc;
+}
+.post-list-content .post-topic-box .box-main .info li {
+    width: 33.333333333%;
+    float: left;
+    text-align: left;
+    color: #aaa;
+}
+.post-list-content .post-topic-box .box-main .info li img {
+    margin: -2px 4px 0px 0px;
+}
+.post-list-content .box-look-instruc{
+	color:#aaa;
+}
+.post-list-content .box-look ul{
+	height: 144px;
+	padding-top:12px;
+}
+.post-list-content .box-look ul li{
+	float:left;
+	width:50px;
+	height:50px;
+	line-height: 50px;
+	text-align: center;
+	overflow:hidden;
+	border-radius: 50%;
+	background-color:#ccc;
+	margin-bottom:16px;
+	margin-right:15px;
+}
+.post-list-content .box-look ul li img{
+	width: 100%;
+}
+.post-list-content .box-look ul li:nth-of-type(6n){
+	margin-right:0px;
+}
+.post-list-content .box-look .box-look-btn{
+	width:90%;
+	font-size:16px;
+	font-weight:bold;
+	background-color: #FFFD00;
+	border-radius: 5px;
+	text-align: center;
+	padding:8px 0px;
+	margin:5px auto 0px auto;
+	cursor: pointer;
+}

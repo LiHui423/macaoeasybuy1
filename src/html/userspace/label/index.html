@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用戶空間-標籤列表頁</title>
+    <!-- 加载公共CSS -->
+    <link rel="stylesheet" href="/css/common/easyframe/easyframe.css">
+    <link rel="stylesheet" href="/css/common/common.css">
+    <!-- 加载模块公共CSS -->
+    <link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+    <!-- 加载页面CSS -->
+    <link rel="stylesheet" href="/css/userspace/label/labellist/labellist.css">
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="/js/common/frameDomainJSON.js"></script>
+    <script>
+        easyBuy.userSpaceGlobal.afterSetIsSelf = function (state) {
+            if (state) {
+                easyFrame.loadCss('/css/userspace/label/labellist/labellist-mine.css');
+            } else {
+                easyFrame.loadCss('/css/userspace/label/labellist/labellist-other.css');
+            }
+        }
+    </script>
+    <script src="/js/common/getData/getData_needLogin.js"></script>
+    <script src="/js/userspace/common/userspacebg.js" async></script>
+    <script>
+        easyBuy.userSpaceGlobal.whiteNavName = 'LabelControlNumber';
+    </script>
+</head>
+
+<body>
+    <div id="swapper">
+        <header></header>
+        <div id="container" class="clearfloat">
+            <div id="left-menu"></div>
+            <div id="right-content">
+                <div id="user-info"></div>
+                <div class="clearfloat">
+                    <div class="white-container">
+                        <ul id="white-menu"></ul>
+                        <ul id="news-push"></ul>
+                    </div>
+                    <div id="userspace-content">
+                        <div class="tabsBar">
+                            <div class="labelTabs" data-eb-active="0">
+                                <div class="tab tab-created"></div>
+                                <div class="tab tab-used">
+                                    <div class="tab-show"></div>
+                                    <div class="all"></div>
+                                    <div class="daily"></div>
+                                    <div class="living"></div>
+                                    <div class="buy"></div>
+                                    <div class="used"></div>
+                                </div>
+                            </div>
+                            <div class="label-add">
+                                <button class="add-btn"></button>
+                                <div class="add-panel">
+                                    <div class="select">
+                                        <div class="header">
+                                            <ul data-eb-active="0">
+                                                <li>#地點</li>
+                                                <li>#熱點</li>
+                                                <li>#品牌</li>
+                                            </ul>
+                                            <input type="text" placeholder="請輸入您想要使用的標籤">
+                                        </div>
+                                        <ul></ul>
+                                    </div>
+                                    <div class="confirm">
+                                        <p>您選擇的標籤</p>
+                                        <p>#標籤#</p>
+                                        <p>快去以下板塊中使用這個標籤吧</p>
+                                        <p>tips: 新標籤在發佈帖子后才能成功創建哦</p>
+                                        <div>
+                                            <a href="#">
+                                                <img src="/img/userspace/common/leftmenu/userin_ica4.png" alt="">
+                                                <span>日誌</span>
+                                            </a>
+                                            <a href="#">
+                                                <img src="/img/userspace/common/leftmenu/userin_ica6.png" alt="">
+                                                <span>生活圈</span>
+                                            </a>
+                                            <a href="#">
+                                                <img src="/img/userspace/common/leftmenu/userin_ica8.png" alt="">
+                                                <span>二手</span>
+                                            </a>
+                                            <a href="#">
+                                                <img src="/img/userspace/common/leftmenu/userin_ica7.png" alt="">
+                                                <span>敗家誌</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sortOrderTabs" data-eb-active="0">
+                                <div class="tab">按發佈時間</div>
+                                <div class="tab">按讃好數</div>
+                                <div class="tab">按被用次數</div>
+                            </div>
+                        </div>
+                        <div class="item-container" data-eb-active="0">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer></footer>
+    </div>
+    <script src="/js/plug/yez_js_Reset.js"></script>
+    <script src="/js/common/vendor/template-native.js"></script>
+    <script src="/js/userspace/common/userinfo.js" async></script>
+    <script src="/js/userspace/common/leftmenu.js" async></script>
+    <script src="/js/userspace/common/whitemenu.js" async></script>
+    <script src="/js/userspace/common/newspush.js" async></script>
+    <script src="/js/common/header&search&footer/footer.js" async></script>
+    <script src="/js/common/header&search&footer/header.js"></script>
+    <script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+    <script src="/js/common/ebtemplate-jquery.js"></script>
+    <script src="/js/userspace/label/labellist/labellist.js"></script>
+    <script id="queryUserSpaceLabel" type="text/html" data-eb-template>
+        <%for(var i=0, item; (item = content[i++]);) {%>
+            <div class="label-item">
+                <%if(item.labelPic !== '') {%>
+                    <div class="label-picture">
+                        <img src="<%=osURL%><%=item.labelPic%>" alt="">
+                    </div>
+                    <%}%>
+                        <div class="label-describe">
+                            <div class="label-name">
+                                <%=item.labelName%>
+                            </div>
+                            <div class="label-create-time">
+                                <img src="/img/social/label/labelranklist/clock.png" alt="">
+                                <%=item.uptime%>前創建於
+                                    <span>
+                                        <%=item.labelType%>
+                                    </span>
+                            </div>
+                            <div class="label-article">
+                                <div>關於
+                                    <span>
+                                        <%=item.labelName%>
+                                    </span>
+                                </div>
+                                <p>
+                                    <%=item.labelDesc%>
+                                </p>
+                            </div>
+                            <div class="label-num clearfloat">
+                                <div>
+                                    <img src="/img/common/eye.png" alt="">
+                                    <%=formatNum(item.seeCount)%>宜粉查看過</div>
+                                <div>
+                                    <img src="/img/common/good.png" alt="">
+                                    <%=formatNum(item.loveCount)%>宜粉讃好</div>
+                            </div>
+                            <div class="label-post">
+                                <div>該標籤精彩帖子</div>
+                                <ul>
+                                    <%if(item.postList.length === 0 || item.postList[0] === null) {%>
+                                        <li class="label-none">
+                                            <img src="/img/userspace/label/post-num.png" alt="">沒有帖子使用該標籤哦，您要搶先？</li>
+                                        <%} else {
+                                    for(var j=0, li; (li = item.postList[j++]);) {
+                                        if(li.type === 0) {%>
+                                            <li class="label-master">
+                                                <img src="/img/userspace/label/label-master.png" alt="">
+                                                <%=li.postContent%>
+                                            </li>
+                                            <%} else {%>
+                                                <li class="label-none">
+                                                    <img src="/img/userspace/label/post-num.png" alt="">
+                                                    <%li.postContent%>
+                                                </li>
+                                                <%}
+                                    }
+                                }%>
+                                </ul>
+                            </div>
+                        </div>
+
+            </div>
+            <%}%>
+    </script>
+    <script id="queryUserSpaceUsedLabel" type="text/html" data-eb-template>
+        <%for(var i = 0, item; item = content[i++];) {%>
+            <div class="post-item">
+                <div class="post-picture">
+                    <img src="<%=osURL%><%=item.postPics%>" alt="">
+                </div>
+                <div class="post-content">
+                    <div class="title clearfloat">
+                        <div class="head">
+                            <img src="/img/common/headPic_noBorder.png" alt="">
+                        </div>
+                        <div class="post-state">
+                            <div class="post-title">
+                                <%=item.postName%>
+                            </div>
+                            <div class="post-time-state">
+                                <img src="/img/social/label/labelranklist/clock.png" alt="">
+                                <span class="time">
+                                    <%=item.uptime%>
+                                </span>前發佈於
+                                <span class="state">
+                                    <%=item.postState%>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <%=item.postContent%>
+                    </div>
+                    <ul class="post-num clearfloat">
+                        <li>
+                            <img src="/img/common/eye.png" alt="">
+                            <%=formatNum(item.postSeeNumber)%>
+                        </li>
+                        <li>
+                            <img src="/img/common/message.png" alt="">
+                            <%=formatNum(item.replyCount)%>
+                        </li>
+                        <li>
+                            <img src="/img/common/good.png" alt="">
+                            <%=formatNum(item.postLoveNumber)%>
+                        </li>
+                    </ul>
+                    <div class="post-label">
+                        <img src="/img/userspace/label/arrow-g.png" alt="" class="arrow">
+                        <ul>
+                            <%for(var j = 0; label = item.labels[j++];) {%>
+                                <li>
+                                    <div class="post-use-label">
+                                        <%=label.labelName%>
+                                    </div>
+                                    <div class="clearfloat">
+                                        <div class="post-use-head">
+                                            <img src="<%=osURL%><%=label.labeluserpic%>" alt="">
+                                        </div>
+                                        <div class="post-use-name-from">
+                                            <div class="post-use-name">
+                                                <%=label.labeluserName%>
+                                                    <%=#sexIcon(label.labelusersex)%>
+                                            </div>
+                                            <div class="post-use-from">創建該標籤於
+                                                <span>#熱點#</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <%}%>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <%}%>
+    </script>
+    <script id="queryLabelForUserSpace" type="text/html" data-eb-template>
+        <%for(var i = 0, item; (item = content[i++]);) {%>
+            <li>
+                <span><%=#item.labelName%></span>
+            </li>
+            <%}%>
+    </script>
+</body>
+
+</html>

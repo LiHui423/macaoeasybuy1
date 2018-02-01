@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>發佈-敗家誌</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" type="text/css" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_Editor.css">
+		<link rel="stylesheet" type="text/css" href="/css/userspace/publish/publish_common.css">
+		<link rel="stylesheet" type="text/css" href="/css/userspace/publish/emoji_at_label_store_goods.css">
+		<link rel="stylesheet" type="text/css" href="/css/userspace/publish/publish_liveshot.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+	</head>
+
+	<body>
+		<div class="transparent_bg"></div>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu"></ul>
+							<ul id="news-push"></ul>
+						</div>
+						<div id="userspace-content">
+							<div class="publishBox publishBox_diary">
+								<div class="publishBox_title">發佈敗家誌</div>
+								<div class="publishBox_main">
+									<!--上傳圖片-->
+									<div class="publishBox_unloadpic">
+										<div class="upload-box">
+											<div class="upload-box-tips">
+												<span class="upload-count">上傳圖片(<span class="now-num" id="nowNum">0</span>/<span class="max-num" id="maxNum">6</span>)</span>
+												<span class="upload-tips">提示：適合上傳JPG、JPEG、GIF、PNG、APNG且每張不超過4MB大小的圖片</span>
+											</div>
+											<div class="upload-picbox clearfloat">
+												<div class="upload-picbar" id="preview-box"></div>
+												<div id="publish_submit" class=""></div>
+											</div>
+										</div>
+									</div>
+									<!--文章標題-->
+									<div class="publishBox_articleTitle clearfloat">
+										<div class="publishBox_articleTitleLeft">
+											<span>標題：</span><input type="text" id="diaryTitle" value="" placeholder="幫您的帖子起一個標題吧" maxlength="24">
+											<div class="publishBox_articleTitleLeft_num"><span id="diaryTitle-num">0</span>/24</div>
+										</div>
+									</div>
+									<!--文章正文-->
+									<div class="publishBox_articleMain">
+										<!--輸入框-->
+										<div id="editor-box"></div>
+										<!--選擇完的內容-->
+										<div class="publishBox_showbox">
+											<!--存放大表情-->
+											<div class="publishBox_showbox_each publishBox_showbox_bigemoji" id="big-expression">
+												<div class="publishBox_showbox_title">大表情（<span class="now">0</span> /<span class="max"> 8</span>）</div>
+												<div class="publishBox_showbox_main clearfloat"></div>
+											</div>
+											<!--相關商品-->
+											<div class="publishBox_showbox_each publishBox_showbox_good" id="add-good-show-box">
+												<div class="publishBox_showbox_title">相關商品（<span>0</span> / 4）</div>
+												<div class="publishBox_showbox_main clearfloat"></div>
+											</div>
+											<!--相關商店-->
+											<div class="publishBox_showbox_each publishBox_showbox_shop" id="add-shop-show-box">
+												<div class="publishBox_showbox_title">相關商店（<span>0</span> / 4）</div>
+												<div class="publishBox_showbox_main clearfloat"></div>
+											</div>
+										</div>
+									</div>
+									<!--按鈕盒子-->
+									<div class="publishBox_btn clearfloat">
+										<div class="publishBox_surebtn" id="replyBox_sendMess">
+											<span><img src="/img/userspace/publish/checkIcon_white.png"></span><span>保存并發佈</span>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer></footer>
+		</div>
+
+		<!--發佈成功-->
+		<div id="comment-success-tips-empty" class="comment-success-tips">
+			<div class="praise on-middle yez-tips-box">
+				<div><img src="/img/common/icon/focusShop_icon.png" alt="">已成功發佈敗家誌！</div>
+				<div>已獲得積分獎勵</div>
+				<div>+<span class="point-number"></span>分</div>
+			</div>
+		</div>
+
+	<script src="/js/plug/yez_js_Reset.js"></script>
+	<script src="/js/common/vendor/template-native.js"></script>
+	<script src="/js/userspace/common/userinfo.js" async></script>
+	<script src="/js/userspace/common/leftmenu.js" async></script>
+	<script src="/js/userspace/common/whitemenu.js" async></script>
+	<script src="/js/userspace/common/newspush.js" async></script>
+	<script src="/js/common/header&search&footer/footer.js" async></script>
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="//js.macaoeasybuy.com/img/js/plug/yez_Editor.js"></script>
+	<script src="/js/plug/webuploader.nolog.min.js"></script>
+	<script src="/js/common/uploadFrame/uploadFrame.js"></script>
+	<script src="/js/userspace/publish/publish_Editor.js"></script>
+	<script src="/js/userspace/publish/publish_common_upload.js"></script>
+	<script src="/js/userspace/publish/publish_getData.js"></script>
+	<script src="/js/userspace/publish/publish_liveshot/publish_liveshot.js"></script>
+
+	<!--圖片預覽模板-->
+	<script id="upload-show-img" type="text/html" data-type="template">
+		<div class="upload-picboxEach" id="<%=id%>">
+			<img src="<%=pic%>" alt="">
+			<div class="upload-picboxEach_clear">
+				<img src="/img/userspace/publish/pubilsh_close.png">
+			</div>
+			<div class="upload-picboxEach_clear_shadow">
+				<div class="upload-picboxEach_clear_shadow_inner">
+					<div class="progress-text">等待上傳</div>
+					<div class="progress">
+						<div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+	<!--at人的模板-->
+	<script id="at-person-template" type="text/html" data-type="template">
+		<%if(data.length != 0){%>
+		<%for(var i=0;i<data.length;i++){%>
+			<li id="<%=data[i].id%>user" class="<%=data[i].id%>userclass">
+				<div class="fandPic"><img src="<%=osURL%><%=data[i].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+				<div class="fansMess clearfloat">
+					<span><%=data[i].name%></span>
+					<%if(data[i].sex == 'Girl'){%>
+						<span><img src="/img/common/girl.png"></span>
+					<%}else if(data[i].sex == 'Boy'){%>
+						<span><img src="/img/common/boy.png"></span>
+					<%}%>
+				</div>
+				<div class="fandPic_Filter"></div>
+				<span class="metiond_checked"><img src="/img/social/label/labeldetail/fancurr.png"></span>
+			</li>
+		<%}%>
+		<%}else if(data.length == 0 && page == 0){%>
+			<div class="no-res-content">
+				<div><img src="/img/common/05.png" alt=""></div>
+				<div>暫無內容</div>
+			</div>
+		<%}%>
+	</script>
+	<!--標籤的模板-->
+	<script id="label-template" type="text/html" data-type="template">
+		<%if(labelList.length != 0){%>
+		<%for(var i=0;i<labelList.length;i++){%>
+			<li id="<%=labelList[i].id%>label" class="<%=labelList[i].id%>labelclass" label="<%=labelList[i].labelName%>" type="<%=labelList[i].type%>" author="<%=labelList[i].userId%>">
+				<div class="LabelList_Filter"></div>
+				<span class="LabelList_checked"><img src="/img/social/label/labeldetail/fancurr.png"></span>
+				<div class="labelList_left"><img src="<%=osURL%><%=labelList[i].picture%>" onerror="this.src='/img/common/loading_pc_80.png';this.style.width='120px'"></div>
+				<div class="labelList_right">
+					<div class="labelList_title"><%=labelList[i].labelName%></div>
+					<div class="labelList_main">
+						<p><%=labelList[i].describe%></p>
+					</div>
+					<div class="labelList_DataBox clearfloat">
+						<div class="labelList_DataEach">
+							<div><img src="/img/social/liveshot/ProdigalTopicList/eye.png"></div>
+							<p><span><%=labelList[i].seeNums%></span>個宜粉查看</p>
+						</div>
+						<div class="labelList_DataEach">
+							<div><img src="/img/social/liveshot/ProdigalTopicList/good.png"></div>
+							<p><span><%=labelList[i].loveNums%></span>個宜粉贊好</p>
+						</div>
+						<!--<div class="labelList_DataEach">
+							<div><img src="/img/social/label/labeldetail/about (1).png"></div>
+							<p><span>50</span>相關帖子</p>
+						</div>-->
+					</div>
+				</div>
+			</li>
+		<%}%>
+		<%}else if(labelList.length == 0 && page == 0){%>
+			<div class="no-res-content">
+				<div><img src="/img/common/05.png" alt=""></div>
+				<div>暫無內容</div>
+			</div>
+		<%}%>
+	</script>
+	<!--新標籤模板-->
+	<script id="new-label-template" type="text/html" data-type="template">
+		<li id="<%=id%>label" class="<%=id%>labelclass" label="<%=labelName%>" type="<%=type%>" author="<%=userId%>">
+			<div class="LabelList_Filter"></div>
+			<span class="LabelList_checked"><img src="/img/social/label/labeldetail/fancurr.png"></span>
+			<div class="labelList_left"><img src="/img/common/loading_pc_80.png" style="width: 120px;"></div>
+			<div class="labelList_right">
+				<div class="labelList_title"><%=labelName%></div>
+				<div class="labelList_main">
+					<p id="new-label-tips">新標籤</p>
+				</div>
+				<div class="labelList_DataBox clearfloat">
+					<div class="labelList_DataEach">
+						<div><img src="/img/social/liveshot/ProdigalTopicList/eye.png"></div>
+						<p><span><%=seeNums%></span>個宜粉查看</p>
+					</div>
+					<div class="labelList_DataEach">
+						<div><img src="/img/social/liveshot/ProdigalTopicList/good.png"></div>
+						<p><span><%=loveNums%></span>個宜粉贊好</p>
+					</div>
+					<!--<div class="labelList_DataEach">
+						<div><img src="/img/social/label/labeldetail/about (1).png"></div>
+						<p><span>50</span>相關帖子</p>
+					</div>-->
+				</div>
+			</div>
+		</li>
+	</script>
+	<!--添加商品-->
+	<script id="goods-template" type="text/html" data-type="template">
+		<%if(good.length != 0){%>
+			<%for(var i=0;i<good.length;i++){%>
+				<%if(good[i].isSelect == true){%>
+				<li id="<%=good[i].shangpinId%>-good-<%=type%>" class="<%=good[i].shangpinId%>-good storegood-item select">
+				<%}else{%>
+				<li id="<%=good[i].shangpinId%>-good-<%=type%>" class="<%=good[i].shangpinId%>-good storegood-item">
+				<%}%>
+					<div class="goods-item-box">
+						<img src="<%=osURL%><%=good[i].pic%>" alt="" onerror="this.src='/img/common/loading_pc_220.jpg'">
+						<div class="bottom clearfloat">
+							<div class="goodLove"><%=good[i].loveCount%></div>
+							<div class="goodSee"><%=good[i].seeCount%></div>
+							<div class="goodBuy"><%=good[i].saleCount%></div>
+						</div>
+						<div class="mycover"></div>
+					</div>
+					<p class="goodTitle_hide"><%=good[i].title%></p>
+				</li>
+			<%}%>
+		<%}else if(good.length == 0 && page == 0){%>
+			<div class="no-res-content">
+				<div><img src="/img/common/05.png" alt=""></div>
+				<div>暫無內容</div>
+			</div>
+		<%}%>
+	</script>
+	<!--添加商店-->
+	<script id="store-template" type="text/html" data-type="template">
+		<%if(shop.length != 0){%>
+			<%for(var i=0;i<shop.length;i++){%>
+				<%if(shop[i].isSelect == true){%>
+				<li id="<%=shop[i].shopId%>-shop-<%=type%>" class="<%=shop[i].shopId%>-shop storegood-item select">
+				<%}else{%>
+				<li id="<%=shop[i].shopId%>-shop-<%=type%>" class="<%=shop[i].shopId%>-shop storegood-item">
+				<%}%>
+					<div class="top">
+						<img src="<%=osURL%><%=shop[i].logo%>" alt="" class="top-banner" onerror="this.src='/img/common/loading_pc_shop.png'">
+						<div class="top-head"><img src="<%=osURL%><%=shop[i].shopPic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+					</div>
+					<div class="bottom">
+						<div class="bottom-title"><img src="/img/social/label/labeldetail/shop-house.png" alt=""><span><%=shop[i].shopName%></span></div>
+						<div class="bottom-type">商品類別：<span><%=shop[i].type%></span></div>
+						<div class="clearfloat bottom-number">
+							<div>商品數量：<span><%=shop[i].saleCount%></span></div>
+							<div>粉絲數量：<span><%=shop[i].fanCount%></span></div>
+						</div>
+					</div>
+					<div class="mycover"></div>
+				</li>
+			<%}%>
+		<%}else if(shop.length == 0 && page == 0){%>
+			<div class="no-res-content">
+				<div><img src="/img/common/05.png" alt=""></div>
+				<div>暫無內容</div>
+			</div>
+		<%}%>
+	</script>
+	<!--插入相關商品-->
+	<script id="add-good-template" type="text/html" data-type="template">
+		<%for(var i=0;i<list.length;i++){%>
+		<div class="showbox_main_good_each clearfloat" id="<%=list[i].id%>-add-good-item">
+			<div class="showbox_main_good_eachLeft">
+				<img src="<%=osURL%><%=list[i].pic%>" onerror="this.src='/img/common/loading_pc_220.jpg'">
+			</div>
+			<div class="showbox_main_good_eachRight">
+				<p><%=list[i].title%></p>
+				<ul>
+					<li>
+						<div class="showbox_main_good_eachRight_data">
+							<span><img src="/img/userspace/publish/publish_loveIcon.png"></span>
+							<span><%=list[i].loveCount%></span>
+						</div>
+						<p>宜粉心動</p>
+					</li>
+					<li>
+						<div class="showbox_main_good_eachRight_data">
+							<span><img src="/img/userspace/publish/publish_greatIcon.png"></span>
+							<span><%=list[i].goodRate%>%</span>
+						</div>
+						<p>好評率</p>
+					</li>
+					<li>
+						<div class="showbox_main_good_eachRight_data">
+							<span><img src="/img/userspace/publish/publish_buyIcon.png"></span>
+							<span><%=list[i].saleCount%></span>
+						</div>
+						<p>最近已購買</p>
+					</li>
+				</ul>
+			</div>
+			<div class="showbox_main_good_each_close"><img src="/img/userspace/publish/pubilsh_close.png"></div>
+		</div>
+		<%}%>
+	</script>
+	<!--插入相關商店-->
+	<script id="add-shop-template" type="text/html" data-type="template">
+		<%for(var i=0;i<list.length;i++){%>
+		<div class="showbox_main_shop_each" id="<%=list[i].id%>-add-shop-item">
+			<img src="<%=osURL%><%=list[i].logo%>" onerror="this.src='/img/common/loading_pc_shop.png'">
+			<div class="showbox_main_shop_each_close"><img src="/img/userspace/publish/pubilsh_close.png"></div>
+		</div>
+		<%}%>
+	</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,348 @@
+#contenteditable-btn,
+.editor-top.other,
+#move-success-tips{
+	display:none;
+}
+.describe-title-mine{
+	width:610px;
+	float:left;
+	height:60px;
+}
+.describe-title-mine>div{
+	width:33.3333333%;
+	float:left;
+	color:#7c7c7c;
+	font-size:18px;
+	line-height:60px;
+	text-align: center;
+	border-right:1px solid #ccc;
+	cursor:pointer;
+	position:relative;
+}
+.describe-title-mine>div img{
+	margin:-3px 6px 0px 0px;
+}
+.describe-title-mine>div img.select{
+	display: none;
+}
+.describe-title-mine>div img.no-select{
+	display: inline-block;
+}
+.describe-title-mine>div.select img.select{
+	display: inline-block;
+}
+.describe-title-mine>div.select img.no-select{
+	display: none;
+}
+.describe-title-mine>div>div{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:100%;
+	height:8px;
+	background-color:#e98900;
+	display:none;
+}
+.describe-title-mine>div.select{
+	color:#E98900;
+}
+.describe-title-mine>div.select>div{
+	display:block;
+}
+/*採集圖片*/
+#album-collect{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	display:none;
+}
+#album-collect .collect-shadow{
+	position:fixed;
+	top:0px;
+	right:0px;
+	left:0px;
+	bottom:0px;
+	background-color:rgba(0,0,0,.4);
+	z-index:988;
+}
+#album-collect .collect-box{
+    position: relative;
+    z-index: 988;
+    width: 570px;
+    margin: 0px auto;
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+#album-collect .collect-box .collect-title{
+	background-color:#E98900;
+	font-size:16px;
+	color:#fff;
+	padding:8px 20px;
+	-webkit-border-radius:10px 10px 0px 0px;
+	-moz-border-radius:10px 10px 0px 0px;
+	-ms-border-radius:10px 10px 0px 0px;
+	-o-border-radius:10px 10px 0px 0px;
+	border-radius:10px 10px 0px 0px;
+}
+#album-collect .collect-box .collect-inner{
+	padding:10px 20px;
+	background-color:#ffefd8;
+	-webkit-border-radius:0px 0px 10px 10px;
+	-moz-border-radius:0px 0px 10px 10px;
+	-ms-border-radius:0px 0px 10px 10px;
+	-o-border-radius:0px 0px 10px 10px;
+	border-radius:0px 0px 10px 10px;
+}
+#album-collect .collect-box .collect-inner .collect-tips{
+	font-size:14px;
+	color:#AAAAAA;
+	margin-top:20px;
+}
+#album-collect .collect-box .collect-inner .collect-tips:nth-of-type(1){
+	margin-top:0px;
+}
+#album-collect .collect-box .collect-inner .collect-imgs{
+	max-height: 200px;
+	min-height:155px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin-top:10px;
+}
+#album-collect .collect-box .collect-inner .collect-imgs li{
+	position:relative;
+	margin-bottom:15px;
+	height:150px;
+}
+#album-collect .collect-box .collect-inner .collect-imgs li:last-of-type{
+	margin-bottom:0px;
+}
+#album-collect .collect-box .collect-inner .collect-imgs li div{
+	float:left;
+	height:150px;
+}
+#album-collect .collect-box .collect-inner .collect-imgs li div.collect-img{
+	width:150px;
+	height:100%;
+	background-color:#ccc;
+	margin-right:15px;
+	box-shadow: 0px 0px 7px 3px #aaa;
+	position:relative;
+	z-index:500;
+}
+#album-collect .collect-box .collect-inner .collect-imgs li div.collect-img img{
+	width:100%;
+	height:100%;
+}
+#album-collect .collect-box .collect-inner .collect-imgs li div.collect-img-shadow{
+    position: absolute;
+    top: -3px;
+    left: -7px;
+    width: 150px;
+    -webkit-transform: rotateZ(-3deg);
+    -moz-transform: rotateZ(-3deg);
+    -ms-transform: rotateZ(-3deg);
+    -o-transform: rotateZ(-3deg);
+    transform: rotateZ(-3deg);
+    background-color: rgba(100,100,100,.2);
+    z-index: 499;
+    height: 150px;
+}
+#album-collect .collect-box .collect-inner .collect-imgs li .collect-describe{
+	resize: none;
+	width:345px;
+	height:100%;
+	background-color:#fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+	padding:15px;
+	overflow: auto;
+	outline:0px;
+    word-wrap: break-word;
+    border:0px;
+    outline:0px;
+}
+
+#album-collect .collect-box .collect-inner .collect-create{
+	height:40px;
+	width:100%;
+	position:relative;
+	background: #fff;
+	-webkit-border-radius: 0px 10px 10px 0px;
+	-moz-border-radius: 0px 10px 10px 0px;
+	-ms-border-radius: 0px 10px 10px 0px;
+	-o-border-radius: 0px 10px 10px 0px;
+	border-radius: 0px 10px 10px 0px;
+	margin-top:10px;
+}
+#collect-title-count{
+	position:absolute;
+	top:50%;
+	-webkit-transform: translate(0px,-50%);
+	-moz-transform: translate(0px,-50%);
+	-ms-transform: translate(0px,-50%);
+	-o-transform: translate(0px,-50%);
+	transform: translate(0px,-50%);
+	right:115px;
+}
+#collect-title-count span{
+	color:#E98900;
+}
+#album-collect .collect-box .collect-inner .collect-create .collect-input{
+	float:left;
+	width:80%;
+	height:100%;
+	outline:0px;
+	border:0px;
+	line-height:40px;
+	padding:0px 10px;
+	color:#E98900;
+	letter-spacing: 1px;
+}
+#album-collect .collect-box .collect-inner .collect-create .create-btn{
+	position:absolute;
+	right:0px;
+	height:100%;
+	width:20%;
+	background-color:#E98900;
+	line-height:40px;
+	text-align: center;
+	text-indent:24px;
+	font-size:16px;
+	letter-spacing: 1px;
+	color:#fff;
+	cursor: pointer;
+	cursor: -ms-pointer;
+	background:url(/img/social/easylive/focus-white.png) 24px 10px no-repeat #E98900;
+	background-size:18px 18px;
+	-webkit-background-size:18px 18px;
+	-moz-background-size:18px 18px;
+	-ms-background-size:18px 18px;
+	-o-background-size:18px 18px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+}
+#album-collect .collect-box .collect-inner .collect-list{
+	margin-top:10px;
+	background-color:#fff;
+	padding:15px;
+}
+#album-collect .collect-box .collect-inner .collect-list .collect-list-title{
+	border-bottom:1px solid #aaa;
+	padding-bottom:15px;
+	color:#aaa;
+	height:36px;
+	overflow: hidden;
+}
+#album-collect .collect-box .collect-inner .collect-list ul{
+	height:330px;
+	width:515px;
+	margin-top:15px;
+	overflow: auto;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li{
+	float:left;
+	width:23.49%;
+	margin-right:10px;
+	margin-bottom:20px;
+	cursor: pointer;
+	cursor:-ms-pointer;
+	position:relative;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li:nth-of-type(4n){
+	margin-right:0px;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li .collect-list-div:first-of-type{
+	width:100%;
+	height:120px;
+	overflow: hidden;
+	position:relative;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li .collect-list-div:first-of-type img{
+	width:100%;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li .collect-list-div:first-of-type div.img-number{
+	position:absolute;
+	right:0px;
+	bottom:0px;
+	width:30px;
+	height:30px;
+	text-align: center;
+	background-color:#E98900;
+	color:#fff;
+	line-height:30px;
+	font-size:16px;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li .collect-list-div:first-of-type div.collect-select{
+	position:absolute;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	background-color:rgba(0,0,0,.5);
+	display:none;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li.select .collect-list-div:first-of-type div{
+	display:block;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li .collect-list-div:first-of-type div img{
+	display:block;
+	width:auto;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+}
+#album-collect .collect-box .collect-inner .collect-list ul li .collect-list-div:nth-of-type(2){
+	color:#666;
+	text-align: center;
+	height:20px;
+	overflow: hidden;
+}
+
+#album-collect .collect-box .collect-inner .want-collect{
+    width: 172px;
+    margin: 25px auto 10px auto;
+    text-indent: 46px;
+    padding: 13px 0px;
+    color: #fff;
+    background: url(/img/social/easylive/album-classification-cai-white.png) 24px 6px no-repeat #E98900;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    cursor: -ms-pointer;
+}
+#album-collect .collect-box .collect-inner .want-collect.cannot-collect{
+	background-color:#ddd;
+	color:#fff;
+	cursor: default;
+	cursor: -ms-default;
+}
+#album-collect .collect-box .close-collect{
+	display:block;
+	position:absolute;
+	right:0px;
+	top:0px;
+	-webkit-transform: translate(50%,-50%);
+	-moz-transform: translate(50%,-50%);
+	-ms-transform: translate(50%,-50%);
+	-o-transform: translate(50%,-50%);
+	transform: translate(50%,-50%);
+	cursor: pointer;
+	cursor: -ms-pointer;
+}

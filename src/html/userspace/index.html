@@ -1,0 +1,321 @@
+<!doctype html>
+<html class="no-js" lang="zh-cmn-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>用戶空間</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="/css/common/normalize.css">
+    <link rel="stylesheet" href="/css/common/reset.css">
+    <link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+    <link rel="stylesheet" href="/css/common/common.css">
+    <link rel="stylesheet" href="/css/userspace/main.css">
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+<div id="userspace">
+    <header id="page-header"></header>
+    <main id="page-main">
+        <div id="left-menu"></div>
+        <div id="right-content">
+            <div id="user-info"></div>
+            <div class="e-container">
+                <div class="white-container">
+                    <ul id="white-menu"></ul>
+                    <ul id="news-push"></ul>
+                </div>
+                <div id="userspace-content">
+                    <iframe src="" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="page-footer"></footer>
+</div>
+<script src="/js/common/easyframe.js"></script>
+<script src="/js/common/vendor/modernizr-3.5.0.min.js"></script>
+<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+<!-- <script src="/js/common/page-header.js"></script> -->
+<script src="/js/userspace/main.js"></script>
+<!-- 当前空间的用户信息 -->
+<script type="text/template" data-art-template="userInfo">
+    <div class="userinfo-panel">
+            <div class="user-head clearfloat">
+                <div class="head-img myborder-radius"><img src="<%=image(userPic)%>" alt="" class="head-pic"></div>
+                <div class="head-info">
+                    <div>用戶暱稱：<span class="user-name-top"><%=userName%></span><img src="<%=easySex(sex)%>" class="sex"></div>
+                    <div>寵物等級：<img src="<%=petGradePic !== '' && (oss + petGradePic)%>" class="pet" onerror="this.style.display='none'"><span
+                        class="pet-level"><%=petGradeName%></span></div>
+                    <div>用戶身份：<span class="identity">&nbsp;<%=userIdentity ? userIdentity : '普通用戶'%></span></div>
+                </div>
+            </div>
+            <div class="user-looking-set-point-user-box">
+                <% if(isSelf == 1) { %>
+                <div class="user-looking point-select-different">有<%=seeNum%>個宜粉正在訪問您</div>
+                <% } else { %>
+                <div class="set-point-user-box">
+                    <div id="follows-btn" class="set-point-user point-select-different">
+                        <span id="follows-show"><%=isAttented === 0 ? '關注' : '已關注對方' + attentionTime%></span>
+                        <span id=""></span>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <ul class="clearfloat">
+                <li id="go-editor-userinfo" class="">
+                    <a class="go-editor-userinfo-inner"
+                       href="/page/userspace/personalinfo/infoview/information/information.html">
+                        <div>個人</div>
+                        <div>資料</div>
+                    </a>
+                    <img src="/img/userspace/common/friend-arrow1.png" alt="">
+                </li>
+                <li><div><%=publishCount%></div><div>發佈</div></li>
+                <li><div><%=attentionCount%></div><div>關注</div></li>
+                <li><div><%=fansCount%></div><div>粉絲</div></li>
+                <li><img src="/img/userspace/common/code.png" alt=""></li>
+            </ul>
+    </div>
+    <div class="user-info-bg">
+        <img src="/img/userspace/common/userin_1.png" alt="">
+    </div>
+
+    <div id="user-info-success"><img src="/img/social/label/labeldetail/fancurr.png" alt="">已成功關注該宜粉！</div>
+    <div id="user-info-focus-box">
+        <div class="shadow"></div>
+        <div class="cancel-tips-box">
+            <div class="cancels-title">取消關注好友</div>
+            <div>
+                <div class="cancels-xc"><img src="/img/common/02.png" alt=""></div>
+                <div class="cancel-tips-text">不再關注該好友了嗎？</div>
+                <div class="clearfloat sure-button">
+                    <div class="sure-cancel">確認</div>
+                    <div class="cancel-sure">取消</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<!-- 左侧浮动的导航栏-->
+<script type="text/template" data-art-template="leftmenu">
+    <ul>
+        <li id="index-leftmenu">
+            <div><img src="/img/userspace/common/leftmenu/userin_ic0.png" alt=""></div>
+            <div><span>我的<br>首頁</span></div>
+        </li>
+        <li id="easylife-leftmenu">
+            <div><img src="/img/userspace/common/leftmenu/userin_ic1.png" alt=""></div>
+            <div><span>宜生活</span></div>
+        </li>
+        <li id="setinfo-leftmenu">
+            <div><img src="/img/userspace/common/leftmenu/userin_ic2.png" alt=""></div>
+            <div><span>個人<br>設置</span></div>
+        </li>
+        <li id="sendpost-leftmenu">
+            <div><img src="/img/userspace/common/leftmenu/userin_ic3.png" alt=""></div>
+            <div><span>發佈<br>帖子</span></div>
+        </li>
+        <li id="inform-leftmenu">
+            <div><img src="/img/userspace/common/leftmenu/userin_ic4.png" alt=""></div>
+            <div><span>通知<br>消息</span></div>
+        </li>
+        <li id="peep-leftmenu">
+            <div><img src="/img/userspace/common/leftmenu/userin_ic5.png" alt=""></div>
+            <div><span>誰來<br>偷看</span></div>
+        </li>
+        <li id="findfriend-leftmenu">
+            <div><img src="/img/userspace/common/leftmenu/userin_ic6.png" alt=""></div>
+            <div><span>查找<br>宜粉</span></div>
+        </li>
+    </ul>
+    <div id="sendpost-leftmenu-box">
+        <div class="release-shadow"></div>
+        <div class="release-box">
+            <img src="/img/common/tips-box/img-upload-close.png" alt="" class="cancel-btn">
+            <ul class="clearfloat">
+                <li class="clearfloat" id="userReleaseNumber-postclick">
+                    <a href="/page/userspace/publish/pubilsh_diary.html">
+                        <div><img src="/img/userspace/common/leftmenu/userin_ica4.png" alt=""></div>
+                        <div>
+                            <div>日誌</div>
+                            <div>我要發佈我的生活文</div>
+                            <p>他們已發佈了<span>&nbsp;</span>篇</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="clearfloat" id="userSentVolunteersNumber-postclick">
+                    <a href="/page/userspace/publish/pubilsh_liveshot.html">
+                        <div><img src="/img/userspace/common/leftmenu/userin_ica7.png" alt=""></div>
+                        <div>
+                            <div>敗家誌</div>
+                            <div>我要發佈我的嗮單</div>
+                            <p>他們已發佈了<span>&nbsp;</span>篇</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="clearfloat" id="userAlbumNumber-postclick">
+                    <a href="/page/userspace/publish/pubilsh_album.html">
+                        <div><img src="/img/userspace/common/leftmenu/userin_ica5.png" alt=""></div>
+                        <div>
+                            <div>專輯</div>
+                            <div>我要發佈我的美美圖冊</div>
+                            <p>他們已發佈了<span>&nbsp;</span>篇</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="clearfloat" id="userUsedNumber-postclick">
+                    <a href="/page/userspace/publish/pubilsh_secondHand.html">
+                        <div><img src="/img/userspace/common/leftmenu/userin_ica8.png" alt=""></div>
+                        <div>
+                            <div>二手</div>
+                            <div>我要為閒置物找到好主人</div>
+                            <p>他們已發佈了<span>&nbsp;</span>篇</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="clearfloat" id="userSuitableLifeNumber-postclick">
+                    <a href="/page/userspace/publish/pubilsh_group.html">
+                        <div><img src="/img/userspace/common/leftmenu/userin_ica6.png" alt=""></div>
+                        <div>
+                            <div>生活圈</div>
+                            <div>我要發佈圈中話題</div>
+                            <p>他們已發佈了<span>&nbsp;</span>篇</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="clearfloat" id="userFairNumber-postclick">
+                    <a href="/page/userspace/publish/pubilsh_market.html">
+                        <div><img src="/img/userspace/common/leftmenu/userin_ica9.png" alt=""></div>
+                        <div>
+                            <div>市集</div>
+                            <div>我要擺攤出售雜貨</div>
+                            <p>他們已發佈了<span>&nbsp;</span>篇</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</script>
+<!-- 左侧的空间导航栏 -->
+<script type="text/template" data-art-template="whitemenu">
+    <li data-space-nav="dynamic">
+        <span>動態</span><span></span>
+    </li>
+    <li data-space-nav="love">
+        <span>心動</span><span><%=userAllLoveNumber%></span>
+    </li>
+    <li data-space-nav="praise">
+        <span>贊好</span><span><%=userLikeNumber%></span>
+    </li>
+    <li data-space-nav="daily">
+        <span>日誌</span><span><%=userReleaseNumber%></span>
+    </li>
+    <li data-space-nav="album">
+        <span>專輯</span><span><%=userAlbumNumber%></span>
+    </li>
+    <li data-space-nav="life">
+        <span>生活圈</span><span><%=userSuitableLifeNumber%></span>
+    </li>
+    <li data-space-nav="buy">
+        <span>敗家誌</span><span><%=userSentVolunteersNumber%></span>
+    </li>
+    <li data-space-nav="used">
+        <span>二手</span><span><%=userUsedNumber%></span>
+    </li>
+    <li data-space-nav="fair">
+        <span>市集</span><span><%=userFairNumber%></span>
+    </li>
+    <li data-space-nav="label">
+        <span>標籤</span><span><%=userLabelControlNumber%></span>
+    </li>
+    <li data-space-nav="shop">
+        <span>關注的商店</span><span><%=userAttentionShopNumber%></span>
+    </li>
+    <li data-space-nav="relation">
+        <span>好友與粉絲</span><span></span>
+    </li>
+</script>
+<!-- 左侧的新品栏 -->
+<script type="text/template" data-art-template="newspush">
+    <div class="news-push-title clearfloat">
+        <div>新品推送</div>
+        <div>更多></div>
+    </div>
+    <div class="news-push-box">
+        <div class="news-push-box-inner">
+            <li>
+                <div class="news-push-shop clearfloat">
+                    <div class="shop-head"><img src="/img/social/easylive/album-recommend-list1.png" alt=""></div>
+                    <div class="shop-info">
+                        <div>店主：番薯</div>
+                        <div>2015-15-88</div>
+                        <div>17:88:66</div>
+                    </div>
+                </div>
+                <div class="news-push-shops">
+                    <div class="shop-title">今日上新貨了哦，只賣6.5折，打到骨折為止！</div>
+                    <div class="shop-img">
+                        <img src="/img/e8f08dcc7ec6e4a62d7add2bf6689dca6d5474e572992-9eTnKp.jpg" alt="">
+                    </div>
+                    <div class="shop-price clearfloat">
+                        <div>原價：<span>MOP 250</span></div>
+                        <div>現價：<span>MOP 111</span></div>
+                    </div>
+                    <div class="save-for">為您節省MOP 37</div>
+                </div>
+            </li>
+            <li>
+                <div class="news-push-shop clearfloat">
+                    <div class="shop-head"><img src="/img/social/easylive/album-recommend-list1.png" alt=""></div>
+                    <div class="shop-info">
+                        <div>店主：番薯</div>
+                        <div>2015-15-88</div>
+                        <div>17:88:66</div>
+                    </div>
+                </div>
+                <div class="news-push-shops">
+                    <div class="shop-title">今日上新貨了哦，只賣6.5折，打到骨折為止！</div>
+                    <div class="shop-img">
+                        <img src="/img/e8f08dcc7ec6e4a62d7add2bf6689dca6d5474e572992-9eTnKp.jpg" alt="">
+                    </div>
+                    <div class="shop-price clearfloat">
+                        <div>原價：<span>MOP 250</span></div>
+                        <div>現價：<span>MOP 111</span></div>
+                    </div>
+                    <div class="save-for">為您節省MOP 37</div>
+                </div>
+            </li>
+            <li>
+                <div class="news-push-shop clearfloat">
+                    <div class="shop-head"><img src="/img/social/easylive/album-recommend-list1.png" alt=""></div>
+                    <div class="shop-info">
+                        <div>店主：番薯</div>
+                        <div>2015-15-88</div>
+                        <div>17:88:66</div>
+                    </div>
+                </div>
+                <div class="news-push-shops">
+                    <div class="shop-title">今日上新貨了哦，只賣6.5折，打到骨折為止！</div>
+                    <div class="shop-img">
+                        <img src="/img/e8f08dcc7ec6e4a62d7add2bf6689dca6d5474e572992-9eTnKp.jpg" alt="">
+                    </div>
+                    <div class="shop-price clearfloat">
+                        <div>原價：<span>MOP 250</span></div>
+                        <div>現價：<span>MOP 111</span></div>
+                    </div>
+                    <div class="save-for">為您節省MOP 37</div>
+                </div>
+            </li>
+        </div>
+    </div>
+</script>
+</body>
+</html>

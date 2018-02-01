@@ -1,0 +1,292 @@
+.publishBox_articleTitle{
+	margin-top: 0px;
+}
+.publishBox_unloadpic{
+	margin-top: 15px;
+}
+
+.publishBox_articleTitleRight{
+	background-color: #e98900;
+}
+.publishBox_articleTitleRight_slide{
+	border: 1px solid #e98900;
+}
+.publishBox_articleTitleRight_slide ul li{
+	color: #e98900;
+}
+.publishBox_articleTitleRight_slide ul li:hover{
+	background-color:#f6b860;
+	color: #FFFFFF;
+}
+.publishBox_articleTitleRight_slide ul li.publish_slide_curr{
+	background-color:#e98900;
+	color: #FFFFFF;
+}
+.publishBox_articleTitleLeft_num{
+	right: 35px;
+}
+.cleapublishBox_articleTitleLeft_slideIcon{
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	cursor: pointer;
+}
+/*點擊選擇其他專輯那裡*/
+#diaryTitle{
+	height: 34px;
+	width: 490px;
+}
+.publishBox_articleTitleLeft.select{
+	border-style: solid;
+	border-color:#e98900;
+	-webkit-border-radius: 6px 6px 0px 0px;
+	-moz-border-radius: 6px 6px 0px 0px;
+	-ms-border-radius: 6px 6px 0px 0px;
+	-o-border-radius: 6px 6px 0px 0px;
+	border-radius: 6px 6px 0px 0px;
+}
+.publishBox_articleTitleLeft_slide{
+	display: none;
+	position:absolute;
+	left: -2px;
+	top:100%;
+	width: 710px;
+	max-height: 447px;
+	-webkit-border-radius: 0px 0px 6px 6px;
+	-moz-border-radius: 0px 0px 6px 6px;
+	-ms-border-radius: 0px 0px 6px 6px;
+	-o-border-radius: 0px 0px 6px 6px;
+	border-radius: 0px 0px 6px 6px;
+	border:2px solid #e98900;
+	border-top: 1px solid #ddd;
+	background-color:#fff;
+	z-index: 602;
+	padding:16px;
+	padding-right: 4px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.publishBox_articleTitleLeft_slide_inner{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.other_album_item{
+	float:left;
+	width: 150px;
+	margin-right: 23px;
+	margin-bottom:10px;
+	cursor: pointer;
+}
+.other_album_item:nth-of-type(4n){
+	margin-right:0px;
+}
+.other_album_item_img{
+	width: 100%;
+	height: 150px;
+	line-height: 147px;
+	margin: 0 auto;
+	overflow: hidden;
+	border:1px solid #efefef;
+	position:relative;
+}
+.other_album_item_img img{
+	width: 100%;
+}
+.other_album_item_number,
+.other_album_item_name{
+	width: 100%;
+	overflow: hidden;
+	line-height: normal;
+	text-align: center;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.other_album_item_name{
+	margin-top:8px;
+	line-height: 16px;
+}
+.other_album_item_name span{
+	display: inline-block;
+	max-width: 112px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.other_album_item_name,
+.other_album_item_number,
+.other_album_item_number span,
+.other_album_item_name span{
+	color:#666;
+	font-size: 14px;
+}
+.other_album_item.new .other_album_item_name span{
+	color:#e98900;
+}
+.other_album_item.new .other_album_item_number{
+	visibility: hidden;
+}
+.other_album_item .select-shadow{
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	background:rgba(0,0,0,.4);
+	display: none;
+}
+.other_album_item .select-shadow img{
+	width : 40px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.other_album_item.select .select-shadow{
+	display: block;
+}
+.no_album_img{
+	cursor: default;
+	text-align: center;
+	margin:15px 0px;
+}
+.no_album_img img{
+	width: 130px;
+}
+.no_album_img .text-tips{
+	font-size:16px;
+	color:#888;
+}
+/*提示文字*/
+p.album-tips{
+	text-align: center;
+	font-size:16px;
+	color:#e98900;
+	padding:15px 0px;
+}
+/*圖片預覽模板樣式*/
+.upload-each{
+	margin-top:30px;
+}
+.upload-each .album-list-item{
+	padding:20px 0px;
+	border-top:1px solid #ccc;
+}
+.upload-each .album-list-img-view{
+	float:left;
+	width: 150px;
+	height: 150px;
+	border : 1px solid #ccc;
+	position:relative;
+	overflow: hidden;
+}
+.upload-each .album-list-img-view img.img-view{
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.upload-each .album-list-img-view div.addalbum-cancel-btn{
+	position:absolute;
+	top:0px;
+	right:0px;
+	cursor: pointer;
+}
+.upload-each .album-list-img-content img.img-view{
+	width: 100%;
+}
+.upload-each .album-list-img-content{
+	float:left;
+	resize: none;
+	height: 150px;
+	width: 700px;
+	margin-left:20px;
+	border:0px;
+	border:none;
+	outline: 0px;
+	outline: none;
+	font-size:18px;
+}
+/*提示信息*/
+.fullAlertBox{
+	position: absolute;
+	display:inline-block;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	border: #FF527C 2px solid;
+	box-shadow: 0px 1px 30px 5px rgba(169,169,169,0.73);
+	border-radius:8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius:8px;
+	background-color: #FFFFFF;
+	font-size: 18px;
+	color: #FF527C;
+	letter-spacing: 2px;
+	display:none;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	padding:0px 8px;
+}
+
+/*評論內容不能為空*/
+.comment-success-tips {
+    display: none;
+    position: relative;
+    z-index: 888;
+}
+.comment-success-tips .praise {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 888;
+    width: 320px;
+    background-color: #fff;
+    text-align: center;
+	padding: 14px 26px 14px 26px;
+    color: #ff567c;
+    letter-spacing: 2px;
+    border: 2px solid #ff567c;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.comment-success-tips .praise div:nth-of-type(1) {
+    font-size: 22px;
+    font-weight: bold;
+}
+.comment-success-tips .praise div:nth-of-type(1) img{
+    margin-top: -6px;
+    margin-right: 10px;
+}
+.comment-success-tips .praise div:nth-of-type(2){
+    color: #000;
+    padding: 6px 0px;
+    font-size: 18px;
+}
+.comment-success-tips .praise div:nth-of-type(3){
+    font-size: 50px;
+}
+#comment-success-tips-insert .praise{
+	width: 365px;
+}

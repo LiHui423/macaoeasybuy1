@@ -1,0 +1,375 @@
+.editor-top-info{
+	background-color:#fff;
+	padding:30px;
+}
+/*頂部按鈕塊*/
+.editor-top-info .editor-top{
+	padding-bottom:30px;
+	border-bottom:1px solid #aaa;
+}
+.editor-top-info .describe-title{
+	float: left;
+}
+.editor-top-info .describe-title div:first-of-type{
+	font-weight: bold;
+	font-size:22px;
+}
+#album-post-time{
+	margin-top:20px;
+	color:#aaa;
+}
+#album-post-time span{
+	padding-right:10px;
+}
+#album-post-time span:last-of-type{
+	padding-right:0px;
+}
+.editor-top-info .edtor-btns{
+	margin-top:33px;
+	float:right;
+}
+.editor-top-info .edtor-btns li{
+	float:left;
+	padding:8px 15px;
+	margin-right:15px;
+	border:1px solid #aaa;
+	color:#aaa;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.editor-top-info .edtor-btns li img{
+	margin:-4px 6px 0px 0px;
+}
+.editor-top-info .edtor-btns li:last-of-type{
+	margin-right:0px;
+}
+#save-btn{
+	background-color:#e98900;
+	color:#fff;
+	border-color: #e98900;
+}
+/*專輯信息*/
+.editor-bottom{
+	margin-top:30px;
+	height:180px;
+	font-size:16px;
+}
+.editor-bottom .album-cover{
+	float:left;
+	width:180px;
+	height:100%;
+	background-color:#666;
+}
+.editor-bottom .album-info{
+	float:right;
+	width:710px;
+	height:100%;
+}
+.editor-bottom .album-info .album-title{
+	width:100%;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    border:1px solid #ccc;
+    position:relative;
+}
+.editor-bottom .album-info .album-title .album-title-input{
+	width:100%;
+    border-radius: 8px;
+	outline:0px;
+    font-size: 24px;
+    color: #e98900;
+    resize: none;
+    border:0px;
+    height:30px;
+    overflow: hidden;
+    margin-top:4px;
+}
+.editor-bottom .album-info .album-title p{
+	position:absolute;
+	right:10px;
+	top:50%;
+	-webkit-transform: translate(0px,-50%);
+	-moz-transform: translate(0px,-50%);
+	-ms-transform: translate(0px,-50%);
+	-o-transform: translate(0px,-50%);
+	transform: translate(0px,-50%);
+	font-size:14px;
+}
+.editor-bottom .album-info .album-title p span:first-of-type{
+	color: #e98900;
+}
+.editor-bottom .album-info .album-title p span:last-of-type{
+	color:#ccc;
+}
+.editor-bottom .album-info .album-allnum{
+	margin-top:10px;
+	color:#aaa;
+}
+.editor-bottom .album-info .album-classification{
+	margin-top:4px;
+	color:#aaa;
+}
+.editor-bottom .album-info .album-classification div:first-of-type{
+	line-height:38px;
+	float:left;
+}
+.editor-bottom .album-info .album-classification .classification-top{
+	width:110px;
+	float:left;
+	position:relative;
+}
+.editor-bottom .album-info .album-classification .classification-top div{
+	cursor: pointer;
+}
+#selecter{
+	position:relative;
+	z-index:991;
+	border:1px solid transparent;
+	padding:7px 0px;
+	text-align: center;
+}
+.editor-bottom .album-info .album-classification .classification-top ul{
+	width:100%;
+	position:absolute;
+	top:100%;
+	background-color:#fff;
+	border:1px solid #ccc;
+	border-top:0px;
+	z-index: 991;
+	display:none;
+}
+.editor-bottom .album-info .album-classification .classification-top ul li{
+	cursor: pointer;
+	border-bottom:1px solid #ccc;
+	padding:8px 0px;
+	text-align: center;
+}
+.editor-bottom .album-info .album-classification .classification-top ul li:last-of-type{
+	border-bottom:0px;
+}
+.editor-bottom .album-info .album-classification .classification-top ul li:hover{
+	color:#fff;
+	background-color:#e98900;
+}
+.editor-bottom .album-info .album-classification .classification-top .select-shadow{
+	position:fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	z-index:800;
+	display:none;
+}
+.editor-bottom .album-info .album-classification .classification-top img{
+	width:14px;
+	margin:0px 0px 0px 5px;
+}
+.editor-bottom .album-info .album-info-num{
+	margin-top:18px;
+	margin-left:-30px;
+}
+.editor-bottom .album-info .album-info-num li{
+    float: left;
+    width: 20%;
+    color: #aaa;
+    text-align: center;
+    border-right: 1px solid #888;
+}
+.editor-bottom .album-info .album-info-num li:last-of-type{
+	border-right:0px;
+}
+.editor-bottom .album-info .album-info-num li div:first-of-type{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+/*上傳圖片框*/
+.editor-upload{
+	width:92%;
+	margin:20px auto;
+	background-color:#fff;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+	padding:20px;
+}
+.editor-upload .upload-box{
+	width:100%;
+    border: 2px dashed #B3B3B3;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+	padding:20px;
+}
+.editor-upload .upload-box .upload-box-tips span.upload-count{
+	font-size:20px;
+}
+.editor-upload .upload-box .upload-box-tips span.upload-count span{
+	padding:0px 8px;
+}
+.editor-upload .upload-box .upload-box-tips span.upload-count .now-num{
+	color:#FF527C;
+}
+.editor-upload .upload-box .upload-box-tips span.upload-tips{
+	padding-left:20px;
+	color:#ccc;
+}
+.editor-upload .upload-box ul{
+	width:100%;
+	height:126px;
+	margin:20px 0px;
+}
+.editor-upload .upload-box ul li{
+	width:126px;
+	height:100%;
+	margin:0 auto;
+    background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/dragImg.png) 0 0 / 100% 100% no-repeat;
+    cursor: pointer;
+    position:relative;
+}
+.editor-upload .editor-lister{
+	margin-top:25px;
+}
+.editor-upload .editor-lister li{
+	height:241px;
+	padding:20px 0px;
+	border-top:1px solid #ccc;
+}
+.editor-upload .editor-lister li .editor-items-img{
+	width:200px;
+	height:100%;
+	float:left;
+	background-color:#fefefe;
+	position:relative;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	overflow: hidden;
+}
+.editor-upload .editor-lister li .editor-items-img img{
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.editor-upload .editor-lister li .editor-items-img .hover-check-box{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #fff;
+    border:1px solid #eee;
+}
+.editor-upload .editor-lister li.select .editor-items-img .hover-check-box{
+	background: url(/img/userspace/album/check-select.png) center center / 80% 80% no-repeat #fff;
+}
+.editor-upload .editor-lister li .editor-items-value{
+	width:625px;
+	float:right;
+	height:100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	outline:0px;
+	font-size:16px;
+}
+.editor-upload .editor-lister li .editor-items-value:after{
+    content: attr(placeholder);
+    color: #ccc;
+}
+/*沒有更多內容*/
+.no-more {
+    color: #444;
+    font-size: 18px;
+    text-align: center;
+    padding:20px 0px;
+    /* display: none; */
+}
+/*刪除帖子*/
+#delete-post{
+	display:none;
+	position:relative;
+	z-index: 999;
+}
+.yez-tips-box {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#delete-post .delete-post-shadow{
+	position:fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	z-index:889;
+	background-color:rgba(0,0,0,.4);
+}
+#delete-post .cancel-tips-box {
+    position: fixed;
+    z-index: 900;
+    box-shadow: 4px 4px 30px #aaa;
+    background-color: #fff;
+    text-align: center;
+    width: 510px;
+}
+#delete-post .cancels-title {
+    padding: 10px 0px;
+    font-size: 18px;
+    background-color: #FF527C;
+    color: #fff;
+}
+#delete-post .cancels-xc {
+    margin-top: 20px;
+}
+#delete-post .cancel-tips-text {
+    padding: 15px 0px 4px 0px;;
+    font-size: 18px;
+}
+#delete-post .sure-button {
+    display: inline-block;
+    margin:15px 0px;
+}
+#delete-post .sure-cancel,
+#delete-post .cancel-sure{
+    background-color: #FF527C;
+    color: #FFFFFF;
+    padding: 8px 45px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 16px;
+    float: left;
+}
+#delete-post .cancel-sure {
+    margin-left: 20px;
+    background-color: #b3b3b3;
+}

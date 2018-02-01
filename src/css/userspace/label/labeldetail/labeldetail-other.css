@@ -1,0 +1,32 @@
+#editor-label-btn{
+	display:none;
+}
+/*博主頭像那裡*/
+.label-top .label-top-left .labeler-head{
+	float:left;
+	width:60px;
+	height:60px;
+	background-color:#ccc;
+	overflow: hidden;
+}
+.label-top .label-top-left .labeler-head img{
+	width: 100%;
+}
+.label-top .label-top-left .labeler-info{
+	margin-left:10px;
+	padding-top:10px;
+	float:left;
+}
+.label-top .label-top-left .labeler-info img{
+	width:18px;
+	margin:-5px 0px 0px 4px;
+}
+.label-top .label-top-left .labeler-info div:first-of-type{
+	font-weight:bold;
+}
+.label-top .label-top-left .labeler-info div:last-of-type{
+	color:#aaa;
+}
+.label-top .label-top-left .labeler-info div:last-of-type span:last-of-type{
+	padding-left:8px;
+}

@@ -1,0 +1,619 @@
+body{
+	background-color:#f5f5f5;
+}
+.container-swapper{
+	width:1397px;
+	margin:0 auto;
+	position:relative;
+    padding-bottom: 100px;
+}
+.no-more {
+    position: absolute;
+    bottom: -60px;
+    color: #888;
+    font-size: 18px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+.detail-title{
+	background-color:#fff;
+	margin-top:3px;
+}
+.detail-title-inner{
+	width:1397px;
+	margin:0 auto;
+}
+.albumBox_showPic {
+    float: left;
+    height:240px;
+    width:310px;
+    overflow: hidden;
+}
+.albumBox_showPic img{
+	width:100%;
+}
+.albumBox_introBox {
+    float: left;
+    margin-left: 20px;
+}
+.albumBox_introEach {
+    margin-top: 20px;
+}
+.albumBox_introEachTitle {
+    font-size: 16px;
+    color: #999999;
+    float: left;
+}
+.albumBox_introEachMain {
+    float: left;
+    color: #999999;
+    font-size: 14px;
+}
+.albumPic_albumName {
+    font-size: 16px;
+    color: #e98900;
+}
+.albumBox_introEachMain .albumPic_albumName {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.albumBox_introEach:nth-child(2) {
+    margin-top: 20px;
+    margin-right: 20px;
+    padding-left:14px;
+}
+.albumBox_introEach:nth-child(2) .albumBox_introEachTitle.second-list{
+	margin-left:40px;
+}
+.albumBox_introEach:nth-child(3) {
+    margin-top: 20px;
+}
+.albumBox_introEachMain span {
+    margin-left: 10px;
+    background-color: #E98900;
+    color: #FFFFFF;
+    padding: 8px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.albumBox_topBox .labelList_DataBox {
+	margin-top:24px;
+    padding-left:14px;
+}
+.labelList_DataEach {
+    float: left;
+}
+.albumBox_topBox .labelList_DataEach {
+    margin-right: 10px;
+    border-right:1px solid #aaa;
+    padding:0px 15px;
+}
+.albumBox_topBox .labelList_DataEach:first-of-type{
+	padding-left:0px;
+}
+.albumBox_topBox .labelList_DataEach:last-of-type{
+	border-right:0px;
+}
+.labelList_DataEach div {
+    width: 20px;
+    height: 15px;
+    margin: 0 auto;
+}
+.albumBox_topBox .labelList_DataEach div {
+    float: left;
+    width: 16px;
+    margin:-1px 6px 0px 0px;
+}
+.labelList_DataEach div img {
+    width: 100%;
+}
+.labelList_DataEach p {
+    text-align: center;
+    font-size: 12px;
+    color: #A5A5A5;
+    letter-spacing: 1px;
+}
+.albumBox_topBox .labelList_DataEach p {
+    float: left;
+    font-size: 16px;
+}
+.detail-title-timer{
+	margin-top:20px;
+	padding-left:14px;
+}
+.detail-title-timer span{
+	padding-right:20px;
+	font-size: 16px;
+    color: #999999;
+}
+.mdcategory_title{
+    padding: 20px 0px;
+    background-color: #fff;
+    margin-top:20px;
+    margin-bottom:40px;
+    height:100%;
+}
+.mdcategory-access {
+    background-color: #e98900;
+    float: left;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    margin: -20px 20px 0 20px;
+    padding:6px 12px;
+}
+.secondhand_easyfans {
+    float: left;
+}
+.secondhand_easyfans li {
+    float: left;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.secondhand_easyfans li img {
+    width: 100%;
+    height: 100%;
+}
+.secondhand_easyfans li:last-of-type {
+    margin-right: 0px;
+}
+.take-album-btn{
+	float:right;
+	border-left:1px solid #000;
+	height:56px;
+}
+.take-album-btn .album-btn{
+	background-color:#e98900;
+	color:#fff;
+	padding:8px 20px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	-ms-border-radius:8px;
+	-o-border-radius:8px;
+	border-radius:8px;
+	text-align: center;
+	text-indent:7px;
+	font-size:16px;
+	margin:9px 30px 0px 20px;
+	cursor: pointer;
+}
+.take-album-btn .album-btn.cannot-select{
+	background-color:#ddd;
+	color:#fff;
+	cursor: default;
+}
+.album-lister > div {
+    overflow: hidden;
+}
+.album-lister .album-list {
+    width: 265px;
+    overflow: hidden;
+    float: left;
+    margin-right: 18px;
+    cursor: pointer;
+}
+.album-lister .album-list:hover .shadow-box,
+.album-lister .album-list:hover .hover-check-box-outer {
+    display: block;
+}
+.album-lister .album-list:nth-of-type(5n){
+	margin-right:0px;
+}
+.album-relative {
+    position: relative;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    overflow: hidden;
+}
+.album-lister .album-list .album-top-img img {
+    width: 100%;
+}
+.album-lister .album-list .album-state {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom: 0px;
+    border-top: 0px;
+    padding-bottom: 5px;
+}
+.album-lister .album-list .album-state div {
+    width: 50%;
+    float: left;
+    text-align: left;
+    padding: 8px 0px;
+    color: #e98900;
+    padding-left: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.album-lister .album-list .album-state div img {
+    margin-right: 5px;
+}
+.album-lister .album-list .album-state div span{
+	padding-right:4px;
+}
+.album-poster {
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+.album-poster .laster-text-num{
+	padding:15px;
+	text-align: right;
+	color:#888;
+	font-size:15px;
+}
+.shadow-box {
+    position: absolute;
+    z-index: 49;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgba(0,0,0,.1);
+    border-radius: 10px;
+    display: none;
+}
+
+.album-lister .album-list .hover-check-box-outer{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:70px;
+	height:70px;
+	z-index:888;
+	display:none;
+}
+.album-lister .album-list .hover-check-box{
+	position:absolute;
+	top:15px;
+	left:15px;
+	width:30px;
+	height:30px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-ms-border-radius:5px;
+	-o-border-radius:5px;
+	border-radius:5px;
+	cursor: pointer;
+	background:#fff;
+}
+.picture-item.yez-selected .hover-check-box{
+	background:url("/img/social/easylive/check-select.png") center center no-repeat #fff;
+}
+.album-lister .album-list .shadow-box p{
+	color:#fff;
+	font-size:16px;
+	font-weight:bold;
+	width:80%;
+	height:66px;
+	margin:122px auto 0px auto;
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    letter-spacing: 1px;
+    line-height:23px;
+}
+.album-lister .album-list .bottom-shadow {
+    height:30px;
+}
+.album-lister .album-list .bottom-shadow img {
+    width: 98%;
+    display: block;
+    margin: 0 auto;
+    vertical-align: top;
+}
+#album-collect{
+	display:none;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+}
+#album-collect.select{
+	display:block;
+}
+#album-collect .collect-shadow{
+	position:fixed;
+	top:0px;
+	right:0px;
+	left:0px;
+	bottom:0px;
+	background-color:rgba(0,0,0,.4);
+	z-index:988;
+}
+#album-collect .collect-box{
+	z-index:988;
+	width:570px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+	background-color:#fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+#album-collect .collect-box .collect-title{
+	background-color:#E98900;
+	font-size:16px;
+	color:#fff;
+	padding:8px 20px;
+	-webkit-border-radius:10px 10px 0px 0px;
+	-moz-border-radius:10px 10px 0px 0px;
+	border-radius:10px 10px 0px 0px;
+}
+#album-collect .collect-box .collect-inner{
+	padding:10px 20px;
+	background-color:#ffefd8;
+	-webkit-border-radius:0px 0px 10px 10px;
+	-moz-border-radius:0px 0px 10px 10px;
+	border-radius:0px 0px 10px 10px;
+}
+#album-collect .collect-box .collect-inner .list-box {
+    height: 300px;
+    overflow: auto;
+}
+#album-collect .collect-box .collect-inner .collect-tips{
+	font-size:14px;
+	color:#AAAAAA;
+	margin-top:20px;
+}
+#album-collect .collect-box .collect-inner .collect-tips:nth-of-type(1){
+	margin-top:0px;
+}
+#album-collect .collect-box .collect-inner .collect-imgs{
+	margin-top:10px;
+    padding: 10px 0 12px 10px;
+    height: 235px;
+    overflow: auto;
+}
+#album-collect .collect-box .collect-inner .collect-imgs li{
+	position:relative;
+	margin-bottom:15px;
+	height:150px;
+}
+#album-collect .collect-box .collect-inner .collect-imgs li:last-of-type{
+	margin-bottom:0px;
+}
+#album-collect .collect-box .collect-inner .collect-imgs li div{
+	float:left;
+	height:150px;
+}
+#album-collect .collect-box .collect-inner .collect-imgs li div.collect-img{
+	width:150px;
+	height:100%;
+	background-color:#ccc;
+	margin-right:15px;
+	box-shadow: 0px 0px 7px 3px #aaa;
+	position:relative;
+	z-index:500;
+}
+#album-collect .collect-box .collect-inner .collect-imgs li div.collect-img img{
+	width:100%;
+	height:100%;
+}
+#album-collect .collect-box .collect-inner .collect-imgs li div.collect-img-shadow{
+    position: absolute;
+    top: -3px;
+    left: -7px;
+    width: 150px;
+    -webkit-transform: rotateZ(-3deg);
+    -moz-transform: rotateZ(-3deg);
+    -ms-transform: rotateZ(-3deg);
+    -o-transform: rotateZ(-3deg);
+    transform: rotateZ(-3deg);
+    background-color: rgba(100,100,100,.2);
+    z-index: 499;
+    height: 150px;
+}
+#album-collect .collect-box .collect-inner .collect-imgs li .collect-describe{
+	resize: none;
+	width:340px;
+	height:100%;
+	background-color:#fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+	padding:15px;
+	overflow: auto;
+	outline:0px;
+    word-wrap: break-word;
+    border:0px;
+    outline:0px;
+}
+
+#album-collect .collect-box .collect-inner .collect-create{
+	height:40px;
+	width:100%;
+	position:relative;
+	background: #fff;
+	-webkit-border-radius: 0px 10px 10px 0px;
+	-moz-border-radius: 0px 10px 10px 0px;
+	-ms-border-radius: 0px 10px 10px 0px;
+	-o-border-radius: 0px 10px 10px 0px;
+	border-radius: 0px 10px 10px 0px;
+	margin-top:10px;
+}
+#album-collect .collect-box .collect-inner .collect-create .collect-input{
+	float:left;
+	width:80%;
+	height:100%;
+	outline:0px;
+	border:0px;
+	line-height:40px;
+	padding:0px 10px;
+	color:#E98900;
+	letter-spacing: 1px;
+}
+#album-collect .collect-box .collect-inner .collect-create .create-btn{
+	position:absolute;
+	right:0px;
+	height:100%;
+	width:20%;
+	background-color:#E98900;
+	line-height:40px;
+	text-align: center;
+	text-indent:24px;
+	font-size:16px;
+	letter-spacing: 1px;
+	color:#fff;
+	cursor: pointer;
+	background:url(//img.macaoeasybuy.com/img/social/easylive/focus-white.png) 24px 10px no-repeat #E98900;
+	background-size:18px 18px;
+	-webkit-background-size:18px 18px;
+	-moz-background-size:18px 18px;
+	-ms-background-size:18px 18px;
+	-o-background-size:18px 18px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+}
+#album-collect .collect-box .collect-inner .collect-list{
+	margin-top:10px;
+	background-color:#fff;
+	padding:15px;
+}
+#album-collect .collect-box .collect-inner .collect-list .collect-list-title{
+	border-bottom:1px solid #aaa;
+	padding-bottom:15px;
+	color:#aaa;
+	height:36px;
+	overflow: hidden;
+}
+#album-collect .collect-box .collect-inner .collect-list ul{
+	height:140px;
+	width:515px;
+	margin-top:15px;
+	overflow: auto;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li{
+	float:left;
+	width: 113px;
+	margin-right:16px;
+	margin-bottom:16px;
+	cursor: pointer;
+	position:relative;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li:nth-of-type(4n){
+	margin-right:0px;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li .collect-list-div:first-of-type{
+	width:100%;
+	height:113px;
+	overflow: hidden;
+	position:relative;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li .collect-list-div:first-of-type img{
+	width:100%;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li .collect-list-div:first-of-type div.img-number{
+	position:absolute;
+	right:0px;
+	bottom:0px;
+	width:30px;
+	height:30px;
+	text-align: center;
+	background-color:#E98900;
+	color:#fff;
+	line-height:30px;
+	font-size:16px;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li .collect-list-div:first-of-type div.collect-select{
+	position:absolute;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	background-color:rgba(0,0,0,.5);
+	display:none;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li.select .collect-list-div:first-of-type div{
+	display:block;
+}
+#album-collect .collect-box .collect-inner .collect-list ul li .collect-list-div:first-of-type div img{
+	display:block;
+	width:auto;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+}
+#album-collect .collect-box .collect-inner .collect-list ul li .collect-list-div:nth-of-type(2){
+	color:#666;
+	text-align: center;
+	height:20px;
+	overflow: hidden;
+}
+
+#album-collect .collect-box .collect-inner .want-collect{
+    width: 172px;
+    margin: 25px auto 10px auto;
+    text-indent: 46px;
+    padding: 13px 0px;
+    color: #fff;
+    background: url(//img.macaoeasybuy.com/img/social/easylive/album-classification-cai-white.png) 24px 6px no-repeat #E98900;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#album-collect .collect-box .collect-inner .want-collect.cannot-collect{
+	background-color:#ddd;
+	color:#fff;
+	cursor: default;
+}
+#album-collect .collect-box .close-collect{
+	display:block;
+	position:absolute;
+	right:0px;
+	top:0px;
+	-webkit-transform: translate(50%,-50%);
+	-moz-transform: translate(50%,-50%);
+	-ms-transform: translate(50%,-50%);
+	-o-transform: translate(50%,-50%);
+	transform: translate(50%,-50%);
+	cursor: pointer;
+}
+/* 图片单元 */
+.picture-list .picture-item {
+
+}
+.picture-item .img-container {
+    height: 265px;
+    width: 265px;
+    overflow: hidden;
+    line-height: 265px;
+}
+.picture-item .img-container img {
+    width: 100%;
+    vertical-align: middle;
+}
+.picture-item.yez-selected .shadow-box,
+.picture-item.yez-selected .hover-check-box-outer {
+    display: block;
+}

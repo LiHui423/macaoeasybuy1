@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>搜索結果(商店)</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/search/searchCommon.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/search/search_shop.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+	</head>
+	<body>
+		<header></header>
+		<div id ="searchBar">
+			<div class="searchBox">
+				<div class="searchBox_mainBox">
+					<div class="searchBox_left">
+						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+					</div>
+					<div class="searchBox_right" id="searchBox_rightBox"></div>
+				</div>
+			</div>
+		</div>
+		<div class="searchMainBox">
+			<div class="searchMain">
+				<div class="search_result_title">您搜索的 “<span>女裝</span>” 關鍵字一共有 <span>12</span> 個相關商店：</div>
+				<div class="search_result_main">
+					<div class="search_result_null">
+						<div class="search_result_nullIcon"><img src="/img/common/05.png"></div>
+						<p>沒有搜索到 “<span></span>” 的相關商店哦！</p>
+					</div>
+					<div class="search_resultBox">
+						<div class="search_resultBox_sort">
+							<div class="search_resultBox_sortEach">
+								<span class="search_resultBox_checkBox search_resultBox_choosesort search_resultBox_checkBox_curr" data-main = "" data-descorasc = ""><img src="/img/easybuy/hit/hit_checkCurr.png"></span><span>默認排序</span>
+							</div>
+							<div class="search_resultBox_sortEach">
+								<span class="search_resultBox_checkBox search_resultBox_choosesort" data-main = "shopvisitors" data-descorasc = "desc"><img src="/img/easybuy/hit/hit_checkCurr.png"></span><span>人氣到訪多至少</span>
+							</div>
+							<div class="search_resultBox_sortEach">
+								<span class="search_resultBox_checkBox search_resultBox_choosesort" data-main = "BuyNumbers" data-descorasc = "desc"><img src="/img/easybuy/hit/hit_checkCurr.png"></span><span>銷量多至少</span>
+							</div>
+							<div class="search_resultBox_sortEach">
+								<span class="search_resultBox_checkBox search_resultBox_choosesort" data-main = "AttentionCount" data-descorasc = "desc"><img src="/img/easybuy/hit/hit_checkCurr.png"></span><span>粉絲多至少</span>
+							</div>
+							<div class="search_resultBox_sortEach">
+								<span class="search_resultBox_checkBox search_resultBox_choosesort" data-main = "bestPercent" data-descorasc = "desc"><img src="/img/easybuy/hit/hit_checkCurr.png"></span><span>近期好評高至低</span>
+							</div>
+							<div class="search_resultBox_sortEach">
+								<span class="search_resultBox_checkBox search_resultBox_only"><img src="/img/easybuy/hit/hit_checkCurr.png"></span><span>發現新店</span>
+							</div>
+							<div class="search_resultBox_sort_btn">排序搜索</div>
+						</div>
+						<div class="search_resultBox_list"></div>
+						<div class="tcdPageCode"></div>
+					</div>
+				</div>
+			</div>
+			<div class="seeOtherShop">
+				<div class="search_result_seeOther_title"><img src="/img/easybuy/moreshops/seeOther_title.png"></div>
+				<div class="seeOtherShop_mian">
+
+				</div>
+			</div>
+
+		</div>
+		<footer></footer>
+	</body>
+	<!--模板文件和模擬數據-->
+	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/js/common/search/search_shop/search_shop.data.js"></script>
+	<!--頭部文件的js-->
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<!--搜索框部份的js-->
+	<script src="/js/common/header&search&footer/searchBar.js"></script>
+	<!--商城結果頁js-->
+	<script src="/js/common/search/search_shop/search_shop.js"></script>
+	<!--分頁js-->
+	<script src="/js/easybuy/goodDetails/jquery.page.js"></script>
+
+	<script src="/js/common/header&search&footer/footer.js"></script>
+
+	<!--商店搜索結果-->
+	<script type="text/html" id="shopList" data-array = "shopListData">
+		<%for(var i = 0;i <list.classList.length;i++){%>
+			<div class="search_resultBox_shopEach clearfloat" data-id="<%=list.classList[i].shopid%>">
+				<div class="search_resultBox_shopEach_left">
+					<div class="search_shop_pic">
+						<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].shopLogo%>' onerror="this.src='/img/common/loading_pc_shop.png'">
+						<div class="search_shop_pic_icon"><img src="/img/common/search/search_shop_shoppic.png"></div>
+					</div>
+					<div class="search_shop_name"><%=list.classList[i].shopname%></div>
+					<div class="search_shop_mess clearfloat">
+						<div class="search_shop_messLeft myborder-radius"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].shoppic%>' onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+						<div class="search_shop_messRight">
+							<p>店主 <%=list.classList[i].shopMan%></p>
+							<p><span>銷售數：<%=list.classList[i].buyNumbers%></span><span>粉絲數：<%=list.classList[i].attentionCount%></span></p>
+							<p><span>主營<%=list.classList[i].areaName%></span><span>共<%=list.classList[i].goodsCount%>件商品</span></p>
+							<div class="search_shop_messRight_btn">進店看看</div>
+						</div>
+					</div>
+					<div class="search_shop_data">
+						<ul>
+							<li>
+								<p>描述相符</p>
+								<div class="search_shop_data_details">
+									<%if(list.classList[i].miaoState == '0'){%>
+										<span><img src="/img/common/curr_down.png"></span>
+									<%}else{%>
+										<span><img src="/img/common/curr_up.png"></span>
+									<%}%>
+									<span><%=list.classList[i].avgMiao%> / 5.0</span>
+								</div>
+							</li>
+							<li>
+								<p>價格合理</p>
+								<div class="search_shop_data_details">
+									<%if(list.classList[i].jiaState == '0'){%>
+										<span><img src="/img/common/curr_down.png"></span>
+									<%}else{%>
+										<span><img src="/img/common/curr_up.png"></span>
+									<%}%>
+									<span><%=list.classList[i].avgJia%> / 5.0</span>
+								</div>
+							</li>
+							<li>
+								<p>商品質量</p>
+								<div class="search_shop_data_details">
+									<%if(list.classList[i].shangState == '0'){%>
+										<span><img src="/img/common/curr_down.png"></span>
+									<%}else{%>
+										<span><img src="/img/common/curr_up.png"></span>
+									<%}%>
+									<span><%=list.classList[i].avgShang%>/ 5.0</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="search_resultBox_shopEach_right">
+					<%if(list.classList[i].shopPiclist.length == '0'){%>
+						<div class="search_shop_show_null"><img src="/img/common/search/search_shop_nogood.png"></div>
+					<%}else{%>
+						<div class="search_shop_show_btnLeft"><img src="/img/common/icon/prevIcon_dark.png"></div>
+						<div class="search_shop_show_main clearfloat" data-page = "1">
+							<ul>
+								<%for(var k = 0;k <list.classList[i].shopPiclist.length;k++){%>
+									<li><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].shopPiclist[k]%>"></li>
+								<%}%>
+							</ul>
+						</div>
+						<div class="search_shop_show_btnRight"><img src="/img/common/icon/nextIcon_dark.png"></div>
+					<%}%>
+				</div>
+			</div>
+		<%}%>
+	</script>
+
+	<!--搜索結果數量-->
+	<script type="text/html" id="searchShopNum" data-array = "searchShopNumData">
+		您搜索的 “<span>男裝</span>” 關鍵字一共有 <span><%=list.numFound%></span> 個相關商店：
+	</script>
+
+	<!--隨便看看-->
+	<script type="text/html" id="seeOther" data-array = "seeOtherData">
+		<%for(var i = 0;i <list.length;i++){%>
+			<div class="search_resultBox_shopEach clearfloat" data-id="<%=list[i].shopid%>">
+				<div class="search_resultBox_shopEach_left">
+					<div class="search_shop_pic">
+						<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].shopLogo%>' onerror="this.src='/img/common/loading_pc_shop.png'">
+						<div class="search_shop_pic_icon"><img src="/img/common/search/search_shop_shoppic.png"></div>
+					</div>
+					<div class="search_shop_name"><%=list[i].shopname%></div>
+					<div class="search_shop_mess clearfloat">
+						<div class="search_shop_messLeft myborder-radius"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].shoppic%>' onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+						<div class="search_shop_messRight">
+							<p>店主 <%=list[i].shopMan%></p>
+							<p><span>銷售數：<%=list[i].buyNumbers%></span><span>粉絲數：<%=list[i].attentionCount%></span></p>
+							<p><span>主營<%=list[i].areaName%></span><span>共<%=list[i].goodsCount%>件商品</span></p>
+							<div class="search_shop_messRight_btn">進店看看</div>
+						</div>
+					</div>
+					<div class="search_shop_data">
+						<ul>
+							<li>
+								<p>描述相符</p>
+								<div class="search_shop_data_details">
+									<%if(list[i].miaoState == '0'){%>
+										<span><img src="/img/common/curr_down.png"></span>
+									<%}else{%>
+										<span><img src="/img/common/curr_up.png"></span>
+									<%}%>
+									<span><%=list[i].avgMiao%> / 5.0</span>
+								</div>
+							</li>
+							<li>
+								<p>價格合理</p>
+								<div class="search_shop_data_details">
+									<%if(list[i].jiaState == '0'){%>
+										<span><img src="/img/common/curr_down.png"></span>
+									<%}else{%>
+										<span><img src="/img/common/curr_up.png"></span>
+									<%}%>
+									<span><%=list[i].avgJia%> / 5.0</span>
+								</div>
+							</li>
+							<li>
+								<p>商品質量</p>
+								<div class="search_shop_data_details">
+									<%if(list[i].shangState == '0'){%>
+										<span><img src="/img/common/curr_down.png"></span>
+									<%}else{%>
+										<span><img src="/img/common/curr_up.png"></span>
+									<%}%>
+									<span><%=list[i].avgShang%>/ 5.0</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="search_resultBox_shopEach_right">
+					<%if(list[i].shopPiclist.length == '0'){%>
+						<div class="search_shop_show_null"><img src="/img/common/search/search_shop_nogood.png"></div>
+					<%}else{%>
+						<div class="search_shop_show_btnLeft"><img src="/img/common/icon/prevIcon_dark.png"></div>
+						<div class="search_shop_show_main clearfloat" data-page = "1">
+							<ul>
+								<%for(var k = 0;k <list[i].shopPiclist.length;k++){%>
+									<li><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].shopPiclist[k]%>"></li>
+								<%}%>
+							</ul>
+						</div>
+						<div class="search_shop_show_btnRight"><img src="/img/common/icon/nextIcon_dark.png"></div>
+					<%}%>
+				</div>
+			</div>
+		<%}%>
+	</script>
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>標籤-詳細頁</title>
+		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/header&search&footer.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/social/label/labeldetail/labeldetail.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/plug/yez_js_Reset.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script>
+			var userId = 786; //遊客(登錄的)
+			var seeUserId = 547; //帖主Id
+			var postId = 10;
+			var isLogin = false;
+		</script>
+		<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+		<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+		
+		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+	</head>
+	<body>
+		<div id="disappear"></div>
+		<div id="swapper">
+			<header></header>
+			<div id="searchBar">
+				<div class="searchBox">
+					<div class="searchBox_mainBox">
+						<div class="searchBox_left">
+							<img src="/img/common/header&search&footer/easybuy_Logo.png">
+						</div>
+						<div class="searchBox_right" id="searchBox_rightBox"></div>
+					</div>
+				</div>
+			</div>
+			<div class="navBar_borderBox">
+				<div class="navBar">
+					<ul>
+						<li><a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
+						<li class="navBarLi_curr"><a href="http://shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+						<li><a href="http://social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
+						<li><a href="http://social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
+						<li><a href="http://social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="container">
+				<div class="container-swapper clearfloat">
+					<!--左邊-->
+					<div class="container-left">
+						<!--標籤介紹-->
+						<div class="introduce border">
+							<div class="container-title clearfloat" id="label-container-title">
+								<div class="container-title-about">&nbsp;</div>
+								<div class="container-title-items-swapper clearfloat">
+									<div class="container-title-items">
+										<div>&nbsp;</div>
+									</div>
+								</div>
+							</div>
+							<div class="introduce-article" id="introduce-article"></div>
+							<div class="labeldetail_triangle"><img src="/img/social/label/labeldetail/liveshotdetail_triangle.png" alt=""></div>
+						</div>
+						<!--標籤創始人-->
+						<div class="founder border">
+							<div class="container-title clearfloat">標籤創建人</div>
+							<div class="founder-info clearfloat" id="label-user-info">
+								<div class="head"><img src="" alt=""></div>
+								<div class="info-about" id="user-info-about">
+									<div class="info-name">
+										<span>&nbsp;</span>
+										<img src="" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--她/他还创建了-->
+						<div class="founder-other border">
+							<div class="founder-other-title">他/她還創建了：</div>
+							<div class="clearfloat">
+								<ul class="founder-other-Main-Left" id="userOtherLabel-name"></ul>
+								<ul class="founder-other-Main-Right" id="userOtherLabel-number"></ul>
+							</div>
+							<div class="founder-other-btn" id="founder-other-btn">
+								<a href="#"><span>&nbsp;</span>創建の標籤</a>
+							</div>
+							<div class="labeldetail_triangle"><img src="/img/social/label/labeldetail/liveshotdetail_triangle_up.png" alt=""></div>
+						</div>
+						<!--最近宜粉查看-->
+						<div class="recent border">
+							<div class="container-title clearfloat">
+								<div class="container-title-about">最近宜粉查看</div>
+							</div>
+							<ul class="recent-head clearfloat" id="recent-look-user"></ul>
+						</div>
+						<!--標籤排行榜-->
+						<div class="chart border">
+							<div class="container-title clearfloat">
+								<div class="container-title-about">標籤排行榜</div>
+							</div>
+							<ul class="chart-card-btn clearfloat">
+								<li class="select">
+									<span>1小時</span>
+									<div class="line"></div>
+								</li>
+								<li>
+									<span>24小時</span>
+									<div class="line"></div>
+								</li>
+								<li>
+									<span>總排名</span>
+									<div class="line"></div>
+								</li>
+							</ul>
+							<ul class="chart-card-title clearfloat">
+								<li>排名</li>
+								<li>標籤</li>
+								<li>讃好數</li>
+							</ul>
+						</div>
+						<ul class="chart-card-data select"></ul>
+						<ul class="chart-card-data"></ul>
+						<ul class="chart-card-data"></ul>
+						<div class="chart-card-data-list-more">
+							<a href="#">查看更多<span>></span></a>
+						</div>
+					</div>
+					<!--右邊-->
+					<div class="container-right">
+						<!--標籤封面圖-->
+						<div class="cover border" id="label-cover">
+							<div id="label-btn" class="clearfloat">
+								<div id="other-use-post"><img src="/img/userspace/userspace_postDetails/icon/writing.png" alt="">用此標籤發佈</div>
+							</div>
+						</div>
+						<!--發帖編輯框-->
+						<div class="edit-box border" id="editor-box">
+							<div>&nbsp;</div>
+							<ul>
+								<li>
+									<img src="/img/social/label/labeldetail/eye.png" alt="">
+									<span id="label-look-number">&nbsp;宜粉查看</span>
+								</li>
+								<li>
+									<img src="/img/social/label/labeldetail/good.png" alt="">
+									<span id="label-love-number">&nbsp;宜粉讃好</span>
+								</li>
+								<li>
+									<img src="/img/social/label/labeldetail/clock.png" alt="">
+									<span id="label-update-time">創建於&nbsp;</span>
+								</li>
+							</ul>
+						</div>
+						<!--相關貼子-->
+						<div class="related-posts border">
+							<ul class="related-posts-nav clearfloat" id="related-posts-nav">
+								<li class="select">日誌(<span>0</span>)</li>
+								<li>生活圈(<span>0</span>)</li>
+								<li>二手(<span>0</span>)</li>
+								<li>敗家誌(<span>0</span>)</li>
+								<li>話題(<span>0</span>)</li>
+							</ul>
+
+							<div class="page">
+								<div class="post-log page-boss clearfloat select">
+									<div class="box-inner"></div>
+									<p class="no-more">~沒有更多內容了~</p>
+								</div>
+								<div class="post-live page-boss clearfloat">
+									<div class="box-inner"></div>
+									<p class="no-more">~沒有更多內容了~</p>
+								</div>
+								<div class="post-second page-boss clearfloat">
+									<div class="box-inner"></div>
+									<p class="no-more">~沒有更多內容了~</p>
+								</div>
+								<div class="post-shot page-boss clearfloat">
+									<div class="box-inner"></div>
+									<p class="no-more">~沒有更多內容了~</p>
+								</div>
+								<div class="post-topic page-boss clearfloat">
+									<div class="box-inner"></div>
+									<p class="no-more">~沒有更多內容了~</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<footer></footer>
+		</div>
+		<!--點讚取消點讚-->
+		<div id="praise-post">
+			<div class="praise on-middle yez-tips-box click">
+				<div><img src="/img/common/tips-box/good-icon.png" alt="">謝謝您的鼓勵哦！</div>
+			</div>
+			<div class="praise on-middle yez-tips-box cancel">
+				<div><img src="/img/common/tips-box/good-icon1.png" alt="">您已取消讃好。</div>
+			</div>
+		</div>
+		<!--關注-->
+		<div id="user-info-success"><img src="/img/social/label/labeldetail/fancurr.png" alt="">已成功關注該宜粉！</div>
+		<!--取消關注-->
+		<div id="user-info-focus-box">
+			<div class="shadow"></div>
+			<div class="cancel-tips-box">
+				<div class="cancels-title">取消關注好友</div>
+				<div>
+					<div class="cancels-xc"><img src="/img/common/02.png" alt=""></div>
+					<div class="cancel-tips-text">不再關注該好友了嗎？</div>
+					<div class="clearfloat sure-button">
+						<div class="sure-cancel">確認</div>
+						<div class="cancel-sure">取消</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--使用此標籤發佈-->
+		<div id="release">
+			<div class="release-shadow"></div>
+			<div class="release-box">
+				<img src="/img/common/tips-box/img-upload-close.png" alt="" class="cancel-btn">
+				<div class="release-title">使用標籤<span></span>發佈:</div>
+				<ul class="clearfloat">
+					<li class="clearfloat">
+						<div><img src="/img/userspace/common/leftmenu/userin_ica4.png" alt=""></div>
+						<div>
+							<div>日誌</div>
+							<div>我要發佈我的生活文</div>
+						</div>
+					</li>
+					<li class="clearfloat">
+						<div><img src="/img/userspace/common/leftmenu/userin_ica6.png" alt=""></div>
+						<div>
+							<div>生活圈</div>
+							<div>我要發佈圈中話題</div>
+						</div>
+					</li>
+					<li class="clearfloat">
+						<div><img src="/img/userspace/common/leftmenu/userin_ica8.png" alt=""></div>
+						<div>
+							<div>二手</div>
+							<div>我要為閒置物找到好主人</div>
+						</div>
+					</li>
+					<li class="clearfloat">
+						<div><img src="/img/userspace/common/leftmenu/userin_ica7.png" alt=""></div>
+						<div>
+							<div>敗家誌</div>
+							<div>我要發佈我的嗮單</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="/js/common/header&search&footer/header.js"></script>
+		<script src="/js/common/header&search&footer/searchBar.js"></script>
+		<script src="/js/common/header&search&footer/footer.js"></script>
+		<script src="/js/social/label/labeldetail/labeldetail.js"></script>
+		<script src="/js/social/label/labeldetail/labeldetail_data.js"></script>
+		<!--排行榜-->
+		<script id="level-template" type="text/html">
+			<li class="chart-card-data-list">
+				<ul class="clearfloat">
+					<%if(index <= 2){%>
+						<li>TOP<%=num%></li>
+					<%}else{%>
+						<li><%=num%></li>
+					<%}%>
+					<li><span>#</span><span><%=labelName%></span><span>#</span></li>
+					<li><%=loveCount%></li>
+				</ul>
+			</li>
+		</script>
+		<!--日誌模板-->
+		<script id="log-template" type="text/html">
+			<%if(classList.length != 0){%>
+			<%for(var i=0;i<classList.length;i++){%>
+			<div class="pillar-all">
+				<div class="pillar">
+					<div class="page-main">
+						<%if(classList[i].postPics.length != 0){%>
+						<a href=""><img src="http://wap.macaoeasybuy.com/<%=classList[i].postPics[0]%>" class="page-main-head-img"></a>
+						<%}%>
+						<div class="post-main-text">
+							<div class="post-title"><%=classList[i].postName%></div>
+							<div class="post-description"><%=#classList[i].postContent%></div>
+						</div>
+					</div>
+					<div class="laster">
+						<ul class="laster-num clearfloat">
+							<li><%=classList[i].postSeeNumber%></li>
+							<li><%=classList[i].postLoveNumber%></li>
+							<li><%=classList[i].replyCount%></li>
+						</ul>
+						<div class="laster-look clearfloat">
+							<div class="laster-head"><img src="http://wap.macaoeasybuy.com/<%=classList[i].postuserpic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+							<div class="laster-text">
+								<div class="laster-text-name">
+									<span><%=classList[i].postuserName%></span>
+									<%if(classList[i].postusersex == 'Girl'){%>
+										<img src="/img/common/girl.png" alt="">
+									<%}else{%>
+										<img src="/img/common/boy.png" alt="">
+									<%}%>
+								</div>
+								<div class="laster-text-num"><span><%=classList[i].postTimeDiff%></span>前發佈</div>
+							</div>
+						</div>
+					</div>
+					<div class="shadow-box"></div>
+				</div>
+				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+			</div>
+			<%}%>
+			<%}else if(classList.length == 0 && page == 0){%>
+			<div class="no-post-list">
+				<div>
+					<img src="/img/common/05.png" alt="">
+				</div>
+				<span>目前沒有任何內容哦!</span>
+			</div>
+			<%}%>
+		</script>
+		<!--生活圈-->
+		<script id="life-template" type="text/html">
+			<%if(classList.length != 0){%>
+			<%for(var i=0;i<classList.length;i++){%>
+			<div class="pillar-all">
+				<div class="pillar">
+					<div class="page-main">
+						<div class="laster-look clearfloat">
+							<div class="laster-head"><img src="http://wap.macaoeasybuy.com/<%=classList[i].postuserpic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+							<div class="laster-text">
+								<div class="laster-text-name">
+									<span><%=classList[i].postuserName%></span>
+									<%if(classList[i].postusersex == 'Girl'){%>
+										<img src="/img/common/girl.png" alt="">
+									<%}else{%>
+										<img src="/img/common/boy.png" alt="">
+									<%}%>
+								</div>
+								<div class="laster-text-num"><span><%=classList[i].postTimeDiff%></span>前發佈</div>
+							</div>
+						</div>
+						<%if(classList[i].postPics.length != 0){%>
+						<a href=""><img src="http://wap.macaoeasybuy.com/<%=classList[i].postPics[0]%>" class="page-main-head-img"></a>
+						<%}%>
+						<div class="post-main-text">
+							<div class="post-title"><%=classList[i].postName%><span>/<%=classList[i].classname%>/</span></div>
+							<div class="post-description"><%=#classList[i].postContent%></div>
+							<div class="post-number"><span><%=classList[i].postTimeDiff%></span>前發佈</div>
+						</div>
+					</div>
+					<div class="laster">
+						<ul class="laster-num clearfloat">
+							<li><%=classList[i].postSeeNumber%></li>
+							<li><%=classList[i].postLoveNumber%></li>
+							<li><%=classList[i].replyCount%></li>
+						</ul>
+					</div>
+					<div class="shadow-box"></div>
+				</div>
+				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+			</div>
+			<%}%>
+			<%}else if(classList.length == 0 && page == 0){%>
+			<div class="no-post-list">
+				<div>
+					<img src="/img/common/05.png" alt="">
+				</div>
+				<span>目前沒有任何內容哦!</span>
+			</div>
+			<%}%>
+		</script>
+		<!--二手-->
+		<script id="second-template" type="text/html">
+			<%if(classList.length != 0){%>
+			<%for(var i=0;i<classList.length;i++){%>
+			<div class="pillar-all">
+				<div class="pillar">
+					<div class="page-main">
+						<div class="top-banner"><%=classList[i].fineness%>/MOP<%=classList[i].usedprice%></div>
+						<%if(classList[i].postPics.length != 0){%>
+						<a href=""><img src="http://wap.macaoeasybuy.com/<%=classList[i].postPics[0]%>" class="page-main-head-img"></a>
+						<%}%>
+						<div class="laster-look clearfloat">
+							<div class="laster-head"><img src="http://wap.macaoeasybuy.com/<%=classList[i].postuserpic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+							<div class="laster-text">
+								<div class="laster-text-name">
+									<span><%=classList[i].postuserName%></span>
+									<%if(classList[i].postusersex == 'Girl'){%>
+										<img src="/img/common/girl.png" alt="">
+									<%}else{%>
+										<img src="/img/common/boy.png" alt="">
+									<%}%>
+								</div>
+								<div class="laster-text-num"><span><%=classList[i].postTimeDiff%></span>前發佈</div>
+							</div>
+						</div>
+						<div class="post-second-line"></div>
+						<div class="post-main-text">
+							<p><%=classList[i].postName%></p>
+							<div class="post-title"><%=#classList[i].postContent%></div>
+							<ul>
+								<li>功能：<span><%=classList[i].usedfunction%></span></li>
+								<li>外觀：<span><%=classList[i].appearance%></span></li>
+								<li>私保：<span><%=classList[i].insurance%></span></li>
+								<li>保養期：<span><%=classList[i].period%></span></li>
+								<!--<li class="area"><span>黑沙環</span></li>-->
+							</ul>
+						</div>
+					</div>
+					<div class="laster">
+						<ul class="laster-num clearfloat">
+							<li><%=classList[i].postSeeNumber%></li>
+							<li><%=classList[i].postLoveNumber%></li>
+							<li><%=classList[i].replyCount%></li>
+						</ul>
+					</div>
+					<div class="shadow-box"></div>
+				</div>
+				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+				<%if(classList[i].state == '无效'){%>
+				<div class="close-bg"><img src="/img/social/secondHand/secondHand_finished.png" alt=""></div>
+				<%}else if(classList[i].state == '取消'){%>
+				<div class="close-bg"><img src="/img/social/secondHand/secondHand_cancel.png" alt=""></div>
+				<%}%>
+			</div>
+			<%}%>
+			<%}else if(classList.length == 0 && page == 0){%>
+			<div class="no-post-list">
+				<div>
+					<img src="/img/common/05.png" alt="">
+				</div>
+				<span>目前沒有任何內容哦!</span>
+			</div>
+			<%}%>
+		</script>
+		<!--敗家志-->
+		<script id="shot-template" type="text/html">
+			<%if(classList.length != 0){%>
+			<%for(var i=0;i<classList.length;i++){%>
+			<div class="pillar-all">
+				<div class="pillar">
+					<div class="page-main">
+						<%if(classList[i].postPics.length != 0){%>
+						<a href=""><img src="http://wap.macaoeasybuy.com/<%=classList[i].postPics[0]%>" class="page-main-head-img"></a>
+						<%}%>
+						<div class="post-main-text">
+							<div class="post-title"><%=classList[i].postName%></div>
+							<div class="post-description"><%=#classList[i].postContent%></div>
+							<div class="post-description-other">
+								<div class="post-description-other-top">
+									<div class="post-description-other-right">
+										<%for(var j=0;j<classList[i].labels.length;j++){%>
+										<p><%=classList[i].labels[j]%></p>
+										<%}%>
+									</div>
+								</div>
+								<div class="post-other-time clearfloat">
+									<div><span><%=classList[i].postTimeDiff%></span>前發佈</div>
+									<img src="/img/social/label/labeldetail/shot.png" alt="" class="post-other-img">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="laster">
+						<ul class="laster-num clearfloat">
+							<li><%=classList[i].postSeeNumber%></li>
+							<li><%=classList[i].postLoveNumber%></li>
+							<li><%=classList[i].replyCount%></li>
+						</ul>
+						<div class="laster-look">
+							<div class="laster-head"><img src="http://wap.macaoeasybuy.com/<%=classList[i].postuserpic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+							<div class="laster-text">
+								<div class="laster-text-name">
+									<span><%=classList[i].postuserName%></span>
+									<%if(classList[i].postusersex == 'Girl'){%>
+										<img src="/img/common/girl.png" alt="">
+									<%}else{%>
+										<img src="/img/common/boy.png" alt="">
+									<%}%>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="shadow-box"></div>
+				</div>
+				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+			</div>
+			<%}%>
+			<%}else if(classList.length == 0 && page == 0){%>
+			<div class="no-post-list">
+				<div>
+					<img src="/img/common/05.png" alt="">
+				</div>
+				<span>目前沒有任何內容哦!</span>
+			</div>
+			<%}%>
+		</script>
+		<!--話題-->
+		<script id="topic-template" type="text/html">
+			<%if(classList.length != 0){%>
+			<%for(var i=0;i<classList.length;i++){%>
+			<div class="post-topic-box clearfloat">
+				<div class="box-img"><img src="http://wap.macaoeasybuy.com/<%=classList[i].topicPics[0]%>" class="page-main-head-img" onerror="this.onerror=null;this.src='/img/common/PC765x404.jpg'"></div>
+				<div class="box-main">
+					<div class="box-main-head clearfloat">
+						<div class="box-main-head-img">
+							<img src="http://wap.macaoeasybuy.com/<%=classList[i].topicadminpic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'">
+						</div>
+						<div class="box-main-head-info">
+							<div class="box-main-head-info-title"><%=classList[i].topicName%></div>
+							<div class="box-main-head-info-time clearfloat">
+								<div>小編<%=classList[i].topicadmin%></div>
+								<div><span><%=classList[i].topicTimeDiff%></span>前發佈</div>
+							</div>
+						</div>
+					</div>
+					<div class="box-main-head-info-article"><%=#classList[i].topicContent%></div>
+					<ul class="box-main-head-bottom clearfloat">
+						<li><span><%=classList[i].topicSeeNumber%></span>宜粉查看</li>
+						<li><span><%=classList[i].topicreplyCount%></span>宜粉回應</li>
+						<li><span><%=classList[i].topicLoveNumber%></span>宜粉讃好</li>
+					</ul>
+				</div>
+				<div class="shadow-box"></div>
+			</div>
+			<%}%>
+			<%}else if(classList.length == 0 && page == 0){%>
+			<div class="no-post-list">
+				<div>
+					<img src="/img/common/05.png" alt="">
+				</div>
+				<span>目前沒有任何內容哦!</span>
+			</div>
+			<%}%>
+		</script>
+	</body>
+</html>

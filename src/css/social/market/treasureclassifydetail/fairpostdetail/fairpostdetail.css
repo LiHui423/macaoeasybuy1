@@ -1,0 +1,369 @@
+/*評論回復氣泡*/
+.statistics .statistics-title li.select .statistics-bubble {
+    border-color: #c5a97f;
+}
+.all-look .all-look-bottom .bottom-arrow {
+    color: #c5a97f;
+}
+.articleType span {
+    background-color: #c5a97f;
+    padding: 3px 15px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #FFFFFF;
+}
+.messBox_mess_time p:last-of-type {
+    margin-left: 10px;
+}
+/*市集特殊樣式*/
+.article-detail{
+	width:100%;
+	height:130px;
+	margin:30px 0px;
+	display:table;
+	border-top:1px dashed #ccc;
+	border-bottom:1px dashed #ccc;
+}
+.article-detail .detail-items{
+	display:table-cell;
+	vertical-align:middle;
+	height:100%;
+	text-align: center;
+}
+.article-detail .price{
+	width:32%;
+}
+.article-detail .price-inner,
+.article-detail .old-price .old-price-inner{
+	border-right:1px dashed #ccc;
+	padding:10px 0px;
+}
+.article-detail .price .price-title{
+	color:#ccc;
+	font-size:14px;
+	display:inline-block;
+}
+.article-detail .price .price-title div{
+	float:left;
+	font-size:16px;
+}
+.article-detail .price .price-title div.price-cut{
+	background-color:#c5a97f;
+	color:#fff;
+	position:relative;
+	margin-left:15px;
+	padding:0px 4px;
+}
+.article-detail .price .price-title div.price-cut .price-arrow{
+	position:absolute;
+	top:50%;
+	left:0px;
+	-webkit-transform: translate(-100%,-50%);
+	-moz-transform: translate(-100%,-50%);
+	-ms-transform: translate(-100%,-50%);
+	-o-transform: translate(-100%,-50%);
+	transform: translate(-100%,-50%);
+}
+.article-detail .price .now-price{
+	color:#FF527C;
+	font-size:40px;
+}
+.article-detail .old-price{
+	color:#ccc;
+	font-size:16px;
+	width:24%;
+}
+.article-detail .old-price .old-price-inner div:last-of-type{
+	font-size:28px;
+	text-decoration: line-through;
+}
+.article-detail .poster-info{
+	width:100%;
+	padding-left:5px;
+}
+.article-detail .poster-info .poster-info-items{
+	float:left;
+	background-color:#c5a97f;
+	width:48%;
+	padding:10px 0px;
+	display:table;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+}
+.article-detail .poster-info .poster-info-items:first-of-type{
+	margin-right:2%;
+	margin-bottom:10px;
+}
+.article-detail .poster-info .poster-info-items .poster-item-logo{
+	display:table-cell;
+	vertical-align: middle;
+}
+.article-detail .poster-info .poster-info-items .poster-item-logo img{
+	margin:0px 5px;
+	vertical-align: middle;
+}
+.article-detail .poster-info .poster-info-items .poster-item-info{
+	text-align: left;
+	color:#fff;
+}
+/*取消心動*/
+#praise-post .praise{
+	width : 415px;
+	color: #FF527C;
+	border: 2px solid #FF527C;
+}
+#praise-post-box{
+	display: none;
+}
+#praise-post-box .shadow {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 889;
+    background-color: rgba(0,0,0,.4);
+}
+#praise-post-box .cancel-tips-box {
+    position: fixed;
+    z-index: 890;
+    box-shadow: 4px 4px 30px #aaa;
+    background-color: #fff;
+    text-align: center;
+    width: 510px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    overflow:hidden;
+}
+#praise-post-box .cancels-title {
+    padding: 10px 0px;
+    font-size: 18px;
+    background-color: #FF527C;
+    color: #fff;
+}
+#praise-post-box .cancels-xc {
+    margin-top: 20px;
+    text-indent: -30px;
+}
+#praise-post-box .cancel-tips-text {
+    padding: 15px 0px 4px 0px;
+    font-size: 18px;
+}
+#praise-post-box .sure-button {
+    display: inline-block;
+    margin: 15px 0px;
+}
+#praise-post-box .sure-cancel,
+#praise-post-box .cancel-sure {
+    background-color: #FF527C;
+    color: #FFFFFF;
+    padding: 8px 45px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 16px;
+    float: left;
+}
+#praise-post-box .cancel-sure {
+    margin-left: 20px;
+    background-color: #b3b3b3;
+}
+/*帖子樣式*/
+.pillar-all{
+    width: 220px;
+    position:absolute;
+    visibility: hidden;
+}
+.pillar-all:hover .pillar .pillar-inner .pillar-shadow{
+	display:block;
+}
+.pillar{
+    width: 100%;
+}
+.pillar .pillar-inner{
+	position:relative;
+	border:1px solid #ccc;
+	border-bottom:0px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.pillar .pillar-inner .pillar-shadow{
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	background-color:rgba(0,0,0,.1);
+	z-index: 10;
+	cursor: pointer;
+	display:none;
+}
+.pillar .pillar-height{
+	width:98%;
+	margin:0 auto;
+}
+.pillar .pillar-height img{
+	vertical-align: top;
+	width:100%;
+}
+.pillar .page-main {
+    overflow: hidden;
+    border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -ms-border-radius: 10px 10px 0px 0px;
+    -o-border-radius: 10px 10px 0px 0px;
+}
+.pillar .page-main a{
+    display: block;
+    position:relative;
+}
+.pillar .page-main .top-banner{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding:5px 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    background-color: #FF5A78;
+}
+.pillar .page-main .top-banner.not{
+	bottom:-30px;
+}
+.pillar .page-main img.page-main-head-img{
+    width: 100%;
+}
+.pillar .post-main-text {
+	background-color:#fff;
+    padding:14px;
+}
+.pillar .page-main .post-description{
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 20px;
+    color: #c4b48b;
+}
+.pillar .page-main .post-description.not{
+	margin-top:30px;
+}
+.pillar .laster{
+    overflow: hidden;
+    border-bottom: 0px;
+}
+.pillar .laster .laster-num li{
+    float: left;
+    width: 33.333333%;
+    text-align: center;
+    color: #FF5A78;
+    padding: 32px 0px 10px 0px;
+}
+.pillar .laster .laster-num li:first-of-type{
+    background: url(//img.macaoeasybuy.com/img/social/market/treasureclassifydetail/shopin_heart.png) center 9px / 20px 20px no-repeat #f8f4ea;
+}
+.pillar .laster .laster-num li:nth-of-type(2){
+    background: url(//img.macaoeasybuy.com/img/social/market/treasureclassifydetail/red-eyes.png) center 13px no-repeat #f8f4ea;
+}
+.pillar .laster .laster-num li:last-of-type{
+    background: url(//img.macaoeasybuy.com/img/social/market/treasureclassifydetail/red-mop.png) center 13px no-repeat #f8f4ea;
+}
+.pillar .laster-look {
+    background-color: #fff;
+	padding: 15px;
+}
+.pillar .laster-look .laster-head {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+    margin-left: 5px;
+}
+.pillar .laster-look .laster-head img {
+    width: 100%;
+    height:100%;
+}
+.pillar .laster-look .laster-text {
+    margin: 10px 0px 0px 14px;
+    float: left;
+}
+.pillar .laster-look .laster-text .laster-text-name {
+	width:88px;
+	height:22px;
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+}
+.pillar .laster-look .laster-text .laster-text-name div{
+	max-width:68px;
+	height:22px;
+	float:left;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.pillar .laster-look .laster-text .laster-text-name img {
+    width: 20px;
+    float:left;
+}
+.pillar .laster-look .laster-text .laster-text-num {
+    font-size: 13px;
+    color: #999;
+    font-weight: 600;
+}
+.pillar .laster-add{
+	background-color:#c4b48b;
+	position:relative;
+	padding:10px;
+}
+.pillar .laster-add .laster-main{
+	color:#fff;
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.pillar .laster-add .add-arrow{
+	position:absolute;
+	top:-7px;
+	left:43px;
+}
+.pillar .laster-add{
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-ms-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+}
+.pillar.mine .laster-look .laster-text{
+	margin:0px;
+}

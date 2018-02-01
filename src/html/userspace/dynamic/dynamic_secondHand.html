@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>動態(二手)</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" type="text/css" href="/css/userspace/dynamic/dynamic_common.css">
+		<link rel="stylesheet" type="text/css" href="/css/userspace/dynamic/dynamic_secondHand.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script>easyBuy.userSpaceGlobal.whiteNavName = 'dynamicWhiteNav';</script>
+	</head>
+
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu"></ul>
+							<ul id="news-push"></ul>
+						</div>
+						<div id="userspace-content">
+							<div class="dynamic_columnTab clearfloat">
+								<ul>
+									<li class="clearfloat">
+										<a href="/page/userspace/dynamic/dynamic_diary.html">
+											<div class="dynamic_columnTab_icon"><img src="/img/userspace/dynamic/dynamic_diaryIcon.png"></div>
+											<div class="dynamic_columnTab_mess">
+												<p class="dynamic_columnTab_mess_title">好友日誌</p>
+												<p>有<span>6</span>篇日誌新發佈</p>
+											</div>
+										</a>
+									</li>
+									<li class="clearfloat">
+										<a href="/page/userspace/dynamic/dynamic_album.html">
+											<div class="dynamic_columnTab_icon"><img src="/img/userspace/dynamic/dynamic_alnumIcon.png"></div>
+											<div class="dynamic_columnTab_mess">
+												<p class="dynamic_columnTab_mess_title">好友專輯</p>
+												<p>有<span>6</span>個專輯新發佈</p>
+											</div>
+										</a>
+									</li>
+									<li class="clearfloat">
+										<a href="/page/userspace/dynamic/dynamic_group.html">
+											<div class="dynamic_columnTab_icon"><img src="/img/userspace/dynamic/dynamic_groupIcon.png"></div>
+											<div class="dynamic_columnTab_mess">
+												<p class="dynamic_columnTab_mess_title">好友生活圈</p>
+												<p>暫無新發佈</p>
+											</div>
+										</a>
+									</li>
+									<li class="clearfloat">
+										<a href="/page/userspace/dynamic/dynamic_liveshot.html">
+											<div class="dynamic_columnTab_icon"><img src="/img/userspace/dynamic/dynamic_liveshotIcon.png"></div>
+											<div class="dynamic_columnTab_mess">
+												<p class="dynamic_columnTab_mess_title">好友敗家誌</p>
+												<p>有<span>6</span>篇敗家誌新發佈</p>
+											</div>
+										</a>
+									</li>
+									<li class="clearfloat dynamic_columnTab_curr">
+										<a href="/page/userspace/dynamic/dynamic_secondHand.html">
+											<div class="dynamic_columnTab_icon"><img src="/img/userspace/dynamic/dynamic_secondHandIcon.png"></div>
+											<div class="dynamic_columnTab_mess">
+												<p class="dynamic_columnTab_mess_title">好友二手</p>
+												<p>暫無新發佈</p>
+											</div>
+										</a>
+									</li>
+									<li class="clearfloat">
+										<a href="/page/userspace/dynamic/dynamic_market.html">
+											<div class="dynamic_columnTab_icon"><img src="/img/userspace/dynamic/dynamic_marketIcon.png"></div>
+											<div class="dynamic_columnTab_mess">
+												<p class="dynamic_columnTab_mess_title">好友市集</p>
+												<p>暫無新發佈</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="dynamic_sortBox clearfloat">
+								<ul>
+									<li class="userlove_chooseSort_left_curr"><span><img src="/img/userspace/userlove/userlove_clockIcon.png"><img src="/img/userspace/userlove/userlove_clockIcon_curr.png"></span><span>按發佈時間排序</span></li>
+									<li><span><img src="/img/common/icon/messageIcon_dark.png"><img src="/img/userspace/album/mes-sort-w.png"></span><span>按回覆數排序</span></li>
+									<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"><img src="/img/userspace/album/goods-sort-w.png"></span><span>按贊好數排序</span></li>
+								</ul>
+							</div>
+							<div class="dynamic_mainBox clearfloat">
+								<div class="dynamic_mainList clearfloat"></div>
+								<div class="dynamic_main_noMore">~沒有更多內容了哦~</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+	</body>
+	<script src="/js/plug/yez_js_Reset.js"></script>
+	<script src="/js/common/vendor/template-native.js"></script>
+	<script src="/js/userspace/common/userinfo.js" async></script>
+	<script src="/js/userspace/common/leftmenu.js" async></script>
+	<script src="/js/userspace/common/whitemenu.js" async></script>
+	<script src="/js/userspace/common/newspush.js" async></script>
+	<script src="/js/common/header&search&footer/footer.js" async></script>
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+	<script src="/js/userspace/dynamic/dynamic_secondHand/dynamic_secondHand.js"></script>
+
+	<script id="data-list" type="text/html" data-type="template">
+		<%for(var i=0;i<num.length;i++){%>
+			<div class="pillar-all">
+				<!--capable 有狀態(已經賣了)  usercancel 用戶取消  -->
+				<div class="remind_newBox myborder-radius">
+					<div class="remind_newBox_curr myborder-radius"></div>
+				</div>
+				<div class="close-bg"></div>
+				<div class="pillar">
+					<div class="page-main">
+						<div class="box-shadow"></div>
+						<div class="top-banner">6成新&nbsp;/&nbsp;MOP&nbsp;4937</div>
+						<a href=""><img src="http://dummyimage.com/300x250" class="page-main-head-img"></a>
+						<div class="laster-look clearfloat">
+							<div class="laster-head">
+								<img src="http://dummyimage.com/240x400" alt="">
+							</div>
+							<div class="laster-text">
+								<div class="laster-text-name clearfloat">
+									<div>Dorothy</div>
+									<img src="/img/common/girl.png" alt="">
+								</div>
+								<div class="laster-text-num"><span>13</span>分鐘前發佈</div>
+							</div>
+						</div>
+						<div class="post-second-line"></div>
+
+						<div class="post-main-text">
+							<p>具干长公示北劳毛飞产果情。</p>
+							<div class="post-title">元心上却好细百住两她非开拉光合省。</div>
+							<ul>
+								<li>功能：<span>代术省工专特第按众去体科分近活有。</span></li>
+								<li>外觀：<span>日青府那积包在科高领率道精于水头精。</span></li>
+								<li>私保：<span>27天</span></li>
+								<li>保養期：<span>保養期內</span></li>
+								<li class="area"><span>名治交院无率</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="laster">
+						<div class="box-shadow"></div>
+						<ul class="laster-num clearfloat">
+							<li>21</li>
+							<li>967</li>
+							<li>587</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		<%}%>
+	</script>
+</html>

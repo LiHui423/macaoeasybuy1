@@ -1,0 +1,92 @@
+#container{
+	background-color:#f2e7db;
+}
+/*帖子*/
+.post-list-content .list-num{
+	width:445px;
+	float:left;
+	margin:0px 31px 31px 0px;
+}
+.post-list-content .list-num:nth-of-type(3n){
+	margin-right:0px;
+}
+.post-list-content .list-num .list-num-img{
+	width:100%;
+	height:310px;
+	position:relative;
+}
+.post-list-content .list-num .list-num-img .header_pic{
+	width: 100%;
+	height: 310px;
+	line-height: 310px;
+	overflow: hidden;
+	background-color: #fff;
+	text-align: center;
+}
+.post-list-content .list-num .list-num-img img:first-of-type{
+	width:100%;
+}
+.post-list-content .list-num .list-num-img div.img-head{
+	position:absolute;
+	width:80px;
+	height:80px;
+	border:2px solid #fff;
+	bottom:0px;
+	left:50%;
+	-webkit-transform: translate(-50%,50%);
+	-moz-transform: translate(-50%,50%);
+	-ms-transform: translate(-50%,50%);
+	-o-transform: translate(-50%,50%);
+	transform: translate(-50%,50%);
+	background-color:#f00;
+	overflow: hidden;
+}
+.post-list-content .list-num .list-info{
+	background-color:#fff;
+	padding:50px 18px 0px 18px;
+}
+.post-list-content .list-num .list-info .list-info-name{
+	font-size:18px;
+	text-align: center;
+}
+.post-list-content .list-num .list-info .list-info-time{
+	text-align: center;
+	color:#aaa;
+}
+.post-list-content .list-num .list-info .list-info-title{
+	font-size:18px;
+	font-weight:bold;
+	padding:10px 0px 5px 0px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.post-list-content .list-num .list-info .list-info-article{
+	font-size:16px;
+	color:#aa9358;
+	line-height:30px;
+	padding:5px 0px;
+	letter-spacing: 1px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+	height: 93px;
+}
+.post-list-content .list-num .list-info ul{
+	padding:30px 0px;
+}
+.post-list-content .list-num .list-info ul li{
+	float:left;
+	width:33.3333%;
+	text-align: center;
+	color:#aaa;
+	border-right:1px solid #ccc;
+}
+.post-list-content .list-num .list-info ul li:last-of-type{
+	border-right:0px;
+}
+.post-list-content .list-num .list-info ul li img{
+	margin-top:-3px;
+	margin-right:8px;
+}

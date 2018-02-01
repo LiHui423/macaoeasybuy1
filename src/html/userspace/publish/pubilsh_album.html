@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>發佈-專輯</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" type="text/css" href="/css/userspace/publish/publish_common.css">
+		<link rel="stylesheet" type="text/css" href="/css/userspace/publish/publish_album.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_needLogin.js"></script>
+		<script src="/js/userspace/common/userspacebg.js" async></script>
+	</head>
+
+	<body>
+		<div class="transparent_bg"></div>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu"></ul>
+							<ul id="news-push"></ul>
+						</div>
+						<div id="userspace-content">
+							<div class="publishBox publishBox_diary">
+								<div class="publishBox_title">發佈專輯</div>
+								<div class="publishBox_main">
+									<!--文章標題-->
+									<div class="publishBox_articleTitle clearfloat">
+
+										<div class="publishBox_articleTitleLeft">
+											<span>專輯標題：</span><input type="text" id="diaryTitle" value="" placeholder="請為您的專輯取一個標題吧~" maxlength="24">
+											<div class="publishBox_articleTitleLeft_num"><span id="diaryTitle-num">0</span>/24</div>
+											<div class="cleapublishBox_articleTitleLeft_slideIcon"><img src="/img/userspace/publish/album_slideIcon.png"></div>
+
+											<div class="publishBox_articleTitleLeft_slide scrollIe scrollOther">
+												<div class="publishBox_articleTitleLeft_slide_inner clearfloat" id="other_album_box"></div>
+											</div>
+
+										</div>
+
+										<div class="publishBox_articleTitleRight" id="diary_class">
+											<span>選擇專輯類別</span><span><img src="/img/userspace/publish/downIcon2_white.png"></span>
+											<div class="publishBox_articleTitleRight_slide">
+												<ul></ul>
+											</div>
+										</div>
+
+									</div>
+									<!--上傳圖片-->
+									<div class="publishBox_unloadpic">
+
+										<div class="upload-box">
+											<div class="upload-box-tips">
+												<span class="upload-count">上傳圖片(<span class="now-num" id="nowNum">0</span>/<span class="max-num" id="maxNum">6</span>)</span>
+												<span class="upload-tips">提示：適合上傳JPG、JPEG、GIF、PNG、APNG且每張不超過4MB大小的圖片</span>
+											</div>
+											<div class="upload-picbox">
+												<div class="upload-picbar"></div>
+												<div id="publish_submit" class=""></div>
+											</div>
+										</div>
+
+										<div class="upload-each" id="preview-box"></div>
+
+									</div>
+									<p class="album-tips">專輯發佈時最多添加6張相片，如需添加更多相片，請於發佈後再進行添加~</p>
+									<!--按鈕盒子-->
+									<div class="publishBox_btn clearfloat">
+										<div class="publishBox_surebtn" id="replyBox_sendMess">
+											<span><img src="/img/userspace/publish/checkIcon_white.png"></span><span>保存并發佈</span>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer></footer>
+		</div>
+		<!--發佈成功-->
+		<div id="comment-success-tips-empty" class="comment-success-tips">
+			<div class="praise on-middle yez-tips-box">
+				<div><img src="/img/common/icon/focusShop_icon.png" alt="">已成功發佈專輯！</div>
+				<div>已獲得積分獎勵</div>
+				<div>+<span class="point-number"></span>分</div>
+			</div>
+		</div>
+		<!--插入圖片成功-->
+		<div id="comment-success-tips-insert" class="comment-success-tips">
+			<div class="praise on-middle yez-tips-box">
+				<div><img src="/img/common/icon/focusShop_icon.png" alt="">已成功添加圖片到專輯！</div>
+			</div>
+		</div>
+
+	<script src="/js/plug/yez_js_Reset.js"></script>
+	<script src="/js/common/vendor/template-native.js"></script>
+	<script src="/js/userspace/common/userinfo.js" async></script>
+	<script src="/js/userspace/common/leftmenu.js" async></script>
+	<script src="/js/userspace/common/whitemenu.js" async></script>
+	<script src="/js/userspace/common/newspush.js" async></script>
+	<script src="/js/common/header&search&footer/footer.js" async></script>
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/plug/webuploader.nolog.min.js"></script>
+	<script src="/js/userspace/publish/publish_getData.js"></script>
+	<script src="/js/userspace/publish/publish_album/publish_album.js"></script>
+	<script src="/js/userspace/publish/publish_album/publish_album_upload.js"></script>
+
+	<!--圖片預覽模板-->
+	<script id="upload-show-img" type="text/html" data-type="template">
+
+		<div class="album-list-item clearfloat" id="<%=id%>">
+
+			<div class="album-list-img-view">
+				<img src="<%=pic%>" alt="" class="img-view">
+
+				<div class="upload-picboxEach_clear">
+					<img src="/img/userspace/publish/pubilsh_close.png" alt="">
+				</div>
+
+				<div class="upload-picboxEach_clear_shadow">
+					<div class="upload-picboxEach_clear_shadow_inner">
+						<div class="progress-text">等待上傳</div>
+						<div class="progress">
+							<div></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<textarea class="album-list-img-content scrollIe scrollOther" placeholder="為您的圖片添加描述"></textarea>
+
+		</div>
+
+	</script>
+	<!--獲取其他專輯模板-->
+	<script id="other-album-template" type="text/html" data-type="template">
+		<%if(albumClass.length != 0){%>
+			<%for(var i=0;i<albumClass.length;i++){%>
+				<%if(i==0 && page == 0){%>
+				<div class="other_album_item new select" id="new_album">
+					<div class="other_album_item_img">
+						<img src="/img/social/easylive/no-collect.png" alt="">
+						<div class="select-shadow"><img src="/img/social/easylive/collect-select.png" alt=""></div>
+					</div>
+					<div class="other_album_item_name"><span>《</span><span>我的新專輯</span><span>》</span></div>
+					<div class="other_album_item_number">專輯圖：<span>0</span>張</div>
+				</div>
+				<%}%>
+				<div class="other_album_item" id="<%=albumClass[i].id%>_other_album">
+					<div class="other_album_item_img">
+						<img src="<%=osURL%><%=albumClass[i].coverPic%>" alt="">
+						<div class="select-shadow"><img src="/img/social/easylive/collect-select.png" alt=""></div>
+					</div>
+					<div class="other_album_item_name"><span>《</span><span><%=albumClass[i].albumName%></span><span>》</span></div>
+					<div class="other_album_item_number">專輯圖：<span><%=albumClass[i].picCount%></span>張</div>
+				</div>
+			<%}%>
+		<%}else if(albumClass.length == 0 && page == 0){%>
+			<div class="no_album_img">
+				<div><img src="/img/common/05.png" alt=""></div>
+				<div class="text-tips">沒有任何內容哦~</div>
+			</div>
+		<%}%>
+	</script>
+
+	</body>
+
+</html>

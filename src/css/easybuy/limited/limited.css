@@ -1,0 +1,461 @@
+/*加載的假數據*/
+.ListBox_dinner{
+	float: left;
+    width: 460px;
+    height: 340px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    margin-left: 8px;
+    margin-top: 20px;
+}
+.ListBox_dinner:nth-child(3n+1) {
+    margin-left: 0px;
+}
+.ListBox_dinnerpic{
+	width: 220px;
+	height: 300px;
+	float: left;
+	background-color: #E3E3E3;
+}
+.ListBox_dinnerdata{
+	float: left;
+    margin-left: 20px;
+    width: 180px;
+}
+.ListBox_dinnerdata p:nth-of-type(1){
+	width: 180px;
+	height: 25px;
+	background-color: #E3E3E3;
+}
+.ListBox_dinnerdata p:nth-of-type(2){
+	width: 180px;
+	height: 25px;
+	background-color: #E3E3E3;
+	margin-top: 30px;
+}
+.ListBox_dinnerdata p:nth-of-type(3){
+	margin-top: 50px;
+}
+.ListBox_dinnerdata p:nth-of-type(3) span:nth-of-type(1){
+	float: left;
+	width: 80px;
+	height: 25px;
+	display: inline-block;
+	background-color: #E3E3E3;
+}
+.ListBox_dinnerdata p:nth-of-type(3) span:nth-of-type(2){
+	float: right;
+	width: 80px;
+	height: 25px;
+	display: inline-block;
+	background-color: #E3E3E3;
+}
+.ListBox_dinnerdata p:nth-of-type(4){
+	margin-top: 60px;
+}
+.ListBox_dinnerdata p:nth-of-type(4) span:nth-of-type(1){
+	float: left;
+	width: 80px;
+	height: 25px;
+	display: inline-block;
+	background-color: #E3E3E3;
+}
+.ListBox_dinnerdata p:nth-of-type(4) span:nth-of-type(2){
+	float: right;
+	width: 80px;
+	height: 25px;
+	display: inline-block;
+	background-color: #E3E3E3;
+}
+.ListBox_dinnerdata p:nth-of-type(5){
+	width: 180px;
+	height: 40px;
+	background-color: #E3E3E3;
+	margin-top: 20px;
+}
+
+
+.limitedBox{
+	background: url(//img.macaoeasybuy.com/img/easybuy/limited/limited_bg.png) fixed;
+}
+.limited_main{
+	width: 1397px;
+	margin: auto;
+	padding-bottom: 150px;
+}
+.limited_hottestBox{
+	height: 930px;
+}
+.hottestBox_title{
+	width: 250px;
+	margin: auto;
+	padding:55px 0;
+}
+.hottestBox_main{
+	width: 1397px;
+	margin: auto;
+}
+.hottestBox_each{
+	float: left;
+	width: 460px;
+	height: 340px;
+	padding: 20px;
+	background-color: #FFFFFF;
+	margin-left: 8px;
+	margin-top: 20px;
+}
+.hottestBox_each:nth-child(3n+1){
+	margin-left: 0px;
+}
+.hottestBox_eachLeft{
+	float: left;
+	width: 220px;
+	height: 300px;
+	position: relative;
+}
+.limitedIcon{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.hottestBox_eachLeft img{
+	width: 100%;
+	max-height: 300px;
+}
+.hottestBox_eachRight{
+	float: left;
+	margin-left: 20px;
+	width: 180px;
+}
+.hottestBox_each_title{
+	font-size: 18px;
+	text-align: center;
+	width: 100%;
+}
+.hottestBox_each_schedule{
+	margin-top: 15px;
+}
+.hottestBox_each_schedule p{
+	color: #b3b3b3;
+	font-size: 16px;
+	letter-spacing: 2px;
+}
+.hottestBox_each_scheduleBox{
+	background-color:#f0f0f0;
+	height: 17px;
+	border: 1px solid #FF527C;
+	margin-top: 2px;
+	border-radius:20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius:20px;
+	position: relative;
+}
+.hottestBox_each_scheduleCurr{
+	position: absolute;
+	background-color: #FF527C;
+	height: 15px;
+	width: 0;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	position: absolute;
+	left: -1px;
+}
+.hottestBox_each_number{
+	margin-top: 10px;
+	color: #b3b3b3;
+}
+.hottestBox_each_number span{
+	font-size: 20px;
+	color: #FF527C;
+	margin-left: 5px;
+}
+.hottestBox_each_numberLeft{
+	float: left;
+}
+.hottestBox_each_numberRight{
+	float: right;
+}
+.hottestBox_each_numberRight span{
+	color: #B3B3B3;
+}
+.hottestBox_each_date{
+	margin-top: 40px;
+}
+.hottestBox_each_dateNum{
+	color: #b3b3b3;
+}
+.hottestBox_each_dateNum span:nth-child(1){
+	margin-right: 5px;
+}
+.hottestBox_each_dateLeft{
+	float: left;
+}
+.hottestBox_each_dateRight{
+	float: right;
+}
+.hottestBox_each_price{
+	margin-top: 20px;
+}
+.hottestBox_each_old{
+	float: left;
+	color: #FF527C;
+}
+.hottestBox_each_old span{
+	font-size: 26px;
+	margin-left: 5px;
+}
+.hottestBox_each_new{
+	float: right;
+	color: #B3B3B3;
+	margin-top: 12px;
+	text-decoration: line-through;
+}
+.hottestBox_each_button{
+	margin-top: 20px;
+	background-color: #FF527C;
+	color: #FFFFFF;
+	border-radius:8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius:8px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	font-size: 22px;
+	letter-spacing: 2px;
+	cursor: pointer;
+}
+.limited_ListBox{
+
+}
+.limited_ListBox_title{
+	width: 415px;
+	padding-top: 80px;
+	padding-bottom: 40px;
+	margin: auto;
+}
+.limited_ListBox_goods{
+	margin-top: 30px;
+}
+.ListBox_goodsEach{
+	width: 270px;
+	height: 575px;
+	padding: 25px;
+	background-color: #FFFFFF;
+	margin-bottom: 20px;
+	margin-left: 10px;
+	float: left;
+}
+.ListBox_goodsEach:nth-child(5n+1){
+	margin-left: 0px;
+}
+.ListBox_goodsEach_pic{
+	width: 220px;
+	height: 300px;
+	position: relative;
+	background:url(/img/common/loading_pc_220.jpg);
+}
+.ListBox_goodsEach_pic img{
+	display: inline-block;
+	width: 220px;
+	max-height: 300px;
+	opacity: 0;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+}
+.ListBox_goodsEach_pic .ListBox_goodsEach_picCover img{
+	opacity: 1;
+}
+.ListBox_goodsEach_picCover{
+	width: 220px;
+	height: 300px;
+	position: absolute;
+	top: 0px;
+	background: rgba(0,0,0,0.5);
+	z-index: 2;
+	display: none;
+}
+.ListBox_goodsEach_picCover img{
+	width: 70%;
+    margin-left: 15%;
+    margin-top: 40px;
+    max-height: 300px;
+}
+.ListBox_goodsEach_date{
+	width: 220px;
+	background: rgba(0,0,0,0.7);
+	position: absolute;
+	bottom: 0;
+	padding: 10px 0;
+}
+.ListBox_goodsEach_dateEach{
+	float: left;
+	width: 110px;
+	color: #FFFFFF;
+	padding-left: 10px;
+}
+.ListBox_goodsEach_dateEach img{
+	opacity: 1;
+}
+.ListBox_goodsEach_dateEach:nth-child(1){
+	border-right:2px solid #FFFFFF ;
+}
+.ListBox_goodsEach_dateEach:nth-child(1) span:nth-child(1){
+	width: 18px;
+}
+.ListBox_goodsEach_dateEach span:nth-child(1){
+	width: 20px;
+	display: inline-block;
+	margin-right: 5px;
+	float: left;
+}
+.ListBox_goodsEach_dateEach span:nth-child(1) img{
+	width: 100%;
+}
+.ListBox_goodsEach_dateEach span:nth-child(2){
+	font-size: 16px;
+	display: inline-block;
+	float: left;
+	margin-top: 2px;
+}
+.ListBox_goodsEach_title{
+	margin-top: 13px;
+}
+.ListBox_goodsEach_schedule{
+	margin-top: 13px;
+}
+.ListBox_goodsEach_schedule p{
+	color: #b3b3b3;
+	font-size: 16px;
+	letter-spacing: 2px;
+}
+.ListBox_goodsEach_scheduleBox{
+	background-color:#f0f0f0;
+	height: 17px;
+	border: 1px solid #e86500;
+	margin-top: 2px;
+	border-radius:20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius:20px;
+	position: relative;
+	overflow: hidden;
+}
+.ListBox_goodsEach_scheduleCurr{
+	position: absolute;
+	background-color: #e86500;
+	height: 15px;
+	width: 0px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	position: absolute;
+	left: -1px;
+}
+.ListBox_goodsEach_number{
+	margin-top: 5px;
+	color: #b3b3b3;
+}
+.ListBox_goodsEach_number span{
+	font-size: 20px;
+	color: #FF527C;
+	margin-left: 5px;
+}
+.ListBox_goodsEach_numberLeft{
+	float: left;
+}
+.ListBox_goodsEach_numberRight{
+	float: right;
+}
+.ListBox_goodsEach_numberRight span{
+	color: #B3B3B3;
+}
+.ListBox_goodsEach_price{
+	margin-top: 15px;
+}
+.ListBox_goodsEach_old{
+	float: left;
+	color: #FF527C;
+}
+.ListBox_goodsEach_old span{
+	font-size: 26px;
+	margin-left: 5px;
+}
+.ListBox_goodsEach_new{
+	float: right;
+	color: #B3B3B3;
+	margin-top: 12px;
+	text-decoration: line-through;
+}
+.ListBox_goodsEach_buy{
+	cursor: pointer;
+}
+.ListBox_goodsEach_button{
+	margin-top: 5px;
+	color: #FFFFFF;
+	border-radius:8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius:8px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 22px;
+	letter-spacing: 2px;
+}
+.ListBox_goodsEach_buy{
+	background-color: #e86500;
+}
+.ListBox_goodsEach_over{
+	background-color: #E3E3E3;
+	display: none;
+}
+
+.ListBox_goodsEach_sellOut .ListBox_goodsEach_picCover{
+	display: block;
+}
+.ListBox_goodsEach_sellOut .ListBox_goodsEach_scheduleBox{
+	border: none;
+}
+.ListBox_goodsEach_sellOut .ListBox_goodsEach_scheduleCurr{
+	display: none;
+}
+.ListBox_goodsEach_sellOut .ListBox_goodsEach_buy{
+	display: none;
+}
+.ListBox_goodsEach_sellOut .ListBox_goodsEach_over{
+	display: block;
+}
+.limitedIcon img{
+	width: 72px;
+	height: 66px;
+}
+#noMore{
+	text-align: center;
+	margin-top: 40px;
+	color: #8f8f8f;
+	font-size: 16px;
+}
+.loadingnow{
+	width: 150px;
+	height: 15px;
+	margin: auto;
+	margin-top: 10px;
+	display:none;
+}
+.noshowgood{
+	width: 100%;
+	padding: 50px 0px;
+	background-color: #FFFFFF;
+}
+.noshowgood_pic{
+	width: 150px;
+	margin: auto;
+}
+.noshowgood_pic img{
+	width: 100%;
+}
+.noshowgood p{
+	font-size: 18px;
+	letter-spacing: 2px;
+	margin-top: 20px;
+	text-align: center;
+}

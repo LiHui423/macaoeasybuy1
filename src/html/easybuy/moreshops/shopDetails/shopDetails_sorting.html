@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商店詳細頁(排序列表頁)</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/moreshops/shopDetails/shopDetails.css">
+		<style type="text/css">
+			.shopDetails_main_sortingBox{
+				visibility: hidden;
+			}
+		</style>
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/yez_js_Reset.js"></script>
+		<script>
+			var shopId = 5;
+			var shopOrder = 0; //0 随机 1 时间 2心动数 3 价格
+			var descOrAsc = shopOrder == 3 ? 1 : 0; //0 降序 1 升序 (如果order是價格，則默認是升序排序)
+		</script>
+	</head>
+	<body>
+		<header></header>
+
+		<div id="shopDetails_searchBar" class="clearfloat">
+
+			<div class="clearfloat">
+				<div class="shopDetails_searchBarLeft">
+					<div class="searchBarLeft_top clearfloat">
+						<div class="searchBarLeft_topLogo">
+							<img src="/img/common/loading_pc_shop.png">
+						</div>
+						<div class="searchBarLeft_topData clearfloat">
+							<ul>
+								<li>
+									<div class="searchBarLeft_number myborder-radius">&nbsp;</div>
+									<p>描述相符</p>
+								</li>
+								<li>
+									<div class="searchBarLeft_number myborder-radius">&nbsp;</div>
+									<p>價格合理</p>
+								</li>
+								<li>
+									<div class="searchBarLeft_number myborder-radius">&nbsp;</div>
+									<p>商品質量</p>
+								</li>
+							</ul>
+						</div>
+						<div class="searchBarLeft_allData">
+							<p>&nbsp;</p>
+							<p>近期好評率</p>
+						</div>
+					</div>
+
+				</div>
+				<div class="shopDetails_searchBarRight">
+					<div class="shopDetails_searchBox clearfloat">
+						<div class="shopDetails_searchBoxLeft">
+							<span>搜本店</span>
+							<span><img src="/img/easybuy/moreshops/shopDetails_slide.png"></span>
+							<div class="shopDetails_searchBoxLeft_slideBox">
+								<ul>
+									<li>搜本店</li>
+									<li>搜本站</li>
+								</ul>
+							</div>
+						</div>
+						<div class="shopDetails_searchBoxMiddle"><input type="text" id="search-input" value=""></div>
+						<div class="shopDetails_searchBoxRight" id="search_btn"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/systemImg/7/7/7/20160707031032363321007103210032.png"></div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="searchBarLeft_bottom clearfloat">
+				<ul>
+					<li class="shop-number">商品數量：<span>&nbsp;</span></li>
+					<li class="shop-type">商品類別：<span>&nbsp;</span></li>
+					<li class="shop-level">商家評級：<span></span></li>
+					<li class="shop-report">舉報投訴：<span>&nbsp;</span></li>
+					<li class="shop-starts">創店時間：<span>&nbsp;</span></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="containerBox" id="containerBox">
+			<div class="shopDetails_main">
+
+				<div class="shopDetails_main_mess">
+
+					<div class="shopDetails_mess clearfloat">
+						<div class="shopDetails_banner">
+							<ul id="foodBannerul"></ul>
+							<div class="circleBox" id="foodBannerul-dotted"></div>
+						</div>
+						<div class="shopDetails_shoper">
+							<div class="shopDetails_shoper_head myborder-radius"></div>
+							<p class="shopDetails_shoper_name"></p>
+							<p class="shopDetails_shoper_intro"></p>
+							<div class="focus_btn">
+								<span>加入關注</span><span><img src="/img/easybuy/goodDetails/QRcode_button.png"></span>
+								<div class="addShopCar_QRshow">
+									<div class="addShopCar_QRshow_top"><img src="/img/easybuy/goodDetails/ticketPopBox_top.png"></div>
+									<div class="addShopCar_QRshow_main">
+										<img src="/img/easybuy/goodDetails/QRcode_show.png">
+										<div class="addShopCar_QRshow_text">手機掃碼直達本店</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="shopDetails_operating clearfloat">
+						<div class="shopDetails_operating_left">
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+						</div>
+						<div class="shopDetails_operating_right clearfloat">
+							<ul>
+								<li class="shareTo_bth">
+									<div class="article_share">
+										<img src="/img/easybuy/museum/icon/museumDetails_share.png" class="marks">
+										<img src="/img/easybuy/museum/icon/museumDetails_shares.png" class="grays">
+									</div>
+									<p>分享好友</p>
+								</li>
+								<li>
+									<div class="article_report">
+										<img src="/img/easybuy/museum/icon/museumDetails_wrongs.png" class="marks">
+										<img src="/img/easybuy/museum/icon/museumDetails_wrong.png" class="grays">
+									</div>
+									<p>問題舉報</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="shopDetails_visitor clearfloat">
+						<div class="shopDetails_visitor_left">
+							<p>&nbsp;</p>
+							<div><span><img src="/img/common/icon/seeIcon_dark.png"></span><span>宜粉到訪</span></div>
+						</div>
+						<div class="shopDetails_visitor_right clearfloat">
+							<div>最近查看本店：</div>
+							<ul class="clearfloat"></ul>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="shopDetails_main_sortingBox">
+					<div class="shopDetails_main_sorting_choose clearfloat">
+						<div class="shopDetails_main_sorting_chooseLeft">
+							<a href="/page/easybuy/moreshops/shopDetails/shopDetails_index.html">首頁</a>
+							<ul>
+								<li>所有</li>
+								<li>最新</li>
+								<li class="sorting_more bottom">
+									<span>心動</span>
+									<span class="sorting_null"><img src="/img/easybuy/moreshops/shopDetails_null.png"></span>
+									<span class="sorting_top"><img src="/img/easybuy/moreshops/shopDetails_top.png"></span>
+									<span class="sorting_bottom"><img src="/img/easybuy/moreshops/shopDetails_bottom.png"></span>
+								</li>
+								<li class="sorting_more top">
+									<span>價格</span>
+									<span class="sorting_null"><img src="/img/easybuy/moreshops/shopDetails_null.png"></span>
+									<span class="sorting_top"><img src="/img/easybuy/moreshops/shopDetails_top.png"></span>
+									<span class="sorting_bottom"><img src="/img/easybuy/moreshops/shopDetails_bottom.png"></span>
+								</li>
+							</ul>
+						</div>
+						<div class="shopDetails_main_sorting_chooseRight">
+							<ul>
+								<li>
+									<span><img src="/img/easybuy/shopCart/check.png"></span>
+									<span>有紅包券</span>
+								</li>
+								<li>
+									<span><img src="/img/easybuy/shopCart/check.png"></span>
+									<span>有價格券</span>
+								</li>
+								<li>
+									<span><img src="/img/easybuy/shopCart/check.png"></span>
+									<span>有積分券</span>
+								</li>
+								<li>
+									<span><img src="/img/easybuy/shopCart/check.png"></span>
+									<span>有其他券</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="shopDetails_main_sorting_main clearfloat">
+						<ul id="shop_list_box" class="clearfloat"></ul>
+						<p class="no-more">~沒有任何內容了哦~</p>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+		<footer></footer>
+	</body>
+
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/common/header&search&footer/footer.js"></script>
+	<script src="/js/easybuy/moreshops/shopDetails/shopDetails_sort.js"></script>
+	<script src="/js/easybuy/moreshops/shopDetails/shopDetail_common.js"></script>
+	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	<!--商品信息模板-->
+	<script id="shop_list_template" type="text/html">
+		<%if(list.length != 0){%>
+			<%for(var i=0;i<list.length;i++){%>
+			<li>
+				<div class="otherGoods">
+					<div class="otherGoods_pic"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_220.jpg'"></div>
+					<div class="otherGoods_mess">
+						<div class="otherGoods_mess_title hiddenText"><%=list[i].title%></div>
+						<p class="otherGoods_mess_nowPrice">MOP<%=list[i].price%></p>
+						<p class="otherGoods_mess_oldPrice">MOP<%=list[i].costPrice%></p>
+					</div>
+					<div class="otherGoods_data clearfloat">
+						<div class="otherGoods_dataEach clearfloat">
+							<span><img src="/img/common/icon/bagIcon_dark.png"></span>
+							<span><%=list[i].buynumber%></span>
+						</div>
+						<div class="otherGoods_dataEach clearfloat">
+							<span><img src="/img/common/icon/likeIcon_dark.png"></span>
+							<span><%=list[i].loveNumber%></span>
+						</div>
+					</div>
+					<%if(list[i].kucunState == 0){%>
+					<div class="goods_cover">
+						<img src="/img/easybuy/findNew/findNew_sellOut.png">
+					</div>
+					<%}%>
+				</div>
+			</li>
+			<%}%>
+		<%}else if(list.length == 0 && page == 0){%>
+			<div id="no-search-num">
+				<div><img src="/img/common/05.png" alt=""></div>
+				<p>沒有找到相關商品哦！</p>
+			</div>
+		<%}%>
+	</script>
+</html>

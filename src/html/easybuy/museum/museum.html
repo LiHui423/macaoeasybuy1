@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+
+		<title>宜品館</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/css/common/common.css">
+		<link rel="stylesheet" type="text/css" href="/css/easybuy/museum/museum.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/handlebars.runtime-v4.0.5.js"></script>
+
+	</head>
+	<body>
+		<header></header>
+		<div class="museumHome_head museumHome_head_slideUp">
+			<!--宜品館logo-->
+			<div class="museum_logoBox"><img src="/img/easybuy/museum/museum_logo.png"></div>
+			<div class="museum_navSlide_btn"><img src="/img/easybuy/museum/icon/museum_top_down.png"></div>
+			<!--橫條導航欄-->
+			<div class="navBar">
+				<ul>
+					<li><a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a></li>
+					<li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+					<li><a href="//social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
+					<li><a href="//social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
+					<li class="navBarLi_curr"><a href="//shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
+					<li><a href="//shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
+					<li><a href="//social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="containerBox">
+			<div class="detailsPopWindow clearfloat"></div>
+			<div class="museum_bannerBox"></div>
+			<div class="museum_todayDesign"></div>
+			<div class="museum_popularDesign"></div>
+			<div class="museum_willSell"></div>
+			<div class="museum_museumShow museum_Beautiful"></div>
+			<div class="museum_museumShow museum_Practical"></div>
+			<div class="museum_museumShow museum_Magical"></div>
+		</div>
+		<div class="museum_themeBox">
+			<div class="museum_themeBox_main">
+				<div class="museum_themeBox_main_title"><img src="/img/easybuy/museum/museum_theme_title.png"></div>
+				<div class="museum_themeBox_main_shwoBox clearfloat">
+					<ul>
+						<li>
+							<div class="museum_themeBox_main_liEach">
+								<a><img src="/img/easybuy/museum/museum_theme_showPic.png"></a>
+							</div>
+							<div class="museum_themeBox_main_liEach">
+								<a><img src="/img/easybuy/museum/museum_theme_showPic.png"></a>
+							</div>
+							<div class="museum_themeBox_main_liEach">
+								<a><img src="/img/easybuy/museum/museum_theme_showPic.png"></a>
+							</div>
+							<div class="museum_themeBox_main_liEach">
+								<a><img src="/img/easybuy/museum/museum_theme_showPic.png"></a>
+							</div>
+						</li>
+						<li>
+							<div class="museum_themeBox_main_liEach">
+								<a><img src="/img/easybuy/museum/museum_theme_showPic.png"></a>
+							</div>
+							<div class="museum_themeBox_main_liEach">
+								<a><img src="/img/easybuy/museum/museum_theme_showPic.png"></a>
+							</div>
+							<div class="museum_themeBox_main_liEach">
+								<a><img src="/img/easybuy/museum/museum_theme_showPic.png"></a>
+							</div>
+							<div class="museum_themeBox_main_liEach">
+								<a><img src="/img/easybuy/museum/museum_theme_showPic.png"></a>
+							</div>
+						</li>
+					</ul>
+					<div class="museum_sequenceBox"></div>
+				</div>
+			</div>
+		</div>
+
+		<footer></footer>
+	</body>
+	<!-- 公共文件js -->
+	<script src="/js/plug/yez_js_Reset.js"></script>
+	<!--頭部文件的js-->
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/common/header&search&footer/footer.js"></script>
+	<!--宜品館部份的js-->
+	<script src="/js/easybuy/museum/museum.js"></script>
+	<!--模板文件和假數據-->
+	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/js/easybuy/museum/museum_date.js"></script>
+	<!--團購部份用到的js-->
+	<script src="/js/easybuy/groupBuy/groupBuy.js"></script>
+	<!--評論滾動用到的插件-->
+	<script src="/js/plug/common_scroll.js"></script>
+	<!--即將開賣的倒計時插件-->
+	<script src="/js/common/groupBuy/groupBuy_countDown.js"></script>
+
+	<!--輪播圖的模板-->
+	<script type="text/html" id="showMuseumBanner"  data-array = "museumBannerList" >
+		<div class="museum_banner_showBox">
+			<%for(var i = 0;i <list.length;i++){%>
+				<%if(list[i].bannerPic==""){%>
+					<a href="#">
+							<img src="//img.macaoeasybuy.com/img/common/loading_banner.jpg">
+					</a>
+				<%}else{%>
+					<a href="#">
+						<img src=http://wap.macaoeasybuy.com/<%=list[i].bannerPic%>>
+					</a>
+				<%}%>
+			<%}%>
+		</div>
+		<div class="museum_banner_tabBox">
+			<ul>
+				<%for(var k = 0;k <list.length;k++){%>
+					<li><%=list[k].bannerTitle%></li>
+				<%}%>
+			</ul>
+		</div>
+	</script>
+	<!--TODAY'SDESIGN模板-->
+	<script type="text/html" id="showTodayDesign"  data-array = "TodayDesignList" >
+		<div class="museum_todayDesign_title"><img src="/img/easybuy/museum/museum_head.png"></div>
+		<div class="museum_todayDesign_box">
+			<div class="todayDesign_box_Btn todayDesign_box_leftBtn"><img src="/img/easybuy/museum/icon/todayDesign_leftBtn.png"></div>
+			<div class="todayDesign_box_Btn todayDesign_box_rightBtn"><img src="/img/easybuy/museum/icon/todayDesign_rightBtn.png"></div>
+			<ul>
+				<%for(var i = 0;i <list.length;i++){%>
+					<li data-id = "<%=list[i].id%>">
+						<a href="#"><img src=http://wap.macaoeasybuy.com/<%=list[i].todayDedignPic%>></a>
+						<div class="museum_goods_cover">
+							<div class="museum_goods_radius">
+								<p>原價:<%=list[i].todayDedignOldPrice%></p>
+								<p>宜買價：<%=list[i].todayDedignNewPrice%></p>
+								<div class="museum_good_mess"><span><img src="/img/easybuy/museum/icon/museum_good_seenumber.png"></span><span><%=list[i].seeNumber%></span></div>
+								<div class="museum_good_mess"><span><img src="/img/easybuy/museum/icon/museum_good_buynumber.png"></span><span><%=list[i].buyNumber%></span></div>
+							</div>
+						</div>
+					</li>
+				<%}%>
+			</ul>
+		</div>
+	</script>
+	<!--人氣設計的左邊商品模板-->
+	<script type="text/html" id="showPopularBox"  data-array = "popoularList" >
+		<div class="museum_secondNav_title"><img src="/img/easybuy/museum/museum_title1.png"></div>
+		<div class="museum_popularDesign_main">
+			<div class="museum_popularDesign_left">
+				<div class="popularDesign_btn popularDesign_btnLeft"><img src="/img/easybuy/museum/icon/todayDesign_leftBtn.png"></div>
+				<div class="popularDesign_btn popularDesign_btnRight"><img src="/img/easybuy/museum/icon/todayDesign_rightBtn.png"></div>
+				<ul>
+					<%for(var i = 0;i <list.length;i  = i + 2){%>
+						<li>
+							<div class="popularDesign_li popularDesign_liTop" data-id = "<%=list[i].id%>">
+								<a href="#"><img src=http://wap.macaoeasybuy.com/<%=list[i].todayDedignPic%>></a>
+								<div class="museum_popularDesign_cover">
+									<div class="museum_goods_radius">
+										<p>原價:<%=list[i].todayDedignOldPrice%></p>
+										<p>宜買價:<%=list[i].todayDedignNewPrice%></p>
+										<div class="museum_good_mess"><span><img src="/img/easybuy/museum/icon/museum_good_seenumber.png"></span><span><%=list[i].seeNumber%></span></div>
+										<div class="museum_good_mess"><span><img src="/img/easybuy/museum/icon/museum_good_buynumber.png"></span><span><%=list[i].buyNumber%></span></div>
+									</div>
+								</div>
+							</div>
+							<div class="popularDesign_li popularDesign_liBottom" data-id = "<%=list[i+1].id%>">
+								<a href="#"><img src=http://wap.macaoeasybuy.com/<%=list[i + 1].todayDedignPic%>></a>
+								<div class="museum_popularDesign_cover">
+									<div class="museum_goods_radius">
+										<p>原價:<%=list[i+1].todayDedignOldPrice%></p>
+										<p>宜買價：<%=list[i+1].todayDedignNewPrice%></p>
+										<div class="museum_good_mess"><span><img src="/img/easybuy/museum/icon/museum_good_seenumber.png"></span><span><%=list[i+1].seeNumber%></span></div>
+										<div class="museum_good_mess"><span><img src="/img/easybuy/museum/icon/museum_good_buynumber.png"></span><span><%=list[i+1].buyNumber%></span></div>
+									</div>
+								</div>
+							</div>
+						</li>
+					<%}%>
+				</ul>
+			</div>
+			<div class="museum_popularDesign_right">
+				<div class="popularDesign_right_title">宜粉評價</div>
+				<div class="popularDesign_right_commentBox">
+					<ul></ul>
+				</div>
+			</div>
+		</div>
+	</script>
+	<!--人氣設計的右邊評論滾動模板-->
+	<script type="text/html" id="showPopularComment"  data-array = "popularCommentList" >
+		<%for(var i = 0;i <list.length;i++){%>
+			<li>
+				<a href="#" data-id = "<%=list[i].goodid%>">
+					<div class="popularDesign_right_commentEach">
+						<div class="popularDesign_commentGood">
+							<div class="popularDesign_commentGood_left"><img src=http://wap.macaoeasybuy.com/<%=list[i].goodPic%>></div>
+							<div class="popularDesign_commentGood_right">
+								<p><%=list[i].goodName%></p>
+								<span>MOP <%=list[i].goodNewPrice%></span><del>MOP <%=list[i].goodOldPrice%></del>
+							</div>
+						</div>
+						<div class="popularDesign_commentMess">
+							<div class="popularDesign_commentMess_left">
+								<%if(list[i].commentAthourPic == ""){%>
+									<img src="/img/common/loading_pc_headPic.png">
+								<%}else{%>
+									<img src = 'http://wap.macaoeasybuy.com/<%=list[i].commentAthourPic%>' onerror="this.src='/img/common/headPic.png'">
+								<%}%>
+							</div>
+							<div class="popularDesign_commentMess_right">
+								<p><%=list[i].commentAthour%>:</p>
+								<p><%=list[i].commentMain%></p>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+		<%}%>
+	</script>
+	<!--即將開賣的模板-->
+	<script type="text/html" id="showWillSellBox"  data-array = "willSellList" >
+		<div class="museum_secondNav_title"><img src="/img/easybuy/museum/museum_title2.png"></div>
+		<div class="museum_willSellBox clearfloat">
+			<%for(var i = 0;i <list.length;i++){%>
+				<div class="museum_willSellBoxEach" data-id = "<%=list[i].goodid%>">
+					<div class="museum_willSellBoxEach_top">
+						<div class="museum_willSellBoxEach_topLeft"><img src=http://wap.macaoeasybuy.com/<%=list[i].goodBigPic%>></div>
+						<div class="museum_willSellBoxEach_topRight">
+							<div class="museum_willSellBoxEach_locked"><img src="/img/easybuy/museum/icon/museum_Locked.png"></div>
+							<div class="museum_willSellBoxEach_title"><%=list[i].goodName%></div>
+							<div class="museum_willSellBoxEach_small">
+								<div style="background-image: url(http://wap.macaoeasybuy.com/<%=list[i].piclist[0]%>);"></div>
+								<div style="background-image: url(http://wap.macaoeasybuy.com/<%=list[i].piclist[1]%>);"></div>
+							</div>
+						</div>
+					</div>
+					<div class="museum_willSellBoxEach_bottom">
+						<p>比原價<%=list[i].countCut%></p>
+						<p class="museum_willSellBoxEach_reciprocal">
+							<span class="willSellBoxEach_number willSellBoxEach_days">00</span> <span>天</span>
+							<span class="willSellBoxEach_number willSellBoxEach_hours">00</span> <span>小時</span>
+							<span class="willSellBoxEach_number willSellBoxEach_mins">00</span> <span>分</span>
+							<span class="willSellBoxEach_number willSellBoxEach_seconds">00</span> <span>秒</span>
+							<span>開賣</span>
+						</p>
+						<input type="hidden" name="" id="" class="museumBeginTime" value="<%=list[i].beginTime%>">
+					</div>
+				</div>
+			<%}%>
+		</div>
+	</script>
+	<!--唯美館的模板-->
+	<script type="text/html" id="showBeautiful"  data-array = "showBeautifulList" >
+		<div class="museum_secondNav_title">
+			<img src="/img/easybuy/museum/museum_title3.png">
+			<a href="museumList_beautiful.html">查看更多唯美產品</a>
+		</div>
+		<div class="museum_museumShowBox">
+			<div class="museum_museumShowBox_top">
+				<div class="museum_museumShowBox_topLeft">
+					<a href="museumList_beautiful.html"><img src="/img/easybuy/museum/museumShowBox-1.png"></a>
+				</div>
+				<div class="museum_museumShowBox_topRight">
+					<div class="museumShowBox_topRight_btn museumShowBox_topRight_btnLeft"><img src="/img/easybuy/museum/icon/todayDesign_leftBtn.png"></div>
+					<div class="museumShowBox_topRight_btn museumShowBox_topRight_btnRight"><img src="/img/easybuy/museum/icon/todayDesign_rightBtn.png"></div>
+					<ul>
+						<%for(var i = 0;i <list.length;i++){%>
+							<li data-id = "<%=list[i].spid%>">
+								<div class="museum_museumShowBox_li">
+									<a href="#"><img src=http://wap.macaoeasybuy.com/<%=list[i].sppic%>></a>
+									<div class="museum_museumShowBox_cover">
+										<div class="museum_goods_radius">
+											<p>原價:MOP<%=list[i].oldprice%></p>
+											<p>宜買價：MOP<%=list[i].newprice%></p>
+											<div class="museum_good_mess"><span><img src="/img/easybuy/museum/icon/museum_good_seenumber.png"></span><span><%=list[i].seeNumber%></span></div>
+											<div class="museum_good_mess"><span><img src="/img/easybuy/museum/icon/museum_good_buynumber.png"></span><span><%=list[i].buyNumber%></span></div>
+										</div>
+									</div>
+								</div>
+							</li>
+						<%}%>
+					</ul>
+				</div>
+			</div>
+			<div class="museum_museumShowBox_bottom museumShowBox_bottom_beautiful"></div>
+		</div>
+	</script>
+
+	<script type="text/html" id="showVisitFan"  data-array = "visitFanList" >
+		<div class="museumShowBox_bottom_left">
+			<p class="museumShowBox_bottom_number"><%=list[0].sumSeeNum%></p>
+			<p>宜粉感興趣</p>
+		</div>
+		<div class="museumShowBox_bottom_right">
+			<div class="museumShowBox_bottom_right_title">最新查看</div>
+			<div class="museumShowBox_bottom_right_seeBox">
+				<ul>
+					<%for(var i = 0;i <list[0].listmap.length;i++){%>
+						<%if(list[0].listmap[i].userpic == ""){%>
+							<li><a href="#" data-id = "<%=list[0].listmap[i].userid%>"><div class="museumShowBox_bottom_right_seeBox_head"><img src="/img/common/loading_pc_headPic.png"></div></a></li>
+						<%}else{%>
+							<li><a href="#" data-id = "<%=list[0].listmap[i].userid%>"><div class="museumShowBox_bottom_right_seeBox_head"><img src='http://wap.macaoeasybuy.com/<%=list[0].listmap[i].userpic%>' onerror="this.src='/img/common/headPic.png'"></div></a></li>
+						<%}%>
+					<%}%>
+				</ul>
+			</div>
+		</div>
+	</script>
+	<!--實用館的模板-->
+	<script type="text/html" id="showPractical"  data-array = "showPracticalList" >
+		<div class="museum_secondNav_title">
+			<img src="/img/easybuy/museum/museum_title4.png">
+			<a href="museumList_practical.html">查看更多實用設計</a>
+		</div>
+		<div class="museum_museumShowBox">
+			<div class="museum_museumShowBox_top">
+				<div class="museum_museumShowBox_topLeft">
+					<a href="museumList_practical.html"><img src="/img/easybuy/museum/museumShowBox-2.png"></a>
+				</div>
+				<div class="museum_museumShowBox_topRight">
+					<div class="museumShowBox_topRight_btn museumShowBox_topRight_btnLeft"><img src="/img/easybuy/museum/icon/todayDesign_leftBtn.png"></div>
+					<div class="museumShowBox_topRight_btn museumShowBox_topRight_btnRight"><img src="/img/easybuy/museum/icon/todayDesign_rightBtn.png"></div>
+					<ul>
+						<%for(var i = 0;i <list.length;i++){%>
+							<li data-id = "<%=list[i].spid%>">
+								<div class="museum_museumShowBox_li">
+									<a href="#"><img src=http://wap.macaoeasybuy.com/<%=list[i].sppic%>></a>
+									<div class="museum_museumShowBox_cover">
+										<div class="museum_goods_radius">
+											<p>原價:MOP<%=list[i].oldprice%></p>
+											<p>宜買價：MOP<%=list[i].newprice%></p>
+											<div class="museum_good_mess"><span><img src="/img/easybuy/museum/icon/museum_good_seenumber.png"></span><span><%=list[i].seeNumber%></span></div>
+											<div class="museum_good_mess"><span><img src="/img/easybuy/museum/icon/museum_good_buynumber.png"></span><span><%=list[i].buyNumber%></span></div>
+										</div>
+									</div>
+								</div>
+							</li>
+						<%}%>
+					</ul>
+				</div>
+			</div>
+			<div class="museum_museumShowBox_bottom museumShowBox_bottom_practical"></div>
+		</div>
+	</script>
+
+	<!--奇趣館的模板-->
+	<script type="text/html" id="showMagical"  data-array = "showMagicalList" >
+		<div class="museum_secondNav_title">
+			<img src="/img/easybuy/museum/museum_title5.png">
+			<a href="museumList_magical.html">查看更多奇趣產品</a>
+		</div>
+		<div class="museum_museumShowBox">
+			<div class="museum_museumShowBox_top">
+				<div class="museum_museumShowBox_topLeft">
+					<a href="museumList_magical.html"><img src="/img/easybuy/museum/museumShowBox-3.png"></a>
+				</div>
+				<div class="museum_museumShowBox_topRight">
+					<div class="museumShowBox_topRight_btn museumShowBox_topRight_btnLeft"><img src="/img/easybuy/museum/icon/todayDesign_leftBtn.png"></div>
+					<div class="museumShowBox_topRight_btn museumShowBox_topRight_btnRight"><img src="/img/easybuy/museum/icon/todayDesign_rightBtn.png"></div>
+					<ul>
+						<%for(var i = 0;i <list.length;i++){%>
+							<li data-id = "<%=list[i].spid%>">
+								<div class="museum_museumShowBox_li">
+									<a href="#"><img src=http://wap.macaoeasybuy.com/<%=list[i].sppic%>></a>
+									<div class="museum_museumShowBox_cover">
+										<div class="museum_goods_radius">
+											<p>原價:MOP<%=list[i].oldprice%></p>
+											<p>宜買價：MOP<%=list[i].newprice%></p>
+											<div class="museum_good_mess"><span><img src="/img/easybuy/museum/icon/museum_good_seenumber.png"></span><span><%=list[i].seeNumber%></span></div>
+											<div class="museum_good_mess"><span><img src="/img/easybuy/museum/icon/museum_good_buynumber.png"></span><span><%=list[i].buyNumber%></span></div>
+										</div>
+									</div>
+								</div>
+							</li>
+						<%}%>
+					</ul>
+				</div>
+			</div>
+			<div class="museum_museumShowBox_bottom museumShowBox_bottom_magical"></div>
+		</div>
+	</script>
+
+	<!--即將開賣商品彈窗的模板-->
+	<script type="text/html" id="showDetailsPop" data-array ="DetailsPopList">
+		<div class="detailsPopWindow_left">
+			<div class="detailsPopWindow_coverPic"><img src=http://wap.macaoeasybuy.com/<%=list.sppic%>></div>
+			<div class="detailsPopWindow_title hiddenText"><%=list.title%></div>
+			<div class="detailsPopWindow_intro"><%=list.intro%></div>
+			<div class="detailsPopWindow_price">
+				<p>售價：24天後公佈</p>
+				<p>比原價節省20.5%</p>
+			</div>
+			<div class="detailsPopWindow_sellDay">
+				<div class="detailsPopWindow_day_begin">
+					<span>10</span>月<span>30</span>日&nbsp;<span>18:00</span>開賣
+				</div>
+				<p>距離開賣還有</p>
+				<div class="detailsPopWindow_day_count">
+					<span>24</span>天
+					<span>05</span>小時
+					<span>10</span>分
+					<span>03</span>秒
+				</div>
+			</div>
+			<div class="detailsPopWindow_Save">
+				<%if(list.loveState = 1){%>
+					<a class="saveGoods_up"><img src="/img/common/icon/saveGoodsUp.png"></a>
+				<%}else if(list.loveState = 0){%>
+					<a class="saveGoods"><img src="/img/common/icon/saveGoods.png"></a>
+				<%}else if(list.loveState = -1){%>
+					<a href="#"><img src="/img/common/icon/saveGoodsUp.png"></a>
+				<%}%>
+				<p>心動收藏</p>
+			</div>
+			<div class="detailsPopWindow_data clearfloat">
+				<div class="detailsPopWindow_data_saveNumber">
+					<span><img src="/img/easybuy/museum/icon/museumPop_save.png"></span>
+					<span><%=list.splovesum%>宜粉心動</span>
+				</div>
+				<div class="detailsPopWindow_data_saveNumber">
+					<span><img src="/img/easybuy/museum/icon/museumPop_see.png"></span>
+					<span><%=list.spseeSum%>宜粉查看</span>
+				</div>
+			</div>
+		</div>
+		<div class="detailsPopWindow_right scrollIe scrollOther">
+			<img src=http://wap.macaoeasybuy.com/<%=list.propiclist[0]%>>
+			<img src=http://wap.macaoeasybuy.com/<%=list.propiclist[1]%>>
+		</div>
+		<div class="detailsPopWindow_closeIcon">
+			<img src="/img/easybuy/museum/icon/museumPop_back.png">
+		</div>
+	</script>
+
+	<script type="text/html" id="showTheme" data-array ="themeList">
+		<%if(list.length < 4){%>
+			<li class="clearfloat">
+				<%for(var i = 0;i <list.length;i = i + 1){%>
+					<%if(list[i].bannerPic==""){%>
+						<div class="museum_themeBox_main_liEach">
+							<a><img src="//img.macaoeasybuy.com/img/common/loading_banner.jpg"></a>
+						</div>
+					<%}else{%>
+					<div class="museum_themeBox_main_liEach">
+						<a><img src=http://wap.macaoeasybuy.com/<%=list[i].bannerPic%>></a>
+					</div>
+					<%}%>
+				<%}%>
+			</li>
+		<%}else{%>
+			<%for(var i = 0;i <list.length/4;i = i + 4){%>
+				<li class="clearfloat">
+					<div class="museum_themeBox_main_liEach">
+						<%if(list[i].bannerPic==""){%>
+							<a><img src="//img.macaoeasybuy.com/img/common/loading_banner.jpg"></a>
+						<%}else{%>
+							<a><img src=http://wap.macaoeasybuy.com/<%=list[i].bannerPic%>></a>
+						<%}%>
+					</div>
+					<div class="museum_themeBox_main_liEach">
+						<%if(list[i+1].bannerPic==""){%>
+							<a><img src="//img.macaoeasybuy.com/img/common/loading_banner.jpg"></a>
+						<%}else{%>
+							<a><img src=http://wap.macaoeasybuy.com/<%=list[i+1].bannerPic%>></a>
+						<%}%>
+					</div>
+					<div class="museum_themeBox_main_liEach">
+						<%if(list[i+2].bannerPic==""){%>
+							<a><img src="//img.macaoeasybuy.com/img/common/loading_banner.jpg"></a>
+						<%}else{%>
+							<a><img src=http://wap.macaoeasybuy.com/<%=list[i+2].bannerPic%>></a>
+						<%}%>
+					</div>
+					<div class="museum_themeBox_main_liEach">
+						<%if(list[i+3].bannerPic==""){%>
+							<a><img src="//img.macaoeasybuy.com/img/common/loading_banner.jpg"></a>
+						<%}else{%>
+							<a><img src=http://wap.macaoeasybuy.com/<%=list[i+3].bannerPic%>></a>
+						<%}%>
+					</div>
+				</li>
+			<%}%>
+		<%}%>
+	</script>
+</html>

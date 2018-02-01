@@ -1,0 +1,37 @@
+.goodMessBox_messBox_eachPrice span:nth-child(2){
+	color: #FF527C;
+	font-size: 16px;
+	margin-top: 12px;
+	margin-left: 10px;
+}
+.goodMessBox_messBox_limitedBox{
+	position: relative;	
+	width: 270px;
+	height: 25px;
+	border-radius:25px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius:25px;
+	background-color: #cccccc;
+	margin-top: 50px;
+}
+.goodMessBox_messBox_limitedBox_curr{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
+	height: 25px;
+	border-top-left-radius: 25px;
+	border-bottom-left-radius: 25px;
+	background-color: #e98900;
+}
+.goodMessBox_messBox_limitedBox_number{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 270px;
+	height: 25px;
+	text-align: center;
+	line-height: 25px;
+	color: #FFFFFF;
+	letter-spacing: 1px;
+}

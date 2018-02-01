@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>尋寶市集</title>
+		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" type="text/css" href="/css/social/market/market.css">
+		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_sinple.js"></script>
+		<style type="text/css">
+			.navBar_borderBox{
+				width: 100%;
+				border-bottom: 2px solid #FF527C;
+				padding-bottom: 15px;
+			}
+			#groupBuy_banner{
+				margin-top: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="transparent_bg"></div>
+		<header></header>
+		<div id ="searchBar">
+			<div class="searchBox">
+				<div class="searchBox_mainBox">
+					<div class="searchBox_left">
+						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+					</div>
+					<div class="searchBox_right" id="searchBox_rightBox"></div>
+				</div>
+			</div>
+		</div>
+		<div class="containerBox">
+			<!--橫條導航欄-->
+			<div class="navBar_borderBox">
+				<div class="navBar">
+					<ul>
+						<li><a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+						<li><a href="//social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
+						<li class="navBarLi_curr"><a href="//social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
+						<li><a href="//shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
+						<li><a href="//social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="market_bannerBox">
+				<img src="/img/social/market/marketBanner.png">
+			</div>
+			<div class="marketBox">
+				<div class="market_main">
+					<!--占位-->
+					<div class="example">
+						<div class="example_top clearfloat">
+							<div class="example_top_left"></div>
+							<div class="example_top_right"></div>
+						</div>
+						<div class="example_main clearfloat">
+							<div class="example_main_theme"></div>
+							<div class="example_main_goodbox">
+								<div class="example_main_eachgood">
+									<div class="example_main_eachgoodmain">
+										<p class="example_main_eachgoodmain_p"></p>
+										<p class="example_main_eachgoodmain_head myborder-radius"></p>
+									</div>
+								</div>
+								<div class="example_main_eachgood">
+									<div class="example_main_eachgoodmain">
+										<p class="example_main_eachgoodmain_p"></p>
+										<p class="example_main_eachgoodmain_head myborder-radius"></p>
+									</div>
+								</div>
+								<div class="example_main_eachgood">
+									<div class="example_main_eachgoodmain">
+										<p class="example_main_eachgoodmain_p"></p>
+										<p class="example_main_eachgoodmain_head myborder-radius"></p>
+									</div>
+								</div>
+								<div class="example_main_eachgood">
+									<div class="example_main_eachgoodmain">
+										<p class="example_main_eachgoodmain_p"></p>
+										<p class="example_main_eachgoodmain_head myborder-radius"></p>
+									</div>
+								</div>
+								<div class="example_main_eachgood">
+									<div class="example_main_eachgoodmain">
+										<p class="example_main_eachgoodmain_p"></p>
+										<p class="example_main_eachgoodmain_head myborder-radius"></p>
+									</div>
+								</div>
+								<div class="example_main_eachgood">
+									<div class="example_main_eachgoodmain">
+										<p class="example_main_eachgoodmain_p"></p>
+										<p class="example_main_eachgoodmain_head myborder-radius"></p>
+									</div>
+								</div>
+								<div class="example_main_eachgood">
+									<div class="example_main_eachgoodmain">
+										<p class="example_main_eachgoodmain_p"></p>
+										<p class="example_main_eachgoodmain_head myborder-radius"></p>
+									</div>
+								</div>
+								<div class="example_main_eachgood">
+									<div class="example_main_eachgoodmain">
+										<p class="example_main_eachgoodmain_p"></p>
+										<p class="example_main_eachgoodmain_head myborder-radius"></p>
+									</div>
+								</div>
+								<div class="example_main_eachgood">
+									<div class="example_main_eachgoodmain">
+										<p class="example_main_eachgoodmain_p"></p>
+										<p class="example_main_eachgoodmain_head myborder-radius"></p>
+									</div>
+								</div>
+								<div class="example_main_eachgood">
+									<div class="example_main_eachgoodmain">
+										<p class="example_main_eachgoodmain_p"></p>
+										<p class="example_main_eachgoodmain_head myborder-radius"></p>
+									</div>
+								</div>
+								<div class="example_main_eachgood">
+									<div class="example_main_eachgoodmain">
+										<p class="example_main_eachgoodmain_p"></p>
+										<p class="example_main_eachgoodmain_head myborder-radius"></p>
+									</div>
+								</div>
+								<div class="example_main_eachgood">
+									<div class="example_main_eachgoodmain">
+										<p class="example_main_eachgoodmain_p"></p>
+										<p class="example_main_eachgoodmain_head myborder-radius"></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer></footer>
+	</body>
+	<!--模板文件和數據文件-->
+	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/common/header&search&footer/searchBar.js"></script>
+	<script src="/js/common/header&search&footer/footer.js"></script>
+
+	<!--尋寶市集的js-->
+	<script src="/js/social/market/market.js"></script>
+	<script src="/js/social/market/market.data.js"></script>
+	<!--敗家點讚的模板-->
+	<script id="market" type="text/html">
+		<%for(var i = 0;i <list.length;i++){%>
+			<div class="marketBlock">
+				<div class="marketBlock_top clearfloat">
+					<div class="marketBlock_top_left">
+						<div class="marketBlock_top_icon"><img src="http://wap.macaoeasybuy.com/<%=list[i].fairClassPic%>"></div>
+						<div class="marketBlock_top_title"><%=list[i].fairClassName%></div>
+					</div>
+					<div class="marketBlock_top_right">
+						<div class="marketBlock_top_data marketBlock_top_number">
+							<span><img src="/img/common/icon/groceriesIcon_brown.png"></span>
+							<span><%=list[i].shuliang%>件雜貨</span>
+						</div>
+						<div class="marketBlock_top_data marketBlock_top_see">
+							<span><img src="/img/common/icon/seeIcon_brown.png"></span>
+							<span><%=list[i].seeNum%>宜粉查看</span>
+						</div>
+					</div>
+				</div>
+				<div class="marketBlock_main clearfloat">
+					<div class="marketBlock_main_theme">
+						<div class="marketBlock_main_themeCover">
+							<div class="marketBlock_main_themeCover_see">進去逛逛</div>
+							<p>查看更多<%=list[i].fairClassName%>帖子</p>
+						</div>
+						<%if(list[i].fairClassName=="雜貨舖"){%>
+							<img src="/img/social/market/market_theme_2.png">
+						<%}else if(list[i].fairClassName=="小廚房"){%>
+							<img src="/img/social/market/market_theme_3.png">
+						<%}else if(list[i].fairClassName=="私傢貨"){%>
+							<img src="/img/social/market/market_theme_4.png">
+						<%}else{%>
+							<img src="/img/social/market/market_theme_1.png">
+						<%}%>
+					</div>
+					<div class="marketBlock_main_goodsBox">
+						<%for(var k = 0;k <list[i].extra_Fair.length;k++){%>
+							<div class="marketBlock_main_each" onclick="goFpDetail(this,event)" data-id = "<%=list[i].extra_Fair[k].id%>">
+								<div class="marketBlock_main_eachCover">
+									<div class="marketBlock_main_eachCover_title"><p><%=list[i].extra_Fair[k].content%></p></div>
+									<div class="marketBlock_main_eachCover_head myborder-radius">
+										<img src="http://wap.macaoeasybuy.com/<%=list[i].extra_Fair[k].userpic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+									</div>
+								</div>
+								<img src="http://wap.macaoeasybuy.com/<%=list[i].extra_Fair[k].picture%>" onerror="this.src='/img/common/loading_pc_220.jpg'">
+							</div>
+						<%}%>
+					</div>
+				</div>
+			</div>
+		<%}%>
+	</script>
+
+</html>

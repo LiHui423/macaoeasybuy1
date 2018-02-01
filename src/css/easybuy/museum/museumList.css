@@ -1,0 +1,256 @@
+#swapper {
+	max-width: 100%;
+	min-width: 1397px;
+	margin: auto;
+}
+
+#container .selecter {
+	height: 160px;
+	width: 100%;
+	background: url(//img.macaoeasybuy.com/img/easybuy/museum/listHead_beautiful.png) center no-repeat;
+}
+
+#container .sbtn {
+	width: 1397px;
+	margin: 0px auto;
+	background: #f00;
+	position: relative;
+}
+
+#container .sbtn .selecter-sbtn {
+	position: absolute;
+	top: -47px;
+	right: 25px;
+}
+
+#container .sbtn .selecter-sbtn li a {
+	display: block;
+	width: 90px;
+	height: 90px;
+	line-height: 80px;
+	font-size: 16px;
+	color: #BDAEB2;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #fff;
+	margin-right: 30px;
+	border: 6px solid #BDAEB2;
+	cursor: pointer;
+	background-color: #fff;
+}
+
+#container .sbtn .selecter-sbtn li.select a {
+	background: url(//img.macaoeasybuy.com/img/easybuy/museum/selecter-btn-bg.png) center center / 33px 68px no-repeat #fff;
+	color: #FF527C;
+	border: 6px solid #FF527C;
+}
+
+#container .sbtn .selecter-sbtn li {
+	float: left;
+}
+
+#container .sbtn .selecter-sbtn li:last-of-type {
+	margin-right: 0px;
+}
+
+#container .shop {
+	width: 100%;
+	background: url(//img.macaoeasybuy.com/img/easybuy/museum/museum_back.png) center -325px no-repeat;
+	padding: 80px 0px 110px 0px;
+}
+
+#container .shop .shop-main {
+	width: 1397px;
+	margin: 0 auto;
+}
+
+#container .shop .shop-main .shop-main-interest .interest-left {
+	float: left;
+	text-align: center;
+	width: 150px;
+	height: 80px;
+	padding-top: 10px;
+	border-right: 1px dashed #444;
+}
+
+#container .shop .shop-main .shop-main-interest .interest-left p.number {
+	font-size: 30px;
+	color: #F7AF02
+}
+
+#container .shop .shop-main .shop-main-interest .interest-left p.text {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#container .shop .shop-main .shop-main-interest .recently {
+	float: left;
+	height: 80px;
+	line-height: 80px;
+	margin-left: 20px;
+}
+
+#container .shop .shop-main .shop-main-interest .head-img {
+	float: left;
+	margin-left: 15px;
+	padding: 5px 0;
+	position: relative;
+}
+
+#container .shop .shop-main .shop-main-interest .head-img li {
+	float: left;
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	margin-right: 15px;
+	overflow: hidden;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+
+#container .shop .shop-main .shop-main-interest .head-img li img {
+	width: 100%;
+	height: 100%;
+}
+
+#container .shop .shop-main .shop-main-interest .head-img li:last-of-type {
+	margin-right: 0px;
+}
+
+#container .shop .shop-main .shop-main-interest .head-img li a {
+	display: block;
+}
+
+#container .shop .shop-main .shop-main-interest .head-img li img {
+	width: 100%
+}
+
+#container .shop .shop-main .shop-main-contain {
+	margin-top: 36px;
+}
+
+#container .shop .shop-main .shop-main-contain ul .item {
+	width: 220px;
+	height: 460px;
+	background: #ccc;
+	float: left;
+	margin-right: 70px;
+	margin-bottom: 40px;
+	cursor: pointer;
+}
+
+#container .shop .shop-main .shop-main-contain ul li:nth-of-type(5n) {
+	margin-right: 0px;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-img {
+	width: 220px;
+	height: 300px;
+	background: #666;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-img a {
+	display: block;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-img img {
+	width: 100%;
+	max-height: 300px;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-price {
+	width: 220px;
+	height: 100px;
+	text-align: center;
+	border: 1px solid #E3E3E3;
+	background-color: #fff;
+	padding-top: 10px;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-price .item-price-title {
+	font-size: 18px;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-price .item-price-newPrice {
+	font-size: 25px;
+	margin-top: 6px;
+	color: #FF537E;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-price .item-price-oldPrice {
+	font-size: 16px;
+	margin-top: 4px;
+	color: #aaa;
+	text-decoration: line-through;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-price .item-price-newPrice span:first-of-type {
+	margin-right: 10px;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-info {
+	width: 220px;
+	height: 60px;
+	background-color: #BDAEB2;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-info ul li {
+	float: left;
+	height: 60px;
+	width: 60px;
+	background-color: transparent;
+	margin-right: 10px;
+	position: relative;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-info ul li .icon {
+	width: 21px;
+	height: 16px;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-info ul li .icon1 {
+	background: url(//img.macaoeasybuy.com/img/easybuy/museum/icon/shop-price-icon.png) 0 0 no-repeat;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-info ul li .icon2 {
+	background: url(//img.macaoeasybuy.com/img/easybuy/museum/icon/shop-price-icon2.png) 0 0 no-repeat;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-info ul li .icon3 {
+	background: url(//img.macaoeasybuy.com/img/easybuy/museum/icon/shop-price-icon3.png) 0 0 no-repeat;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-info ul li .icon-num {
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	color: #fff;
+	transform: translate(-50%, -50%);
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-info ul li:first-child {
+	margin-left: 10px;
+}
+
+#container .shop .shop-main .shop-main-contain ul li .item-info ul li:last-child {
+	margin-right: 0px;
+}
+
+#no-more {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 50px);
+	color: #888;
+}

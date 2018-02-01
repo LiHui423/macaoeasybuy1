@@ -1,0 +1,494 @@
+.navBar_borderBox{
+	width: 100%;
+	background-color:#fff;
+}
+/*初始樣式*/
+body{
+	background-color:#eee;
+}
+#container{
+	padding-bottom: 150px;
+}
+#container .container-swapper{
+    width: 1397px;
+    margin: 0 auto;
+    position: relative;
+    background-color:#e1e1e1;
+    padding-bottom:100px;
+}
+.navBar{
+	border-bottom:0px;
+}
+.myborder-radius{
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+
+/*banner樣式*/
+.banner{
+	width:100%;
+	height:328px;
+}
+.banner img{
+	width:100%;
+	height:100%;
+}
+/*nav樣式*/
+.nav{
+	position:absolute;
+	z-index:50;
+	top:328px;
+	width: 1397px;
+	height:60px;
+	background-color:#03BBC3;
+	color:#fff;
+	font-size:16px;
+	font-weight:bold;
+}
+.nav .navbtn{
+	float:left;
+	height:30px;
+	margin-top:15px;
+	line-height:30px;
+	width:158px;
+	text-indent:-12px;
+	background:url(//img.macaoeasybuy.com/img/social/secondHand/secondhandclassifydetail/noclick-arrow.png) 120px center no-repeat;
+	cursor: pointer;
+	text-align: center;
+	border-right:2px solid #fff;
+}
+.nav .navbtn.select{
+	color:#03BBC3;
+	background:url(//img.macaoeasybuy.com/img/social/secondHand/secondhandclassifydetail/click-arrow.png) 120px center no-repeat #fff;
+	height:100%;
+	line-height:60px;
+	margin-top:0px;
+}
+.nav .newes-items,
+.nav .maximum-view{
+	float:left;
+	padding:0 22px;
+	margin-top:19px;
+	margin-right:10px;
+	text-indent:8px;
+	cursor: pointer;
+}
+.nav .maximum-view{
+	padding:0px;
+}
+.nav .check-box{
+	float:left;
+	width:22px;
+	height:22px;
+	background: #eee;
+	border-radius:4px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	-ms-border-radius:4px;
+	-o-border-radius:4px;
+}
+.nav .check-box.select{
+	background: url(//img.macaoeasybuy.com/img/social/secondHand/secondhandclassifydetail/checked.png) center center no-repeat #eee;
+}
+.nav .price{
+	float:left;
+}
+.nav .price li{
+	float:left;
+	line-height:60px;
+}
+.nav .price li:first-of-type{
+	height:30px;
+	line-height:30px;
+	margin:15px 0px 0px 30px;
+	border-left:2px solid #fff;
+	padding:0px 10px 0px 15px;
+	font-weight:500;
+}
+.nav .price li:nth-of-type(3){
+	padding:0px 14px;
+}
+.nav .search-btn{
+	height:46px;
+	line-height:46px !important;
+	border-radius:8px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	-ms-border-radius:8px;
+	-o-border-radius:8px;
+	width:80px;
+	text-align: center;
+	background-color:#01696c;
+	margin-top:7px;
+	cursor:pointer;
+	margin-left:10px;
+}
+.nav .search-input{
+	height:46px;
+	line-height:46px;
+	background-color:#fff;
+	border-radius:8px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	-ms-border-radius:8px;
+	-o-border-radius:8px;
+	border:0px;
+	border:none;
+	outline:0px;
+	outline:none;
+	color:#03BBC3;
+	font-size:16px;
+	padding:0px 10px;
+	font-size:18px;
+	font-weight:normal;
+}
+.nav .price li input{
+	margin-top:7px;
+	width:100px;
+}
+.nav .search-other{
+	float:left;
+}
+.nav .search-other li{
+	float:left;
+}
+.nav .search-other li:first-of-type{
+	border-left:2px solid #fff;
+	width:2px;
+	height:30px;
+	margin:15px 15px 0px 16px;
+}
+.nav .search-other li:nth-of-type(2) input{
+	margin-top:7px;
+	width:380px;
+}
+.nav .search-other li:nth-of-type(2) input::-webkit-input-placeholder {
+	color: #ccc;
+}
+.nav .search-other li:nth-of-type(2) input:-moz-placeholder {
+	color: #ccc;
+}
+.nav .search-other li:nth-of-type(2) input::-moz-placeholder {
+	color: #ccc;
+}
+.nav .search-other li:nth-of-type(2) input:-ms-input-placeholder {
+	color: #ccc;
+}
+.nav .slider-nav{
+	position:absolute;
+	top:60px;
+	left:0px;
+	width:100%;
+	background-color:#fff;
+	overflow: hidden;
+	display:none;
+	box-shadow: 0px 9px 14px -4px rgba(169,169,169,.73);
+	z-index:500;
+}
+.nav .slider-nav li{
+	float:left;
+	width:66px;
+	text-align: center;
+	cursor: pointer;
+	margin:20px 20px 20px 0px;
+}
+.nav .slider-nav li>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.nav .slider-nav li:first-of-type{
+	margin-left:20px;
+}
+.nav .slider-nav li:last-of-type{
+	margin-right:0px;
+}
+.nav .slider-nav li .slider-image{
+	position:relative;
+	width:66px;
+	height:66px;
+	overflow: hidden;
+}
+.nav .slider-nav li .slider-image img{
+	width:100%;
+	height:100%;
+}
+.nav .slider-nav li .slider-image div{
+	position:absolute;
+	top:0px;
+	left: 0px;
+	bottom:0px;
+	right: 0px;
+	z-index: 10;
+	background-color:rgba(255,255,255,.8);
+}
+.nav .slider-nav li.select .slider-image div{
+	display: none;
+}
+.nav .slider-nav p{
+	margin-top:6px;
+	color:#000;
+	font-size:14px;
+	font-weight:normal;
+}
+/*搜索結果的匯總*/
+#show-result-tips{
+	margin-top:70px;
+	padding:28px 0px;
+	text-align:center;
+	display: none;
+}
+#show-result-tips .no-result{
+    line-height: 560px;
+    height: 370px;
+    background: url(/img/common/05.png) center 12px no-repeat;
+    font-weight: 600;
+    font-size: 16px;
+	display:none;
+}
+#show-result-tips .has-result{
+	font-size:16px;
+	font-weight:600;
+	display: none;
+}
+#show-result-tips .has-result .result-title,
+#show-result-tips .no-result .result-title{
+	color:#fd5271;
+}
+/*搜索結果*/
+.search-result{
+	width:100%;
+	padding:0px 48px;
+}
+.search-result .search-result-inner{
+	min-height:512px;
+	position:relative;
+}
+
+/*帖子樣式*/
+.pillar-all{
+	width:290px;
+	visibility: hidden;
+	display: absolute;
+}
+.pillar-all .pillar {
+    width: 100%;
+    background: url(/img/social/label/labeldetail/hobg.png) center bottom no-repeat;
+    background-size: 100%;
+    padding-bottom: 17px;
+    position:relative;
+}
+.pillar-all .pillar .box-shadow{
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	background-color:rgba(0,0,0,.1);
+	z-index: 1;
+	display: none;
+}
+.pillar-all:hover .pillar .box-shadow{
+	display: block;
+}
+.pillar-all .pillar .page-main {
+    position: relative;
+    border: 1px solid #ccc;
+    border-bottom: 0px;
+    overflow: hidden;
+    border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -ms-border-radius: 10px 10px 0px 0px;
+    -o-border-radius: 10px 10px 0px 0px;
+    background-color: #fff;
+}
+.pillar-all .pillar .page-main .top-banner {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 0px 7px;
+    line-height: 36px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    background-color: #FF5A78;
+    border-radius: 10px 0px 0px 0px;
+    -webkit-border-radius: 10px 0px 0px 0px;
+    -moz-border-radius: 10px 0px 0px 0px;
+    -ms-border-radius: 10px 0px 0px 0px;
+    -o-border-radius: 10px 0px 0px 0px;
+}
+.pillar-all .pillar .page-main a {
+    display: block;
+}
+.pillar-all .pillar .page-main img.page-main-head-img {
+    width: 100%;
+    min-height: 100px;
+    margin-bottom: -34px;
+}
+.pillar-all .pillar .page-main .post-main-text {
+    padding: 14px 14px 18px 14px;
+}
+.pillar-all .pillar .page-main .post-main-text p {
+    margin-bottom: 14px;
+    font-weight: bold;
+    color: #03BBC3;
+    font-size: 15px;
+}
+.pillar-all .pillar .page-main .post-main-text .post-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 2px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+}
+.pillar-all .pillar .page-main .post-main-text ul {
+    margin-top: 14px;
+    color: #03BBC3;
+}
+.pillar-all .pillar .page-main .post-main-text ul li{
+	margin-bottom:4px;
+}
+.pillar-all .pillar .page-main .post-main-text ul li:last-of-type{
+	margin-bottom: 0px;
+}
+.pillar-all .pillar .page-main .post-main-text ul li.area {
+    background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/area.png) 1px 3px no-repeat;
+    text-indent: 20px;
+}
+.pillar-all .pillar .post-number {
+    margin-top: 18px;
+    color: #bbb;
+}
+.pillar-all .pillar .laster {
+    position: relative;
+    border: 1px solid #ccc;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    -moz-border-radius: 0px 0px 10px 10px;
+    -ms-border-radius: 0px 0px 10px 10px;
+    -o-border-radius: 0px 0px 10px 10px;
+    overflow: hidden;
+}
+.pillar-all .pillar .laster .laster-num {
+    background-color: #03BBC3;
+}
+.pillar-all .pillar .laster .laster-num li {
+    color: #fff;
+    float: left;
+    width: 33.333333%;
+    text-align: center;
+    padding: 32px 0px 10px 0px;
+}
+.pillar-all .pillar .laster .laster-num li:first-of-type {
+    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/eye-w.png) 36px 14px no-repeat;
+}
+.pillar-all .pillar .laster .laster-num li:nth-of-type(2) {
+    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/good-w.png) 36px 10px no-repeat;
+}
+.pillar-all .pillar .laster .laster-num li:last-of-type {
+    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/message-w.png) 36px 13px no-repeat;
+}
+.pillar .page-main .laster-look {
+    margin-top: 34px;
+    border-top: 0px;
+    padding: 15px;
+}
+.pillar .page-main .laster-look .laster-head {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    line-height:59px;
+    overflow: hidden;
+    float: left;
+}
+.pillar .page-main .laster-look .laster-head img {
+    width: 100%;
+}
+.pillar .page-main .laster-look .laster-text {
+    margin: 10px 0px 0px 10px;
+    float: left;
+}
+.pillar .page-main .laster-look .laster-text .laster-text-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+.pillar .page-main .laster-look .laster-text .laster-text-name div{
+	float:left;
+	max-width: 150px;
+	height:25px;
+    overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.pillar .page-main .laster-look .laster-text .laster-text-name img {
+    width: 18px;
+    height: 18px;
+    float:left;
+    margin:2px 0px 0px 2px;
+}
+.pillar .page-main .laster-look .laster-text .laster-text-num {
+    font-size: 14px;
+    color: #999;
+    font-weight: normal;
+}
+.pillar .page-main .post-second-line {
+    width: 88%;
+    border: 1px solid #03BBC3;
+    margin: 0px auto;
+}
+.pillar-all .close-bg{
+	position:absolute;
+	top:0px;
+	left:0px;
+	bottom:17px;
+	right:0px;
+	z-index: 1;
+	background-color:rgba(0,0,0,.5);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+}
+.pillar-all .close-bg img{
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+/*沒有更多內容了*/
+#container .container-swapper .no-more{
+    position: absolute;
+    width:100%;
+    height:100px;
+    line-height:100px;
+    text-align: center;
+    bottom:0px;
+    left:0px;
+    color: #888;
+    font-size: 18px;
+    display: none;
+}
+.footBaner{
+	position:relative;
+	z-index:3px;
+}

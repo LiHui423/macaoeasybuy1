@@ -1,0 +1,471 @@
+#userspace-content{
+	
+}
+/*頭*/
+.content-title{
+	height:65px;
+	line-height:65px;
+	padding-left:25px;
+	background-color:#fff3e1;
+	font-weight:bold;
+	font-size:18px;
+	position:relative;
+	color:#000;
+}
+.content-title img{
+	margin:-8px 15px 0px 0px;
+}
+.content-title .info-progress{
+	position:absolute;
+	right:20px;
+	top:50%;
+	-webkit-transform: translate(0px,-50%);
+	-moz-transform: translate(0px,-50%);
+	-ms-transform: translate(0px,-50%);
+	-o-transform: translate(0px,-50%);
+	transform: translate(0px,-50%);
+	line-height:normal;
+	font-size:12px;
+	background-color:#e5e5e5;
+	width:150px;
+	text-align: center;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+	padding:2px 0px;
+	overflow: hidden;
+	cursor: default;
+	display: none;
+}
+.content-title .info-progress div{
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	background-color:#e98900;
+	z-index: -1;
+}
+.content-title span.info-tips{
+	font-size:16px;
+	color:#aaa;
+	font-weight: normal;
+	padding-left:10px;
+}
+/*技能列表*/
+.skill-lister{
+	border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 0px 30px;
+	background-color:#fff;
+}
+.skill-lister>li {
+    width: 50%;
+    float: left;
+    color: #888;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+    height: 75px;
+    line-height: 75px;
+    position:relative;
+}
+.skill-lister>li .icon-box{
+	width: 35px;
+    height: 100%;
+    float: left;
+    position: relative;
+    margin-right: 15px;
+}
+.skill-lister>li .icon-box img{
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.skill-lister>li .list-title{
+	width:100px;
+	height:100%;
+    float: left;
+}
+.skill-lister>li .info-content {
+    float: right;
+    height: 100%;
+    width: 64%;
+    position: relative;
+    cursor: default;
+}
+.skill-lister>li .info-content>span{
+	position:relative;
+	z-index: 603;
+}
+#easybuy-constellation .info-content>span,
+#easybuy-state .info-content>span{
+	position:relative;
+	z-index: 604;
+}
+.skill-lister>li .radio-box{
+	position:relative;
+	top:100%;
+	display: none;
+}
+.skill-lister>li .radio-box .ul-box{
+	position:absolute;
+	top:0px;
+	left:0px;
+    z-index: 604;
+    padding:10px 5px 10px 15px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 30px 5px rgba(169, 169, 169, 0.73);
+    -moz-box-shadow: 0 1px 30px 5px rgba(169, 169, 169, 0.73);
+    box-shadow: 0 1px 30px 5px rgba(169, 169, 169, 0.73);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+}
+.skill-lister>li .radio-box .ul-box ul{
+    height:250px;
+    width:150px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*padding: 0px 15px;*/
+    padding-right:10px;
+}
+.skill-lister>li .radio-box .ul-box ul li{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    color: #e98900;
+}
+.skill-lister>li .radio-box img.arrow{
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    z-index: 605;
+}
+
+#easybuy-account .info-content{
+	color:#e98900;
+}
+#easybuy-nickname .info-content{
+    color: #e98900;
+    padding: 20px 0px;
+}
+#easybuy-nickname .info-content div {
+    width: 100%;
+    height: 100%;
+    line-height: 36px;
+    position:relative;
+}
+#easybuy-nickname .info-content div input {
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    outline: 0px;
+}
+#easybuy-sex .info-content{
+	padding:20px 0px;
+	line-height: 34px;
+}
+#easybuy-sex .info-content div{
+	height:100%;
+	float:left;
+	cursor: pointer;
+	color:#888;
+}
+#easybuy-sex .info-content div img.select{
+	display: none;
+}
+#easybuy-sex .info-content div img.no-select{
+	display: inline-block;
+}
+#easybuy-sex .info-content div.select img.select{
+	display: inline-block;
+}
+#easybuy-sex .info-content div.select img.no-select{
+	display: none;
+}
+#easybuy-sex .info-content div:first-of-type{
+	margin-right: 30px;
+}
+#easybuy-sex .info-content div.select.man{
+	color:#4699F7;
+}
+#easybuy-sex .info-content div.select.girl{
+	color:#FF527B;
+}
+#easybuy-sex .info-content div.man img{
+	width:20px;
+	margin:-2px 8px 0px 0px;
+}
+#easybuy-sex .info-content div.girl img{
+	width:15px;
+	margin:-4px 8px 0px 0px;
+}
+
+#birthday-select{
+	z-index: 599;
+	color:#e98900;
+	padding:20px 0px;
+	line-height: normal;
+}
+#birthday-select .select-box{
+	float:left;
+	width:22%;
+	height:100%;
+	position:relative;
+	cursor: pointer;
+}
+#birthday-select .select-box{
+	margin-right:12%;
+}
+#birthday-select .select-box:first-of-type{
+	width:30%;
+}
+#birthday-select .select-box:last-of-type{
+	margin-right:0px;
+}
+#birthday-select .select-box select{
+	width: 100%;
+	height: 100%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	border:0px;
+	outline: 0px;
+	position:relative;
+	z-index: 10;
+	background:url(/img/userspace/personalinfo/arrow-down.png) center right no-repeat #fff;
+}
+#birthday-select .select-box select::-ms-expand{
+    visibility: hidden;
+    display: none;
+}
+.skill-lister>li.check-box .info-content>span {
+    float: left;
+    color:#aaa;
+    cursor: pointer;
+}
+.skill-lister>li.check-box .info-content>span img {
+    margin: -2px 0px 0px 16px;
+}
+.skill-lister>li.check-box.select .info-content>span{
+	position:relative;
+	z-index: 601;
+	color: #e98900;
+}
+.skill-lister>li.no-bottom{
+	border-bottom: 0px;
+}
+.skill-lister .list-select{
+	position:absolute;
+	top:100%;
+	left:135px;
+	display: none;
+}
+.skill-lister .list-select img.arrow{
+    position: absolute;
+    top: -15px;
+    left: 76px;
+    z-index: 605;
+}
+.skill-lister .list-select .ul-box{
+	position:relative;
+	z-index: 604;
+	padding:10px 6px 10px 12px;
+	background-color:#fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+    -webkit-box-shadow: 0 1px 30px 5px rgba(169, 169, 169, 0.73);
+    -moz-box-shadow: 0 1px 30px 5px rgba(169, 169, 169, 0.73);
+    box-shadow: 0 1px 30px 5px rgba(169, 169, 169, 0.73);
+}
+.skill-lister .list-select .ul-box ul{
+	min-width:250px;
+	max-height:280px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color:#fff;
+	padding-right:6px;
+}
+.skill-lister .list-select .ul-box ul li {
+	height:55px;
+	line-height:55px;
+	color:#e98900;
+	border-bottom:1px solid #ccc;
+	cursor: pointer;
+}
+.skill-lister .list-select .ul-box ul li:last-of-type{
+	border-bottom: 0px;
+}
+.skill-lister .list-select .ul-box ul li div{
+	float:left;
+	width:26px;
+	height:26px;
+	border:1px solid #e98900;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+	margin:13px 15px 0px 0px;
+}
+.skill-lister .list-select .ul-box ul li.select div{
+	background:url(/img/userspace/album/check-select.png) center center / 80% no-repeat;
+}
+.skill-lister .list-select .ul-box ul li span{
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: inline-block;
+	width: 185px;
+}
+/*確認保存*/
+.submit-btn-box {
+    text-align: center;
+    margin: 50px 0px 100px 0px;
+}
+#submit-btn {
+    display: inline-block;
+    font-size: 18px;
+    width: 125px;
+    padding: 8px 0px;
+    text-align: center;
+    background-color: #E98900;
+    color: #fff;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    position:relative;
+    z-index: 601;
+}
+#submit-btn.can-not-save{
+	background-color:#ccc;
+	color:#666;
+	cursor: default;
+}
+/*沒有保存*/
+#no-save{
+	display: none;
+}
+#no-save .cancel-tips-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 601;
+    box-shadow: 4px 4px 30px #aaa;
+    background-color: #fff;
+    text-align: center;
+    width: 510px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+}
+#no-save .cancels-title {
+    padding: 10px 0px;
+    font-size: 18px;
+    background-color: #FF527C;
+    color: #fff;
+}
+#no-save .cancels-xc {
+    margin-top: 20px;
+}
+#no-save .cancel-tips-text {
+    padding: 15px 0px 4px 0px;
+    font-size: 18px;
+}
+#no-save .sure-button {
+    display: inline-block;
+    margin: 15px 0px;
+}
+#no-save .sure-cancel,
+#no-save .cancel-sure {
+    background-color: #FF527C;
+    color: #FFFFFF;
+    padding: 8px 45px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 16px;
+    float: left;
+}
+#no-save .cancel-sure {
+    margin-left: 20px;
+    background-color: #b3b3b3;
+}
+.shadow-box{
+	position:fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	background-color: rgba(0,0,0,0);
+	z-index: 600;
+}
+/*成功提示*/
+#praise-post{
+	display: none;
+}
+#praise-post .praise {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 888 !important;
+    background-color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    color: #e98900;
+    letter-spacing: 2px;
+    border: 2px solid #e98900;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+#praise-post .praise div:nth-of-type(1) {
+    font-size: 18px;
+    font-weight: bold;
+}
+#praise-post .praise div:nth-of-type(1) img {
+	width: 22px;
+    margin-top: -3px;
+    margin-right: 10px;
+}

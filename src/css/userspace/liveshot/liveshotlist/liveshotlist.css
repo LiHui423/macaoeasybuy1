@@ -1,0 +1,277 @@
+/*內容*/
+.sort-box{
+	padding:20px;
+	padding-bottom:30px;
+	position:relative;
+	display: none;
+}
+.sort-box.select{
+	display: block;
+}
+/*帖子樣式*/
+.pillar-all{
+	width:220px;
+	visibility: hidden;
+}
+.pillar-all:nth-of-type(4){
+	margin-right:0px;
+}
+.pillar-all .pillar{
+	width:100%;
+	position:relative;
+	background-color:#fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+}
+.pillar-all .post-shadow{
+	width:100%;
+}
+.pillar-all .post-shadow img{
+	width:94%;
+	display: block;
+	margin:0 auto;
+	vertical-align: top;
+}
+.pillar-all:hover .shadow-box{
+	display:block;
+}
+.pillar-all .shadow-box{
+	position:absolute;
+	z-index:49;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	background-color:rgba(0,0,0,.1);
+	border-radius:10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	-ms-border-radius:10px;
+	-o-border-radius:10px;
+	display:none;
+}
+.pillar-all .page-main{
+	border:1px solid #ccc;
+	overflow: hidden;
+	border-radius:10px 10px 0px 0px;
+	-webkit-border-radius:10px 10px 0px 0px;
+	-moz-border-radius:10px 10px 0px 0px;
+	-ms-border-radius:10px 10px 0px 0px;
+	-o-border-radius:10px 10px 0px 0px;
+}
+.pillar-all .page-main img.page-main-head-img{
+	width:100%;
+}
+.pillar-all .post-main-text{
+	padding:14px 14px 18px 14px;
+}
+.pillar-all .page-main .post-title{
+	font-size:16px;
+	font-weight:bold;
+	color:#000;
+	letter-spacing:2px;
+}
+.pillar-all .page-main .post-description{
+	color:#aaa;
+	margin-top:10px;
+	font-size:14px;
+	letter-spacing:2px;
+	line-height:20px;
+	max-height: 58px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
+.pillar-all .laster{
+	border:1px solid #ccc;
+	border-top:0px;
+	border-radius:0px 0px 10px 10px;
+	-webkit-border-radius:0px 0px 10px 10px;
+	-moz-border-radius:0px 0px 10px 10px;
+	-ms-border-radius:0px 0px 10px 10px;
+	-o-border-radius:0px 0px 10px 10px;
+	overflow: hidden;
+}
+.pillar-all .laster .laster-num li{
+	float:left;
+	width:33.333333%;
+	text-align:center;
+	color:#aaa;
+	padding:32px 0px 10px 0px;
+}
+.pillar-all .laster .laster-num li:first-of-type{
+	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/eye.png) 28px 15px no-repeat;
+}
+.pillar-all .laster .laster-num li:nth-of-type(2){
+	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/good.png) 26px 10px no-repeat;
+}
+.pillar-all .laster .laster-num li:last-of-type{
+	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/message.png) 27px 13px no-repeat;
+}
+.pillar-all .laster-look{
+	padding:15px;
+	background-color:#F2F2F2;
+}
+.pillar-all .laster-look .laster-head{
+	border-radius:50%;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	-ms-border-radius:50%;
+	-o-border-radius:50%;
+	width:60px;
+	height:60px;
+	line-height:59px;
+	overflow: hidden;
+	float:left;
+	margin-left:5px;
+}
+.pillar-all .laster-look .laster-head img{
+	width:100%;
+}
+.pillar-all .laster-look .laster-text{
+	margin:10px 0px 0px 14px;
+	float:left;
+}
+.pillar-all .laster-look .laster-text .laster-text-name{
+	font-size:16px;
+	font-weight:bold;
+}
+.pillar-all .laster-look .laster-text .laster-text-name span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 150px;
+}
+.pillar-all .laster-look .laster-text .laster-text-name img{
+	vertical-align: top;
+	width:22px;
+}
+.pillar-all .laster-look .laster-text .laster-text-num{
+	font-size:14px;
+	color:#999;
+	font-weight:600;
+}
+/*相關貼子  敗家志*/
+.pillar-all .laster-look{
+	border-top:1px solid #ccc;
+	background-color:#fff;
+}
+.pillar-all .laster-look .laster-head{
+	width:60px;
+	margin:0px auto;
+	float:none;
+}
+.pillar-all .laster-look .laster-text{
+	text-align: center;
+	margin:0px;
+	float:none;
+}
+.pillar-all .post-description-other{
+	margin-top:10px;
+	font-size:15px;
+}
+.pillar-all .post-description-other-right{
+	color:#FA617A;
+}
+.pillar-all .post-other-time{
+	margin-top:12px;
+}
+.pillar-all .post-other-time div{
+	color:#aaa;
+	float:left;
+}
+.pillar-all .post-other-time .post-other-img{
+	float:right;
+}
+.content-box-class{
+	min-height:400px;
+	width:100%;
+	position:relative;
+}
+.content-box-class .pillar-all{
+	position:absolute;
+}
+/*菜單樣式*/
+.mine-sort-menu{
+	height:60px;
+	background-color:#fff;
+}
+.mine-sort-menu>div{
+	width:21%;
+	float:left;
+	color:#7c7c7c;
+	font-size:18px;
+	line-height:60px;
+	text-align: center;
+	border-right:1px solid #ccc;
+	cursor:pointer;
+	position:relative;
+}
+.mine-sort-menu>div img{
+	margin:-2px 6px 0px 0px;
+}
+.mine-sort-menu>div img.no-select{
+	display: inline-block;
+}
+.mine-sort-menu>div img.select{
+	display:none;
+}
+.mine-sort-menu>div.select img.no-select{
+	display: none;
+}
+.mine-sort-menu>div.select img.select{
+	display: inline-block;
+}
+.mine-sort-menu>div>div{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:100%;
+	height:8px;
+	background-color:#e98900;
+	display:none;
+}
+.mine-sort-menu>div.select{
+	color:#E98900;
+}
+.mine-sort-menu>div.select>div{
+	display:block;
+}
+/*沒有更多*/
+.no-more {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    -o-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    -moz-transform: translate(-50%, 0%);
+    -webkit-transform: translate(-50%, 0%);
+    color: #444;
+   	font-size:18px;
+    cursor: default;
+	display: none;
+}
+/*一篇帖子都沒有*/
+#no-post{
+	text-align: center;
+	font-size:20px;
+	color:#aaa;
+	padding-top:90px;
+}
+#no-post div{
+	margin-bottom: 15px;
+}
+#no-post img{
+	width: 120px;
+}
+#album-delete{
+	display: none;
+}
+#delete-post{
+	display: none;
+}

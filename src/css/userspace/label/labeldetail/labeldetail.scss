@@ -1,0 +1,1223 @@
+#userspace-content {
+    background-color: #fff;
+}
+
+#content-box {
+    width: 100%;
+    padding: 25px;
+    background-color: #fff;
+}
+
+.label-top {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.label-top .label-top-left {
+    min-height: 107px;
+    float: left;
+}
+
+.label-top .label-top-left .label-top-left-first {
+    color: #e98900;
+    font-size: 26px;
+    margin-bottom: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 600px;
+}
+
+.label-top .label-top-right {
+    float: right;
+}
+
+.label-top .label-top-right div:first-of-type {
+    color: #fff;
+    background-color: #C7C3E4;
+    padding: 6px 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.label-top .label-top-right div:first-of-type img {
+    margin: -3px 6px 0 0;
+}
+
+.label-top .label-top-right div:last-of-type {
+    text-align: center;
+    color: #aaa;
+    margin-top: 10px;
+}
+
+.label-top .label-top-right div:last-of-type span {
+    background-color: #B2B0D7;
+    padding: 3px 10px;
+    text-align: center;
+    border-radius: 20px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.label-bottom {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.label-picture {
+    margin-bottom: 20px;
+}
+
+.label-picture img {
+    width: 100%;
+}
+
+.label-describe {
+    color: #989898;
+    font-size: 18px;
+}
+
+.articleOpera {
+    height: 162px;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    padding: 40px 0 20px 0;;
+}
+
+.articleOpera ul li {
+    display: inline-block;
+    width: 70px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.articleOpera ul li:nth-child(1) {
+    margin-left: 0;
+}
+
+.articleOpera ul li div img {
+    width: 100%;
+}
+
+.articleOpera ul li p {
+    margin-top: 10px;
+    text-align: center;
+    color: #b3b3b3;
+    font-size: 16px;
+}
+
+.articleOpera ul li .click {
+    display: none;
+}
+
+#good-click-btn.select .no-click {
+    display: none;
+}
+
+#good-click-btn.select .click {
+    display: block;
+}
+
+.statistics {
+
+}
+
+.statistics .statistics-title {
+    margin: 20px 0;
+}
+
+.statistics .statistics-title li {
+    width: 33.333333%;
+    float: left;
+    text-align: center;
+}
+
+.statistics .statistics-title li .statistics-bubble {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 20px 20px;
+    border-radius: 10px;
+    color: #AFAFAF;
+    cursor: pointer;
+    border: 3px solid transparent;
+    position: relative;
+}
+
+.statistics .statistics-title li .statistics-bubble div:first-of-type {
+    font-size: 30px;
+}
+
+.statistics .statistics-title li .statistics-bubble div:last-of-type {
+    font-size: 14px;
+}
+
+.statistics .statistics-title li .statistics-bubble div:last-of-type img {
+    margin-right: 10px;
+}
+
+.statistics .statistics-title li .statistics-bubble .arrow {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    bottom: -12px;
+    background-color: #fff;
+    display: none;
+}
+
+.statistics .statistics-title li.select .statistics-bubble {
+    border-color: #C7C3E4;
+}
+
+.statistics .statistics-title li.select .statistics-bubble .arrow {
+    display: block;
+}
+
+.statistics .statistics-page {
+    padding-top: 10px;
+}
+
+.statistics .statistics-page > ul {
+    position: relative;
+    display: none;
+    padding-bottom: 40px;
+}
+
+.statistics .statistics-page > ul:first-of-type {
+    display: block;
+}
+
+.statistics-looker li {
+    float: left;
+    margin: 0 16px 25px 0;
+}
+
+.statistics-looker li:nth-of-type(8n) {
+    margin-right: 0;
+}
+
+.statistics-looker li a {
+    display: block;
+    color: #000;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+.statistics-looker .respondBox_fandPic {
+    margin: 0 auto;
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.statistics-looker .respondBox_fandPic img {
+    width: 100%;
+}
+
+.statistics-looker .respondBox_fansMess {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.statistics-looker .respondBox_fansMess div:first-of-type {
+    height: 20px;
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.statistics-looker .respondBox_fansMess div {
+    display: inline-block;
+}
+
+.statistics-looker .respondBox_fansMess div img {
+    width: 14px;
+    margin-top: -12px;
+}
+
+/*遊客開始*/
+.statistics-looker li.tourists .respondBox_fandPic {
+    border: 3px solid #ccc;
+    text-align: center;
+    color: #ccc;
+}
+
+.statistics-looker li.tourists .respondBox_fandPic div:first-of-type {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.statistics-looker li.tourists .respondBox_fandPic div:last-of-type {
+    font-size: 18px;
+}
+
+/*遊客結束*/
+
+#statistics-abouts .related-posts-nav {
+
+}
+
+#statistics-abouts .related-posts-nav li {
+    float: left;
+}
+
+#statistics-abouts .related-posts-nav li {
+    width: 20%;
+    float: left;
+    padding: 10px 0 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #aaa;
+    cursor: pointer;
+    position: relative;
+}
+
+#statistics-abouts .related-posts-nav li.select {
+    color: #fff;
+}
+
+#statistics-abouts .related-posts-nav li:nth-of-type(1) {
+    background: url(/img/social/label/labeldetail/about.png) 27px 6px no-repeat;
+}
+
+#statistics-abouts .related-posts-nav li:nth-of-type(1).select {
+    background: url(/img/social/label/labeldetail/about-select.png) 27px 6px no-repeat #C7C3E4;
+}
+
+#statistics-abouts .related-posts-nav li:nth-of-type(2) {
+    background: url(/img/social/label/labeldetail/about2.png) 17px 6px no-repeat;
+}
+
+#statistics-abouts .related-posts-nav li:nth-of-type(2).select {
+    background: url(/img/social/label/labeldetail/about2-select.png) 17px 6px no-repeat #C7C3E4;
+}
+
+#statistics-abouts .related-posts-nav li:nth-of-type(3) {
+    background: url(/img/social/label/labeldetail/about3.png) 31px 5px no-repeat;
+}
+
+#statistics-abouts .related-posts-nav li:nth-of-type(3).select {
+    background: url(/img/social/label/labeldetail/about3-select.png) 31px 5px no-repeat #C7C3E4;
+}
+
+#statistics-abouts .related-posts-nav li:nth-of-type(4) {
+    background: url(/img/social/label/labeldetail/about4.png) 17px 7px no-repeat;
+}
+
+#statistics-abouts .related-posts-nav li:nth-of-type(4).select {
+    background: url(/img/userspace/label/about4-select.png) 18px 7px no-repeat #C7C3E4;
+}
+
+#statistics-abouts .related-posts-nav li:nth-of-type(5) {
+    background: url(/img/social/label/labeldetail/about5.png) 28px 7px no-repeat;
+}
+
+#statistics-abouts .related-posts-nav li:nth-of-type(5).select {
+    background: url(/img/social/label/labeldetail/about5-select.png) 28px 7px no-repeat #C7C3E4;
+}
+
+#statistics-abouts .related-posts-page {
+    margin-top: 30px;
+    position: relative;
+}
+
+#statistics-abouts .related-posts-page > li {
+    display: none;
+    padding-bottom: 30px;
+}
+
+#statistics-abouts .related-posts-page > li.select {
+    display: block;
+}
+
+/*所有帖子樣式*/
+.related-posts-page .pillar-all {
+    width: 220px;
+    position: absolute;
+    visibility: hidden;
+}
+
+.related-posts-page .pillar-all:nth-of-type(4) {
+    margin-right: 0;
+}
+
+.related-posts-page .page-boss .pillar {
+    width: 100%;
+    position: relative;
+}
+
+.related-posts-page .post-shadow {
+    width: 100%;
+}
+
+.related-posts-page .post-shadow img {
+    width: 94%;
+    display: block;
+    margin: 0 auto;
+    vertical-align: top;
+}
+
+.related-posts-page .pillar-all:hover .shadow-box {
+    display: block;
+}
+
+.related-posts-page .post-topic-box:hover .shadow-box {
+    display: block;
+}
+
+.related-posts-page .shadow-box {
+    position: absolute;
+    z-index: 49;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    display: none;
+}
+
+.related-posts-page .post-topic .post-topic-box .shadow-box {
+    border-radius: 0;
+}
+
+.related-posts-page .page-boss .page-main {
+    border: 1px solid #ccc;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+
+.related-posts-page .page-boss .page-main a {
+    display: block;
+}
+
+.related-posts-page .page-boss .page-main img.page-main-head-img {
+    width: 100%;
+}
+
+.related-posts-page .post-main-text {
+    padding: 14px 14px 18px 14px;
+}
+
+.related-posts-page .page-boss .page-main .post-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 2px;
+}
+
+.related-posts-page .page-boss .page-main .post-description {
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 20px;
+    color: #aaa;
+}
+
+.related-posts-page .page-boss .laster {
+    border: 1px solid #ccc;
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+.related-posts-page .page-boss .laster .laster-num li {
+    float: left;
+    width: 33.333333%;
+    text-align: center;
+    color: #aaa;
+    padding: 32px 0 10px 0;
+}
+
+.related-posts-page .page-boss .laster .laster-num li:first-of-type {
+    background: url(/img/social/liveshot/ProdigalTopicList/eye.png) 28px 14px no-repeat;
+}
+
+.related-posts-page .page-boss .laster .laster-num li:nth-of-type(2) {
+    background: url(/img/social/liveshot/ProdigalTopicList/good.png) 30px 10px no-repeat;
+}
+
+.related-posts-page .page-boss .laster .laster-num li:last-of-type {
+    background: url(/img/social/liveshot/ProdigalTopicList/message.png) 27px 13px no-repeat;
+}
+
+.related-posts-page .page-boss .laster-look {
+    padding: 15px;
+    background-color: #F2F2F2;
+}
+
+.related-posts-page .page-boss .laster-look .laster-head {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+}
+
+.related-posts-page .page-boss .laster-look .laster-head img {
+    width: 100%;
+}
+
+.related-posts-page .page-boss .laster-look .laster-text {
+    margin: 10px 0 0 10px;
+    float: left;
+    width: 118px;
+    overflow: hidden;
+}
+
+.related-posts-page .page-boss .laster-look .laster-text .laster-text-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.related-posts-page .page-boss .laster-look .laster-text .laster-text-name span {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 86px;
+}
+
+.related-posts-page .page-boss .laster-look .laster-text .laster-text-name img {
+    vertical-align: top;
+    margin-left: 4px;
+    width: 22px;
+}
+
+.related-posts-page .page-boss .laster-look .laster-text .laster-text-num {
+    font-size: 14px;
+    color: #999;
+    font-weight: 600;
+}
+
+/*相關帖子 生活圈*/
+.related-posts-page .post-live .post-number {
+    display: none;
+    margin-top: 18px;
+    color: #bbb;
+}
+
+.related-posts-page .post-live .laster-look {
+    background-color: #fff;
+}
+
+.related-posts-page .post-live .post-title span {
+    color: #E98900;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-left: 5px;
+}
+
+/*相關帖子 二手*/
+.related-posts-page .post-second .close-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 12px;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 9px;
+}
+
+.related-posts-page .post-second .close-bg img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.related-posts-page .post-second .page-main .page-main-head-img {
+    margin-bottom: -34px;
+}
+
+.related-posts-page .post-second .laster-look {
+    margin-top: 34px;
+    border-top: 0;
+    background-color: #fff;
+}
+
+.related-posts-page .post-second .post-second-line {
+    width: 256px;
+    border: 1px solid #03BBC3;
+    margin: 0 auto;
+}
+
+.related-posts-page .post-second .laster-num {
+    background-color: #03BBC3;
+}
+
+.related-posts-page .post-second .laster .laster-num li {
+    color: #fff;
+}
+
+.related-posts-page .post-second .laster .laster-num li:first-of-type {
+    background: url(/img/social/liveshot/ProdigalTopicList/eye-w.png) 28px 14px no-repeat;
+}
+
+.related-posts-page .post-second .laster .laster-num li:nth-of-type(2) {
+    background: url(/img/social/liveshot/ProdigalTopicList/good-w.png) 30px 10px no-repeat;
+}
+
+.related-posts-page .post-second .laster .laster-num li:last-of-type {
+    background: url(/img/social/liveshot/ProdigalTopicList/message-w.png) 27px 13px no-repeat;
+}
+
+.related-posts-page .post-second .post-main-text p {
+    margin-bottom: 14px;
+    font-weight: bold;
+    color: #03BBC3;
+    font-size: 15px;
+}
+
+.related-posts-page .post-second .post-main-text ul {
+    margin-top: 14px;
+    color: #03BBC3;
+}
+
+.related-posts-page .post-second .post-main-text ul li.area {
+    background: url(/img/social/label/labeldetail/area.png) 1px 3px no-repeat;
+    text-indent: 20px;
+}
+
+.related-posts-page .post-second .post-main-text .post-number {
+    display: none;
+    margin-top: 18px;
+    color: #bbb;
+}
+
+.related-posts-page .post-second .laster-look .laster-text .laster-text-num {
+    font-weight: normal;
+}
+
+.related-posts-page .post-second .page-main {
+    position: relative;
+}
+
+.related-posts-page .post-second .top-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px 16px;
+    line-height: 36px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    background-color: #FF5A78;
+    border-radius: 10px 0 0 0;
+}
+
+.related-posts-page .post-second .laster {
+    border-bottom: 0;
+}
+
+/*相關貼子  敗家志*/
+.related-posts-page .post-shot .laster-look {
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.related-posts-page .post-shot .laster-look .laster-head {
+    width: 60px;
+    margin: 0 auto;
+    float: none;
+}
+
+.related-posts-page .post-shot .laster-look .laster-text {
+    text-align: center;
+    margin: 0;
+    float: none;
+    width: 100%;
+}
+
+.related-posts-page .post-shot .post-description-other {
+    margin-top: 10px;
+}
+
+.related-posts-page .post-shot .post-description-other-top p {
+    color: #FA617A;
+}
+
+.related-posts-page .post-shot .post-other-time {
+    margin-top: 12px;
+}
+
+.related-posts-page .post-shot .post-other-time div {
+    color: #aaa;
+    float: left;
+}
+
+.related-posts-page .post-shot .post-other-time .post-other-img {
+    float: right;
+}
+
+/*話題帖子*/
+.post-topic .post-topic-box {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.post-topic .post-topic-box .box-img {
+    float: left;
+    height: 100%;
+    width: 50%;
+    position: relative;
+}
+
+.post-topic .post-topic-box .box-img img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.post-topic .post-topic-box .box-main {
+    float: left;
+    height: 100%;
+    width: 50%;
+    padding: 20px;
+}
+
+.post-topic .post-topic-box .box-main .box-main-head .box-main-head-img {
+    width: 80px;
+    height: 80px;
+    background-color: #f00;
+    float: left;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.post-topic .post-topic-box .box-main .box-main-head .box-main-head-info {
+    float: left;
+    padding-left: 20px;
+}
+
+.post-topic .post-topic-box .box-main .box-main-head .box-main-head-info-title {
+    font-size: 16px;
+    color: #bf2440;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.post-topic .post-topic-box .box-main-head-info-article {
+    padding-top: 15px;
+    width: 100%;
+    height: 83px;
+    line-height: 24px;
+    color: #666;
+    letter-spacing: 1px;
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+
+}
+
+.post-topic .post-topic-box .box-main .box-main-head .box-main-head-info-time div:first-of-type {
+    float: left;
+    margin-right: 20px;
+    color: #000;
+    font-weight: bold;
+}
+
+.post-topic .post-topic-box .box-main .box-main-head .box-main-head-info-time div:last-of-type {
+    float: left;
+    color: #aaa;
+}
+
+.post-topic .post-topic-box .box-main .box-main-head-bottom li {
+    float: left;
+    width: 33.3333333%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #666;
+    text-indent: 28px;
+    margin-top: 20px;
+    color: #aaa;
+}
+
+.post-topic .post-topic-box .box-main .box-main-head-bottom li:first-of-type {
+    background: url(/img/common/eye.png) 18px 13px no-repeat;
+}
+
+.post-topic .post-topic-box .box-main .box-main-head-bottom li:nth-of-type(2) {
+    background: url(/img/common/message.png) 18px 13px no-repeat;
+}
+
+.post-topic .post-topic-box .box-main .box-main-head-bottom li:last-of-type {
+    background: url(/img/common/good.png) 18px 8px no-repeat;
+}
+
+/*使用此標籤發佈*/
+#release {
+    display: none;
+}
+
+#release .release-shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 899;
+}
+
+#release .release-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 900;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px 30px;
+}
+
+#release .release-box .cancel-btn {
+    width: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transform: translate(50%, -50%);
+    -moz-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
+    -o-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+    cursor: pointer;
+}
+
+#release .release-box .release-title {
+    font-weight: bold;
+}
+
+#release .release-box .release-title span {
+    font-size: 22px;
+    padding: 0 5px;
+    color: #ff567c;
+}
+
+#release .release-box ul {
+    margin-top: 20px;
+}
+
+#release .release-box ul li {
+    width: 50%;
+    height: 65px;
+    float: left;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+#release .release-box ul li > div {
+    float: left;
+}
+
+#release .release-box ul li > div:last-of-type {
+    margin-left: 10px;
+}
+
+#release .release-box ul li > div div:first-of-type {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e98900;
+    margin-top: 8px;
+}
+
+#release .release-box ul li > div div:last-of-type {
+    color: #aaa;
+}
+
+/*沒有更多內容了*/
+.no-more {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    font-size: 16px;
+    transform: translate(-50%, 0%);
+    -o-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    -moz-transform: translate(-50%, 0%);
+    -webkit-transform: translate(-50%, 0%);
+    color: #aaa;
+    display: none;
+}
+
+/*是否點讚*/
+.no-more-good {
+    background-color: #fff;
+    height: 380px;
+    width: 100%;
+    text-align: center;
+    color: #666;
+    padding-top: 35px;
+    display: none;
+}
+
+.no-more-good .title {
+    padding: 10px 0;
+}
+
+.no-more-good .img {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.no-more-good .img img {
+    width: 100%;
+}
+
+.no-more-good .no-btn {
+    width: 100px;
+    padding: 5px;
+    margin: 25px auto 0 auto;
+    background-color: #ff567d;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/*用戶點讚提示*/
+#praise-post .praise {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 888;
+    width: 298px;
+    background-color: #fff;
+    text-align: center;
+    padding: 14px 26px;
+    color: #e98900;
+    letter-spacing: 2px;
+    border: 2px solid #e98900;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    display: none;
+}
+
+#praise-post .praise div:nth-of-type(1) {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#praise-post .praise div:nth-of-type(1) img {
+    margin-top: -12px;
+    margin-right: 10px;
+}
+
+#praise-post .praise div:nth-of-type(2) {
+    color: #000;
+    padding: 6px 0;
+    font-size: 18px;
+}
+
+#praise-post .praise div:nth-of-type(3) {
+    font-size: 50px;
+}
+
+/*沒有更多內容*/
+.no-post-list {
+    text-align: center;
+    font-size: 20px;
+    color: #aaa;
+    padding-top: 90px;
+}
+
+.no-post-list div {
+    margin-bottom: 15px;
+}
+
+.no-post-list img {
+    width: 120px;
+}
+
+.post-list-inner {
+    position: relative;
+    min-height: 300px;
+}
+
+.my-space {
+
+#labeler-header {
+    display: none;
+}
+
+#editor-label-btn div:first-of-type {
+    color: #aaa;
+}
+
+#editor-label-btn div:first-of-type span:last-of-type {
+    padding-left: 8px;
+}
+
+#editor-label-btn .btn-inner {
+    width: 140px;
+    padding: 8px 0px;
+    border: 1px solid #aaa;
+    color: #aaa;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 6px;
+}
+
+#editor-label-btn .btn-inner img {
+    margin: -5px 4px 0px 0px;
+}
+
+#userspace-content {
+    position: relative;
+}
+
+#content-box {
+    /*position:absolute;
+    top:0px;
+    left:0px;*/
+}
+
+#editor-box {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 25px;
+    background-color: #fff;
+    display: none;
+}
+
+#editor-box .label-top-right-box {
+    margin-top: 23px;
+    float: right;
+}
+
+#editor-box .label-top-right-box div {
+    float: left;
+    width: 140px;
+    padding: 8px 0px;
+    border: 1px solid #aaa;
+    color: #aaa;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#editor-box .label-top-right-box div img {
+    margin: -4px 4px 0px 0px;
+}
+
+#editor-box .label-top {
+    padding-bottom: 0;
+}
+
+#editor-box .label-top-right-box div:first-of-type {
+    border-color: #FF567C;
+    background-color: #FF567C;
+    color: #fff;
+    margin-right: 10px;
+}
+
+#editor-box .upload-label-img {
+    width: 100%;
+    height: 550px;
+    border: 2px dashed #B3B3B3;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+#editor-box .upload-label-img > div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: url(/img/common/icon/img-uploader.png) center 100px no-repeat;
+    text-align: center;
+}
+
+#editor-box .upload-label-img > div .close-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+
+#editor-box .upload-label-img > div p {
+    text-align: center;
+    font-size: 16px;
+    color: #aaa;
+    padding-top: 250px;
+}
+
+#editor-box .upload-label-img .upload-img-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #fff;
+}
+
+#editor-box #upload-btn {
+    width: 120px;
+    margin: 20px auto 0px auto;
+    color: #fff;
+    background-color: #FF567C;
+    text-align: center;
+    padding: 5px 0px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+}
+
+#editor-box .upload-describe {
+    margin-top: 25px;
+    height: 280px;
+    width: 100%;
+    border: 2px dashed #B3B3B3;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    padding: 25px;
+    position: relative;
+}
+
+#editor-box .upload-describe .editor-input {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    resize: none;
+    font-size: 16px;
+    border: 0px;
+    outline: none;
+}
+
+#editor-box .upload-describe .upload-describe-count {
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    color: #aaa;
+    font-size: 16px;
+}
+
+/*看自己的帖子樣式*/
+/*相關帖子  日誌*/
+/*.related-posts-page .post-log .log-mine .laster .laster-look .laster-text{
+	margin:0px;
+}
+.related-posts-page .post-log .log-mine .laster-head{
+	display:none;
+}
+.related-posts-page .post-log .log-mine .laster-text-name{
+	display:none;
+}
+.related-posts-page .post-log .log-mine .laster-text-num{
+	text-indent:100px;
+}*/
+/*生活圈*/
+/*.related-posts-page .post-live .live-mine .laster-look{
+	display:none;
+}
+.related-posts-page .post-live .live-mine .post-number{
+	display:block;
+}*/
+/*二手*/
+/*.related-posts-page .post-second .second-mine .post-main-text .post-number{
+	display:block;
+}
+.related-posts-page .post-second .second-mine .post-main-text{
+	margin-top:34px;
+}
+.related-posts-page .post-second .second-mine .page-main .laster-look{
+	display:none;
+}
+.related-posts-page .post-second .second-mine .page-main .post-second-line{
+	display:none;
+}*/
+/*敗家志*/
+/*.related-posts-page .post-shot .shot-mine .laster-look{
+	display:none;
+}*/
+}
+.other-space {
+
+#editor-label-btn {
+    display: none;
+}
+
+/*博主頭像那裡*/
+.label-top .label-top-left .labeler-head {
+    float: left;
+    width: 60px;
+    height: 60px;
+    background-color: #ccc;
+    overflow: hidden;
+}
+
+.label-top .label-top-left .labeler-head img {
+    width: 100%;
+}
+
+.label-top .label-top-left .labeler-info {
+    margin-left: 10px;
+    padding-top: 10px;
+    float: left;
+}
+
+.label-top .label-top-left .labeler-info img {
+    width: 18px;
+    margin: -5px 0px 0px 4px;
+}
+
+.label-top .label-top-left .labeler-info div:first-of-type {
+    font-weight: bold;
+}
+
+.label-top .label-top-left .labeler-info div:last-of-type {
+    color: #aaa;
+}
+
+.label-top .label-top-left .labeler-info div:last-of-type span:last-of-type {
+    padding-left: 8px;
+}
+
+}

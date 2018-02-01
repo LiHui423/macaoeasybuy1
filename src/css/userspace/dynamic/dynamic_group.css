@@ -1,0 +1,162 @@
+.pillar-all{
+	width:220px;
+	visibility: hidden;
+	position: absolute;
+}
+.pillar-all .pillar{
+	width:100%;
+	position:relative;
+	background-color:#fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+}
+.pillar-all .post-shadow{
+	width:100%;
+}
+.pillar-all .post-shadow img{
+	width:94%;
+	display: block;
+	margin:0 auto;
+	vertical-align: top;
+}
+.pillar-all:hover .shadow-box{
+	display:block;
+}
+.pillar-all .shadow-box{
+	position:absolute;
+	z-index:49;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	background-color:rgba(0,0,0,.1);
+	border-radius:10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	-ms-border-radius:10px;
+	-o-border-radius:10px;
+	display:none;
+}
+.pillar-all .page-main{
+	border:1px solid #ccc;
+	overflow: hidden;
+	border-radius:10px 10px 0px 0px;
+	-webkit-border-radius:10px 10px 0px 0px;
+	-moz-border-radius:10px 10px 0px 0px;
+	-ms-border-radius:10px 10px 0px 0px;
+	-o-border-radius:10px 10px 0px 0px;
+}
+.pillar-all .page-main a{
+	display:block;
+}
+.pillar-all .page-main img.page-main-head-img{
+	width:100%;
+}
+.pillar-all .post-main-text{
+	padding:14px 14px 18px 14px;
+}
+.pillar-all .page-main .post-title{
+	font-size:16px;
+	font-weight:bold;
+	color:#000;
+	letter-spacing:2px;
+}
+.pillar-all .page-main .post-description{
+	margin-top:10px;
+	font-size:14px;
+	letter-spacing:2px;
+	line-height:20px;
+	color:#aaa;
+	overflow: hidden;
+ 	text-overflow: ellipsis;
+ 	display: -webkit-box;
+ 	-webkit-line-clamp: 3;
+ 	-webkit-box-orient: vertical;
+}
+.pillar-all .laster{
+	border:1px solid #ccc;
+	border-top:0px;
+	border-radius:0px 0px 10px 10px;
+	-webkit-border-radius:0px 0px 10px 10px;
+	-moz-border-radius:0px 0px 10px 10px;
+	-ms-border-radius:0px 0px 10px 10px;
+	-o-border-radius:0px 0px 10px 10px;
+	overflow: hidden;
+}
+.pillar-all .laster .laster-num li{
+	float:left;
+	width:33.333333%;
+	text-align:center;
+	color:#aaa;
+	padding:32px 0px 10px 0px;
+}
+.pillar-all .laster .laster-num li:first-of-type{
+	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/eye.png) 28px 14px no-repeat;
+}
+.pillar-all .laster .laster-num li:nth-of-type(2){
+	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/good.png) 30px 10px no-repeat;
+}
+.pillar-all .laster .laster-num li:last-of-type{
+	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/message.png) 27px 13px no-repeat;
+}
+.pillar-all .laster-look{
+	padding:15px;
+	background-color:#F2F2F2;
+}
+.pillar-all .laster-look .laster-head{
+	border-radius:50%;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	-ms-border-radius:50%;
+	-o-border-radius:50%;
+	width:60px;
+	height:60px;
+	overflow: hidden;
+	float:left;
+	margin-left:5px;
+}
+.pillar-all .laster-look .laster-head img{
+	width:100%;
+}
+.pillar-all .laster-look .laster-text{
+	margin:10px 0px 0px 14px;
+	float:left;
+}
+.pillar-all .laster-look .laster-text .laster-text-name{
+	font-size:18px;
+	font-weight:bold;
+}
+.pillar-all .laster-look .laster-text .laster-text-name img{
+	vertical-align: top;
+	margin-left:8px;
+	width:22px;
+}
+.pillar-all .laster-look .laster-text .laster-text-num{
+	font-size:14px;
+	color:#999;
+}
+/*相關貼子*/
+.pillar-all .post-number{
+	margin-top:18px;
+	color:#bbb;
+}
+.pillar-all .laster-look{
+	 background-color:#fff;
+}
+.pillar-all .post-title span{
+	color:#E98900;
+	font-size:14px;
+	font-weight: normal;
+	letter-spacing:2px;
+	margin-left:5px;
+}
+#content-box{
+	width:100%;
+	position:relative;
+}
+#content-box .pillar-all{
+	position:absolute;
+}

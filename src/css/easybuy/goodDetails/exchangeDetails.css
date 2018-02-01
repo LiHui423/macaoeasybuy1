@@ -1,0 +1,107 @@
+.museumDetails_goodDataBox{
+	display: none;
+}
+.exchange_countTime{
+	background-color: #ffd800;
+	height: 80px;
+	line-height: 80px;
+	font-size: 30px;
+	text-align: center;
+}
+.exchange_countTime span{
+	display: inline-block;
+	display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    color: #000;
+    text-align: center;
+    line-height: 50px;
+    background-color: #FFFFFF;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.museumDetails_goodMessBox_Btn{
+	display: none;
+}
+.museumDetails_goodMessBox_willSell{
+	display:block;
+	width: 320px;
+    height: 55px;
+    line-height: 55px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    cursor: pointer;
+    color: #FFFFFF;
+    background-color: #c9c9c9;
+    text-align: center;
+    font-size: 26px;
+    letter-spacing: 2px;
+}
+.goodMessBox_messBox_eachMainLeft{
+	float: left;
+	width: 260px;
+}
+.goodMessBox_messBox_exchange{
+	width: 110px;
+	float: right;
+	position: relative;
+}
+.goodMessBox_messBox_exchange img{
+	width: 100%;
+}
+.goodMessBox_messBox_exchange span{
+	position: absolute;
+	top: 28px;
+	left: 40px;
+	color: #ff005e;
+	font-size: 18px;
+	font-weight: bold;
+}
+.goodMessBox_messBox_eachLess{
+	font-size: 14px;
+	color: #A8A8A8;
+	letter-spacing: 1px;
+}
+.goodMessBox_messBox_exchange_hover{
+	position: absolute;
+    z-index: 3;
+    background-color: #FFFFFF;
+    width: 380px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 10px 15px;
+    box-shadow: 0px 1px 10px 2px rgba(150,150,150,0.6);
+    top: 70px;
+    left: -200px;
+    display: none;
+    
+}
+.shopCar_all_costPop_top{
+	position: absolute;
+    top: -16px;
+    left: 260px;
+}
+.exchange_alert_left{
+	float: left;
+}
+.exchange_alert_right{
+	float: left;
+}
+.goodMessBox_messBox_exchange_hover p{
+	color: #FF527C;
+	margin-bottom: 5px;
+}
+.exchange_alert{
+	color: #000000;
+}
+.goodMessBox_messBox_exchange_hover .exchange_alert p{
+	color: #000000;
+}
+.goodMessBox_messBox_exchange:hover .goodMessBox_messBox_exchange_hover{
+	display: block;
+}

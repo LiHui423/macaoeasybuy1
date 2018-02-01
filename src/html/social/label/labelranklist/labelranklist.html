@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>標籤-排行榜</title>
+    <link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/common/common.css">
+    <link rel="stylesheet" href="/css/social/label/labelranklist/labelranklist.css">
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="/js/common/frameDomainJSON.js"></script>
+    <script src="/js/common/getData/getData_sinple.js"></script>
+    <script>
+        easyBuy.global.hasNav = false;
+    </script>
+</head>
+
+<body>
+
+    <div id="swapper">
+        <header></header>
+        <div id="searchBar">
+            <div class="searchBox">
+                <div class="searchBox_mainBox">
+                    <div class="searchBox_left">
+                        <img src="/img/common/header&search&footer/easybuy_Logo.png">
+                    </div>
+                    <div class="searchBox_right" id="searchBox_rightBox"></div>
+                </div>
+            </div>
+        </div>
+        <div class="navBar_borderBox">
+            <div class="navBar">
+                <ul>
+                    <li>
+                        <a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a>
+                    </li>
+                    <li>
+                        <a href="//shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a>
+                    </li>
+                    <li>
+                        <a href="//shopping.macaoeasybuy.com/findNew/new.html">發現新品</a>
+                    </li>
+                    <li>
+                        <a href="//shopping.macaoeasybuy.com/discount/discount.html">今日降價</a>
+                    </li>
+                    <li>
+                        <a href="//shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a>
+                    </li>
+                    <li>
+                        <a href="//social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a>
+                    </li>
+                    <li>
+                        <a href="//social.macaoeasybuy.com/market/market.html">尋寶市集</a>
+                    </li>
+                    <li>
+                        <a href="//shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a>
+                    </li>
+                    <li>
+                        <a href="//shopping.macaoeasybuy.com/museum/museum.html">宜品館</a>
+                    </li>
+                    <li>
+                        <a href="//shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a>
+                    </li>
+                    <li>
+                        <a href="//social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="container">
+            <div class="container-swapper clearfloat">
+                <div class="ranklist-left">
+                    <div class="ranklist-class clearfloat">
+                        <div class="ranklist-class-title">
+                            <div>
+                                <img src="/img/social/label/labelranklist/label-icon.png" alt="">
+                            </div>
+                            <div>標籤排行榜</div>
+                        </div>
+                        <div class="ranklist-class-nav clearfloat conditionSelector">
+                            <div class="yez-active" id="class-all">所有</div>
+                            <div id="class-locale">地點</div>
+                            <div id="class-brand">品牌</div>
+                            <div id="class-hotpoint">熱點</div>
+                        </div>
+                    </div>
+                    <div class="ranklist-contain">
+                        <div class="ranklist-time-select clearfloat conditionSelector">
+                            <div class="yez-active">1小時</div>
+                            <div>24小時</div>
+                            <div>總排名</div>
+                        </div>
+                        <div>
+                            <ul class="ranklist-list"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="ranklist-right">
+                    <div class="news-label">
+                        <div class="right-title">最新鮮標籤</div>
+                        <ul class="news-list"></ul>
+                    </div>
+                    <div class="label-hero">
+                        <div class="right-title">標籤俠</div>
+                        <div class="hero-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer></footer>
+    </div>
+    <script src="/js/plug/yez_js_Reset.js"></script>
+    <script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+    <script src="/js/common/header&search&footer/searchBar.js" async></script>
+    <script src="/js/common/header&search&footer/footer.js" async></script>
+    <script src="/js/common/header&search&footer/header.js"></script>
+    <script src="/js/social/label/labelranklist/labelranklist.js"></script>
+    <script id="labelRank" type="text/html" data-type="template">
+        <% if (data[0].data !== undefined) {%>
+            <%for(var i=0,il=data.length; i < il; i++) {%>
+                <div id="page<%=data[i].page%>">
+                    <% for (var j=0,jl=data[i].data.length; j < jl; j++) {%>
+                        <li class="ranklist-lister clearfloat">
+                            <div class="lister-img">
+                                <div class="label-inner-shadow">
+                                    <div class="shadow-inner">
+                                        <div class="label-instruc"><%=data[i].data[j].content%></div>
+                                        <div class="look-btn" id="<%=data[i].data[j].id%>">查看該標籤相關帖子&gt;</div>
+                                    </div>
+                                </div>
+                                <div class="lister-img-banner">
+                                    <% if(data[i].data[j].labelPic === "") {%>
+                                        <div class="ranklist-no-banner"><%=data[i].data[j].labelName%></div>
+                                    <% } else { %>
+                                        <img src="//wap.macaoeasybuy.com<%=data[i].data[j].labelPic%>">
+                                    <% } %>
+                                </div>
+                                <% if(data[i].data[j].num<4) {%>
+                                    <div class="lister-img-top"><img src="/img/social/label/labelranklist/top.png"></div>
+                                <%}%>
+                            </div>
+                            <div class="lister-info">
+                                <div class="label-number"><%=ranking(data[i].data[j].num)%></div>
+                                <div class="label-name"><%=data[i].data[j].labelName%></div>
+                                <div class="label-class"><%=labelType(data[i].data[j].type)%></div>
+                                <div class="label-creater clearfloat">
+                                    <div class="creater-head myborder-radius" id="<%=data[i].data[j].userId%>">
+                                        <img src="//wap.macaoeasybuy.com<%=data[i].data[j].userPic%>">
+                                    </div>
+                                    <div class="creater-info">
+                                        <div>
+                                            <span><%=data[i].data[j].userName%></span>
+                                            <img src="<%=easySex(data[i].data[j].sex)%>">
+                                        </div>
+                                        <div>
+                                            <img src="/img/social/label/labelranklist/clock.png">
+                                            <span><%=data[i].data[j].uptime%></span>
+                                            <span>前創建</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="label-look-good clearfloat">
+                                    <div><img src="/img/common/eye.png"><span><%=data[i].data[j].seeCount%></span>宜粉查看</div>
+                                    <div><img src="/img/common/good.png"><span><%=data[i].data[j].loveCount%></span>宜粉讃好</div>
+                                </div>
+                            </div>
+                        </li>
+                    <%}%>
+                </div>
+            <%}%>
+        <%}%>
+    </script>
+    <script id="freshLabel" type="text/html" data-type="template">
+        <% for(var i=0,j=data.length; i<j; i++) { %>
+            <li>
+                <div class="label-name">
+                    <%=data[i].labelName%>
+                </div>
+                <div class="news-label-info clearfloat">
+                    <div class="label-creater clearfloat">
+                        <div class="creater-head myborder-radius">
+                            <%if(data[i].userPic==""){%>
+                                <img src="/img/common/loading_pc_headPic.png">
+                            <%}else{%>
+                                <img src="//wap.macaoeasybuy.com<%=data[i].userPic%>">
+                            <%}%>
+                        </div>
+                        <div class="creater-info">
+                            <div>
+                                <span>
+                                    <%=data[i].userName%>
+                                </span>
+                                <img src="<%=easySex(data[i].sex)%>">
+                            </div>
+                            <div>
+                                <img src="/img/social/label/labelranklist/clock.png">
+                                <span>30分鐘</span>
+                                <span>
+                                    <%=data[i].uptime%>前創建</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="label-class" id="<%=data[i].type%>">
+                        <%=data[i].typeName%>
+                    </div>
+                </div>
+            </li>
+            <% } %>
+    </script>
+    <script id="labelMan" type="text/html" data-type="template">
+        <% for(var i=0,il=data.length; i<il; i++) { %>
+            <div id="page<%=data[i].page%>">
+                <% for(var j=0,jl=data[i].data.length; j < jl; j++) {%>
+                    <div class="hero-label-list">
+                        <div class="hero-lister clearfloat">
+                            <div>
+                                <img src="//wap.macaoeasybuy.com<%=data[i].data[j].user.pic%>">
+                            </div>
+                            <div>
+                                <span>
+                                    <%=data[i].data[j].user.name%>
+                                </span>
+                                <img src="<%=easySex(data[i].data[j].user.sex)%>">
+                            </div>
+                        </div>
+                        <div class='hero-label-contain'>
+                            <%for(var z=0,zl=data[i].data[j].labelList.length; z < zl; z++) {%>
+                                <div class="label-inner">
+                                    <div class="show-filter">
+                                        <div class="label-img">
+                                            <img src="//wap.macaoeasybuy.com<%=data[i].data[j].labelList[z].picture%>">
+                                        </div>
+                                        <div class="hero-inner-class clearfloat">
+                                            <div class="label-name">
+                                                <%=data[i].data[j].labelList[z].labelName%>
+                                            </div>
+                                            <div class="label-number">
+                                                <%=ranking(data[i].data[j].labelList[z].num)%>
+                                            </div>
+                                        </div>
+                                        <div class="label-class">
+                                            <%=labelType(data[i].data[j].labelList[z].type)%>
+                                        </div>
+                                        <div class="label-look-good clearfloat">
+                                            <div>
+                                                <img src="/img/common/eye.png" alt="">
+                                                <span>
+                                                    <%=data[i].data[j].labelList[z].seeCount%>
+                                                </span>宜粉查看</div>
+                                            <div>
+                                                <img src="/img/common/good.png" alt="">
+                                                <span>
+                                                    <%=data[i].data[j].labelList[z].loveCount%>
+                                                </span>宜粉讃好</div>
+                                        </div>
+                                    </div>
+                                    <div class="label-inner-shadow">
+                                        <div class="look-btn shadow-inner" id="<%=data[i].data[j].labelList[z].id%">查看該標籤相關帖子></div>
+                                    </div>
+                                </div>
+                                <%}%>
+                        </div>
+                        <div class="hero-label-btn">
+                            <%=data[i].data[j].user.name%>創建の標籤</div>
+                    </div>
+                    <%}%>
+            </div>
+            <%}%>
+    </script>
+</body>
+
+</html>

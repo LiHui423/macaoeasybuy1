@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>宜生活</title>
+    <link rel="stylesheet" href="/css/common/yez_css_Reset.css">
+    <link rel="stylesheet" href="/css/common/common.css">
+    <link rel="stylesheet" href="/css/social/easylive/easylive.css">
+    <script src="/js/common/frameDomainJSON.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="/js/common/getData/getData_sinple.js"></script>
+    <script>
+		easyBuy.social.isEasyLife = true;
+		easyBuy.global.hasNav = false;
+    </script>
+</head>
+<body>
+<div id="swapper">
+    <header></header>
+    <div id="searchBar">
+        <div class="searchBox">
+            <div class="searchBox_mainBox clearfloat">
+                <div class="searchBox_left">
+                    <ul class="clearfloat">
+                        <li><a href="//social.macaoeasybuy.com/easylive/easyliveglobalgoods/globalgoods.html">全球筍貨</a></li>
+                        <li><a href="http://social.macaoeasybuy.com/easylive/easylivewelfare/easylivewelfare.html">福利社</a></li>
+                        <li><a href="http://social.macaoeasybuy.com/easylive/easylivebuytopic/easylivebuytopic.html">宜買話題</a></li>
+                        <li><a href="http://social.macaoeasybuy.com/easylive/easylivelifecircle/easylivelifecircle.html">生活圈</a></li>
+                        <li><a href="http://social.macaoeasybuy.com/easylive/easylivelog/easylivelog.html">宜粉日誌</a></li>
+                        <li><a href="http://social.macaoeasybuy.com/easylive/easylivealbum/easylivealbum.html">宜粉專輯</a></li>
+                    </ul>
+                </div>
+                <div class="searchBox_right" id="searchBox_rightBox"></div>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <div class="banner">
+            <img src="/img/social/easylive/easylive-banner.png" alt="">
+        </div>
+        <div class="container-swapper">
+            <div class="golbal">
+                <div class="global-nav clearfloat">
+                    <div class="global-logo"><img src="/img/social/easylive/global-logo.png" alt=""></div>
+                    <ul class="global-list clearfloat">
+                    </ul>
+                </div>
+                <div class="golbal-slider">
+                    <div class="slider-cover">
+                        <ul class="slider-item-container">
+                        </ul>
+                    </div>
+                    <a class="next" id="goRight">
+                        <div><img src="/img/social/easylive/next.png" border="0"></div>
+                    </a>
+                    <a class="prev" id="goLeft">
+                        <div><img src="/img/social/easylive/prev.png" border="0"></div>
+                    </a>
+                </div>
+                <div class="golbal-more">
+                    <div class="golbal-more-btn">更多全球筍貨 >></div>
+                </div>
+            </div>
+            <div class="other-template clearfloat">
+                <div class="template-left">
+                    <div class="easylive-welfare">
+                        <div class="left-title clearfloat">
+                            <div class="left-title-left">
+                                <img src="/img/social/easylive/index-logo-welfare.png" alt=""><span>福利社</span>
+                                <img src="/img/social/easylive/index-instruc-welfare.png" alt="">
+                            </div>
+                            <div class="left-title-right"><a href="">更多福利>></a></div>
+                        </div>
+                        <div class="welfare-main clearfloat">
+                            <!-- <div class="welfare-main-left">
+                                <div class="post-topic-box">
+                                    <div class="box-img"></div>
+                                    <div class="box-main">
+                                        <div class="box-main-head">
+                                            <div class="box-main-head-info">
+                                                <div class="box-main-head-info-title">XXXX</div>
+                                            </div>
+                                        </div>
+                                        <div class="box-main-head-info-article">
+                                            的訪客領取額我就軟件全文人家的訪客領取額件全文人家的訪客領取我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家
+                                        </div>
+                                        <ul class="info clearfloat">
+                                            <li><img src="/img/common/eye.png" alt="">93552</li>
+                                            <li><img src="/img/common/message.png" alt="">70836</li>
+                                            <li><img src="/img/common/good.png" alt="">68149</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="welfare-main-left-record">
+                                    <div class="welfare-main-left-record-new">最新宜粉回應：</div>
+                                    <div class="clearfloat welfare-main-left-record-human">
+                                        <div class="person-head"></div>
+                                        <div class="person-info">
+                                            <div class="person-info-name">XXX</div>
+                                            <div class="person-info-contain">
+                                                <div class="person-info-text">
+                                                    XXX
+                                                </div>
+                                            </div>
+                                            <div class="person-info-time"><span>X</span>秒前發佈</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="welfare-main-right">
+                                <div class="post-topic-box clearfloat">
+                                    <div class="box-img"></div>
+                                    <div class="box-main">
+                                        <div class="box-main-head">
+                                            <div class="box-main-head-info">
+                                                <div class="box-main-head-info-title">滿2劍舞才華塑</div>
+                                            </div>
+                                        </div>
+                                        <div class="box-main-head-info-article">
+                                            的訪客領取額我就軟件全文人家的訪客領取額件全文人家的訪客領取我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家
+                                        </div>
+                                        <ul class="info clearfloat">
+                                            <li><img src="/img/common/eye.png" alt="">93552</li>
+                                            <li><img src="/img/common/message.png" alt="">70836</li>
+                                            <li><img src="/img/common/good.png" alt="">68149</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="post-topic-box clearfloat">
+                                    <div class="box-img"></div>
+                                    <div class="box-main">
+                                        <div class="box-main-head">
+                                            <div class="box-main-head-info">
+                                                <div class="box-main-head-info-title">滿2劍舞才華塑</div>
+                                            </div>
+                                        </div>
+                                        <div class="box-main-head-info-article">
+                                            的訪客領取額我就軟件全文人家的訪客領取額件全文人家的訪客領取我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家
+                                        </div>
+                                        <ul class="info clearfloat">
+                                            <li><img src="/img/common/eye.png" alt="">93552</li>
+                                            <li><img src="/img/common/message.png" alt="">70836</li>
+                                            <li><img src="/img/common/good.png" alt="">68149</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="post-topic-box clearfloat">
+                                    <div class="box-img"></div>
+                                    <div class="box-main">
+                                        <div class="box-main-head">
+                                            <div class="box-main-head-info">
+                                                <div class="box-main-head-info-title">滿2劍舞才華塑</div>
+                                            </div>
+                                        </div>
+                                        <div class="box-main-head-info-article">
+                                            的訪客領取額我就軟件全文人家的訪客領取額件全文人家的訪客領取我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家
+                                        </div>
+                                        <ul class="info clearfloat">
+                                            <li><img src="/img/common/eye.png" alt="">93552</li>
+                                            <li><img src="/img/common/message.png" alt="">70836</li>
+                                            <li><img src="/img/common/good.png" alt="">68149</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="post-topic-box clearfloat">
+                                    <div class="box-img"></div>
+                                    <div class="box-main">
+                                        <div class="box-main-head">
+                                            <div class="box-main-head-info">
+                                                <div class="box-main-head-info-title">滿2劍舞才華塑</div>
+                                            </div>
+                                        </div>
+                                        <div class="box-main-head-info-article">
+                                            的訪客領取額我就軟件全文人家的訪客領取額件全文人家的訪客領取我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家
+                                        </div>
+                                        <ul class="info clearfloat">
+                                            <li><img src="/img/common/eye.png" alt="">93552</li>
+                                            <li><img src="/img/common/message.png" alt="">70836</li>
+                                            <li><img src="/img/common/good.png" alt="">68149</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="easylive-topic">
+                        <div class="left-title clearfloat">
+                            <div class="left-title-left">
+                                <img src="/img/social/easylive/index-logo-topic.png" alt=""><span>宜買話題</span><img
+                                    src="/img/social/easylive/index-instruc-topic.png" alt="">
+                            </div>
+                        </div>
+                        <div class="easylive-topic-main clearfloat">
+                            <ul class="easylive-topic-nav">
+                                <div class="easylive-topic-nav-top"></div>
+                                <div class="easylive-topic-nav-outer">
+                                    <div class="easylive-topic-nav-inner">
+                                        <li>
+                                            <div class="clearfloat easylive-topic-nav-list">
+                                                <div class="easylive-topic-nav-list-img eb-img"><img
+                                                        src="/img/social/easylive/1.png"></div>
+                                                <div class="easylive-topic-nav-list-instruc">
+                                                    <div>超人氣</div>
+                                                    <div>（1234篇）</div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </div>
+                                <div class="easylive-topic-nav-bottom"></div>
+                            </ul>
+                            <div class="easylive-topic-list">
+                                <ul>
+                                    <!-- <div class="post-topic-box clearfloat">
+                                        <div class="box-img"></div>
+                                        <div class="box-main">
+                                            <div class="box-main-head">
+                                                <div class="box-main-head-info">
+                                                    <div class="box-main-head-info-title">滿2劍舞才華塑</div>
+                                                </div>
+                                            </div>
+                                            <div class="box-main-head-info-article">
+                                                的訪客領取額我就軟件全文人家的訪客領取額件全文人家的訪客領取我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家
+                                            </div>
+                                            <ul class="info clearfloat">
+                                                <li><img src="/img/common/eye.png" alt="">93552</li>
+                                                <li><img src="/img/common/message.png" alt="">70836</li>
+                                                <li><img src="/img/common/good.png" alt="">68149</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="post-topic-box clearfloat">
+                                        <div class="box-img"></div>
+                                        <div class="box-main">
+                                            <div class="box-main-head">
+                                                <div class="box-main-head-info">
+                                                    <div class="box-main-head-info-title">滿2劍舞才華塑</div>
+                                                </div>
+                                            </div>
+                                            <div class="box-main-head-info-article">
+                                                的訪客領取額我就軟件全文人家的訪客領取額件全文人家的訪客領取我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家
+                                            </div>
+                                            <ul class="info clearfloat">
+                                                <li><img src="/img/common/eye.png" alt="">93552</li>
+                                                <li><img src="/img/common/message.png" alt="">70836</li>
+                                                <li><img src="/img/common/good.png" alt="">68149</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="post-topic-box clearfloat">
+                                        <div class="box-img"></div>
+                                        <div class="box-main">
+                                            <div class="box-main-head">
+                                                <div class="box-main-head-info">
+                                                    <div class="box-main-head-info-title">滿2劍舞才華塑</div>
+                                                </div>
+                                            </div>
+                                            <div class="box-main-head-info-article">
+                                                的訪客領取額我就軟件全文人家的訪客領取額件全文人家的訪客領取我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家
+                                            </div>
+                                            <ul class="info clearfloat">
+                                                <li><img src="/img/common/eye.png" alt="">93552</li>
+                                                <li><img src="/img/common/message.png" alt="">70836</li>
+                                                <li><img src="/img/common/good.png" alt="">68149</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="post-topic-box clearfloat">
+                                        <div class="box-img"></div>
+                                        <div class="box-main">
+                                            <div class="box-main-head">
+                                                <div class="box-main-head-info">
+                                                    <div class="box-main-head-info-title">滿2劍舞才華塑</div>
+                                                </div>
+                                            </div>
+                                            <div class="box-main-head-info-article">
+                                                的訪客領取額我就軟件全文人家的訪客領取額件全文人家的訪客領取我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家
+                                            </div>
+                                            <ul class="info clearfloat">
+                                                <li><img src="/img/common/eye.png" alt="">93552</li>
+                                                <li><img src="/img/common/message.png" alt="">70836</li>
+                                                <li><img src="/img/common/good.png" alt="">68149</li>
+                                            </ul>
+                                        </div>
+                                    </div> -->
+                                </ul>
+                                <div class="easylive-topic-list-btn">查看更多最慳錢話題&nbsp;>></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-right">
+                    <!-- 生活圈 -->
+                    <div class="easylive-lifecircle eb-card living-circle">
+                        <div class="card-header">
+                            <img class="card-icon" src="/img/social/easylive/index-logo-lifecircle.png">
+                            <span class="card-title">生活圈</span>
+                            <a class="card-more" href="">更多生活圈>></a>
+                        </div>
+                        <div class="right-box-main card-body">
+                            <div class="card-body-inner">
+                                <ul class="right-box-main-content slide-wrapper">
+                                    <li class="right-box-main-li slide-item">
+                                        <div class="right-box-main-head clearfloat">
+                                            <div class="right-box-main-head-img user-avatar"></div>
+                                            <div class="right-box-main-head-info">
+                                                <div class="right-box-main-head-info-title"><span>滿2劍舞才華塑</span><span>/媽媽圈/</span>
+                                                </div>
+                                                <div class="right-box-main-head-info-time clearfloat">
+                                                    <div class="topic-title-name">媽媽達人</div>
+                                                    <div class="name">ada</div>
+                                                    <div><img src="/img/common/boy.png" alt=""></div>
+                                                    <div><span>13</span>分鐘前發佈</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right-box-main-head-info-article">
+                                            的訪客領取額我就軟件全文人家的訪客領取額件全文人家的訪客領取我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家
+                                        </div>
+                                        <ul class="card-picgroup">
+                                            <li><img src="/img/social/easylive/myimg.png" alt=""></li>
+                                            <li><img src="/img/social/easylive/myimg.png" alt=""></li>
+                                            <li><img src="/img/social/easylive/myimg.png" alt=""></li>
+                                            <li><img src="/img/social/easylive/myimg.png" alt=""></li>
+                                            <li><img src="/img/social/easylive/myimg.png" alt=""></li>
+                                            <li><img src="/img/social/easylive/myimg.png" alt=""></li>
+                                        </ul>
+                                        <ul class="right-info clearfloat">
+                                            <li><img src="/img/common/eye.png" alt="">93552</li>
+                                            <li><img src="/img/common/message.png" alt="">70836</li>
+                                            <li><img src="/img/common/good.png" alt="">68149</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 宜粉日志 -->
+                    <div class="easylive-log eb-card follower-log">
+                        <div class="card-header">
+                            <img class="card-icon" src="/img/social/easylive/index-logo-log.png">
+                            <span class="card-title">宜粉日誌</span>
+                            <a class="card-more" href="">更多日誌>></a>
+                        </div>
+                        <div class="right-box-main card-body slide-container-b">
+                            <div class="card-body-inner">
+                                <ul class="right-box-main-content slide-wrapper">
+                                    <li class="right-box-main-li slide-item">
+                                        <div class="right-box-main-head clearfloat">
+                                            <div class="right-box-main-head-img user-avatar"></div>
+                                            <div class="right-box-main-head-info">
+                                                <div class="right-box-main-head-info-title"><span>滿2劍舞才華塑</span><span>/媽媽圈/</span>
+                                                </div>
+                                                <div class="right-box-main-head-info-time clearfloat">
+                                                    <div class="topic-title-name">媽媽達人</div>
+                                                    <div class="name">ada</div>
+                                                    <div><img src="/img/common/boy.png" alt=""></div>
+                                                    <div><span>13</span>分鐘前發佈</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right-box-main-head-info-article">
+                                            的訪客領取額我就軟件全文人家的訪客領取額件全文人家的訪客領取我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家的訪客領取額我就軟件全文人家
+                                        </div>
+                                        <ul class="card-picgroup">
+                                            <li><img src="/img/social/easylive/myimg.png" alt=""></li>
+                                            <li><img src="/img/social/easylive/myimg.png" alt=""></li>
+                                            <li><img src="/img/social/easylive/myimg.png" alt=""></li>
+                                            <li><img src="/img/social/easylive/myimg.png" alt=""></li>
+                                            <li><img src="/img/social/easylive/myimg.png" alt=""></li>
+                                            <li><img src="/img/social/easylive/myimg.png" alt=""></li>
+                                        </ul>
+                                        <ul class="right-info clearfloat">
+                                            <li><img src="/img/common/eye.png" alt="">93552</li>
+                                            <li><img src="/img/common/message.png" alt="">70836</li>
+                                            <li><img src="/img/common/good.png" alt="">68149</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 宜粉专辑 -->
+                    <div class="easylive-album eb-card">
+                        <div class="right-title clearfloat">
+                            <div class="right-title-left">
+                                <img src="/img/social/easylive/index-logo-album.png" alt=""><span>宜粉專輯</span>
+                            </div>
+                            <div class="right-title-right"><a href="">更多專輯>></a></div>
+                        </div>
+                        <div class="right-box-main card-body">
+                            <div class="card-body-inner">
+                                <ul class="right-box-main slide-wrapper">
+                                    <li class="right-box-main-li">
+                                        <div class="right-box-main-head clearfloat">
+                                            <div class="right-box-main-head-img"></div>
+                                            <div class="right-box-main-head-info">
+                                                <div class="right-box-main-head-info-title"><span>滿2劍舞才華塑</span><span>/媽媽圈/</span>
+                                                </div>
+                                                <div class="right-box-main-head-info-time clearfloat">
+                                                    <div class="name">ada</div>
+                                                    <div><img src="/img/common/boy.png" alt=""></div>
+                                                    <div><span>13</span>分鐘前發佈</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right-box-main-img-fall clearfloat">
+                                            <div><img src="/img/social/easylive/myimg.png" alt=""></div>
+                                        </div>
+                                        <ul class="right-info clearfloat">
+                                            <li><img src="/img/common/eye.png" alt="">93552</li>
+                                            <li><img src="/img/common/message.png" alt="">70836</li>
+                                            <li><img src="/img/common/good.png" alt="">68149</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</div>
+</body>
+
+<script src="/js/plug/yez_js_Reset.js"></script>
+<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+<!-- <script src="/js/common/header&search&footer/searchBar.js" async></script> -->
+<script src="/js/common/header&search&footer/footer.js" async></script>
+<script src="/js/common/header&search&footer/header.js"></script>
+<script src="/js/common/ebtemplate-jquery.js"></script>
+<script src="/js/social/easylive/easylive.js"></script>
+<script src="/js/common/easyframe.js"></script>
+
+<script id="queryShouldbuyClass" type="text/html" data-eb-template>
+    <%for(var i=0, item; item = content[i++];) {%>
+    <li id="<%=item.id%>">
+        <div class="global-list-logo eb-img">
+            <img src="//wap.macaoeasybuy.com<%=item.shouldbuyClassPic%>">
+        </div>
+        <div class="global-list-text"><%=item.shouldbuyClassName%></div>
+    </li>
+    <%}%>
+</script>
+<script id="queryEasyBuyWorldClassList" type="text/html" data-eb-template>
+    <%for(var i=0, item; item = content[i++];) {%>
+    <li id="<%=item.id%>">
+        <div class="mdetail_div_topic_detail">
+            <div class="title-img"><img src="//wap.macaoeasybuy.com<%=item.pic%>"></div>
+            <div class="mdetail_div_topicfont"><a href="#"><%=item.title%></a></div>
+            <div class="mdetail_topic_text"><%=cutModify(item.content)%></div>
+        </div>
+    </li>
+    <%}%>
+</script>
+<script id="queryEasyBuyWelfareList" type="text/html" data-eb-template>
+    <div class="welfare-main-left">
+        <div class="post-topic-box">
+            <div class="box-img eb-img"><img src="<%=content[0].welfarePic%>"></div>
+            <div class="box-main">
+                <div class="box-main-head">
+                    <div class="box-main-head-info">
+                        <div class="box-main-head-info-title"><%=content[0].title%></div>
+                    </div>
+                </div>
+                <div class="box-main-head-info-article"><%=content[0].content%></div>
+                <ul class="info clearfloat">
+                    <li><img src="/img/common/eye.png" alt=""><%=content[0].seeCount%></li>
+                    <li><img src="/img/common/message.png" alt=""><%=content[0].commentCount%></li>
+                    <li><img src="/img/common/good.png" alt=""><%=content[0].loveCount%></li>
+                </ul>
+            </div>
+        </div>
+        <div class="welfare-main-left-record">
+            <div class="welfare-main-left-record-new">最新宜粉回應：</div>
+            <div class="clearfloat welfare-main-left-record-human">
+                <div class="person-head">
+                    <%if(content[0].comment.userPic==""){%>
+                        <img src="/img/common/loading_pc_headPic.png">
+                    <%}else{%>
+                        <img src="//wap.macaoeasybuy.com<%=content[0].comment.userPic%>">
+                    <%}%>
+                </div>
+                <div class="person-info">
+                    <div class="person-info-name">
+                        <%=content[0].comment.userName%><%=content[0].comment.sex%>
+                    </div>
+                    <div class="person-info-contain">
+                        <div class="person-info-text"><%=content[0].comment.replycontent%></div>
+                    </div>
+                    <div class="person-info-time"><span><%=content[0].comment.uptime%></span>前發佈</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="welfare-main-right">
+        <%for(var i=1, item; item = content[i++];) {%>
+        <div class="post-topic-box clearfloat">
+            <div class="box-img eb-img">
+                <img src="<%=item.welfarePic%>">
+            </div>
+            <div class="box-main">
+                <div class="box-main-head">
+                    <div class="box-main-head-info">
+                        <div class="box-main-head-info-title"><%=item.title%></div>
+                    </div>
+                </div>
+                <div class="box-main-head-info-article"><%=item.content%></div>
+                <ul class="info clearfloat">
+                    <li><img src="/img/common/eye.png" alt=""><%=item.seeCount%></li>
+                    <li><img src="/img/common/message.png" alt=""><%=item.commentCount%></li>
+                    <li><img src="/img/common/good.png" alt=""><%=item.loveCount%></li>
+                </ul>
+            </div>
+        </div>
+        <%}%>
+    </div>
+</script>
+<script id="queryEasyBuyTopicList" type="text/html" data-eb-template>
+    <%for(var i=0, item; item = content[i++];) {%>
+    <li id="<%=item.classId%>">
+        <div class="clearfloat easylive-topic-nav-list">
+            <div class="easylive-topic-nav-list-img eb-user-avatar">
+                <img src="//wap.macaoeasybuy.com<%=item.classPic%>" >
+            </div>
+            <div class="easylive-topic-nav-list-instruc">
+                <div><%=item.className%></div>
+                <div>（<%=item.num%>篇）</div>
+            </div>
+        </div>
+    </li>
+    <%}%>
+</script>
+<script id="queryEasyBuyTopicDetailList" type="text/html" data-eb-template>
+    <%for(var i=0, item; item = content[i++];) {%>
+    <div class="post-topic-box clearfloat">
+        <div class="box-img eb-img"><img src="<%=item.topicPic%>"></div>
+        <div class="box-main">
+            <div class="box-main-head">
+                <div class="box-main-head-info">
+                    <div class="box-main-head-info-title"><%=item.title%></div>
+                </div>
+            </div>
+            <div class="box-main-head-info-article"><%=item.content%></div>
+            <ul class="info clearfloat">
+                <li><img src="/img/common/eye.png" alt=""><%=item.seeCount%></li>
+                <li><img src="/img/common/message.png" alt=""><%=item.commentCount%></li>
+                <li><img src="/img/common/good.png" alt=""><%=item.loveCount%></li>
+            </ul>
+        </div>
+    </div>
+    <%}%>
+</script>
+<script id="queryEasyBuySuitableLifeList" type="text/html" data-eb-template>
+    <%for(var i=0, item; item = content[i++];) {%>
+    <li class="yez-topic slide-item">
+        <div class="right-box-main-head clearfloat topic-header">
+            <div class="eb-user-avatar">
+                <img src="//wap.macaoeasybuy.com<%=item.userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+            </div>
+            <div class="topic-info">
+                <div class="topic-title-info">
+                    <div class="title-and-class" data-class="/<%=item.className%>/"><%=item.title%></div>
+                </div>
+                <div class="topic-poster-info">
+                    <%if(item.userLabel !== "") {%>
+                    <span class="poster-label"><%=item.userLabel%></span>
+                    <%}%>
+                    <span class="poster-name"><%=item.userName%><%=#sexIcon(item.sex)%></span>
+                    <span class="topic-post-time"><%=item.uptime%>前發佈</span>
+                </div>
+            </div>
+        </div>
+        <%if(item.content !== "") {%>
+        <div class="right-box-main-head-info-article"><%=item.content%></div>
+        <%}%>
+        <%if(item.lifePicList.length !== 0) {%>
+        <ul class="card-picgroup">
+            <%for(var j=0, imgURL; imgURL = item.lifePicList[j++];) {%>
+            <li><img src="//wap.macaoeasybuy.com<%=imgURL%>" onerror="this.src='/img/common/loading_pc_220.jpg'"></li>
+            <%}%>
+        </ul>
+        <%}%>
+        <ul class="right-info clearfloat topic-data">
+            <li><img src="/img/common/eye.png" alt=""><%=item.seeCount%></li>
+            <li><img src="/img/common/message.png" alt=""><%=item.commentCount%></li>
+            <li><img src="/img/common/good.png" alt=""><%=item.loveCount%></li>
+        </ul>
+    </li>
+    <%}%>
+</script>
+<script id="queryEasyBuyReleaseList" type="text/html" data-eb-template>
+    <%for(var i=0, item; item = content[i++];) {%>
+    <li class="yez-topic slide-item">
+        <div class="right-box-main-head clearfloat topic-header">
+            <div class="eb-user-avatar">
+                <img src="//wap.macaoeasybuy.com<%=item.userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+            </div>
+            <div class="topic-info">
+                <div class="topic-title-info">
+                    <div class="title-and-class" data-class="/<%=item.className%>/"><%=item.title%></div>
+                </div>
+                <div class="topic-poster-info">
+                    <%if(item.userLabel !== "") {%>
+                    <span class="poster-label"><%=item.userLabel%></span>
+                    <%}%>
+                    <span class="poster-name"><%=item.userName%><%=#sexIcon(item.sex)%></span>
+                    <span class="topic-post-time"><%=item.uptime%>前發佈</span>
+                </div>
+            </div>
+        </div>
+        <%if(item.content !== "") {%>
+        <div class="right-box-main-head-info-article"><%=item.content%></div>
+        <%}%>
+        <%if(item.releasePicList.length !== 0) {%>
+        <ul class="card-picgroup">
+            <%for(var j=0, imgURL; imgURL = item.releasePicList[j++];) {%>
+            <li><img src="//wap.macaoeasybuy.com<%=imgURL%>" onerror="this.src='/img/common/loading_pc_220.jpg'"></li>
+            <%}%>
+        </ul>
+        <%}%>
+        <ul class="right-info clearfloat topic-data">
+            <li><img src="/img/common/eye.png"><%=item.seeCount%></li>
+            <li><img src="/img/common/message.png"><%=item.commentCount%></li>
+            <li><img src="/img/common/good.png"><%=item.loveCount%></li>
+        </ul>
+    </li>
+    <%}%>
+</script>
+<script id="queryEasyBuyAlbumList" type="text/html" data-eb-template>
+    <%for(var i=0, item; item = content[i++];) {%>
+    <li class="yez-topic slide-item">
+        <div class="right-box-main-head clearfloat topic-header">
+            <div class="eb-user-avatar" id="<%=item.userId%>">
+                <img src="//wap.macaoeasybuy.com<%=item.userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+            </div>
+            <div class="topic-info">
+                <div class="topic-title-info">
+                    <div class="title-and-class" id="<%=item.albumId%" data-class="/<%=item.className%>/">
+                        <%=item.title%>
+                    </div>
+                </div>
+                <div class="topic-poster-info">
+                    <%if(item.userLabel !== "") {%>
+                    <span class="poster-label"><%=item.userLabel%></span>
+                    <%}%>
+                    <span class="poster-name"><%=item.userName%><%=#sexIcon(item.sex)%></span>
+                    <span class="topic-post-time"><%=item.uptime%>前發佈</span>
+                </div>
+            </div>
+        </div>
+        <%if(item.albumPicList.length !== 0) {%>
+        <ul class="card-picgroup">
+            <%for(var j=0, imgURL; imgURL = item.albumPicList[j++];) {%>
+            <li><img src="//wap.macaoeasybuy.com<%=imgURL%>" onerror="this.src='/img/common/loading_pc_220.jpg'"></li>
+            <%}%>
+        </ul>
+        <%}%>
+        <ul class="right-info clearfloat topic-data">
+            <li><img src="/img/common/eye.png"><%=item.seeCount%></li>
+            <li><img src="/img/common/message.png"><%=item.commentCount%></li>
+            <li><img src="/img/common/good.png"><%=item.loveCount%></li>
+        </ul>
+    </li>
+    <%}%>
+</script>
+</html>

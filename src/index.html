@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>YEZ-項目路徑</title>
+    <style>
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        header {
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #fac51c;
+            height: 70px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            padding-left: 100px;
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .m {
+            position: relative;
+        }
+
+        .m a {
+            background: #333333;
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            min-width: 190px;
+            max-width: 250px;
+            min-height: 26px;
+            font-size: 12px;
+            padding-left: 30px;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            margin-bottom: 3px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        .m a::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 26px;
+            bottom: 0;
+            content: " ";
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        .m a:hover {
+            padding-left: 40px;
+        }
+
+        .m a:hover::before {
+            width: 40px;
+        }
+
+        .m .l2 {}
+
+        .m .l2::before {}
+
+        .m .l3 {}
+
+        .m .l3::before {}
+
+        .m .l4 {}
+
+        .m .l4::before {}
+
+        .z {
+            background: #333333;
+            color: #ffffff;
+            position: relative;
+            width: 150px;
+            height: 40px;
+            margin-right: 20px;
+            padding-left: 40px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+
+        .z::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            content: " ";
+        }
+
+        .z.a::before,
+        .m .a:before {
+            background: #f5222d;
+        }
+
+        .z.b::before,
+        .m .b:before {
+            background: #fadb14;
+        }
+
+        .z.c::before,
+        .m .c:before {
+            background: #13c2c2;
+        }
+
+        .z.d::before,
+        .m .d:before {
+            background: #52c41a;
+        }
+
+        .z.e::before,
+        .m .e:before {
+            background: #2f54eb;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="z a">未对接口</div>
+        <div class="z b">已对接口</div>
+        <div class="z c">整理完成</div>
+        <div class="z d">优化完成</div>
+        <div class="z e">跳转替换</div>
+    </header>
+    <main>
+        <div class="m">
+            <h1>商城</h1>
+            <h2>商城-首頁</h2>
+            <a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html" class="b">首頁</a>
+            <h2>商城-限量搶購</h2>
+            <a href="http://shopping.macaoeasybuy.com/limited/limited.html" class="c">限量搶購入口頁</a>
+            <a href="http://shopping.macaoeasybuy.com/goodDetails/limitedDetail.html" class="b">限量搶購商品詳情頁</a>
+            <h2>分享好友</h2>
+            <a href="http://shopping.macaoeasybuy.com/common/share/share.html" class="a">分享好友</a>
+            <h2>好店街</h2>
+            <a href="http://shopping.macaoeasybuy.com/moreshops/moreshops.html" class="b">好店街</a>
+            <a href="http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_index.html" class="b">商店詳細頁(首頁)</a>
+            <a href="http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_sorting.html"
+                class="b">商店詳細頁(排序列表頁)</a>
+            <a href="http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_search.html"
+                class="b">商店詳細頁(搜索結果頁頁)</a>
+            <h2>主題館</h2>
+            <a href="http://shopping.macaoeasybuy.com/moreTheme/moreTheme.html" class="b">更多主題</a>
+            <a href="http://shopping.macaoeasybuy.com/moreTheme/themeDetails/themeDetails.html" class="b">主題廣告詳細頁</a>
+            <a href="http://shopping.macaoeasybuy.com/moreTheme/addetail/addetail.html" class="b">普通廣告詳細頁</a>
+            <h2>子分類詳細頁</h2>
+            <a href="http://shopping.macaoeasybuy.com/sClassification/sClassification.html" class="b">子分類詳細頁</a>
+            <h2>購物籃</h2>
+            <a href="http://shopping.macaoeasybuy.com/shopCartController/ShoppingCart.easy" class="b">購物籃</a>
+            <a href="http://shopping.macaoeasybuy.com/shopCartController/shopCartOrder.html" class="b">購物籃(下單)</a>
+            <a href="http://shopping.macaoeasybuy.com/shopCartController/shopCartOrder_wrong.html" class="b">重複下單</a>
+            <a href="http://shopping.macaoeasybuy.com/shopCart/unprocessed.html" class="b">待發貨</a>
+            <a href="http://shopping.macaoeasybuy.com/shopCart/unconfirmed.html" class="b">待確認</a>
+            <a href="http://shopping.macaoeasybuy.com/shopCart/unconfirmed_return.html" class="b">待確認-退換貨</a>
+            <a href="http://shopping.macaoeasybuy.com/shopCart/staycommend.html" class="b">待評價</a>
+            <a href="http://shopping.macaoeasybuy.com/shopCart/completed.html" class="b">已完成</a>
+            <h2>今日降價</h2>
+            <a href="http://shopping.macaoeasybuy.com/discount/discount.html" class="b">今日降價</a>
+            <a href="http://shopping.macaoeasybuy.com/goodDetails/discountDetails.html" class="b">今日降價商品詳情頁</a>
+            <h2>著數換領</h2>
+            <a href="http://shopping.macaoeasybuy.com/exchange/exchange.html" class="b">著數換領</a>
+            <a href="http://shopping.macaoeasybuy.com/goodDetails/exchangeDetail.html" class="b">著數換領商品詳細頁</a>
+            <h2>量販團</h2>
+            <a href="http://shopping.macaoeasybuy.com/gruopBuy/groupBuy.html" class="b">量販團</a>
+            <a href="http://shopping.macaoeasybuy.com/goodDetails/groupDetail.html" class="b">量販團商品詳情頁</a>
+            <h2>本週熱賣</h2>
+            <a href="http://shopping.macaoeasybuy.com/hit/hit.html" class="b">本週熱賣</a>
+            <h2>發現新品</h2>
+            <a href="http://shopping.macaoeasybuy.com/findNew/new.html" class="b">發現新品</a>
+            <h2>宜品館</h2>
+            <a href="http://shopping.macaoeasybuy.com/museum/museum.html" class="b">宜品館</a>
+            <a href="http://shopping.macaoeasybuy.com/museum/museumList_beautiful.html" class="b">宜品館(唯美)</a>
+            <a href="http://shopping.macaoeasybuy.com/museum/museumList_magical.html" class="b">宜品館(奇趣)</a>
+            <a href="http://shopping.macaoeasybuy.com/museum/museumList_practical.html" class="b">宜品館(實用)</a>
+            <a href="http://shopping.macaoeasybuy.com/goodDetails/museumDetails.html" class="b">宜品館商品詳情頁</a>
+            <h2>普通商品詳細頁</h2>
+            <a href="http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html" class="b">普通商品詳細頁</a>
+            <h2>搜索</h2>
+            <a href="http://shopping.macaoeasybuy.com/common/search/search_good.html" class="b">商品搜索結果</a>
+            <a href="http://shopping.macaoeasybuy.com/common/search/search_shop.html" class="b">商店搜索結果</a>
+            <a href="http://shopping.macaoeasybuy.com/common/search/search_label.html" class="b">標籤搜索結果</a>
+            <a href="http://shopping.macaoeasybuy.com/common/search/search_topic.html" class="b">話題搜索結果</a>
+            <a href="http://shopping.macaoeasybuy.com/common/search/search_post.html" class="b">帖子搜索結果</a>
+            <a href="http://shopping.macaoeasybuy.com/common/search/search_fans.html" class="b">粉絲搜索結果</a>
+            <h2>紅包積分</h2>
+            <a href="http://shopping.macaoeasybuy.com/envelopeintegral/envelopeintegral.html" class="b">紅包積分</a>
+        </div>
+        <div class="m">
+            <h1>社交</h1>
+            <h2>宜生活</h2>
+            <a href="http://social.macaoeasybuy.com/easylive/easylive.html" class="b">宜生活</a>
+            <a href="http://social.macaoeasybuy.com/easylive/easylivebuytopic/easylivebuytopic.html" class="b">宜生活-宜買話題</a>
+            <a href="http://social.macaoeasybuy.com/easylive/easylivebuytopic/buytopicpostdetail/buytopicpostdetail.html"
+                class="c">宜買話題詳細頁</a>
+            <a href="http://social.macaoeasybuy.com/easylive/easyliveglobalgoods/globalgoods.html" class="b">宜生活-全球筍貨</a>
+            <a href="http://social.macaoeasybuy.com/easylive/easyliveglobalgoods/globalpostdetail/globalpostdetail.html"
+                class="c">全球筍貨話題帖子詳細頁</a>
+            <a href="http://social.macaoeasybuy.com/easylive/easylivelog/easylivelog.html" class="b">宜生活-日誌</a>
+            <a href="http://social.macaoeasybuy.com/easylive/easylivelog/logpostdetail/logpostdetail.html"
+                class="c">日誌帖子詳情頁</a>
+            <a href="http://social.macaoeasybuy.com/easylive/easylivewelfare/easylivewelfare.html" class="b">宜生活-福利社</a>
+            <a href="http://social.macaoeasybuy.com/easylive/easylivewelfare/welfarepostdetail/welfarepostdetail.html"
+                class="c">福利社話題帖子詳情頁</a>
+            <a href="http://social.macaoeasybuy.com/easylive/easylivelifecircle/easylivelifecircle.html"
+                class="c">宜生活-生活圈</a>
+            <a href="http://social.macaoeasybuy.com/easylive/easylivelifecircle/lifecirclepostdetail/lifecirclepostdetail.html"
+                class="c">生活圈帖子詳情頁</a>
+            <a href="http://social.macaoeasybuy.com/easylive/easylivealbum/easylivealbum.html" class="b">宜生活-專輯</a>
+            <a href="http://social.macaoeasybuy.com/easylive/easylivealbum/albumclassification/albumclassification.html"
+                class="b">專輯分類詳細頁</a>
+            <a href="http://social.macaoeasybuy.com/easylive/easylivealbum/albumclassification/albumlistdetail/albumlistdetail.html"
+                class="b">指定專輯詳細頁</a>
+            <a href="http://social.macaoeasybuy.com/easylive/easylivealbum/albumclassification/albumlistdetail/albumphotodetail/albumphotodetail.html"
+                class="b">專輯圖片詳細頁</a>
+            <h2>標籤</h2>
+            <a href="http://social.macaoeasybuy.com/label/labeldetail/labeldetail.html" class="b">標籤詳細頁</a>
+            <a href="http://social.macaoeasybuy.com/label/labelranklist/labelranklist.html" class="b">標籤排行榜</a>
+            <h2>敗家志</h2>
+            <a href="http://social.macaoeasybuy.com/liveshot/liveshot.html" class="b">敗家志首頁</a>
+            <a href="http://social.macaoeasybuy.com/liveshot/ProdigalTopicList/ProdigalTopicList.html"
+                class="b">敗家志-話題列表頁</a>
+            <a href="http://social.macaoeasybuy.com/liveshot/ProdigalTopicList/ProdigalOfficialPost/prodigalOfficialPost.html"
+                class="c">敗家志-話題帖子詳細頁</a>
+            <a href="http://social.macaoeasybuy.com/liveshot/ProdigalPostDetail/ProdigalPostDetail.html"
+                class="c">敗家誌-帖子詳細頁</a>
+            <h2>激平二手</h2>
+            <a href="http://social.macaoeasybuy.com/secondhand/secondHand.html" class="b">二手首頁</a>
+            <a href="http://social.macaoeasybuy.com/secondhand/secondhandclassifydetail/secondhandclassifydetail.html"
+                class="b">激平二手-分類列表頁</a>
+            <a href="http://social.macaoeasybuy.com/secondhand/secondhandclassifydetail/secondPostDetail/secondPostDetail.html"
+                class="c">激平二手-帖子詳細頁</a>
+            <h2>尋寶市集</h2>
+            <a href="http://social.macaoeasybuy.com/market/market.html" class="b">尋寶市集首頁</a>
+            <a href="http://social.macaoeasybuy.com/market/treasureclassifydetail/treasureclassifydetail.html"
+                class="c">尋寶市集-分類列表頁</a>
+            <a href="http://social.macaoeasybuy.com/market/treasureclassifydetail/fairpostdetail/fairpostdetail.html"
+                class="c">尋寶市集-帖子詳細頁</a>
+            <a href="http://social.macaoeasybuy.com/market/treasureclassifydetail/fairofficialpost/fairofficialpost.html"
+                class="c">尋寶市集話題帖子詳細頁</a>
+        </div>
+        <div class="m">
+            <h1>用戶空間</h1>
+            <h2>敗家志</h2>
+            <a href="http://userspace.macaoeasybuy.com/liveshot/liveshotlist/liveshotlist.html" class="c">敗家志列表頁</a>
+            <a href="http://userspace.macaoeasybuy.com/liveshot/liveshotpostdetail/liveshotpostdetail.html"
+                class="c">敗家志詳細頁</a>
+            <h2>激平二手</h2>
+            <a href="http://userspace.macaoeasybuy.com/secondhand/secondhandlist/secondhandlist.html" class="c">二手列表頁</a>
+            <a href="http://userspace.macaoeasybuy.com/secondhand/secondpostdetail/secondpostdetail.html"
+                class="c">二手詳細頁</a>
+            <h2>日誌</h2>
+            <a href="http://userspace.macaoeasybuy.com/logpost/logpostlist/logpostlist.html" class="c">日誌列表頁</a>
+            <a href="http://userspace.macaoeasybuy.com/logpost/logpostdetail/logpostdetail.html" class="c">日誌詳情頁</a>
+            <h2>生活圈</h2>
+            <a href="http://userspace.macaoeasybuy.com/lifecircle/lifecirclelist/lifecirclelist.html" class="c">生活圈列表頁</a>
+            <a href="http://userspace.macaoeasybuy.com/lifecircle/lifecirclepostdetail/lifecirclepostdetail.html"
+                class="c">生活圈詳情頁</a>
+            <h2>市集</h2>
+            <a href="http://userspace.macaoeasybuy.com/fair/fairlist/fairlist.html" class="c">市集列表頁</a>
+            <a href="http://userspace.macaoeasybuy.com/fair/fairpostdetail/fairpostdetail.html" class="c">市集詳情頁</a>
+            <h2>專輯</h2>
+            <a href="http://userspace.macaoeasybuy.com/album/albumpostdetail/albumpostdetail.html" class="a">專輯圖片詳細頁</a>
+            <a href="http://userspace.macaoeasybuy.com/album/albumlist/albumlist.html" class="c">專輯列表頁</a>
+            <a href="http://userspace.macaoeasybuy.com/album/albumeditor/albumeditor.html" class="a">專輯編輯頁</a>
+            <a href="http://userspace.macaoeasybuy.com/album/albumaddimg/albumaddimg.html" class="a">專輯添加圖片頁</a>
+            <a href="http://userspace.macaoeasybuy.com/album/albumdetail/albumdetail.html" class="b">專輯詳情頁</a>
+            <h2>標籤</h2>
+            <a href="http://userspace.macaoeasybuy.com/label/labellist/labellist.html" class="b">標籤列表頁-剩搜索</a>
+            <a href="http://userspace.macaoeasybuy.com/label/labeldetail/labeldetail.html" class="a">標籤詳細頁</a>
+            <h2>好友粉絲</h2>
+            <a href="http://userspace.macaoeasybuy.com/friendsfans/findfriends/findfriends.html" class="c">查找好友</a>
+            <a href="http://userspace.macaoeasybuy.com/friendsfans/friendsandfans/friendsandfans.html"
+                class="c">好友粉絲</a>
+            <h2>足跡</h2>
+            <a href="http://userspace.macaoeasybuy.com/footprint/footprintgoods/footprintgoods.html" class="c">足跡-看過的商品
+                <span style="color: #f00;">（漏了：推薦新品、最新下單）</span>
+            </a>
+            <a href="http://userspace.macaoeasybuy.com/footprint/footprintshops/footprintshops.html" class="c">足跡-看過的商店
+                <span style="color: #f00;">（漏了：隨便看看）</span>
+            </a>
+            <a href="http://userspace.macaoeasybuy.com/footprint/footprintwhos/footprintwhos.html" class="c">足跡-我看過誰</a>
+            <h2>個人信息</h2>
+            <h2>查看</h2>
+            <a href="http://userspace.macaoeasybuy.com/personalinfo/infoview/information/information.html"
+                class="c">信息</a>
+            <a href="http://userspace.macaoeasybuy.com/personalinfo/infoview/interest/interest.html" class="c">興趣</a>
+            <a href="http://userspace.macaoeasybuy.com/personalinfo/infoview/skills/skills.html" class="c">技能</a>
+            <a href="http://userspace.macaoeasybuy.com/personalinfo/infoview/sentiment/sentiment.html" class="c">人氣</a>
+            <a href="http://userspace.macaoeasybuy.com/personalinfo/infoview/growth/growth.html" class="c">成長</a>
+            <h2>設置</h2>
+            <a href="http://userspace.macaoeasybuy.com/personalinfo/infoset/information/information.html"
+                class="c">信息</a>
+            <a href="http://userspace.macaoeasybuy.com/personalinfo/infoset/interest/interest.html" class="c">興趣</a>
+            <a href="http://userspace.macaoeasybuy.com/personalinfo/infoset/skills/skills.html" class="c">技能</a>
+            <a href="http://userspace.macaoeasybuy.com/personalinfo/infoset/baseinfo/baseinfo.html" class="a">基本
+                <span>（功能與需求還未完善：空間背景圖庫，頭像設置，頭像圖庫，封面設置，封面圖庫,...）</span>
+            </a>
+            <h2>心動</h2>
+            <a href="http://userspace.macaoeasybuy.com/userlove/userlove.html" class="c">心動</a>
+            <h2>動態</h2>
+            <a href="http://userspace.macaoeasybuy.com/index.html" class="a">動態</a>
+            <h2>讃好</h2>
+            <a href="http://userspace.macaoeasybuy.com/praise/praise.html" class="c">讃好</a>
+            <h2>關注商店</h2>
+            <a href="http://userspace.macaoeasybuy.com/userFocusShop/userFocusShop.html" class="c">關注商店</a>
+            <h2>通知</h2>
+            <a href="http://userspace.macaoeasybuy.com/usermessage/usermessage.html" class="a">通知</a>
+            <h2>誰來偷看</h2>
+            <a href="http://userspace.macaoeasybuy.com/whospeep/whospeep.html" class="c">誰來偷看頁</a>
+            <h2>發佈</h2>
+            <a href="http://userspace.macaoeasybuy.com/publish/pubilsh_diary.html" class="c">發佈日誌</a>
+            <a href="http://userspace.macaoeasybuy.com/publish/pubilsh_liveshot.html" class="c">發佈敗家誌</a>
+            <a href="http://userspace.macaoeasybuy.com/publish/pubilsh_group.html" class="c">發佈生活圈</a>
+            <a href="http://userspace.macaoeasybuy.com/publish/pubilsh_market.html" class="c">發佈市集</a>
+            <a href="http://userspace.macaoeasybuy.com/publish/pubilsh_secondHand.html" class="c">發佈二手</a>
+            <a href="http://userspace.macaoeasybuy.com/publish/pubilsh_album.html" class="c">發佈專輯</a>
+        </div>
+        <div class="m">
+            <h1>登入註冊</h1>
+            <h2>登錄</h2>
+            <a href="http://www.macaoeasybuy.com/page/common/loginregister/loginregister.html" class="b">登錄（找回密碼）</a>
+            <a href="http://usermanager.macaoeasybuy.com/login.html" class="b">登錄測試用（找回密碼）</a>
+            <h2>註冊</h2>
+            <a href="http://www.macaoeasybuy.com/page/common/loginregister/loginregister.html?state=register" class="b">註冊</a>
+            <a id="aaa" href="http://192.168.3.38:8080/page/userspace/liveshot/liveshotpostdetail/liveshotpostdetail.html?id=888"
+                data-easybuy="?">敗家志詳細頁</a>
+        </div>
+    </main>
+</body>
+
+</html>

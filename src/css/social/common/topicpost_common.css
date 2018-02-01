@@ -1,0 +1,806 @@
+.navBar_borderBox{
+	width: 100%;
+	border-bottom: 2px solid #FF527C;
+	padding-bottom: 15px;
+}
+#container{
+	padding-bottom: 150px;
+}
+.container-swapper{
+	width:1397px;
+	margin:0px auto 100px auto;
+	padding-top:20px;
+}
+.post-top{
+	padding-bottom:20px;
+	margin-bottom:40px;
+}
+.post-left{
+	float:left;
+	width:71%;
+	margin-right:10px;
+}
+
+.post-details{
+	padding:20px;
+	background-color:#fff;
+}
+/*標題*/
+.post-details .title{
+	border-bottom: 1px solid #ccc;
+	margin-bottom:20px;
+}
+.post-details .title .big-title{
+	font-size:43px;
+	font-weight:600;
+	padding:4px 0px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	height: 64px;
+}
+.post-details .title .title-from{
+	font-size:22px;
+}
+.post-details .title .title-from a{
+	color:#FF527C;
+}
+.post-details .title .title-from span{
+	padding:0px 4px;
+	color: #FF527C;
+}
+.post-details .title .title-push-time{
+	padding:10px 0px;
+	font-size:18px;
+	color:#888;
+}
+.post-details .title .title-push-time span:first-of-type{
+	padding-right:10px;
+}
+/*內容*/
+.post-details .post-content{
+	padding-bottom:30px;
+}
+.post-details .post-content .content-image{
+	width:100%;
+}
+.post-details .post-content .content-image img{
+	width:100%;
+}
+.post-details .post-content .content-article{
+	font-size:18px;
+	line-height:32px;
+	letter-spacing: 3px;
+	padding:10px 0px;
+	min-height: 150px;
+}
+/*讃好，分享按鈕*/
+.articleOpera {
+    padding-top: 40px;
+    min-height:144px;
+    margin: auto;
+    position: relative;
+    text-align: center;
+}
+.articleOpera ul li {
+	display:inline-block;
+    width: 70px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.articleOpera ul li:first-of-type {
+    margin-left: 0px;
+}
+.articleOpera ul li .thumbs_up.click{
+	display: none;
+}
+.articleOpera ul li.select .thumbs_up.click{
+	display:block;
+}
+.articleOpera ul li.select .thumbs_up.no-click{
+	display:none;
+}
+.articleOpera ul li div img {
+    width: 100%;
+}
+.articleOpera ul li p {
+    margin-top: 10px;
+    text-align: center;
+    color: #b3b3b3;
+    font-size: 16px;
+}
+
+/*回應框*/
+.statistics{
+    width:100%;
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 26px 40px;
+    min-height: 683px;
+}
+.statistics .statistics-title{
+	padding-right:55px;
+}
+.statistics .statistics-title li{
+	width:33.333333%;
+	float:left;
+	text-align: center;
+}
+.statistics .statistics-title li .statistics-bubble{
+	display:inline-block;
+	margin:0 auto;
+	padding: 20px 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+	color: #AFAFAF;
+	cursor: pointer;
+	border: 3px solid transparent;
+	position:relative;
+}
+.statistics .statistics-title li.select .statistics-bubble{
+	border-color:#e98900;
+}
+.statistics .statistics-title li .statistics-bubble div:first-of-type{
+	font-size: 30px;
+}
+.statistics .statistics-title li .statistics-bubble div:last-of-type{
+	font-size:14px;
+}
+.statistics .statistics-title li .statistics-bubble div:last-of-type img{
+	margin-right:10px;
+}
+.statistics .statistics-title li .statistics-bubble .arrow{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0px);
+    -webkit-transform: translate(-50%,0px);
+    -moz-transform: translate(-50%,0px);
+    -ms-transform: translate(-50%,0px);
+    -o-transform: translate(-50%,0px);
+    bottom: -12px;
+    background-color: #fff;
+    display:none;
+}
+.statistics .statistics-title li.select .statistics-bubble .arrow{
+	display:block;
+}
+.statistics .statistics-page{
+	margin-top:30px;
+}
+.statistics .statistics-page .statistics-page-item{
+	display:none;
+	min-height:500px;
+	position:relative;
+	padding-bottom: 60px;
+}
+.statistics .statistics-page .statistics-page-item.select{
+	display:block;
+}
+.person-messaage li {
+	margin-bottom: 26px;
+}
+.person-messaage li .person-head {
+	float: left;
+	width: 74px;
+	height: 74px;
+	line-height:73px;
+	background-color: #ccc;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	overflow: hidden;
+}
+.person-messaage li .person-head img{
+	width:100%;
+}
+.person-messaage li .person-info {
+	float: left;
+	width:91%;
+	padding-left: 20px;
+}
+.person-messaage li .person-info .person-info-name {
+	color: #888;
+	letter-spacing: 2px;
+}
+.person-messaage li .person-info .person-info-name img {
+	width: 17px;
+	height: 17px;
+	margin-left: 6px;
+	vertical-align: top;
+}
+.person-messaage li .person-info .person-info-contain .person-info-text {
+	float: left;
+	margin: 10px 0px 12px 0px;
+	width: 90%;
+	font-weight: 700;
+	word-wrap:break-word;
+}
+.person-messaage li .person-info .person-info-contain .person-info-text a{
+	display: inline-block;
+}
+.person-messaage li .person-info .person-info-contain .person-info-text img{
+	width: 30px;
+}
+.person-messaage li .person-info .person-info-contain .person-info-text a.at{
+    color: #e98900;
+}
+.person-messaage li .person-info .person-info-contain .person-info-text a.myLabel{
+	color: #ff567c;
+}
+.person-messaage li .person-info .person-info-contain .person-info-revert{
+	float: right;
+	color:#E98900;
+	cursor: pointer;
+	text-indent: 25px;
+	padding: 5px 0px;
+	background: url(/img/social/liveshot/ProdigalPostDetail/message.png) 0px 4px no-repeat;
+	background-size: 20px;
+	-webkit-background-size: 20px;
+	-moz-background-size: 20px;
+	-ms-background-size: 20px;
+	-o-background-size: 20px;
+}
+.person-messaage li .person-info .big-expression{
+	margin:10px 0px;
+}
+.person-messaage li .person-info .big-expression img{
+	width:100px;
+	margin-right:10px;
+}
+.person-messaage li .person-info .big-expression img:nth-of-type(7n){
+	margin-right:0px;
+}
+.person-messaage li .person-info .big-expression img:last-of-type{
+	margin-right:0px;
+}
+.person-messaage li .person-info .person-info-time {
+	color: #888;
+	font-size: 12px;
+}
+.person-messaage li .person-info .person-info-record {
+	margin-top: 15px;
+}
+.person-messaage li .person-info .person-info-record .big-expression img:nth-of-type(7n){
+	margin-right: 10px;
+}
+.person-messaage li .person-info .person-info-record .big-expression img:nth-of-type(5n){
+	margin-right: 0px;
+}
+.person-messaage li .person-info .person-info-record li {
+	margin-bottom: 0px;
+	background-color: #F6F6F6;
+	padding: 14px;
+}
+.person-messaage li .person-info .person-info-record li .person-info-record-head{
+	width: 70px;
+	height: 70px;
+	line-height:69px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	background-color: #ccc;
+	float: left;
+	overflow: hidden;
+}
+.person-messaage li .person-info .person-info-record li .person-info-record-head img{
+	width: 100%;
+}
+.person-messaage li .person-info .person-info-record li .person-info-record-info {
+	float: left;
+	padding-left: 14px;
+	width: 85%;
+}
+.person-messaage li .person-info .person-info-record li .person-info-record-info .person-info-text {
+	width: 100%;
+}
+.checkAndGood{
+	overflow: hidden;
+	margin-top:20px;
+}
+.checkAndGood p{
+	font-weight:bold;
+	font-size:16px;
+	text-align: center;
+	text-indent:-50px;
+	margin:10px 0px 24px 0px;
+}
+.checkAndGood li{
+	float:left;
+	width: 100px;
+	margin:0px 12px 20px 0px;
+}
+.checkAndGood li.tourists .respondBox_fandPic {
+    border: 3px solid #ccc;
+    text-align: center;
+    color: #ccc;
+    line-height: normal;
+}
+.checkAndGood li.tourists .respondBox_fandPic div:first-of-type {
+    margin-top: 15px;
+    font-size: 16px;
+}
+.checkAndGood li.tourists .respondBox_fandPic div:last-of-type {
+    font-size: 18px;
+}
+.checkAndGood li:nth-of-type(8n){
+	margin-right:0px;
+}
+.checkAndGood li a{
+	display: block;
+	color:#000;
+    width: 100%;
+    height:100px;
+    text-align: center;
+}
+.respondBox_fandPic {
+    width: 75px;
+    height:75px;
+    line-height:74px;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin: 0 auto;
+}
+.respondBox_fandPic img {
+    width: 100%;
+}
+.respondBox_fansMess {
+    margin-top: 5px;
+    text-align: center;
+}
+.respondBox_fansMess div{
+	display: inline-block;
+	height:20px;
+}
+.respondBox_fansMess div:first-of-type{
+	height:20px;
+	max-width:80px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.respondBox_fansMess div img{
+	width:14px;
+	margin:-14px 0px 0px 2px;
+}
+.no-more-good{
+	background-color:#fff;
+	height:380px;
+	width:100%;
+	text-align: center;
+	color:#666;
+	padding-top:80px;
+}
+.no-more-good .title{
+	padding:10px 0px;
+}
+.no-more-good .img{
+	width:100px;
+	height: 128px;
+	margin:0px auto;
+}
+.no-more-good .img img{
+	width:100%;
+}
+.no-more-good .no-btn{
+	width:100px;
+	padding:5px;
+	margin:25px auto 0px auto;
+	background-color:#ff567d;
+	cursor:pointer;
+	color:#fff;
+	border-radius:8px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	-ms-border-radius:8px;
+	-o-border-radius:8px;
+	font-size:16px;
+}
+.person-good .no-more-good{
+	padding-top:40px;
+	display: none;
+}
+.person-good .no-more-good .img{
+	width:130px;
+}
+.click-upload-more {
+    font-size: 18px;
+    text-align: center;
+    padding-top: 30px;
+    color: #aaa;
+    border-top: 1px solid #aaa;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    visibility: hidden;
+}
+.click-upload-more span{
+	cursor: pointer;
+}
+.click-upload-more img{
+	margin:-2px 0px 0px 4px;
+}
+
+/*右邊*/
+.post-right{
+	float:left;
+	width:28%;
+	position:relative;
+}
+
+/*官方小編*/
+.poster{
+	background-color:#fff;
+	margin-bottom:10px;
+}
+.poster .poster-head{
+	width:280px;
+	margin:0 auto;
+	padding:15px 0px;
+}
+.poster .poster-head .head-img{
+	float:left;
+	width:90px;
+	height:90px;
+	line-height: 90px;
+	overflow: hidden;
+}
+.poster .poster-head .head-img img{
+	width: 100%;
+}
+.poster .poster-head .name{
+	width:190px;
+	padding-left:10px;
+	float:left;
+}
+.poster .poster-head .name div:first-of-type{
+	padding-top:10px;
+	font-size:22px;
+}
+.poster .poster-head .name div:last-of-type span{
+	font-size:36px;
+}
+.poster .poster-hot{
+	border-top:1px solid #F6E2E3;
+	padding:8px 0px;
+}
+.poster .poster-hot li{
+	float:left;
+	width:50%;
+	text-align: center;
+	padding:5px 0px 10px 0px;
+}
+.poster .poster-hot li:first-of-type{
+	border-right:1px solid #F6E2E3;
+}
+.poster .poster-hot li div:first-of-type{
+	font-size:30px;
+}
+.poster .poster-hot li div:last-of-type{
+	font-size:18px;
+	text-indent:20px;
+}
+.poster .poster-hot li div.topic{
+	background:url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/huati.png) 61px 2px no-repeat;
+}
+.poster .poster-hot li div.welcome{
+	background:url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/zan.png) 45px 1px no-repeat;
+}
+/*提及的商店*/
+.poster-about-shop{
+	background-color:#fff;
+	padding:15px 0px;
+	margin-bottom: 10px;
+	display: none;
+}
+.poster-tips{
+	font-size:20px;
+	border-left:2px solid #e98900;
+	text-indent: 18px;
+	margin-bottom:20px;
+}
+.poster-slider{
+	width:391px;
+	height:290px;
+	margin:0 auto;
+	overflow: hidden;
+	position:relative;
+}
+.poster-slider ul{
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	overflow: hidden;
+}
+.poster-slider ul li{
+	float:left;
+	width:391px;
+	height:100%;
+	text-align: center;
+}
+.poster-slider ul li .poster-slider-logo{
+	width:243px;
+	height:120px;
+	background-color:#f00;
+	margin:0 auto;
+}
+.poster-slider ul li .poster-slider-headimg{
+	width:80px;
+	height:80px;
+	overflow: hidden;
+	background-color:#f00;
+	margin:15px auto;
+}
+.poster-slider ul li .poster-slider-npc{
+	font-size:20px;
+}
+.poster-slider ul li .poster-slider-npcname{
+	padding:6px 0px;
+}
+.prev,
+.next{
+	position:absolute;
+	top:50%;
+	cursor: pointer;
+	-webkit-transform: translate(0px,-50%);
+	-moz-transform: translate(0px,-50%);
+	-ms-transform: translate(0px,-50%);
+	-o-transform: translate(0px,-50%);
+	transform: translate(0px,-50%);
+	background-color:rgba(0,0,0,0.3);
+	padding:0px 5px;
+	display:none;
+}
+.prev{
+	left:0px;
+}
+.next{
+	right:0px;
+}
+.prev div,
+.next div{
+	padding:12px 0px;
+}
+.prev div img,
+.next div img{
+    width: 15px;
+    display: block;
+}
+.poster-about-shop .go-btn{
+    border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border: 1px solid #E98900;
+    cursor: pointer;
+    height: 50px;
+    width: 80%;
+    margin:15px auto 0px auto;
+    text-align: center;
+    line-height:50px;
+    font-size:18px;
+    color: #E98900;
+}
+/*提及的商品*/
+.poster-about-shopping{
+	background-color:#fff;
+	padding:15px 5px 15px 0px;
+	margin-bottom: 10px;
+	display: none;
+}
+.poster-about-shopping .shop-list{
+	height:670px;
+	-ms-overflow-x: hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-ms-overflow-y: auto;
+	padding:0px 20px;
+}
+.poster-about-shopping .shop-list li{
+	width:100%;
+	padding-bottom:20px;
+}
+.poster-about-shopping .shop-list li .img{
+	width:100px;
+	height:100px;
+	background-color:#ccc;
+	float:left;
+}
+.poster-about-shopping .shop-list li .shop-describe{
+	width:65%;
+	height:100px;
+	float:left;
+	position:relative;
+	margin-left:15px;
+}
+.poster-about-shopping .shop-list li .shop-describe .shop-describe-title{
+	font-weight:600;
+	font-size:16px;
+}
+.poster-about-shopping .shop-list li .shop-describe .describe-number{
+	position:absolute;
+	left:0px;
+	bottom: 0px;
+	width:230px;
+}
+.poster-about-shopping .shop-list li .shop-describe .describe-number div{
+	width:50%;
+	float:left;
+	text-indent:36px;
+	padding:5px 0px 2px 0px;
+	color:#aaa;
+}
+.poster-about-shopping .shop-list li .shop-describe .describe-number div:first-of-type{
+	background : url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/eye.png) 0px 7px no-repeat;
+}
+.poster-about-shopping .shop-list li .shop-describe .describe-number div:last-of-type{
+	background : url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/pack.png) 5px 3px no-repeat;
+}
+
+/*我想說說*/
+.what-say{
+	padding:15px;
+	background-color:#fff;
+	display:none;
+}
+.what-say .head-img{
+	width:100px;
+	height:100px;
+	line-height: 100px;
+	margin:12px auto;
+	background-color:#666;
+	overflow: hidden;
+}
+.what-say .head-img img{
+	width: 100%;
+}
+.what-say .say-text{
+	font-size:20px;
+	font-weight:bold;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+
+/*沒有更多內容*/
+.no_more,
+.no-more{
+    position: absolute;
+    bottom: 0px;
+    color: #888;
+    font-size: 18px;
+    left: 50%;
+    transform: translate(-50%,0px);
+    display: none;
+}
+/*點讚、取消讃好*/
+#praise-post .praise {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 888;
+    width: 298px;
+    background-color: #fff;
+    text-align: center;
+    padding: 14px 26px;
+    color: #e98900;
+    letter-spacing: 2px;
+    border: 2px solid #e98900;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    display: none;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+#praise-post .praise div{
+    font-size: 22px;
+    font-weight: bold;
+}
+#praise-post .praise div img {
+    margin-top: -6px;
+    margin-right: 10px;
+}
+
+
+/*回復成功加分提示*/
+.comment-success-tips{
+	display: none;
+	position:relative;
+	z-index: 888;
+}
+.comment-success-tips .praise{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 888;
+    width: 298px;
+    background-color: #fff;
+    text-align: center;
+    padding: 20px 26px 14px 26px;
+    color: #ff567c;
+    letter-spacing: 2px;
+    border: 2px solid #ff567c;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+#comment-success-tips-error .praise{
+	width: 368px;
+}
+#comment-success-tips-empty .praise{
+	width: 320px;
+	padding: 14px 26px 14px 26px;
+}
+.comment-success-tips .praise div:nth-of-type(1){
+    font-size: 22px;
+    font-weight: bold;
+}
+.comment-success-tips .praise div:nth-of-type(1) img{
+    margin-top: -6px;
+    margin-right: 10px;
+}
+.comment-success-tips .praise div:nth-of-type(2){
+    color: #000;
+    padding: 6px 0px;
+    font-size: 18px;
+}
+.comment-success-tips .praise div:nth-of-type(3){
+    font-size: 50px;
+}
+
+
+/*一篇帖子都沒有*/
+#no-post{
+	text-align: center;
+	font-size:20px;
+	color:#aaa;
+	padding-top:90px;
+}
+#no-post div{
+	margin-bottom: 15px;
+}
+#no-post img{
+	width: 120px;
+}
+
+.post-list{
+	position: relative;
+}

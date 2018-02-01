@@ -1,0 +1,9 @@
+.unconfirmed_returnMain_change{
+	display: none;
+}
+.unconfirmed_tabBox ul li:last-of-type{
+	background-color: #FF527C;
+}
+.unconfirmed_tabBox ul li:last-of-type a{
+	color: #FFFFFF;
+}
