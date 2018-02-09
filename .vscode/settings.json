@@ -1,7 +1,10 @@
 {
-    "liveServer.settings.host": "dev.macaoeasybuy.com",
-    "liveServer.settings.port": 80,
-    "editor.autoIndent": true,
-    "files.eol": "\n",
-    "files.insertFinalNewline": true,
+  "liveServer.settings.host": "127.0.0.1",
+  "liveServer.settings.port": 5555,
+  "liveServer.settings.ChromeDebuggingAttachment": false,
+  "liveServer.settings.NoBrowser": true,
+  "editor.autoIndent": true,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "git.ignoreLimitWarning": true,
 }
