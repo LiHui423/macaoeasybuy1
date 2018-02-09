@@ -1,1 +1,208 @@
-/*作廢*/
+@import './variable.scss';
+@import './mixin.scss';
+@mixin pop {
+  position: relative;
+  padding-right: 38px;
+  &:before {
+    border-right: 10px solid $color20;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: 24px;
+    content: "";
+  }
+  &:after {
+    content: attr(data-count);
+    border-radius: 12px;
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 24px;
+    background-color: $color20;
+    right: 0;
+    top: 12px;
+    line-height: 25px;
+    padding-left: 1px;
+    font-size: 15px;
+    color: #fff;
+  }
+}
+#page-header {
+  background-color: $color21;
+  height: 70px;
+  color: $color20;
+  a {
+    color: $color20;
+  }
+  span {
+    display: block;
+    box-sizing: border-box;
+    height: 36px;
+  }
+  .e-container {
+    width: $common-width;
+    height: 100%;
+    > div {
+      height: 100%;
+      position: relative;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+  .nav {
+    float: left;
+    width: 275px;
+    height: 100%;
+    > div {
+      float: left;
+      width: 120px;
+      text-align: center;
+      height: 100%;
+      padding: 17px 0;
+      &:hover div {
+        display: block;
+      }
+      &:last-child {
+        width: 107px;
+        margin-left: 20px;
+      }
+      > div {
+        background-color: #fff;
+        position: fixed;
+        left: 0;
+        top: 70px;
+        width: 100vw;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px solid $color21;
+        z-index: 1;
+      }
+    }
+    .e-container {
+      width: $common-width;
+      li {
+        float: left;
+        width: calc(1397px / 11);
+      }
+    }
+    span {
+      line-height: 36px;
+      background-position: 0 45%;
+      padding-left: 22px;
+      &:hover {
+        background: $color20;
+        color: #fff;
+        border-radius: 20px;
+      }
+    }
+    .shopping span {
+      background-repeat: no-repeat;
+      width: 120px;
+      background-position: 16% 44%;
+      background-image: url("/img/common/icon/header-shopping.png");
+      &:hover {
+        background-image: url("/img/common/icon/header-shopping-hover.png");
+      }
+    }
+    .social span {
+      background-repeat: no-repeat;
+      width: 107px;
+      background-position: 18% 48%;
+      background-image: url("/img/common/icon/header-social.png");
+      &:hover {
+        background-image: url("/img/common/icon/header-social-hover.png");
+      }
+    }
+  }
+  .right {
+    float: right;
+    > * {
+      display: block;
+      float: left;
+    }
+    > a {
+      height: 50px;
+      line-height: 50px;
+      margin: 10px;
+      &[data-count] {
+        @include pop;
+      }
+      &:last-of-type {
+        margin-left: 20px;
+        position: relative;
+        &::before {
+        content: "|";
+        color: $color20;
+        position: absolute;
+        left: -15px;
+        top: -1px;
+      }
+      }
+    }
+    > div {
+      width: 90px;
+      height: 100%;
+      padding: 17px 10px;
+      position: relative;
+      &:hover {
+        background-color: #fff;
+        ul {
+          display: block;
+        }
+      }
+      span {
+        line-height: 36px;
+      }
+      ul {
+          z-index: 1;
+          display: none;
+          position: absolute;
+          border: 1px solid $color21;
+          border-top: none;
+          background-color: #fff;
+      }
+      &.user {
+        ul {
+          top: 70px;
+          right: -1px;
+        }
+        li {
+          width: 120px;
+          border-top: 1px solid $color21;
+          padding: 10px;
+          &:first-of-type {
+            border-top: none;
+            height: 100px;
+          }
+        }
+        img {
+          margin: 18px auto;
+        }
+      }
+      &.appdl {
+        ul {
+          width: 416px;
+          padding: 30px;
+          right: -1px;
+          top: 70px;
+        }
+        li {
+          float: left;
+          margin-left: 10px;
+          color: $font;
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+        img {
+          padding: 5px;
+          border: 1px solid $border;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

@@ -55,11 +55,17 @@ function scss(sp, dp) {
     const isGlob = srcPath.indexOf('*') !== -1;
     return gulp.src(srcPath)
         .pipe(m.sourcemaps.init())
-        .pipe(m.replace(/("|'|\()\/(css|js|img)\//gim, match => link(match, 'dev')))
         .pipe(m.sass().on('error', m.sass.logError))
         .pipe(m.autoprefixer(
             { browsers: ['last 2 version', 'not ie <= 8'] }
         ))
+        .pipe(m.base64({
+          baseDir: 'src',
+          extensions: ['svg', 'png', 'jpg', 'jpeg'],
+          maxImageSize: 8 * 1024,
+          debug: true,
+        }))
+        .pipe(m.replace(/("|'|\()\/(css|js|img)\//gim, match => link(match, 'dev')))
         .pipe(m.sourcemaps.write('.'))
         .pipe(gulp.dest(destPath));
 }
