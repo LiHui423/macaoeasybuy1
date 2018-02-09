@@ -2,8 +2,6 @@ $containerWidth: 968px;
 html,
 body {
     width: $containerWidth;
-    min-width: $containerWidth;
-    max-width: $containerWidth;
     overflow: hidden;
 }
 .dynamic-type-tabs {
@@ -127,6 +125,7 @@ body {
     position: relative;
     .sort-box {
         position: relative;
+        display: none;
         *zoom: 1;
         &:after {
             display: table;
@@ -134,12 +133,16 @@ body {
             content: " ";
         }
     }
+    &[data-active="0"] > .sort-box:nth-of-type(1),
+    &[data-active="1"] > .sort-box:nth-of-type(2),
+    &[data-active="2"] > .sort-box:nth-of-type(3) {
+      display: block;
+    }
 }
 
 .dynamic-item {
     //(928-220*4)/3
     width: 220px;
-    margin: 20px 16px 0 0;
     position: relative;
     visibility: hidden;
     &:nth-of-type(1),

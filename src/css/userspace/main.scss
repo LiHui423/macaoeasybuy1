@@ -1,4 +1,6 @@
-$color1: #e98900;
+@import '../common/mixin.scss';
+@import '../common/variable.scss';
+
 body {
   background: no-repeat fixed;
   background-size: 100% auto;
@@ -136,7 +138,7 @@ body {
 /*右側內容*/
 #right-content {
   float: right;
-  width: 93.69%;
+  width: 1307px;
 }
 
 /*用戶資料*/
@@ -438,11 +440,20 @@ body {
     line-height: 85px;
     font-size: 24px;
     background: #fff;
-    color: $color1;
+    color: $color10;
     margin-bottom: 5px;
     position: relative;
     padding-left: 100px;
     cursor: pointer;
+    span:last-of-type {
+      padding-left: 34px;
+      font-size: 18px;
+      color: #aaa;
+    }
+    &:hover {
+      background-color: $color10;
+      color: #fff;
+    }
     &::before {
       display: block;
       position: absolute;
@@ -455,23 +466,47 @@ body {
       background-repeat: no-repeat;
       background-position: center;
     }
-    &[data-space-nav="dynamic"]::before {
+    &[data-space-type="dynamic"]::before {
       background-image: url(/img/userspace/common/leftmenu/userin_ica1.png);
     }
-    &[data-space-nav="love"]::before {
+    &[data-space-type="love"]::before {
       background-image: url(/img/userspace/common/leftmenu/userin_ica2.png);
     }
-    &[data-space-nav="like"]::before {
+    &[data-space-type="praise"]::before {
       background-image: url(/img/userspace/common/leftmenu/userin_ica3.png);
     }
-    &[data-space-nav="daily"]::before {
+    &[data-space-type="daily"]::before {
       background-image: url(/img/userspace/common/leftmenu/userin_ica4.png);
     }
-    &[data-space-nav="album"]::before {
+    &[data-space-type="album"]::before {
       background-image: url(/img/userspace/common/leftmenu/userin_ica5.png);
     }
-    &[data-space-nav=""]::before {
-      background-image: url()
+    &[data-space-type="life"]::before {
+      background-image: url(/img/userspace/common/leftmenu/userin_ica6.png);
+    }
+    &[data-space-type="buy"]::before {
+      background-image: url(/img/userspace/common/leftmenu/userin_ica7.png);
+    }
+    &[data-space-type="used"]::before {
+      background-image: url(/img/userspace/common/leftmenu/userin_ica8.png);
+    }
+    &[data-space-type="fair"]::before {
+      background-image: url(/img/userspace/common/leftmenu/userin_ica9.png);
+    }
+    &[data-space-type="label"]::before {
+      background-image: url(/img/userspace/common/leftmenu/userin_ica10.png);
+    }
+    &[data-space-type="shop"]::before {
+      background-image: url(/img/userspace/common/leftmenu/userin_ica11.png);
+    }
+    &[data-space-type="relation"]::before {
+      background-image: url(/img/userspace/common/leftmenu/userin_ica12.png);
+    }
+  }
+  @for $i from 0 through 11 {
+    &[data-active="#{$i}"] > li:nth-of-type(#{$i+1}) {
+      background-color: $color10;
+      color: #fff;
     }
   }
 }
@@ -654,10 +689,13 @@ body {
 /*內容板塊*/
 #userspace-content {
   float: right;
-  width: 74%;
+  width: 970px;
   background-color: rgba(255, 255, 255, .3);
   iframe {
     width: 100%;
     min-height: 1000px;
+    body {
+      width: 100% !important;
+    }
   }
 }

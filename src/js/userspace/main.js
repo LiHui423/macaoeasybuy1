@@ -1,4 +1,4 @@
-new Effect({
+const u = new Effect({
     el: '#userspace',
     data: {
         ApiO: {
@@ -16,9 +16,25 @@ new Effect({
                     seeUserId: null,
                 }
             },
+        },
+        isSelf: null,
+        doms: {
+            $spaceNav: $('#white-menu'),
+            $control: $('#left-menu'),
+            $infoPanel: $('#user-info'),
+            $newsPush: $('#news-push'),
+            $content: $('iframe'),
         }
     },
     methods: {
+        initApiO() {
+            const sid = this.$_data.search || this.$_data.userInfo.id;
+            this.$_data.isSelf = sid === this.$_data.userInfo.id;
+            Object.keys(this.$_data.ApiO).forEach(o => {
+                this.$_data.ApiO[o].params.userId = this.$_data.userInfo.id;
+                this.$_data.ApiO[o].params.seeUserId = sid;
+            });
+        },
         insertHeader() {
             const $header = $('#page-header');
             const data = this.$_data.userInfo;
@@ -33,10 +49,7 @@ new Effect({
             });
         },
         insertSpaceInfo() {
-            const $container = $('#user-info');
             const apio = this.$_data.ApiO.spaceInfo;
-            apio.params.userId = this.$_data.userInfo.id;
-            apio.params.seeUserId = this.$_data.URLParams.uid ? this.$_data.URLParams.uid : apio.params.userId;
             const url = Effect.methods('getRequestURL')(apio);
             $.ajax({
                 url,
@@ -46,27 +59,33 @@ new Effect({
                     const data = res['userInfo'];
                     this.$_data.spaceInfo = data;
                     const templateString = this.$_data.template['userInfo'];
-                    $container.html(template.render(templateString, data));
-                    const style = `body{background-image: url(//img.macaoeasybuy.com/img/userspace/test-bgimage.jpg);}.userinfo-panel{background-image: url(//img.macaoeasybuy.com/img/userspace/common/userin_1.png);}`;
+                    this.$_data.doms.$infoPanel.html(template.render(templateString, data));
+                    const style = `body{background-image: url(//img.macaoeasybuy.com/img/userspace/background-image.jpg);}.userinfo-panel{background-image: url(//img.macaoeasybuy.com/img/userspace/common/userin_1.png);}`;
                     $('head > link[rel="stylesheet"]:last').after(`<style>${style}</style>`);
                 }
             });
         },
-        loadIframe() {
-            const iframe = document.querySelector('iframe');
-            iframe.setAttribute('src', '/dynamic/index.html');
+        loadIframe(type) {
+            const $iframe = this.$_data.doms.$content;
+            $iframe.attr('src', `/${type}/index.html`);
+            sessionStorage.setItem('isSelf', this.$_data.isSelf);
+            sessionStorage.setItem('userID', this.$_data.userInfo.id);
+            sessionStorage.setItem('spaceID', this.$_data.search ? this.$_data.search.uid : this.$_data.userInfo.id);
+            $iframe.on('load', () => {
+                $iframe[0].contentDocument.body.onresize = () => {
+                    console.log('1');
+                }
+                // console.log($iframe[0].contentDocument.body.);
+            });
         },
         insertControl() {
-            const $container = $('#left-menu');
             const templateString = this.$_data.template['leftmenu'];
-            $container.html(template.render(templateString));
+            this.$_data.doms.$control.html(template.render(templateString));
         },
         insertSpaceNav() {
-            const $container = $('#white-menu');
+            const doms = this.$_data.doms;
             const templateString = this.$_data.template['whitemenu'];
             const apio = this.$_data.ApiO.spaceNav;
-            apio.params.userId = this.$_data.userInfo.id;
-            apio.params.seeUserId = this.$_data.URLParams.uid ? this.$_data.URLParams.uid : apio.params.userId;
             const url = Effect.methods('getRequestURL')(apio);
             $.ajax({
                 url,
@@ -74,15 +93,17 @@ new Effect({
                 dataType: 'JSONP',
                 success: (responseJSON) => {
                     const data = responseJSON['userSpaceCount'];
-                    $container.html(template.render(templateString, data));
+                    doms.$spaceNav.html(template.render(templateString, data));
+                    const type = doms.$spaceNav.children().eq(0).attr('data-space-type');
+                    doms.$spaceNav.attr('data-active', 0);
+                    this.loadIframe(type);
                     this.bindSpaceNavClick();
                 },
             });
         },
         insertNewPush() {
-            const $container = $('#news-push');
             const templateString = this.$_data.template['newspush'];
-            $container.html(template.render(templateString));
+            this.$_data.doms.$newsPush.html(template.render(templateString));
         },
         userInfoBindClickPoint(followed, isSelf) {
             const $followsShow = $('#follows-show');
@@ -155,14 +176,19 @@ new Effect({
             });
         },
         bindSpaceNavClick() {
-            $('#white-menu').on('click', 'li', (e) => {
-                console.log(e.target);
+            const doms = this.$_data.doms;
+            doms.$spaceNav.on('click', 'li', e => {
+                const $e = e.target.tagName === 'LI' ? $(e.target) : $(e.target).parent();
+                const index = $e.index();
+                const type = $e.attr('data-space-type');
+                doms.$spaceNav.attr('data-active', index);
+                this.loadIframe(type);
             })
-        }
+        },
     },
     resBack() {
+        this.initApiO();
         this.insertHeader();
-        this.loadIframe();
     },
     after() {
         this.insertSpaceInfo();

@@ -1,0 +1,16 @@
+// 重置ul
+@mixin resetul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// 清除浮动
+@mixin clearfloat {
+  *zoom: 1;
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
