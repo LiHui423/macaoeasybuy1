@@ -13,6 +13,7 @@ $(function(){
 function museumBannerBox(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/MallshopingMessController/queryMessAdvertisement/10126/10107/false/true.easy",function(json){
 		var museumBannerList = json;
+		console.log(museumBannerList);
 		var html = template("showMuseumBanner", museumBannerList);
 		$(".museum_bannerBox").html(html);
 		$(".museum_banner_tabBox ul li:nth-child(1)").addClass('museum_banner_tabcurr');
@@ -23,9 +24,15 @@ function museumBannerBox(){
 function TodayDesignBox(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsYiPingController/queryYiShangpin/8/0/buy_date/desc/1.easy",function(json){
 		var TodayDesignList = json;
-		var html = template("showTodayDesign", TodayDesignList);
-		$(".museum_todayDesign").html(html);
-		todayDesign();
+		console.log(TodayDesignList);
+		if(TodayDesignList.list[0].length===0){
+			$('.museum_willSell').css('diaplay','none');
+			
+		}else{
+			var html = template("showTodayDesign", TodayDesignList);
+			$(".museum_todayDesign").html(html);
+			todayDesign();
+		}
 	});
 }
 /*人氣設計的左邊商品數據*/
@@ -52,13 +59,18 @@ function popularCommentBox(){
 	});
 	
 }
+// 即將開賣的模板
 function willSellBox(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsYiPingController/queryYiShangpin/4/0/NEWID()/desc/2.easy",function(json){
 		var willSellList = json;
-		var html = template("showWillSellBox", willSellList);
-		$(".museum_willSell").html(html);
-		setInterval(calcMuseumBegin, 1000);
-		DetailsPop()
+		if(willSellList.list[0].length === 0){
+			$('.museum_willSell').css('display','none');
+		}else{
+			var html = template("showWillSellBox", willSellList);
+			$(".museum_willSell").html(html);
+			setInterval(calcMuseumBegin, 1000);
+			DetailsPop()
+		}
 	});
 }
 

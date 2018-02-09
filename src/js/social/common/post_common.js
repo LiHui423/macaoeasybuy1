@@ -1,3 +1,4 @@
+
 //檢測並且執行吸頂
 function checkAndGoScrollTop(){
 	var flag = false;
@@ -54,8 +55,11 @@ function rightScrollTop(){
 }
 //用戶姓名，頭像，性別
 function userInfo(a,b,c){
+	console.log(a);
+	console.log(b);
+	console.log(c);
 	$('#other-mess-name span,#mine-other-post .poster-name,#mine-other-poster .poster-name').html(a);
-	$('#messBox_pic img,#mine-other-poster img.head-img').attr('src',easyBuy.global.osURL+b);
+	$('#messBox_pic img,#mine-other-poster img.head-img').attr('src','//wap.macaoeasybuy.com'+b);
 	$('#messBox_pic img,#mine-other-poster img.head-img').attr('data-type','userAvatar');
 	if(c=='Girl'){
 		$('#other-mess-name img').attr('src','/img/common/girl.png');
@@ -67,7 +71,7 @@ function userInfo(a,b,c){
 function otherMessShop(data){
 	if(data.length != 0){
 		for(var i=0;i<data.length;i++){
-			var html = '<li data-id="'+data[i].id+'"><img src="'+easyBuy.global.osURL+data[i].logo+'"></li>';
+			var html = '<li data-id="'+data[i].id+'"><img src="'+'//wap.macaoeasybuy.com'+data[i].logo+'"></li>';
 			$('#otherMess_shop').append(html);
 		}
 	}else{
@@ -93,7 +97,7 @@ function commodity(data){
 function bigEmoji(data){
 	if(data == undefined) return false;
 	for(var i=0;i<data.length;i++){
-		var html = '<li><img src="'+easyBuy.global.osURL+data[i]+'"></li>'
+		var html = '<li><img src="'+'//wap.macaoeasybuy.com'+data[i]+'"></li>'
 		$('#atricle_emjo').append(html);
 	}
 }
@@ -210,7 +214,7 @@ function responseCard(postType){
 			},
 			success:function(data){
 				data.replyList.page = page;
-				var html = template.render(responseTemplate, data.replyList);
+				var html = template('response', data.replyList);
 				$('#response-list-inner .no-more').before(html);
 				//如果沒有數據的時候，出現暫時沒有任何人評論
 				if(data.replyList.replyList.length == 0 && page == 0){
@@ -314,7 +318,8 @@ function checkCard(objBtn,postType){
 				scrollReq('off');
 			},
 			success:function(data){
-				var html = template.render(checkTemplate, data.result);
+				console.log(data);
+				var html = template('check', data.result);
 				if(page == 0){
 					var tourists = '<li class="tourists"><div class="respondBox_fandPic"><div>'+data.result.touristcount+'</div><div>遊客</div></div><div class="respondBox_fansMess clearfloat"><div></div><div></div></div></li>';
 					$('#check-list-inner').prepend(tourists);
@@ -515,6 +520,7 @@ function queryTopicCount(type,topicType){
 	var type = type;
 	var topicType = topicType;
 	$.getJSON('http://userspace1.macaoeasybuy.com/userSpaceIndexController/queryTopicCount.easy?type='+type+'&id='+postId+'&topicType='+topicType+'&easybuyCallback=?',function(data){
+		console.log(data);
 		$('#statistics-title li:first-of-type .statistics-bubble div:first-of-type')[0].dataNum = data.topicCount.commentNum;
 		$('#statistics-title li:nth-of-type(2) .statistics-bubble div:first-of-type')[0].dataNum = data.topicCount.seeNums;
 		$('#statistics-title li:last-of-type .statistics-bubble div:first-of-type')[0].dataNum = data.topicCount.loveNums;
@@ -554,7 +560,7 @@ function postBanner(opt){
 				if(newData[i].pic===undefined){
 					var html='<li><img middle="true" src="/img/common/loadnow.jpg"></li>'
 				}else{
-					var html = '<li><img middle="true" src="'+easyBuy.global.osURL+newData[i].pic+'"></li>';
+					var html = '<li><img middle="true" src="'+'//wap.macaoeasybuy.com'+newData[i].pic+'" onerror=this.src="/img/common/loadnow.jpg"></li>';
 				}
 				$('#foodBannerul').append(html);
 			}

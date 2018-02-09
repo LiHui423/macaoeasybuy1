@@ -108,6 +108,7 @@
 		<script src="/js/common/header&search&footer/header.js"></script>
 		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 		<script src="/js/social/market/treasureclassifydetail/treasureclassifydetail.js "></script>
+		<script src="/js/common/clickEvent.js"></script>
 		<!--市集話題模板-->
 		<script id="townDataHtml" type="text/html" data-type="template">
 			<%for(var i=0;i<totalCount;i++){%>
@@ -186,7 +187,7 @@
 								<a href="#">
 									<%if(result[i].userPic.length != 0){%>
 										<div class="top-banner">原價-<span><%=result[i].discount%></span>%</div>
-										<img src="//wap.macaoeasybuy.com<%=result[i].userPic%>" class="page-main-head-img ">
+										<img src="//wap.macaoeasybuy.com<%=result[i].userPic%>" class="page-main-head-img " onerror="this.src='/img/common/loading_pc_220.jpg'">
 									<%}else{%>
 										<div class="top-banner not">原價-<span><%=result[i].discount%></span>%</div>
 									<%}%>

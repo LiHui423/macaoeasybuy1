@@ -60,6 +60,7 @@
 <script src="/js/common/header&search&footer/header.js"></script>
 <script src="/js/social/easylive/easylivealbum/albumclassification/albumclassification.js"></script>
 <script src="/js/social/easylive/easylivealbum/albumclassification/albumclassification_data.js"></script>
+<script src="/js/common/clickEvent.js"></script>
 
 <script id="info" type="text/html" data-type="template">
 	<div class="class-icon"><img src="//wap.macaoeasybuy.com<%=list[0].thealbumClassPic%>"></div>
@@ -74,7 +75,7 @@
 </script>
 <script id="list" type="text/html" data-type="template">
 	<% for (var i=0,j=list.length; i<j; i++) { %>
-	<div class="list-item">
+	<div class="list-item" data-id="<%=list[i].id%>">
 		<div class="item-title"><%=list[i].thealbumName%></div>
 		<% if(list[i].thecoverpictureurl !== "") { %>
 		<div class="item-img">
@@ -107,7 +108,9 @@
 			</table>
 		</div>
 		<div class="item-poster">
-			<div class="poster-avatar"><img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=list[i].userpic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+			<div class="poster-avatar" data-id="<%=list[i].userid%>">
+				<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=list[i].userpic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+			</div>
 			<div class="poster-info">
 				<div class="poster-name clearfloat">
 					<span><%=list[i].userName%></span>
@@ -140,7 +143,9 @@
 						</tr>
 					</table>
 				</div>
-				<div class="hot-list-poster-head"><img src="//wap.macaoeasybuy.com<%=list[i].userPic%>" alt=""></div>
+				<div class="hot-list-poster-head" data-id="<%=list[i].userId%>">
+					<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=list[i].userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+				</div>
 				<div class="hot-list-poster-name"><%=list[i].userName%><%if(list[i].userSex==='Girl'){%><img src="/img/common/girl.png" alt=""><%}%></div>
 				<div class="shadow-box"></div>
 			</div>

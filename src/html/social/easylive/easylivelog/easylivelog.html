@@ -153,6 +153,7 @@
         <script src="/js/plug/yeztemplate.js"></script>
 		<script src="/js/social/easylive/easylivelog/easylivelog.js"></script>
 		<script src="/js/social/easylive/easylivelog/easylivelog_data.js"></script>
+		<script src="/js/common/clickEvent.js"></script>
 		<script id="queryReleaseClassInfo" type="text/html" data-type="template">
 			<% for(var i=0; i < data.length; i++) {%>
 					<li id="<%=data[i].id%>" class="<%=isActive(1,data[i].biggestOrder)%>">
@@ -179,7 +180,7 @@
                 </div>
                 <ul class="head-img clearfloat">
                     <%for(var i=0; i < data[0].visitors.length; i++) {%>
-                    <li id="<%=data[0].visitors[i].id%>"><img src="//wap.macaoeasybuy.com<%=data[0].visitors[i].pic%>"></li>
+                    <li data-id="<%=data[0].visitors[i].id%>"><img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=data[0].visitors[i].pic%>"></li>
                     <%}%>
                 </ul>
             </div>

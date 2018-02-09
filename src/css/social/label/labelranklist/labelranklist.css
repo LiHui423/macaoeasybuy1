@@ -170,6 +170,26 @@
     color: #000;
     margin-top:15px;
 }
+/* 后增加 */
+
+#underline{
+	position: relative;
+}
+#underline:after{
+	content: "";
+	width: 0;
+	height: 1px;
+	background: #222222;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transition: all .3s;
+}
+#underline:hover:after{
+	left: 0%;
+	width: 100%;
+}
+/*  */
 .ranklist-left .ranklist-contain .ranklist-lister .lister-info .label-class{
 	width:84px;
     font-size: 18px;

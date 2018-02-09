@@ -2,6 +2,7 @@ easyBuy.global.beforeDataJs = function(){
 	bannerData();
 	queryFairClassInfoFunc();
 	townData();
+	goTopicDetail();//話題列表點擊事件
 }
 var mygoodbanner = easyBuy.global.dep.mygoodbanner;
 var formatNum = easyBuy.global.dep.formatNum;
@@ -168,7 +169,8 @@ function mySlider(obj) {
 				var newData = data.result;
 				$.each(newData.fairTopicList,function(k,y){
 					li.eq(k).find('.title-img').html('<img src="'+easyBuy.global.osURL+y.pic+'">');
-					li.eq(k).find('.mdetail_div_topicfont').html(y.title);
+					li.eq(k).find('.mdetail_div_topic_detail').attr('data-id',y.id);
+					li.eq(k).find('.mdetail_div_topicfont').html('<a id="underline">'+y.title+'</a>');
 					li.eq(k).find('.mdetail_topic_text').html(y.content.replace(/<.*?>/ig,'').substring(0,70));
 				});
 				if(bool==true && btn == 'next'){
@@ -395,6 +397,7 @@ function queryFairClassDetailInfo(id,className){
 	var easyUrl = 'http://social.macaoeasybuy.com';
 	var dataUrl = ipUrl + '/fairQuerySocialController/queryFairClassDetailInfo.easy?id='+id+'&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
+		console.log(data);
 		$('#' + id + '-queryFairClassInfo-box .mdetail_div_topic_right .number').each(function(k){
 			switch(k){
 				case 0:
@@ -410,7 +413,7 @@ function queryFairClassDetailInfo(id,className){
 		});
 		var html = ''
 		$.each(data.result[0].userList, function(k,y) {
-			html += '<li><img src=http://mbuy.oss-cn-hongkong.aliyuncs.com/' + y.pic + '></li>';
+			html += '<li data-id='+y.id+'><img data-type="userAvatar" src=http://mbuy.oss-cn-hongkong.aliyuncs.com/' + y.pic + '></li>';
 		});
 		html = html == '' ? '<div>暫無人訪問</div>' : html;
 		$('#' + id + '-queryFairClassInfo-box .artTempFans').html(html);
@@ -489,18 +492,40 @@ function townData() {
 	var townDataHtmlTemplate = easyBuy.global.template['townDataHtml'];
 	$.getJSON(dataUrl,function(data){
 		var newData = data.result;
+		console.log(newData);
 		var html = template.render(townDataHtmlTemplate, newData);
 		$('#itemContainer').html(html);
+
 		//多少個宜粉查看
 		$('#mdcategory_TopicFansNum').html(formatNum(newData.seeCount));
 		//一開始的四個數據
 		$.each(newData.fairTopicList,function(k,y){
 			$('.mdetail_div_topic_detail .title-img').eq(k).html('<img src="'+easyBuy.global.osURL+y.pic+'">');
-			$('.mdetail_div_topicfont').eq(k).html(y.title);
+			$('.mdetail_div_topic_detail').eq(k).attr('data-id',y.id);
+			$('.mdetail_div_topicfont').eq(k).html('<a id="underline">'+y.title+'</a>');
 			$('.mdetail_topic_text').eq(k).html(y.content.replace(/<.*?>/ig,'').substring(0,70));
 		});
 		mySlider({
 			slider: $('#itemContainer')
 		});
 	});
+}
+//市集話題點擊跳轉事件
+function goTopicDetail(){
+	$('#itemContainer').on('click',function(e){
+		var target=e.target;
+		console.log(target);
+		if($(target).attr('id')==="underline"){
+			console.log('34');
+			var topicId=$(target).parent().parent().attr('data-id');
+			window.open('http://social.macaoeasybuy.com/market/treasureclassifydetail/fairofficialpost/fairofficialpost.html?topicId='+topicId);
+		}
+	})
+	$('body').on('click',function(e){
+		var target=e.target;
+		if($(target).hasClass('pillar-shadow')){
+			var postId=$(target).parents('.pillar-all').attr('id').split('-')[0];
+			window.open('http://social.macaoeasybuy.com/market/treasureclassifydetail/fairpostdetail/fairpostdetail.html?id='+postId);
+		}
+	})
 }

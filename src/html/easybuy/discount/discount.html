@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="/css/easybuy/discount/discount.css">
 		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON"></script>
 		<script src="/js/plug/handlebars.runtime-v4.0.5.js"></script>
 		<style type="text/css">
 			.navBar_borderBox{
@@ -100,6 +101,7 @@
 	<!--今日降價的js-->
 	<script src="/js/easybuy/discount/discount.js"></script>
 	<script src="/js/common/header&search&footer/footer.js"></script>
+	<script src="/js/common/clickEvent.js"></script>
 	
 	<!--banner模板-->
 	<script type="text/html" id="showBannerPic" data-array = "bannerPicList">
@@ -119,7 +121,7 @@
 			<%}else{%>
 				<div class="discount_goodEach noPic"data-id = <%=list[i].id%> >
 			<%}%>
-				<div class="discount_goodEach_pic"><img onclick="goDetail(this,event)" data-src='//wap.macaoeasybuy.com/<%=list[i].pic2%>' src='//wap.macaoeasybuy.com/<%=list[i].pic2%>'></div>
+				<div class="discount_goodEach_pic"><img data-src='//wap.macaoeasybuy.com/<%=list[i].pic2%>' src='//wap.macaoeasybuy.com/<%=list[i].pic2%>'></div>
 				<div class="discount_goodEach_mess">
 					<div class="discount_goodEach_size clearfloat">
 						<%for(var k = 0;k <list[i].tupianlist.length;k++){%>
@@ -130,7 +132,9 @@
 							<p>選購</p>
 						</div>
 					</div>
-					<div class="discount_goodEach_title hiddenText"><%=list[i].title%></div>
+					<div class="discount_goodEach_title hiddenText" onclick="goDetail(this,event)" >
+						<span id="underline"><%=list[i].title%></span>
+					</div>
 					<div class="discount_goodEach_data clearfloat">
 						<div class="discount_goodEach_dataLeft">
 							<p>MOP<%=list[i].price - list[i].depreciate%></p>

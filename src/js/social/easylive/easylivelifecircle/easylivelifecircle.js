@@ -2,6 +2,7 @@ var slider = easyBuy.global.dep.slider;
 var waterfall = easyBuy.global.dep.waterfall;
 var domain = "http://social1.macaoeasybuy.com";
 
+
 $(function () {
     var lifeType = new Ebtemplate({
         targetURL: domain + '/suitableLifeController/querySuitableLifeClass.easy',
@@ -14,9 +15,12 @@ $(function () {
                     $(even.target).siblings('.yez-active').removeAttr('class').end().addClass('yez-active');
                     var classID = $(even.target).attr('id');
                     console.log(classID);
-                    // everybody.requestData.parameters.classId = classID;
-                    // hotTopic.requestData.parameters.classId = classID;
-                    // random.requestData.parameters.classId = classID;
+                    everybody.requestData.parameters.classId = classID;
+                    hotTopic.requestData.parameters.classId = classID;
+                    random.requestData.parameters.classId = classID;
+                    // everybody.parameters.classId = this.classID;
+                    // hotTopic.parameters.classId = this.classID;
+                    // random.parameters.classId = this.classID;
                     Ebtemplate.processor([everybody, hotTopic, random]);
                 });
             }
@@ -28,7 +32,7 @@ $(function () {
     var everybody = new Ebtemplate({
         targetURL: domain + '/suitableLifeController/querySuitableLifeNoisy.easy',
         parameters: {
-            classId: 4
+            classId: 4,
         },
         templateID: 'everybody',
         container: '.all-say-list',
@@ -83,7 +87,7 @@ $(function () {
         $(document).on('click',function(e){
             var target=e.target;
             // 判斷是否點擊到文字描述
-            if($(target).attr('class')==="box-main-head-info-article"){
+            if($(target).attr('id')==="underline"){
                 var postId=$(target).parents('.hot-post-list-li,.all-say-list-li').attr('id');
                 window.open('http://social.macaoeasybuy.com/easylive/easylivelifecircle/lifecirclepostdetail/lifecirclepostdetail.html?id='+postId);
             }

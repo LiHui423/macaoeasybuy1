@@ -285,14 +285,15 @@
 	    <script src="/js/userspace/common/postDetailEditorSend.js"></script>
 	    <script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 		<script src="/js/social/common/topicPost_common.js"></script>
+		<script src="/js/common/clickEvent.js"></script>
 
 		<!--最近查看宜粉-->
 		<script id="check" type="text/html" data-type="template" >
 			<% for(var k=0;k<userList.length;k++){%>
 			<li id="<%=userList[k].id%>">
-				<a href="">
-					<div class="respondBox_fandPic">
-						<img src="//wap.macaoeasybuy.com<%=userList[k].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+				<a>
+					<div class="respondBox_fandPic" data-id="<%=userList[k].id%>">
+						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=userList[k].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
 					</div>
 					<div class="respondBox_fansMess clearfloat">
 						<div>
@@ -313,10 +314,10 @@
 		<!--最近讃好宜粉-->
 		<script id="good" type="text/html" data-type="template">
 			<% for(var a=0;a<loveList.length;a++){%>
-				<li id="<%=loveList[a].id%>good-id">
-					<a href="">
+				<li id="<%=loveList[a].id%>good-id" data-id="<%=loveList[a].id%>">
+					<a>
 						<div class="respondBox_fandPic">
-							<img src="//wap.macaoeasybuy.com<%=loveList[a].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+							<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=loveList[a].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
 						</div>
 						<div class="respondBox_fansMess clearfloat">
 							<div>
@@ -339,7 +340,8 @@
 			<%if(replyList.length > 0){%>
 				<%for(var i=0;i<replyList.length;i++){%>
 				<li class="clearfloat" id="<%=replyList[i].id%>response">
-					<div class="person-head" id="replyList[i].userid"><img src="//wap.macaoeasybuy.com<%=replyList[i].pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+					<div class="person-head" data-id="<%=replyList[i].userid%>">
+						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=replyList[i].pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
 					<div class="person-info">
 						<div class="person-info-name">
 							<%=replyList[i].name%>

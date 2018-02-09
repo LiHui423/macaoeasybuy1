@@ -213,7 +213,7 @@
 	<!--人氣推薦模板-->
 	<script id="sentiment-template" type="text/html">
 		<%for(var i=0;i<list.length;i++){%>
-		<li>
+		<li data-id="<%=list[i].id%>">
 			<img src="//wap.macaoeasybuy.com/<%=list[i].pic2%>">
 			<div class="indexBox_popularBox_goodtitle">
 				<p class="hiddenText"><%=list[i].Title%></p>
@@ -224,10 +224,12 @@
 
 	<!--宜粉熱評模板-->
 	<script id="hot-comment-template" type="text/html">
-		<div class="Subclasses_showBox_leftEach clearfloat" id="hot-comments-shop<%=id%>">
-			<div class="showBox_leftEach_pic">
-				<img src="//wap.macaoeasybuy.com/<%=Pic2%>">
-			</div>
+		<div class="Subclasses_showBox_leftEach clearfloat" id="hot-comments-shop<%=id%>" data-id="<%=id%>">
+			<a>
+				<div class="showBox_leftEach_pic" data-type="productImg">
+					<img src="//wap.macaoeasybuy.com/<%=Pic2%>">
+				</div>
+			</a>
 			<div class="showBox_leftEach_mess">
 				<div class="showBox_leftEach_commentBox">
 					<%if(userComment.length > 1){%>
@@ -313,7 +315,8 @@
 		<li>
 			<div class="indexBox_showpic_pic"><img src="//wap.macaoeasybuy.com/<%=list[i].SentVolunteersurl%>" onerror="this.style.width='150px';this.onerror=null;this.src='/img/common/share_easybuy.png'"></div>
 			<div class="indexBox_showpic_mess clearfloat">
-				<div class="indexBox_showpic_messLeft"><img src="//wap.macaoeasybuy.com/<%=list[i].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'"></div>
+				<div class="indexBox_showpic_messLeft" data-id="<%=list[i].id%>">
+					<img data-type="userAvatar" src="//wap.macaoeasybuy.com/<%=list[i].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'"></div>
 				<div class="indexBox_showpic_messRight">
 					<p>
 						<span><%=list[i].Name%></span>

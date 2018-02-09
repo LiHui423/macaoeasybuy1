@@ -189,6 +189,14 @@ function allLookReq(){
 					isComplete = true;
 					if(data.result.returnList.length != 0 || page !=1) $('#all-look-post-inner .no-more').css('display','block');
 				}
+				// 宜粉們都在看的點擊事件
+				$(document).on('click',function(e){
+					var target=e.target;
+					if($(target).attr('class')==="shadow-box"){
+						var postId=$(target).parents('.pillar-all').attr('id').split('-')[0];
+						window.open('http://social.macaoeasybuy.com/easylive/easylivelifecircle/lifecirclepostdetail/lifecirclepostdetail.html?id='+postId);
+					}
+				})
 			}
 		});
 	}

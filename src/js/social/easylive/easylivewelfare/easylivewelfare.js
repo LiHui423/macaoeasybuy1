@@ -21,7 +21,7 @@ function queryEasyBuyUserSee(){
 	$.getJSON(dataUrl,function(data){
 		var html = '';
 		$.each(data.list, function(k,y) {
-			html += '<li><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/'+y.Pic+'" onerror="this.src=\'/img/common/loading_pc_headPic.png\'"></li>';
+			html += '<li data-id="'+y.id+'"><img data-type="userAvatar" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/'+y.Pic+'" onerror="this.src=\'/img/common/loading_pc_headPic.png\'"></li>';
 		});
 		$('#header-head-img').html(html);
 	});

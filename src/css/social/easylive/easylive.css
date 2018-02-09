@@ -372,6 +372,26 @@ html {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+/* 后增加 */
+
+#underline{
+	position: relative;
+}
+#underline:after{
+	content: "";
+	width: 0;
+	height: 1px;
+	background: #222222;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transition: all .3s;
+}
+#underline:hover:after{
+	left: 0%;
+	width: 100%;
+}
+/*  */
 
 .post-topic-box .box-main .box-main-head-info-article {
     width: 100%;

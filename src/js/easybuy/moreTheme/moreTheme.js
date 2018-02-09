@@ -1,3 +1,7 @@
+$(function(){
+	beforeDataJs();
+	moreThemeHover();
+})
 function beforeDataJs(){
 	getThemeMuseum();
 	getThemeShop();

@@ -9,18 +9,21 @@
 		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
 		<link rel="stylesheet" href="/css/social/label/labeldetail/labeldetail.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/plug/yez_js_Reset.js"></script>
 		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/plug/yez_js_Reset.js"></script>
+		
 		<script>
 			var userId = 786; //遊客(登錄的)
 			var seeUserId = 547; //帖主Id
-			var postId = 10;
+			//var postId = 10;
+			var postId=location.href.split('=')[1];
 			var isLogin = false;
 		</script>
 		<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
 		<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
 		
 		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+		
 	</head>
 	<body>
 		<div id="disappear"></div>
@@ -43,7 +46,7 @@
 						<li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
 						<li><a href="http://shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
 						<li><a href="http://shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
-						<li class="navBarLi_curr"><a href="http://shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
+						<li><a href="http://shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
 						<li><a href="http://social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
 						<li><a href="http://social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
 						<li><a href="http://shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
@@ -131,7 +134,7 @@
 						<ul class="chart-card-data"></ul>
 						<ul class="chart-card-data"></ul>
 						<div class="chart-card-data-list-more">
-							<a href="#">查看更多<span>></span></a>
+							<a href="http://social.macaoeasybuy.com/label/labelranklist/labelranklist.html">查看更多<span>></span></a>
 						</div>
 					</div>
 					<!--右邊-->
@@ -269,16 +272,21 @@
 		<script src="/js/common/header&search&footer/footer.js"></script>
 		<script src="/js/social/label/labeldetail/labeldetail.js"></script>
 		<script src="/js/social/label/labeldetail/labeldetail_data.js"></script>
+		<script src="/js/common/clickEvent.js"></script>
 		<!--排行榜-->
 		<script id="level-template" type="text/html">
-			<li class="chart-card-data-list">
+			<li class="chart-card-data-list" data-id="<%=id%>">
 				<ul class="clearfloat">
 					<%if(index <= 2){%>
 						<li>TOP<%=num%></li>
 					<%}else{%>
 						<li><%=num%></li>
 					<%}%>
-					<li><span>#</span><span><%=labelName%></span><span>#</span></li>
+					<li>
+						<span>#</span>
+						<span><a id="underline"><%=labelName%></a></span>
+						<span>#</span>
+					</li>
 					<li><%=loveCount%></li>
 				</ul>
 			</li>
@@ -287,7 +295,7 @@
 		<script id="log-template" type="text/html">
 			<%if(classList.length != 0){%>
 			<%for(var i=0;i<classList.length;i++){%>
-			<div class="pillar-all">
+			<div class="pillar-all" data-id="<%=classList[i].postid%>">
 				<div class="pillar">
 					<div class="page-main">
 						<%if(classList[i].postPics.length != 0){%>
@@ -514,8 +522,8 @@
 		<script id="topic-template" type="text/html">
 			<%if(classList.length != 0){%>
 			<%for(var i=0;i<classList.length;i++){%>
-			<div class="post-topic-box clearfloat">
-				<div class="box-img"><img src="http://wap.macaoeasybuy.com/<%=classList[i].topicPics[0]%>" class="page-main-head-img" onerror="this.onerror=null;this.src='/img/common/PC765x404.jpg'"></div>
+			<div class="post-topic-box clearfloat" data-id="<%=classList[i].topicid%>">
+				<div class="box-img"><img style="height:250px" src="http://wap.macaoeasybuy.com/<%=classList[i].topicPics[0]%>" class="page-main-head-img" onerror="this.onerror=null;this.src='/img/common/PC765x404.jpg'"></div>
 				<div class="box-main">
 					<div class="box-main-head clearfloat">
 						<div class="box-main-head-img">

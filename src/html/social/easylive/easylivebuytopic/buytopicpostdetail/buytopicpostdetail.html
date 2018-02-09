@@ -139,7 +139,9 @@
 							<!--官方小編-->
 							<div class="poster" id="poster">
 								<div class="poster-head clearfloat">
-									<div class="head-img myborder-radius"></div>
+									<div class="head-img myborder-radius">
+										
+									</div>
 									<div class="name">
 										<div>官方小編</div>
 										<div><span class="poster_name">&nbsp;</span></div>
@@ -286,38 +288,40 @@
 	    <script src="/js/userspace/common/postDetailEditorSend.js"></script>
 	    <script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 		<script src="/js/social/common/topicPost_common.js"></script>
+		<script src="/js/common/clickEvent.js"></script>
 
 		<!--最近查看宜粉-->
 		<script id="check" type="text/html" data-type="template" >
-			<% for(var k=0;k<userList.length;k++){%>
-			<li id="<%=userList[k].id%>">
-				<a href="">
-					<div class="respondBox_fandPic">
-						<img src="//wap.macaoeasybuy.com<%=userList[k].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
-					</div>
-					<div class="respondBox_fansMess clearfloat">
-						<div>
-							<%=userList[k].name%>
+				<% for(var k=0;k<userList.length;k++){%>
+				<li id="<%=userList[k].id%>" data-id="<%=userList[k].id%>">
+					<a>
+						<div class="respondBox_fandPic">
+							<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=userList[k].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
 						</div>
-						<div>
-							<% if(userList[k].sex == 'Boy'){ %>
-							<img src="/img/common/boy.png" alt="">
-							<% }else if(userList[k].sex == 'Girl'){%>
-							<img src="/img/common/girl.png" alt="">
-							<%}%>
+						<div class="respondBox_fansMess clearfloat">
+							<div>
+								<%=userList[k].name%>
+							</div>
+							<div>
+								<% if(userList[k].sex == 'Boy'){ %>
+								<img src="/img/common/boy.png" alt="">
+								<% }else if(userList[k].sex == 'Girl'){%>
+								<img src="/img/common/girl.png" alt="">
+								<%}%>
+							</div>
 						</div>
-					</div>
-				</a>
-			</li>
-			<%}%>
+					</a>
+				</li>
+				<%}%>
+			
 		</script>
 		<!--最近讃好宜粉-->
 		<script id="good" type="text/html" data-type="template">
 			<% for(var a=0;a<loveList.length;a++){%>
-				<li id="<%=loveList[a].id%>good-id">
-					<a href="">
+				<li id="<%=loveList[a].id%>good-id" data-id="<%=loveList[a].id%>">
+					<a>
 						<div class="respondBox_fandPic">
-							<img src="//wap.macaoeasybuy.com<%=loveList[a].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+							<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=loveList[a].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
 						</div>
 						<div class="respondBox_fansMess clearfloat">
 							<div>
@@ -339,8 +343,8 @@
 		<script id="response" type="text/html" data-type="template">
 			<%if(replyList.length > 0){%>
 				<%for(var i=0;i<replyList.length;i++){%>
-				<li class="clearfloat" id="<%=replyList[i].id%>response">
-					<div class="person-head" id="replyList[i].userid"><img src="//wap.macaoeasybuy.com<%=replyList[i].pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+				<li class="clearfloat" id="<%=replyList[i].id%>response" data-id="<%=replyList[i].id%>">
+					<div class="person-head" id="replyList[i].userid"><img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=replyList[i].pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
 					<div class="person-info">
 						<div class="person-info-name">
 							<%=replyList[i].name%>
@@ -470,11 +474,13 @@
 		<script id="bottom_list" type="text/html" data-type="template">
 			<%if(result.length != 0){%>
 				<%for(var i=0;i<result.length;i++){%>
-				<div class="post-topic-box clearfloat">
+				<div class="post-topic-box clearfloat" id="<%=result[i].adminId%>">
 					<div class="box-img"><img src="//wap.macaoeasybuy.com<%=result[i].shouldBuyPic%>" alt=""></div>
 					<div class="box-main">
 						<div class="box-main-head clearfloat">
-							<div class="box-main-head-img"><img src="//wap.macaoeasybuy.com<%=result[i].adminPic%>" alt=""></div>
+							<div class="box-main-head-img" data-id="<%=result[i].adminId%>">
+								<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=result[i].adminPic%>" alt="">
+							</div>
 							<div class="box-main-head-info">
 								<div class="box-main-head-info-title"><%=result[i].title%></div>
 								<div class="box-main-head-info-time clearfloat">
@@ -494,7 +500,9 @@
 						<div class="box-look-instruc">最近查看的宜粉：</div>
 						<ul class="clearfloat">
 							<%for(var j=0;j<result[i].visitorList.length;j++){%>
-								<li><img src="//wap.macaoeasybuy.com<%=result[i].visitorList[j].pic%>" alt=""></li>
+								<li data-id="<%=result[i].visitorList[j].id%>">
+									<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=result[i].visitorList[j].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+								</li>
 							<%}%>
 						</ul>
 						<div class="box-look-btn">好奇看看</div>

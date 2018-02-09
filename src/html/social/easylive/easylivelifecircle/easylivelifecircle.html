@@ -96,9 +96,12 @@
 		<script src="/js/common/header&search&footer/header.js"></script>
 		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 		<script src="/js/common/ebtemplate-jquery.js"></script>
-		<script src="/js/social/easylive/easylivelifecircle/easylivelifecircle.js"></script>
-		<script id="lifeType" type="text/html" data-eb-template>
-			<%for(var i=0, item; (item = content[i++]);) {
+		<!-- <script src="/js/social/easylive/easylivelifecircle/easylivelifecircle.js"></script> -->
+		<script src="/js/social/easylive/easylivelifecircle/easylivelifecircle1.js"></script>
+		<script src="/js/common/clickEvent.js"></script>
+
+		<script id="lifeType" type="text/html">
+			<%for(var i=0, item; (item = result [i++]);) {
 				if(i===0) {%>
 					<li id="<%=item.id%>" class="yez-active">
 				<%} else {%>
@@ -110,33 +113,42 @@
 			<%}%>
 		</script>
 		<!-- lifeId: 518-->
-		<script id="hotTopic" type="text/html" data-eb-template>
-			<%for(var i=0, il=content.length; i < il; i++){%>
-				<li class="hot-post-list-li" id="<%=content[i].lifeId%>">
+		<script id="hotTopic" type="text/html">
+			<%for(var i=0, il=result.length; i < il; i++){%>
+				<li class="hot-post-list-li" id="<%=result[i].lifeId%>">
 					<div class="post-topic-box">
 						<div class="box-img">
-							<%if(content[i].lifePic==""){%>
+							<%if(result[i].lifePic==""){%>
 								<img src="/img/common/loading_pc_220.jpg">
 							<%}else{%>
-								<img src="//wap.macaoeasybuy.com<%=content[i].lifePic%>">
+								<img src="//wap.macaoeasybuy.com<%=result[i].lifePic%>">
 							<%}%>
 						</div>
 						<div class="box-main">
 							<div class="box-main-head clearfloat">
-								<div class="box-main-head-img myborder-radius" id="<%=content[i].userId%>">
-									<img src="//wap.macaoeasybuy.com<%=content[i].userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+								<div class="box-main-head-img myborder-radius" data-id="<%=result[i].userId%>">
+									<%if(result[i].userPic==""){%>
+										<img data-type="userAvatar" src="/img/common/loading_pc_headPic.png">
+									<%}else{%>
+										<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=result[i].userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+									<%}%>
 								</div>
 								<div class="box-main-head-info">
-									<div class="box-main-head-info-title"><%=content[i].userName%><i class="icon <%=content[i].sex%>"></i></div>
-									<div class="box-main-head-info-time"><span><%=content[i].uptime%></span>前發佈</div>
+									<div class="box-main-head-info-title"><%=result[i].userName%><i class="icon <%=result[i].sex%>"></i></div>
+									<div class="box-main-head-info-time"><span><%=result[i].uptime%></span>前發佈</div>
 								</div>
 							</div>
-							<div class="box-main-head-info-instruc"><span><%=content[i].title%></span><span>/<%=content[i].className%>/</span></div>
-							<div class="box-main-head-info-article"><%=content[i].content%></div>
+							<div class="box-main-head-info-instruc">
+								<span>
+									<a id="underline"><%=result[i].title%></a>
+								</span>
+								<span>/<%=result[i].className%>/</span>
+							</div>
+							<div class="box-main-head-info-article"><%=result[i].content%></div>
 							<ul class="info clearfloat">
-								<li><img src="/img/common/eye.png" alt=""><%=content[i].seeCount%></li>
-								<li><img src="/img/common/message.png" alt=""><%=content[i].commentCount%></li>
-								<li><img src="/img/common/good.png" alt=""><%=content[i].loveCount%></li>
+								<li><img src="/img/common/eye.png" alt=""><%=result[i].seeCount%></li>
+								<li><img src="/img/common/message.png" alt=""><%=result[i].commentCount%></li>
+								<li><img src="/img/common/good.png" alt=""><%=result[i].loveCount%></li>
 							</ul>
 						</div>
 					</div>
@@ -144,28 +156,37 @@
 			<%}%>
 		</script>
 		<script id="everybody" type="text/html" data-eb-template>
-			<%for(var i=0, il=content.length; i < il; i++) {%>
-				<li class="all-say-list-li" id="<%=content[i].lifeId%>">
+			<%for(var i=0, il=result.length; i < il; i++) {%>
+				<li class="all-say-list-li" id="<%=result[i].lifeId%>">
 					<div class="post-topic-box">
 						<div class="box-img">
-							<%if(content[i].lifePic==""){%>
+							<%if(result[i].lifePic==""){%>
 								<img src="/img/common/loading_pc_220.jpg">
 							<%}else{%>
-								<img src="//wap.macaoeasybuy.com<%=content[i].lifePic%>">
+								<img src="//wap.macaoeasybuy.com<%=result[i].lifePic%>">
 							<%}%>
 						</div>
 						<div class="box-main">
 							<div class="box-main-head clearfloat">
-								<div class="box-main-head-img myborder-radius">
-									<img src="//wap.macaoeasybuy.com<%=content[i].userPic%>" onerror="this.src:'/img/common/loading_pc_220.jpg'">
+								<div class="box-main-head-img myborder-radius" data-id="<%=result[i].userId%>">
+									<%if(result[i].userPic==""){%>
+										<img data-type="userAvatar" src="/img/common/loading_pc_headPic.png">
+									<%}else{%>
+										<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=result[i].userPic%>" onerror="this.src:'/img/common/loading_pc_headPic.png'">
+									<%}%>
 								</div>
 								<div class="box-main-head-info">
-									<div class="box-main-head-info-title"><%=content[i].userName%><i class="icon <%=content[i].sex%>"></i></div>
-									<div class="box-main-head-info-time"><span><%=content[i].uptime%></span>前發佈</div>
+									<div class="box-main-head-info-title"><%=result[i].userName%><i class="icon <%=result[i].sex%>"></i></div>
+									<div class="box-main-head-info-time"><span><%=result[i].uptime%></span>前發佈</div>
 								</div>
 							</div>
-							<div class="box-main-head-info-instruc"><span><%=content[i].title%></span><span>/<%=content[i].className%>/</span></div>
-							<div class="box-main-head-info-article"><%=content[i].content%></div>
+							<div class="box-main-head-info-instruc">
+								<span>
+									<a id="underline"><%=result[i].title%></a>
+								</span>
+								<span>/<%=result[i].className%>/</span>
+							</div>
+							<div class="box-main-head-info-article"><%=result[i].content%></div>
 							<div class="all-say-record">
 								<div class="all-say-item clearfloat">
 									<div class="myborder-radius all-say-item-head"></div>
@@ -181,9 +202,9 @@
 								</div>
 							</div>
 							<ul class="info clearfloat">
-								<li><img src="/img/common/eye.png" alt=""><%=content[i].seeCount%></li>
-								<li><img src="/img/common/message.png" alt=""><%=content[i].commentCount%></li>
-								<li><img src="/img/common/good.png" alt=""><%=content[i].loveCount%></li>
+								<li><img src="/img/common/eye.png" alt=""><%=result[i].seeCount%></li>
+								<li><img src="/img/common/message.png" alt=""><%=result[i].commentCount%></li>
+								<li><img src="/img/common/good.png" alt=""><%=result[i].loveCount%></li>
 							</ul>
 						</div>
 					</div>
@@ -191,40 +212,40 @@
 			<%}%>
 		</script>
 		<script id="random" type="text/html" data-eb-template>
-			<%for(var i=0; i < content.length; i++) {%>
-				<div class="pillar-all" id="<%=content[i].lifeId%>">
+			<%for(var i=0; i < result.length; i++) {%>
+				<div class="pillar-all" id="<%=result[i].lifeId%>">
 					<div class="pillar">
 						<div class="page-main">
 							<div class="laster-look clearfloat">
-								<div class="laster-head">
-									<%if(content[i].lifePic==""){%>
-										<img src="/img/common/loading_pc_headPic.png">
+								<div class="laster-head" data-id="<%=result[i].lifeId%>">
+									<%if(result[i].lifePic==""){%>
+										<img data-type="userAvatar" src="/img/common/loading_pc_headPic.png">
 									<%}else{%>
-										<img src="//wap.macaoeasybuy.com<%=content[i].lifePic%>">
+										<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=result[i].lifePic%>">
 									<%}%>
 								</div>
 								<div class="laster-text">
-									<div class="laster-text-name"><%=content[i].userName%><i class="icon <%=content[i].sex%>"></i></div>
-									<div class="laster-text-num"><span><%=content[i].uptime%></span>前發佈</div>
+									<div class="laster-text-name"><%=result[i].userName%><i class="icon <%=result[i].sex%>"></i></div>
+									<div class="laster-text-num"><span><%=result[i].uptime%></span>前發佈</div>
 								</div>
 							</div>
 							<a href="">
-								<%if(content[i].lifePic==""){%>
+								<%if(result[i].lifePic==""){%>
 									<img src="/img/common/loading_pc_220.jpg">
 								<%}else{%>
-									<img src="//wap.macaoeasybuy.com<%=content[i].lifePic%>" class="page-main-head-img">
+									<img src="//wap.macaoeasybuy.com<%=result[i].lifePic%>" class="page-main-head-img">
 								<%}%>
 							</a>
 							<div class="post-main-text">
-								<div class="post-title"><%=content[i].title%><span>/<%=content[i].className%>/</span></div>
-								<div class="post-description"><%=content[i].content%></div>
+								<div class="post-title"><%=result[i].title%><span>/<%=result[i].className%>/</span></div>
+								<div class="post-description"><%=result[i].content%></div>
 							</div>
 						</div>
 						<div class="laster">
 							<ul class="laster-num clearfloat">
-								<li><%=content[i].seeCount%></li>
-								<li><%=content[i].loveCount%></li>
-								<li><%=content[i].commentCount%></li>
+								<li><%=result[i].seeCount%></li>
+								<li><%=result[i].loveCount%></li>
+								<li><%=result[i].commentCount%></li>
 							</ul>
 						</div>
 						<div class="shadow-box"></div>

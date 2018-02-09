@@ -104,6 +104,26 @@
 .liveshotBox_thumb_each_title{
 	font-size: 18px;
 }
+/* 后增加 */
+
+#underline{
+	position: relative;
+}
+#underline:after{
+	content: "";
+	width: 0;
+	height: 1px;
+	background: #222222;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transition: all .3s;
+}
+#underline:hover:after{
+	left: 0%;
+	width: 100%;
+}
+/*  */
 .liveshotBox_thumb_each_intro{
 	margin-top: 25px;
 }

@@ -225,7 +225,7 @@
 								<div class="statistics-page">
 									<ul class="person-messaage statistics-page-item select">
 										<div class="innerDiv scrollIe scrollOther" id="response-list">
-											<div id="response-list-inner">
+											<div id="response-list-inner" class="clearfloat">
 												<div class="no-more">~沒有更多內容了哦~</div>
 											</div>
 										</div>
@@ -265,7 +265,9 @@
 						<div class="title"><span class="poster-name"></span>還有<span class="poster-number"></span>篇市集</div>
 						<div class="mine-other-outer scrollIe scrollOther" id="masonry-box">
 							<div class="mine-main clearfloat" id="masonry">
-								<div class="mine_main_inner"></div>
+								<div class="mine_main_inner">
+
+								</div>
 								<p class="no-more">~沒有更多內容了~</p>
 							</div>
 						</div>
@@ -286,7 +288,7 @@
 							</div>
 						</div>
 						<div class="all-look-bottom">
-							<a href="">查看更多市集帖子<span class="bottom-arrow">>></span></a>
+							<a href="http://social.macaoeasybuy.com/market/market.html" target="_blank">查看更多市集帖子<span class="bottom-arrow">>></span></a>
 						</div>
 					</div>
 
@@ -565,7 +567,7 @@
 											<div class="top-banner not">原價-<span><%=result.returnList[i].discount%></span>%</div>
 										<%}else{%>
 											<div class="top-banner">原價-<span><%=result.returnList[i].discount%></span>%</div>
-											<img src="//wap.macaoeasybuy.com<%=result.returnList[i].pic%>" class="page-main-head-img ">
+											<img src="//wap.macaoeasybuy.com<%=result.returnList[i].pic%>" class="page-main-head-img " onerror="this.src='/img/common/loading_pc_220.jpg'">
 										<%}%>
 									</a>
 									<div class="post-main-text">
@@ -586,7 +588,7 @@
 									<%if(type == 'other'){%>
 										<div class="laster-look clearfloat other">
 											<div data-id="<%=result.returnList[i].user.id%>" class="laster-head">
-												<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=result.returnList[i].user.pic%>" alt=" ">
+												<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=result.returnList[i].user.pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
 											</div>
 											<div class="laster-text">
 												<div class="laster-text-name clearfloat">

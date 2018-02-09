@@ -61,6 +61,7 @@ function insertTemplate(templateObj) {
             };
         },
         success: function (response) {
+            console.log(response);
             var cache;
             //根据目标对象是否存在page参数来确定是否需要分页
             if(templateObj.requestData.page === undefined) {

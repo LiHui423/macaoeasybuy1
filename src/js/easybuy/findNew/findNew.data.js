@@ -32,46 +32,46 @@ function bannerPicBox(){
 };
 
 /*發現新品最近查看模板*/
-// function FindNewVisit(){
-// 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsXinController/queryXinUserSeeInfo.easy?easybuyCallback=?",function(json){
-// 		var findNewVisitList = json;
-// 		var html = template("showFindNewVisit", findNewVisitList);
-// 		$(".findNew_main_visitBox").html(html);
-// 	});
-// }
-
-/*發現新品最近查看模板*/
-function FindNewVisit(){	
-	var url="http://shopping1.macaoeasybuy.com/goodsXinController/queryXinUserSeeInfo.easy?easybuyCallback";
-	$.ajax({
-		url:url,
-		type:"get",
-		success:function(result){
-			var data=(JSON.parse(result)).list;
-			var html=`
-				<div class="findNew_main_visitBoxLeft">
-					<p>${data.SumSeeNumber}</p>
-					<p>宜粉到訪</p>
-				</div>
-				<div class="findNew_main_visitBoxRight">
-					<ul>
-						${avatorList(data.userinfolist)}
-					</ul>
-				</div>
-			`;
-			function avatorList(arr){
-				var htmlChild=``;
-				for(var j=0;j<arr.length;j++){
-					htmlChild+=`
-						<li data-id=${arr[j].UserId}><img src='http://wap.macaoeasybuy.com${arr[j].pic}'></li>
-					`;
-				}
-				return htmlChild;
-			}
-			$(".findNew_main_visitBox").html(html);
-		}	
+function FindNewVisit(){
+	$.getJSON("http://shopping1.macaoeasybuy.com/goodsXinController/queryXinUserSeeInfo.easy?easybuyCallback=?",function(json){
+		var findNewVisitList = json;
+		var html = template("showFindNewVisit", findNewVisitList);
+		$(".findNew_main_visitBox").html(html);
 	});
 }
+
+// /*發現新品最近查看模板*/
+// function FindNewVisit(){	
+// 	var url="http://shopping1.macaoeasybuy.com/goodsXinController/queryXinUserSeeInfo.easy?easybuyCallback";
+// 	$.ajax({
+// 		url:url,
+// 		type:"get",
+// 		success:function(result){
+// 			var data=(JSON.parse(result)).list;
+// 			var html=`
+// 				<div class="findNew_main_visitBoxLeft">
+// 					<p>${data.SumSeeNumber}</p>
+// 					<p>宜粉到訪</p>
+// 				</div>
+// 				<div class="findNew_main_visitBoxRight">
+// 					<ul>
+// 						${avatorList(data.userinfolist)}
+// 					</ul>
+// 				</div>
+// 			`;
+// 			function avatorList(arr){
+// 				var htmlChild=``;
+// 				for(var j=0;j<arr.length;j++){
+// 					htmlChild+=`
+// 						<li data-id=${arr[j].UserId}><img src='http://wap.macaoeasybuy.com${arr[j].pic}'></li>
+// 					`;
+// 				}
+// 				return htmlChild;
+// 			}
+// 			$(".findNew_main_visitBox").html(html);
+// 		}	
+// 	});
+// }
 
 /*主題館廣告圖模板*/
 function showFindNewBox(Areaid){

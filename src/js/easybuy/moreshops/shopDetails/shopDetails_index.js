@@ -4,12 +4,14 @@ $(function(){
 	getShopMap(); //人氣推薦
 	getHotComment(); //宜粉熱評
 	printShopReq(); //宜粉嗮圖
+	clickEvent();//頁面點擊事件
 });
 
 //人氣推薦
 function getShopMap(){
 	var dataUrl = 'http://shopping1.macaoeasybuy.com/shopInfoController/queryShopMap.easy?Shopid='+shopId+'&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
+		console.log(data);
 		$('#sentiment-box').html(template('sentiment-template',data));
 	});
 }
@@ -70,4 +72,27 @@ function printShopReq(){
 	$.getJSON(dataUrl,function(data){
 		$('#print-shop-box').html(template('print-shop-template',data));
 	});
+}
+function clickEvent(){
+	$('#sentiment-box').on('click',function(e){
+		var target=e.target;
+		if($(target).is('img')){
+			var productId=$(target).parents('[data-id]').attr('data-id');
+			window.open('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?productId='+productId);
+		}
+	});
+	$('#hot-comment-box').on('click',function(e){
+		var target=e.target;
+		if($(target).parent().attr('data-type')==="productImg"){
+			var productId=$(target).parents('[data-id]').attr('data-id');
+			window.open('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?productId='+productId);
+		}
+	})
+	$('.indexBox_classBox').on('click',function(e){
+		var target=e.target;
+		if($(target).is('img')){
+			var classId=$(target).parent('[data-typeid]').attr('data-typeid');
+			window.open('http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_sorting.html?shopId='+shopId+'&classId='+(classId-1));
+		}
+	})
 }

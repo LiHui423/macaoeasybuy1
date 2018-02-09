@@ -6,14 +6,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="renderer" content="webkit">
 		<title>宜品館-分類列表頁(奇趣館)</title>
-		<link rel="stylesheet" type="text/css" href="/css/common/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/css/common/yez_css_Reset.css">
 		<link rel="stylesheet" type="text/css" href="/css/common/header&search&footer.css">
 		<link rel="stylesheet" type="text/css" href="/css/easybuy/museum/museum.css">
 		<link rel="stylesheet" type="text/css" href="/css/easybuy/museum/museumList.css">
 		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
-		<script src="/js/common/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
 		<style type="text/css">
 			.museumHome_head{
 				border:none;
@@ -68,9 +67,9 @@
 								<ul class="head-img clearfloat">
 									<%for(var i=0; i<list[0].listmap.length;i++){%>
 										<%if(list[0].listmap[i].userpic == ""){%>
-											<li data-type = "<%=list[0].listmap[i].userid%>"><img src="/img/common/loading_pc_headPic.png"></li>
+											<li data-id = "<%=list[0].listmap[i].userid%>"><a><img data-type="userAvatar" src="/img/common/loading_pc_headPic.png"></a></li>
 										<%}else{%>
-											<li data-type = "<%=list[0].listmap[i].userid%>"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[0].listmap[i].userpic%>" alt=""></li>
+											<li data-id = "<%=list[0].listmap[i].userid%>"><a><img data-type="userAvatar" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[0].listmap[i].userpic%>" alt=""></a></li>
 										<%}%>
 									<%}%>
 								</ul>
@@ -85,7 +84,8 @@
 												<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].sppic%>" alt="">
 											</div>
 											<div class="item-price">
-												<div class="item-price-title hiddenText"><%=list[i].sptitle%></div>
+												<div class="item-price-title hiddenText">
+													<span id="underline"><%=list[i].sptitle%></span></div>
 												<div class="item-price-newPrice"><span>MOP</span><span><%=list[i].newprice%></span></div>
 												<div class="item-price-oldPrice"><span>MOP&nbsp;</span><span><%=list[i].oldprice%></span></div>
 											</div>
@@ -119,15 +119,18 @@
 		<footer></footer>
 	</body>
 	<!--頭部文件的js-->
-	<script src="/js/header&search&footer/header.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/common/header&search&footer/footer.js"></script>
 	<!--頭部文件的js-->
-	<script src="/js/easybuy/museum/museumList.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/easybuy/museum/museumList.js"></script>
 	<!--模板文件和假數據-->
-	<script src="/js/common/template-native.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/js/easybuy/museum/museumListData.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/js/easybuy/museum/museumListData.js"></script>
+	<script src="/js/common/clickEvent.js"></script>
 	<!--將底部加載進來-->
 	<script type="text/javascript">
-		$("footer").load('../../page/header&search&footer/footer.html');
+		//$("footer").load('../../page/header&search&footer/footer.html');
 		$(function(){
 			lookList(10111);
 			queryList(10111);

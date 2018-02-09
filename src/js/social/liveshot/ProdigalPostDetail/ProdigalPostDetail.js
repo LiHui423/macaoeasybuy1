@@ -8,6 +8,7 @@ easyBuy.global.beforeDataJs = function(){
 	});
 	mineOtherReq(); //帖主還有其他帖子
 	allLookReq(); //他們都在看其他帖子
+	clickEvent();//頁面點擊事件
 }
 easyBuy.global.afterDataJs = function(){
 	if(easyBuy.isLogin){
@@ -27,13 +28,16 @@ var arrayGetMax = easyBuy.global.dep.arrayGetMax;
 var imgOnMiddle = easyBuy.global.dep.imgOnMiddle;
 var easyScrollRequest = easyBuy.global.dep.easyScrollRequest;
 //var postId = easyBuy.global.pageParameter.id;
-var postId = 633;
+//var postId = 633;
+var postId=location.href.split('=')[1];
+
 var checkFinsh = {
 	banner : false,
 	editor : false,
 	content : false,
 	firstReply : false,
 }
+postContent(); 
 //選項卡(待評論列表加載完之後調用)
 function selectPage(){
 	var btn = $('.statistics-title li');
@@ -62,15 +66,17 @@ function selectPage(){
 		});
 	});
 }
-
 //帖子內容
 function postContent(){
+	console.log('55555');
 	$.ajax({
-		url:'http://userspace1.macaoeasybuy.com/UserLiveShotConntroller/querySentVolunteersInfo.easy?userId='+userId+'&seeUserId='+seeUserId+'&id='+postId+'&easybuyCallback=?',
+		//url:'http://userspace1.macaoeasybuy.com/UserLiveShotConntroller/querySentVolunteersInfo.easy?userId='+userId+'&seeUserId='+seeUserId+'&id='+postId+'&easybuyCallback=?',
+		url:'http://userspace1.macaoeasybuy.com/UserLiveShotConntroller/querySentVolunteersInfo.easy?userId=5&seeUserId=6&id='+postId+'&easybuyCallback=?',
 		type:"get",
 		async:true,
 		dataType:'jsonp',
 		success:function(data){
+			console.log(data);
 			var newData = data.suitableLifeInfo;
 			$('#messBox_mess_time p:last-of-type span').html(newData.addtime); //發佈時間
 			$('#atricle_title').html(newData.titlename); //標題
@@ -87,6 +93,9 @@ function postContent(){
 			//吸頂檢測
 			checkFinsh.content = true;
 			checkAndGoScrollTop();
+		},
+		error:function(){
+			console.log('發生未知錯誤');
 		}
 	});
 }
@@ -183,4 +192,16 @@ function allLookReq(){
 			}
 		});
 	}
+}
+// 頁面點擊事件
+function clickEvent(){
+	$('body').on('click',function(e){
+		var target=e.target;
+		if($(target).hasClass('shadow-box')){
+			var postId=$(target).parents('[id]').attr('id').split('-')[0];
+			console.log(postId);
+			window.open('http://social.macaoeasybuy.com/liveshot/ProdigalPostDetail/ProdigalPostDetail.html?postId='+postId);
+
+		}
+	})
 }

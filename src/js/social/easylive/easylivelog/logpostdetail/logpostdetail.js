@@ -30,6 +30,7 @@ var easyScrollRequest = easyBuy.global.dep.easyScrollRequest;
 //var postId = easyBuy.global.pageParameter.id;
 //var postId = 2141;
 var postId=location.href.split('?')[1].split('=')[1];
+console.log(postId);
 var checkFinsh = {
 	banner : false,
 	editor : false,
@@ -74,7 +75,7 @@ function postContent(){
 		async:true,
 		dataType:'jsonp',
 		beforeSend:function(){
-//			console.log('發出內容的請求')
+			console.log('發出內容的請求')
 		},
 		success:function(data){
 			var newData = data.releaseInfo;
@@ -91,6 +92,7 @@ function postContent(){
 				$('#otherMess_shop').parent().remove();
 			}
 			userInfo(newData.username,newData.headPic,newData.sex); //用戶性別，頭像，姓名
+			console.log('55555555');
 			//吸頂檢測
 			checkFinsh.content = true;
 			checkAndGoScrollTop();
@@ -191,7 +193,15 @@ function allLookReq(){
 }
 // 頁面點擊事件
 function clickEvent(){
-	$(document).on('click',function(e){
+	$('#masonry').on('click',function(e){
+		var target=e.target;
+		console.log(target);
+		if($(target).attr('class')==="shadow-box"){
+			postId=$(target).parents('.pillar-all').attr('id').split('-')[0];
+			window.open('http://social.macaoeasybuy.com/easylive/easylivelog/logpostdetail/logpostdetail.html?id='+postId);
+		}
+	});
+	$('#all-look-post-inner').on('click',function(e){
 		var target=e.target;
 		console.log(target);
 		if($(target).attr('class')==="shadow-box"){

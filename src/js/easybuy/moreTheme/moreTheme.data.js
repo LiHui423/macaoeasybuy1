@@ -16,6 +16,7 @@ function getThemeMuseum(){
 				if(isComplete) return false;
 			},
 			success:function(data){
+				console.log(data);
 				var html = template('theme_museum_template',data);
 				$('#theme_museum_box').append(html);
 				$.each(data.list, function(k,y) {

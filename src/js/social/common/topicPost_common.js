@@ -98,7 +98,8 @@ function getContent(){
 			//官方小編
 			var posterBox = $('#poster');
 			posterBox.find('.poster_name').html(data.adminName); //小編 姓名
-			posterBox.find('.head-img').html('<img src="'+easyBuy.global.osURL+data.adminPic+'" onerror="this.onerror=null;this.src=\'/img/common/loading_pc_headPic.png\'">');
+			posterBox.find('.head-img').html('<img data-type="userAvatar" src="'+easyBuy.global.osURL+data.adminPic+'" onerror="this.onerror=null;this.src=\'/img/common/loading_pc_headPic.png\'">');
+			posterBox.find('.head-img').attr('data-id',data.adminId);
 			posterBox.find('.poster_hot_number').html(formatNum(data.shouldBuyCount)); //話題數
 			posterBox.find('.poster_welcome_number').html(formatNum(data.adminLoveCount)); //受歡迎數
 			//帖子
@@ -229,15 +230,16 @@ function checkCard(objBtn){
 				$('.person-check .click-upload-more span').off('click');
 			},
 			success:function(data){
-				var html = template.render(checkTemplate,data.topicSee);
+				console.log(data);	
+				var html = template.render(checkTemplate,data.result);
 				if(page == 0){
-					var tourists = '<li class="tourists"><div class="respondBox_fandPic"><div>'+data.topicSee.touristcount+'</div><div>遊客</div></div><div class="respondBox_fansMess clearfloat"><div></div><div></div></div></li>';
+					var tourists = '<li class="tourists"><div class="respondBox_fandPic"><div>'+data.result.touristcount+'</div><div>遊客</div></div><div class="respondBox_fansMess clearfloat"><div></div><div></div></div></li>';
 					$('#check-list').html(tourists);
 					objBtn[0].flag = false;
 				}
 				$('.tourists').before(html);
 				page++;
-				if(data.topicSee.userList.length == size){
+				if(data.result.userList.length == size){
 					$('.person-check .click-upload-more span').on('click',function(){
 						firstBlood(page,size);
 					});

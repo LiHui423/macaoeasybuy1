@@ -40,12 +40,17 @@
 						<div class="person-left">
 							<div class="person-swapper">
 								<div class="publisherMessBox clearfloat">
-									<div class="messBox_pic"><img src="/img/common/headPic.png"></div>
+									<div class="messBox_pic" id="messBox_pic">
+										<img src="/img/common/headPic.png">
+									</div>
 									<div class="messBox_mess">
-										<div class="messBox_mess_name"><span>思思</span>
-											<div><img src="/img/common/sex.png"></div>
+										<div class="messBox_mess_name" id="other-mess-name">
+											<span>思思</span>
+											<div>
+												<img src="/img/common/sex.png">
+											</div>
 										</div>
-										<div class="messBox_mess_time">
+										<div class="messBox_mess_time" id="messBox_mess_time">
 											<p class="articleType">發佈自：<span>休閒生活</span></p>
 											<p>發佈時間：<span>2016-04-29&nbsp;18:01:09</span></p>
 										</div>
@@ -57,9 +62,7 @@
 								<div class="showPicBox">
 									<div class="foodBanner">
 										<ul id="foodBannerul">
-											<li>
-												<img middle="true" src="/img/userspace/userspace_postDetails/5.jpg" alt="">
-											</li>
+											
 										</ul>
 									</div>
 								</div>
@@ -568,7 +571,35 @@
     <script src="/js/common/header&search&footer/searchBar.js" async></script>
     <script src="/js/common/header&search&footer/footer.js" async></script>
 	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/social/common/post_common.js"></script>
 	<script src="/js/social/easylive/easylivealbum/albumclassification/albumlistdetail/albumphotodetail/albumphotodetail.js"></script>
 	<script src="/js/social/easylive/easylivealbum/albumclassification/albumlistdetail/albumphotodetail/albumphotodetail_data.js"></script>
 
+	<script id="bannerPic" type="text/html">
+		<li>
+			<img middle="true" src="//wap.macaoeasybuy.com<%=result.pic%>" onerror="this.src='/img/common/loadnow_jpg'">
+		</li>
+	</script>
+	<!-- <script id="publisherMessBox" type="text/html">
+		<div class="publisherMessBox clearfloat">
+			<div class="messBox_pic">
+				<img src="/img/common/headPic.png">
+			</div>
+			<div class="messBox_mess">
+				<div class="messBox_mess_name">
+					<span>思思</span>
+					<div>
+						<img src="/img/common/sex.png">
+					</div>
+				</div>
+				<div class="messBox_mess_time">
+					<p class="articleType">發佈自：<span>休閒生活</span></p>
+					<p>發佈時間：<span>2016-04-29&nbsp;18:01:09</span></p>
+				</div>
+			</div>
+			<div class="messBox_logo">
+				<img src="/img/social/easylive/albumlistdetail/photo-detail-logo.png" alt="">
+			</div>
+		</div>
+	</script> -->
 </html>

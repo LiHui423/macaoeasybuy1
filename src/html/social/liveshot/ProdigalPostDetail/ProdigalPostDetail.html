@@ -14,7 +14,8 @@
 		<link rel="stylesheet" href="/css/social/liveshot/ProdigalPostDetail/ProdigalPostDetail.css">
     	<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
     	<script src="/js/common/frameDomainJSON.js"></script>
-    	<script src="/js/common/getData/getData_sinple.js"></script>
+		<script src="/js/common/getData/getData_sinple.js"></script>
+		
     	<!--userid頁面所屬用戶id   id帖子Id-->
 	</head>
 
@@ -82,7 +83,7 @@
 							<div class="person-swapper">
 								<!--頭像-->
 								<div class="publisherMessBox clearfloat">
-									<div class="messBox_pic" id="messBox_pic"><img src="" alt=""></div>
+									<div class="messBox_pic" id="messBox_pic"><img src="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
 									<div class="messBox_mess">
 										<div class="messBox_mess_name" id="other-mess-name">
 											<span>&nbsp;</span>
@@ -329,24 +330,26 @@
 		</div>
 
 	    <script src="/js/plug/yez_js_Reset.js"></script>
-	    <script src="/js/common/vendor/template-native.js"></script>
+	    <script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
+		<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
 	    <script src="/js/common/header&search&footer/searchBar.js" async></script>
 	    <script src="/js/common/header&search&footer/footer.js" async></script>
 		<script src="/js/common/header&search&footer/header.js"></script>
-		<script src="//js.macaoeasybuy.com/img/js/plug/yez_Editor.js"></script>
+		<script src="//js.macaoeasybuy.com/js/plug/yez_Editor.js"></script>
 		<!--編輯回復(引入用戶空間)-->
 		<script src="/js/userspace/common/postDetailEditorSend.js"></script>
 		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 		<script src="/js/social/common/post_common.js"></script>
 		<script src="/js/social/liveshot/ProdigalPostDetail/ProdigalPostDetail.js"></script>
+		<script src="/js/common/clickEvent.js"></script>
 
 		<!--最近讃好宜粉-->
 		<script id="good" type="text/html" data-type="template">
 			<% for(var a=0;a<loveList.length;a++){%>
 				<li id="<%=loveList[a].id%>good-id">
-					<a href="">
-						<div class="respondBox_fandPic">
-							<img src="<%=osURL%><%=loveList[a].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+					<a>
+						<div class="respondBox_fandPic" data-id="<%=loveList[a].id%>">
+							<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=loveList[a].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
 						</div>
 						<div class="respondBox_fansMess clearfloat">
 							<div>
@@ -365,12 +368,12 @@
 			<%}%>
 		</script>
 		<!--最近查看宜粉-->
-		<script id="check" type="text/html" data-type="template">
+		<script id="check" type="text/html">
 			<% for(var k=0;k<userList.length;k++){%>
 			<li id="<%=userList[k].id%>">
-				<a href="">
-					<div class="respondBox_fandPic">
-						<img src="<%=osURL%><%=userList[k].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+				<a>
+					<div class="respondBox_fandPic" data-id="<%=userList[k].id%>">
+						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=userList[k].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
 					</div>
 					<div class="respondBox_fansMess clearfloat">
 						<div>
@@ -389,11 +392,13 @@
 			<%}%>
 		</script>
 		<!--回復評論帖子-->
-		<script id="response" type="text/html" data-type="template">
+		<script id="response" type="text/html">
 			<%if(replyList.length > 0){%>
 				<%for(var i=0;i<replyList.length;i++){%>
-				<li class="clearfloat" id="<%=replyList[i].id%>response">
-					<div class="person-head" id="replyList[i].userid"><img src="<%=osURL%><%=replyList[i].pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+				<li class="clearfloat" id="<%=replyList[i].id%>response" data-id="<%=replyList[i].id%>">
+					<div class="person-head" data-id="<%=replyList[i].userid%>">
+						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=replyList[i].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+					</div>
 					<div class="person-info">
 						<div class="person-info-name">
 							<%=replyList[i].name%>
@@ -410,7 +415,7 @@
 						<div class="big-expression">
 							<%if(replyList[i].bigexpressionGroup != undefined){%>
 								<%for(var k=0; k<replyList[i].bigexpressionGroup.length; k++){%>
-									<img src="<%=osURL%><%=replyList[i].bigexpressionGroup[k]%>" alt="">
+									<img src="//wap.macaoeasybuy.com<%=replyList[i].bigexpressionGroup[k]%>" alt="">
 								<%}%>
 							<%}%>
 						</div>
@@ -419,7 +424,7 @@
 							<% if(replyList[i].reply != undefined){ %>
 								<li class="clearfloat" id="<%=replyList[i].reply.id%>response-reply">
 									<div class="person-info-record-head">
-										<img src="<%=osURL%><%=replyList[i].reply.pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'">
+										<img src="//wap.macaoeasybuy.com<%=replyList[i].reply.pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'">
 									</div>
 									<div class="person-info-record-info">
 										<div class="person-info-name">
@@ -436,7 +441,7 @@
 										<div class="big-expression">
 											<%if(replyList[i].reply.bigexpressionGroup != undefined){%>
 											<%for(var k=0; k<replyList[i].reply.bigexpressionGroup.length; k++){%>
-												<img src="<%=osURL%><%=replyList[i].reply.bigexpressionGroup[k]%>" alt="">
+												<img src="//wap.macaoeasybuy.com<%=replyList[i].reply.bigexpressionGroup[k]%>" alt="">
 											<%}%>
 											<%}%>
 										</div>
@@ -462,7 +467,7 @@
 			<%if(data.length != 0){%>
 			<%for(var i=0;i<data.length;i++){%>
 				<li id="<%=data[i].id%>user" class="<%=data[i].id%>userclass">
-					<div class="fandPic"><img src="<%=osURL%><%=data[i].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+					<div class="fandPic"><img src="//wap.macaoeasybuy.com<%=data[i].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
 					<div class="fansMess clearfloat">
 						<span><%=data[i].name%></span>
 						<%if(data[i].sex == 'Girl'){%>
@@ -489,7 +494,7 @@
 				<li id="<%=labelList[i].id%>label" class="<%=labelList[i].id%>labelclass" label="<%=labelList[i].labelName%>" type="<%=labelList[i].type%>" author="<%=labelList[i].userId%>">
 					<div class="LabelList_Filter"></div>
 					<span class="LabelList_checked"><img src="/img/social/label/labeldetail/fancurr.png"></span>
-					<div class="labelList_left"><img src="<%=osURL%><%=labelList[i].picture%>" onerror="this.src='/img/common/loading_pc_80.png';this.style.width='120px'"></div>
+					<div class="labelList_left"><img src="//wap.macaoeasybuy.com<%=labelList[i].picture%>" onerror="this.src='/img/common/loading_pc_80.png';this.style.width='120px'"></div>
 					<div class="labelList_right">
 						<div class="labelList_title"><%=labelList[i].labelName%></div>
 						<div class="labelList_main">
@@ -524,7 +529,7 @@
 			<%for(var i=0;i<shangpinList.length;i++){%>
 				<div class="otherMess_commodityEach" data-id="<%=shangpinList[i].id%>" data-num="<%=shangpinList[i].shangPinId%>">
 					<div class="commodityEach_left">
-						<img src="<%=osURL%><%=shangpinList[i].pic%>">
+						<img src="//wap.macaoeasybuy.com<%=shangpinList[i].pic%>">
 					</div>
 					<div class="commodityEach_right">
 						<p><%=shangpinList[i].title%></p>
@@ -567,7 +572,7 @@
 
 							<div class="page-main">
 								<%if(result.returnList[i].pic){%>
-									<a href=""><img src="<%=osURL%><%=result.returnList[i].pic%>" class="page-main-head-img" onerror="$(this).remove()"></a>
+									<a href=""><img src="//wap.macaoeasybuy.com<%=result.returnList[i].pic%>" class="page-main-head-img" onerror="$(this).remove()"></a>
 								<%}%>
 								<div class="post-main-text">
 									<div class="post-title"><%=result.returnList[i].titlename%></div>
@@ -595,7 +600,7 @@
 								<%if(type == 'other' && result.returnList[i].user != null){%>
 									<div class="laster-look">
 										<div class="laster-head">
-											<img src="<%=osURL%><%=result.returnList[i].user.pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'">
+											<img src="//wap.macaoeasybuy.com<%=result.returnList[i].user.pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'">
 										</div>
 										<div class="laster-text">
 											<div class="laster-text-name">

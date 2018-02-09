@@ -5,6 +5,8 @@ $(function(){
 	getShopInfo(true); //獲取商店信息
 	$('.shopDetails_main_sorting_chooseLeft ul li').eq(shopOrder).addClass('sorting_curr');
 	searchData();
+	clickEvent();
+
 });
 var searchOpt = {
 	page : 0, //頁數
@@ -71,4 +73,18 @@ function scrollFunc(state){
 	}else{
 		$(window).off('scroll.req');
 	}
+}
+function clickEvent(){
+	$(document).on('click',function(e){
+		var target=e.target;
+		if($(target).attr('id') === "underline"){
+			var productId=$(target).parents('[data-id]').attr('data-id');
+			console.log(productId);
+			window.open('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?productId='+productId);
+		}
+		if($(target).html() === "首頁"){
+			var shopId=location.href.split('=')[1].split('&')[0];
+			location.href="http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_index.html?shopId="+shopId;
+		}
+	})
 }

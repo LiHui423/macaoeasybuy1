@@ -225,7 +225,6 @@
 										<p>最近讃好の宜粉</p>
 										<div class="innerDiv clearfloat scrollIe scrollOther" id="good-list">
 											<div id="good-list-inner" class="clearfloat">
-
 												<div class="no-more-good">
 													<div class="img"><img src="/img/common/06.png" alt=""></div>
 													<div class="title">暫無宜粉讃好</div>
@@ -337,15 +336,16 @@
 		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 		<script src="/js/social/common/post_common.js"></script>
 		<script src="/js/social/easylive/easylivelifecircle/lifecirclepostdetail/lifecirclepostdetail.js"></script>
+		<script src="/js/common/clickEvent.js"></script>
 
 
 		<!--最近讃好宜粉-->
 		<script id="good" type="text/html" data-type="template">
 			<% for(var a=0;a<loveList.length;a++){%>
-				<li id="<%=loveList[a].id%>good-id">
-					<a href="">
+				<li id="<%=loveList[a].id%>good-id" data-id="<%=loveList[a].id%>">
+					<a>
 						<div class="respondBox_fandPic">
-							<img src="//wap.macaoeasybuy.com<%=loveList[a].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+							<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=loveList[a].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
 						</div>
 						<div class="respondBox_fansMess clearfloat">
 							<div>
@@ -364,12 +364,12 @@
 			<%}%>
 		</script>
 		<!--最近查看宜粉-->
-		<script id="check" type="text/html" data-type="template">
+		<script id="check" type="text/html">
 			<% for(var k=0;k<userList.length;k++){%>
-			<li id="<%=userList[k].id%>">
-				<a href="">
+			<li data-id="<%=userList[k].id%>">
+				<a>
 					<div class="respondBox_fandPic">
-						<img src="//wap.macaoeasybuy.com<%=userList[k].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=userList[k].pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
 					</div>
 					<div class="respondBox_fansMess clearfloat">
 						<div>
@@ -388,7 +388,7 @@
 			<%}%>
 		</script>
 		<!--回復評論帖子-->
-		<script id="response" type="text/html" data-type="template">
+		<script id="response" type="text/html">
 			<%if(replyList.length > 0){%>
 				<%for(var i=0;i<replyList.length;i++){%>
 				<li class="clearfloat" id="<%=replyList[i].id%>response">
@@ -457,7 +457,7 @@
 			<%}%>
 		</script>
 		<!--at人的模板-->
-		<script id="at-person-template" type="text/html" data-type="template">
+		<script id="at-person-template" type="text/html">
 			<%if(data.length != 0){%>
 			<%for(var i=0;i<data.length;i++){%>
 				<li id="<%=data[i].id%>user" class="<%=data[i].id%>userclass">
@@ -482,7 +482,7 @@
 			<%}%>
 		</script>
 		<!--標籤的模板-->
-		<script id="label-template" type="text/html" data-type="template">
+		<script id="label-template" type="text/html">
 			<%if(labelList.length != 0){%>
 			<%for(var i=0;i<labelList.length;i++){%>
 				<li id="<%=labelList[i].id%>label" class="<%=labelList[i].id%>labelclass" label="<%=labelList[i].labelName%>" type="<%=labelList[i].type%>" author="<%=labelList[i].userId%>">
@@ -519,7 +519,7 @@
 			<%}%>
 		</script>
 		<!--相關商品-->
-		<script id="otherMess_commodityBox-template" type="text/html" data-type="template">
+		<script id="otherMess_commodityBox-template" type="text/html">
 			<%for(var i=0;i<shangpinList.length;i++){%>
 				<div class="otherMess_commodityEach" data-id="<%=shangpinList[i].id%>" data-num="<%=shangpinList[i].shangPinId%>">
 					<div class="commodityEach_left">

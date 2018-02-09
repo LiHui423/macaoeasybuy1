@@ -8,6 +8,41 @@ $(function() {
 	myRelease(); //使用此標籤發佈帖子按鈕
 	userOtherLabel(); //用戶還創建了其他標籤
 	relatedPostNum(); //相關帖子數量
+	function waterfall(outer, item, num, margin, width,flag){
+        outer.css('position','relative');
+        var totalWidth = outer.width();
+        flag = flag == undefined ? false : flag;
+        width = flag ? (totalWidth - num * item.width()) / (num - 1) : width;
+        var eachWidth = item.width() + width;
+        var columNum = num;
+        var heightArr = [];
+        for(var i = 0; i < columNum; i++) {
+            heightArr[i] = 0;
+        }
+        outer.find('img').imagesLoaded(function(){
+            item.each(function(idx, ele) {
+                var minIndex = 0;
+                var minValue = heightArr[minIndex];
+                for(var i = 0; i < heightArr.length; i++) {
+                    if(heightArr[i] < minValue) {
+                        minIndex = i;
+                        minValue = heightArr[i];
+                    }
+                }
+                $(ele).css({
+                    'position': 'absolute',
+                    left: eachWidth * minIndex,
+                    top: minValue,
+                    'visibility' : 'visible'
+                });
+                var oldHeight = heightArr[minIndex];
+                oldHeight += $(ele).outerHeight(true) + margin;
+                heightArr[minIndex] = oldHeight;
+            });
+            outer.css('height',easyGlobal.arrayGetMax(heightArr)+'px');
+            return heightArr;
+        });
+    };
 });
 var myLabelIndex = 0;
 //標籤排行榜

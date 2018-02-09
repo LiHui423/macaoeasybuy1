@@ -124,7 +124,7 @@ function clickTabFunction($targetDiv,showNumber,$leftBtn,$RightBtn,scrollWidth,s
 			if($(this).siblings("ul").is(":animated")){
 				return;
 			}else{
-				l = parseInt($(this).siblings("ul").css("left")) + scrollWidth * scrollNumber;
+				var l = parseInt($(this).siblings("ul").css("left")) + scrollWidth * scrollNumber;
 				$(this).siblings("ul").animate({
 					"left":l
 				},800)
@@ -140,7 +140,7 @@ function clickTabFunction($targetDiv,showNumber,$leftBtn,$RightBtn,scrollWidth,s
 			if($(this).siblings("ul").is(":animated")){
 				return;
 			}else{
-				l = parseInt($(this).siblings("ul").css("left")) - scrollWidth * scrollNumber;
+				var l = parseInt($(this).siblings("ul").css("left")) - scrollWidth * scrollNumber;
 				$(this).siblings("ul").animate({
 					"left":l
 				},800)
@@ -221,6 +221,6 @@ function closeDetailsPop(){
 function museumOnload(){
 	$('.museum_popularDesign_left ul li .popularDesign_li').on('click',function(){
 		var id = $(this).data('id');
-		window.open('/page/easybuy/goodDetails/museumDetails.html?id=' + id +'');
+		window.open('http://shopping.macaoeasybuy.com/goodDetails/museumDetails.html?id=' + id +'');
 	})
 }

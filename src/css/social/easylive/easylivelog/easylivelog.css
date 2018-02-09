@@ -311,6 +311,7 @@ body{
 }
 .pillar .laster .laster-look .laster-head img {
     width: 100%;
+    z-index:1000;
 }
 .pillar .laster .laster-look .laster-text {
     margin: 10px 0px 0px 14px;

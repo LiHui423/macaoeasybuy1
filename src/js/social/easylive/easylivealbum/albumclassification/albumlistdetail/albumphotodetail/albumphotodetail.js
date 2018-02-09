@@ -2,17 +2,20 @@ $(function(){
 	pageSelect();
 	bannerImgMiddle($('#foodBannerul li'));
 	albumCollects();
-	mygoodbanner({
-		box:$('.showPicBox'),
-		banner:$('#foodBannerul'),
-		now:$('.showPicBox').find('.now'),
-		goLeft:$('#goLeft'),
-		goRight:$('#goRight')
-	});
+	
+	postContent();
+	
+	// mygoodbanner({
+	// 	box:$('.showPicBox'),
+	// 	banner:$('#foodBannerul'),
+	// 	now:$('.showPicBox').find('.now'),
+	// 	goLeft:$('#goLeft'),
+	// 	goRight:$('#goRight')
+	// });
 });
 function bannerImgMiddle(box){
 	box.each(function(){
-		easyBuy.global.dep.imgOnMiddle($(this));
+		//easyBuy.global.dep.imgOnMiddle($(this));
 	});
 }
 function pageSelect(){
@@ -87,6 +90,30 @@ function albumCollects(){
 			$('.collect-list-title').html(title);
 			hasAddAlbum = true;
 			listerSelect();
+		}
+	});
+}
+
+
+//帖子內容
+function postContent(){
+	var postId=location.href.split('=')[1];
+	$.ajax({
+		//url:'http://userspace1.macaoeasybuy.com/UserUsedConntroller/queryUsedInfo.easy?userId='+userId+'&seeUserId='+seeUserId+'&id='+postId+'&easybuyCallback=?',
+		url:'http://userspace1.macaoeasybuy.com/UserUsedConntroller/queryUsedInfo.easy?userId=5&seeUserId=6&id='+postId+'&easybuyCallback=?',
+		type:"get",
+		async:true,
+		dataType:'jsonp',
+		success:function(data){
+			console.log(data);
+			var newData = data.usedInfo;
+			console.log(newData);
+			$('#messBox_mess_time p.articleType span').html(newData.typename); //帖子類型
+			$('#messBox_mess_time p:last-of-type span').html(newData.addtime); //發佈時間
+			userInfo(newData.username,newData.headPic,newData.sex); //用戶性別，頭像，姓名
+		},
+		error:function(){
+			console.log('發生未知錯誤')
 		}
 	});
 }

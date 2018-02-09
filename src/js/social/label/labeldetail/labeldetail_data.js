@@ -1,3 +1,50 @@
+ 
+ //瀑布流
+ function waterfall(outer, item, num, margin, width,flag){
+	outer.css('position','relative');
+	var totalWidth = outer.width();
+	flag = flag == undefined ? false : flag;
+	width = flag ? (totalWidth - num * item.width()) / (num - 1) : width;
+	var eachWidth = item.width() + width;
+	var columNum = num;
+	var heightArr = [];
+	for(var i = 0; i < columNum; i++) {
+		heightArr[i] = 0;
+	}
+	outer.find('img').imagesLoaded(function(){
+		item.each(function(idx, ele) {
+			var minIndex = 0;
+			var minValue = heightArr[minIndex];
+			for(var i = 0; i < heightArr.length; i++) {
+				if(heightArr[i] < minValue) {
+					minIndex = i;
+					minValue = heightArr[i];
+				}
+			}
+			$(ele).css({
+				'position': 'absolute',
+				left: eachWidth * minIndex,
+				top: minValue,
+				'visibility' : 'visible'
+			});
+			var oldHeight = heightArr[minIndex];
+			oldHeight += $(ele).outerHeight(true) + margin;
+			heightArr[minIndex] = oldHeight;
+		});
+		outer.css('height',arrayGetMax(heightArr)+'px');
+		//获取数组最大值
+		function arrayGetMax(a){
+			var max = a[0];
+			for(var i = 1; i < a.length; i++) {
+				if(max < a[i]) {
+					max = a[i];
+				}
+			}
+			return max;
+		};
+		return heightArr;
+	});
+};
  //轉換數值
  function formatNum(num){
 	var str = num + '';//转换成字符串
@@ -44,7 +91,8 @@ function queryLabelInfo(){
 		$('#label-love-number').html(formatNum(newData.loveNums)+'宜粉讃好');
 		
 		//查看是否有圖片
-		if(newData.picture != undefined){
+		console.log(newData.picture);
+		if(newData.picture != undefined && newData.picture!=""){
 			$('#label-cover').prepend('<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/'+newData.picture+'" alt="" class="label-banner">');
 		}else{
 			$('#label-cover').addClass('hasShadow').prepend('<p>'+newData.labelName+'</p>');
@@ -138,11 +186,10 @@ function myCheckCard(){
 	var postType = 12; //標籤的是12
 	var dataUrl = 'http://userspace1.macaoeasybuy.com/seeController/querySeeFriends.easy?id='+postId+'&type='+postType+'&size=10&page=0&order=uptime&descOrAsc=desc&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
-		console.log(data);
-		var newData = data.userList;
+		var newData = data.result.userList;
 		var html = '';
 		$.each(newData, function(k,y) {
-			html += '<li><a><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/'+y.pic+'" alt="" title="'+y.name+'" onerror="this.src=\'/img/common/loading_pc_headPic.png\'"></a></li>';
+			html += '<li data-id="'+y.id+'"><a><img data-type="userAvatar" src="//wap.macaoeasybuy.com/'+y.pic+'" alt="" title="'+y.name+'" onerror="this.src=\'/img/common/loading_pc_headPic.png\'"></a></li>';
 		});
 		$('#recent-look-user').html(html);
 	})
@@ -234,6 +281,7 @@ function levelRank(idx){
 	var time = idx;
 	var dataUrl = 'http://social1.macaoeasybuy.com/labelSocialConntroller/queryLabelRank.easy?time='+time+'&id='+postId+'&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
+		console.log(data);
 		$.each(data.result, function(k,y) {
 			y.labelName = y.labelName.replace(/#/g,'');
 			y.loveCount = formatNum(y.loveCount);
@@ -246,10 +294,19 @@ function levelRank(idx){
 			if(k != len -1) html += template('level-template',y);
 		});
 		$('.chart-card-data').eq(idx).html(html);
+		// 排行榜點擊事件
+		$('.chart-card-data').on('click',function(e){
+			var target=e.target;
+			if($(target).attr('id')==="underline"){
+				var labelId=$(target).parents('[data-id]').attr('data-id');
+				location.href="http://social.macaoeasybuy.com/label/labeldetail/labeldetail.html?id="+labelId;
+			}
+		})
 	})
 }
 //相關帖子
 function relatedPost(myData){
+	console.log(myData);
 	var btn = $('#related-posts-nav li').eq(myLabelIndex);
 	var box = $('#container .container-right .related-posts .page .page-boss').eq(myLabelIndex);
 	var page = myData.page;
@@ -275,10 +332,10 @@ function relatedPost(myData){
 	}
 	if(myLabelIndex != 4){
 		//日誌、生活圈、二手、敗家志
-		var dataUrl = 'http://shopping1.macaoeasybuy.com/SolrPostsController/QueryPostsByLabel.easy?page='+page+'&rows='+size+'&postState='+postState+'&labelid='+postId+'&easybuyCallback=?';
+		var dataUrl = 'http://social1.macaoeasybuy.com/SolrPostsController/QueryPostsByLabel.easy?page='+page+'&rows='+size+'&postState='+postState+'&labelid='+postId+'&easybuyCallback=?';
 	}else{
 		//話題
-		var dataUrl = 'http://shopping1.macaoeasybuy.com/SolrTopicsController/queryTopicByLabel.easy?page='+page+'&rows='+size+'&labelid='+postId+'&easybuyCallback=?'
+		var dataUrl = 'http://social1.macaoeasybuy.com/SolrTopicsController/queryTopicByLabel.easy?page='+page+'&rows='+size+'&labelid='+postId+'&easybuyCallback=?'
 	}
 	$.ajax({
 		url:dataUrl,
@@ -292,6 +349,8 @@ function relatedPost(myData){
 		success:function(data){
 			var newData = data.list; //返回來的信息
 			var dataLen = newData.classList.length;
+			console.log(newData);
+			console.log(dataLen);
 			newData.page = page;
 			$.each(newData.classList,function(k,y){
 				if(myLabelIndex != 4){
@@ -316,6 +375,15 @@ function relatedPost(myData){
 				imagesLoaded(box.find('img'),function(){
 					var a = waterfall(box,box.find('.pillar-all'),4,0,0,true);
 					var sum = arrayGetMax(a);
+					function arrayGetMax(a){
+						var max = a[0];
+						for(var i = 1; i < a.length; i++) {
+							if(max < a[i]) {
+								max = a[i];
+							}
+						}
+						return max;
+					};
 					box.find('.box-inner').css('height',sum+'px');
 				});
 			}
@@ -328,6 +396,21 @@ function relatedPost(myData){
 				bindScrollReq('off');
 				if(dataLen != 0 || page != 0) box.find('.no-more').css('display','block');
 			}
+			// 相關帖子點擊事件
+			$('.post-log .box-inner').on('click',function(e){
+				var target=e.target;
+				if($(target).hasClass('shadow-box')){
+					var postId=$(target).parents('.pillar-all').attr('data-id');
+           			 window.open('http://social.macaoeasybuy.com/easylive/easylivelog/logpostdetail/logpostdetail.html?postId='+postId);
+				}
+			})
+			$('.post-topic .box-inner').on('click',function(e){
+				var target=e.target;
+				if($(target).hasClass('shadow-box')){
+					var topicid=$(target).parents('.post-topic-box').attr('data-id');
+					window.open('http://social.macaoeasybuy.com/easylive/easylivebuytopic/buytopicpostdetail/buytopicpostdetail.html?topicId='+topicid);
+				}
+			})
 		}
 	});
 }
@@ -349,7 +432,7 @@ function bindScrollReq(state){
 }
 //相關帖子數量
 function relatedPostNum(){
-	var dataUrl = 'http://shopping1.macaoeasybuy.com/SolrLabelsController/QueryRelevantLabelCount.easy?id='+postId+'&easybuyCallback=?';
+	var dataUrl = 'http://social1.macaoeasybuy.com/SolrLabelsController/QueryRelevantLabelCount.easy?id='+postId+'&easybuyCallback=?';
 	var boxList = $('#container .container-right .related-posts .page .page-boss');
 	$.getJSON(dataUrl,function(data){
 		$('#related-posts-nav li').each(function(k){

@@ -107,6 +107,7 @@
 		<script src="/js/common/header&search&footer/searchBar.js"></script>
 		<script src="/js/common/header&search&footer/footer.js"></script>
 		<script src="/js/social/easylive/easylivebuytopic/easylivebuytopic.js"></script>
+		<script src="/js/common/clickEvent.js"></script>
 		<!--頭部選項卡模板-->
 		<script id="head-template" type="text/html">
 			<%for(var i=0;i<list.length;i++){%>
@@ -135,7 +136,9 @@
 			<%for(var i=0;i<usercommentinflist.length;i++){%>
 			<div class="hot-comments-item">
 				<div class="comments-info clearfloat">
-					<div class="comments-info-head"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=usercommentinflist[i].Pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+					<div class="comments-info-head" data-id="<%=usercommentinflist[i].id%>">
+						<img data-type="userAvatar" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=usercommentinflist[i].Pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'">
+					</div>
 					<div class="comments-info-userInfo">
 						<div>
 							<span class="name"><%=usercommentinflist[i].Name%></span>
@@ -162,7 +165,9 @@
 				<div class="box-img"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].shouldbuygroupPic%>" alt=""></div>
 				<div class="box-main">
 					<div class="box-main-head clearfloat">
-						<div class="box-main-head-img"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].adminpic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+						<div class="box-main-head-img" data-id="<%=list[i].adminid%>">
+							<img data-type="userAvatar" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].adminpic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'">
+						</div>
 						<div class="box-main-head-info">
 							<a>
 								<div class="box-main-head-info-title"><%=list[i].title%></div>
@@ -184,7 +189,9 @@
 					<div class="box-look-instruc">最近查看的宜粉：</div>
 					<ul class="clearfloat">
 						<%for(var j = 0;j<list[i].userSeeInfolist.length;j++){%>
-							<li><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].userSeeInfolist[j].Pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></li>
+							<li data-id="<%=list[i].userSeeInfolist[j].id%>">
+								<img data-type="userAvatar" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].userSeeInfolist[j].Pic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'">
+							</li>
 						<%}%>
 					</ul>
 					<div class="box-look-btn">好奇看看</div>

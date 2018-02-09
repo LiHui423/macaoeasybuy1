@@ -367,7 +367,7 @@
 			<%}%>
 		</script>
 		<!--最近查看宜粉-->
-		<script id="check" type="text/html" data-type="template">
+		<script id="check" type="text/html">
 			<% for(var k=0;k<userList.length;k++){%>
 			<li id="<%=userList[k].id%>">
 				<a href="">
@@ -391,7 +391,7 @@
 			<%}%>
 		</script>
 		<!--回復評論帖子-->
-		<script id="response" type="text/html" data-type="template">
+		<script id="response" type="text/html">
 			<%if(replyList.length > 0){%>
 				<%for(var i=0;i<replyList.length;i++){%>
 				<li class="clearfloat" id="<%=replyList[i].id%>response">
@@ -572,7 +572,7 @@
 							<div class="pillar">
 								<div class="page-main">
 									<%if(result.returnList[i].pic != ''){%>
-										<a href=""><img src="//wap.macaoeasybuy.com<%=result.returnList[i].pic%>" class="page-main-head-img" onerror="this.src='/img/common/loading_pc_220.jpg'"></a>
+										<a data-id="<%=result.returnList[i].id%>"><img src="//wap.macaoeasybuy.com<%=result.returnList[i].pic%>" class="page-main-head-img" onerror="this.src='/img/common/loading_pc_220.jpg'"></a>
 									<%}%>
 									<div class="post-main-text">
 										<div class="post-title"><%=result.returnList[i].titlename%></div>

@@ -1,13 +1,15 @@
 $(function(){
 	goodDetails()
 	otherGoodShow()
+	
 })
-
+var shopId;
 function goodDetails(){
 	var id = getId()
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsdetailController/queryAllGoodsdetaiInfo/" + id + "/3.easy?easybuyCallback=?",function(json){
 		var shopMessData = json;
 		console.log(shopMessData);
+		shopId=shopMessData.list[0].shopid;
 		/*店鋪信息*/
 		var htmlShopMess = template("shopMess", shopMessData);
 		$(".searchBox_left").html(htmlShopMess);

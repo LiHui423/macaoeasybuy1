@@ -99,7 +99,11 @@
 							</div>
 							<div class="liveshotBox_labelRank_icon">
 								<span><img src="/img/social/liveshot/labelRankIcon.png"></span>
-								<span>標籤排行榜</span>
+								<span>
+									<a href="http://social.macaoeasybuy.com/label/labelranklist/labelranklist.html" target="_blank">
+										標籤排行榜
+									</a>
+								</span>
 								<span><img src="/img/social/liveshot/labelRank_next.png"></span>
 							</div>
 						</div>
@@ -361,6 +365,7 @@
 	<script src="/js/social/liveshot/liveshot.js"></script>
 	<!--瀑布流樣式圖片加載-->
 	<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+	<script src="/js/common/clickEvent.js"></script>
 
 	<!--敗家點讚的模板-->
 	<script type="text/html" id="Prodigal" data-array="ProdigalList">
@@ -372,10 +377,16 @@
 					<%}else{%>
 						<div class="liveshotBox_thumb_each_pic" style="background-image: url(http://wap.macaoeasybuy.com<%=result[i].pic%>);">
 					<%}%>
-						<div class="liveshotBox_thumb_each_headPic myborder-radius" data-userid='<%=result[i].userId%>'><img src="http://wap.macaoeasybuy.com<%=result[i].userPic%>"></div>
+						<div class="liveshotBox_thumb_each_headPic myborder-radius" data-id='<%=result[i].userId%>'>
+							<img data-type="userAvatar" src="http://wap.macaoeasybuy.com<%=result[i].userPic%>">
+						</div>
 					</div>
 					<div class="liveshotBox_thumb_each_main">
-						<div class="liveshotBox_thumb_each_title hiddenText"><%=result[i].title%></div>
+						<a>
+							<div class="liveshotBox_thumb_each_title hiddenText">
+								<span id="underline"><%=result[i].title%></span>
+							</div>
+						</a>
 						<div class="liveshotBox_thumb_each_intro"><p><%=result[i].content%></p></div>
 						<div class="liveshotBox_thumb_each_dataBox clearfloat">
 							<div class="liveshotBox_thumb_each_data"><span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=result[i].seeCount%></span></div>
@@ -390,10 +401,10 @@
 	<!--敗家達人的模板-->
 	<script type="text/html" id="talent" data-array="talentlList">
 		<%for(var i = 0;i <result.length;i++){%>
-			<div class="liveshotBox_talent_each" data-id = "">
+			<div class="liveshotBox_talent_each" data-id = "<%=result[i].userId%>">
 				<div class="liveshotBox_talent_each_head clearfloat">
-					<div class="liveshotBox_talent_each_headLeft myborder-radiusliveshotBox_talent_each_headLeft myborder-radius" data-userid='<%=result[i].userId%>'>
-						<img src="//wap.macaoeasybuy.com<%=result[i].userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+					<div class="liveshotBox_talent_each_headLeft myborder-radiusliveshotBox_talent_each_headLeft myborder-radius" data-id='<%=result[i].userId%>'>
+						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=result[i].userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
 					<div class="liveshotBox_talent_each_headRight">
 						<div class="liveshotBox_talent_each_headName clearfloat">
 							<span><%=result[i].name%></span>
@@ -476,7 +487,9 @@
 			<div class="pillar-all" data-id = "<%=result.returnList[i].id%>">
 				<div class="pillar">
 					<div class="page-main">
-						<a href=""><img src="http://wap.macaoeasybuy.com<%=result.returnList[i].pic%>" onerror="this.src='/img/social/label/labeldetail/showpic.png'" class="page-main-head-img"></a>
+						<a>
+							<img src="http://wap.macaoeasybuy.com<%=result.returnList[i].pic%>" onerror="this.src='/img/social/label/labeldetail/showpic.png'" class="page-main-head-img">
+						</a>
 						<div class="post-main-text">
 							<div class="post-title"><%=result.returnList[i].titlename%></div>
 							<div class="post-description"><%=result.returnList[i].purchasedfrom%></div>

@@ -4,10 +4,12 @@ $(function(){
 	seeOtherMusem()
 })
 function goodDetails(){
-	var id = getId()
-	$.getJSON("http://shopping.macaoeasybuy.com/goodsdetailController/queryAllGoodsdetaiInfo/" + id + "/5.easy?easybuyCallback=?",function(json){
+	var id=location.href.split('=')[1];
+	console.log(id);
+	//var id = getId()
+	$.getJSON("http://shopping1.macaoeasybuy.com/goodsdetailController/queryAllGoodsdetaiInfo/" + id + "/5.easy?easybuyCallback=?",function(json){
 		var shopMessData = json;
-		console.log(json)
+		console.log(json);
 		/*商品信息*/
 		var htmlGoodMess = template("goodDetailsMess", shopMessData);
 		$(".museumDetails_goodMessBox_left").html(htmlGoodMess);
@@ -53,7 +55,7 @@ function goodDetails(){
 /*宜品館商品底部其他商品數據*/
 function BottomOtherBox(){
 	var id = getId()
-	$.getJSON("http://shopping.macaoeasybuy.com/ShangpinBottomController/queryYiRandomSp/"+ id +".easy?easybuyCallback=?",function(json){
+	$.getJSON("http://shopping1.macaoeasybuy.com/ShangpinBottomController/queryYiRandomSp/"+ id +".easy?easybuyCallback=?",function(json){
 		var detailsBottomOtherData = json;
 		console.log(detailsBottomOtherData)
 		var html = template("detailsBottomOther", detailsBottomOtherData);
@@ -63,7 +65,7 @@ function BottomOtherBox(){
 
 /*宜品館商品底部去其他館看看數據*/
 function seeOtherMusem(){
-	$.getJSON("http://shopping.macaoeasybuy.com/ShangpinBottomController/queryYiSeeNumber.easy?easybuyCallback=?",function(json){
+	$.getJSON("http://shopping1.macaoeasybuy.com/ShangpinBottomController/queryYiSeeNumber.easy?easybuyCallback=?",function(json){
 		var seeOtherMuseumData = json;
 		var html = template("seeOtherMuseum", seeOtherMuseumData);
 		$(".museumDetails_othersMuseum_showBox").html(html);

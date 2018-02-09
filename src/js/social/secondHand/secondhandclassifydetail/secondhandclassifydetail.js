@@ -1,6 +1,8 @@
 var justNumInput = easyBuy.global.dep.justNumInput;
 var maskClick = easyBuy.global.dep.maskClick;
-var postType = easyBuy.global.pageParameter.type || 13;
+//var postType = easyBuy.global.pageParameter.type || 13;
+var postType=location.href.split('=')[1];
+console.log(postType);
 easyBuy.global.beforeDataJs = function(){
 	bannerImage(); //廣告圖
 	reqClassName(); //獲取二手類名

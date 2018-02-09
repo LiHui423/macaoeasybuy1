@@ -6,7 +6,7 @@ function clickScrollFunction(tragetDiv){
 			if($(this).siblings(".secondHand_exampleEach_scroll").children("ul").is(":animated")){
 				return;
 			}else{
-				l = parseInt($(this).siblings(".secondHand_exampleEach_scroll").children("ul").css("left")) + 1268;
+				var l = parseInt($(this).siblings(".secondHand_exampleEach_scroll").children("ul").css("left")) + 1268;
 				$(this).siblings(".secondHand_exampleEach_scroll").children("ul").animate({
 					"left":l
 				},800)
@@ -22,7 +22,7 @@ function clickScrollFunction(tragetDiv){
 			if($(this).siblings(".secondHand_exampleEach_scroll").children("ul").is(":animated")){
 				return;
 			}else{
-				l = parseInt($(this).siblings(".secondHand_exampleEach_scroll").children("ul").css("left")) - 1268;
+				var l = parseInt($(this).siblings(".secondHand_exampleEach_scroll").children("ul").css("left")) - 1268;
 				$(this).siblings(".secondHand_exampleEach_scroll").children("ul").animate({
 					"left":l
 				},800)

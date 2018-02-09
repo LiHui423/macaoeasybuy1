@@ -107,6 +107,7 @@ function getTemplateData(templateObj) {
             }
             console.log("当前请求模块为：" + templateObj.templateID + ", 当前请求页面为：" + resData.data[0].page);
             console.log("缓存：");
+            // 最新鮮標籤數據
             console.log(resData);
             console.log("对象数据：");
             console.log(templateObj.data);
@@ -212,7 +213,20 @@ function otherProcesser(templateObj) {
     }
 }
 
-
+// 頁面點擊事件
+$(document).on('click',function(e){
+    var target=e.target;
+    if($(target).hasClass('look-btn')){
+        var labelId=$(target).attr('id');
+        console.log(labelId);
+        window.open('http://social.macaoeasybuy.com/label/labeldetail/labeldetail.html?id='+labelId);
+    }
+    if($(target).attr('id') === "underline"){
+        var labelId=$(target).parents('li').attr('id');
+        console.log(labelId);
+        window.open('http://social.macaoeasybuy.com/label/labeldetail/labeldetail.html?id='+labelId);
+    }
+})
 template.helper('ranking', function(num) {
     return num = num < 4 ? "TOP"+num : num;
 })

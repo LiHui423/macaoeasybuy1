@@ -92,9 +92,9 @@ function queryEasyBuyUserSee(){
 		var html = '';
 		$.each(data.list, function(k,y) {
 			if(y.Pic===null||y.Pic===""){
-				html += '<li><img src="/img/common/loading_pc_headPic.png"></li>';
+				html += '<li data-id="'+y.id+'"><img data-type="userAvatar" src="/img/common/loading_pc_headPic.png"></li>';
 			}else{
-				html += '<li><img src="http://wap.macaoeasybuy.com/'+y.Pic+'"></li>';
+				html += '<li data-id="'+y.id+'"><img data-type="userAvatar" src="http://wap.macaoeasybuy.com/'+y.Pic+'"></li>';
 			}
 		});
 		$('#header-head-img').html(html);

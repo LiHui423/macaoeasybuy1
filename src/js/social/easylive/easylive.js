@@ -1,6 +1,7 @@
 
 document.body.onload = function () {
 	store().init();
+	clickEvent();
 };
 
 var store = (function () {
@@ -57,7 +58,8 @@ var store = (function () {
 				targetURL: 'http://social1.macaoeasybuy.com/shouldBuySocialConntroller/queryEasyBuyTopicList.easy',
 				templateID: 'queryEasyBuyTopicList',
 				container: '.easylive-topic-nav-inner',
-				afterInsert: function () {
+				afterInsert: function (data) {
+					console.log(data);
 					$.each($('.easylive-topic-nav li'), function (index) {
 						index === 0 && $(this).attr('data-eb-active', '');
 						$(this).children('div').on('click', function () {
@@ -93,7 +95,8 @@ var store = (function () {
 				targetURL: 'http://social1.macaoeasybuy.com/shouldBuySocialConntroller/queryEasyBuySuitableLifeList.easy',
 				templateID: 'queryEasyBuySuitableLifeList',
 				container: '.living-circle .slide-wrapper',
-				afterInsert: function () {
+				afterInsert: function (data) {
+					console.log(data);
 					easyBuy.global.dep.ebSlide({
 						mode: 2,
 						autoPlay: true,
@@ -148,5 +151,29 @@ var store = (function () {
 		return {init: init};
 	}
 	return store;
+	// 頁面點擊事件
+	
 }());
-
+function clickEvent(){
+	$('.welfare-main').on('click',function(e){
+		var target=e.target;
+		if($(target).attr('id') === "underline"){
+			var postId=$(target).parents('[data-id]').attr('data-id');
+			window.open('http://social.macaoeasybuy.com/easylive/easylivewelfare/welfarepostdetail/welfarepostdetail.html?postId='+postId);
+		}
+	})
+	$('.easylive-topic-main').on('click',function(e){
+		var target=e.target;
+		if($(target).attr('id') === "underline"){
+			var postId=$(target).parents('[data-id]').attr('data-id');
+			window.open('http://social.macaoeasybuy.com/easylive/easylivebuytopic/buytopicpostdetail/buytopicpostdetail.html?postId='+postId);
+		}
+	})
+	$('.slider-item-container').on('click',function(e){
+		var target=e.target;
+		if($(target).is('a')){
+			var postId=$(target).parents('li').attr('id');
+			window.open('http://social.macaoeasybuy.com/easylive/easyliveglobalgoods/globalpostdetail/globalpostdetail.html?postId='+postId);
+		}
+	})
+}

@@ -119,12 +119,13 @@
     <script src="/js/common/header&search&footer/footer.js" async></script>
     <script src="/js/common/header&search&footer/header.js"></script>
     <script src="/js/social/label/labelranklist/labelranklist.js"></script>
+    <script src="/js/common/clickEvent.js"></script>
     <script id="labelRank" type="text/html" data-type="template">
         <% if (data[0].data !== undefined) {%>
             <%for(var i=0,il=data.length; i < il; i++) {%>
                 <div id="page<%=data[i].page%>">
                     <% for (var j=0,jl=data[i].data.length; j < jl; j++) {%>
-                        <li class="ranklist-lister clearfloat">
+                        <li class="ranklist-lister clearfloat" id="<%=data[i].data[j].id%>">
                             <div class="lister-img">
                                 <div class="label-inner-shadow">
                                     <div class="shadow-inner">
@@ -145,11 +146,13 @@
                             </div>
                             <div class="lister-info">
                                 <div class="label-number"><%=ranking(data[i].data[j].num)%></div>
-                                <div class="label-name"><%=data[i].data[j].labelName%></div>
+                                <div class="label-name">
+                                    <%=data[i].data[j].labelName%>
+                                </div>
                                 <div class="label-class"><%=labelType(data[i].data[j].type)%></div>
                                 <div class="label-creater clearfloat">
-                                    <div class="creater-head myborder-radius" id="<%=data[i].data[j].userId%>">
-                                        <img src="//wap.macaoeasybuy.com<%=data[i].data[j].userPic%>">
+                                    <div class="creater-head myborder-radius" data-id="<%=data[i].data[j].userId%>">
+                                        <img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=data[i].data[j].userPic%>">
                                     </div>
                                     <div class="creater-info">
                                         <div>
@@ -174,19 +177,24 @@
             <%}%>
         <%}%>
     </script>
+    <!-- 最新鮮標籤 -->
     <script id="freshLabel" type="text/html" data-type="template">
         <% for(var i=0,j=data.length; i<j; i++) { %>
-            <li>
-                <div class="label-name">
-                    <%=data[i].labelName%>
-                </div>
+            <li id="<%=data[i].labelId%>">
+                <a>
+                    <div class="label-name">
+                        <span id="underline">
+                            <%=data[i].labelName%>
+                        </span>
+                    </div>
+                </a>
                 <div class="news-label-info clearfloat">
                     <div class="label-creater clearfloat">
-                        <div class="creater-head myborder-radius">
+                        <div class="creater-head myborder-radius" data-id="<%=data[i].userId%>">
                             <%if(data[i].userPic==""){%>
-                                <img src="/img/common/loading_pc_headPic.png">
+                                <img data-type="userAvatar" src="/img/common/loading_pc_headPic.png">
                             <%}else{%>
-                                <img src="//wap.macaoeasybuy.com<%=data[i].userPic%>">
+                                <img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=data[i].userPic%>">
                             <%}%>
                         </div>
                         <div class="creater-info">
@@ -211,14 +219,15 @@
             </li>
             <% } %>
     </script>
+    <!-- 標籤俠模板 -->
     <script id="labelMan" type="text/html" data-type="template">
         <% for(var i=0,il=data.length; i<il; i++) { %>
             <div id="page<%=data[i].page%>">
                 <% for(var j=0,jl=data[i].data.length; j < jl; j++) {%>
                     <div class="hero-label-list">
-                        <div class="hero-lister clearfloat">
+                        <div class="hero-lister clearfloat" data-id="<%=data[i].data[j].user.id%>">
                             <div>
-                                <img src="//wap.macaoeasybuy.com<%=data[i].data[j].user.pic%>">
+                                <img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=data[i].data[j].user.pic%>">
                             </div>
                             <div>
                                 <span>
@@ -229,14 +238,16 @@
                         </div>
                         <div class='hero-label-contain'>
                             <%for(var z=0,zl=data[i].data[j].labelList.length; z < zl; z++) {%>
-                                <div class="label-inner">
+                                <div class="label-inner" >
                                     <div class="show-filter">
                                         <div class="label-img">
                                             <img src="//wap.macaoeasybuy.com<%=data[i].data[j].labelList[z].picture%>">
                                         </div>
                                         <div class="hero-inner-class clearfloat">
                                             <div class="label-name">
-                                                <%=data[i].data[j].labelList[z].labelName%>
+                                                <span id="underline">
+                                                    <%=data[i].data[j].labelList[z].labelName%>
+                                                </span>
                                             </div>
                                             <div class="label-number">
                                                 <%=ranking(data[i].data[j].labelList[z].num)%>
@@ -259,7 +270,7 @@
                                         </div>
                                     </div>
                                     <div class="label-inner-shadow">
-                                        <div class="look-btn shadow-inner" id="<%=data[i].data[j].labelList[z].id%">查看該標籤相關帖子></div>
+                                        <div class="look-btn shadow-inner" id="<%=data[i].data[j].labelList[z].id%>">查看該標籤相關帖子></div>
                                     </div>
                                 </div>
                                 <%}%>

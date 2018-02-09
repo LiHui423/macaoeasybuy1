@@ -249,10 +249,33 @@
 	letter-spacing: 1px;
 }
 .secondHand_goods_title{
-	padding: 20px 0px 10px 0px;
+	/* padding: 20px 0px 10px 0px; */
 	color:#02bbc2;
 	font-size: 16px;
+	transition:all .3s;
+	margin:20px 0px 10px 0px;
 }
+/* 后增加 */
+
+#underline{
+	position: relative;
+}
+#underline:after{
+	content: "";
+	width: 0;
+	height: 1px;
+	background: #02bbc2;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transition: all .3s;
+}
+#underline:hover:after{
+	left: 0%;
+	width: 100%;
+}
+/*  */
+
 .secondHand_goods_intro{
 	padding-bottom: 30px;
 }

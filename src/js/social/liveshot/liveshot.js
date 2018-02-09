@@ -5,6 +5,7 @@ $(function(){
 	showHover();
 	easyBuy.global.dep.waterfall($('.liveshotBox_postList_main'),$('.pillar-all'),6,15,15);
 	setPosition();
+	clickEvent();//页面点击事件
 })
 
 function clickTabFunction($targetDiv,showNumber,$leftBtn,$RightBtn,scrollWidth,scrollNumber,otherWidth){
@@ -15,7 +16,7 @@ function clickTabFunction($targetDiv,showNumber,$leftBtn,$RightBtn,scrollWidth,s
 			if($(this).siblings("ul").is(":animated")){
 				return;
 			}else{
-				l = parseInt($(this).siblings("ul").css("left")) + scrollWidth * scrollNumber + otherWidth;
+				var l = parseInt($(this).siblings("ul").css("left")) + scrollWidth * scrollNumber + otherWidth;
 				$(this).siblings("ul").animate({
 					"left":l
 				},800)
@@ -30,7 +31,7 @@ function clickTabFunction($targetDiv,showNumber,$leftBtn,$RightBtn,scrollWidth,s
 			if($(this).siblings("ul").is(":animated")){
 				return;
 			}else{
-				l = parseInt($(this).siblings("ul").css("left")) - scrollWidth * scrollNumber - otherWidth;
+				var l = parseInt($(this).siblings("ul").css("left")) - scrollWidth * scrollNumber - otherWidth;
 				$(this).siblings("ul").animate({
 					"left":l
 				},800)
@@ -179,4 +180,26 @@ function postScroll(){
 
 	/*綁定滾動*/
 	$(window).off('scroll.throttlescroll').on('scroll.throttlescroll',throttling(handle, 100, 500))
+}
+// 頁面點擊事件
+function clickEvent(){
+	$('body').on('click',function(e){
+		var target=e.target;
+		console.log(target);
+		if($(target).attr('id') === "underline"){
+			var postId=$(target).parents('[data-id]').attr('data-id');
+			window.open('http://social.macaoeasybuy.com/liveshot/ProdigalPostDetail/ProdigalPostDetail.html?postId='+postId);
+			
+		}
+		if($(target).html('查看曬圖')){
+			var userId=$(target).parents('[data-id]').attr('data-id');
+			// 跳轉到用戶空間敗家志處
+		}
+		if($(target).hasClass('shadow-box')){
+			var postId=$(target).parents('[data-id]').attr('data-id');
+			console.log(postId);
+			window.open('http://social.macaoeasybuy.com/liveshot/ProdigalPostDetail/ProdigalPostDetail.html?postId='+postId);
+
+		}
+	})
 }

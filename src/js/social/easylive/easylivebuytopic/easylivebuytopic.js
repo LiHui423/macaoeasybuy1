@@ -67,9 +67,10 @@ function frontCover(){
 function queryEasyBuyUserSee(){
 	var dataUrl = 'http://social1.macaoeasybuy.com/easyBuyTopicController/QueryEasyBuyUserSee.easy?Type=101&SeeId=0&size=11&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
+		console.log(data);
 		var html = '';
 		$.each(data.list, function(k,y) {
-			html += '<li><img src="http://wap.macaoeasybuy.com/'+y.Pic+'" onerror="this.src=\'/img/common/loading_pc_headPic.png\'"></li>';
+			html += '<li data-id="'+y.id+'"><img data-type="userAvatar" src="http://wap.macaoeasybuy.com/'+y.Pic+'" onerror="this.src=\'/img/common/loading_pc_headPic.png\'"></li>';
 		});
 		$('#header-head-img').html(html);
 	});
@@ -84,7 +85,8 @@ function hotTopicReq(){
 		$('#list-hot-cover').html('<img src="http://wap.macaoeasybuy.com/'+newData.shouldbuygroupPic+'">');
 		$('#list-hot-cover').parent().attr('id',newData.id);
 		//頭像
-		$('#hot-box-main-head-img').html('<img src="http://wap.macaoeasybuy.com/'+newData.adminpic+'" onerror="this.src=\'/img/common/loading_pc_headPic.png\'">');
+		$('#hot-box-main-head-img').html('<img data-type="userAvatar" src="http://wap.macaoeasybuy.com/'+newData.adminpic+'" onerror="this.src=\'/img/common/loading_pc_headPic.png\'">');
+		$('#hot-box-main-head-img').parent().attr('data-id',newData.adminid);
 		//標題
 		$('#hot-box-main-head-info-title').html(newData.title);
 		//小編名字
@@ -102,6 +104,7 @@ function hotTopicReq(){
 	});
 	//無縫滾動
 	function scrollBoxFunc(newData){
+		console.log(newData)
 		var scrollBox = $('#hot-comments .hot-comments-inner'); //滾動的盒子
 		var html = template('hot-response-template',newData); //獲取模板
 		scrollBox.html(html); //添加模板
@@ -199,7 +202,7 @@ function topicClickEvent(){
 	})
 	$('#list-other').on('click',function(e){
 		var target=e.target;
-		if($(target).attr('class')==='box-main-head-info-title'){
+		if($(target).attr('class')==='box-main-head-info-title'||$(target).attr('class')==='box-look-btn'){
 			var postId=$(target).parents('.post-topic-box').attr('id');
 			console.log(postId);
 			easyBuy.global.pageParameter.postId=postId;

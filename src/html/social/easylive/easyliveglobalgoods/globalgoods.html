@@ -88,6 +88,7 @@
     <script src="/js/common/header&search&footer/footer.js" async></script>
     <script src="/js/common/header&search&footer/header.js"></script>
 	<script src="/js/social/easylive/easyliveglobalgoods/globalgoods.js"></script>
+	<script src="/js/common/clickEvent.js"></script>
 	<!--更多選項模板-->
 	<script id="arrow-template" type="text/html" data-type="template">
 		<li class="more" id="more-class-btn">
@@ -130,7 +131,9 @@
 					<div class="main-new">最新查看の宜粉：</div>
 					<ul class="main-head-img clearfloat">
 						<%for(var j = 0;j<list[i].userSeeInfolist.length;j++){%>
-							<li><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].userSeeInfolist[j].Pic%>"></li>
+							<li data-id="<%=list[i].userSeeInfolist[j].id">
+								<img data-type="userAvatar" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].userSeeInfolist[j].Pic%>">
+							</li>
 						<%}%>
 					</ul>
 					<ul class="info clearfloat">

@@ -1,4 +1,5 @@
 $(function(){
+	
 	bannerPicBox();
 	willbeshelvesBoxHtml();
 	exchangeVisitBox();
@@ -7,8 +8,11 @@ $(function(){
 
 /*banner圖數據加載*/
 function bannerPicBox(){
+
 	$.getJSON("http://shopping1.macaoeasybuy.com/MallshopingMessController/queryMessAdvertisement/10116/10107/false/false.easy",function(json){
 		var bannerPicList = json;
+		var shopId=bannerPicList.list[0].shopid;
+		console.log(shopId);
 		var html = template("showBannerPic", bannerPicList);
 		$(".scroll").html(html);
 		mygoodbanner({
@@ -25,6 +29,7 @@ function bannerPicBox(){
 function willbeshelvesBoxHtml(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsMopExChangeController/queryMianExchangeWillGrounding/25/0.easy",function(json){
 		var willbeshelvesList = json;
+		console.log(willbeshelvesList);
 		var html = template("showWillbeshelves", willbeshelvesList);
 		$(".willbeShelves_scroll ul").html(html);
 		clickTabFunction($(".willbeShelves_scroll"),5,$(".willbeShelves_btnLeft"),$(".willbeShelves_btnRight"),247,5)

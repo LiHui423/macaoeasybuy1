@@ -81,7 +81,9 @@
 							<div class="person-swapper">
 								<!--頭像-->
 								<div class="publisherMessBox clearfloat">
-									<div class="messBox_pic" id="messBox_pic"><img src="" alt=""></div>
+									<div class="messBox_pic" id="messBox_pic">
+										<img src="" alt="">
+									</div>
 									<div class="messBox_mess">
 										<div class="messBox_mess_name" id="other-mess-name">
 											<span>&nbsp;</span>
@@ -328,7 +330,7 @@
 							</div>
 						</div>
 						<div class="all-look-bottom">
-							<a href="">查看更多二手帖子<span class="bottom-arrow">>></span></a>
+							<a href="http://social.macaoeasybuy.com/secondhand/secondHand.html" target="_blank">查看更多二手帖子<span class="bottom-arrow">>></span></a>
 						</div>
 					</div>
 
@@ -395,7 +397,7 @@
 	    <script src="/js/common/header&search&footer/searchBar.js" async></script>
 	    <script src="/js/common/header&search&footer/footer.js" async></script>
 		<script src="/js/common/header&search&footer/header.js"></script>
-		<script src="//js.macaoeasybuy.com/img/js/plug/yez_Editor.js"></script>
+		<script src="//js.macaoeasybuy.com/js/plug/yez_Editor.js"></script>
 		<!--編輯回復(引入用戶空間)-->
 		<script src="/js/userspace/common/postDetailEditorSend.js"></script>
 		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
@@ -430,7 +432,7 @@
 			<%}%>
 		</script>
 		<!--最近查看宜粉-->
-		<script id="check" type="text/html" data-type="template">
+		<script id="check" type="text/html">
 			<% for(var k=0;k<userList.length;k++){%>
 			<li id="<%=userList[k].id%>" data-id="<%=userList[k].id%>">
 				<a>
@@ -454,7 +456,7 @@
 			<%}%>
 		</script>
 		<!--回復評論帖子-->
-		<script id="response" type="text/html" data-type="template">
+		<script id="response" type="text/html">
 			<%if(replyList.length > 0){%>
 				<%for(var i=0;i<replyList.length;i++){%>
 				<li class="clearfloat" id="<%=replyList[i].id%>response">
@@ -643,7 +645,7 @@
 								<%if(type == 'other'){%>
 									<div class="laster-look clearfloat">
 										<div class="laster-head">
-											<img src="//wap.macaoeasybuy.com<%=result.returnList[i].user.pic%>" alt="">
+											<img src="//wap.macaoeasybuy.com<%=result.returnList[i].user.pic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
 										</div>
 										<div class="laster-text">
 											<div class="laster-text-name clearfloat">

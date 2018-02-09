@@ -1,6 +1,8 @@
-var albumID = easyBuy.global.pageParameter.id;
+//var albumID = easyBuy.global.pageParameter.id;
+var albumID=location.href.split('=')[1];
+console.log(albumID);
 var easyScrollRequest = easyBuy.global.dep.easyScrollRequest;
-
+clickEvent();//頁面點擊事件
 var queryThealBumData = new YEZTemplateObj({
     targetURL: 'http://social1.macaoeasybuy.com/thealbumSocialConntroller/queryThealBumData.easy',
     parameters: {
@@ -8,7 +10,8 @@ var queryThealBumData = new YEZTemplateObj({
     },
     templateID: 'albumInfo',
     container: '#swapper > #container',
-    afterInsert: function () {
+    afterInsert: function (data) {
+        console.log(data);
         templateProcessor([queryThealBumGroupData]);
         collectionBtn(queryThealBumGroupData.data.selectPic);
     }
@@ -87,4 +90,15 @@ function changeSelectedCount(count) {
     count === 0 ?
         (!btn.hasClass('cannot-select') && btn.addClass('cannot-select')) :
         (btn.removeClass('cannot-select'));
+}
+function clickEvent(){
+    $(document).on('click',function(e){
+        var target=e.target;
+        console.log(target);
+        if($(target).is('p')||$(target).hasClass('shadow-box')){
+            var albumPhotoId=$(target).parents('.picture-item').attr('id');
+            console.log(albumPhotoId);
+            window.open('http://social.macaoeasybuy.com/easylive/easylivealbum/albumclassification/albumlistdetail/albumphotodetail/albumphotodetail.html?albumPhotoId='+albumPhotoId);
+        }
+    })
 }

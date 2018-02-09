@@ -8,6 +8,7 @@ easyBuy.global.beforeDataJs = function(){
 	});
 	mineOtherReq(); //帖主還有其他帖子
 	allLookReq(); //他們都在看其他帖子
+	clickEvent();//页面点击事件
 }
 easyBuy.global.afterDataJs = function(){
 	if(easyBuy.isLogin){
@@ -67,10 +68,12 @@ function selectPage(){
 	});
 }
 
+postContent();
 //帖子內容
 function postContent(){
 	$.ajax({
-		url:'http://userspace1.macaoeasybuy.com/UserFairsConntroller/queryFairsInfo.easy?userId='+userId+'&seeUserId='+seeUserId+'&id='+postId+'&easybuyCallback=?',
+		//url:'http://userspace1.macaoeasybuy.com/UserFairsConntroller/queryFairsInfo.easy?userId='+userId+'&seeUserId='+seeUserId+'&id='+postId+'&easybuyCallback=?',
+		url:'http://userspace1.macaoeasybuy.com/UserFairsConntroller/queryFairsInfo.easy?userId=5&seeUserId=6&id='+postId+'&easybuyCallback=?',
 		type:"get",
 		async:true,
 		dataType:'jsonp',
@@ -187,4 +190,16 @@ function allLookReq(){
 			}
 		});
 	}
+}
+// 頁面點擊事件
+function clickEvent(){
+	$('body').on('click',function(e){
+		var target=e.target;
+		if($(target).hasClass('pillar-shadow')){
+			console.log('true');
+			var postId=$(target).parents('.pillar-all').attr('id').split('-')[0];
+			console.log(postId);
+			window.location.href="http://social.macaoeasybuy.com/market/treasureclassifydetail/fairpostdetail/fairpostdetail.html?id="+postId;
+		}
+	})
 }

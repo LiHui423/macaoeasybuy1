@@ -59,7 +59,9 @@
                     </a>
                 </div>
                 <div class="golbal-more">
-                    <div class="golbal-more-btn">更多全球筍貨 >></div>
+                    <a href="http://social.macaoeasybuy.com/easylive/easyliveglobalgoods/globalgoods.html" target="_blank">
+                        <div class="golbal-more-btn">更多全球筍貨 >></div>
+                    </a>
                 </div>
             </div>
             <div class="other-template clearfloat">
@@ -198,7 +200,7 @@
                                     <div class="easylive-topic-nav-inner">
                                         <li>
                                             <div class="clearfloat easylive-topic-nav-list">
-                                                <div class="easylive-topic-nav-list-img eb-img"><img
+                                                <div class="easylive-topic-nav-list-img e-img"><img
                                                         src="/img/social/easylive/1.png"></div>
                                                 <div class="easylive-topic-nav-list-instruc">
                                                     <div>超人氣</div>
@@ -427,6 +429,8 @@
 </body>
 
 <script src="/js/plug/yez_js_Reset.js"></script>
+<script src="/js/common/ebtemplate-jquery.js"></script>
+<script src="/js/common/ebtemplate.js"></script>
 <script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
 <script src="/js/common/vendor-extend/atr-template.extend.js"></script>
 <!-- <script src="/js/common/header&search&footer/searchBar.js" async></script> -->
@@ -435,36 +439,46 @@
 <script src="/js/common/ebtemplate-jquery.js"></script>
 <script src="/js/social/easylive/easylive.js"></script>
 <script src="/js/common/easyframe.js"></script>
+<script src="/js/common/clickEvent.js"></script>
 
+<!-- 全球荀货分类 -->
 <script id="queryShouldbuyClass" type="text/html" data-eb-template>
     <%for(var i=0, item; item = content[i++];) {%>
     <li id="<%=item.id%>">
-        <div class="global-list-logo eb-img">
+        <div class="global-list-logo e-img">
             <img src="//wap.macaoeasybuy.com<%=item.shouldbuyClassPic%>">
         </div>
         <div class="global-list-text"><%=item.shouldbuyClassName%></div>
     </li>
     <%}%>
 </script>
+<!-- 全球筍貨列表 -->
 <script id="queryEasyBuyWorldClassList" type="text/html" data-eb-template>
     <%for(var i=0, item; item = content[i++];) {%>
     <li id="<%=item.id%>">
         <div class="mdetail_div_topic_detail">
             <div class="title-img"><img src="//wap.macaoeasybuy.com<%=item.pic%>"></div>
-            <div class="mdetail_div_topicfont"><a href="#"><%=item.title%></a></div>
+            <div class="mdetail_div_topicfont">
+                <a><%=item.title%></a>
+            </div>
             <div class="mdetail_topic_text"><%=cutModify(item.content)%></div>
         </div>
     </li>
     <%}%>
 </script>
+<!-- 福利社 -->
 <script id="queryEasyBuyWelfareList" type="text/html" data-eb-template>
     <div class="welfare-main-left">
         <div class="post-topic-box">
-            <div class="box-img eb-img"><img src="<%=content[0].welfarePic%>"></div>
+            <div class="box-img e-img"><img src="<%=content[0].welfarePic%>"></div>
             <div class="box-main">
                 <div class="box-main-head">
                     <div class="box-main-head-info">
-                        <div class="box-main-head-info-title"><%=content[0].title%></div>
+                        <a>
+                            <div class="box-main-head-info-title" data-id="<%=content[0].welfareId%>">
+                                <span id="underline"><%=content[0].title%></span>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="box-main-head-info-article"><%=content[0].content%></div>
@@ -500,13 +514,17 @@
     <div class="welfare-main-right">
         <%for(var i=1, item; item = content[i++];) {%>
         <div class="post-topic-box clearfloat">
-            <div class="box-img eb-img">
+            <div class="box-img e-img">
                 <img src="<%=item.welfarePic%>">
             </div>
             <div class="box-main">
                 <div class="box-main-head">
                     <div class="box-main-head-info">
-                        <div class="box-main-head-info-title"><%=item.title%></div>
+                        <a>
+                            <div class="box-main-head-info-title" data-id="<%=item.welfareId%>">
+                                <span id="underline"><%=item.title%></span>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="box-main-head-info-article"><%=item.content%></div>
@@ -520,12 +538,13 @@
         <%}%>
     </div>
 </script>
+<!-- 宜買話題分類 -->
 <script id="queryEasyBuyTopicList" type="text/html" data-eb-template>
     <%for(var i=0, item; item = content[i++];) {%>
     <li id="<%=item.classId%>">
         <div class="clearfloat easylive-topic-nav-list">
-            <div class="easylive-topic-nav-list-img eb-user-avatar">
-                <img src="//wap.macaoeasybuy.com<%=item.classPic%>" >
+            <div class="easylive-topic-nav-list-img e-user-avatar">
+                <img style="width:72px" data-type="userAvatar" src="//wap.macaoeasybuy.com<%=item.classPic%>" style="width:72px;">
             </div>
             <div class="easylive-topic-nav-list-instruc">
                 <div><%=item.className%></div>
@@ -535,14 +554,19 @@
     </li>
     <%}%>
 </script>
+<!-- 宜買話題精選 -->
 <script id="queryEasyBuyTopicDetailList" type="text/html" data-eb-template>
     <%for(var i=0, item; item = content[i++];) {%>
     <div class="post-topic-box clearfloat">
-        <div class="box-img eb-img"><img src="<%=item.topicPic%>"></div>
+        <div class="box-img e-img"><img src="<%=item.topicPic%>"></div>
         <div class="box-main">
             <div class="box-main-head">
                 <div class="box-main-head-info">
-                    <div class="box-main-head-info-title"><%=item.title%></div>
+                    <a>
+                        <div class="box-main-head-info-title" data-id="<%=item.topicId%>">
+                            <span id="underline"><%=item.title%></span>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="box-main-head-info-article"><%=item.content%></div>
@@ -555,12 +579,13 @@
     </div>
     <%}%>
 </script>
+<!-- 生活圈 -->
 <script id="queryEasyBuySuitableLifeList" type="text/html" data-eb-template>
     <%for(var i=0, item; item = content[i++];) {%>
-    <li class="yez-topic slide-item">
+    <li class="yez-topic slide-item" data-id="<%=item.userId%>">
         <div class="right-box-main-head clearfloat topic-header">
-            <div class="eb-user-avatar">
-                <img src="//wap.macaoeasybuy.com<%=item.userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+            <div class="e-user-avatar">
+                <img style="width:72px" data-type="userAvatar" src="//wap.macaoeasybuy.com<%=item.userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
             </div>
             <div class="topic-info">
                 <div class="topic-title-info">
@@ -593,12 +618,13 @@
     </li>
     <%}%>
 </script>
+<!-- 宜粉日誌 -->
 <script id="queryEasyBuyReleaseList" type="text/html" data-eb-template>
     <%for(var i=0, item; item = content[i++];) {%>
     <li class="yez-topic slide-item">
         <div class="right-box-main-head clearfloat topic-header">
-            <div class="eb-user-avatar">
-                <img src="//wap.macaoeasybuy.com<%=item.userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+            <div class="e-user-avatar">
+                <img style="width:72px" src="//wap.macaoeasybuy.com<%=item.userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
             </div>
             <div class="topic-info">
                 <div class="topic-title-info">
@@ -631,12 +657,13 @@
     </li>
     <%}%>
 </script>
+<!-- 宜粉專輯 -->
 <script id="queryEasyBuyAlbumList" type="text/html" data-eb-template>
     <%for(var i=0, item; item = content[i++];) {%>
     <li class="yez-topic slide-item">
         <div class="right-box-main-head clearfloat topic-header">
-            <div class="eb-user-avatar" id="<%=item.userId%>">
-                <img src="//wap.macaoeasybuy.com<%=item.userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
+            <div class="e-user-avatar" id="<%=item.userId%>">
+                <img style="width:72px" src="//wap.macaoeasybuy.com<%=item.userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
             </div>
             <div class="topic-info">
                 <div class="topic-title-info">

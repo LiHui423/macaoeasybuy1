@@ -16,8 +16,8 @@
 		<script src="/js/common/frameDomainJSON.js"></script>
 		<script src="/js/common/yez_js_Reset.js"></script>
 		<script>
-			var shopId = 5;
-			var shopOrder = 0; //0 随机 1 时间 2心动数 3 价格
+			var shopId = location.href.split('=')[1].split('&')[0];
+			var shopOrder = location.href.split('=')[2]; //0 随机 1 时间 2心动数 3 价格
 			var descOrAsc = shopOrder == 3 ? 1 : 0; //0 降序 1 升序 (如果order是價格，則默認是升序排序)
 		</script>
 	</head>
@@ -154,7 +154,7 @@
 				<div class="shopDetails_main_sortingBox">
 					<div class="shopDetails_main_sorting_choose clearfloat">
 						<div class="shopDetails_main_sorting_chooseLeft">
-							<a href="/page/easybuy/moreshops/shopDetails/shopDetails_index.html">首頁</a>
+							<a>首頁</a>
 							<ul>
 								<li>所有</li>
 								<li>最新</li>
@@ -220,7 +220,11 @@
 				<div class="otherGoods">
 					<div class="otherGoods_pic"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_220.jpg'"></div>
 					<div class="otherGoods_mess">
-						<div class="otherGoods_mess_title hiddenText"><%=list[i].title%></div>
+						<div class="otherGoods_mess_title hiddenText" data-id="<%=list[i].id%>">
+							<a>
+								<span id="underline"><%=list[i].title%></span>
+							</a>
+						</div>
 						<p class="otherGoods_mess_nowPrice">MOP<%=list[i].price%></p>
 						<p class="otherGoods_mess_oldPrice">MOP<%=list[i].costPrice%></p>
 					</div>

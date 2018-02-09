@@ -27,7 +27,9 @@ function searchSlide(){
 				case 0:
 					//alert('跳去搜索結果頁');
 					str = encodeURI(str);
-					window.location.href = 'http://192.168.3.38:8080/shopping/moreshops/shopDetails/shopDetails_search.html?shopId='+shopId+'&queryStr='+str;
+					console.log(str);
+
+					//window.location.href = 'http://192.168.3.38:8080/shopping/moreshops/shopDetails/shopDetails_search.html?shopId='+shopId+'&queryStr='+str;
 				break;
 				case 1:
 					alert('跳去商場搜索結果頁');
