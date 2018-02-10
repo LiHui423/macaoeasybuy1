@@ -1,87 +1,108 @@
 var slider = easyBuy.global.dep.slider;
 var waterfall = easyBuy.global.dep.waterfall;
 var domain = "http://social1.macaoeasybuy.com";
-
-
-$(function () {
-    var lifeType = new Ebtemplate({
-        targetURL: domain + '/suitableLifeController/querySuitableLifeClass.easy',
-        templateID: 'lifeType',
-        container: '.livingCircle',
-        methods: {
-            gotoClick: function() {
-                var livingCircle = $('.livingCircle');
-                livingCircle.on('click', function(even) {
-                    $(even.target).siblings('.yez-active').removeAttr('class').end().addClass('yez-active');
-                    var classID = $(even.target).attr('id');
-                    console.log(classID);
-                    everybody.requestData.parameters.classId = classID;
-                    hotTopic.requestData.parameters.classId = classID;
-                    random.requestData.parameters.classId = classID;
-                    // everybody.parameters.classId = this.classID;
-                    // hotTopic.parameters.classId = this.classID;
-                    // random.parameters.classId = this.classID;
-                    Ebtemplate.processor([everybody, hotTopic, random]);
+$(function(){
+    // 請求生活圈分類數據
+    var classId = 4;
+    $.ajax({
+        url:domain + '/suitableLifeController/querySuitableLifeClass.easy',
+        type:"GET",
+        async:true,
+        datatype:JSON,
+        success:function(data){
+            hotTopic(classId);
+            everybody(classId);
+            random(classId);
+            clickEvent()//頁面點擊事件
+            var newData=JSON.parse(data);
+            var html=template('lifeType',newData);
+            $('.livingCircle').html(html);
+            $('.livingCircle li:first-of-type').attr('class','yez-active');
+            // 生活圈分類點擊事件
+            $('.livingCircle').on('click',function(e){
+                var target=e.target;
+                $(target).addClass('yez-active').siblings().removeClass('yez-active');
+                // 獲取點擊目標的id
+                classId=$(target).attr('id');
+                hotTopic(classId);//請求熱帖推薦數據并渲染
+                everybody(classId);//請求大家都說數據并渲染
+                random(classId);//請求隨便看看數據并渲染
+            })
+        },
+        error:function(){
+            console.log('發生未知錯誤')
+        }
+    });
+    // 熱帖推薦
+    function hotTopic(classId){
+        $.ajax({
+            url:domain + '/suitableLifeController/querySuitableLifeHot.easy',
+            data:{
+                classId:classId
+            },
+            type:"GET",
+            async:true,
+            success:function(data){
+                var newData=JSON.parse(data);
+                var html=template('hotTopic',newData);
+                $('.hot-post-list').html(html);
+                slider({
+                    slider:$('.hot-post-list'),
+                    item:$('.hot-post-list-li'),
+                    len:3,
+                    next:$('#goRight'),
+                    prev:$('#goLeft'),
+                });
+            },
+            error:function(){
+                console.log('發生未知錯誤')
+            }
+        });
+    }
+    //大家都說
+    function everybody(classId){
+        $.ajax({
+            url:domain + '/suitableLifeController/querySuitableLifeNoisy.easy',
+            data:{
+                classId:classId
+            },
+            type:"GET",
+            async:true,
+            success:function(data){
+                var newData=JSON.parse(data);
+                var html=template('everybody',newData);
+                $('.all-say-list').html(html);
+                slider({
+                    slider:$('.all-say-list'),
+                    item:$('.all-say-list-li'),
+                    len:4,
+                    next:$('#allsay-goRight'),
+                    prev:$('#allsay-goLeft'),
                 });
             }
-        },
-        afterInsert: function() {
-            this.methods.gotoClick();
-        }
-    });
-    var everybody = new Ebtemplate({
-        targetURL: domain + '/suitableLifeController/querySuitableLifeNoisy.easy',
-        parameters: {
-            classId: 4,
-        },
-        templateID: 'everybody',
-        container: '.all-say-list',
-        afterInsert: function(data) {
-            console.log(data);
-            slider({
-                slider:$('.all-say-list'),
-                item:$('.all-say-list-li'),
-                len:4,
-                next:$('#allsay-goRight'),
-                prev:$('#allsay-goLeft'),
-            });
-            this.afterInsert = null;
-        },
-    });
-    var hotTopic = new Ebtemplate({
-        targetURL: domain + '/suitableLifeController/querySuitableLifeHot.easy',
-        parameters: {
-            classId: 4
-        },
-        templateID: 'hotTopic',
-        container: '.hot-post-list',
-        afterInsert: function(data) {
-            console.log(data);
-            slider({
-                slider:$('.hot-post-list'),
-                item:$('.hot-post-list-li'),
-                len:3,
-                next:$('#goRight'),
-                prev:$('#goLeft'),
-            });
-            this.afterInsert = null;
-        }
-    });
-    var random = new Ebtemplate({
-        targetURL: domain + '/suitableLifeController/querySuitableLifeList.easy',
-        parameters: {
-            page: 0,
-            classId: 4
-        },
-        templateID: 'random',
-        container:'.lifecircle-having-look',
-        afterInsert: function(data) {
-            console.log(data);
-            waterfall($('.lifecircle-having-look'), $('.pillar-all'), 6, 20, 0,true);
-        }
-    });
-    Ebtemplate.processor([lifeType, hotTopic, everybody, random]);
-    clickEvent();
+        });
+    }
+    //隨便看看
+    function random(classId){
+        $.ajax({
+            url:domain + '/suitableLifeController/querySuitableLifeList.easy',
+            data:{
+                page:0,
+                classId:classId
+            },
+            type:"GET",
+            async:true,
+            success:function(data){
+                var newData=JSON.parse(data);
+                var html=template('random',newData);
+                $('.lifecircle-having-look').html(html);
+                waterfall($('.lifecircle-having-look'), $('.pillar-all'), 6, 20, 0,true);
+            },
+            error:function(){
+                console.log('發生未知錯誤');
+            }
+        });
+    }
     // 頁面點擊事件
     function clickEvent(){
         $(document).on('click',function(e){
@@ -98,5 +119,4 @@ $(function () {
             }
         })
     }
-});
-
+})

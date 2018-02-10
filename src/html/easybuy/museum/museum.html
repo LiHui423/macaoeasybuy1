@@ -13,10 +13,13 @@
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 		<script src="/js/common/frameDomainJSON.js"></script>
 		<script src="/js/common/handlebars.runtime-v4.0.5.js"></script>
+		<script src="/js/common/getData/getData_sinple.js"></script>
+		<script>easyBuy.global.hasNav = false;</script>
+		<!--不需要參數加載進來-->
 
 	</head>
 	<body>
-		<header></header>
+		<header id="page-header"></header>
 		<div class="museumHome_head museumHome_head_slideUp">
 			<!--宜品館logo-->
 			<div class="museum_logoBox"><img src="/img/easybuy/museum/museum_logo.png"></div>
@@ -92,7 +95,7 @@
 	<!-- 公共文件js -->
 	<script src="/js/plug/yez_js_Reset.js"></script>
 	<!--頭部文件的js-->
-	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/common/page-header.js"></script>
 	<script src="/js/common/header&search&footer/footer.js"></script>
 	<!--宜品館部份的js-->
 	<script src="/js/easybuy/museum/museum.js"></script>
@@ -238,13 +241,14 @@
 					<div class="museum_willSellBoxEach_top">
 						<div class="museum_willSellBoxEach_topLeft"><img src=http://wap.macaoeasybuy.com/<%=list[i].goodBigPic%>></div>
 						<div class="museum_willSellBoxEach_topRight">
-							<div class="museum_willSellBoxEach_locked"><img src="/img/easybuy/museum/icon/museum_Locked.png"></div>
-							<div class="museum_willSellBoxEach_title"><%=list[i].goodName%></div>
-							<div class="museum_willSellBoxEach_small">
-								<div style="background-image: url(http://wap.macaoeasybuy.com/<%=list[i].piclist[0]%>);"></div>
-								<div style="background-image: url(http://wap.macaoeasybuy.com/<%=list[i].piclist[1]%>);"></div>
+								<div class="museum_willSellBoxEach_locked"><img src="/img/easybuy/museum/icon/museum_Locked.png"></div>
+								<div class="museum_willSellBoxEach_title"><%=list[i].goodName%></div>
+								<div class="museum_willSellBoxEach_small">
+									<div style="background-image: url(http://wap.macaoeasybuy.com/<%=list[i].piclist[0]%>);"></div>
+									<div style="background-image: url(http://wap.macaoeasybuy.com/<%=list[i].piclist[1]%>);"></div>
+								</div>
 							</div>
-						</div>
+						
 					</div>
 					<div class="museum_willSellBoxEach_bottom">
 						<p>比原價<%=list[i].countCut%></p>
@@ -394,53 +398,59 @@
 
 	<!--即將開賣商品彈窗的模板-->
 	<script type="text/html" id="showDetailsPop" data-array ="DetailsPopList">
-		<div class="detailsPopWindow_left">
-			<div class="detailsPopWindow_coverPic"><img src=http://wap.macaoeasybuy.com/<%=list.sppic%>></div>
-			<div class="detailsPopWindow_title hiddenText"><%=list.title%></div>
-			<div class="detailsPopWindow_intro"><%=list.intro%></div>
-			<div class="detailsPopWindow_price">
-				<p>售價：24天後公佈</p>
-				<p>比原價節省20.5%</p>
-			</div>
-			<div class="detailsPopWindow_sellDay">
-				<div class="detailsPopWindow_day_begin">
-					<span>10</span>月<span>30</span>日&nbsp;<span>18:00</span>開賣
+		<div id="modelBox">
+			<div id="modelBoxInner">
+				<div class="detailsPopWindow_left">
+					<div class="detailsPopWindow_coverPic"><img src=http://wap.macaoeasybuy.com/<%=list.sppic%>></div>
+					<div class="detailsPopWindow_title hiddenText"><%=list.title%></div>
+					<div class="detailsPopWindow_intro"><%=list.intro%></div>
+					<div class="detailsPopWindow_price">
+						<p>售價：24天後公佈</p>
+						<p>比原價節省20.5%</p>
+					</div>
+					<div class="detailsPopWindow_sellDay">
+						<div class="detailsPopWindow_day_begin">
+							<span>10</span>月<span>30</span>日&nbsp;<span>18:00</span>開賣
+						</div>
+						<p>距離開賣還有</p>
+						<div class="detailsPopWindow_day_count">
+							<span>24</span>天
+							<span>05</span>小時
+							<span>10</span>分
+							<span>03</span>秒
+						</div>
+					</div>
+					<div class="detailsPopWindow_Save">
+						<%if(list.loveState = 1){%>
+							<a class="saveGoods_up"><img src="/img/common/icon/saveGoodsUp.png"></a>
+						<%}else if(list.loveState = 0){%>
+							<a class="saveGoods"><img src="/img/common/icon/saveGoods.png"></a>
+						<%}else if(list.loveState = -1){%>
+							<a href="#"><img src="/img/common/icon/saveGoodsUp.png"></a>
+						<%}%>
+						<p style="color:#FD5981;margin-left:6x;">心動收藏</p>
+					</div>
+					<div class="detailsPopWindow_data clearfloat">
+						<div class="detailsPopWindow_data_saveNumber">
+							<span><img src="/img/easybuy/museum/icon/museumPop_save.png"></span>
+							<span><%=list.splovesum%>宜粉心動</span>
+						</div>
+						<div class="detailsPopWindow_data_saveNumber">
+							<span><img src="/img/easybuy/museum/icon/museumPop_see.png"></span>
+							<span><%=list.spseeSum%>宜粉查看</span>
+						</div>
+					</div>
 				</div>
-				<p>距離開賣還有</p>
-				<div class="detailsPopWindow_day_count">
-					<span>24</span>天
-					<span>05</span>小時
-					<span>10</span>分
-					<span>03</span>秒
+				<div class="rightBox">
+					<div class="detailsPopWindow_right scrollIe scrollOther">
+						<img style="width:100%" src=http://wap.macaoeasybuy.com/<%=list.propiclist[0]%>>
+						<img style="width:100%" src=http://wap.macaoeasybuy.com/<%=list.propiclist[1]%>>
+					</div>
+				</div>
+				<div class="detailsPopWindow_closeIcon">
+					<img src="/img/easybuy/museum/icon/museumPop_back.png">
 				</div>
 			</div>
-			<div class="detailsPopWindow_Save">
-				<%if(list.loveState = 1){%>
-					<a class="saveGoods_up"><img src="/img/common/icon/saveGoodsUp.png"></a>
-				<%}else if(list.loveState = 0){%>
-					<a class="saveGoods"><img src="/img/common/icon/saveGoods.png"></a>
-				<%}else if(list.loveState = -1){%>
-					<a href="#"><img src="/img/common/icon/saveGoodsUp.png"></a>
-				<%}%>
-				<p>心動收藏</p>
-			</div>
-			<div class="detailsPopWindow_data clearfloat">
-				<div class="detailsPopWindow_data_saveNumber">
-					<span><img src="/img/easybuy/museum/icon/museumPop_save.png"></span>
-					<span><%=list.splovesum%>宜粉心動</span>
-				</div>
-				<div class="detailsPopWindow_data_saveNumber">
-					<span><img src="/img/easybuy/museum/icon/museumPop_see.png"></span>
-					<span><%=list.spseeSum%>宜粉查看</span>
-				</div>
-			</div>
-		</div>
-		<div class="detailsPopWindow_right scrollIe scrollOther">
-			<img src=http://wap.macaoeasybuy.com/<%=list.propiclist[0]%>>
-			<img src=http://wap.macaoeasybuy.com/<%=list.propiclist[1]%>>
-		</div>
-		<div class="detailsPopWindow_closeIcon">
-			<img src="/img/easybuy/museum/icon/museumPop_back.png">
 		</div>
 	</script>
 

@@ -185,6 +185,7 @@ function DetailsPop(){
 	$(".museum_willSellBoxEach").click(function(){
 		$(".detailsPopWindow").show();
 		$(".headPop_BG").show();
+		$(".headPop_BG").css('z-index','4');
 		$('body').css('overflow','scroll');
 		$('html').css('overflow-y','hidden');
 		var id = $(this).data("id");

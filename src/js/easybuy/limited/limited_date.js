@@ -21,7 +21,7 @@ function bannerPicBox(){
 				banner: $('#groupBuy_banner .scroll'),
 				goLeft: $('#groupBuy_banner .before'),
 				goRight: $('#groupBuy_banner .after'),
-				childMargin: parseInt($('#groupBuy_banner .scroll').children().eq(0).css('margin-left'))
+				// childMargin: parseInt($('#groupBuy_banner .scroll').children().eq(0).css('margin-left'))
 			});
 		}
 	});
