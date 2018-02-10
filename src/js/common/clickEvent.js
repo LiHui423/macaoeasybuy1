@@ -45,6 +45,11 @@
             const postId=$e.parents('.list-num').attr('data-id');
             console.log(postId);
             jump('http://social.macaoeasybuy.com/easylive/easylivewelfare/welfarepostdetail/welfarepostdetail.html?id =',postId);
+        }//跳轉到尋寶市集話題帖子詳細頁
+        else if(location.href.indexOf('fairofficialpost.html') !==-1 && $e.attr('id') === "underline"){
+            console.log('true');
+            const postId=$e.parents('[data-id]').attr('data-id');
+            jump('http://social.macaoeasybuy.com/market/treasureclassifydetail/fairofficialpost/fairofficialpost.html?id =',postId);
         }
     })
     function jump(url,para){
