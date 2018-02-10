@@ -1,6 +1,7 @@
 ((() => {
-  const nav = window.easyBuy.hasNav;
+  const nav = window.easyBuy.global.hasNav;
   const login = window.easyBuy.isLogin;
+  const oss = window.easyBuy.global.osURL;
   const link = 'http://usermanager.macaoeasybuy.com/login.html';
   let navShoppingHTMLString = '';
   let navSocialHTMLString = '';
@@ -117,9 +118,9 @@
       hongbao: header.querySelector('.right a:nth-of-type(3)'),
       jifen: header.querySelector('.right a:nth-of-type(4)'),
       insert() {
-        const info = easybuy.data.userInfo;
+        const info = window.easyBuy.easyUser;
         this.userName.innerHTML = `Hi, ${info.name}`;
-        this.avatar.src = easybuy.data.oss + info.pic;
+        this.avatar.src = oss + info.pic;
         this.xindong.setAttribute('data-count', info.loveNum);
         this.gouwulan.setAttribute('data-count', info.shopCarNum);
         this.hongbao.setAttribute('data-count', info.mop);

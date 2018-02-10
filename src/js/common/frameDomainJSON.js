@@ -1,23 +1,23 @@
 /*
  * 請在Jquery編譯完成後調用
- * 
+ *
  * 以下方法需要先給getUserInfo對象賦值后
  * 最後調用 getUserInfo.go
  * 全局對象：
- * 
+ *
  	easyFrame   //框架全局對象
 		 	getUserInfo.beforeDataJs  獲取用戶信息之前
 		 	getUserInfo.startJs  獲取用戶信息成功之後
 		 	getUserInfo.noInfoStartJs  獲取用戶信息失敗，沒有用戶信息
 		 	getUserInfo.afterDataJs 獲取用戶信息之後觸發，無論成功還是失敗
-		 	
+
 		 	getUserInfo.beforeDataJsReady  獲取用戶信息之前 (ready之後)
 		 	getUserInfo.startJsReady  獲取用戶信息成功之後(ready之後)
 		 	getUserInfo.noInfoStartJsReady  獲取用戶信息失敗，沒有用戶信息(ready之後)
 		 	getUserInfo.afterDataJsReady 獲取用戶信息之後觸發，無論成功還是失敗(ready之後)
- 	
- 	
- 	
+
+
+
  	template 自己註冊的方法和屬性具體查看 template.helper();
  	<%=formatNum(str)%> //數字轉換成金額模式
  	<%=osURL%> //OS路徑
@@ -34,10 +34,10 @@ window.easyBuy = {
 	easybuy : {}, //商場全局變量
 	social : { //社交全局變量
 		isEasyLife : false //判斷是否宜生活，用在宜生活的導航searchBar那裡
-	},    
+	},
 	userSpaceGlobal : { //用戶空間全局變量
 		isFansFriends : false , //是否在好友粉絲頁（好友粉絲頁的關注與取消關注要進行特殊處理，具體查看userinfo.js）
-	},  
+	},
 	global : {   //通用全局變量
 		beforeDataJs : null,  //頁面ready完后觸發 ,請求用戶信息之前  不需要用戶信息
 		noInfoStartJs : null,  //頁面ready完后觸發，無用戶信息
@@ -56,14 +56,8 @@ window.easyBuy = {
 	}
 }
 
-setTimeout(function(){
-	console.log("%c \u0045\u0061\u0073\u0079\u0042\u0075\u0079\u5b89\u5168\u63d0\u793a","font-size:50px;color:#ffd0d1;-webkit-text-fill-color:#ffd0d1;-webkit-text-stroke: 2px #FF527C;");
-	console.log("%c \u6b64\u700f\u89bd\u5668\u529f\u80fd\u5c08\u4f9b\u958b\u767c\u8005\u4f7f\u7528\uff0c\u8acb\u4e0d\u8981\u5617\u8a66\u5728\u9019\u88e1\u9ecf\u8cbc\u6216\u57f7\u884c\u4efb\u4f55\u5167\u5bb9\uff0c\u9019\u53ef\u80fd\u6703\u5c0e\u81f4\u60a8\u7684\u8cec\u6236\u53d7\u5230\u653b\u64ca\uff0c\u7d66\u60a8\u5e36\u4f86\u4e0d\u5fc5\u8981\u7684\u640d\u5931 \uff01","font-size: 20px;color:#333");
-},1);
-
 function FrameDomain(){
 	this.domain = ".macaoeasybuy.com";
-	
 	//**********獲取用戶信息對象開始**********
 	var frameInnerObj = this;
 	this.getUserInfo = {};
@@ -75,7 +69,7 @@ function FrameDomain(){
 			self.beforeDataJsReady && self.beforeDataJsReady(); //獲取用戶信息之前 鉤子
 			easyBuy.global.beforeDataJs&&easyBuy.global.beforeDataJs(); //頁面ready完后觸發 ,請求用戶信息之前  不需要用戶信息
 		});
-		
+
 		//請求用戶數據
 		this.reqFunc({
 			hasLogin : function(data){
@@ -106,17 +100,18 @@ function FrameDomain(){
 				});
 			}
 		});
-		
+
 	}
 
-	
+
 	//獲取用戶數據
 	this.getUserInfo.reqFunc = function(opt){
 		var self = this;
 		var _info = frameInnerObj.getCookie("ENYSTRINETI_STRING");
 		if(_info !== null){
 			//已登錄狀態
-			//有用戶信息，發送請求去後台獲取用戶信息
+      //有用戶信息，發送請求去後台獲取用戶信息
+      window.easyBuy.isLogin = true;
 			var url = "http://userManager.macaoeasybuy.com/UserInfoManagerGetController/LoginTopInfo.easy?easybuyCallback=?";
 			url = frameInnerObj.addHref(url);
 			$.ajaxSettings.async = false;
@@ -135,25 +130,25 @@ function FrameDomain(){
 		}
 	}
 	//*******獲取用戶信息對象結束**********
-	
-	this.loadCss = function(url){ 
-		var link = document.createElement( "link" ); 
-		link.type = "text/css"; 
-		link.rel = "stylesheet"; 
-		link.href = url; 
-		document.getElementsByTagName( "head" )[0].appendChild(link); 
-	}; 
-	
+
+	this.loadCss = function(url){
+		var link = document.createElement( "link" );
+		link.type = "text/css";
+		link.rel = "stylesheet";
+		link.href = url;
+		document.getElementsByTagName( "head" )[0].appendChild(link);
+	};
+
 	//獲取url後面所有的參數，存進全局對象組裡面
 	this.setGlobalParameter = function(){
-		var url = location.search; //获取url中"?"符后的字串 
-		var theRequest = new Object(); 
-		if(url.indexOf("?") != -1) { 
-			var str = url.substr(1); 
-			var strs = str.split("&"); 
-			for(var i = 0; i < strs.length; i ++) { 
-				theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]); 
-			} 
+		var url = location.search; //获取url中"?"符后的字串
+		var theRequest = new Object();
+		if(url.indexOf("?") != -1) {
+			var str = url.substr(1);
+			var strs = str.split("&");
+			for(var i = 0; i < strs.length; i ++) {
+				theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+			}
 		}
 		$.each(theRequest, function(k,y) {
 			easyBuy.global.pageParameter[k] = y;
@@ -163,7 +158,7 @@ function FrameDomain(){
 		});
 	}
 	this.setGlobalParameter();
-	
+
 	//讓arttempalte從頁面消失，存在easy.global.template裡面
 	this.artTemplateHide = function(){
 		$('script[data-type=template]').each(function(){
@@ -171,7 +166,7 @@ function FrameDomain(){
 			$(this).remove();
 		});
 	}
-	
+
 	this.Isverify = function(){
 		var self = this;
 		var parmData = getUrlParam("_encryption");
@@ -194,13 +189,13 @@ function FrameDomain(){
 			}
 		}
 	}
-	
+
 	this.generateverify = function(obj){
 		var self = this;
 		if(obj.length != 0){
 			var box = obj;
 		}else{
-			var box = $('html');	
+			var box = $('html');
 		}
 		var dataeasybuy = box.find('a');
 		for(var i = 0; i < dataeasybuy.length; i++) {
@@ -227,10 +222,10 @@ function FrameDomain(){
 			return null;
 		}
 	}
-	
+
 	//獲取cookie
 	this.getCookie = function(name){
-		var arr, 
+		var arr,
 			reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
 	     if(arr = document.cookie.match(reg)){
 			return unescape(arr[2]);
@@ -238,8 +233,8 @@ function FrameDomain(){
 			return null;
 		}
 	}
-	
-	
+
+
 	//獲取購物籃cookie
 	this.getShopCartCookie = function(name){
 		var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
@@ -250,7 +245,7 @@ function FrameDomain(){
 			return 0;
 		}
 	}
-	
+
 	//設置cookie
 	this.setCookie = function(name,value,time){
 		/*
@@ -329,7 +324,7 @@ function FrameDomain(){
 		var url = "http://userManager.macaoeasybuy.com/userInfoManagerController/outTimeLogin.easy?easybuyCallback=?";
 		var href = self.addHref(url);
 		$.get(href, "", function(data) {
-			
+
 		});
 	}
 	this.wxLogin = function(){
@@ -481,7 +476,7 @@ function FrameDomain(){
 			$(easys).attr("href", prefix + suffix);
 		}
 	}
-	
+
 }
 FrameDomain.prototype = {
 	addHref : function(href){
