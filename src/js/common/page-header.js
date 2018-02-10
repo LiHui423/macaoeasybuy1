@@ -1,90 +1,136 @@
-(function () {
-    const $header = $('#page-header');
-    if (Effect.data('isLogin')) {
-        Effect.back( ()=> {
-            headerNavLoadLogin(Effect.data('userInfo'));
-        })
-    } else {
-        $header.load('/common/header.html', () => {
-            // TODO: 全局没有购物篮物品数量
-            $('#TopMenu_LoveNum').html(window.shopCartNum);
-        });
+((() => {
+  const nav = window.easyBuy.hasNav;
+  const login = window.easyBuy.isLogin;
+  const link = 'http://usermanager.macaoeasybuy.com/login.html';
+  let navShoppingHTMLString = '';
+  let navSocialHTMLString = '';
+  if (nav) {
+    const shoppingPage = [
+      { name: '首頁', href: '#'},
+      { name: '限量搶購', href: '#' },
+      { name: '發現新品', href: '#' },
+      { name: '今日降價', href: '#' },
+      { name: '本週熱賣', href: '#' },
+      { name: '敗家誌', href: '#' },
+      { name: '尋寶市集', href: '#' },
+      { name: '量販團', href: '#' },
+      { name: '宜品館', href: '#' },
+      { name: '著數換領', href: '#' },
+      { name: '激平二手', href: '#' },
+    ];
+    const socialPage = [
+      { name: '全球筍貨', href: '#' },
+      { name: '福利社', href: '#' },
+      { name: '宜買話題', href: '#' },
+      { name: '生活圈', href: '#' },
+      { name: '宜粉日誌', href: '#' },
+      { name: '宜粉專輯', href: '#' },
+    ];
+    const shoppingLi = shoppingPage.reduce((HTMLString, page) => {
+      return HTMLString + `<li><a href="${page.href}">${page.name}</a></li>`;
+    }, '');
+    const socialLi = socialPage.reduce((HTMLString, page) => {
+      return HTMLString + `<li><a href="${page.href}">${page.name}</a></li>`;
+    });
+    navShoppingHTMLString = `
+      <div class="hidden">
+        <ul class="e-container">
+          ${shoppingLi}
+        </ul>
+      </div>
+    `;
+    navSocialHTMLString = `
+      <div class="hidden">
+        <ul class="e-container">
+          ${socialLi}
+        </ul>
+      </div>
+    `;
+  }
+  const qrcode = [
+    { img: '/img/common/header&search&footer/QR code.png', tips: '微信訂閱號' },
+    { img: '/img/common/header&search&footer/QR code.png', tips: '微信服務號' },
+    { img: '/img/common/header&search&footer/QR code.png', tips: '客戶端下載' },
+  ];
+  const qrCodeHTMLString = qrcode.reduce((HTMLString, item) => {
+    return HTMLString + `<li><img src="${item.img}">${item.tips}</li>`;
+  });
+  const headerHTMLString = `
+    <div class="e-container">
+      <div class="nav">
+        <div class="shopping">
+          <span>宜買首頁</span>
+          ${navShoppingHTMLString}
+        </div>
+        <div class="social">
+          <span>宜生活</span>
+          ${navSocialHTMLString}
+        </div>
+      </div>
+      <div class="right">
+        ${
+          login ?
+          `<div class="user">
+            <span></span>
+            <ul>
+              <li><img src="" class="e-avatar"></li>
+              <li>個人空間</li>
+              <li>成長詳情</li>
+              <li>退出賬號</li>
+            </ul>
+          </div>
+          <a href="#" data-count="">心動</a>`
+          : ''
+        }
+        ${
+          login ? ''
+          : `<a href="${link}">登入</a><a :href="${link}">註冊</a>`
+        }
+        <a href="#" data-count="">購物籃</a>
+        ${
+          login ?
+          `<a href="#" data-count="">紅包</a>
+          <a href="#" data-count="">積分</a>
+          <a href="#">足跡</a>`
+          : ''
+        }
+        <a href="#">申請開店</a>
+        <div class="appdl">
+          <span>APP下載</span>
+          <ul class="hidden">
+            ${qrCodeHTMLString}
+          </ul>
+        </div>
+      </div>
+    </div>
+  `;
+  const header = document.querySelector('#page-header');
+  header.innerHTML = headerHTMLString;
+  let headerElements = {};
+  if (login) {
+    const easybuy = this;
+    headerElements = {
+      userName: header.querySelector('.user > span'),
+      avatar: header.querySelector('.e-avatar'),
+      xindong: header.querySelector('.right a:nth-of-type(1)'),
+      gouwulan: header.querySelector('.right a:nth-of-type(2)'),
+      hongbao: header.querySelector('.right a:nth-of-type(3)'),
+      jifen: header.querySelector('.right a:nth-of-type(4)'),
+      insert() {
+        const info = easybuy.data.userInfo;
+        this.userName.innerHTML = `Hi, ${info.name}`;
+        this.avatar.src = easybuy.data.oss + info.pic;
+        this.xindong.setAttribute('data-count', info.loveNum);
+        this.gouwulan.setAttribute('data-count', info.shopCarNum);
+        this.hongbao.setAttribute('data-count', info.mop);
+        this.jifen.setAttribute('data-count', info.integral);
+      },
     }
-
-    function headerNavLoadLogin(data) {
-        $header.load('/common/header_login.html', function () {
-            $header.find('.easy_buy_username').html(data.name); //用戶名字
-            $header.find('.header_picBox').html(`<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/${data.pic}" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'">`); //用戶名字
-            $('#header_loveNum').html(Effect.formatNum(data.loveNum)); //心動
-            $('#header_buyNum').html(Effect.formatNum(data.shopCarNum)); //購物籃
-            $('#header_countNum').html('MOP ' + Effect.formatNum(data.mop)); //紅包
-            $('#header_pointNum').html(Effect.formatNum(data.integral) + ' 分'); //積分
-            // easyBuy.global.hasNav && insertNavToHeader();
-        });
-    }
-
-    function insertNavToHeader() {
-        //一下為導航部分
-        const shopNav = `
-            <div class="headNav_secondNav easyBuyNav" id="easyBuyNav_shop">
-                <div class="navBar">
-                    <ul class="clearfloat">
-                        <li><a href="http://www.macaoeasybuy.com/page/html/easybuy_index.html">首頁</a></li>
-                        <li><a href="http://shopping.macaoeasybuy.com/limited/limited.html">限量搶購</a></li>
-                        <li><a href="http://shopping.macaoeasybuy.com/findNew/new.html">發現新品</a></li>
-                        <li><a href="http://shopping.macaoeasybuy.com/discount/discount.html">今日降價</a></li>
-                        <li><a href="http://shopping.macaoeasybuy.com/hit/hit.html">本周熱賣</a></li>
-                        <li><a href="http://social.macaoeasybuy.com/liveshot/liveshot.html">敗家誌</a></li>
-                        <li><a href="http://social.macaoeasybuy.com/market/market.html">尋寶市集</a></li>
-                        <li><a href="http://shopping.macaoeasybuy.com/gruopBuy/groupBuy.html">量販團</a></li>
-                        <li><a href="http://shopping.macaoeasybuy.com/museum/museum.html">宜品館</a></li>
-                        <li><a href="http://shopping.macaoeasybuy.com/exchange/exchange.html">著數換領</a></li>
-                        <li><a href="http://social.macaoeasybuy.com/secondhand/secondHand.html">激平二手</a></li>
-                    </ul>
-                </div>
-            </div>`;
-
-        const socialNav = `
-            <div class="headNav_secondNav easyaLifeNav" id="easyBuyNav_social">
-                <div class="navBar">
-                    <ul class="clearfloat">
-                        <li><a href="http://social.macaoeasybuy.com/easylive/easyliveglobalgoods/globalgoods.html">全球筍貨</a></li>
-                        <li><a href="http://social.macaoeasybuy.com/easylive/easylivewelfare/easylivewelfare.html">福利社</a></li>
-                        <li><a href="http://social.macaoeasybuy.com/easylive/easylivebuytopic/easylivebuytopic.html">宜買話題</a></li>
-                        <li><a href="http://social.macaoeasybuy.com/easylive/easylivelifecircle/easylivelifecircle.html">生活圈</a></li>
-                        <li><a href="http://social.macaoeasybuy.com/easylive/easylivelog/easylivelog.html">宜粉日誌</a></li>
-                        <li><a href="http://social.macaoeasybuy.com/easylive/easylivealbum/easylivealbum.html">宜粉專輯</a></li>
-                    </ul>
-                </div>
-            </div>`;
-        let timer = null;
-        let delayTime = 250;
-        $header.find('.headNavBox').prepend(shopNav + socialNav);
-        $header.find('.headNavBox_left li').hover(function () {
-            clearTimeout(timer);
-            const idx = $(this).index();
-            const $navSocial = $('#easyBuyNav_social');
-            const $navShop = $('#easyBuyNav_shop');
-            if (idx === 0) {
-                $navSocial.stop().slideUp('fast');
-                $navShop.stop().slideDown('fast');
-            } else {
-                $navShop.stop().slideUp('fast');
-                $navSocial.stop().slideDown('fast');
-            }
-        }, function () {
-            const self = $(this);
-            clearTimeout(timer);
-            timer = setTimeout(function () {
-                self.index() === 0 ? $('#easyBuyNav_shop').stop().slideUp('fast') : $('#easyBuyNav_social').stop().slideUp('fast');
-            }, delayTime);
-        });
-        $('#easyBuyNav_social, #easyBuyNav_shop').hover(function () {
-            clearTimeout(timer);
-            $(this).stop().slideDown('fast');
-        }, function () {
-            $(this).stop().slideUp('fast');
-        });
-    }
-}());
-
+    const uiBackClock = setInterval(() => {
+      if (window.easyBuy.easyUser.id) {
+        clearInterval(uiBackClock);
+        headerElements.insert();
+      }
+    }, 50);
+  }
+})());
