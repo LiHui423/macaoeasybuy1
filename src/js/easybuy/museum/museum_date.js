@@ -69,7 +69,7 @@ function willSellBox(){
 			var html = template("showWillSellBox", willSellList);
 			$(".museum_willSell").html(html);
 			setInterval(calcMuseumBegin, 1000);
-			DetailsPop()
+			DetailsPop();
 		}
 	});
 }

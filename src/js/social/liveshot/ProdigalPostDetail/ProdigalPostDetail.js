@@ -9,6 +9,7 @@ easyBuy.global.beforeDataJs = function(){
 	mineOtherReq(); //帖主還有其他帖子
 	allLookReq(); //他們都在看其他帖子
 	clickEvent();//頁面點擊事件
+	selectPage();//查看攢好數據
 }
 easyBuy.global.afterDataJs = function(){
 	if(easyBuy.isLogin){

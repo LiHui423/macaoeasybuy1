@@ -14,12 +14,13 @@
 		<script src="/js/common/frameDomainJSON.js"></script>
 		<script src="/js/common/handlebars.runtime-v4.0.5.js"></script>
 		<script src="/js/common/getData/getData_sinple.js"></script>
-		<script>easyBuy.global.hasNav = false;</script>
+		<!-- <script>easyBuy.global.hasNav = false;</script> -->
 		<!--不需要參數加載進來-->
 
 	</head>
 	<body>
-		<header id="page-header"></header>
+		<header>
+		</header>
 		<div class="museumHome_head museumHome_head_slideUp">
 			<!--宜品館logo-->
 			<div class="museum_logoBox"><img src="/img/easybuy/museum/museum_logo.png"></div>
@@ -95,8 +96,9 @@
 	<!-- 公共文件js -->
 	<script src="/js/plug/yez_js_Reset.js"></script>
 	<!--頭部文件的js-->
-	<script src="/js/common/page-header.js"></script>
+	<!-- <script src="/js/common/page-header.js"></script> -->
 	<script src="/js/common/header&search&footer/footer.js"></script>
+	<script src="/js/common/header&search&footer/header.js"></script>
 	<!--宜品館部份的js-->
 	<script src="/js/easybuy/museum/museum.js"></script>
 	<!--模板文件和假數據-->
@@ -399,7 +401,7 @@
 	<!--即將開賣商品彈窗的模板-->
 	<script type="text/html" id="showDetailsPop" data-array ="DetailsPopList">
 		<div id="modelBox">
-			<div id="modelBoxInner">
+			<div id="modelBoxInner" style="z-index:5">
 				<div class="detailsPopWindow_left">
 					<div class="detailsPopWindow_coverPic"><img src=http://wap.macaoeasybuy.com/<%=list.sppic%>></div>
 					<div class="detailsPopWindow_title hiddenText"><%=list.title%></div>

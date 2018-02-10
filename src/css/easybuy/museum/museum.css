@@ -796,6 +796,7 @@ body{
 	height:70px;
 	margin:0 auto;
 	margin-top:15px;
+	z-index:4;
 }
 .saveGoods_up{
 	width: 100%;
@@ -821,6 +822,20 @@ body{
 	height:750px;
 	margin-left:40px;
 	overflow-y:scroll;
+}
+.rightBox::-webkit-scrollbar{
+	width:8px;
+	background-color:rgba(0,0,0,0);
+}
+.rightBox::-webkit-scrollbar-thumb{
+	border-radius:10px;
+	background-color:#A8A8A8;
+	-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);
+}
+.rightBox::-webkit-scrollbar-track{
+	-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0);
+	border-radius: 10px;
+	background-color:#F5F5F5;
 }
 .detailsPopWindow_right{
 	width:100%;

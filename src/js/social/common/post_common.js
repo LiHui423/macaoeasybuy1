@@ -213,6 +213,7 @@ function responseCard(postType){
 				if($('.statistics .statistics-title li').eq(0)[0].isComplete) return false;
 			},
 			success:function(data){
+				console.log(data);
 				data.replyList.page = page;
 				var html = template('response', data.replyList);
 				$('#response-list-inner .no-more').before(html);
@@ -281,6 +282,9 @@ function responseCard(postType){
 				}
 				checkFinsh.firstReply = true;
 				checkAndGoScrollTop();
+			},
+			error:function(){
+				console.log('發生未知錯誤')
 			}
 		});
 	}

@@ -183,7 +183,7 @@ function museumTheme(){
 }
 function DetailsPop(){
 	$(".museum_willSellBoxEach").click(function(){
-		$(".detailsPopWindow").show();
+		// $(".detailsPopWindow").show();
 		$(".headPop_BG").show();
 		$(".headPop_BG").css('z-index','4');
 		$('body').css('overflow','scroll');
@@ -192,22 +192,33 @@ function DetailsPop(){
 		console.log(id);
 		DetailsPopBox(id);
 	})
-
-	$(".headPop_BG").click(function(){
-		$(this).hide();
-		$(".detailsPopWindow").hide()
-		$('body').css('overflow','auto');
-		$('html').css('overflow-y','scroll');
-	})
+	// $(".headPop_BG").on('click', function(){
+	// 	$(this).hide();
+	// 	$(".headPop_BG").css('display','none');
+	// 	$(".detailsPopWindow").hide();
+	// 	$('body').css('overflow','auto');
+	// 	$('html').css('overflow-y','scroll');
+	// })
 
 }
 function closeDetailsPop(){
-	$(".detailsPopWindow_closeIcon").click(function(){
-		$(".headPop_BG").hide();
+	// $(".detailsPopWindow_closeIcon").click(function(){
+	// 	$(".headPop_BG").hide();
+	// 	// $(".detailsPopWindow").hide();
+	// 	$('body').css('overflow','auto');
+	// 	$('html').css('overflow-y','scroll');
+	// })
+	$(".headPop_BG").on('click', function(){
+		$(this).hide();
+		$(".headPop_BG").css('display','none');
 		$(".detailsPopWindow").hide();
 		$('body').css('overflow','auto');
 		$('html').css('overflow-y','scroll');
 	})
+	love();
+	
+}
+function love(){
 	$(".detailsPopWindow_Save a").click(function(){
 		if($(this).hasClass("saveGoods_up")){
 			$(".detailsPopWindow_Save a").removeClass("saveGoods_up").addClass("saveGoods")

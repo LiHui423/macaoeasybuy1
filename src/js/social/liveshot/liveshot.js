@@ -191,7 +191,7 @@ function clickEvent(){
 			window.open('http://social.macaoeasybuy.com/liveshot/ProdigalPostDetail/ProdigalPostDetail.html?postId='+postId);
 			
 		}
-		if($(target).html('查看曬圖')){
+		if($(target).html() === '查看曬圖'){
 			var userId=$(target).parents('[data-id]').attr('data-id');
 			// 跳轉到用戶空間敗家志處
 		}
