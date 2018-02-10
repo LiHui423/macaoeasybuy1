@@ -122,10 +122,11 @@ function showMagicalBox(){
 
 function DetailsPopBox(id){
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsYiPingController/QueryShangpinInfoById/"+ id +".easy",function(json){
+		console.log(json);
 		var DetailsPopList = json;
 		var html = template("showDetailsPop", DetailsPopList);
 		$(".detailsPopWindow").html(html);
-		closeDetailsPop()
+		closeDetailsPop();
 	});
 }
 

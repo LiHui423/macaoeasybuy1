@@ -12,7 +12,7 @@ function bannerPicBox(){
 				if(result.list[i].bannerPic==""){
 					html+=`<a href=${result.list[i].tourl}><img src="//img.macaoeasybuy.com/img/common/loadnow.jpg"></a>`;
 				}else{
-					html+=`<a href=${result.list[i].tourl}><img src=${result.list[i].bannerPic}></a>`;
+					html+=`<a href=${result.list[i].tourl}><img src=//wap.macaoeasybuy.com${result.list[i].bannerPic}></a>`;
 				}
 			}
 			$(".scroll").html(html);

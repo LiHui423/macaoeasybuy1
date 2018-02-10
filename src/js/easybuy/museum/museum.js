@@ -188,6 +188,7 @@ function DetailsPop(){
 		$('body').css('overflow','scroll');
 		$('html').css('overflow-y','hidden');
 		var id = $(this).data("id");
+		console.log(id);
 		DetailsPopBox(id);
 	})
 

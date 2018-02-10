@@ -1,11 +1,11 @@
-//$(function(){
-//	goodKey();
-//	shopKey();
-//	labelKey();
-//	topicKey();
-//	postKey();
-//	fansKey();
-//})
+// $(function(){
+// 	goodKey();
+// 	shopKey();
+// 	labelKey();
+// 	topicKey();
+// 	postKey();
+// 	fansKey();
+// })
 
 function goodKey(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/SolrGoodsController/QueryHotSearchGoods.easy?easybuyCallback=?",function(data){

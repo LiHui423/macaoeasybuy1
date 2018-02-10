@@ -72,6 +72,7 @@ function choosePage(page){
 /*隨便看看*/
 function seeOther(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/ShangpinBottomController/queryShopRandomSp/0/12.easy?easybuyCallback=?",function(data){
+		console.log(data);
 		var seeOtherGood = template("seeGood", data);
 		$('.search_result_seeOther_main').html(seeOtherGood);
 		uploadType()

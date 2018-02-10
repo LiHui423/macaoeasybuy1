@@ -9,6 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="/css/common/search/searchCommon.css">
 		<link rel="stylesheet" type="text/css" href="/css/common/search/search_good.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" ></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
 	</head>
 	<body>
 		<header></header>
@@ -123,7 +124,9 @@
 						<div class="otherGoods" data-id="0">
 							<div class="otherGoods_pic"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/\uploadfile\201610\20161031082231636135421510970025.jpg" onerror="this.src='/img/common/loading_pc_220.jpg'"></div>
 							<div class="otherGoods_mess">
-								<div class="otherGoods_mess_title hiddenText">（TEST）測試ETUDE HOUSE櫻桃唇膜</div>
+								<div class="otherGoods_mess_title hiddenText">
+									<a><span id="underline">（TEST）測試ETUDE HOUSE櫻桃唇膜</span></a>
+								</div>
 								<p class="otherGoods_mess_nowPrice">MOP49</p>
 								<p class="otherGoods_mess_oldPrice">MOP94</p>
 							</div>
@@ -158,6 +161,7 @@
 	<!--分頁js-->
 	<script src="/js/easybuy/goodDetails/jquery.page.js" ></script>
 	<script src="/js/common/header&search&footer/footer.js"></script>
+	<script src="/js/common/clickEvent.js"></script>
 	<!--二級分類的選擇-->
 	<script type="text/html" id="secondClass" data-array = "secondClassData">
 		<%for(var i = 0;i <list.areaClassList[0].fields.length;i++){%>
@@ -214,9 +218,11 @@
 	<script type="text/html" id="searchGood" data-array = "searchGoodData">
 		<%for(var i = 0;i <list.solrModelInfo.object.length;i++){%>
 			<div class="otherGoods noPic" data-id="<%=list.solrModelInfo.object[i].spid%>" data-type = "<%=list.solrModelInfo.object[i].goodsType%>">
-				<div class="otherGoods_pic"><img src='' data-src = 'http://wap.macaoeasybuy.com/<%=list.solrModelInfo.object[i].sppic%>' onerror="this.src='/img/common/loading_pc_220.jpg'"></div>
+				<div class="otherGoods_pic"><img src='' data-src = 'http://wap.macaoeasybuy.com<%=list.solrModelInfo.object[i].sppic%>' onerror="this.src='/img/common/loading_pc_220.jpg'"></div>
 				<div class="otherGoods_mess">
-					<div class="otherGoods_mess_title hiddenText"><%=list.solrModelInfo.object[i].sptitle%></div>
+					<div class="otherGoods_mess_title hiddenText">
+						<a><span id="underline"><%=list.solrModelInfo.object[i].sptitle%></span></a>
+					</div>
 					<p class="otherGoods_mess_nowPrice">MOP<%=list.solrModelInfo.object[i].spprice%></p>
 					<p class="otherGoods_mess_oldPrice">MOP<%=list.solrModelInfo.object[i].costPrice%></p>
 				</div>
@@ -240,7 +246,8 @@
 			<div class="otherGoods noPic" data-id="<%=list[i].id%>" data-type = "<%=list[i].goodsType%>">
 				<div class="otherGoods_pic"><img src='' data-src = 'http://wap.macaoeasybuy.com/<%=list[i].pic%>' onerror="this.src='/img/common/loading_pc_220.jpg'"></div>
 				<div class="otherGoods_mess">
-					<div class="otherGoods_mess_title hiddenText"><%=list[i].title%></div>
+					<div class="otherGoods_mess_title hiddenText">
+						<a><span id="underline"><%=list[i].title%></span></a></div>
 					<p class="otherGoods_mess_nowPrice">MOP<%=list[i].price%></p>
 					<p class="otherGoods_mess_oldPrice">MOP<%=list[i].costPrice%></p>
 				</div>

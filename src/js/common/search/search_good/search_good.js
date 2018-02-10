@@ -13,7 +13,7 @@ function scrollLoading(){
 	})
 	function lazyLoad(){
 	    var aLi = $('.otherGoods.noPic .otherGoods_pic').children('img')
-	    var t = document.documentElement.clientHeight + (document.documentElement.scrollTop || document.body.scrollTop) - 300;
+		var t = document.documentElement.clientHeight + (document.documentElement.scrollTop || document.body.scrollTop) - 300;
 	    for (var i = 0;i < aLi.length; i++) {
 	        var oLi = aLi[i];
 	        //检查oLi是否在可视区域
@@ -23,18 +23,19 @@ function scrollLoading(){
 	        }
 	    }
 	}
-	function setImg(index){
+	function setImg(a){
 	    var aLi = $('.otherGoods.noPic .otherGoods_pic').children('img')
-	   	var src= $(aLi[index]).data('src');
-	   	if($(aLi[index]).attr('src') == '/img/common/loading_pc_220.jpg'){
-	   		$(aLi[index]).attr('src',src);
+	   	var src= $(aLi[a]).data('src');
+	   	if($(aLi[a]).attr('src') == '/img/common/loading_pc_220.jpg'){
+	   		$(aLi[a]).attr('src',src);
 	   	}else{
 	   		return false;
-	   	}
-	    $(aLi[index]).load(function(){
-	    	$(this).css('opacity','1')
-	    	$(this).parents('.otherGoods').removeClass('noPic')
-	    })
+		}
+		$(aLi[a]).css('opacity','1');
+	    // $(aLi[a]).load(function(){
+	    // 	$(this).css('opacity','1')
+	    // 	$(this).parents('.otherGoods').removeClass('noPic')
+	    // })
 	}
 	
 	//获得对象距离页面顶端的距离  
@@ -325,21 +326,21 @@ function uploadType(){
 		var type = $(this).data('type');
 		var id = $(this).data('id');
 		if(type == '0'){
-			window.open('/page/easybuy/goodDetails/ordinaryGoodDetais.html?id=' + id +'');
+			window.open('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id=' + id +'');
 		}else if(type == '1'){
-			window.open('/page/easybuy/goodDetails/limitedDetail.html?id=' + id +'');
+			window.open('http://shopping.macaoeasybuy.com/goodDetails/limitedDetail.html?id=' + id +'');
 		}else if(type == '2'){
-			window.open('/page/easybuy/goodDetails/ordinaryGoodDetais.html?id=' + id +'');
+			window.open('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id=' + id +'');
 		}else if(type == '3'){
-			window.open('/page/easybuy/goodDetails/discountDetails.html?id=' + id +'');
+			window.open('http://shopping.macaoeasybuy.com/goodDetails/discountDetails.html?id=' + id +'');
 		}else if(type == '4'){
-			window.open('/page/easybuy/goodDetails/ordinaryGoodDetais.html?id=' + id +'');
+			window.open('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id=' + id +'');
 		}else if(type == '5'){
-			window.open('/page/easybuy/goodDetails/groupDetail.html?id=' + id +'');
+			window.open('http://shopping.macaoeasybuy.com/goodDetails/groupDetail.html?id=' + id +'');
 		}else if(type == '6'){
-			window.open('/page/easybuy/goodDetails/museumDetails.html?id=' + id +'');
+			window.open('http://shopping.macaoeasybuy.com/goodDetails/museumDetails.html?id=' + id +'');
 		}else if(type == '7'){
-			window.open('/page/easybuy/goodDetails/exchangeDetail.html?id=' + id +'');
+			window.open('http://shopping.macaoeasybuy.com/goodDetails/exchangeDetail.html?id=' + id +'');
 		}
 	})
 }

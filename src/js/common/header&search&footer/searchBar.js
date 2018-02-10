@@ -2,15 +2,15 @@
 	var flag = easyBuy.social.isEasyLife;
 	var requestHtml = ! flag ? '/common/searchBar.html' : '/common/searchBar_easyLife.html';
 	$("#searchBox_rightBox").load(requestHtml,function(){
-//		requestHtml = null;
-//		searchBar();
-//		keyWord();
-//		//選擇國家
-//		if(!flag){
-//			chooseCountry();
-//			chooseCountryBar();
-//			flag = null;
-//		}
+		requestHtml = null;
+		searchBar();
+		keyWord();
+		//選擇國家
+		if(!flag){
+			chooseCountry();
+			chooseCountryBar();
+			flag = null;
+		}
 	});
 })();
 
