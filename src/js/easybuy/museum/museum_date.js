@@ -125,7 +125,7 @@ function DetailsPopBox(id){
 		console.log(json);
 		var DetailsPopList = json;
 		var html = template("showDetailsPop", DetailsPopList);
-		$(".detailsPopWindow").html(html);
+		$(".headPop_BG").html(html);
 		closeDetailsPop();
 	});
 }

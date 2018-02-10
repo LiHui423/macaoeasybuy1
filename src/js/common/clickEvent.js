@@ -1,10 +1,11 @@
 ( () => {
     $("body").on('click',function(e){
         const $e = $(e.target);
+        console.log($e);
         // 判断是否是用户头像被点击
         if($e.attr('data-type') === 'userAvatar'){
             const spaceId = $e.parents('[data-id]').attr('data-id');
-            console.log('被点击的用户头像的id为：'+avatarId);
+            console.log('被点击的用户头像的id为：'+spaceId);
             //window.open("http://userspace.macaoeasybuy.com/?spaceid ="+spaceId);
             // 判斷是否立即購買
         }else if($e.attr('data-type') === 'buyNow'){
@@ -33,6 +34,17 @@
                 console.log(id);
                 jump('http://shopping.macaoeasybuy.com/goodDetails/museumDetails.html?id =',id);
             }
+        }//跳轉到宜粉日誌帖子詳細頁
+        else if(location.href.indexOf('logpostdetail.html') !== -1 && $e.hasClass('shadow-box')){
+            console.log('true');
+            const postid=$e.parents('.pillar-all').attr('id').split('-')[0];
+            console.log(postid);
+            jump('http://social.macaoeasybuy.com/easylive/easylivelog/logpostdetail/logpostdetail.html?id =',postid);
+        }//跳轉到福利社話題帖子詳細頁
+        else if(location.href.indexOf('welfarepostdetail.html') !== -1 && $e.hasClass('shadow')){
+            const postId=$e.parents('.list-num').attr('data-id');
+            console.log(postId);
+            jump('http://social.macaoeasybuy.com/easylive/easylivewelfare/welfarepostdetail/welfarepostdetail.html?id =',postId);
         }
     })
     function jump(url,para){

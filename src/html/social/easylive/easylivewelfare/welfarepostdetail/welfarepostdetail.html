@@ -21,7 +21,7 @@
 	</head>
 	<body>
 		<div id="swapper">
-			<header></header>
+			<header id="page-header"></header>
 	        <div id="searchBar">
 				<div class="searchBox">
 					<div class="searchBox_mainBox clearfloat">
@@ -284,7 +284,7 @@
 		<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
 	    <script src="/js/common/header&search&footer/searchBar.js" async></script>
 	    <script src="/js/common/header&search&footer/footer.js" async></script>
-	    <script src="/js/common/header&search&footer/header.js"></script>
+	    <script src="/js/common/page-header.js"></script>
 	    <script src="/js/plug/yez_Editor.js"></script>
 	    <script src="/js/userspace/common/postDetailEditorSend.js"></script>
 	    <script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
@@ -475,7 +475,7 @@
 		<script id="bottom_list" type="text/html" data-type="template">
 			<%if(result.length != 0){%>
 				<%for(var i=0;i<result.length;i++){%>
-				<li class="list-num">
+				<li class="list-num" data-id="<%=result[i].shouldBuyId%>">
 					<div class="header">
 						<div class="header_pic">
 							<img src="//wap.macaoeasybuy.com<%=result[i].shouldBuyPic%>" alt="">

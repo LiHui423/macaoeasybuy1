@@ -7,6 +7,10 @@
 		<link rel="stylesheet" type="text/css" href="/css/easybuy/findNew/findNew.css">
 		<link rel="stylesheet" type="text/css" href="/css/common/common.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_sinple.js"></script>
+		<script>easyBuy.global.hasNav = false;</script>
+		<!--不需要參數加載進來-->
 		<style type="text/css">
 			.navBar_borderBox{
 				width: 100%;
@@ -20,7 +24,7 @@
 	</head>
 	<body>
 		<div class="transparent_bg"></div>
-		<header></header>
+		<header id="page-header"></header>
 		<div id ="searchBar">
 			<div class="searchBox">
 				<div class="searchBox_mainBox">
@@ -156,7 +160,7 @@
 	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
 	<script src="/js/easybuy/findNew/findNew.data.js"></script>
 	<!--頭部文件的js-->
-	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/common/page-header.js"></script>
 	<script src="/js/common/header&search&footer/footer.js"></script>
 	<!--輪播圖banner的js-->
 	<script src="/js/plug/gradientBanner.js"></script>
