@@ -1,6 +1,7 @@
 ( () => {
     $("body").on('click',function(e){
         const $e = $(e.target);
+        console.log($e);
         // 判断是否是用户头像被点击
         if($e.attr('data-type') === 'userAvatar'){
             const spaceId = $e.parents('[data-id]').attr('data-id');
@@ -49,6 +50,11 @@
             console.log('true');
             const postId=$e.parents('[data-id]').attr('data-id');
             jump('http://social.macaoeasybuy.com/market/treasureclassifydetail/fairofficialpost/fairofficialpost.html?id =',postId);
+        }//更多主題頁面商品跳轉到普通商品詳情頁
+        else if(location.href.indexOf('moreTheme.html') !==-1 && $e.parents('.moreThemeMain_left_goodBox')){
+            const productId=$e.parents('[data-id]').attr('data-id');
+            console.log(productId);
+            jump('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id =',productId);
         }
     })
     function jump(url,para){

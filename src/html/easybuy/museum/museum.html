@@ -14,12 +14,12 @@
 		<script src="/js/common/frameDomainJSON.js"></script>
 		<script src="/js/common/handlebars.runtime-v4.0.5.js"></script>
 		<script src="/js/common/getData/getData_sinple.js"></script>
-		<!-- <script>easyBuy.global.hasNav = false;</script> -->
+		<script>easyBuy.global.hasNav = false;</script> 
 		<!--不需要參數加載進來-->
 
 	</head>
 	<body>
-		<header>
+		<header id="page-header">
 		</header>
 		<div class="museumHome_head museumHome_head_slideUp">
 			<!--宜品館logo-->
@@ -48,6 +48,7 @@
 			<div class="museum_todayDesign"></div>
 			<div class="museum_popularDesign"></div>
 			<div class="museum_willSell"></div>
+			<div class="headPop_BG"></div>
 			<div class="museum_museumShow museum_Beautiful"></div>
 			<div class="museum_museumShow museum_Practical"></div>
 			<div class="museum_museumShow museum_Magical"></div>
@@ -96,9 +97,9 @@
 	<!-- 公共文件js -->
 	<script src="/js/plug/yez_js_Reset.js"></script>
 	<!--頭部文件的js-->
-	<!-- <script src="/js/common/page-header.js"></script> -->
+	<script src="/js/common/page-header.js"></script>
 	<script src="/js/common/header&search&footer/footer.js"></script>
-	<script src="/js/common/header&search&footer/header.js"></script>
+	<!-- <script src="/js/common/header&search&footer/header.js"></script> -->
 	<!--宜品館部份的js-->
 	<script src="/js/easybuy/museum/museum.js"></script>
 	<!--模板文件和假數據-->
@@ -244,7 +245,8 @@
 						<div class="museum_willSellBoxEach_topLeft"><img src=http://wap.macaoeasybuy.com/<%=list[i].goodBigPic%>></div>
 						<div class="museum_willSellBoxEach_topRight">
 								<div class="museum_willSellBoxEach_locked"><img src="/img/easybuy/museum/icon/museum_Locked.png"></div>
-								<div class="museum_willSellBoxEach_title"><%=list[i].goodName%></div>
+								<div class="museum_willSellBoxEach_title">
+									<a><span id="underline"><%=list[i].goodName%></span></a></div>
 								<div class="museum_willSellBoxEach_small">
 									<div style="background-image: url(http://wap.macaoeasybuy.com/<%=list[i].piclist[0]%>);"></div>
 									<div style="background-image: url(http://wap.macaoeasybuy.com/<%=list[i].piclist[1]%>);"></div>
@@ -430,7 +432,7 @@
 						<%}else if(list.loveState = -1){%>
 							<a href="#"><img src="/img/common/icon/saveGoodsUp.png"></a>
 						<%}%>
-						<p style="color:#FD5981;margin-left:6x;">心動收藏</p>
+						<p style="color:#FD5981;margin-left:9x;">心動收藏</p>
 					</div>
 					<div class="detailsPopWindow_data clearfloat">
 						<div class="detailsPopWindow_data_saveNumber">

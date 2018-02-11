@@ -182,52 +182,42 @@ function museumTheme(){
 	})
 }
 function DetailsPop(){
-	$(".museum_willSellBoxEach").click(function(){
-		// $(".detailsPopWindow").show();
+	$(".museum_willSellBoxEach .museum_willSellBoxEach_title").off('click').click(function(){
 		$(".headPop_BG").show();
 		$(".headPop_BG").css('z-index','4');
 		$('body').css('overflow','scroll');
 		$('html').css('overflow-y','hidden');
-		var id = $(this).data("id");
-		console.log(id);
+		let id = $(this).parents('[data-id]').attr("data-id");
 		DetailsPopBox(id);
 	})
-	// $(".headPop_BG").on('click', function(){
-	// 	$(this).hide();
-	// 	$(".headPop_BG").css('display','none');
-	// 	$(".detailsPopWindow").hide();
-	// 	$('body').css('overflow','auto');
-	// 	$('html').css('overflow-y','scroll');
-	// })
-
 }
-function closeDetailsPop(){
-	// $(".detailsPopWindow_closeIcon").click(function(){
-	// 	$(".headPop_BG").hide();
-	// 	// $(".detailsPopWindow").hide();
-	// 	$('body').css('overflow','auto');
-	// 	$('html').css('overflow-y','scroll');
-	// })
-	$(".headPop_BG").on('click', function(){
-		$(this).hide();
-		$(".headPop_BG").css('display','none');
-		$(".detailsPopWindow").hide();
-		$('body').css('overflow','auto');
-		$('html').css('overflow-y','scroll');
-	})
-	love();
-	
-}
-function love(){
-	$(".detailsPopWindow_Save a").click(function(){
-		if($(this).hasClass("saveGoods_up")){
-			$(".detailsPopWindow_Save a").removeClass("saveGoods_up").addClass("saveGoods")
-			$(".detailsPopWindow_Save a").children("img").attr("src","/img/common/icon/saveGoods.png")
-		}else if($(this).hasClass("saveGoods")){
-			$(".detailsPopWindow_Save a").removeClass("saveGoods").addClass("saveGoods_up")
-			$(".detailsPopWindow_Save a").children("img").attr("src","/img/common/icon/saveGoodsUp.png");
+function closeDetailsPop($e){
+		let target=$e;
+		let classname=$(target).parents('a').attr('class');
+		console.log(classname);
+		if(classname === "saveGoods_up"){
+			console.log('true');
+			love(classname);
+		}else if(classname === "saveGoods"){
+			console.log('true');
+			love(classname);
+		}else if($(target).hasClass('headPop_BG')){
+			console.log('false');
+			$(this).hide();
+			$(".headPop_BG").css('display','none');
+			$(".detailsPopWindow").hide();
+			$('body').css('overflow','auto');
+			$('html').css('overflow-y','scroll');
 		}
-	})
+}
+function love(classname){
+	if(classname === "saveGoods_up"){
+		$(".detailsPopWindow_Save a").removeClass("saveGoods_up").addClass("saveGoods");
+		$(".detailsPopWindow_Save a").children("img").attr("src","/img/common/icon/saveGoods.png")
+	}else if(classname === "saveGoods"){
+		$(".detailsPopWindow_Save a").removeClass("saveGoods").addClass("saveGoods_up")
+		$(".detailsPopWindow_Save a").children("img").attr("src","/img/common/icon/saveGoodsUp.png");
+	}
 }
 
 

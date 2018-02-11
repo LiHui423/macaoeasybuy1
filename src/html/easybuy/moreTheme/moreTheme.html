@@ -8,6 +8,9 @@
 		<link rel="stylesheet" type="text/css" href="/css/easybuy/moreTheme/moreTheme.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/js/common/getData/getData_sinple.js"></script>
+		<script>easyBuy.global.hasNav = false;</script>
+		<!--不需要參數加載進來-->
 		<script>
 			var fr = new FrameDomain();
 			fr.getUserInfo.go();
@@ -15,7 +18,7 @@
 		</script>
 	</head>
 	<body>
-		<header></header>
+		<header id="page-header"></header>
 		<div id ="searchBar">
 			<div class="searchBox">
 				<div class="searchBox_mainBox">
@@ -69,11 +72,12 @@
 	<script src="/js/plug/yez_js_Reset.js"></script>
 	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
 	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
-	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/js/common/page-header.js"></script>
 	<script src="/js/common/header&search&footer/footer.js"></script>
 	<script src="/js/common/header&search&footer/searchBar.js"></script>
 	<script src="/js/easybuy/moreTheme/moreTheme.js"></script>
 	<script src="/js/easybuy/moreTheme/moreTheme.data.js"></script>
+	<script src="/js/common/clickEvent.js"></script>
 	<!--主題館-->
 	<script id="theme_museum_template" type="text/html">
 		<%for(var i=0;i<list.length;i++){%>
@@ -81,7 +85,7 @@
 			<div class="moreThemeMain_left_top">
 
 				<div class="moreThemeMain_left_pic">
-					<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].smallphoto%>">
+					<img src="//wap.macaoeasybuy.com/<%=list[i].smallphoto%>">
 					<div class="moreThemeMain_left_cover">
 						<span><img src="/img/easybuy/moreTheme/title_begin.png"></span>
 						<span><%=list[i].title%></span>
@@ -91,7 +95,7 @@
 
 				<div class="moreThemeMain_left_intro">
 					<div class="moreThemeMain_left_intro_themePic">
-						<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].smallphoto%>">
+						<img src="//wap.macaoeasybuy.com/<%=list[i].smallphoto%>">
 					</div>
 					<div class="moreThemeMain_left_intro_themeIntro">
 						<div class="left_intro_themeIntro_title">
@@ -118,7 +122,7 @@
 			<div class="moreThemeMain_left_goodBox clearfloat">
 				<ul>
 					<%for(var j=0;j<list[i].goods.length;j++){%>
-					<li><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].goods[j].pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_220.jpg'"></li>
+					<li data-id="<%=list[i].goods[j].id%>"><img src="//wap.macaoeasybuy.com/<%=list[i].goods[j].pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_220.jpg'"></li>
 					<%}%>
 				</ul>
 			</div>
@@ -129,8 +133,8 @@
 				</div>
 				<ul class="clearfloat">
 					<%for(var j=0;j<list[i].messUsers.length;j++){%>
-					<li class="myborder-radius">
-						<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].messUsers[j].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'">
+					<li data-id="<%=list[i].messUsers[j].id%>" class="myborder-radius">
+						<img data-type="userAvatar" src="//wap.macaoeasybuy.com/<%=list[i].messUsers[j].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'">
 					</li>
 					<%}%>
 				</ul>
@@ -142,8 +146,8 @@
 	<script id="theme_shop_template" type="text/html">
 		<%for(var i=0;i<list.length;i++){%>
 		<div class="moreThemeMain_rightEach">
-			<div class="moreThemeMain_rightEach_pic">
-				<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].pic2%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_600.jpg'">
+			<div class="moreThemeMain_rightEach_pic" data-id="<%=list[i].id%>">
+				<img src="//wap.macaoeasybuy.com/<%=list[i].pic2%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_600.jpg'">
 				<div class="moreThemeMain_rightEach_picBg"><img src="/img/easybuy/moreTheme/transparent_bg.png"></div>
 				<div class="moreThemeMain_rightEach_mess">
 					<p><%=list[i].sptitle%></p>
@@ -158,9 +162,9 @@
 			<div class="moreThemeMain_rightEach_comment clearfloat">
 				<ul>
 					<%for(var j=0;j<list[i].userComments.length;j++){%>
-					<li class="clearfloat">
+					<li class="clearfloat" data-id="<%=list[i].userComments[j].id%>">
 						<div class="rightEach_comment_left myborder-radius">
-							<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].userComments[j].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'">
+							<img data-type="userAvatar" src="//wap.macaoeasybuy.com/<%=list[i].userComments[j].Pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'">
 						</div>
 						<div class="rightEach_comment_right">
 							<div class="rightEach_comment_mess clearfloat">

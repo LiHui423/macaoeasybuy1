@@ -122,11 +122,14 @@ function showMagicalBox(){
 
 function DetailsPopBox(id){
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsYiPingController/QueryShangpinInfoById/"+ id +".easy",function(json){
-		console.log(json);
+		//console.log(json);
 		var DetailsPopList = json;
 		var html = template("showDetailsPop", DetailsPopList);
 		$(".headPop_BG").html(html);
-		closeDetailsPop();
+		// 点击事件不能嵌套，所以要先off('click'),再绑定
+		$('.headPop_BG').off('click').on('click',function(e){
+			closeDetailsPop(e.target);
+		})
 	});
 }
 
