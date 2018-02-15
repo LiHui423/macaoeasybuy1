@@ -1,0 +1,85 @@
+@import '../common/variable.scss';
+
+#space-nav {
+  background-color: rgba(255, 255, 255, .3);
+  min-height: 985px;
+  div {
+    height: 85px;
+    line-height: 85px;
+    font-size: 24px;
+    background: #fff;
+    color: $color10;
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 100px;
+    cursor: pointer;
+    span:last-of-type {
+      padding-left: 34px;
+      font-size: 18px;
+      color: #aaa;
+    }
+    &:hover {
+      background-color: $color10;
+      color: #fff;
+      span {
+        color: #fff;
+      }
+    }
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      width: 85px;
+      height: 85px;
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &[data-space-type="dynamic"]::before {
+      background-image: url("/img/userspace/spacenav/icon-dynamic.png");
+    }
+    &[data-space-type="love"]::before {
+      background-image: url("/img/userspace/spacenav/icon-love.png");
+    }
+    &[data-space-type="praise"]::before {
+      background-image: url("/img/userspace/spacenav/icon-praise.png");
+    }
+    &[data-space-type="daily"]::before {
+      background-image: url("/img/userspace/spacenav/icon-daily.png");
+    }
+    &[data-space-type="album"]::before {
+      background-image: url("/img/userspace/spacenav/icon-album.png");
+    }
+    &[data-space-type="life"]::before {
+      background-image: url("/img/userspace/spacenav/icon-life.png");
+    }
+    &[data-space-type="buy"]::before {
+      background-image: url("/img/userspace/spacenav/icon-buy.png");
+    }
+    &[data-space-type="used"]::before {
+      background-image: url("/img/userspace/spacenav/icon-used.png");
+    }
+    &[data-space-type="fair"]::before {
+      background-image: url("/img/userspace/spacenav/icon-fair.png");
+    }
+    &[data-space-type="label"]::before {
+      background-image: url("/img/userspace/spacenav/icon-label.png");
+    }
+    &[data-space-type="shop"]::before {
+      background-image: url("/img/userspace/spacenav/icon-shop.png");
+    }
+    &[data-space-type="relation"]::before {
+      background-image: url("/img/userspace/spacenav/icon-relation.png");
+    }
+  }
+  @for $i from 0 through 11 {
+    &[data-active="#{$i}"] > div:nth-of-type(#{$i+1}) {
+      background-color: $color10;
+      span {
+        color: #fff;
+      }
+    }
+  }
+}
