@@ -116,19 +116,19 @@ function getShopInfo(state){
 		//商家評級
 		var showHtml = '';
 		if(newData.gouyongxin == 1){
-			showHtml+='<img src="/img/easybuy/moreshops/icon/icon1.png" alt="" title="夠用心">';
+			showHtml+='<img src="/src/img/easybuy/moreshops/icon/icon1.png" alt="" title="夠用心">';
 		}
 		if(newData.xinyuhao == 1){
-			showHtml+='<img src="/img/easybuy/moreshops/icon/icon2.png" alt="" title="信譽好">';
+			showHtml+='<img src="/src/img/easybuy/moreshops/icon/icon2.png" alt="" title="信譽好">';
 		}
 		if(newData.baozhengjin == 1){
-			showHtml+='<img src="/img/easybuy/moreshops/icon/icon3.png" alt="" title="保證金">';
+			showHtml+='<img src="/src/img/easybuy/moreshops/icon/icon3.png" alt="" title="保證金">';
 		}
 		if(newData.fuwuyou == 1){
-			showHtml+='<img src="/img/easybuy/moreshops/icon/icon4.png" alt="" title="服務優">';
+			showHtml+='<img src="/src/img/easybuy/moreshops/icon/icon4.png" alt="" title="服務優">';
 		}
 		if(newData.shitidian == 1){
-			showHtml+='<img src="/img/easybuy/moreshops/icon/icon5.png" alt="" title="實體店">';
+			showHtml+='<img src="/src/img/easybuy/moreshops/icon/icon5.png" alt="" title="實體店">';
 		}
 		topBox.find('.searchBarLeft_bottom .shop-level span').html(showHtml);
 		//舉報投訴

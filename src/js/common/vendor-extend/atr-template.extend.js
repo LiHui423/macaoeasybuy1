@@ -32,7 +32,7 @@ template.helper('cutModify', function (str) {
 });
 template.helper('easySex', function (sex) {
     var url;
-    url = sex === "Girl" ? "/img/common/girl.png" : "/img/common/boy.png";
+    url = sex === "Girl" ? "/src/img/common/girl.png" : "/src/img/common/boy.png";
     return url;
 });
 template.helper('sexIcon', function (sex) {

@@ -221,11 +221,11 @@ function appendHtml(val,arr){
 	if(val.length == 0){
 		var html = '';
 	}else{
-		var html = '<div data-index="0"><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">'+val+'<img src="/img/userspace/secondhand/cancel.png" class="cancel-btn"></div>';
+		var html = '<div data-index="0"><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow">'+val+'<img src="/src/img/userspace/secondhand/cancel.png" class="cancel-btn"></div>';
 	}
 	if(arr.length>0){
 		for(var i=0;i<arr.length;i++){
-			html += '<div data-index="'+(arr[i].idx+1)+'"><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">'+arr[i].text+'<img src="/img/userspace/secondhand/cancel.png" class="cancel-btn"></div>';
+			html += '<div data-index="'+(arr[i].idx+1)+'"><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow">'+arr[i].text+'<img src="/src/img/userspace/secondhand/cancel.png" class="cancel-btn"></div>';
 		}
 	}
 	return html;

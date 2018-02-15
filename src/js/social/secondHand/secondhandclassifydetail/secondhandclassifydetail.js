@@ -80,7 +80,7 @@ function bannerImage(){
 			urlStr = 'banner.png'
 		break;
 	}
-	$('#second-banner-bar').html('<img src="/img/social/secondHand/secondhandclassifydetail/'+urlStr+'" alt="">');
+	$('#second-banner-bar').html('<img src="/src/img/social/secondHand/secondhandclassifydetail/'+urlStr+'" alt="">');
 }
 //導航欄
 function navSelect(){

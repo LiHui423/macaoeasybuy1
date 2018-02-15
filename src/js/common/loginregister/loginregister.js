@@ -99,7 +99,7 @@ function findPwdPageTwo(){
 }
 function loginSuccess(){
 	//登入成功
-	var html = '<div id="login-success"><div class="login-success-box"><img src="/img/common/loginregister/login-success.png" alt=""><div>歡迎回到宜買站!</div><div><span class="num">3</span><span>秒後自動進入</span><span class="dot">...</span></div></div></div>';
+	var html = '<div id="login-success"><div class="login-success-box"><img src="/src/img/common/loginregister/login-success.png" alt=""><div>歡迎回到宜買站!</div><div><span class="num">3</span><span>秒後自動進入</span><span class="dot">...</span></div></div></div>';
 	$('body').append(html);
 	var num = 3;
 	var timerNum = setInterval(function(){

@@ -2,9 +2,9 @@ $(function(){
 	pageSelect();
 	bannerImgMiddle($('#foodBannerul li'));
 	albumCollects();
-	
+
 	postContent();
-	
+
 	// mygoodbanner({
 	// 	box:$('.showPicBox'),
 	// 	banner:$('#foodBannerul'),
@@ -80,7 +80,7 @@ function albumCollects(){
 		}else{
 			isCanCollect = true;
 			changeCollectBtnColor(isCanCollect);
-			var html = '<li class="select"><div class="collect-list-div"><img class="collect-list-div-img" src="/img/social/easylive/no-collect.png" alt=""><div class="collect-select"><img src="/img/social/easylive/collect-select.png" alt=""></div></div><div class="collect-list-div">'+title+'</div></li>';
+			var html = '<li class="select"><div class="collect-list-div"><img class="collect-list-div-img" src="/src/img/social/easylive/no-collect.png" alt=""><div class="collect-select"><img src="/src/img/social/easylive/collect-select.png" alt=""></div></div><div class="collect-list-div">'+title+'</div></li>';
 			$('.collect-list ul li').removeClass('select');
 			if(hasAddAlbum == false){
 				$('.collect-list ul').prepend(html);

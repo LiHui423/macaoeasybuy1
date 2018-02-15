@@ -167,7 +167,7 @@ function requestData(){
 				$('.data-show .no-more').css('display','block');
 			}
 			if(data.shopList.length == 0 && page == 0){
-				var html = '<div id="no-post"><div><img src="/img/common/05.png" alt=""></div><span>目前沒有任何內容哦!</span></div>';
+				var html = '<div id="no-post"><div><img src="/src/img/common/05.png" alt=""></div><span>目前沒有任何內容哦!</span></div>';
 				$('#data-box').html(html);
 				$('.data-show .no-more').css('display','none');
 			}

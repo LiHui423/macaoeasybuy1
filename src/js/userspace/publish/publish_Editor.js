@@ -1023,7 +1023,7 @@ function emoji(noBigEmoji) {
 					$('#big-expression .now')[0].bigExpNum++;
 					$('#big-expression .now').html($('#big-expression .now')[0].bigExpNum);
 					$('#big-expression').css('display', 'block');
-					var newImg = '<div class="showbox_main_bigmoji_each"><img class="bigExpression" src="'+src+'"><div class="showbox_main_bigmoji_each_close cancel-btn"><img src="/img/userspace/publish/pubilsh_close.png"></div></div>';
+					var newImg = '<div class="showbox_main_bigmoji_each"><img class="bigExpression" src="'+src+'"><div class="showbox_main_bigmoji_each_close cancel-btn"><img src="/src/img/userspace/publish/pubilsh_close.png"></div></div>';
 					$('#big-expression .publishBox_showbox_main').append(newImg);
 					newImg = null;
 //					editor.obj.focus();

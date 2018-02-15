@@ -414,7 +414,7 @@ function albumMove(){
 	$('#album-move .album-move-box .album-create div').on('click',function(){
 		var a = $('#album-move .album-move-box .album-create input').val().substring(0,10);
 		if(a.length == 0)return false;
-		var html = '<li class="select"><div class="collect-list-div"><img class="collect-list-div-img" src="/img/social/easylive/no-collect.png" alt=""><div class="img-number">0</div><div class="collect-select"><img src="/img/social/easylive/collect-select.png" alt=""></div></div><div class="collect-list-div">'+a+'</div></li>';
+		var html = '<li class="select"><div class="collect-list-div"><img class="collect-list-div-img" src="/src/img/social/easylive/no-collect.png" alt=""><div class="img-number">0</div><div class="collect-select"><img src="/src/img/social/easylive/collect-select.png" alt=""></div></div><div class="collect-list-div">'+a+'</div></li>';
 		$('#album-move .album-move-box .album-select ul li').each(function(){
 			$(this).removeClass('select');
 		});

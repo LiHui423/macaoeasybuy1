@@ -113,7 +113,7 @@ function checkChooseEach(){
 	$('.searchGood_sizeBox_middle ul li span:nth-of-type(2)').off('click').on('click',function(){
 		var title = $(this).parents('.searchGood_sizeEach').find('.searchGood_title').text();
 		var value = [];
-		$('.chooseClassBox').append('<div class="hadchooseClass hadchooseClass_size" data-classname ="'+ title +'" title = "'+ $(this).text() +'"><span>'+ $(this).text() +'</span><span><img src="/img/common/search/search_good_clearEach.png"></span></div>')
+		$('.chooseClassBox').append('<div class="hadchooseClass hadchooseClass_size" data-classname ="'+ title +'" title = "'+ $(this).text() +'"><span>'+ $(this).text() +'</span><span><img src="/src/img/common/search/search_good_clearEach.png"></span></div>')
 		value.push($(this).text())
 		if(spStandard == ''){
 			spStandard = {}
@@ -146,7 +146,7 @@ function checkChooseEach(){
 				textAdd = textAdd + ',' +$(this).text();
 			}
 		});
-		$('.chooseClassBox').append('<div class="hadchooseClass hadchooseClass_size" data-classname ="'+ title +'" title = "'+ textAdd +'"><span>'+ textAdd +'</span><span><img src="/img/common/search/search_good_clearEach.png"></span></div>')
+		$('.chooseClassBox').append('<div class="hadchooseClass hadchooseClass_size" data-classname ="'+ title +'" title = "'+ textAdd +'"><span>'+ textAdd +'</span><span><img src="/src/img/common/search/search_good_clearEach.png"></span></div>')
 		//將分類的欄目恢復原隱藏
 		$('.searchGood_sizeBox_curr').each(function(){
 			value.push($(this).find('span:nth-of-type(2)').text())
@@ -168,7 +168,7 @@ function checkChooseEach(){
 		$(this).parents('.searchGood_sizeEach').find('.searchGood_sizeBox_middle ul li span:nth-of-type(2)').on('click',function(){
 			var title = $(this).parents('.searchGood_sizeEach').find('.searchGood_title').text();
 			var value = [];
-			$('.chooseClassBox').append('<div class="hadchooseClass hadchooseClass_size" data-classname ="'+ title +'" title = "'+ $(this).text() +'"><span>'+ $(this).text() +'</span><span><img src="/img/common/search/search_good_clearEach.png"></span></div>')
+			$('.chooseClassBox').append('<div class="hadchooseClass hadchooseClass_size" data-classname ="'+ title +'" title = "'+ $(this).text() +'"><span>'+ $(this).text() +'</span><span><img src="/src/img/common/search/search_good_clearEach.png"></span></div>')
 			value.push($(this).text())
 			if(spStandard == ''){
 				spStandard = {}
@@ -262,7 +262,7 @@ function Argument(){
 	$('.searchGood_chooseOther_hover ul li').off('click').on('click',function(){
 		var Argumentname = $(this).parents('li').find('span:nth-of-type(1)').text();
 		if($('.chooseClassBox').find('hadchooseClass').length < 8){
-			$('.chooseClassBox').append('<div class="hadchooseClass hadchooseClass_arg" data-classname ="'+ Argumentname +'" title = "'+ $(this).text() +'"><span>'+ $(this).text() +'</span><span><img src="/img/common/search/search_good_clearEach.png"></span></div>')
+			$('.chooseClassBox').append('<div class="hadchooseClass hadchooseClass_arg" data-classname ="'+ Argumentname +'" title = "'+ $(this).text() +'"><span>'+ $(this).text() +'</span><span><img src="/src/img/common/search/search_good_clearEach.png"></span></div>')
 			if(Parameter == ''){
 				Parameter = {}
 			}else{

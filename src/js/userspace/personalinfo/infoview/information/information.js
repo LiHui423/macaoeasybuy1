@@ -112,7 +112,7 @@ function queryUserBasicSettingInfo(){
 				for(var j=0;j<myArr[i].choosedList.length;j++){
 					listHtml += '<div>'+myArr[i].choosedList[j].name+'</div>';
 				}
-				var boxhtml = '<div class="other-list"><img src="/img/userspace/personalinfo/arrow.png" alt="" class="arrow"><div class="other-lister scrollIe scrollOther">'+listHtml+'</div></div>';
+				var boxhtml = '<div class="other-list"><img src="/src/img/userspace/personalinfo/arrow.png" alt="" class="arrow"><div class="other-lister scrollIe scrollOther">'+listHtml+'</div></div>';
 			}
 			switch(i){
 				case 0:

@@ -151,7 +151,7 @@ function upLoadFunc(){
 											'</div>'+
 											'<div class="change_showpicEach_hover">'+
 												'<div class="change_showpicEach_close myborder-radius">'+
-													'<img src="/img/common/tips-box/img-upload-close.png">'+
+													'<img src="/src/img/common/tips-box/img-upload-close.png">'+
 												'</div>'+
 											'</div>'+
 										'</div>';

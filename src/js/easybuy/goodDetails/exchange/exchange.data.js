@@ -16,7 +16,7 @@ function goodDetails(){
 		/*商品信息*/
 		var htmlGoodMess = template("goodDetailsMess", shopMessData);
 		$(".museumDetails_goodMessBox_left").html(htmlGoodMess);
-		giveGreat($(".saveGoods"),$(".like_success"),$(".cancelLike_success"),$(".cancelLikePop"),"/img/common/icon/saveGoods.png","/img/common/saveGoodsUp.png");
+		giveGreat($(".saveGoods"),$(".like_success"),$(".cancelLike_success"),$(".cancelLikePop"),"/src/img/common/icon/saveGoods.png","/src/img/common/saveGoodsUp.png");
 		boomBox()
 		shareBth()
 		

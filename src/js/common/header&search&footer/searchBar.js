@@ -94,27 +94,27 @@ function searchBar(){
 		$(this).addClass('searchBar_typeBox_curr').siblings().removeClass('searchBar_typeBox_curr');
 		detectionStatus()
 	})
-	
+
 	/*節流消抖動的綁定調用*/
 	$('#searchInput').on('keypress keyup',debounce(nextFun, 500))
-	
+
 	function nextFun(){
 		detectionStatus()
 		changeReg()
 	}
-	
+
 	/*debounce 防抖*/
 	function debounce(fn, delay) {
 		var ctx;
 		var args;
 		var timer = null;
-		
+
 		var later = function () {
 		   fn.apply(ctx, args);
 		   // 当事件真正执行后，清空定时器
 		   timer = null;
 		};
-		
+
 		  return function () {
 		    ctx = this;
 		    args = arguments;
@@ -123,16 +123,16 @@ function searchBar(){
 		      clearTimeout(timer);
 		      timer = null;
 		    }
-		
+
 		    // 重新设置事件触发的定时器
 		    timer = setTimeout(later, delay);
 		  };
 		}
-	
-	
+
+
 	function detectionStatus(){
 		var inputVal = $('#searchInput').val();
-		var keyword = encodeURI(encodeURI(inputVal)) 
+		var keyword = encodeURI(encodeURI(inputVal))
 		var id = $('.searchBar_typeBox_curr').data('id');
 		var name = $('.searchBar_typeBox_curr').data('name');
 		$('#showchooseType').text('搜' + name)
@@ -141,7 +141,7 @@ function searchBar(){
 		}else{
 			$('.searchBar_recommendBox').find("[data-main = " + id +"]").addClass('searchBar_recommendEach_curr').siblings().removeClass('searchBar_recommendEach_curr')
 			if(keyword.length == 0){
-			
+
 				}else{
 					if($('.searchBar_recommendEach_curr .searchBar_recommendEach_main ul').html() == ''){
 						if(id == '1'){
@@ -156,7 +156,7 @@ function searchBar(){
 							postLoad(keyword)
 						}else if(id == '6'){
 							fansLoad(keyword)
-						}	
+						}
 					}else{
 						if(inputVal == $('.searchBar_recommendEach_curr').find('.inputValWord').text()){
 							return false;
@@ -173,11 +173,11 @@ function searchBar(){
 								postLoad(keyword)
 							}else if(id == '6'){
 								fansLoad(keyword)
-							}	
+							}
 						}
 					}
 				}
-			$('.searchBar_recommendBox').find("[data-main = " + id +"]").find('.searchBar_recommendEach_title').html('搜 “<span class="inputValWord">'+ inputVal +'</span> ” 相關'+ name + '<span><img src="/img/common/icon/nextIcon_black.png"></span>')
+			$('.searchBar_recommendBox').find("[data-main = " + id +"]").find('.searchBar_recommendEach_title').html('搜 “<span class="inputValWord">'+ inputVal +'</span> ” 相關'+ name + '<span><img src="/src/img/common/icon/nextIcon_black.png"></span>')
 		}
 	}
 	/*對搜索回來的信息做關鍵字匹配*/
@@ -218,15 +218,15 @@ function clickSecondClass(){
 /*執行搜索*/
 function gotosearch(){
 	/*獲取輸入框裡面的文字，假如沒有輸入關鍵字*/
-	var keyword = encodeURI(encodeURI($('#searchInput').val())) 
+	var keyword = encodeURI(encodeURI($('#searchInput').val()))
 	var type = $('.searchBar_typeBox_curr').data('id')
 	/*通過選擇的分類來選擇跳轉的結果頁面*/
 	if(type == '1'){
 		if(keyword == ''){
 			keyword = encodeURI(encodeURI($('.searchBar_recommendBox').find("[data-id = '1']").find('.searchBar_recommendEach_main ul li:nth-of-type(1)').text()))
-			window.location.href = '/common/search/search_good.html?keyword='+ keyword +''	
+			window.location.href = '/common/search/search_good.html?keyword='+ keyword +''
 		}else{
-			window.location.href = '/common/search/search_good.html?keyword='+ keyword +''	
+			window.location.href = '/common/search/search_good.html?keyword='+ keyword +''
 		}
 	}else if(type == '2'){
 		window.location.href = '/common/search/search_shop.html?keyword='+ keyword +''

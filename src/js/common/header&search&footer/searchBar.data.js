@@ -160,7 +160,7 @@ function fansLoad(keyword){
 				html = html + '<li class="typeFans clearfloat" data-id = "'+ data.list[i].id +'">'+
 									'<div class="searchBar_recommendEach_headpic myborder-radius"><img src="http://wap.macaoeasybuy.com/'+ data.list[i].pic +'"></div>'+
 									'<div class="searchBar_recommendEach_mess">'+
-										'<div class="searchBar_recommendEach_mess_top"><p>'+ data.list[i].name +'</p><span class = "SearchfanSex"><img src="/img/common/boy.png"></span></div>'+
+										'<div class="searchBar_recommendEach_mess_top"><p>'+ data.list[i].name +'</p><span class = "SearchfanSex"><img src="/src/img/common/boy.png"></span></div>'+
 										'<div class="searchBar_recommendEach_mess_bottom clearfloat">'+
 											'<ul><li>'+ data.list[i].expertlable +'</li><li>'+ data.list[i].attentionCount +'粉絲</li><li>'+ data.list[i].postsCount +'帖子</li></ul>'+
 										'</div>'+

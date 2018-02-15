@@ -313,12 +313,12 @@ function changeUsedState(item,idx){
 		item.find('.close-bg').remove();
 	}else if(idx == 0){
 		item.find('.close-bg').remove();
-		var html = '<div class="close-bg"><img src="/img/social/secondHand/secondHand_finished.png" alt=""></div>';
+		var html = '<div class="close-bg"><img src="/src/img/social/secondHand/secondHand_finished.png" alt=""></div>';
 		item.append(html);
 		html = null;
 	}else if(idx == -1){
 		item.find('.close-bg').remove();
-		var html = '<div class="close-bg"><img src="/img/social/secondHand/secondHand_cancel.png" alt=""></div>';
+		var html = '<div class="close-bg"><img src="/src/img/social/secondHand/secondHand_cancel.png" alt=""></div>';
 		item.append(html);
 		html = null;
 	}

@@ -406,7 +406,7 @@ function boringSure(){
 			var threeData = cloneObject($(this).data('data'));
 			if(threeData.isSelect == 1){
 				$(this).remove();
-				var html = '<li class="boring-list" id="'+threeData.code+'-boring"><span>'+threeData.name+'</span><img src="/img/userspace/personalinfo/delete-boring.png" alt="" class="delete"></li>';
+				var html = '<li class="boring-list" id="'+threeData.code+'-boring"><span>'+threeData.name+'</span><img src="/src/img/userspace/personalinfo/delete-boring.png" alt="" class="delete"></li>';
 				$('#add-boring').before(html);
 				$('#'+threeData.code+'-boring').data('data',{
 					code : threeData.code,

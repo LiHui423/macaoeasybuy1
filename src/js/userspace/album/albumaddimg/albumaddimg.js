@@ -31,7 +31,7 @@ $(function(){
 							+'<div class="editor-items-img">'+
 								+'<img src="'+fileURL+'">'+
 								+'<div class="close-btn">'+
-									+'<img src="/img/common/tips-box/img-upload-close.png" alt="">'+
+									+'<img src="/src/img/common/tips-box/img-upload-close.png" alt="">'+
 								+'</div>'+
 							+'</div>'+
 							+'<div class="editor-items-value scrollIe scrollOther" contenteditable="true" placeholder="為此圖片添加描述吧！"></div>'+

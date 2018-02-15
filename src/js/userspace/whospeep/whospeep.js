@@ -152,7 +152,7 @@ function requestData(){
 				$('.data-show .no_more').css('display','block');
 			}
 			if(data.seeFoot.length == 0 && globalObj.dataPage == 0){
-				var html = '<div class="no-speep"><img src="/img/common/05.png" alt=""><div>暫時還沒有人來偷看你！</div></div>';
+				var html = '<div class="no-speep"><img src="/src/img/common/05.png" alt=""><div>暫時還沒有人來偷看你！</div></div>';
 				$('#data-box').html(html);
 				$('.data-show .no_more').css('display','none');
 			}

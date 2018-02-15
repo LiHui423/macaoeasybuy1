@@ -457,7 +457,7 @@
         function appendNode() {
             $('#album-move .move-list').html('');
             for (var i = 0; i < selectId.length; i++) {
-                var imgHtml = '<li id="' + selectId[i].id + '-move" data-id="' + selectId[i].id + '"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/' + selectId[i].groupurl + '" alt="" class="move-list-img" middle="true"><img src="/img/userspace/album/close-btn.png" alt="" class="album-close-btn"></li>';
+                var imgHtml = '<li id="' + selectId[i].id + '-move" data-id="' + selectId[i].id + '"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/' + selectId[i].groupurl + '" alt="" class="move-list-img" middle="true"><img src="/src/img/userspace/album/close-btn.png" alt="" class="album-close-btn"></li>';
                 $('#album-move .move-list').append(imgHtml);
                 $('#' + selectId[i].id + '-move')[0].dataId = selectId[i].id;
                 setWidth();
@@ -584,7 +584,7 @@
             $('#album-move .album-move-box .album-create div').on('click', function () {
                 var a = $('#album-move .album-move-box .album-create input').val().substring(0, 10);
                 if (a.length == 0) return false;
-                var html = '<li class="select" id="newCreateAlbum"><div class="collect-list-div"><img class="collect-list-div-img" src="/img/social/easylive/no-collect.png" alt=""><div class="img-number">0</div><div class="collect-select"><img src="/img/social/easylive/collect-select.png" alt=""></div></div><div class="collect-list-div">' + a + '</div></li>';
+                var html = '<li class="select" id="newCreateAlbum"><div class="collect-list-div"><img class="collect-list-div-img" src="/src/img/social/easylive/no-collect.png" alt=""><div class="img-number">0</div><div class="collect-select"><img src="/src/img/social/easylive/collect-select.png" alt=""></div></div><div class="collect-list-div">' + a + '</div></li>';
                 $('#album-move .album-move-box .album-select ul li').each(function () {
                     $(this).removeClass('select');
                 });
@@ -685,8 +685,8 @@
     };
     //編輯專輯
     window.albumData.mineFunc.chagneAlbum = function () {
-        var saveBtn = '<div id="contenteditable-save"><img src="/img/userspace/album/save-btn-con.png" alt="">保存</div>';
-        var setBtn = '<div id="contenteditable-btn"><img src="/img/userspace/album/opeartion.png" alt="">設置</div>';
+        var saveBtn = '<div id="contenteditable-save"><img src="/src/img/userspace/album/save-btn-con.png" alt="">保存</div>';
+        var setBtn = '<div id="contenteditable-btn"><img src="/src/img/userspace/album/opeartion.png" alt="">設置</div>';
         set();
         var golbal = window.albumData.editorAlbum;
 

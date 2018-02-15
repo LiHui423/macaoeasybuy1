@@ -196,8 +196,8 @@ function myCheckCard(){
 }
 //点赞
 function isClickLove(){
-	var goodHtml = '<div id="good-btn"><img src="/img/userspace/userspace_postDetails/icon/albumData4.png" alt="">值得讃好</div>';
-	var cancelHtml = '<div id="cancel-good-btn"><img src="/img/social/label/labeldetail/click-good.png" alt="">取消讃好</div>';
+	var goodHtml = '<div id="good-btn"><img src="/src/img/userspace/userspace_postDetails/icon/albumData4.png" alt="">值得讃好</div>';
+	var cancelHtml = '<div id="cancel-good-btn"><img src="/src/img/social/label/labeldetail/click-good.png" alt="">取消讃好</div>';
 	//判斷是否登錄
 	if(!isLogin){
 		$('#label-btn').prepend(goodHtml);

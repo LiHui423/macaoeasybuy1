@@ -1118,7 +1118,7 @@ function emoji() {
 					$('#big-expression p .now')[0].bigExpNum++;
 					$('#big-expression p .now').html($('#big-expression p .now')[0].bigExpNum);
 					$('#big-expression p').css('display', 'block');
-					var newImg = '<div><img src="' + src + '" alt="" class="bigExpression"><img src="/img/common/cancel-big-expression.png" alt="" class="cancel-btn"></div>';
+					var newImg = '<div><img src="' + src + '" alt="" class="bigExpression"><img src="/src/img/common/cancel-big-expression.png" alt="" class="cancel-btn"></div>';
 					$('#big-expression p').before(newImg);
 					newImg = null;
 					editor.obj.focus();

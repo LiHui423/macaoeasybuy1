@@ -9,10 +9,10 @@ function museumHeadSlide(){
 	$(".museum_navSlide_btn").click(function(){
 		if($(".museumHome_head").hasClass("museumHome_head_slideUp")){
 			$(".museumHome_head").removeClass("museumHome_head_slideUp").animate({height:"270px"});
-			$(".museum_navSlide_btn").find("img").attr("src","/img/easybuy/museum/icon/museum_top_up.png");
+			$(".museum_navSlide_btn").find("img").attr("src","/src/img/easybuy/museum/icon/museum_top_up.png");
 		}else{
 			$(".museumHome_head").addClass("museumHome_head_slideUp").animate({height:"225px"});
-			$(".museum_navSlide_btn").find("img").attr("src","/img/easybuy/museum/icon/museum_top_down.png")
+			$(".museum_navSlide_btn").find("img").attr("src","/src/img/easybuy/museum/icon/museum_top_down.png")
 		}
 	})
 }
@@ -213,10 +213,10 @@ function closeDetailsPop($e){
 function love(classname){
 	if(classname === "saveGoods_up"){
 		$(".detailsPopWindow_Save a").removeClass("saveGoods_up").addClass("saveGoods");
-		$(".detailsPopWindow_Save a").children("img").attr("src","/img/common/icon/saveGoods.png")
+		$(".detailsPopWindow_Save a").children("img").attr("src","/src/img/common/icon/saveGoods.png")
 	}else if(classname === "saveGoods"){
 		$(".detailsPopWindow_Save a").removeClass("saveGoods").addClass("saveGoods_up")
-		$(".detailsPopWindow_Save a").children("img").attr("src","/img/common/icon/saveGoodsUp.png");
+		$(".detailsPopWindow_Save a").children("img").attr("src","/src/img/common/icon/saveGoodsUp.png");
 	}
 }
 

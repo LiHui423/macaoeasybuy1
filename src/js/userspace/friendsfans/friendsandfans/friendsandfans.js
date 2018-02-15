@@ -48,7 +48,7 @@ function DataFunc(){
 	var dataBox = $('#user-list .user-list-box'); //大盒子
 	window.boxNum = 0; //大盒子目前是選擇哪個的
 	window.dataSize = 9; //一次請求多少條數據
-	var focusBtnHtml = '<div class="shadow-box-btn focus-it focus-btn"><div><img src="/img/userspace/friendsfans/add.png" alt="">關注</div></div>';
+	var focusBtnHtml = '<div class="shadow-box-btn focus-it focus-btn"><div><img src="/src/img/userspace/friendsfans/add.png" alt="">關注</div></div>';
 	var cancelBtnHtml = '<div class="shadow-box-btn cancel-focus focus-btn"><div>已關注</div></div>';
 	navBtn.each(function(k){
 		$(this)[0].data = {

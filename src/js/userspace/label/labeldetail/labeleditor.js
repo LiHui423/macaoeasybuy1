@@ -37,7 +37,7 @@ function editorLabel(){
 		},
 		//當選擇文件后顯示圖片的API
 		showImg:function(fileURL, file){
-			var html = '<div class="upload-img-box"><img src="'+fileURL+'" alt="" class="upload-picture"><img src="/img/userspace/label/upload-close.png" alt="" class="close-btn"></div>'
+			var html = '<div class="upload-img-box"><img src="'+fileURL+'" alt="" class="upload-picture"><img src="/src/img/userspace/label/upload-close.png" alt="" class="close-btn"></div>'
 			$('#editor-box .upload-label-img>div').prepend(html);
 			$('#upload-btn').css('display','none');
 		},

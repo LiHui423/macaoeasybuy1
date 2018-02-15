@@ -173,7 +173,7 @@ function loadEditor(fn){
 		//沒登錄
 		const html = `<div class="edit-box">
 			<div class="edit-box-no-login clearfloat">
-				<div class="no-login-icon"><img src="/img/common/05.png" alt=""></div>
+				<div class="no-login-icon"><img src="/src/img/common/05.png" alt=""></div>
 				<div class="no-login-tips">
 					<div class="no-login-tips-text">未登入無法留言哦！</div>
 					<div class="clearfloat no-login-tips-btn">
@@ -562,9 +562,9 @@ function postBanner(opt){
 			}
 			for(var i=0;i<newData.length;i++){
 				if(newData[i].pic===undefined){
-					var html='<li><img middle="true" src="/img/common/loadnow.jpg"></li>'
+					var html='<li><img middle="true" src="/src/img/common/loadnow.jpg"></li>'
 				}else{
-					var html = '<li><img middle="true" src="'+'//wap.macaoeasybuy.com'+newData[i].pic+'" onerror=this.src="/img/common/loadnow.jpg"></li>';
+					var html = '<li><img middle="true" src="'+'//wap.macaoeasybuy.com'+newData[i].pic+'" onerror=this.src="/src/img/common/loadnow.jpg"></li>';
 				}
 				$('#foodBannerul').append(html);
 			}

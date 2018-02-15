@@ -13,7 +13,7 @@ function goodDetails(){
 		/*商品信息*/
 		var htmlGoodMess = template("goodDetailsMess", shopMessData);
 		$(".museumDetails_goodMessBox_left").html(htmlGoodMess);
-		giveGreat($(".saveGoods"),$(".like_success"),$(".cancelLike_success"),$(".cancelLikePop"),"/img/userspace/userspace_postDetails/icon/saveGoods.png","/img/userspace/userspace_postDetails/icon/saveGoodsUp.png");
+		giveGreat($(".saveGoods"),$(".like_success"),$(".cancelLike_success"),$(".cancelLikePop"),"/src/img/userspace/userspace_postDetails/icon/saveGoods.png","/src/img/userspace/userspace_postDetails/icon/saveGoodsUp.png");
 		boomBox()
 		
 		var htmlDetailsPrice = template("goodDetailsPrice", shopMessData);
