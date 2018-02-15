@@ -3,13 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<title>購物籃-待確認</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/easybuy/shopCart/shopCart_common.css">
-		<link rel="stylesheet" href="/css/easybuy/shopCart/unprocessed/unprocessed.css">
-		<link rel="stylesheet" href="/css/easybuy/shopCart/unconfirmed/unconfirmed.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/easybuy/shopCart/shopCart_common.css">
+		<link rel="stylesheet" href="/src/css/easybuy/shopCart/unprocessed/unprocessed.css">
+		<link rel="stylesheet" href="/src/css/easybuy/shopCart/unconfirmed/unconfirmed.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
 		<script>
 			var fr = new FrameDomain();
 			fr.getUserInfo.beforeInfo = function(){
@@ -26,7 +26,7 @@
 			fr.getUserInfo.go();
 //			var userId = 32;
 		</script>
-		<script src="/js/common/yez_js_Reset.js"></script>
+		<script src="/src/js/common/yez_js_Reset.js"></script>
 	</head>
 
 	<body>
@@ -37,37 +37,37 @@
 				<ul id="shopCart_searchBoxLeft_box" class="clearfloat">
 					<li>
 						<a href="/page/easybuy/shopCart/shopCart/shopCartCalc.html">
-							<div class="iconBox"><img src="/img/easybuy/shopCart/menu-shopCar.png"></div>
+							<div class="iconBox"><img src="/src/img/easybuy/shopCart/menu-shopCar.png"></div>
 							<p>購物籃(<span>&nbsp;</span>)</p>
 						</a>
 					</li>
 					<li>
 						<a href="/page/easybuy/shopCart/unprocessed.html">
-							<div class="iconBox"><img src="/img/easybuy/shopCart/menu-waitSend.png"></div>
+							<div class="iconBox"><img src="/src/img/easybuy/shopCart/menu-waitSend.png"></div>
 							<p>待發貨(<span>&nbsp;</span>)</p>
 						</a>
 					</li>
 					<li>
 						<a href="/page/easybuy/shopCart/unconfirmed.html">
-							<div class="iconBox"><img src="/img/easybuy/shopCart/menu_waitSign_curr.png"></div>
+							<div class="iconBox"><img src="/src/img/easybuy/shopCart/menu_waitSign_curr.png"></div>
 							<p>待確認(<span>&nbsp;</span>)</p>
 						</a>
 					</li>
 					<li>
 						<a href="/page/easybuy/shopCart/staycommend.html">
-							<div class="iconBox"><img src="/img/easybuy/shopCart/menu-Evaluation.png"></div>
+							<div class="iconBox"><img src="/src/img/easybuy/shopCart/menu-Evaluation.png"></div>
 							<p>待評價(<span>&nbsp;</span>)</p>
 						</a>
 					</li>
 					<li>
 						<a href="/page/easybuy/shopCart/completed.html">
-							<div class="iconBox"><img src="/img/easybuy/shopCart/menu-finished.png"></div>
+							<div class="iconBox"><img src="/src/img/easybuy/shopCart/menu-finished.png"></div>
 							<p>已完成(<span>&nbsp;</span>)</p>
 						</a>
 					</li>
 				</ul>
 			</div>
-			<div class="shopCart_searchBoxMiddle"><img src="/img/easybuy/shopCart/shopper.png"></div>
+			<div class="shopCart_searchBoxMiddle"><img src="/src/img/easybuy/shopCart/shopper.png"></div>
 			<div class="shopCart_searchBoxRight">
 				<input type="text" id="" value="" placeholder="搜索商品、商店、標籤、話題、帖子、宜粉">
 				<div class="searchIcon"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/systemImg/7/7/7/20160707031032363321007103210032.png"></div>
@@ -83,7 +83,7 @@
 				<div class="noMore" id="noMore">~沒有更多內容了哦~</div>
 			</div>
 			<div class="no_unprocessed_mainBox">
-				<img src="/img/common/05.png" alt="">
+				<img src="/src/img/common/05.png" alt="">
 				<div>您目前沒有任何待確認商品哦！</div>
 			</div>
 			<!--他們都在看-->
@@ -102,9 +102,9 @@
 		<!--簽收彈窗-->
 		<div id="receiving-box" class="destroyOrder_box">
 			<div class="wantSignUp">
-				<div class="wantSignUp_closeIcon"><img src="/img/easybuy/shopCart/address_close.png"></div>
+				<div class="wantSignUp_closeIcon"><img src="/src/img/easybuy/shopCart/address_close.png"></div>
 				<div class="wantSignUp_title">我已收到以下商品</div>
-				<div class="wantSignUp_icon"><img src="/img/easybuy/shopCart/wantSignUp_icon.png"></div>
+				<div class="wantSignUp_icon"><img src="/src/img/easybuy/shopCart/wantSignUp_icon.png"></div>
 				<div class="wantSignUp_mess clearfloat">
 					<div class="wantSignUp_mess_img"><img src=""></div>
 					<div class="wantSignUp_mess_size">
@@ -114,7 +114,7 @@
 					</div>
 				</div>
 				<div class="wantSignUp_intro">
-					<div class="wantSignUp_intro_icon"><img src="/img/easybuy/shopCart/wantSignUp_check.png"></div>
+					<div class="wantSignUp_intro_icon"><img src="/src/img/easybuy/shopCart/wantSignUp_check.png"></div>
 					<p>商品沒問題，確認簽收！</p>
 					<p>商品不錯，我不需要退換此商品了，謝謝～</p>
 				</div>
@@ -126,10 +126,10 @@
 		<div id="after-receiving-box" class="destroyOrder_box">
 			<div class="hadSignUp">
 				<div class="hadSignUp_close">
-					<img src="/img/easybuy/shopCart/address_close.png">
+					<img src="/src/img/easybuy/shopCart/address_close.png">
 				</div>
-				<div class="hadSignUp_title"><span><img src="/img/easybuy/shopCart/wantSignUp_check.png"></span><span>已簽收！</span></div>
-				<div class="wantSignUp_icon"><img src="/img/easybuy/shopCart/wantSignUp_icon.png"></div>
+				<div class="hadSignUp_title"><span><img src="/src/img/easybuy/shopCart/wantSignUp_check.png"></span><span>已簽收！</span></div>
+				<div class="wantSignUp_icon"><img src="/src/img/easybuy/shopCart/wantSignUp_icon.png"></div>
 				<div class="hadSignUp_Evalua">
 					<div class="hadSignUp_Evalua_title">評價後即獲得以下獎勵哦：</div>
 					<p class="clearfloat"><span>驚喜紅包券總計</span><span>+80元紅包</span></p>
@@ -146,20 +146,20 @@
 
 	</body>
 
-	<script src="/js/common/header&search&footer/header.js"></script>
-	<script src="/js/common/header&search&footer/footer.js"></script>
-	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
-	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
-	<script src="/js/easybuy/shopCart/shopCart_common.js"></script>
-	<script src="/js/easybuy/shopCart/unconfirmed/unconfirmed.js"></script>
-	<script src="/js/easybuy/shopCart/unconfirmed/unconfirmed.data.js"></script>
+	<script src="/src/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/header&search&footer/footer.js"></script>
+	<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/src/js/easybuy/shopCart/shopCart_common.js"></script>
+	<script src="/src/js/easybuy/shopCart/unconfirmed/unconfirmed.js"></script>
+	<script src="/src/js/easybuy/shopCart/unconfirmed/unconfirmed.data.js"></script>
 
 	<!--商店頭模板-->
 	<script id="store_title_template" type="text/html">
 
 		<div class="unprocessed_main_shopMess clearfloat">
 			<div class="shopCart_shopTitle">
-				<span><img src="/img/easybuy/shopCart/shopIcon.png"></span><span><%=shopname%></span><span>(<%=ordersCount%>張訂單)</span>
+				<span><img src="/src/img/easybuy/shopCart/shopIcon.png"></span><span><%=shopname%></span><span>(<%=ordersCount%>張訂單)</span>
 			</div>
 			<div class="shopCart_shop_enter">進入店鋪</div>
 		</div>
@@ -173,13 +173,13 @@
 		<div class="unprocessed_main_order clearfloat" id="<%=id%>_order">
 			<div class="unprocessed_main_order_left">
 				<span>訂單編號：<%=sNumber%></span>
-				<span class="unprocessed_main_order_mess_btn"><img src="/img/easybuy/shopCart/shopCart_see.png"></span>
+				<span class="unprocessed_main_order_mess_btn"><img src="/src/img/easybuy/shopCart/shopCart_see.png"></span>
 
 				<!--鼠標移入彈框開始-->
 				<div class="unprocessed_main_order_mess">
 
 					<div class="unprocessed_main_order_mess_left">
-						<img src="/img/easybuy/shopCart/order_mess_left.png">
+						<img src="/src/img/easybuy/shopCart/order_mess_left.png">
 					</div>
 
 					<%if(myExchangeList.length != 0){%>
@@ -338,11 +338,11 @@
 						<span>待確認</span>
 					<%}%>
 
-					<span><img src="/img/easybuy/shopCart/shopCart_see.png"></span>
+					<span><img src="/src/img/easybuy/shopCart/shopCart_see.png"></span>
 
 					<!--訂單流程-->
 					<div class="unprocessed_status_pop">
-						<div class="shopCar_all_costPop_top"><img src="/img/easybuy/shopCart/hoverPop_top.png"></div>
+						<div class="shopCar_all_costPop_top"><img src="/src/img/easybuy/shopCart/hoverPop_top.png"></div>
 						<p class="select">＊<%=shoppings[i].sPlaceOrderTime%> 您發出訂單</p>
 						<p class="select">＊您的商品已配貨</p>
 						<p class="select">＊您的商品在發貨中哦！</p>
@@ -487,11 +487,11 @@
 				</div>
 				<div class="otherGoods_data clearfloat">
 					<div class="otherGoods_dataEach clearfloat">
-						<span><img src="/img/common/icon/bagIcon_dark.png"></span>
+						<span><img src="/src/img/common/icon/bagIcon_dark.png"></span>
 						<span><%=list[i].buyNumber%></span>
 					</div>
 					<div class="otherGoods_dataEach clearfloat">
-						<span><img src="/img/common/icon/likeIcon_dark.png"></span>
+						<span><img src="/src/img/common/icon/likeIcon_dark.png"></span>
 						<span><%=list[i].loveNumber%></span>
 					</div>
 				</div>

@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title>普通廣告詳細頁</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/easybuy/moreTheme/addetail/addetail.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/easybuy/moreTheme/addetail/addetail.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
 		<script>
 			var fr = new FrameDomain();
 			fr.getUserInfo.go();
@@ -21,7 +21,7 @@
 			<div class="searchBox">
 				<div class="searchBox_mainBox">
 					<div class="searchBox_left">
-						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+						<img src="/src/img/common/header&search&footer/easybuy_Logo.png">
 					</div>
 					<div class="searchBox_right" id="searchBox_rightBox"></div>
 				</div>
@@ -57,14 +57,14 @@
 
 					<div class="addetail_mess">
 						<div class="addetail_messMain clearfloat">
-							<div class="addetail_mess_left"><img src="/img/easybuy/moreTheme/addetail/bracket_left.png"></div>
+							<div class="addetail_mess_left"><img src="/src/img/easybuy/moreTheme/addetail/bracket_left.png"></div>
 							<div class="addetail_mess_middle">
 								<div class="addetail_mess_middleMain">
 									<p class="themeDetails_top_name"></p>
 									<div class="addetail_mess_intro"></div>
 								</div>
 							</div>
-							<div class="addetail_mess_right"><img src="/img/easybuy/moreTheme/addetail/bracket_right.png"></div>
+							<div class="addetail_mess_right"><img src="/src/img/easybuy/moreTheme/addetail/bracket_right.png"></div>
 						</div>
 					</div>
 
@@ -81,17 +81,17 @@
 		<footer></footer>
 	</body>
 	<!--模板文件和數據文件-->
-	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
-	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
-	<script src="/js/plug/yez_js_Reset.js"></script>
+	<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/src/js/plug/yez_js_Reset.js"></script>
 	<!--頭部文件的js-->
-	<script src="/js/common/header&search&footer/header.js"></script>
-	<script src="/js/common/header&search&footer/footer.js"></script>
+	<script src="/src/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/header&search&footer/footer.js"></script>
 	<!--搜索框部份的js-->
-	<script src="/js/common/header&search&footer/searchBar.js"></script>
+	<script src="/src/js/common/header&search&footer/searchBar.js"></script>
 	<!--更多主題的js-->
-	<script src="/js/easybuy/moreTheme/addetail/addetail.js"></script>
-	<script src="/js/easybuy/moreTheme/addetail/addetail.data.js"></script>
+	<script src="/src/js/easybuy/moreTheme/addetail/addetail.js"></script>
+	<script src="/src/js/easybuy/moreTheme/addetail/addetail.data.js"></script>
 
 
 	<!--發現新品最近查看模板-->
@@ -128,15 +128,15 @@
 				<div class="addetail_each_middleLeft clearfloat">
 					<ul>
 						<li>
-							<div><img src="/img/common/icon/seeIcon_dark.png"></div>
+							<div><img src="/src/img/common/icon/seeIcon_dark.png"></div>
 							<p><%=list[i].seeNumbers%></p>
 						</li>
 						<li>
-							<div><img src="/img/common/icon/likeIcon_dark.png"></div>
+							<div><img src="/src/img/common/icon/likeIcon_dark.png"></div>
 							<p><%=list[i].loveNumbers%></p>
 						</li>
 						<li>
-							<div><img src="/img/common/icon/hadBuyIcon_dark.png"></div>
+							<div><img src="/src/img/common/icon/hadBuyIcon_dark.png"></div>
 							<p><%=list[i].buyNumbers%></p>
 						</li>
 					</ul>
@@ -152,12 +152,12 @@
 					<div class="addetail_each_name"><p>店主<%=list[i].shopMan%>：</p></div>
 				</div>
 				<div class="addetail_each_bottomRight">
-					<div class="addetail_each_bottomRight_left"><img src="/img/easybuy/moreTheme/addetail/addetail_symbolLeft.png"></div>
+					<div class="addetail_each_bottomRight_left"><img src="/src/img/easybuy/moreTheme/addetail/addetail_symbolLeft.png"></div>
 					<div class="addetail_each_bottomRight_middle">
 						<p><%=list[i].title%></p>
 						<div class="addetail_each_bottomRight_intro"><%=list[i].intro%></div>
 					</div>
-					<div class="addetail_each_bottomRight_right"><img src="/img/easybuy/moreTheme/addetail/addetail_symbolRight.png"></div>
+					<div class="addetail_each_bottomRight_right"><img src="/src/img/easybuy/moreTheme/addetail/addetail_symbolRight.png"></div>
 				</div>
 			</div>
 		</div>

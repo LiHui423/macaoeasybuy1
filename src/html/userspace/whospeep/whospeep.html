@@ -4,15 +4,15 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>用戶空間-誰來偷看頁</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
-		<link rel="stylesheet" href="/css/common/dateRange.css">
-		<link rel="stylesheet" href="/css/userspace/whospeep/whospeep.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/src/css/common/dateRange.css">
+		<link rel="stylesheet" href="/src/css/userspace/whospeep/whospeep.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
-		<script src="/js/common/getData/getData_needLogin.js"></script>
-		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/getData/getData_needLogin.js"></script>
+		<script src="/src/js/userspace/common/userspacebg.js" async></script>
 	</head>
 	<body>
 		<div id="swapper">
@@ -32,16 +32,16 @@
 									<div id="date-select-btn"></div>
 									<div id="sex-select" class="clearfloat">
 										<div class="select">
-											<img src="/img/userspace/friendsfans/boygirl.png" alt="" class="no-select">
-											<img src="/img/userspace/friendsfans/boygirl-h.png" alt="" class="select">
+											<img src="/src/img/userspace/friendsfans/boygirl.png" alt="" class="no-select">
+											<img src="/src/img/userspace/friendsfans/boygirl-h.png" alt="" class="select">
 										</div>
 										<div>
-											<img src="/img/userspace/friendsfans/girl.png" alt="" class="no-select">
-											<img src="/img/userspace/friendsfans/girl-h.png" alt="" class="select">
+											<img src="/src/img/userspace/friendsfans/girl.png" alt="" class="no-select">
+											<img src="/src/img/userspace/friendsfans/girl-h.png" alt="" class="select">
 										</div>
 										<div>
-											<img src="/img/userspace/friendsfans/boy.png" alt="" class="no-select">
-											<img src="/img/userspace/friendsfans/boy-h.png" alt="" class="select">
+											<img src="/src/img/userspace/friendsfans/boy.png" alt="" class="no-select">
+											<img src="/src/img/userspace/friendsfans/boy-h.png" alt="" class="select">
 										</div>
 									</div>
 								</div>
@@ -58,14 +58,14 @@
 		</div>
 
 		<!--關注成功提示彈框-->
-		<div class="focus_success_tips_box"><img src="/img/social/label/labeldetail/fancurr.png" alt="">已成功關注該宜粉！</div>
+		<div class="focus_success_tips_box"><img src="/src/img/social/label/labeldetail/fancurr.png" alt="">已成功關注該宜粉！</div>
 		<!--取消關注成功提示彈框-->
 		<div class="cancelFocus_tips_box">
 			<div class="shadow"></div>
 			<div class="cancel-tips-box">
 				<div class="cancels-title">取消關注宜粉</div>
 				<div>
-					<div class="cancels-xc"><img src="/img/common/02.png" alt=""></div>
+					<div class="cancels-xc"><img src="/src/img/common/02.png" alt=""></div>
 					<div class="cancel-tips-text">不再關注該宜粉了嗎？</div>
 					<div class="clearfloat sure-button">
 						<div class="sure-cancel">確認</div>
@@ -75,24 +75,24 @@
 			</div>
 		</div>
 
-		<script src="/js/plug/yez_js_Reset.js"></script>
-		<script src="/js/common/vendor/template-native.js"></script>
-		<script src="/js/userspace/common/userinfo.js" async></script>
-		<script src="/js/userspace/common/leftmenu.js" async></script>
-		<script src="/js/userspace/common/whitemenu.js" async></script>
-		<script src="/js/userspace/common/newspush.js" async></script>
-		<script src="/js/common/header&search&footer/footer.js" async></script>
-		<script src="/js/common/header&search&footer/header.js"></script>
-		<script src="/js/plug/dateRange.js"></script>
-		<script src="/js/userspace/whospeep/whospeep.js"></script>
+		<script src="/src/js/plug/yez_js_Reset.js"></script>
+		<script src="/src/js/common/vendor/template-native.js"></script>
+		<script src="/src/js/userspace/common/userinfo.js" async></script>
+		<script src="/src/js/userspace/common/leftmenu.js" async></script>
+		<script src="/src/js/userspace/common/whitemenu.js" async></script>
+		<script src="/src/js/userspace/common/newspush.js" async></script>
+		<script src="/src/js/common/header&search&footer/footer.js" async></script>
+		<script src="/src/js/common/header&search&footer/header.js"></script>
+		<script src="/src/js/plug/dateRange.js"></script>
+		<script src="/src/js/userspace/whospeep/whospeep.js"></script>
 
 		<script id="user-template" type="text/html" data-type="template">
 			<%for(var i=0;i<seeFoot.length;i++){%>
 				<ul class="clearfloat">
 					<div class="date-time">
-						<img src="/img/userspace/footprint/line.png" alt="">
+						<img src="/src/img/userspace/footprint/line.png" alt="">
 						<span><%=seeFoot[i].uptime%></span>
-						<img src="/img/userspace/footprint/line.png" alt="">
+						<img src="/src/img/userspace/footprint/line.png" alt="">
 					</div>
 					<div class="date-num">我到訪過<span><%=seeFoot[i].count%></span>個宜粉空間</div>
 					<%for(var j=0;j<seeFoot[i].seeList.length;j++){%>
@@ -114,7 +114,7 @@
 										</div>
 									</div>
 									<div class="identity-level user">用戶身份：<span>普通百姓</span></div>
-									<div class="identity-level pet">寵物等級：<img src="/img/userspace/friendsfans/2-ico.png" alt=""><span>圈圈獸</span><span>LV.1</span></div>
+									<div class="identity-level pet">寵物等級：<img src="/src/img/userspace/friendsfans/2-ico.png" alt=""><span>圈圈獸</span><span>LV.1</span></div>
 									<ul class="clearfloat user-info">
 										<li>
 											<div>9999</div>
@@ -135,12 +135,12 @@
 									</ul>
 									<div class="user-skills">
 										<div class="user-skills-inner clearfloat">
-											<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">Ada</div>
-											<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">女性</div>
-											<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
-											<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
-											<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
-											<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
+											<div><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow">Ada</div>
+											<div><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow">女性</div>
+											<div><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
+											<div><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
+											<div><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
+											<div><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
 										</div>
 										<!--<p>暫無任何興趣和技能</p>-->
 									</div>
@@ -185,7 +185,7 @@
 									</div>
 								</div>
 								<div class="identity-level user">用戶身份：<span>普通百姓</span></div>
-								<div class="identity-level pet">寵物等級：<img src="/img/userspace/friendsfans/2-ico.png" alt=""><span>圈圈獸</span><span>LV.1</span></div>
+								<div class="identity-level pet">寵物等級：<img src="/src/img/userspace/friendsfans/2-ico.png" alt=""><span>圈圈獸</span><span>LV.1</span></div>
 								<ul class="clearfloat user-info">
 									<li>
 										<div>9999</div>
@@ -206,12 +206,12 @@
 								</ul>
 								<div class="user-skills">
 									<div class="user-skills-inner clearfloat">
-										<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">Ada</div>
-										<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">女性</div>
-										<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
-										<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
-										<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
-										<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
+										<div><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow">Ada</div>
+										<div><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow">女性</div>
+										<div><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
+										<div><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
+										<div><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
+										<div><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow">普通百姓</div>
 									</div>
 									<!--<p>暫無任何興趣和技能</p>-->
 								</div>

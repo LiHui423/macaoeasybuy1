@@ -5,12 +5,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv="Pragma" contect="no-cache">
 		<title>尋寶市集-分類列表頁</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/social/market/treasureclassifydetail/treasureclassifydetail.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/social/market/treasureclassifydetail/treasureclassifydetail.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
-		<script src="/js/common/getData/getData_sinple.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/getData/getData_sinple.js"></script>
 		<!--不需要參數-->
 	</head>
 	<body>
@@ -20,7 +20,7 @@
 				<div class="searchBox">
 					<div class="searchBox_mainBox clearfloat">
 						<div class="searchBox_left">
-							<img src="/img/common/header&search&footer/easybuy_Logo.png">
+							<img src="/src/img/common/header&search&footer/easybuy_Logo.png">
 						</div>
 						<div class="searchBox_right" id="searchBox_rightBox"></div>
 					</div>
@@ -48,8 +48,8 @@
 
 				<div id="groupBuy_banner">
 					<div class="bannerCon">
-						<div class="before"><img src="/img/common/bannerLeft.png" alt=""></div>
-						<div class="after"><img src="/img/common/bannerRight.png" alt=""></div>
+						<div class="before"><img src="/src/img/common/bannerLeft.png" alt=""></div>
+						<div class="after"><img src="/src/img/common/bannerRight.png" alt=""></div>
 						<div class="scroll clearfloat"></div>
 					</div>
 				</div>
@@ -64,7 +64,7 @@
 							<div class="mdetail_div_topic mg-left-13"></div>
 							<div class="mdetail_div_topic"></div>
 							<div class="mdetail_div_topic_right">
-								<img src="/img/social/market/treasureclassifydetail/eyes.png">
+								<img src="/src/img/social/market/treasureclassifydetail/eyes.png">
 								<span id="mdcategory_TopicFansNum"></span>個宜粉查看&nbsp;&nbsp;
 							</div>
 						</div>
@@ -100,15 +100,15 @@
 			<footer></footer>
 		</div>
 
-	    <script src="/js/plug/yez_js_Reset.js"></script>
-	    <script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
-		<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
-	    <script src="/js/common/header&search&footer/searchBar.js" async></script>
-	    <script src="/js/common/header&search&footer/footer.js" async></script>
-		<script src="/js/common/header&search&footer/header.js"></script>
-		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
-		<script src="/js/social/market/treasureclassifydetail/treasureclassifydetail.js "></script>
-		<script src="/js/common/clickEvent.js"></script>
+	    <script src="/src/js/plug/yez_js_Reset.js"></script>
+	    <script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+		<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
+	    <script src="/src/js/common/header&search&footer/searchBar.js" async></script>
+	    <script src="/src/js/common/header&search&footer/footer.js" async></script>
+		<script src="/src/js/common/header&search&footer/header.js"></script>
+		<script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+		<script src="/src/js/social/market/treasureclassifydetail/treasureclassifydetail.js "></script>
+		<script src="/src/js/common/clickEvent.js"></script>
 		<!--市集話題模板-->
 		<script id="townDataHtml" type="text/html" data-type="template">
 			<%for(var i=0;i<totalCount;i++){%>
@@ -118,7 +118,7 @@
 						<div class="mdetail_div_topicfont"></div>
 						<div class="mdetail_topic_text"></div>
 						<div class="mdetail_foot shadow-img">
-							<img src="/img/social/market/treasureclassifydetail/mdetail-shadow.png">
+							<img src="/src/img/social/market/treasureclassifydetail/mdetail-shadow.png">
 						</div>
 					</div>
 				</li>
@@ -139,9 +139,9 @@
 				<p><%=result[i].fairClassName%></p>
 				<div class="color"></div>
 				<div class="tips">
-					<img src="/img/social/market/treasureclassifydetail/arrow01.png" alt=" " class="arrow-tips ">
+					<img src="/src/img/social/market/treasureclassifydetail/arrow01.png" alt=" " class="arrow-tips ">
 					<p><span><%=result[i].fairClassName%></span><%=result[i].des%></p>
-					<img src="/img/social/market/treasureclassifydetail/xiaoxuan.png " alt=" " class="bg-xiaoxuan ">
+					<img src="/src/img/social/market/treasureclassifydetail/xiaoxuan.png " alt=" " class="bg-xiaoxuan ">
 				</div>
 			</li>
 			<%}%>
@@ -157,9 +157,9 @@
 				<div class="mdcategory_title1 clearfloat">
 					<div class="mdetail_div_topic_left mdcategory-mg "><%=result[i].fairClassName%></div>
 					<span class="mdetail_div_topic_right new-right ">
-						<img src="/img/social/market/treasureclassifydetail/eyes.png "><span class="number">&nbsp;</span>個宜粉查看&nbsp;&nbsp;
-						<img src="/img/social/market/treasureclassifydetail/mdetail-esundry.png "><span class="number">&nbsp;</span>件雜貨&nbsp;&nbsp;
-						<img src="/img/social/market/treasureclassifydetail/shopin_heart.png "><span class="number">&nbsp;</span>宜粉心動
+						<img src="/src/img/social/market/treasureclassifydetail/eyes.png "><span class="number">&nbsp;</span>個宜粉查看&nbsp;&nbsp;
+						<img src="/src/img/social/market/treasureclassifydetail/mdetail-esundry.png "><span class="number">&nbsp;</span>件雜貨&nbsp;&nbsp;
+						<img src="/src/img/social/market/treasureclassifydetail/shopin_heart.png "><span class="number">&nbsp;</span>宜粉心動
 					</span>
 				</div>
 				<div class="mdcategory_title22 clearfloat ">
@@ -209,23 +209,23 @@
 								<div class="laster-look clearfloat ">
 									<div class="laster-head "><img src="//wap.macaoeasybuy.com<%=result[i].userPic%>" alt="" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
 									<div class="laster-text ">
-										<div class="laster-text-name clearfloat"><div><%=result[i].userName%></div><img src="/img/common/girl.png" alt=""></div>
+										<div class="laster-text-name clearfloat"><div><%=result[i].userName%></div><img src="/src/img/common/girl.png" alt=""></div>
 										<div class="laster-text-num "><span><%=result[i].uptime%></span>前發佈</div>
 									</div>
 								</div>
 								<div class="laster-add ">
-									<img src="/img/social/market/treasureclassifydetail/arrow.png " alt=" " class="add-arrow ">
+									<img src="/src/img/social/market/treasureclassifydetail/arrow.png " alt=" " class="add-arrow ">
 									<div class="laster-main"></div>
 								</div>
 							</div>
 						</div>
-						<div class="pillar-height"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+						<div class="pillar-height"><img src="/src/img/social/label/labeldetail/hobg.png" alt=""></div>
 					</div>
 				</div>
 				<%}%>
 			<%}else if(result.length == 0 && page == 0){%>
 				<div id="no-post">
-					<div><img src="/img/common/05.png" alt=""></div>
+					<div><img src="/src/img/common/05.png" alt=""></div>
 					<span>目前沒有任何內容哦！</span>
 				</div>
 			<%}%>

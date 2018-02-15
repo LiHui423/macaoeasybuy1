@@ -4,14 +4,14 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>讃好</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
-		<link rel="stylesheet" href="/css/userspace/praise/praise.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/src/css/userspace/praise/praise.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
-		<script src="/js/common/getData/getData_needLogin.js"></script>
-		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/getData/getData_needLogin.js"></script>
+		<script src="/src/js/userspace/common/userspacebg.js" async></script>
 		<script>easyBuy.userSpaceGlobal.whiteNavName = 'LikeNumber';</script>
 		<!--userid要傳 頁面所屬用戶的id-->
 	</head>
@@ -35,7 +35,7 @@
 								<div class="praise_filterBox_left clearfloat">
 									<div class="praise_filterBox_name">
 										<div class="praise_filterBox_name_show">
-											<span><img src="/img/common/icon/menuIcon_white.png"></span><span>日誌</span><span><img src="/img/common/icon/downIcon2_white.png"></span>
+											<span><img src="/src/img/common/icon/menuIcon_white.png"></span><span>日誌</span><span><img src="/src/img/common/icon/downIcon2_white.png"></span>
 										</div>
 										<div class="praise_filterBox_slide hideSlide">
 											<ul>
@@ -55,9 +55,9 @@
 
 								<div class="praise_filterBox_right clearfloat">
 									<ul class="clearfloat">
-										<li class="praise_filterBox_right_curr" data-type = "01"><span><img src="/img/userspace/userlove/userlove_clockIcon.png"><img src="/img/userspace/userlove/userlove_clockIcon_curr.png"></span><span>按發佈時間排序</span><div></div></li>
-										<li data-type = "02"><span><img src="/img/common/icon/messageIcon_dark.png"><img src="/img/userspace/album/mes-sort-w.png"></span><span>按回覆數排序</span><div></div></li>
-										<li data-type = "03"><span><img src="/img/common/icon/thumbsupIcon_dark.png"><img src="/img/userspace/album/goods-sort-w.png"></span><span>按贊好數排序</span><div></div></li>
+										<li class="praise_filterBox_right_curr" data-type = "01"><span><img src="/src/img/userspace/userlove/userlove_clockIcon.png"><img src="/src/img/userspace/userlove/userlove_clockIcon_curr.png"></span><span>按發佈時間排序</span><div></div></li>
+										<li data-type = "02"><span><img src="/src/img/common/icon/messageIcon_dark.png"><img src="/src/img/userspace/album/mes-sort-w.png"></span><span>按回覆數排序</span><div></div></li>
+										<li data-type = "03"><span><img src="/src/img/common/icon/thumbsupIcon_dark.png"><img src="/src/img/userspace/album/goods-sort-w.png"></span><span>按贊好數排序</span><div></div></li>
 									</ul>
 								</div>
 
@@ -134,22 +134,22 @@
 		</div>
 
 
-	<script src="/js/plug/yez_js_Reset.js"></script>
-	<script src="/js/common/vendor/template-native.js"></script>
+	<script src="/src/js/plug/yez_js_Reset.js"></script>
+	<script src="/src/js/common/vendor/template-native.js"></script>
 
 
-	<script src="/js/userspace/common/userinfo.js" async></script>
-	<script src="/js/userspace/common/leftmenu.js" async></script>
-	<script src="/js/userspace/common/whitemenu.js" async></script>
-	<script src="/js/userspace/common/newspush.js" async></script>
-	<script src="/js/common/header&search&footer/footer.js" async></script>
+	<script src="/src/js/userspace/common/userinfo.js" async></script>
+	<script src="/src/js/userspace/common/leftmenu.js" async></script>
+	<script src="/src/js/userspace/common/whitemenu.js" async></script>
+	<script src="/src/js/userspace/common/newspush.js" async></script>
+	<script src="/src/js/common/header&search&footer/footer.js" async></script>
 
-	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/header&search&footer/header.js"></script>
 
-	<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+	<script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 	<!--贊好的js-->
-	<script src="/js/userspace/praise/praise.js"></script>
-	<script src="/js/userspace/praise/praise_data.js"></script>
+	<script src="/src/js/userspace/praise/praise.js"></script>
+	<script src="/src/js/userspace/praise/praise_data.js"></script>
 
 	<!--日誌的模板-->
 	<script id="praise_diary_template" type="text/html" data-type="template">
@@ -178,9 +178,9 @@
 								<div class="laster-text-name">
 									<span><%=returnList[i].userName%></span>
 									<%if(returnList[i].sex == 'Girl'){%>
-									<img src="/img/common/girl.png" alt=""></div>
+									<img src="/src/img/common/girl.png" alt=""></div>
 									<%}else{%>
-									<img src="/img/common/boy.png" alt=""></div>
+									<img src="/src/img/common/boy.png" alt=""></div>
 									<%}%>
 								<div class="laster-text-num"><span><%=returnList[i].uptime%></span>前發佈</div>
 							</div>
@@ -188,12 +188,12 @@
 					</div>
 					<div class="shadow-box"></div>
 				</div>
-				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+				<div class="post-shadow"><img src="/src/img/social/label/labeldetail/hobg.png" alt=""></div>
 			</div>
 		<%}%>
 		<%}else if(returnList.length == 0 && page ==0){%>
 			<div class="praise_tabEach_none">
-				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<div class="praise_tabEach_none_icon"><img src="/src/img/common/05.png"></div>
 				<p>該欄目暫時沒有任何內容哦~</p>
 			</div>
 		<%}%>
@@ -228,16 +228,16 @@
 								</div>
 							<%}%>
 						<%}else{%>
-							<div class="album-img-none-box-img"><img src="/img/userspace/album/album-no-img.png" alt=""></div>
+							<div class="album-img-none-box-img"><img src="/src/img/userspace/album/album-no-img.png" alt=""></div>
 							<div class="album-img-none-box-tips">該專輯目前沒有圖片</div>
 						<%}%>
 					</div>
 
 					<div class="album-state clearfloat">
-						<div><img src="/img/social/easylive/album-classification-eye.png" alt=""><%=formatNum(returnList[i].seeCount)%></div>
-						<div><img src="/img/social/easylive/album-classification-mes.png" alt=""><%=formatNum(returnList[i].commentCount)%></div>
-						<div><img src="/img/social/easylive/album-classification-good.png" alt=""><%=formatNum(returnList[i].loveCount)%></div>
-						<div><img src="/img/social/easylive/album-classification-cai.png" alt=""><%=formatNum(returnList[i].collectCount)%></div>
+						<div><img src="/src/img/social/easylive/album-classification-eye.png" alt=""><%=formatNum(returnList[i].seeCount)%></div>
+						<div><img src="/src/img/social/easylive/album-classification-mes.png" alt=""><%=formatNum(returnList[i].commentCount)%></div>
+						<div><img src="/src/img/social/easylive/album-classification-good.png" alt=""><%=formatNum(returnList[i].loveCount)%></div>
+						<div><img src="/src/img/social/easylive/album-classification-cai.png" alt=""><%=formatNum(returnList[i].collectCount)%></div>
 					</div>
 
 					<div class="album-poster">
@@ -247,9 +247,9 @@
 								<div class="laster-text-name">
 									<span><%=returnList[i].userName%></span>
 									<%if(returnList[i].sex == 'Girl'){%>
-									<img src="/img/common/girl.png" alt=""></div>
+									<img src="/src/img/common/girl.png" alt=""></div>
 									<%}else{%>
-									<img src="/img/common/boy.png" alt=""></div>
+									<img src="/src/img/common/boy.png" alt=""></div>
 									<%}%>
 								<div class="laster-text-num"><span><%=returnList[i].uptime%></span>前發佈</div>
 							</div>
@@ -258,13 +258,13 @@
 
 					<div class="shadow-box"></div>
 				</div>
-				<div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+				<div class="bottom-shadow"><img src="/src/img/social/label/labeldetail/hobg.png" alt=""></div>
 			</div>
 		</li>
 		<%}%>
 		<%}else if(returnList.length == 0 && page ==0){%>
 			<div class="praise_tabEach_none">
-				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<div class="praise_tabEach_none_icon"><img src="/src/img/common/05.png"></div>
 				<p>該欄目暫時沒有任何內容哦~</p>
 			</div>
 		<%}%>
@@ -283,9 +283,9 @@
 								<div class="laster-text-name">
 									<span><%=returnList[i].userName%></span>
 									<%if(returnList[i].sex == 'Girl'){%>
-									<img src="/img/common/girl.png" alt=""></div>
+									<img src="/src/img/common/girl.png" alt=""></div>
 									<%}else{%>
-									<img src="/img/common/boy.png" alt=""></div>
+									<img src="/src/img/common/boy.png" alt=""></div>
 									<%}%>
 								<div class="laster-text-num"><span><%=returnList[i].uptime%></span>前發佈</div>
 							</div>
@@ -307,12 +307,12 @@
 					</div>
 					<div class="shadow-box"></div>
 				</div>
-				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+				<div class="post-shadow"><img src="/src/img/social/label/labeldetail/hobg.png" alt=""></div>
 			</div>
 		<%}%>
 		<%}else if(returnList.length == 0 && page ==0){%>
 			<div class="praise_tabEach_none">
-				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<div class="praise_tabEach_none_icon"><img src="/src/img/common/05.png"></div>
 				<p>該欄目暫時沒有任何內容哦~</p>
 			</div>
 		<%}%>
@@ -339,7 +339,7 @@
 								</div>
 								<div class="post-other-time clearfloat">
 									<div><span><%=returnList[i].uptime%></span>前發佈</div>
-									<img src="/img/social/label/labeldetail/shot.png" alt="" class="post-other-img">
+									<img src="/src/img/social/label/labeldetail/shot.png" alt="" class="post-other-img">
 								</div>
 							</div>
 						</div>
@@ -356,21 +356,21 @@
 								<div class="laster-text-name">
 									<span><%=returnList[i].userName%></span>
 									<%if(returnList[i].sex == 'Girl'){%>
-									<img src="/img/common/girl.png" alt=""></div>
+									<img src="/src/img/common/girl.png" alt=""></div>
 									<%}else{%>
-									<img src="/img/common/boy.png" alt=""></div>
+									<img src="/src/img/common/boy.png" alt=""></div>
 									<%}%>
 							</div>
 						</div>
 					</div>
 					<div class="shadow-box"></div>
 				</div>
-				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+				<div class="post-shadow"><img src="/src/img/social/label/labeldetail/hobg.png" alt=""></div>
 			</div>
 		<%}%>
 		<%}else if(returnList.length == 0 && page ==0){%>
 			<div class="praise_tabEach_none">
-				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<div class="praise_tabEach_none_icon"><img src="/src/img/common/05.png"></div>
 				<p>該欄目暫時沒有任何內容哦~</p>
 			</div>
 		<%}%>
@@ -397,9 +397,9 @@
 								<div class="laster-text-name clearfloat">
 									<div><%=returnList[i].userName%></div>
 									<%if(returnList[i].sex == 'Girl'){%>
-									<img src="/img/common/girl.png" alt="">
+									<img src="/src/img/common/girl.png" alt="">
 									<%}else{%>
-									<img src="/img/common/boy.png" alt="">
+									<img src="/src/img/common/boy.png" alt="">
 									<%}%>
 								</div>
 								<div class="laster-text-num"><span><%=returnList[i].uptime%></span>前發佈</div>
@@ -432,7 +432,7 @@
 		<%}%>
 		<%}else if(returnList.length == 0 && page ==0){%>
 			<div class="praise_tabEach_none">
-				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<div class="praise_tabEach_none_icon"><img src="/src/img/common/05.png"></div>
 				<p>該欄目暫時沒有任何內容哦~</p>
 			</div>
 		<%}%>
@@ -465,9 +465,9 @@
 			</div>
 			<div class="praise_welfareEach_data clearfloat">
 				<ul>
-					<li><span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=formatNum(returnList[i].seeCount)%></span></li>
-					<li><span><img src="/img/common/icon/messageIcon_dark.png"></span><span><%=formatNum(returnList[i].commentCount)%></span></li>
-					<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=formatNum(returnList[i].loveCount)%></span></li>
+					<li><span><img src="/src/img/common/icon/seeIcon_dark.png"></span><span><%=formatNum(returnList[i].seeCount)%></span></li>
+					<li><span><img src="/src/img/common/icon/messageIcon_dark.png"></span><span><%=formatNum(returnList[i].commentCount)%></span></li>
+					<li><span><img src="/src/img/common/icon/thumbsupIcon_dark.png"></span><span><%=formatNum(returnList[i].loveCount)%></span></li>
 				</ul>
 			</div>
 			<div class="shadow-box"></div>
@@ -475,7 +475,7 @@
 		<%}%>
 		<%}else if(returnList.length == 0 && page ==0){%>
 			<div class="praise_tabEach_none">
-				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<div class="praise_tabEach_none_icon"><img src="/src/img/common/05.png"></div>
 				<p>該欄目暫時沒有任何內容哦~</p>
 			</div>
 		<%}%>
@@ -500,9 +500,9 @@
 				<div class="praise_topicEach_intro"><%=cutContent(cutModify(returnList[i].content),80)%></div>
 				<div class="praise_topicEach_data clearfloat">
 					<ul>
-						<li><span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=formatNum(returnList[i].seeCount)%>宜粉查看</span></li>
-						<li><span><img src="/img/common/icon/messageIcon_dark.png"></span><span><%=formatNum(returnList[i].commentCount)%>宜粉回應</span></li>
-						<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=formatNum(returnList[i].loveCount)%>宜粉讃好</span></li>
+						<li><span><img src="/src/img/common/icon/seeIcon_dark.png"></span><span><%=formatNum(returnList[i].seeCount)%>宜粉查看</span></li>
+						<li><span><img src="/src/img/common/icon/messageIcon_dark.png"></span><span><%=formatNum(returnList[i].commentCount)%>宜粉回應</span></li>
+						<li><span><img src="/src/img/common/icon/thumbsupIcon_dark.png"></span><span><%=formatNum(returnList[i].loveCount)%>宜粉讃好</span></li>
 					</ul>
 				</div>
 				<div class="praise_topicEach_visitor clearfloat">
@@ -519,7 +519,7 @@
 		<%}%>
 		<%}else if(returnList.length == 0 && page ==0){%>
 			<div class="praise_tabEach_none">
-				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<div class="praise_tabEach_none_icon"><img src="/src/img/common/05.png"></div>
 				<p>該欄目暫時沒有任何內容哦~</p>
 			</div>
 		<%}%>
@@ -541,7 +541,7 @@
 				<div class="search_label_resultEach_left_hover">
 					<div>
 						<div class="label_resultEach_left_intro"><%=returnList[i].describe%></div>
-						<div class="label_resultEach_left_btn"><span>查看該標籤的相關帖子</span><span><img src="/img/common/icon/nextIcon_black.png"></span></div>
+						<div class="label_resultEach_left_btn"><span>查看該標籤的相關帖子</span><span><img src="/src/img/common/icon/nextIcon_black.png"></span></div>
 					</div>
 				</div>
 			</div>
@@ -551,8 +551,8 @@
 					<div class="search_label_resultEach_ranking">排名：<%=returnList[i].rank%></div>
 					<div class="search_label_resultEach_data clearfloat">
 						<ul>
-							<li><span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=formatNum(returnList[i].seeCount)%>宜粉人查看</span></li>
-							<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=formatNum(returnList[i].loveCount)%>宜粉讚好</span></li>
+							<li><span><img src="/src/img/common/icon/seeIcon_dark.png"></span><span><%=formatNum(returnList[i].seeCount)%>宜粉人查看</span></li>
+							<li><span><img src="/src/img/common/icon/thumbsupIcon_dark.png"></span><span><%=formatNum(returnList[i].loveCount)%>宜粉讚好</span></li>
 						</ul>
 					</div>
 				</div>
@@ -564,13 +564,13 @@
 						<p>
 							<span><%=returnList[i].userName%></span>
 							<%if(returnList[i].sex == 'Girl'){%>
-							<span><img src="/img/common/girl.png"></span>
+							<span><img src="/src/img/common/girl.png"></span>
 							<%}else{%>
-							<span><img src="/img/common/boy.png"></span>
+							<span><img src="/src/img/common/boy.png"></span>
 							<%}%>
 						</p>
 						<p>
-							<span><img src="/img/common/icon/clockIcon_dark.png"></span>
+							<span><img src="/src/img/common/icon/clockIcon_dark.png"></span>
 							<span><%=returnList[i].uptime%>前創建於</span>
 						</p>
 					</div>
@@ -581,7 +581,7 @@
 		<%}%>
 		<%}else if(returnList.length == 0 && page ==0){%>
 			<div class="praise_tabEach_none">
-				<div class="praise_tabEach_none_icon"><img src="/img/common/05.png"></div>
+				<div class="praise_tabEach_none_icon"><img src="/src/img/common/05.png"></div>
 				<p>該欄目暫時沒有任何內容哦~</p>
 			</div>
 		<%}%>

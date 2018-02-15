@@ -4,12 +4,12 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>用戶空間-個人信息查看-興趣</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
-		<link rel="stylesheet" href="/css/userspace/personalinfo/infoview/interest/interest.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/src/css/userspace/personalinfo/infoview/interest/interest.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
 		<script>
 			easyBuy.userSpaceGlobal.afterSetIsSelf = function(state){
 				if(state){
@@ -19,8 +19,8 @@
 				}
 			}
 		</script>
-		<script src="/js/common/getData/getData_needLogin.js"></script>
-		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script src="/src/js/common/getData/getData_needLogin.js"></script>
+		<script src="/src/js/userspace/common/userspacebg.js" async></script>
 		<!--userid  帖子主人id-->
 	</head>
 	<body>
@@ -33,16 +33,16 @@
 					<div class="clearfloat">
 						<div class="white-container">
 							<ul id="white-menu">
-								<li><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica13.png" alt=""></div><span>信息</span><span>3/10</span></a></li>
-								<li class="select"><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica14.png" alt=""></div><span>興趣</span><span>10/11</span></a></li>
-								<li><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica15.png" alt=""></div><span>技能</span><span>6/6</span></a></li>
-								<li id="sentiment"><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica16.png" alt=""></div><span>人氣</span><span>248/1000</span></a></li>
-								<li id="growth"><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica17.png" alt=""></div><span>成長</span><span>LV2</span></a></li>
+								<li><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica13.png" alt=""></div><span>信息</span><span>3/10</span></a></li>
+								<li class="select"><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica14.png" alt=""></div><span>興趣</span><span>10/11</span></a></li>
+								<li><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica15.png" alt=""></div><span>技能</span><span>6/6</span></a></li>
+								<li id="sentiment"><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica16.png" alt=""></div><span>人氣</span><span>248/1000</span></a></li>
+								<li id="growth"><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica17.png" alt=""></div><span>成長</span><span>LV2</span></a></li>
 							</ul>
 						</div>
 						<div id="userspace-content">
 							<!--這裡是內容-->
-								<div class="content-title"><img src="/img/userspace/personalinfo/more-love.png" alt="">比較喜歡</div>
+								<div class="content-title"><img src="/src/img/userspace/personalinfo/more-love.png" alt="">比較喜歡</div>
 								<ul class="content-lister clearfloat" id="more_love">
 									<li></li>
 									<li></li>
@@ -51,12 +51,12 @@
 									<li></li>
 									<li></li>
 								</ul>
-								<div class="content-title"><img src="/img/userspace/personalinfo/whos-icon.png" alt="">平時關注</div>
+								<div class="content-title"><img src="/src/img/userspace/personalinfo/whos-icon.png" alt="">平時關注</div>
 								<ul class="content-lister clearfloat" id="point_about">
 									<li></li>
 									<li></li>
 								</ul>
-								<div class="content-title"><img src="/img/userspace/personalinfo/plane-icon.png" alt="">平時無聊</div>
+								<div class="content-title"><img src="/src/img/userspace/personalinfo/plane-icon.png" alt="">平時無聊</div>
 								<ul class="boring-lister clearfloat" id="boring_box"></ul>
 							<!--內容的結束標識-->
 						</div>
@@ -65,14 +65,14 @@
 			</div>
 			<footer></footer>
 		</div>
-		<script src="/js/plug/yez_js_Reset.js"></script>
-		<script src="/js/common/vendor/template-native.js"></script>
-		<script src="/js/userspace/common/userinfo.js" async></script>
-		<script src="/js/userspace/common/leftmenu.js" async></script>
-		<script src="/js/common/header&search&footer/footer.js" async></script>
-		<script src="/js/common/header&search&footer/header.js"></script>
+		<script src="/src/js/plug/yez_js_Reset.js"></script>
+		<script src="/src/js/common/vendor/template-native.js"></script>
+		<script src="/src/js/userspace/common/userinfo.js" async></script>
+		<script src="/src/js/userspace/common/leftmenu.js" async></script>
+		<script src="/src/js/common/header&search&footer/footer.js" async></script>
+		<script src="/src/js/common/header&search&footer/header.js"></script>
 
-		<script src="/js/userspace/personalinfo/infoview/interest/interest.js"></script>
+		<script src="/src/js/userspace/personalinfo/infoview/interest/interest.js"></script>
 		<!--模板-->
 		<script id="list_template" type="text/html" data-type="template">
 			<%for(var i=0;i<nextClassList.length;i++){%>
@@ -95,7 +95,7 @@
 							<div class="fans-frients">
 								<span>共同</span>
 								<div class="list-boxer">
-									<img src="/img/userspace/personalinfo/arrow.png" alt="" class="arrow">
+									<img src="/src/img/userspace/personalinfo/arrow.png" alt="" class="arrow">
 									<div class="fans-other-list">
 										<div class="list-box scrollIe scrollOther">
 											<ul>
@@ -116,7 +116,7 @@
 							<div class="yi-frients">
 								<span>宜粉</span>
 								<div class="list-boxer">
-									<img src="/img/userspace/personalinfo/arrow.png" alt="" class="arrow">
+									<img src="/src/img/userspace/personalinfo/arrow.png" alt="" class="arrow">
 									<div class="yi-other-list">
 										<div class="list-box scrollIe scrollOther">
 											<ul>
@@ -162,7 +162,7 @@
 						<div class="radius yi-frients">
 							<span>宜粉</span>
 							<div class="list-boxer">
-								<img src="/img/userspace/personalinfo/arrow.png" alt="" class="arrow">
+								<img src="/src/img/userspace/personalinfo/arrow.png" alt="" class="arrow">
 								<div class="yi-other-list">
 									<div class="list-box scrollIe scrollOther">
 										<ul>

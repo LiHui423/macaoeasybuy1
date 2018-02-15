@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title>主題廣告詳細頁</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/easybuy/moreTheme/themeDetails/themeDetails.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/easybuy/moreTheme/themeDetails/themeDetails.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
 		<script>
 			var fr = new FrameDomain();
 			//不需要用戶信息，頁面一加載就去請求數據
@@ -23,7 +23,7 @@
 			<div class="searchBox">
 				<div class="searchBox_mainBox">
 					<div class="searchBox_left">
-						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+						<img src="/src/img/common/header&search&footer/easybuy_Logo.png">
 					</div>
 					<div class="searchBox_right" id="searchBox_rightBox"></div>
 				</div>
@@ -55,7 +55,7 @@
 
 					<div class="themeDetails_top">
 						<div class="themeDetails_top_logo">
-							<img src="/img/easybuy/moreTheme/themeDetails/themeLogo.png">
+							<img src="/src/img/easybuy/moreTheme/themeDetails/themeLogo.png">
 						</div>
 						<div class="themeDetails_top_name"></div>
 						<div class="themeDetails_top_intro"></div>
@@ -77,14 +77,14 @@
 
 					<div class="themeDetails_redbag">
 						<div class="redbagBanner">
-							<img src="/img/easybuy/moreTheme/themeDetails/redbag_banner.png">
+							<img src="/src/img/easybuy/moreTheme/themeDetails/redbag_banner.png">
 							<div class="redbagBox">
-								<div class="redbag_notOpen"><img src="/img/easybuy/moreTheme/themeDetails/redbag_text.png"></div>
+								<div class="redbag_notOpen"><img src="/src/img/easybuy/moreTheme/themeDetails/redbag_text.png"></div>
 								<div class="redbag_openIng">
-									<div class="redbag_openHead"><img src="/img/easybuy/moreTheme/themeDetails/redbag_head.png"></div>
+									<div class="redbag_openHead"><img src="/src/img/easybuy/moreTheme/themeDetails/redbag_head.png"></div>
 								</div>
-								<div class="redbag_openUp"><img src="/img/easybuy/moreTheme/themeDetails/redbag_openUp.png"></div>
-								<div class="redbag_openOver"><img src="/img/easybuy/moreTheme/themeDetails/redbag_openOver.png"></div>
+								<div class="redbag_openUp"><img src="/src/img/easybuy/moreTheme/themeDetails/redbag_openUp.png"></div>
+								<div class="redbag_openOver"><img src="/src/img/easybuy/moreTheme/themeDetails/redbag_openOver.png"></div>
 							</div>
 						</div>
 					</div>
@@ -100,15 +100,15 @@
 		<footer></footer>
 	</body>
 	<!--模板文件和數據文件-->
-	<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
-	<script src="/js/plug/yez_js_Reset.js"></script>
-	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
-	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
-	<script src="/js/common/header&search&footer/header.js"></script>
-	<script src="/js/common/header&search&footer/footer.js"></script>
-	<script src="/js/common/header&search&footer/searchBar.js"></script>
-	<script src="/js/easybuy/moreTheme/themeDetails/themeDetails.js"></script>
-	<script src="/js/easybuy/moreTheme/themeDetails/themeDetails.data.js"></script>
+	<script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+	<script src="/src/js/plug/yez_js_Reset.js"></script>
+	<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/src/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/header&search&footer/footer.js"></script>
+	<script src="/src/js/common/header&search&footer/searchBar.js"></script>
+	<script src="/src/js/easybuy/moreTheme/themeDetails/themeDetails.js"></script>
+	<script src="/src/js/easybuy/moreTheme/themeDetails/themeDetails.data.js"></script>
 
 	<!--內容模板-->
 	<script id="more_list_template" type="text/html">
@@ -121,14 +121,14 @@
 						<p>至少慳MOP<%=list[i].saveMoney%></p>
 						<div class="themeDetails_buyRightNow">馬上搶購</div>
 						<div class="themeDetails_eachPic_hadBuy">
-							<span><img src="/img/common/icon/hadBuyIcon_white.png"></span>
+							<span><img src="/src/img/common/icon/hadBuyIcon_white.png"></span>
 							<span><%=list[i].buyNumbers%>人已搶購</span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="themeDetails_love">
-				<span><img src="/img/common/small-love.png"></span>
+				<span><img src="/src/img/common/small-love.png"></span>
 				<span><%=list[i].loveNumbers%></span>
 			</div>
 			<div class="themeDetails_eachTitle hiddenText"><%=list[i].title%></div>

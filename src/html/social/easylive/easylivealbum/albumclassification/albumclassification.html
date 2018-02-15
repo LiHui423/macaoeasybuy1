@@ -4,12 +4,12 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>宜生活-專輯分類詳細頁</title>
-	<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-	<link rel="stylesheet" href="/css/common/common.css">
-	<link rel="stylesheet" href="/css/social/easylive/easylivealbum/albumclassification/albumclassification.css">
+	<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+	<link rel="stylesheet" href="/src/css/common/common.css">
+	<link rel="stylesheet" href="/src/css/social/easylive/easylivealbum/albumclassification/albumclassification.css">
 	<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-	<script src="/js/common/frameDomainJSON.js"></script>
-	<script src="/js/common/getData/getData_sinple.js"></script>
+	<script src="/src/js/common/frameDomainJSON.js"></script>
+	<script src="/src/js/common/getData/getData_sinple.js"></script>
 	<script>easyBuy.social.isEasyLife = true;easyBuy.global.hasNav = false;</script>
 </head>
 <body>
@@ -52,15 +52,15 @@
 
 	<footer></footer>
 </div>
-<script src="/js/plug/yez_js_Reset.js"></script>
-<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
-<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
-<script src="/js/common/header&search&footer/searchBar.js" async></script>
-<script src="/js/common/header&search&footer/footer.js" async></script>
-<script src="/js/common/header&search&footer/header.js"></script>
-<script src="/js/social/easylive/easylivealbum/albumclassification/albumclassification.js"></script>
-<script src="/js/social/easylive/easylivealbum/albumclassification/albumclassification_data.js"></script>
-<script src="/js/common/clickEvent.js"></script>
+<script src="/src/js/plug/yez_js_Reset.js"></script>
+<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
+<script src="/src/js/common/header&search&footer/searchBar.js" async></script>
+<script src="/src/js/common/header&search&footer/footer.js" async></script>
+<script src="/src/js/common/header&search&footer/header.js"></script>
+<script src="/src/js/social/easylive/easylivealbum/albumclassification/albumclassification.js"></script>
+<script src="/src/js/social/easylive/easylivealbum/albumclassification/albumclassification_data.js"></script>
+<script src="/src/js/common/clickEvent.js"></script>
 
 <script id="info" type="text/html" data-type="template">
 	<div class="class-icon"><img src="//wap.macaoeasybuy.com<%=list[0].thealbumClassPic%>"></div>
@@ -87,7 +87,7 @@
 				<% if(list[i].guropList[img] !== undefined) { %>
 				<li><img src="//wap.macaoeasybuy.com<%=list[i].guropList[img]%>" onerror="this.src='/img/userspace/album/album-no-img.png'"></li>
 				<% } else { %>
-				<li><img src="/img/userspace/album/album-no-img.png"></li>
+				<li><img src="/src/img/userspace/album/album-no-img.png"></li>
 				<% } %>
 				<% } %>
 			</ul>
@@ -146,11 +146,11 @@
 				<div class="hot-list-poster-head" data-id="<%=list[i].userId%>">
 					<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=list[i].userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'">
 				</div>
-				<div class="hot-list-poster-name"><%=list[i].userName%><%if(list[i].userSex==='Girl'){%><img src="/img/common/girl.png" alt=""><%}%></div>
+				<div class="hot-list-poster-name"><%=list[i].userName%><%if(list[i].userSex==='Girl'){%><img src="/src/img/common/girl.png" alt=""><%}%></div>
 				<div class="shadow-box"></div>
 			</div>
 		</div>
-		<div class="hot-list-bottom-shadow"><img src="/img/social/market/treasureclassifydetail/mdetail-shadow.png"></div>
+		<div class="hot-list-bottom-shadow"><img src="/src/img/social/market/treasureclassifydetail/mdetail-shadow.png"></div>
 	</div>
 	<% } %>
 </script>

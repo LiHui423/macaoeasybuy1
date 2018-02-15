@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta http-equiv="Pragma" contect="no-cache">
 		<title>搜索結果(標籤)</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/common/search/searchCommon.css">
-		<link rel="stylesheet" href="/css/common/search/search_label.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/common/search/searchCommon.css">
+		<link rel="stylesheet" href="/src/css/common/search/search_label.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 	</head>
 	<body>
@@ -17,7 +17,7 @@
 			<div class="searchBox">
 				<div class="searchBox_mainBox">
 					<div class="searchBox_left">
-						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+						<img src="/src/img/common/header&search&footer/easybuy_Logo.png">
 					</div>
 					<div class="searchBox_right" id="searchBox_rightBox"></div>
 				</div>
@@ -34,7 +34,7 @@
 								<ul></ul>
 							</div>
 							<div class="search_sortBox_right">
-								<span>默認排序</span><span><img src="/img/common/icon/downIcon_white.png"></span>
+								<span>默認排序</span><span><img src="/src/img/common/icon/downIcon_white.png"></span>
 								<div class="search_sortBox_right_slide">
 									<ul>
 										<li data-order = "" data-asc = "">默認排序</li>
@@ -47,11 +47,11 @@
 						</div>
 						<div class="search_label_resultBox">
 							<div class="search_label_noResult">
-								<div class="search_result_nullIcon"><img src="/img/common/05.png"></div>
+								<div class="search_result_nullIcon"><img src="/src/img/common/05.png"></div>
 								<p>沒有搜索到 “男裝” 的相關標籤哦！</p>
 							</div>
 							<div class="search_label_resultEachBox"></div>
-							<div class="loadNow"><img src="/img/common/loadingnow .gif"></div>
+							<div class="loadNow"><img src="/src/img/common/loadingnow .gif"></div>
 							<div class="noMore">~沒有更多內容了哦~</div>
 						</div>
 					</div>
@@ -60,7 +60,7 @@
 					<div class="search_result_mainRight clearfloat">
 						<div class="search_result_mainRight_fixedBox">
 							<div class="search_result_mainRight_title clearfloat">
-								<div class="search_result_mainRight_icon"><span><img src="/img/common/icon/labelIcon_dark.png"></span><span>熱門標籤</span></div>
+								<div class="search_result_mainRight_icon"><span><img src="/src/img/common/icon/labelIcon_dark.png"></span><span>熱門標籤</span></div>
 								<div class="search_result_mainRight_sort">
 									<ul>
 										<li class="search_result_mainRight_sort_curr" data-typeid = "0">#地點#</li>
@@ -82,17 +82,17 @@
 		<footer></footer>
 	</body>
 	<!--模板文件和模擬數據-->
-	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
-	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
-	<script src="/js/common/search/search_label/search_label.data.js"></script>
+	<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/src/js/common/search/search_label/search_label.data.js"></script>
 	<!--頭部文件的js-->
-	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/header&search&footer/header.js"></script>
 	<!--搜索框部份的js-->
-	<script src="/js/common/header&search&footer/searchBar.js"></script>
+	<script src="/src/js/common/header&search&footer/searchBar.js"></script>
 	<!--標籤搜索結果頁的js-->
-	<script src="/js/common/search/search_label/search_label.js"></script>
+	<script src="/src/js/common/search/search_label/search_label.js"></script>
 
-	<script src="/js/common/header&search&footer/footer.js"></script>
+	<script src="/src/js/common/header&search&footer/footer.js"></script>
 
 	<!--搜索結果得標籤-->
 	<script type="text/html" id="labelList" data-array = "labelListData">
@@ -121,8 +121,8 @@
 						<div class="search_label_resultEach_ranking">排名：<%=#list.classList[i].labelRank%></div>
 						<div class="search_label_resultEach_data clearfloat">
 							<ul>
-								<li><span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=list.classList[i].labelSeeNumber%>宜粉人查看</span></li>
-								<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list.classList[i].labelLoveNumber%>宜粉讚好</span></li>
+								<li><span><img src="/src/img/common/icon/seeIcon_dark.png"></span><span><%=list.classList[i].labelSeeNumber%>宜粉人查看</span></li>
+								<li><span><img src="/src/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list.classList[i].labelLoveNumber%>宜粉讚好</span></li>
 							</ul>
 						</div>
 					</div>
@@ -132,13 +132,13 @@
 							<p>
 								<span><%=list.classList[i].labeluserName%></span>
 								<%if(list.classList[i].labelusersex=="Girl"){%>
-									<span><img src="/img/common/sex.png"></span>
+									<span><img src="/src/img/common/sex.png"></span>
 								<%}else{%>
-									<span><img src="/img/common/boy.png"></span>
+									<span><img src="/src/img/common/boy.png"></span>
 								<%}%>
 							</p>
 							<p>
-								<span><img src="/img/common/icon/clockIcon_dark.png"></span>
+								<span><img src="/src/img/common/icon/clockIcon_dark.png"></span>
 								<span><%=list.classList[i].labelTimeDiff%>前創建於</span>
 							</p>
 						</div>
@@ -166,15 +166,15 @@
 						<div class="search_result_hotLabel_name">
 							<span><%=list[i].labeluserName%></span>
 							<%if(list[i].labelusersex=="Girl"){%>
-								<span><img src="/img/common/sex.png"></span>
+								<span><img src="/src/img/common/sex.png"></span>
 							<%}else{%>
-								<span><img src="/img/common/boy.png"></span>
+								<span><img src="/src/img/common/boy.png"></span>
 							<%}%>
 						</div>
 						<div class="search_result_hotLabel_data clearfloat">
 							<ul>
-								<li><span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=list[i].labelSeeNumber%>人查看</span></li>
-								<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list[i].labelLoveNumber%>人讚好</span></li>
+								<li><span><img src="/src/img/common/icon/seeIcon_dark.png"></span><span><%=list[i].labelSeeNumber%>人查看</span></li>
+								<li><span><img src="/src/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list[i].labelLoveNumber%>人讚好</span></li>
 							</ul>
 						</div>
 					</div>

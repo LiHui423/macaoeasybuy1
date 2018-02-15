@@ -4,14 +4,14 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>用戶空間-心動</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
-		<link rel="stylesheet" href="/css/userspace/userlove/userlove.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/src/css/userspace/userlove/userlove.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
-		<script src="/js/common/getData/getData_needLogin.js"></script>
-		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/getData/getData_needLogin.js"></script>
+		<script src="/src/js/userspace/common/userspacebg.js" async></script>
 		<script>easyBuy.userSpaceGlobal.whiteNavName = 'AllLoveNumber';</script>
 		<!--userid 頁面所屬用戶id-->
 	</head>
@@ -65,10 +65,10 @@
 							<div class="userlove_chooseSort clearfloat">
 								<div class="userlove_chooseSort_left">
 									<ul>
-										<li class="userlove_chooseSort_left_curr"><span><img src="/img/userspace/userlove/userlove_clockIcon.png"><img src="/img/userspace/userlove/userlove_clockIcon_curr.png"></span><span>按心動時間</span></li>
-										<li><span><img src="/img/userspace/userlove/userlove_sellIcon.png"><img src="/img/userspace/userlove/userlove_sellIcon_curr.png"></span><span>按銷量</span></li>
-										<li><span><img src="/img/userspace/userlove/userlove_loveIcon.png"><img src="/img/userspace/userlove/userlove_loveIcon_curr.png"></span><span>按心動數</span></li>
-										<li><span><img src="/img/userspace/userlove/userlove_priceIcon.png"><img src="/img/userspace/userlove/userlove_priceIcon_curr.png"></span><span>按價格</span></li>
+										<li class="userlove_chooseSort_left_curr"><span><img src="/src/img/userspace/userlove/userlove_clockIcon.png"><img src="/src/img/userspace/userlove/userlove_clockIcon_curr.png"></span><span>按心動時間</span></li>
+										<li><span><img src="/src/img/userspace/userlove/userlove_sellIcon.png"><img src="/src/img/userspace/userlove/userlove_sellIcon_curr.png"></span><span>按銷量</span></li>
+										<li><span><img src="/src/img/userspace/userlove/userlove_loveIcon.png"><img src="/src/img/userspace/userlove/userlove_loveIcon_curr.png"></span><span>按心動數</span></li>
+										<li><span><img src="/src/img/userspace/userlove/userlove_priceIcon.png"><img src="/src/img/userspace/userlove/userlove_priceIcon_curr.png"></span><span>按價格</span></li>
 									</ul>
 								</div>
 								<div class="userlove_chooseSort_right">
@@ -128,7 +128,7 @@
 			<div class="cancel-tips-box on-middle yez-tips-box">
 				<div class="cancels-title">批量操作</div>
 				<div>
-					<div class="cancels-xc"><img src="/img/common/02.png" alt=""></div>
+					<div class="cancels-xc"><img src="/src/img/common/02.png" alt=""></div>
 					<div class="cancel-tips-text">您不再心動這些商品了嗎？</div>
 					<div class="clearfloat sure-button">
 						<div class="sure-cancel">確認</div>
@@ -139,17 +139,17 @@
 		</div>
 		<!--取消心動成功提示-->
 
-		<script src="/js/plug/yez_js_Reset.js"></script>
-		<script src="/js/common/vendor/template-native.js"></script>
-		<script src="/js/userspace/common/userinfo.js" async></script>
-		<script src="/js/userspace/common/leftmenu.js" async></script>
-		<script src="/js/userspace/common/whitemenu.js" async></script>
-		<script src="/js/userspace/common/newspush.js" async></script>
-		<script src="/js/common/header&search&footer/footer.js" async></script>
-		<script src="/js/common/header&search&footer/header.js"></script>
-		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
-		<script src="/js/userspace/userlove/userlove.js"></script>
-		<script src="/js/userspace/userlove/userlove_data.js"></script>
+		<script src="/src/js/plug/yez_js_Reset.js"></script>
+		<script src="/src/js/common/vendor/template-native.js"></script>
+		<script src="/src/js/userspace/common/userinfo.js" async></script>
+		<script src="/src/js/userspace/common/leftmenu.js" async></script>
+		<script src="/src/js/userspace/common/whitemenu.js" async></script>
+		<script src="/src/js/userspace/common/newspush.js" async></script>
+		<script src="/src/js/common/header&search&footer/footer.js" async></script>
+		<script src="/src/js/common/header&search&footer/header.js"></script>
+		<script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+		<script src="/src/js/userspace/userlove/userlove.js"></script>
+		<script src="/src/js/userspace/userlove/userlove_data.js"></script>
 		<!--量販團-->
 		<!--groupBuy_goodsEach_begin 已經開團人數不夠-->
 		<!--groupBuy_begin_finishBox 團購開始，人數夠，時間到了-->
@@ -178,7 +178,7 @@
 
 					<%if(result[i].groupBuyState == 1){%>
 					<div class="groupBuy_goodsEach_oldPrice">
-						<div class="del_line"><img src="/img/easybuy/groupBuy/del_line.png"></div>MOP<span><%=result[i].oldPrice%></span>
+						<div class="del_line"><img src="/src/img/easybuy/groupBuy/del_line.png"></div>MOP<span><%=result[i].oldPrice%></span>
 					</div>
 					<%}else{%>
 					<div class="groupBuy_begin_price">
@@ -190,7 +190,7 @@
 					<%if(result[i].groupBuyState == 0){%>
 					<div class="groupBuy_goodsEach_bottom clearfloat">
 						<div class="groupBuy_goodsEach_bottomLeft">
-							<div><img src="/img/common/curr_right_end.png"></div>
+							<div><img src="/src/img/common/curr_right_end.png"></div>
 							<p>開團</p>
 							<p>結束</p>
 						</div>
@@ -203,7 +203,7 @@
 					<%}else if(result[i].groupBuyState == 1){%>
 					<div class="groupBuy_goodsEach_bottom clearfloat">
 						<div class="groupBuy_goodsEach_bottomLeft">
-							<div><img src="/img/common/curr_right.png"></div>
+							<div><img src="/src/img/common/curr_right.png"></div>
 							<p>開團</p>
 							<p>在即</p>
 						</div>
@@ -233,17 +233,17 @@
 						<div class="groupBuy_begin_status_shadow"></div>
 					</div>
 					<%}else if(result[i].groupBuyState == 3){%>
-					<div class="groupBuy_begin_finishBox"><img src="/img/easybuy/groupBuy/groupBuy_begin_finish.png"></div>
+					<div class="groupBuy_begin_finishBox"><img src="/src/img/easybuy/groupBuy/groupBuy_begin_finish.png"></div>
 					<%}%>
 
 
 					<%if(result[i].groupBuyState == 0){%>
 					<div class="userlove_groupbuy_over_num">
-						<span><img src="/img/userspace/userlove/userlove_group_over.png"></span><span><%=result[i].inTuanNum%>人已參加團購！</span>
+						<span><img src="/src/img/userspace/userlove/userlove_group_over.png"></span><span><%=result[i].inTuanNum%>人已參加團購！</span>
 					</div>
 					<%}else if(result[i].groupBuyState == 1){%>
 					<div class="userlove_groupbuy_over_num">
-						<span><img src="/img/common/goodEach_seeIcon.png"></span><span><%=result[i].inTuanNum%>人期待中！</span>
+						<span><img src="/src/img/common/goodEach_seeIcon.png"></span><span><%=result[i].inTuanNum%>人期待中！</span>
 					</div>
 					<%}else if(result[i].groupBuyState == 2 || result[i].groupBuyState == 3){%>
 					<div class="progressBar">
@@ -275,14 +275,14 @@
 
 					<div class="shadow"></div>
 					<%if(result[i].groupBuyState == 0){%>
-					<div class="sticker"><img src="/img/easybuy/groupBuy/groupBuy_end_hover.png" alt=""></div>
+					<div class="sticker"><img src="/src/img/easybuy/groupBuy/groupBuy_end_hover.png" alt=""></div>
 					<%}%>
 				</div>
 			</div>
 			<%}%>
 			<%}else if(result.length == 0 && page == 0){%>
 				<div class="no_more_result">
-					<div><img src="/img/common/05.png" alt=""></div>
+					<div><img src="/src/img/common/05.png" alt=""></div>
 					<div>該欄目沒有任何內容哦！</div>
 				</div>
 			<%}%>
@@ -295,19 +295,19 @@
 				<div class="ListBox_goodsEach_inner">
 					<div class="ListBox_goodsEach_pic">
 						<div class="ListBox_goodsEach_picCover">
-							<img src="/img/easybuy/limited/snap_up.png">
+							<img src="/src/img/easybuy/limited/snap_up.png">
 						</div>
 						<img src="<%=osURL%><%=result[i].pic%>">
 						<%if(result[i].leftNum == 0){%>
-						<div class="sticker"><img src="/img/easybuy/limited/snap_up.png" alt=""></div>
+						<div class="sticker"><img src="/src/img/easybuy/limited/snap_up.png" alt=""></div>
 						<%}%>
-						<div class="limitedIcon"><img src="/img/easybuy/limited/limitedIcon.png"></div>
+						<div class="limitedIcon"><img src="/src/img/easybuy/limited/limitedIcon.png"></div>
 						<div class="ListBox_goodsEach_date clearfloat">
 							<div class="ListBox_goodsEach_dateEach">
-								<span><img src="/img/common/icon/likeIcon_white.png"></span><span><%=formatNum(result[i].loveCount)%></span>
+								<span><img src="/src/img/common/icon/likeIcon_white.png"></span><span><%=formatNum(result[i].loveCount)%></span>
 							</div>
 							<div class="ListBox_goodsEach_dateEach">
-								<span><img src="/img/common/icon/seeIcon2_white.png"></span><span><%=formatNum(result[i].seeCount)%></span>
+								<span><img src="/src/img/common/icon/seeIcon2_white.png"></span><span><%=formatNum(result[i].seeCount)%></span>
 							</div>
 						</div>
 					</div>
@@ -346,7 +346,7 @@
 			<%}%>
 			<%}else if(result.length == 0 && page == 0){%>
 				<div class="no_more_result">
-					<div><img src="/img/common/05.png" alt=""></div>
+					<div><img src="/src/img/common/05.png" alt=""></div>
 					<div>該欄目沒有任何內容哦！</div>
 				</div>
 			<%}%>
@@ -380,25 +380,25 @@
 							<p>MOP<%=formatNum(result[i].nowPrice)%></p>
 							<p>平日價MOP<%=formatNum(result[i].oldPrice)%></p>
 							<div class="discount_goodEach_dataEach discount_goodEach_dataSee">
-								<span><img src="/img/common/icon/seeIcon_dark.png"></span><span><%=formatNum(result[i].seeCount)%>人查看</span>
+								<span><img src="/src/img/common/icon/seeIcon_dark.png"></span><span><%=formatNum(result[i].seeCount)%>人查看</span>
 							</div>
 							<div class="discount_goodEach_dataEach discount_goodEach_dataLike">
-								<span><img src="/img/common/icon/likeIcon_dark.png"></span><span><%=formatNum(result[i].loveCount)%>人心動</span>
+								<span><img src="/src/img/common/icon/likeIcon_dark.png"></span><span><%=formatNum(result[i].loveCount)%>人心動</span>
 							</div>
 						</div>
 						<div class="discount_goodEach_dataRight">
 							<div class="discount_goodEach_count">
-								<div class="countPriceIcon"><img src="/img/easybuy/discount/countPriceIcon.png"></div>
+								<div class="countPriceIcon"><img src="/src/img/easybuy/discount/countPriceIcon.png"></div>
 								<p>只限今天</p>
 								<p class="discountPrice">-MOP<%=formatNum(result[i].oldPrice - result[i].nowPrice)%></p>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="discount_goodEach_cover"><img src="/img/easybuy/discount/discount_sellOut.png"></div>
+				<div class="discount_goodEach_cover"><img src="/src/img/easybuy/discount/discount_sellOut.png"></div>
 
 				<%if(result[i].kuncunSum == 0){%>
-					<div class="sticker"><img src="/img/easybuy/discount/discount_sellOut.png" alt=""></div>
+					<div class="sticker"><img src="/src/img/easybuy/discount/discount_sellOut.png" alt=""></div>
 				<%}%>
 
 				<%if(easyState == 1){%>
@@ -412,7 +412,7 @@
 			<%}%>
 			<%}else if(result.length == 0 && page == 0){%>
 				<div class="no_more_result">
-					<div><img src="/img/common/05.png" alt=""></div>
+					<div><img src="/src/img/common/05.png" alt=""></div>
 					<div>該欄目沒有任何內容哦！</div>
 				</div>
 			<%}%>
@@ -428,10 +428,10 @@
 				<div class="interchange_each_inner clearfloat">
 					<div class="interchange_eachLeft">
 						<div class="willbeShelves_EachTop">
-							<div class="willbeShelves_sellOut_cover"><img src="/img/easybuy/exchange/exchange_sellOut.png"></div>
+							<div class="willbeShelves_sellOut_cover"><img src="/src/img/easybuy/exchange/exchange_sellOut.png"></div>
 							<img src="<%=osURL%><%=result[i].pic%>">
 							<div class="interchange_each_like">
-								<span><img src="/img/easybuy/exchange/filling_like.png"></span><span><%=formatNum(result[i].loveCount)%>人心動</span>
+								<span><img src="/src/img/easybuy/exchange/filling_like.png"></span><span><%=formatNum(result[i].loveCount)%>人心動</span>
 							</div>
 							<div class="redBagCostIcon">
 								<p>mop<span><%=formatNum(result[i].mop)%></span></p>
@@ -459,13 +459,13 @@
 									<p>僅剩</p>
 									<p>1件</p>
 								</div>
-								<img src="/img/easybuy/exchange/grapUp.png">
+								<img src="/src/img/easybuy/exchange/grapUp.png">
 							</div>-->
 						</div>
 						<%}%>
 					</div>
 					<%if(result[i].kuncunSum == 0){%>
-						<div class="sticker"><img src="/img/easybuy/discount/discount_sellOut.png" alt=""></div>
+						<div class="sticker"><img src="/src/img/easybuy/discount/discount_sellOut.png" alt=""></div>
 					<%}%>
 					<%if(easyState == 1){%>
 					<div class="hover-check-box-outer">
@@ -480,7 +480,7 @@
 			<%}%>
 			<%}else if(result.length == 0 && page == 0){%>
 				<div class="no_more_result">
-					<div><img src="/img/common/05.png" alt=""></div>
+					<div><img src="/src/img/common/05.png" alt=""></div>
 					<div>該欄目沒有任何內容哦！</div>
 				</div>
 			<%}%>
@@ -516,7 +516,7 @@
 				</div>
 
 				<%if(result[i].kuncunSum == 0){%>
-					<div class="sticker"><img src="/img/easybuy/discount/discount_sellOut.png" alt=""></div>
+					<div class="sticker"><img src="/src/img/easybuy/discount/discount_sellOut.png" alt=""></div>
 				<%}%>
 
 				<%if(easyState == 1){%>
@@ -530,7 +530,7 @@
 			<%}%>
 			<%}else if(result.length == 0 && page == 0){%>
 				<div class="no_more_result">
-					<div><img src="/img/common/05.png" alt=""></div>
+					<div><img src="/src/img/common/05.png" alt=""></div>
 					<div>該欄目沒有任何內容哦！</div>
 				</div>
 			<%}%>
@@ -555,15 +555,15 @@
 					<div class="userlove_marketEach_data clearfloat">
 						<ul>
 							<li>
-								<div class="userlove_marketEach_data_icon"><img src="/img/common/icon/loveIocn_red.png"></div>
+								<div class="userlove_marketEach_data_icon"><img src="/src/img/common/icon/loveIocn_red.png"></div>
 								<p><%=formatNum(result[i].loveCount)%></p>
 							</li>
 							<li>
-								<div class="userlove_marketEach_data_icon"><img src="/img/common/icon/eyeIcon_red.png"></div>
+								<div class="userlove_marketEach_data_icon"><img src="/src/img/common/icon/eyeIcon_red.png"></div>
 								<p><%=formatNum(result[i].seeCount)%></p>
 							</li>
 							<li>
-								<div class="userlove_marketEach_data_icon"><img src="/img/common/icon/mopIcon_red.png"></div>
+								<div class="userlove_marketEach_data_icon"><img src="/src/img/common/icon/mopIcon_red.png"></div>
 								<p><%=formatNum(result[i].nowPrice)%></p>
 							</li>
 						</ul>
@@ -581,7 +581,7 @@
 					<div class="userlove_marketEach_time"><%=result[i].uptime%>前發佈</div>
 				</div>
 				<div class="userlove_marketEach_shadow">
-					<img src="/img/social/label/labeldetail/hobg.png" alt="">
+					<img src="/src/img/social/label/labeldetail/hobg.png" alt="">
 				</div>
 
 
@@ -596,7 +596,7 @@
 			<%}%>
 			<%}else if(result.length == 0 && page == 0){%>
 				<div class="no_more_result">
-					<div><img src="/img/common/05.png" alt=""></div>
+					<div><img src="/src/img/common/05.png" alt=""></div>
 					<div>該欄目沒有任何內容哦！</div>
 				</div>
 			<%}%>
@@ -614,11 +614,11 @@
 				</div>
 				<div class="otherGoods_data clearfloat">
 					<div class="otherGoods_dataEach clearfloat">
-						<span><img src="/img/common/icon/bagIcon_dark.png"></span>
+						<span><img src="/src/img/common/icon/bagIcon_dark.png"></span>
 						<span><%=formatNum(result[i].saleCount)%></span>
 					</div>
 					<div class="otherGoods_dataEach clearfloat">
-						<span><img src="/img/common/icon/likeIcon_dark.png"></span>
+						<span><img src="/src/img/common/icon/likeIcon_dark.png"></span>
 						<span><%=formatNum(result[i].loveCount)%></span>
 					</div>
 				</div>
@@ -628,14 +628,14 @@
 				</div>
 				<%}%>
 				<%if(result[i].kuncunSum == 0){%>
-					<div class="sticker"><img src="/img/easybuy/discount/discount_sellOut.png" alt=""></div>
+					<div class="sticker"><img src="/src/img/easybuy/discount/discount_sellOut.png" alt=""></div>
 				<%}%>
 				<div class="shadow"></div>
 			</div>
 			<%}%>
 			<%}else if(result.length == 0 && page == 0){%>
 				<div class="no_more_result">
-					<div><img src="/img/common/05.png" alt=""></div>
+					<div><img src="/src/img/common/05.png" alt=""></div>
 					<div>該欄目沒有任何內容哦！</div>
 				</div>
 			<%}%>

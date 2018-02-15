@@ -5,12 +5,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv="Pragma" contect="no-cache">
 		<title>用戶空間-敗家志列表頁</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
-		<link rel="stylesheet" href="/css/userspace/liveshot/liveshotlist/liveshotlist.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/src/css/userspace/liveshot/liveshotlist/liveshotlist.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
 		<script>
 			easyBuy.userSpaceGlobal.afterSetIsSelf = function(state){
 				if(state){
@@ -18,8 +18,8 @@
 				}
 			}
 		</script>
-		<script src="/js/common/getData/getData_needLogin.js"></script>
-		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script src="/src/js/common/getData/getData_needLogin.js"></script>
+		<script src="/src/js/userspace/common/userspacebg.js" async></script>
 		<script>easyBuy.userSpaceGlobal.whiteNavName = 'SentVolunteersNumber';</script>
 		<!--參數要帶 userid 頁面所屬主人的id -->
 	</head>
@@ -41,10 +41,10 @@
 							<!--這裡是內容-->
 							<div class="userspace-content-inner">
 								<div class="mine-sort-menu clearfloat">
-									<div class="select"><img src="/img/userspace/album/news-sort.png" alt="" class="no-select"><img src="/img/userspace/album/news-sort-w.png" alt="" class="select">按發佈時間排序<div></div></div>
-									<div><img src="/img/userspace/album/mes-sort.png" alt="" class="no-select"><img src="/img/userspace/album/mes-sort-w.png" alt="" class="select">按回覆數排序<div></div></div>
-									<div><img src="/img/userspace/album/goods-sort.png" alt="" class="no-select"><img src="/img/userspace/album/goods-sort-w.png" alt="" class="select">按讃好數排序<div></div></div>
-									<p id="album-delete"><img src="/img/userspace/common/deletebtn.png" alt="">批量刪除(<span>0</span>)</p>
+									<div class="select"><img src="/src/img/userspace/album/news-sort.png" alt="" class="no-select"><img src="/src/img/userspace/album/news-sort-w.png" alt="" class="select">按發佈時間排序<div></div></div>
+									<div><img src="/src/img/userspace/album/mes-sort.png" alt="" class="no-select"><img src="/src/img/userspace/album/mes-sort-w.png" alt="" class="select">按回覆數排序<div></div></div>
+									<div><img src="/src/img/userspace/album/goods-sort.png" alt="" class="no-select"><img src="/src/img/userspace/album/goods-sort-w.png" alt="" class="select">按讃好數排序<div></div></div>
+									<p id="album-delete"><img src="/src/img/userspace/common/deletebtn.png" alt="">批量刪除(<span>0</span>)</p>
 								</div>
 								<div class="sort-box select" id="uptime">
 									<div class="clearfloat content-box-class"></div>
@@ -74,7 +74,7 @@
 			<div class="cancel-tips-box on-middle yez-tips-box">
 				<div class="cancels-title">批量刪除</div>
 				<div>
-					<div class="cancels-xc"><img src="/img/common/02.png" alt=""></div>
+					<div class="cancels-xc"><img src="/src/img/common/02.png" alt=""></div>
 					<div class="cancel-tips-text">是否刪除選中的<span>0</span>篇敗家誌？</div>
 					<div class="cancel-tips-text-tips">提示：刪除<span class="remove-num">0</span>篇敗家誌帖子會扣除<span class="remove-num-math"></span>分積分哦！</div>
 					<div class="clearfloat sure-button">
@@ -85,16 +85,16 @@
 			</div>
 		</div>
 
-		<script src="/js/plug/yez_js_Reset.js"></script>
-		<script src="/js/common/vendor/template-native.js"></script>
-		<script src="/js/userspace/common/userinfo.js" async></script>
-		<script src="/js/userspace/common/leftmenu.js" async></script>
-		<script src="/js/userspace/common/whitemenu.js" async></script>
-		<script src="/js/userspace/common/newspush.js" async></script>
-		<script src="/js/common/header&search&footer/footer.js" async></script>
-		<script src="/js/common/header&search&footer/header.js"></script>
-		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
-		<script src="/js/userspace/liveshot/liveshotlist/liveshotlist.js"></script>
+		<script src="/src/js/plug/yez_js_Reset.js"></script>
+		<script src="/src/js/common/vendor/template-native.js"></script>
+		<script src="/src/js/userspace/common/userinfo.js" async></script>
+		<script src="/src/js/userspace/common/leftmenu.js" async></script>
+		<script src="/src/js/userspace/common/whitemenu.js" async></script>
+		<script src="/src/js/userspace/common/newspush.js" async></script>
+		<script src="/src/js/common/header&search&footer/footer.js" async></script>
+		<script src="/src/js/common/header&search&footer/header.js"></script>
+		<script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+		<script src="/src/js/userspace/liveshot/liveshotlist/liveshotlist.js"></script>
 
 		<script id="post-template" type="text/html" data-type="template">
 			<%if(UsersentVolunteersList.sentVolunteersList.length != 0){%>
@@ -116,7 +116,7 @@
 										</div>
 										<div class="post-other-time clearfloat">
 											<div><span><%=UsersentVolunteersList.sentVolunteersList[i].uptime%></span>前發佈</div>
-											<img src="/img/social/label/labeldetail/shot.png" alt="" class="post-other-img">
+											<img src="/src/img/social/label/labeldetail/shot.png" alt="" class="post-other-img">
 										</div>
 									</div>
 								</div>
@@ -146,13 +146,13 @@
 								</div>
 							<%}%>
 						</div>
-						<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+						<div class="post-shadow"><img src="/src/img/social/label/labeldetail/hobg.png" alt=""></div>
 					</div>
 				<%}%>
 			<%}else if(UsersentVolunteersList.sentVolunteersList.length == 0 && page == 0){%>
 				<div id="no-post">
 					<div>
-						<img src="/img/common/05.png" alt="">
+						<img src="/src/img/common/05.png" alt="">
 					</div>
 					<span>目前沒有任何內容哦!</span>
 				</div>

@@ -3,20 +3,20 @@
 	<head>
 		<meta charset="utf-8">
 		<title>購物籃-待確認-退換貨</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/easybuy/shopCart/shopCart_common.css">
-		<link rel="stylesheet" href="/css/easybuy/shopCart/unconfirmed/unconfirmed_return.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/easybuy/shopCart/shopCart_common.css">
+		<link rel="stylesheet" href="/src/css/easybuy/shopCart/unconfirmed/unconfirmed_return.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
 		<script>
 			var fr = new FrameDomain();
 			var returnState = fr.getUrlParam('state');
 			var dataId = fr.getUrlParam('dataid');
 			if(returnState == 'return'){
-				document.write('<link rel="stylesheet" href="/css/easybuy/shopCart/unconfirmed/unconfirmed_return_return.css">');
+				document.write('<link rel="stylesheet" href="/src/css/easybuy/shopCart/unconfirmed/unconfirmed_return_return.css">');
 			}else{
-				document.write('<link rel="stylesheet" href="/css/easybuy/shopCart/unconfirmed/unconfirmed_return_change.css">');
+				document.write('<link rel="stylesheet" href="/src/css/easybuy/shopCart/unconfirmed/unconfirmed_return_change.css">');
 			}
 			fr.getUserInfo.beforeInfo = function(){
 //				console.log('獲取用戶信息之前');
@@ -30,7 +30,7 @@
 			}
 			fr.getUserInfo.go();
 		</script>
-		<script src="/js/common/yez_js_Reset.js"></script>
+		<script src="/src/js/common/yez_js_Reset.js"></script>
 	</head>
 
 	<body>
@@ -78,7 +78,7 @@
 						<!--換貨框-->
 						<div class="unconfirmed_returnMain_change">
 							<div class="unconfirmed_returnMain_warming">
-								<span><img src="/img/easybuy/shopCart/unconfiremed_warming.png"></span>
+								<span><img src="/src/img/easybuy/shopCart/unconfiremed_warming.png"></span>
 								<span>每件商品只能換貨一次</span>
 							</div>
 							<div class="unconfirmed_returnMain_size">
@@ -93,7 +93,7 @@
 								<div class="unconfirmed_returnMain_main">
 									<div class="unconfirmed_returnMain_choosereason clearfloat">
 										<div id="change_reson_btn" class="clearfloat">
-											<span>收到的商品規格與下單不符</span><span><img src="/img/easybuy/shopCart/unconfiremed_slide.png"></span>
+											<span>收到的商品規格與下單不符</span><span><img src="/src/img/easybuy/shopCart/unconfiremed_slide.png"></span>
 										</div>
 										<div class="unconfirmed_choosereason_slide">
 											<ul></ul>
@@ -127,7 +127,7 @@
 						<div class="unconfirmed_returnMain_return">
 
 							<div class="unconfirmed_returnMain_warming">
-								<span><img src="/img/easybuy/shopCart/unconfiremed_warming.png"></span>
+								<span><img src="/src/img/easybuy/shopCart/unconfiremed_warming.png"></span>
 								<span>每件商品只能退貨一次</span>
 							</div>
 
@@ -150,7 +150,7 @@
 								<div class="unconfirmed_returnMain_main">
 									<div class="unconfirmed_returnMain_choosereason clearfloat">
 										<div id="return_reson_btn" class="clearfloat">
-											<span>收到的商品規格與下單不符</span><span><img src="/img/easybuy/shopCart/unconfiremed_slide.png"></span>
+											<span>收到的商品規格與下單不符</span><span><img src="/src/img/easybuy/shopCart/unconfiremed_slide.png"></span>
 										</div>
 										<div class="unconfirmed_choosereason_slide">
 											<ul></ul>
@@ -229,7 +229,7 @@
 						<p class="reason_str_second">&nbsp;</p>
 					</div>
 					<div class="unconfirmed_returnPop_mainRight">
-						<img src="/img/easybuy/shopCart/unconfiremed_icon.png">
+						<img src="/src/img/easybuy/shopCart/unconfiremed_icon.png">
 					</div>
 				</div>
 				<div class="unconfirmed_returnPop_main_intro">
@@ -262,7 +262,7 @@
 						<p class="reason_str_second">&nbsp;</p>
 					</div>
 					<div class="unconfirmed_returnPop_mainRight">
-						<img src="/img/easybuy/shopCart/unconfiremed_icon.png">
+						<img src="/src/img/easybuy/shopCart/unconfiremed_icon.png">
 					</div>
 				</div>
 				<div class="unconfirmed_returnPop_main_intro">
@@ -280,15 +280,15 @@
 
 	</body>
 
-	<script src="/js/common/header&search&footer/header.js"></script>
-	<script src="/js/common/header&search&footer/footer.js"></script>
-	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
-	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
-	<script src="/js/common/webuploader.nolog.min.js"></script>
-	<script src="/js/common/uploadFrame.js"></script>
-	<script src="/js/easybuy/shopCart/unconfirmed/guigeChange.js"></script>
-	<script src="/js/easybuy/shopCart/unconfirmed/unconfirmed_return.js"></script>
-	<script src="/js/easybuy/shopCart/unconfirmed/unconfirmed_return.data.js"></script>
+	<script src="/src/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/header&search&footer/footer.js"></script>
+	<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/src/js/common/webuploader.nolog.min.js"></script>
+	<script src="/src/js/common/uploadFrame.js"></script>
+	<script src="/src/js/easybuy/shopCart/unconfirmed/guigeChange.js"></script>
+	<script src="/src/js/easybuy/shopCart/unconfirmed/unconfirmed_return.js"></script>
+	<script src="/src/js/easybuy/shopCart/unconfirmed/unconfirmed_return.data.js"></script>
 	<!--中間商品規格模板-->
 	<script type="text/html" id="goodDetailsSize" data-array = "goodDetailsSizeData">
 
@@ -312,7 +312,7 @@
 						<li class="guigeImg">
 							<div class="goodMessBox_messBox_eachType">
 								<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list[0].tupianlist[i]%>">
-								<div class="curr_icon"><img src="/img/easybuy/museum/icon/museumDetails_currIcon.png"></div>
+								<div class="curr_icon"><img src="/src/img/easybuy/museum/icon/museumDetails_currIcon.png"></div>
 							</div>
 						</li>
 					<%}%>

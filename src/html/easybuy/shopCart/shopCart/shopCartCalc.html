@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <title>購物籃</title>
-<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-<link rel="stylesheet" href="/css/common/header&search&footer.css">
-<link rel="stylesheet" href="/css/easybuy/shopCart/shopCart/shopCartCalc.css">
-<link rel="stylesheet" href="/css/easybuy/shopCart/shopCart_common.css">
+<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+<link rel="stylesheet" href="/src/css/common/header&search&footer.css">
+<link rel="stylesheet" href="/src/css/easybuy/shopCart/shopCart/shopCartCalc.css">
+<link rel="stylesheet" href="/src/css/easybuy/shopCart/shopCart_common.css">
 
 <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="/js/common/frameDomainJSON.js"></script>
+<script src="/src/js/common/frameDomainJSON.js"></script>
 <script>
 	var fr = new FrameDomain();
 	fr.getUserInfo.go();
@@ -26,7 +26,7 @@
 		<div class="shopCart_Redeem_main">
 			<div class="shopCart_Redeem_main_mess clearfloat">
 				<div class="shopCart_Redeem_main_messLeft">
-					<img src="/img/shopCart/shopCart_Redeem.png">
+					<img src="/src/img/shopCart/shopCart_Redeem.png">
 				</div>
 				<div class="shopCart_Settlement_redBagDetails">
 					<p>
@@ -65,7 +65,7 @@
 		<div class="cancelThumbsPop_title">刪除商品</div>
 		<div class="cancelThumbsPop_Main">
 			<div class="cancelThumbsPop_top">
-				<img src="/img/easybuy/goodDetails/cancel_thumbsupPop.png">
+				<img src="/src/img/easybuy/goodDetails/cancel_thumbsupPop.png">
 			</div>
 			<div class="cancelThumbsPop_bottom">
 				<p>確認刪除選中的商品嗎？</p>
@@ -80,7 +80,7 @@
 		<div class="cancelThumbsPop_title">積分不足</div>
 		<div class="cancelThumbsPop_Main">
 			<div class="cancelThumbsPop_top">
-				<img src="/img/common/noResult.png">
+				<img src="/src/img/common/noResult.png">
 			</div>
 			<div class="cancelThumbsPop_bottom">
 				<p>您的積分已不足哦！</p>
@@ -96,7 +96,7 @@
 		<div class="cancelThumbsPop_title">紅包不足</div>
 		<div class="cancelThumbsPop_Main">
 			<div class="cancelThumbsPop_top">
-				<img src="/img/common/noResult.png">
+				<img src="/src/img/common/noResult.png">
 			</div>
 			<div class="cancelThumbsPop_bottom">
 				<p>您的紅包已不足哦！</p>
@@ -112,7 +112,7 @@
 		<div class="cancelThumbsPop_title">庫存不足</div>
 		<div class="cancelThumbsPop_Main">
 			<div class="cancelThumbsPop_top">
-				<img src="/img/common/noResult.png">
+				<img src="/src/img/common/noResult.png">
 			</div>
 			<div class="cancelThumbsPop_bottom">
 				<p>您所購買商品的庫存不足！</p>
@@ -129,38 +129,38 @@
 			<ul id="shopCart_searchBoxLeft_box">
 				<li><a href="http://shopping.macaoeasybuy.com/shopCartController/ShoppingCart.easy">
 						<div class="iconBox">
-							<img src="/img/shopCart/menu_shopCar-curr.png">
+							<img src="/src/img/shopCart/menu_shopCar-curr.png">
 						</div>
 						<p>購物籃(<span class="shopCartCount">0</span>)</p> </a>
 				</li>
 				<li><a href="http://192.168.3.38:8080/page/easybuy/shopCart/unprocessed.html">
 						<div class="iconBox">
-							<img src="/img/shopCart/menu-waitSend.png">
+							<img src="/src/img/shopCart/menu-waitSend.png">
 						</div>
 						<p>待發貨(<span class="shipmentpendingCount">0</span>)</p> </a>
 				</li>
 				<li><a href="http://192.168.3.38:8080/page/easybuy/shopCart/unconfirmed.html">
 						<div class="iconBox">
-							<img src="/img/shopCart/menu-waitSign.png">
+							<img src="/src/img/shopCart/menu-waitSign.png">
 						</div>
 						<p>待確認(<span class="confirmedCount">0</span>)</p> </a>
 				</li>
 				<li><a href="http://192.168.3.38:8080/page/easybuy/shopCart/staycommend.html">
 						<div class="iconBox">
-							<img src="/img/shopCart/menu-Evaluation.png">
+							<img src="/src/img/shopCart/menu-Evaluation.png">
 						</div>
 						<p>待評價(<span class="evaluationCount">0</span>)</p> </a>
 				</li>
 				<li><a href="http://192.168.3.38:8080/page/easybuy/shopCart/completed.html">
 						<div class="iconBox">
-							<img src="/img/shopCart/menu-finished.png">
+							<img src="/src/img/shopCart/menu-finished.png">
 						</div>
 						<p>已完成(<span class="completeCount">0</span>)</p> </a>
 				</li>
 			</ul>
 		</div>
 		<div class="shopCart_searchBoxMiddle">
-			<img src="/img/shopCart/shopper.png">
+			<img src="/src/img/shopCart/shopper.png">
 		</div>
 		<div class="shopCart_searchBoxRight">
 			<input type="text" id="" value="" placeholder="搜索商品、商店、標籤、話題、帖子、宜粉">
@@ -207,17 +207,17 @@
 				<div class="shopCart_checkBox_selectAll">
 					<div
 						class="shopCart_checkBox_all myborder-radius shopCart_checkBox_all_hide">
-						<img src="/img/shopCart/check.png">
+						<img src="/src/img/shopCart/check.png">
 					</div>
 					<span>全選</span>
 				</div>
 				<div class="shopCart_Settlement_delete">
-					<span><img src="/img/shopCart/delete.png"> </span><span>刪除</span>
+					<span><img src="/src/img/shopCart/delete.png"> </span><span>刪除</span>
 				</div>
 			</div>
 			<div class="shopCart_Settlement_redBag">
 				<div class="shopCart_Settlement_redBag_icon">
-					<img src="/img/shopCart/integral.png">
+					<img src="/src/img/shopCart/integral.png">
 				</div>
 				<div class="shopCart_Settlement_redBagDetails">
 					<p>
@@ -231,7 +231,7 @@
 			</div>
 			<div class="shopCart_Settlement_calc">
 				<div class="shopCart_Settlement_calc_icon">
-					<img src="/img/shopCart/settlementIcon.png">
+					<img src="/src/img/shopCart/settlementIcon.png">
 				</div>
 				<div class="shopCart_Settlement_calc_title">
 					<p>
@@ -261,17 +261,17 @@
 </body>
 
 <!--模板文件和數據文件-->
-<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
-<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
-<script src="/js/plug/yez_js_Reset.js"></script>
-<script src="/js/easybuy/shopCart/shopCart/shopCartCalc.js" charset="utf-8"></script>
-<script src="/js/easybuy/shopCart/shopCart/shopCartCalc.data.js" charset="utf-8"></script>
+<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
+<script src="/src/js/plug/yez_js_Reset.js"></script>
+<script src="/src/js/easybuy/shopCart/shopCart/shopCartCalc.js" charset="utf-8"></script>
+<script src="/src/js/easybuy/shopCart/shopCart/shopCartCalc.data.js" charset="utf-8"></script>
 <!--頭部文件的js-->
-<script src="/js/common/header&search&footer/header.js" charset="utf-8"></script>
-<script src="/js/common/header&search&footer/footer.js" charset="utf-8"></script>
+<script src="/src/js/common/header&search&footer/header.js" charset="utf-8"></script>
+<script src="/src/js/common/header&search&footer/footer.js" charset="utf-8"></script>
 <!--購物車的js-->
-<script src="/js/easybuy/shopCart/shopCart/guigeChange.js" charset="utf-8"></script>
-<script src="/js/easybuy/shopCart/shopCart_common.js"></script>
+<script src="/src/js/easybuy/shopCart/shopCart/guigeChange.js" charset="utf-8"></script>
+<script src="/src/js/easybuy/shopCart/shopCart_common.js"></script>
 
 
 

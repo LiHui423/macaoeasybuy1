@@ -4,13 +4,13 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>專輯圖片詳情頁</title>
-		<link rel="stylesheet" href="/css/common/bootstrap.min.css">
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/social/easylive/easylivealbum/albumclassification/albumlistdetail/albumphotodetail/albumphotodetail.css">
+		<link rel="stylesheet" href="/src/css/common/bootstrap.min.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/social/easylive/easylivealbum/albumclassification/albumlistdetail/albumphotodetail/albumphotodetail.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
-		<script src="/js/common/getData/getData_sinple.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/getData/getData_sinple.js"></script>
 		<script>easyBuy.social.isEasyLife = true;easyBuy.global.hasNav = false;</script>
 	</head>
 	<body>
@@ -41,13 +41,13 @@
 							<div class="person-swapper">
 								<div class="publisherMessBox clearfloat">
 									<div class="messBox_pic" id="messBox_pic">
-										<img src="/img/common/headPic.png">
+										<img src="/src/img/common/headPic.png">
 									</div>
 									<div class="messBox_mess">
 										<div class="messBox_mess_name" id="other-mess-name">
 											<span>思思</span>
 											<div>
-												<img src="/img/common/sex.png">
+												<img src="/src/img/common/sex.png">
 											</div>
 										</div>
 										<div class="messBox_mess_time" id="messBox_mess_time">
@@ -56,7 +56,7 @@
 										</div>
 									</div>
 									<div class="messBox_logo">
-										<img src="/img/social/easylive/albumlistdetail/photo-detail-logo.png" alt="">
+										<img src="/src/img/social/easylive/albumlistdetail/photo-detail-logo.png" alt="">
 									</div>
 								</div>
 								<div class="showPicBox">
@@ -83,22 +83,22 @@
 									<ul class="clearfloat">
 										<li>
 											<div class="thumbs_up no-click">
-												<img src="/img/social/liveshot/ProdigalPostDetail/thumbs.png">
+												<img src="/src/img/social/liveshot/ProdigalPostDetail/thumbs.png">
 											</div>
 											<div class="thumbs_up click">
-												<img src="/img/social/liveshot/ProdigalPostDetail/thumbsup.png">
+												<img src="/src/img/social/liveshot/ProdigalPostDetail/thumbsup.png">
 											</div>
 											<p>值得讚好</p>
 										</li>
 										<li>
 											<div class="article_share">
-												<img src="/img/social/liveshot/ProdigalPostDetail/share.png">
+												<img src="/src/img/social/liveshot/ProdigalPostDetail/share.png">
 											</div>
 											<p>分享好友</p>
 										</li>
 										<li>
 											<div class="article_report">
-												<img src="/img/social/liveshot/ProdigalPostDetail/report.png">
+												<img src="/src/img/social/liveshot/ProdigalPostDetail/report.png">
 											</div>
 											<p>違規舉報</p>
 										</li>
@@ -112,22 +112,22 @@
 										<li class="select">
 											<div class="statistics-bubble">
 												<div>1234</div>
-												<div><img src="/img/common/message.png" alt="">宜粉回應</div>
-												<img src="/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/arrow.png" alt="" class="arrow">
+												<div><img src="/src/img/common/message.png" alt="">宜粉回應</div>
+												<img src="/src/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/arrow.png" alt="" class="arrow">
 											</div>
 										</li>
 										<li>
 											<div class="statistics-bubble">
 												<div>1234</div>
-												<div><img src="/img/common/eye.png" alt="">宜粉查看</div>
-												<img src="/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/arrow.png" alt="" class="arrow">
+												<div><img src="/src/img/common/eye.png" alt="">宜粉查看</div>
+												<img src="/src/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/arrow.png" alt="" class="arrow">
 											</div>
 										</li>
 										<li>
 											<div class="statistics-bubble">
 												<div>1234</div>
-												<div><img src="/img/common/good.png" alt="">宜粉讃好</div>
-												<img src="/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/arrow.png" alt="" class="arrow">
+												<div><img src="/src/img/common/good.png" alt="">宜粉讃好</div>
+												<img src="/src/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/arrow.png" alt="" class="arrow">
 											</div>
 										</li>
 									</ul>
@@ -143,9 +143,9 @@
 																<div class="person-info-name">
 																	<%=response[i].name%>
 																	<% if(response[i].sex == 'boy'){ %>
-																	<img src="/img/common/boy.png" alt="">
+																	<img src="/src/img/common/boy.png" alt="">
 																	<% }else if(response[i].sex == 'girl'){%>
-																	<img src="/img/common/girl.png" alt="">
+																	<img src="/src/img/common/girl.png" alt="">
 																	<%}%> ：
 																</div>
 																<div class="person-info-contain clearfloat">
@@ -164,9 +164,9 @@
 																			<div class="person-info-name">
 																				<%=response[i].otherResponse[j].name%>
 																				<% if(response[i].otherResponse[j].sex == 'boy'){ %>
-																				<img src="/img/common/boy.png" alt="">
+																				<img src="/src/img/common/boy.png" alt="">
 																				<% }else if(response[i].otherResponse[j].sex == 'girl'){%>
-																				<img src="/img/common/girl.png" alt="">
+																				<img src="/src/img/common/girl.png" alt="">
 																				<%}%> ：
 																			</div>
 																			<div class="person-info-contain clearfloat">
@@ -185,7 +185,7 @@
 														<%}%>
 													<%}else{%>
 														<div class="no-more-good">
-															<div class="img"><img src="/img/social/liveshot/ProdigalTopicList/no-record.png" alt=""></div>
+															<div class="img"><img src="/src/img/social/liveshot/ProdigalTopicList/no-record.png" alt=""></div>
 															<div class="title">暫無宜粉回應</div>
 															<div class="title">來成為第一個回應的宜粉吧</div>
 															<div class="no-btn">去回應</div>
@@ -210,9 +210,9 @@
 																</div>
 																<div>
 																	<% if(check[k].sex == 'boy'){ %>
-																	<img src="/img/common/boy.png" alt="">
+																	<img src="/src/img/common/boy.png" alt="">
 																	<% }else if(check[k].sex == 'girl'){%>
-																	<img src="/img/common/girl.png" alt="">
+																	<img src="/src/img/common/girl.png" alt="">
 																	<%}%>
 																</div>
 															</div>
@@ -239,9 +239,9 @@
 																</div>
 																<div>
 																	<% if(good[a].sex == 'boy'){ %>
-																	<img src="/img/common/boy.png" alt="">
+																	<img src="/src/img/common/boy.png" alt="">
 																	<% }else if(good[a].sex == 'girl'){%>
-																	<img src="/img/common/girl.png" alt="">
+																	<img src="/src/img/common/girl.png" alt="">
 																	<%}%>
 																</div>
 															</div>
@@ -250,7 +250,7 @@
 													<%}%>
 													<%}else{%>
 														<div class="no-more-good">
-															<div class="img"><img src="/img/social/liveshot/ProdigalTopicList/no-good.png" alt=""></div>
+															<div class="img"><img src="/src/img/social/liveshot/ProdigalTopicList/no-good.png" alt=""></div>
 															<div class="title">暫無宜粉讃好</div>
 															<div class="title">給帖主一點點鼓勵吧</div>
 															<div class="no-btn">值得讃好</div>
@@ -277,10 +277,10 @@
 											<div>分類：<span>精心打扮</span></div>
 										</div>
 										<ul>
-											<li><img src="/img/userspace/userspace_postDetails/icon/respond_answer.png">45宜粉留言</li>
-											<li><img src="/img/userspace/userspace_postDetails/icon/respond_thumbsup.png">1,123宜粉讃好</li>
-											<li><img src="/img/userspace/userspace_postDetails/icon/respond_see.png">45宜粉查看</li>
-											<li><img src="/img/userspace/userspace_postDetails/icon/cai.png">88宜粉採集</li>
+											<li><img src="/src/img/userspace/userspace_postDetails/icon/respond_answer.png">45宜粉留言</li>
+											<li><img src="/src/img/userspace/userspace_postDetails/icon/respond_thumbsup.png">1,123宜粉讃好</li>
+											<li><img src="/src/img/userspace/userspace_postDetails/icon/respond_see.png">45宜粉查看</li>
+											<li><img src="/src/img/userspace/userspace_postDetails/icon/cai.png">88宜粉採集</li>
 										</ul>
 									</div>
 								</div>
@@ -309,9 +309,9 @@
 														<div class="collect-photo"></div>
 														<div class="collect-info">
 															<div class="collecter clearfloat">
-																<div class="myborder-radius"><img src="/img/common/headPic_noBorder.png" alt=""></div>
+																<div class="myborder-radius"><img src="/src/img/common/headPic_noBorder.png" alt=""></div>
 																<span>ASd</span>
-																<img src="/img/common/boy.png" alt="" class="sex">
+																<img src="/src/img/common/boy.png" alt="" class="sex">
 															</div>
 															<div class="collecter-title">採集到：<span>《裝扮狗》</span></div>
 															<div class="collecter-number">專輯圈：<span>188</span>張</div>
@@ -322,9 +322,9 @@
 														<div class="collect-photo"></div>
 														<div class="collect-info">
 															<div class="collecter clearfloat">
-																<div class="myborder-radius"><img src="/img/common/headPic_noBorder.png" alt=""></div>
+																<div class="myborder-radius"><img src="/src/img/common/headPic_noBorder.png" alt=""></div>
 																<span>ASd</span>
-																<img src="/img/common/boy.png" alt="" class="sex">
+																<img src="/src/img/common/boy.png" alt="" class="sex">
 															</div>
 															<div class="collecter-title">採集到：<span>《裝扮狗》</span></div>
 															<div class="collecter-number">專輯圈：<span>188</span>張</div>
@@ -337,7 +337,7 @@
 									</div>
 								</div>
 								<div class="nohas-album">
-									<div class="img"><img src="/img/social/liveshot/ProdigalTopicList/no-record.png" alt=""></div>
+									<div class="img"><img src="/src/img/social/liveshot/ProdigalTopicList/no-record.png" alt=""></div>
 									<div class="title">暫無宜粉採集哦！</div>
 									<div class="title">來成為第一個採集的宜粉吧</div>
 									<div class="no-btn">我要採集</div>
@@ -357,21 +357,21 @@
 									<div class="replyBox_toolBox clearfloat">
 										<div class="replyBox_add">
 											<ul class="replyBox_addUl clearfloat">
-												<li class="emjoPop"><img src="/img/social/liveshot/ProdigalPostDetail/add_face.png" alt=""></li>
-												<li class="metiondPop"><img src="/img/social/liveshot/ProdigalPostDetail/add_@.png" alt=""></li>
-												<li class="addLabel"><img src="/img/social/liveshot/ProdigalPostDetail/add_labelIcon.png" alt=""></li>
+												<li class="emjoPop"><img src="/src/img/social/liveshot/ProdigalPostDetail/add_face.png" alt=""></li>
+												<li class="metiondPop"><img src="/src/img/social/liveshot/ProdigalPostDetail/add_@.png" alt=""></li>
+												<li class="addLabel"><img src="/src/img/social/liveshot/ProdigalPostDetail/add_labelIcon.png" alt=""></li>
 											</ul>
 										</div>
 										<div class="replyBox_sendMess">
 											<div>
-												<img src="/img/social/liveshot/ProdigalPostDetail/sendMessButton.png">
+												<img src="/src/img/social/liveshot/ProdigalPostDetail/sendMessButton.png">
 											</div>
 											<span>送出消息</span>
 										</div>
 									</div>
 								</div>
 								<div class="nohas-say">
-									<div class="no-login-icon"><img src="/img/common/noResult.png" alt=""></div>
+									<div class="no-login-icon"><img src="/src/img/common/noResult.png" alt=""></div>
 									<div class="no-login-tips-text">未登入無法留言哦！</div>
 									<div class="clearfloat no-login-tips-btn">
 										<div>馬上登入</div>
@@ -391,31 +391,31 @@
 										<div class="album-list">
 											<div class="album-relative">
 												<div class="album-list-title">女生攝影</div>
-												<div class="album-top-img"><img src="/img/social/easylive/album-recommend-list1.png" alt=""></div>
+												<div class="album-top-img"><img src="/src/img/social/easylive/album-recommend-list1.png" alt=""></div>
 												<div class="album-img-list clearfloat">
-													<img src="/img/social/easylive/myimg.png" alt="">
-													<img src="/img/social/easylive/myimg.png" alt="">
-													<img src="/img/social/easylive/myimg.png" alt="">
-													<img src="/img/social/easylive/myimg.png" alt="">
+													<img src="/src/img/social/easylive/myimg.png" alt="">
+													<img src="/src/img/social/easylive/myimg.png" alt="">
+													<img src="/src/img/social/easylive/myimg.png" alt="">
+													<img src="/src/img/social/easylive/myimg.png" alt="">
 												</div>
 												<div class="album-state clearfloat">
-													<div><img src="/img/social/easylive/album-classification-eye.png" alt="">1234</div>
-													<div><img src="/img/social/easylive/album-classification-mes.png" alt="">1234</div>
-													<div><img src="/img/social/easylive/album-classification-good.png" alt="">1234</div>
-													<div><img src="/img/social/easylive/album-classification-cai.png" alt="">1234</div>
+													<div><img src="/src/img/social/easylive/album-classification-eye.png" alt="">1234</div>
+													<div><img src="/src/img/social/easylive/album-classification-mes.png" alt="">1234</div>
+													<div><img src="/src/img/social/easylive/album-classification-good.png" alt="">1234</div>
+													<div><img src="/src/img/social/easylive/album-classification-cai.png" alt="">1234</div>
 												</div>
 												<div class="album-poster">
 													<div class="laster-look clearfloat">
-														<div class="laster-head"><img src="/img/common/headPic.png" alt=""></div>
+														<div class="laster-head"><img src="/src/img/common/headPic.png" alt=""></div>
 														<div class="laster-text">
-															<div class="laster-text-name">Ada<img src="/img/common/girl.png" alt=""></div>
+															<div class="laster-text-name">Ada<img src="/src/img/common/girl.png" alt=""></div>
 															<div class="laster-text-num"><span>1分鐘</span>前發佈</div>
 														</div>
 													</div>
 												</div>
 												<div class="shadow-box"></div>
 											</div>
-											<div class="bottom-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+											<div class="bottom-shadow"><img src="/src/img/social/label/labeldetail/hobg.png" alt=""></div>
 										</div>
 									<%}%>
 								</script>
@@ -433,7 +433,7 @@
 			<div id="album-collect">
 				<div class="collect-shadow"></div>
 				<div class="collect-box">
-					<img src="/img/social/easylive/close-collect.png" alt="" class="close-collect">
+					<img src="/src/img/social/easylive/close-collect.png" alt="" class="close-collect">
 					<div class="collect-title">採集圖片</div>
 					<div class="collect-inner">
 						<div class="collect-tips">您可以把這些圖片收藏至您的專屬專輯中哦！</div>
@@ -455,33 +455,33 @@
 							<ul class="clearfloat scrollIe scrollOther">
 								<li>
 									<div class="collect-list-div">
-										<img class="collect-list-div-img" src="/img/social/easylive/album-recommend-list1.png" alt="">
+										<img class="collect-list-div-img" src="/src/img/social/easylive/album-recommend-list1.png" alt="">
 										<div class="img-number">12</div>
-										<div class="collect-select"><img src="/img/social/easylive/collect-select.png" alt=""></div>
+										<div class="collect-select"><img src="/src/img/social/easylive/collect-select.png" alt=""></div>
 									</div>
 									<div class="collect-list-div">吃飯啦</div>
 								</li>
 								<li>
 									<div class="collect-list-div">
-										<img class="collect-list-div-img" src="/img/social/easylive/album-recommend-list1.png" alt="">
+										<img class="collect-list-div-img" src="/src/img/social/easylive/album-recommend-list1.png" alt="">
 										<div class="img-number">12</div>
-										<div class="collect-select"><img src="/img/social/easylive/collect-select.png" alt=""></div>
+										<div class="collect-select"><img src="/src/img/social/easylive/collect-select.png" alt=""></div>
 									</div>
 									<div class="collect-list-div">吃飯啦</div>
 								</li>
 								<li>
 									<div class="collect-list-div">
-										<img class="collect-list-div-img" src="/img/social/easylive/album-recommend-list1.png" alt="">
+										<img class="collect-list-div-img" src="/src/img/social/easylive/album-recommend-list1.png" alt="">
 										<div class="img-number">12</div>
-										<div class="collect-select"><img src="/img/social/easylive/collect-select.png" alt=""></div>
+										<div class="collect-select"><img src="/src/img/social/easylive/collect-select.png" alt=""></div>
 									</div>
 									<div class="collect-list-div">吃飯啦</div>
 								</li>
 								<li>
 									<div class="collect-list-div">
-										<img class="collect-list-div-img" src="/img/social/easylive/album-recommend-list1.png" alt="">
+										<img class="collect-list-div-img" src="/src/img/social/easylive/album-recommend-list1.png" alt="">
 										<div class="img-number">12</div>
-										<div class="collect-select"><img src="/img/social/easylive/collect-select.png" alt=""></div>
+										<div class="collect-select"><img src="/src/img/social/easylive/collect-select.png" alt=""></div>
 									</div>
 									<div class="collect-list-div">吃飯啦</div>
 								</li>
@@ -497,7 +497,7 @@
 					<div class="album-gone-box-title">提示信息</div>
 					<div class="album-gone-box-inner">
 						<div class="album-gone-tips clearfloat">
-							<div class="album-tips-img"><img src="/img/common/noResult.png" alt=""></div>
+							<div class="album-tips-img"><img src="/src/img/common/noResult.png" alt=""></div>
 							<div class="album-tips-text">
 								<div>該專輯已不存在！</div>
 								<div>可能原因</div>
@@ -511,7 +511,7 @@
 								<div class="other-album-items">
 									<div class="other-album-items-img">
 										<div class="other-album-shadow">
-											<img src="/img/social/easylive/collect-select.png" alt="">
+											<img src="/src/img/social/easylive/collect-select.png" alt="">
 										</div>
 										<div class="other-album-photo-number">20</div>
 									</div>
@@ -520,7 +520,7 @@
 								<div class="other-album-items">
 									<div class="other-album-items-img">
 										<div class="other-album-shadow">
-											<img src="/img/social/easylive/collect-select.png" alt="">
+											<img src="/src/img/social/easylive/collect-select.png" alt="">
 										</div>
 										<div class="other-album-photo-number">20</div>
 									</div>
@@ -529,7 +529,7 @@
 								<div class="other-album-items">
 									<div class="other-album-items-img">
 										<div class="other-album-shadow">
-											<img src="/img/social/easylive/collect-select.png" alt="">
+											<img src="/src/img/social/easylive/collect-select.png" alt="">
 										</div>
 										<div class="other-album-photo-number">20</div>
 									</div>
@@ -538,7 +538,7 @@
 								<div class="other-album-items">
 									<div class="other-album-items-img">
 										<div class="other-album-shadow">
-											<img src="/img/social/easylive/collect-select.png" alt="">
+											<img src="/src/img/social/easylive/collect-select.png" alt="">
 										</div>
 										<div class="other-album-photo-number">20</div>
 									</div>
@@ -547,7 +547,7 @@
 								<div class="other-album-items">
 									<div class="other-album-items-img">
 										<div class="other-album-shadow">
-											<img src="/img/social/easylive/collect-select.png" alt="">
+											<img src="/src/img/social/easylive/collect-select.png" alt="">
 										</div>
 										<div class="other-album-photo-number">20</div>
 									</div>
@@ -565,15 +565,15 @@
 		</div>
 	</body>
 
-    <script src="/js/plug/yez_js_Reset.js"></script>
-    <script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
-	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
-    <script src="/js/common/header&search&footer/searchBar.js" async></script>
-    <script src="/js/common/header&search&footer/footer.js" async></script>
-	<script src="/js/common/header&search&footer/header.js"></script>
-	<script src="/js/social/common/post_common.js"></script>
-	<script src="/js/social/easylive/easylivealbum/albumclassification/albumlistdetail/albumphotodetail/albumphotodetail.js"></script>
-	<script src="/js/social/easylive/easylivealbum/albumclassification/albumlistdetail/albumphotodetail/albumphotodetail_data.js"></script>
+    <script src="/src/js/plug/yez_js_Reset.js"></script>
+    <script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
+    <script src="/src/js/common/header&search&footer/searchBar.js" async></script>
+    <script src="/src/js/common/header&search&footer/footer.js" async></script>
+	<script src="/src/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/social/common/post_common.js"></script>
+	<script src="/src/js/social/easylive/easylivealbum/albumclassification/albumlistdetail/albumphotodetail/albumphotodetail.js"></script>
+	<script src="/src/js/social/easylive/easylivealbum/albumclassification/albumlistdetail/albumphotodetail/albumphotodetail_data.js"></script>
 
 	<script id="bannerPic" type="text/html">
 		<li>
@@ -583,13 +583,13 @@
 	<!-- <script id="publisherMessBox" type="text/html">
 		<div class="publisherMessBox clearfloat">
 			<div class="messBox_pic">
-				<img src="/img/common/headPic.png">
+				<img src="/src/img/common/headPic.png">
 			</div>
 			<div class="messBox_mess">
 				<div class="messBox_mess_name">
 					<span>思思</span>
 					<div>
-						<img src="/img/common/sex.png">
+						<img src="/src/img/common/sex.png">
 					</div>
 				</div>
 				<div class="messBox_mess_time">
@@ -598,7 +598,7 @@
 				</div>
 			</div>
 			<div class="messBox_logo">
-				<img src="/img/social/easylive/albumlistdetail/photo-detail-logo.png" alt="">
+				<img src="/src/img/social/easylive/albumlistdetail/photo-detail-logo.png" alt="">
 			</div>
 		</div>
 	</script> -->

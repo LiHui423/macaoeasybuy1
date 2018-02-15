@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<title>商店詳細頁(搜索結果頁)</title>
-		<link rel="stylesheet" href="/css/common/bootstrap.min.css">
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/easybuy/moreshops/shopDetails/shopDetails.css">
+		<link rel="stylesheet" href="/src/css/common/bootstrap.min.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/easybuy/moreshops/shopDetails/shopDetails.css">
 		<styl  e>
 			.shopDetails_main{
 				visibility: hidden;
@@ -14,10 +14,10 @@
 			}
 		</style>
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/yez_js_Reset.js"></script>
-		<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
-		<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/yez_js_Reset.js"></script>
+		<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+		<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
 		<script>
 			var fr = new FrameDomain();
 			var shopId = fr.getUrlParam('shopId');
@@ -38,7 +38,7 @@
 				<div class="shopDetails_searchBarLeft">
 					<div class="searchBarLeft_top clearfloat">
 						<div class="searchBarLeft_topLogo">
-							<img src="/img/common/loading_pc_shop.png">
+							<img src="/src/img/common/loading_pc_shop.png">
 						</div>
 						<div class="searchBarLeft_topData clearfloat">
 							<ul>
@@ -67,7 +67,7 @@
 					<div class="shopDetails_searchBox clearfloat">
 						<div class="shopDetails_searchBoxLeft">
 							<span>搜本店</span>
-							<span><img src="/img/easybuy/moreshops/shopDetails_slide.png"></span>
+							<span><img src="/src/img/easybuy/moreshops/shopDetails_slide.png"></span>
 							<div class="shopDetails_searchBoxLeft_slideBox">
 								<ul>
 									<li>搜本店</li>
@@ -102,7 +102,7 @@
 				</div>
 
 				<div class="shopDetails_main_search_null">
-					<div class="search_null_icon"><img src="/img/common/05.png"></div>
+					<div class="search_null_icon"><img src="/src/img/common/05.png"></div>
 					<p>沒有搜索到"<span class="text_tips"></span>"的相關商品哦！</p>
 					<div class="search_null_btn"><a href="">回該店看看</a></div>
 				</div>
@@ -117,34 +117,34 @@
 								<li>最新</li>
 								<li class="sorting_more bottom">
 									<span>心動</span>
-									<span class="sorting_null"><img src="/img/easybuy/moreshops/shopDetails_null.png"></span>
-									<span class="sorting_top"><img src="/img/easybuy/moreshops/shopDetails_top.png"></span>
-									<span class="sorting_bottom"><img src="/img/easybuy/moreshops/shopDetails_bottom.png"></span>
+									<span class="sorting_null"><img src="/src/img/easybuy/moreshops/shopDetails_null.png"></span>
+									<span class="sorting_top"><img src="/src/img/easybuy/moreshops/shopDetails_top.png"></span>
+									<span class="sorting_bottom"><img src="/src/img/easybuy/moreshops/shopDetails_bottom.png"></span>
 								</li>
 								<li class="sorting_more top">
 									<span>價格</span>
-									<span class="sorting_null"><img src="/img/easybuy/moreshops/shopDetails_null.png"></span>
-									<span class="sorting_top"><img src="/img/easybuy/moreshops/shopDetails_top.png"></span>
-									<span class="sorting_bottom"><img src="/img/easybuy/moreshops/shopDetails_bottom.png"></span>
+									<span class="sorting_null"><img src="/src/img/easybuy/moreshops/shopDetails_null.png"></span>
+									<span class="sorting_top"><img src="/src/img/easybuy/moreshops/shopDetails_top.png"></span>
+									<span class="sorting_bottom"><img src="/src/img/easybuy/moreshops/shopDetails_bottom.png"></span>
 								</li>
 							</ul>
 						</div>
 						<div class="shopDetails_main_sorting_chooseRight">
 							<ul>
 								<li>
-									<span><img src="/img/easybuy/shopCart/check.png"></span>
+									<span><img src="/src/img/easybuy/shopCart/check.png"></span>
 									<span>有紅包券</span>
 								</li>
 								<li>
-									<span><img src="/img/easybuy/shopCart/check.png"></span>
+									<span><img src="/src/img/easybuy/shopCart/check.png"></span>
 									<span>有價格券</span>
 								</li>
 								<li>
-									<span><img src="/img/easybuy/shopCart/check.png"></span>
+									<span><img src="/src/img/easybuy/shopCart/check.png"></span>
 									<span>有積分券</span>
 								</li>
 								<li>
-									<span><img src="/img/easybuy/shopCart/check.png"></span>
+									<span><img src="/src/img/easybuy/shopCart/check.png"></span>
 									<span>有其他券</span>
 								</li>
 							</ul>
@@ -157,7 +157,7 @@
 				</div>
 				<!--隨便看看-->
 				<!--<div class="shopDetails_main_seeOther">
-					<div class="shopDetails_main_seeOther_title"><img src="/img/easybuy/moreshops/seeOther_title.png"></div>
+					<div class="shopDetails_main_seeOther_title"><img src="/src/img/easybuy/moreshops/seeOther_title.png"></div>
 				</div>-->
 
 			</div>
@@ -167,10 +167,10 @@
 		<footer></footer>
 	</body>
 
-	<script src="/js/common/header&search&footer/header.js"></script>
-	<script src="/js/common/header&search&footer/footer.js"></script>
-	<script src="/js/easybuy/moreshops/shopDetails/shopDetails_search.js"></script>
-	<script src="/js/easybuy/moreshops/shopDetails/shopDetail_common.js"></script>
+	<script src="/src/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/header&search&footer/footer.js"></script>
+	<script src="/src/js/easybuy/moreshops/shopDetails/shopDetails_search.js"></script>
+	<script src="/src/js/easybuy/moreshops/shopDetails/shopDetail_common.js"></script>
 
 	<!--商品信息模板-->
 	<script id="shop_list_template" type="text/html">
@@ -186,17 +186,17 @@
 					</div>
 					<div class="otherGoods_data clearfloat">
 						<div class="otherGoods_dataEach clearfloat">
-							<span><img src="/img/common/icon/bagIcon_dark.png"></span>
+							<span><img src="/src/img/common/icon/bagIcon_dark.png"></span>
 							<span><%=classList[i].buyNumber%></span>
 						</div>
 						<div class="otherGoods_dataEach clearfloat">
-							<span><img src="/img/common/icon/likeIcon_dark.png"></span>
+							<span><img src="/src/img/common/icon/likeIcon_dark.png"></span>
 							<span><%=classList[i].loveNumber%></span>
 						</div>
 					</div>
 					<%if(classList[i].kucunState == 0){%>
 					<div class="goods_cover">
-						<img src="/img/easybuy/findNew/findNew_sellOut.png">
+						<img src="/src/img/easybuy/findNew/findNew_sellOut.png">
 					</div>
 					<%}%>
 				</div>
@@ -204,7 +204,7 @@
 			<%}%>
 		<%}else if(classList.length == 0 && page == 0){%>
 			<div id="no-search-num">
-				<div><img src="/img/common/05.png" alt=""></div>
+				<div><img src="/src/img/common/05.png" alt=""></div>
 				<p>沒有找到相關商品哦！</p>
 			</div>
 		<%}%>

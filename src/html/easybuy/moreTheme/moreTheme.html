@@ -3,12 +3,12 @@
 	<head>
 		<meta charset="utf-8">
 		<title>更多主題</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/easybuy/moreTheme/moreTheme.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/easybuy/moreTheme/moreTheme.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
-		<script src="/js/common/getData/getData_sinple.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/getData/getData_sinple.js"></script>
 		<script>easyBuy.global.hasNav = false;</script>
 		<!--不需要參數加載進來-->
 		<script>
@@ -23,7 +23,7 @@
 			<div class="searchBox">
 				<div class="searchBox_mainBox">
 					<div class="searchBox_left">
-						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+						<img src="/src/img/common/header&search&footer/easybuy_Logo.png">
 					</div>
 					<div class="searchBox_right" id="searchBox_rightBox"></div>
 				</div>
@@ -51,14 +51,14 @@
 			<!--更多主題主體內容-->
 			<div class="moreThemeBox">
 				<div class="moreThemeCenter">
-					<div class="moreThemeMain_title"><img src="/img/easybuy/moreTheme/moreTheme_title.png"></div>
+					<div class="moreThemeMain_title"><img src="/src/img/easybuy/moreTheme/moreTheme_title.png"></div>
 					<div class="moreThemeMain clearfloat">
 						<div class="moreThemeMain_left">
-							<div class="moreThemeMain_second_title"><span>主題館</span><span><img src="/img/easybuy/moreTheme/ThemeMuseum.png"></span></div>
+							<div class="moreThemeMain_second_title"><span>主題館</span><span><img src="/src/img/easybuy/moreTheme/ThemeMuseum.png"></span></div>
 							<div class="moreThemeMain_left_main" id="theme_museum_box"></div>
 						</div>
 						<div class="moreThemeMain_right">
-							<div class="moreThemeMain_second_title"><span>主題商品</span><span><img src="/img/easybuy/moreTheme/ThemeGood.png"></span></div>
+							<div class="moreThemeMain_second_title"><span>主題商品</span><span><img src="/src/img/easybuy/moreTheme/ThemeGood.png"></span></div>
 							<div class="moreThemeMain_right_main" id="theme_shop_box"></div>
 						</div>
 					</div>
@@ -69,15 +69,15 @@
 		</div>
 		<footer></footer>
 	</body>
-	<script src="/js/plug/yez_js_Reset.js"></script>
-	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
-	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
-	<script src="/js/common/page-header.js"></script>
-	<script src="/js/common/header&search&footer/footer.js"></script>
-	<script src="/js/common/header&search&footer/searchBar.js"></script>
-	<script src="/js/easybuy/moreTheme/moreTheme.js"></script>
-	<script src="/js/easybuy/moreTheme/moreTheme.data.js"></script>
-	<script src="/js/common/clickEvent.js"></script>
+	<script src="/src/js/plug/yez_js_Reset.js"></script>
+	<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/src/js/common/page-header.js"></script>
+	<script src="/src/js/common/header&search&footer/footer.js"></script>
+	<script src="/src/js/common/header&search&footer/searchBar.js"></script>
+	<script src="/src/js/easybuy/moreTheme/moreTheme.js"></script>
+	<script src="/src/js/easybuy/moreTheme/moreTheme.data.js"></script>
+	<script src="/src/js/common/clickEvent.js"></script>
 	<!--主題館-->
 	<script id="theme_museum_template" type="text/html">
 		<%for(var i=0;i<list.length;i++){%>
@@ -87,9 +87,9 @@
 				<div class="moreThemeMain_left_pic">
 					<img src="//wap.macaoeasybuy.com/<%=list[i].smallphoto%>">
 					<div class="moreThemeMain_left_cover">
-						<span><img src="/img/easybuy/moreTheme/title_begin.png"></span>
+						<span><img src="/src/img/easybuy/moreTheme/title_begin.png"></span>
 						<span><%=list[i].title%></span>
-						<span><img src="/img/easybuy/moreTheme/title_end.png"></span>
+						<span><img src="/src/img/easybuy/moreTheme/title_end.png"></span>
 					</div>
 				</div>
 
@@ -99,9 +99,9 @@
 					</div>
 					<div class="moreThemeMain_left_intro_themeIntro">
 						<div class="left_intro_themeIntro_title">
-							<span><img src="/img/easybuy/moreTheme/title_begin.png"></span>
+							<span><img src="/src/img/easybuy/moreTheme/title_begin.png"></span>
 							<span><%=list[i].title%></span>
-							<span><img src="/img/easybuy/moreTheme/title_end.png"></span>
+							<span><img src="/src/img/easybuy/moreTheme/title_end.png"></span>
 						</div>
 						<div class="left_intro_themeIntro_main"><%=list[i].content%></div>
 					</div>
@@ -116,7 +116,7 @@
 
 			</div>
 			<div class="moreThemeMain_left_data">
-				<span><img src="/img/common/icon/labelIcon_dark.png"></span>
+				<span><img src="/src/img/common/icon/labelIcon_dark.png"></span>
 				<span><%=list[i].messGoodsCount%>件商品參與該活動</span>
 			</div>
 			<div class="moreThemeMain_left_goodBox clearfloat">
@@ -128,7 +128,7 @@
 			</div>
 			<div class="moreThemeMain_left_visitor">
 				<div class="moreThemeMain_visitor_title">
-					<span><img src="/img/common/icon/seeIcon_dark.png"></span>
+					<span><img src="/src/img/common/icon/seeIcon_dark.png"></span>
 					<span><%=list[i].userInterestCount%>位宜粉對該活動感興趣</span>
 				</div>
 				<ul class="clearfloat">
@@ -148,7 +148,7 @@
 		<div class="moreThemeMain_rightEach">
 			<div class="moreThemeMain_rightEach_pic" data-id="<%=list[i].id%>">
 				<img src="//wap.macaoeasybuy.com/<%=list[i].pic2%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_600.jpg'">
-				<div class="moreThemeMain_rightEach_picBg"><img src="/img/easybuy/moreTheme/transparent_bg.png"></div>
+				<div class="moreThemeMain_rightEach_picBg"><img src="/src/img/easybuy/moreTheme/transparent_bg.png"></div>
 				<div class="moreThemeMain_rightEach_mess">
 					<p><%=list[i].sptitle%></p>
 					<p>參與主題:<span><%=list[i].title%></span></p>
@@ -172,9 +172,9 @@
 									<span><%=list[i].userComments[j].Name%></span>
 									<span>
 										<%if(list[i].userComments[j].sex == 'Girl'){%>
-											<img src="/img/common/girl.png">
+											<img src="/src/img/common/girl.png">
 										<%}else{%>
-											<img src="/img/common/boy.png">
+											<img src="/src/img/common/boy.png">
 										<%}%>
 									</span>
 								</div>

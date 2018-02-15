@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta http-equiv="Pragma" contect="no-cache">
 		<title>搜索結果(話題)</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/common/search/searchCommon.css">
-		<link rel="stylesheet" href="/css/common/search/search_topic.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/common/search/searchCommon.css">
+		<link rel="stylesheet" href="/src/css/common/search/search_topic.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 	</head>
 	<body>
@@ -17,7 +17,7 @@
 			<div class="searchBox">
 				<div class="searchBox_mainBox">
 					<div class="searchBox_left">
-						<img src="/img/common/header&search&footer/easybuy_Logo.png">
+						<img src="/src/img/common/header&search&footer/easybuy_Logo.png">
 					</div>
 					<div class="searchBox_right" id="searchBox_rightBox"></div>
 				</div>
@@ -51,7 +51,7 @@
 							</div>
 							<div class="search_sortBox_right">
 								<div class="search_sortBoxEach search_sortBoxEach_time">
-									<span>不限時間</span><span><img src="/img/common/icon/downIcon_white.png"></span>
+									<span>不限時間</span><span><img src="/src/img/common/icon/downIcon_white.png"></span>
 									<div class="search_sortBox_right_slide">
 										<ul>
 											<li data-time = "0">不限時間</li>
@@ -61,7 +61,7 @@
 									</div>
 								</div>
 								<div class="search_sortBoxEach search_sortBoxEach_sort">
-									<span>默認排序</span><span><img src="/img/common/icon/downIcon_white.png"></span>
+									<span>默認排序</span><span><img src="/src/img/common/icon/downIcon_white.png"></span>
 									<div class="search_sortBox_right_slide">
 										<ul>
 											<li data-order = "" data-asc = "">默認排序</li>
@@ -77,11 +77,11 @@
 						</div>
 						<div class="search_topic_resultBox">
 							<div class="search_label_noResult">
-								<div class="search_result_nullIcon"><img src="/img/common/05.png"></div>
+								<div class="search_result_nullIcon"><img src="/src/img/common/05.png"></div>
 								<p>沒有搜索到 “<span class=""></span>” 的相關話題哦！</p>
 							</div>
 							<div class="search_topic_resultListBox clearfloat"></div>
-							<div class="loadNow"><img src="/img/common/loadingnow .gif"></div>
+							<div class="loadNow"><img src="/src/img/common/loadingnow .gif"></div>
 							<div class="noMore">~沒有更多內容了哦~</div>
 						</div>
 					</div>
@@ -93,17 +93,17 @@
 		<footer></footer>
 	</body>
 	<!--模板文件和模擬數據-->
-	<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
-	<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
-	<script src="/js/common/search/search_topic/search_topic.data.js"></script>
+	<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
+	<script src="/src/js/common/search/search_topic/search_topic.data.js"></script>
 	<!--頭部文件的js-->
-	<script src="/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/header&search&footer/header.js"></script>
 	<!--搜索框部份的js-->
-	<script src="/js/common/header&search&footer/searchBar.js"></script>
+	<script src="/src/js/common/header&search&footer/searchBar.js"></script>
 	<!--話題搜索結果頁js-->
-	<script src="/js/common/search/search_topic/search_topic.js"></script>
+	<script src="/src/js/common/search/search_topic/search_topic.js"></script>
 
-	<script src="/js/common/header&search&footer/footer.js"></script>
+	<script src="/src/js/common/header&search&footer/footer.js"></script>
 
 	<!--話題搜索結果-->
 	<script type="text/html" id="topicList" data-array = "topicListData">
@@ -137,9 +137,9 @@
 					<%}%>
 					<div class="search_topic_resultEach_data clearfloat">
 						<ul>
-							<li><span><img src="/img/common/eye.png"></span><span><%=list.classList[i].topicSeeNumber%>個粉絲查看</span></li>
-							<li><span><img src="/img/common/icon/messageIcon_dark.png"></span><span><%=list.classList[i].topicreplyCount%>個粉絲回應</span></li>
-							<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list.classList[i].topicLoveNumber%>個粉絲讚好</span></li>
+							<li><span><img src="/src/img/common/eye.png"></span><span><%=list.classList[i].topicSeeNumber%>個粉絲查看</span></li>
+							<li><span><img src="/src/img/common/icon/messageIcon_dark.png"></span><span><%=list.classList[i].topicreplyCount%>個粉絲回應</span></li>
+							<li><span><img src="/src/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list.classList[i].topicLoveNumber%>個粉絲讚好</span></li>
 						</ul>
 					</div>
 				</div>
@@ -162,9 +162,9 @@
 	<script type="text/html" id="topicRightPart" data-array = "topicRightPartData">
 		<div class="search_result_topicEach clearfloat">
 			<div class="search_result_topicEach_top clearfloat">
-				<div class="search_result_topicEach_topLeft"><span><img src="/img/common/search/search_topic_earth.png"></span><span>全球筍貨</span></div>
+				<div class="search_result_topicEach_topLeft"><span><img src="/src/img/common/search/search_topic_earth.png"></span><span>全球筍貨</span></div>
 				<div class="search_result_topicEach_topRight">
-					<a href="/page/social/easylive/easyliveglobalgoods/globalgoods.html"><span>更多筍貨</span><span><img src="/img/common/search/search_topic_more.png"></span></a>
+					<a href="/page/social/easylive/easyliveglobalgoods/globalgoods.html"><span>更多筍貨</span><span><img src="/src/img/common/search/search_topic_more.png"></span></a>
 				</div>
 			</div>
 			<div class="search_result_topicEach_main">
@@ -180,9 +180,9 @@
 				</div>
 				<div class="search_result_topicEach_data clearfloat">
 					<ul>
-						<li><span><img src="/img/common/eye.png"></span><span><%=list.Globalbambooshoots[0].seeNumber%>宜粉查看</span></li>
-						<li><span><img src="/img/common/icon/messageIcon_dark.png"></span><span><%=list.Globalbambooshoots[0].topicCount%>宜粉回應</span></li>
-						<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list.Globalbambooshoots[0].loveNumber%>宜粉讚好</span></li>
+						<li><span><img src="/src/img/common/eye.png"></span><span><%=list.Globalbambooshoots[0].seeNumber%>宜粉查看</span></li>
+						<li><span><img src="/src/img/common/icon/messageIcon_dark.png"></span><span><%=list.Globalbambooshoots[0].topicCount%>宜粉回應</span></li>
+						<li><span><img src="/src/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list.Globalbambooshoots[0].loveNumber%>宜粉讚好</span></li>
 					</ul>
 				</div>
 			</div>
@@ -190,9 +190,9 @@
 
 		<div class="search_result_topicEach clearfloat">
 			<div class="search_result_topicEach_top clearfloat">
-				<div class="search_result_topicEach_topLeft"><span><img src="/img/common/search/search_topic_gift.png"></span><span>福利社</span></div>
+				<div class="search_result_topicEach_topLeft"><span><img src="/src/img/common/search/search_topic_gift.png"></span><span>福利社</span></div>
 				<div class="search_result_topicEach_topRight">
-					<a href="/page/social/easylive/easylivewelfare/easylivewelfare.html"><span>更多福利</span><span><img src="/img/common/search/search_topic_more.png"></span></a>
+					<a href="/page/social/easylive/easylivewelfare/easylivewelfare.html"><span>更多福利</span><span><img src="/src/img/common/search/search_topic_more.png"></span></a>
 				</div>
 			</div>
 			<div class="search_result_topicEach_main">
@@ -208,9 +208,9 @@
 				</div>
 				<div class="search_result_topicEach_data clearfloat">
 					<ul>
-						<li><span><img src="/img/common/eye.png"></span><span><%=list.WelfareAgency[0].seeNumber%>宜粉查看</span></li>
-						<li><span><img src="/img/common/icon/messageIcon_dark.png"></span><span><%=list.WelfareAgency[0].topicCount%>宜粉回應</span></li>
-						<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list.WelfareAgency[0].loveNumber%>宜粉讚好</span></li>
+						<li><span><img src="/src/img/common/eye.png"></span><span><%=list.WelfareAgency[0].seeNumber%>宜粉查看</span></li>
+						<li><span><img src="/src/img/common/icon/messageIcon_dark.png"></span><span><%=list.WelfareAgency[0].topicCount%>宜粉回應</span></li>
+						<li><span><img src="/src/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list.WelfareAgency[0].loveNumber%>宜粉讚好</span></li>
 					</ul>
 				</div>
 			</div>
@@ -218,9 +218,9 @@
 
 		<div class="search_result_topicEach clearfloat">
 			<div class="search_result_topicEach_top clearfloat">
-				<div class="search_result_topicEach_topLeft"><span><img src="/img/common/search/search_topic_chat.png "></span><span>宜買話題</span></div>
+				<div class="search_result_topicEach_topLeft"><span><img src="/src/img/common/search/search_topic_chat.png "></span><span>宜買話題</span></div>
 				<div class="search_result_topicEach_topRight">
-					<a href="/page/social/easylive/easylivebuytopic/easylivebuytopic.html"><span>更多話題</span><span><img src="/img/common/search/search_topic_more.png"></span></a>
+					<a href="/page/social/easylive/easylivebuytopic/easylivebuytopic.html"><span>更多話題</span><span><img src="/src/img/common/search/search_topic_more.png"></span></a>
 				</div>
 			</div>
 			<div class="search_result_topicEach_main">
@@ -236,9 +236,9 @@
 				</div>
 				<div class="search_result_topicEach_data clearfloat">
 					<ul>
-						<li><span><img src="/img/common/eye.png"></span><span><%=list.BuyTopics[0].seeNumber%>宜粉查看</span></li>
-						<li><span><img src="/img/common/icon/messageIcon_dark.png"></span><span><%=list.BuyTopics[0].topicCount%>宜粉回應</span></li>
-						<li><span><img src="/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list.BuyTopics[0].loveNumber%>宜粉讚好</span></li>
+						<li><span><img src="/src/img/common/eye.png"></span><span><%=list.BuyTopics[0].seeNumber%>宜粉查看</span></li>
+						<li><span><img src="/src/img/common/icon/messageIcon_dark.png"></span><span><%=list.BuyTopics[0].topicCount%>宜粉回應</span></li>
+						<li><span><img src="/src/img/common/icon/thumbsupIcon_dark.png"></span><span><%=list.BuyTopics[0].loveNumber%>宜粉讚好</span></li>
 					</ul>
 				</div>
 			</div>

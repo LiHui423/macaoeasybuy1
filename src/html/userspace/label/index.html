@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>用戶空間-標籤列表頁</title>
     <!-- 加载公共CSS -->
-    <link rel="stylesheet" href="/css/common/easyframe/easyframe.css">
-    <link rel="stylesheet" href="/css/common/common.css">
+    <link rel="stylesheet" href="/src/css/common/easyframe/easyframe.css">
+    <link rel="stylesheet" href="/src/css/common/common.css">
     <!-- 加载模块公共CSS -->
-    <link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
+    <link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
     <!-- 加载页面CSS -->
-    <link rel="stylesheet" href="/css/userspace/label/labellist/labellist.css">
+    <link rel="stylesheet" href="/src/css/userspace/label/labellist/labellist.css">
     <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script src="/js/common/frameDomainJSON.js"></script>
+    <script src="/src/js/common/frameDomainJSON.js"></script>
     <script>
         easyBuy.userSpaceGlobal.afterSetIsSelf = function (state) {
             if (state) {
@@ -23,8 +23,8 @@
             }
         }
     </script>
-    <script src="/js/common/getData/getData_needLogin.js"></script>
-    <script src="/js/userspace/common/userspacebg.js" async></script>
+    <script src="/src/js/common/getData/getData_needLogin.js"></script>
+    <script src="/src/js/userspace/common/userspacebg.js" async></script>
     <script>
         easyBuy.userSpaceGlobal.whiteNavName = 'LabelControlNumber';
     </script>
@@ -76,19 +76,19 @@
                                         <p>tips: 新標籤在發佈帖子后才能成功創建哦</p>
                                         <div>
                                             <a href="#">
-                                                <img src="/img/userspace/common/leftmenu/userin_ica4.png" alt="">
+                                                <img src="/src/img/userspace/common/leftmenu/userin_ica4.png" alt="">
                                                 <span>日誌</span>
                                             </a>
                                             <a href="#">
-                                                <img src="/img/userspace/common/leftmenu/userin_ica6.png" alt="">
+                                                <img src="/src/img/userspace/common/leftmenu/userin_ica6.png" alt="">
                                                 <span>生活圈</span>
                                             </a>
                                             <a href="#">
-                                                <img src="/img/userspace/common/leftmenu/userin_ica8.png" alt="">
+                                                <img src="/src/img/userspace/common/leftmenu/userin_ica8.png" alt="">
                                                 <span>二手</span>
                                             </a>
                                             <a href="#">
-                                                <img src="/img/userspace/common/leftmenu/userin_ica7.png" alt="">
+                                                <img src="/src/img/userspace/common/leftmenu/userin_ica7.png" alt="">
                                                 <span>敗家誌</span>
                                             </a>
                                         </div>
@@ -112,17 +112,17 @@
         </div>
         <footer></footer>
     </div>
-    <script src="/js/plug/yez_js_Reset.js"></script>
-    <script src="/js/common/vendor/template-native.js"></script>
-    <script src="/js/userspace/common/userinfo.js" async></script>
-    <script src="/js/userspace/common/leftmenu.js" async></script>
-    <script src="/js/userspace/common/whitemenu.js" async></script>
-    <script src="/js/userspace/common/newspush.js" async></script>
-    <script src="/js/common/header&search&footer/footer.js" async></script>
-    <script src="/js/common/header&search&footer/header.js"></script>
-    <script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
-    <script src="/js/common/ebtemplate-jquery.js"></script>
-    <script src="/js/userspace/label/labellist/labellist.js"></script>
+    <script src="/src/js/plug/yez_js_Reset.js"></script>
+    <script src="/src/js/common/vendor/template-native.js"></script>
+    <script src="/src/js/userspace/common/userinfo.js" async></script>
+    <script src="/src/js/userspace/common/leftmenu.js" async></script>
+    <script src="/src/js/userspace/common/whitemenu.js" async></script>
+    <script src="/src/js/userspace/common/newspush.js" async></script>
+    <script src="/src/js/common/header&search&footer/footer.js" async></script>
+    <script src="/src/js/common/header&search&footer/header.js"></script>
+    <script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+    <script src="/src/js/common/ebtemplate-jquery.js"></script>
+    <script src="/src/js/userspace/label/labellist/labellist.js"></script>
     <script id="queryUserSpaceLabel" type="text/html" data-eb-template>
         <%for(var i=0, item; (item = content[i++]);) {%>
             <div class="label-item">
@@ -136,7 +136,7 @@
                                 <%=item.labelName%>
                             </div>
                             <div class="label-create-time">
-                                <img src="/img/social/label/labelranklist/clock.png" alt="">
+                                <img src="/src/img/social/label/labelranklist/clock.png" alt="">
                                 <%=item.uptime%>前創建於
                                     <span>
                                         <%=item.labelType%>
@@ -154,10 +154,10 @@
                             </div>
                             <div class="label-num clearfloat">
                                 <div>
-                                    <img src="/img/common/eye.png" alt="">
+                                    <img src="/src/img/common/eye.png" alt="">
                                     <%=formatNum(item.seeCount)%>宜粉查看過</div>
                                 <div>
-                                    <img src="/img/common/good.png" alt="">
+                                    <img src="/src/img/common/good.png" alt="">
                                     <%=formatNum(item.loveCount)%>宜粉讃好</div>
                             </div>
                             <div class="label-post">
@@ -165,17 +165,17 @@
                                 <ul>
                                     <%if(item.postList.length === 0 || item.postList[0] === null) {%>
                                         <li class="label-none">
-                                            <img src="/img/userspace/label/post-num.png" alt="">沒有帖子使用該標籤哦，您要搶先？</li>
+                                            <img src="/src/img/userspace/label/post-num.png" alt="">沒有帖子使用該標籤哦，您要搶先？</li>
                                         <%} else {
                                     for(var j=0, li; (li = item.postList[j++]);) {
                                         if(li.type === 0) {%>
                                             <li class="label-master">
-                                                <img src="/img/userspace/label/label-master.png" alt="">
+                                                <img src="/src/img/userspace/label/label-master.png" alt="">
                                                 <%=li.postContent%>
                                             </li>
                                             <%} else {%>
                                                 <li class="label-none">
-                                                    <img src="/img/userspace/label/post-num.png" alt="">
+                                                    <img src="/src/img/userspace/label/post-num.png" alt="">
                                                     <%li.postContent%>
                                                 </li>
                                                 <%}
@@ -197,14 +197,14 @@
                 <div class="post-content">
                     <div class="title clearfloat">
                         <div class="head">
-                            <img src="/img/common/headPic_noBorder.png" alt="">
+                            <img src="/src/img/common/headPic_noBorder.png" alt="">
                         </div>
                         <div class="post-state">
                             <div class="post-title">
                                 <%=item.postName%>
                             </div>
                             <div class="post-time-state">
-                                <img src="/img/social/label/labelranklist/clock.png" alt="">
+                                <img src="/src/img/social/label/labelranklist/clock.png" alt="">
                                 <span class="time">
                                     <%=item.uptime%>
                                 </span>前發佈於
@@ -219,20 +219,20 @@
                     </div>
                     <ul class="post-num clearfloat">
                         <li>
-                            <img src="/img/common/eye.png" alt="">
+                            <img src="/src/img/common/eye.png" alt="">
                             <%=formatNum(item.postSeeNumber)%>
                         </li>
                         <li>
-                            <img src="/img/common/message.png" alt="">
+                            <img src="/src/img/common/message.png" alt="">
                             <%=formatNum(item.replyCount)%>
                         </li>
                         <li>
-                            <img src="/img/common/good.png" alt="">
+                            <img src="/src/img/common/good.png" alt="">
                             <%=formatNum(item.postLoveNumber)%>
                         </li>
                     </ul>
                     <div class="post-label">
-                        <img src="/img/userspace/label/arrow-g.png" alt="" class="arrow">
+                        <img src="/src/img/userspace/label/arrow-g.png" alt="" class="arrow">
                         <ul>
                             <%for(var j = 0; label = item.labels[j++];) {%>
                                 <li>

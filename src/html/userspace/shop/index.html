@@ -6,14 +6,14 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv="Pragma" contect="no-cache">
 		<title>關注店鋪</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
-		<link rel="stylesheet" href="/css/userspace/userFocusShop/userFocusShop.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/src/css/userspace/userFocusShop/userFocusShop.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
-		<script src="/js/common/getData/getData_needLogin.js"></script>
-		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/getData/getData_needLogin.js"></script>
+		<script src="/src/js/userspace/common/userspacebg.js" async></script>
 		<script>
 			easyBuy.userSpaceGlobal.whiteNavName = 'AttentionShopNumber';
 		</script>
@@ -44,7 +44,7 @@
 		</div>
 		<!--關注商店的彈框-->
 		<div class="focusShop" id="focusShop">
-			<p><span><img src="/img/common/icon/focusShop_icon.png"></span><span>已成功關注該商店！</span></p>
+			<p><span><img src="/src/img/common/icon/focusShop_icon.png"></span><span>已成功關注該商店！</span></p>
 			<!--<p>已獲得積分獎勵</p>
 			<p>+5分</p>-->
 		</div>
@@ -53,7 +53,7 @@
 			<div class="cancelThumbsPop_title">取消關注商店</div>
 			<div class="cancelThumbsPop_Main">
 				<div class="cancelThumbsPop_top">
-					<img src="/img/common/02.png">
+					<img src="/src/img/common/02.png">
 				</div>
 				<div class="cancelThumbsPop_bottom">
 					<p>不再關注該商店了嗎？</p>
@@ -67,11 +67,11 @@
 		</div>
 		<!--商店結業的彈窗-->
 		<div class="cancelPop cancelPop_end">
-			<div class="cancelPop_close"><img src="/img/common/icon/cancelCloseIcon.png"></div>
+			<div class="cancelPop_close"><img src="/src/img/common/icon/cancelCloseIcon.png"></div>
 			<div class="cancelThumbsPop_title">該商店已結業</div>
 			<div class="cancelThumbsPop_Main">
 				<div class="cancelThumbsPop_top">
-					<img src="/img/common/04.png">
+					<img src="/src/img/common/04.png">
 				</div>
 				<div class="cancelThumbsPop_bottom">
 					<p>可能原因：</p>
@@ -85,16 +85,16 @@
 			</div>
 		</div>
 
-		<script src="/js/plug/yez_js_Reset.js"></script>
-		<script src="/js/common/vendor/template-native.js"></script>
-		<script src="/js/userspace/common/userinfo.js" async></script>
-		<script src="/js/userspace/common/leftmenu.js" async></script>
-		<script src="/js/userspace/common/whitemenu.js" async></script>
-		<script src="/js/userspace/common/newspush.js" async></script>
-		<script src="/js/common/header&search&footer/footer.js" async></script>
-		<script src="/js/common/header&search&footer/header.js"></script>
-		<script src="/js/userspace/userFocusShop/userFocusShop.js"></script>
-		<script src="/js/userspace/userFocusShop/userFocusShop.data.js"></script>
+		<script src="/src/js/plug/yez_js_Reset.js"></script>
+		<script src="/src/js/common/vendor/template-native.js"></script>
+		<script src="/src/js/userspace/common/userinfo.js" async></script>
+		<script src="/src/js/userspace/common/leftmenu.js" async></script>
+		<script src="/src/js/userspace/common/whitemenu.js" async></script>
+		<script src="/src/js/userspace/common/newspush.js" async></script>
+		<script src="/src/js/common/header&search&footer/footer.js" async></script>
+		<script src="/src/js/common/header&search&footer/header.js"></script>
+		<script src="/src/js/userspace/userFocusShop/userFocusShop.js"></script>
+		<script src="/src/js/userspace/userFocusShop/userFocusShop.data.js"></script>
 		<!--關注的商店的模板-->
 		<script type="text/html" id="focusShop_template" data-array="focusShopData" data-type="template">
 			<%if(shop.length != 0){%>
@@ -110,13 +110,13 @@
 							<%=shop[i].shopName%>
 						</div>
 						<div class="focusShopEach_intro clearfloat">
-							<span><img src="/img/userspace/userFocusShop/focus_commaLeft.png"></span>
+							<span><img src="/src/img/userspace/userFocusShop/focus_commaLeft.png"></span>
 							<%if(shop[i].des == ""){%>
 							<span>店主很懶還沒有為商店寫介紹哦</span>
 							<%}else{%>
 							<span><%=shop[i].des%></span>
 							<%}%>
-							<span><img src="/img/userspace/userFocusShop/focus_commaRight.png"></span>
+							<span><img src="/src/img/userspace/userFocusShop/focus_commaRight.png"></span>
 						</div>
 						<div class="focusShopEach_num clearfloat">
 							<div class="focusShopEach_numEach">
@@ -128,7 +128,7 @@
 						</div>
 						<div class="focusShopEach_seeMore">
 							<div class="focusShopEach_seeMore_btn">
-								<span>展開更多信息</span><span><img src="/img/userspace/userFocusShop/focus_slide.png"></span>
+								<span>展開更多信息</span><span><img src="/src/img/userspace/userFocusShop/focus_slide.png"></span>
 							</div>
 							<div class="focusShopEach_seeMore_slide">
 								<div class="focusShopEach_seeMore_mess">
@@ -147,19 +147,19 @@
 										<div class="focusShopEach_seeMore_messEach_title">商家評級</div>
 										<div class="focusShopEach_seeMore_messEach_main">
 											<%if(shop[i].isCredit == "1"){%>
-											<span><img src="/img/userspace/userFocusShop/focus_comment-6.png"></span>
+											<span><img src="/src/img/userspace/userFocusShop/focus_comment-6.png"></span>
 											<%}%>
 											<%if(shop[i].isGuarant == "1"){%>
-											<span><img src="/img/userspace/userFocusShop/focus_comment-2.png"></span>
+											<span><img src="/src/img/userspace/userFocusShop/focus_comment-2.png"></span>
 											<%}%>
 											<%if(shop[i].isHeart == "1"){%>
-											<span><img src="/img/userspace/userFocusShop/focus_comment-1.png"></span>
+											<span><img src="/src/img/userspace/userFocusShop/focus_comment-1.png"></span>
 											<%}%>
 											<%if(shop[i].isManner == "1"){%>
-											<span><img src="/img/userspace/userFocusShop/focus_comment-3.png"></span>
+											<span><img src="/src/img/userspace/userFocusShop/focus_comment-3.png"></span>
 											<%}%>
 											<%if(shop[i].isReal == "1"){%>
-											<span><img src="/img/userspace/userFocusShop/focus_comment-4.png"></span>
+											<span><img src="/src/img/userspace/userFocusShop/focus_comment-4.png"></span>
 											<%}%>
 										</div>
 									</div>
@@ -210,17 +210,17 @@
 						</div>
 					</div>
 					<div class="focusShopEach_btnBox clearfloat">
-						<div class="focusShopEach_btn focusShopEach_btn_intoshop"><span><img src="/img/userspace/userFocusShop/focus_shopIcon.png"></span><span>進店看看</span></div>
+						<div class="focusShopEach_btn focusShopEach_btn_intoshop"><span><img src="/src/img/userspace/userFocusShop/focus_shopIcon.png"></span><span>進店看看</span></div>
 						<%if(shop[i].isMark == 1){%>
 						<div class="focusShopEach_btn_focus_box cancel">
 						<%}else{%>
 						<div class="focusShopEach_btn_focus_box focus">
 						<%}%>
 								<div class="focusShopEach_btn focusShopEach_btn_focus">
-									<div><span><img src="/img/userspace/userFocusShop/focus_addIcon.png"></span><span>關注商店</span></div>
+									<div><span><img src="/src/img/userspace/userFocusShop/focus_addIcon.png"></span><span>關注商店</span></div>
 								</div>
 								<div class="focusShopEach_btn focusShopEach_btn_focus">
-									<div><span><img src="/img/userspace/userFocusShop/cancelFocusIcon.png"></span><span>已關注</span></div>
+									<div><span><img src="/src/img/userspace/userFocusShop/cancelFocusIcon.png"></span><span>已關注</span></div>
 								</div>
 							</div>
 						</div>
@@ -228,7 +228,7 @@
 					<%}%>
 			<%}else if(shop.length == 0 && page == 0){%>
 				<div class="no_more_result">
-					<div><img src="/img/common/05.png" alt=""></div>
+					<div><img src="/src/img/common/05.png" alt=""></div>
 					<div>該欄目沒有任何內容哦！</div>
 				</div>
 			<%}%>

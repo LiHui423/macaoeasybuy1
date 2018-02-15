@@ -4,15 +4,15 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>用戶空間-個人信息查看-人氣</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
-		<link rel="stylesheet" href="/css/userspace/personalinfo/infoview/sentiment/sentiment.css">
-		<link rel="stylesheet" href="/css/common/dateRange.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/src/css/userspace/personalinfo/infoview/sentiment/sentiment.css">
+		<link rel="stylesheet" href="/src/css/common/dateRange.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
-		<script src="/js/common/getData/getData_needLogin.js"></script>
-		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/getData/getData_needLogin.js"></script>
+		<script src="/src/js/userspace/common/userspacebg.js" async></script>
 		<!--只有自己看自己，不需要參數-->
 	</head>
 	<body>
@@ -25,23 +25,23 @@
 					<div class="clearfloat">
 						<div class="white-container">
 							<ul id="white-menu">
-								<li><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica13.png" alt=""></div><span>信息</span><span>3/10</span></a></li>
-								<li><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica14.png" alt=""></div><span>興趣</span><span>10/11</span></a></li>
-								<li><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica15.png" alt=""></div><span>技能</span><span>6/6</span></a></li>
-								<li id="sentiment" class="select"><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica16.png" alt=""></div><span>人氣</span><span>248/1000</span></a></li>
-								<li id="growth"><a href=""><div><img src="/img/userspace/common/leftmenu/userin_ica17.png" alt=""></div><span>成長</span><span>LV2</span></a></li>
+								<li><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica13.png" alt=""></div><span>信息</span><span>3/10</span></a></li>
+								<li><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica14.png" alt=""></div><span>興趣</span><span>10/11</span></a></li>
+								<li><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica15.png" alt=""></div><span>技能</span><span>6/6</span></a></li>
+								<li id="sentiment" class="select"><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica16.png" alt=""></div><span>人氣</span><span>248/1000</span></a></li>
+								<li id="growth"><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica17.png" alt=""></div><span>成長</span><span>LV2</span></a></li>
 							</ul>
 						</div>
 						<div id="userspace-content">
 							<!--這裡是內容-->
 								<div class="content-title clearfloat">
-									<div class="icon"><img src="/img/userspace/personalinfo/growth-icon01.png" alt=""></div>
+									<div class="icon"><img src="/src/img/userspace/personalinfo/growth-icon01.png" alt=""></div>
 									<span>今日變化</span>
 									<div class="question">
 										<div class="question-btn">
-											<img src="/img/userspace/personalinfo/question-mark.png" alt="">
+											<img src="/src/img/userspace/personalinfo/question-mark.png" alt="">
 											<div class="question-box clearfloat">
-												<img src="/img/userspace/personalinfo/arrow-l.png" alt="" class="arrow">
+												<img src="/src/img/userspace/personalinfo/arrow-l.png" alt="" class="arrow">
 												<div class="question-innerbox">
 													<div>
 														<span class="title">凈增粉絲數：</span>
@@ -72,35 +72,35 @@
 								<div class="content-box" id="today-change">
 									<ul class="clearfloat">
 										<li class="fans-add" id="fans-add">
-											<div class="title"><img src="/img/userspace/personalinfo/sentiment-icon01.png" alt="">凈增粉絲數</div>
+											<div class="title"><img src="/src/img/userspace/personalinfo/sentiment-icon01.png" alt="">凈增粉絲數</div>
 											<div class="num">&nbsp;</div>
 											<div class="compare prev-day">較前日<span>&nbsp;</span></div>
 											<div class="compare prev-week">較上週<span>&nbsp;</span></div>
 											<div class="compare prev-month">較上月<span>&nbsp;</span></div>
 										</li>
 										<li class="post-read" id="post-read">
-											<div class="title"><img src="/img/userspace/personalinfo/sentiment-icon02.png" alt="">帖子閱讀數</div>
+											<div class="title"><img src="/src/img/userspace/personalinfo/sentiment-icon02.png" alt="">帖子閱讀數</div>
 											<div class="num">&nbsp;</div>
 											<div class="compare prev-day">較前日<span>&nbsp;</span></div>
 											<div class="compare prev-week">較上週<span>&nbsp;</span></div>
 											<div class="compare prev-month">較上月<span>&nbsp;</span></div>
 										</li>
 										<li class="post-good" id="post-good">
-											<div class="title"><img src="/img/userspace/personalinfo/sentiment-icon03.png" alt="">帖子讃好數</div>
+											<div class="title"><img src="/src/img/userspace/personalinfo/sentiment-icon03.png" alt="">帖子讃好數</div>
 											<div class="num">&nbsp;</div>
 											<div class="compare prev-day">較前日<span>&nbsp;</span></div>
 											<div class="compare prev-week">較上週<span>&nbsp;</span></div>
 											<div class="compare prev-month">較上月<span>&nbsp;</span></div>
 										</li>
 										<li class="users-interactive" id="users-interactive">
-											<div class="title"><img src="/img/userspace/personalinfo/sentiment-icon04.png" alt="">互動數</div>
+											<div class="title"><img src="/src/img/userspace/personalinfo/sentiment-icon04.png" alt="">互動數</div>
 											<div class="num">&nbsp;</div>
 											<div class="compare prev-day">較前日<span>&nbsp;</span></div>
 											<div class="compare prev-week">較上週<span>&nbsp;</span></div>
 											<div class="compare prev-month">較上月<span>&nbsp;</span></div>
 										</li>
 										<li class="users-browse" id="users-browse">
-											<div class="title"><img src="/img/userspace/personalinfo/sentiment-icon05.png" alt="">空間瀏覽量</div>
+											<div class="title"><img src="/src/img/userspace/personalinfo/sentiment-icon05.png" alt="">空間瀏覽量</div>
 											<div class="num">&nbsp;</div>
 											<div class="compare prev-day">較前日<span>&nbsp;</span></div>
 											<div class="compare prev-week">較上週<span>&nbsp;</span></div>
@@ -109,13 +109,13 @@
 									</ul>
 								</div>
 								<div class="content-title clearfloat">
-									<div class="icon"><img src="/img/userspace/personalinfo/sentiment-big02.png" alt=""></div>
+									<div class="icon"><img src="/src/img/userspace/personalinfo/sentiment-big02.png" alt=""></div>
 									<span>粉絲變化</span>
 									<div class="question">
 										<div class="question-btn">
-											<img src="/img/userspace/personalinfo/question-mark.png" alt="">
+											<img src="/src/img/userspace/personalinfo/question-mark.png" alt="">
 											<div class="question-box clearfloat">
-												<img src="/img/userspace/personalinfo/arrow-l.png" alt="" class="arrow">
+												<img src="/src/img/userspace/personalinfo/arrow-l.png" alt="" class="arrow">
 												<div class="question-innerbox">
 													<div>
 														<span class="title">新增粉絲數：</span>
@@ -144,13 +144,13 @@
 									</ul>
 								</div>
 								<div class="content-title clearfloat">
-									<div class="icon"><img src="/img/userspace/personalinfo/sentiment-big03.png" alt=""></div>
+									<div class="icon"><img src="/src/img/userspace/personalinfo/sentiment-big03.png" alt=""></div>
 									<span>互動變化</span>
 									<div class="question">
 										<div class="question-btn">
-											<img src="/img/userspace/personalinfo/question-mark.png" alt="">
+											<img src="/src/img/userspace/personalinfo/question-mark.png" alt="">
 											<div class="question-box clearfloat">
-												<img src="/img/userspace/personalinfo/arrow-l.png" alt="" class="arrow">
+												<img src="/src/img/userspace/personalinfo/arrow-l.png" alt="" class="arrow">
 												<div class="question-innerbox">
 													<div>
 														<span class="title">閱讀數：</span>
@@ -179,13 +179,13 @@
 									</ul>
 								</div>
 								<div class="content-title clearfloat">
-									<div class="icon"><img src="/img/userspace/personalinfo/sentiment-big04.png" alt=""></div>
+									<div class="icon"><img src="/src/img/userspace/personalinfo/sentiment-big04.png" alt=""></div>
 									<span>我的空間</span>
 									<div class="question">
 										<div class="question-btn">
-											<img src="/img/userspace/personalinfo/question-mark.png" alt="">
+											<img src="/src/img/userspace/personalinfo/question-mark.png" alt="">
 											<div class="question-box clearfloat">
-												<img src="/img/userspace/personalinfo/arrow-l.png" alt="" class="arrow">
+												<img src="/src/img/userspace/personalinfo/arrow-l.png" alt="" class="arrow">
 												<div class="question-innerbox">
 													<div>
 														<span class="title">空間瀏覽量：</span>
@@ -214,13 +214,13 @@
 									</ul>
 								</div>
 								<div class="content-title clearfloat">
-									<div class="icon"><img src="/img/userspace/personalinfo/sentiment-big05.png" alt=""></div>
+									<div class="icon"><img src="/src/img/userspace/personalinfo/sentiment-big05.png" alt=""></div>
 									<span>我的發佈</span>
 									<div class="question">
 										<div class="question-btn">
-											<img src="/img/userspace/personalinfo/question-mark.png" alt="">
+											<img src="/src/img/userspace/personalinfo/question-mark.png" alt="">
 											<div class="question-box clearfloat">
-												<img src="/img/userspace/personalinfo/arrow-l.png" alt="" class="arrow">
+												<img src="/src/img/userspace/personalinfo/arrow-l.png" alt="" class="arrow">
 												<div class="question-innerbox">
 													<div>
 														<span class="title">帖子發佈數：</span>
@@ -255,13 +255,13 @@
 			</div>
 			<footer></footer>
 		</div>
-		<script src="/js/plug/yez_js_Reset.js"></script>
-		<script src="/js/userspace/common/userinfo.js" async></script>
-		<script src="/js/userspace/common/leftmenu.js" async></script>
-		<script src="/js/common/header&search&footer/footer.js" async></script>
-		<script src="/js/common/header&search&footer/header.js"></script>
-		<script src="/js/plug/linegraph.js"></script>
-		<script src="/js/plug/dateRange.js"></script>
-		<script src="/js/userspace/personalinfo/infoview/sentiment/sentiment.js"></script>
+		<script src="/src/js/plug/yez_js_Reset.js"></script>
+		<script src="/src/js/userspace/common/userinfo.js" async></script>
+		<script src="/src/js/userspace/common/leftmenu.js" async></script>
+		<script src="/src/js/common/header&search&footer/footer.js" async></script>
+		<script src="/src/js/common/header&search&footer/header.js"></script>
+		<script src="/src/js/plug/linegraph.js"></script>
+		<script src="/src/js/plug/dateRange.js"></script>
+		<script src="/src/js/userspace/personalinfo/infoview/sentiment/sentiment.js"></script>
 	</body>
 </html>

@@ -4,14 +4,14 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>標籤-詳細頁</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/header&search&footer.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/social/label/labeldetail/labeldetail.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/header&search&footer.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/social/label/labeldetail/labeldetail.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
-		<script src="/js/plug/yez_js_Reset.js"></script>
-		<script src="/js/common/getData/getData_sinple.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/plug/yez_js_Reset.js"></script>
+		<script src="/src/js/common/getData/getData_sinple.js"></script>
 		<script>easyBuy.global.hasNav = false;</script>
 		<!--不需要參數加載進來-->
 
@@ -22,10 +22,10 @@
 			var postId=location.href.split('=')[1];
 			var isLogin = false;
 		</script>
-		<script src="/js/common/vendor/art-template-3.1.0.min.js"></script>
-		<script src="/js/common/vendor-extend/atr-template.extend.js"></script>
+		<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+		<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
 
-		<script src="/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
+		<script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 
 	</head>
 	<body>
@@ -36,7 +36,7 @@
 				<div class="searchBox">
 					<div class="searchBox_mainBox">
 						<div class="searchBox_left">
-							<img src="/img/common/header&search&footer/easybuy_Logo.png">
+							<img src="/src/img/common/header&search&footer/easybuy_Logo.png">
 						</div>
 						<div class="searchBox_right" id="searchBox_rightBox"></div>
 					</div>
@@ -74,7 +74,7 @@
 								</div>
 							</div>
 							<div class="introduce-article" id="introduce-article"></div>
-							<div class="labeldetail_triangle"><img src="/img/social/label/labeldetail/liveshotdetail_triangle.png" alt=""></div>
+							<div class="labeldetail_triangle"><img src="/src/img/social/label/labeldetail/liveshotdetail_triangle.png" alt=""></div>
 						</div>
 						<!--標籤創始人-->
 						<div class="founder border">
@@ -99,7 +99,7 @@
 							<div class="founder-other-btn" id="founder-other-btn">
 								<a href="#"><span>&nbsp;</span>創建の標籤</a>
 							</div>
-							<div class="labeldetail_triangle"><img src="/img/social/label/labeldetail/liveshotdetail_triangle_up.png" alt=""></div>
+							<div class="labeldetail_triangle"><img src="/src/img/social/label/labeldetail/liveshotdetail_triangle_up.png" alt=""></div>
 						</div>
 						<!--最近宜粉查看-->
 						<div class="recent border">
@@ -145,7 +145,7 @@
 						<!--標籤封面圖-->
 						<div class="cover border" id="label-cover">
 							<div id="label-btn" class="clearfloat">
-								<div id="other-use-post"><img src="/img/userspace/userspace_postDetails/icon/writing.png" alt="">用此標籤發佈</div>
+								<div id="other-use-post"><img src="/src/img/userspace/userspace_postDetails/icon/writing.png" alt="">用此標籤發佈</div>
 							</div>
 						</div>
 						<!--發帖編輯框-->
@@ -153,15 +153,15 @@
 							<div>&nbsp;</div>
 							<ul>
 								<li>
-									<img src="/img/social/label/labeldetail/eye.png" alt="">
+									<img src="/src/img/social/label/labeldetail/eye.png" alt="">
 									<span id="label-look-number">&nbsp;宜粉查看</span>
 								</li>
 								<li>
-									<img src="/img/social/label/labeldetail/good.png" alt="">
+									<img src="/src/img/social/label/labeldetail/good.png" alt="">
 									<span id="label-love-number">&nbsp;宜粉讃好</span>
 								</li>
 								<li>
-									<img src="/img/social/label/labeldetail/clock.png" alt="">
+									<img src="/src/img/social/label/labeldetail/clock.png" alt="">
 									<span id="label-update-time">創建於&nbsp;</span>
 								</li>
 							</ul>
@@ -209,21 +209,21 @@
 		<!--點讚取消點讚-->
 		<div id="praise-post">
 			<div class="praise on-middle yez-tips-box click">
-				<div><img src="/img/common/tips-box/good-icon.png" alt="">謝謝您的鼓勵哦！</div>
+				<div><img src="/src/img/common/tips-box/good-icon.png" alt="">謝謝您的鼓勵哦！</div>
 			</div>
 			<div class="praise on-middle yez-tips-box cancel">
-				<div><img src="/img/common/tips-box/good-icon1.png" alt="">您已取消讃好。</div>
+				<div><img src="/src/img/common/tips-box/good-icon1.png" alt="">您已取消讃好。</div>
 			</div>
 		</div>
 		<!--關注-->
-		<div id="user-info-success"><img src="/img/social/label/labeldetail/fancurr.png" alt="">已成功關注該宜粉！</div>
+		<div id="user-info-success"><img src="/src/img/social/label/labeldetail/fancurr.png" alt="">已成功關注該宜粉！</div>
 		<!--取消關注-->
 		<div id="user-info-focus-box">
 			<div class="shadow"></div>
 			<div class="cancel-tips-box">
 				<div class="cancels-title">取消關注好友</div>
 				<div>
-					<div class="cancels-xc"><img src="/img/common/02.png" alt=""></div>
+					<div class="cancels-xc"><img src="/src/img/common/02.png" alt=""></div>
 					<div class="cancel-tips-text">不再關注該好友了嗎？</div>
 					<div class="clearfloat sure-button">
 						<div class="sure-cancel">確認</div>
@@ -236,32 +236,32 @@
 		<div id="release">
 			<div class="release-shadow"></div>
 			<div class="release-box">
-				<img src="/img/common/tips-box/img-upload-close.png" alt="" class="cancel-btn">
+				<img src="/src/img/common/tips-box/img-upload-close.png" alt="" class="cancel-btn">
 				<div class="release-title">使用標籤<span></span>發佈:</div>
 				<ul class="clearfloat">
 					<li class="clearfloat">
-						<div><img src="/img/userspace/common/leftmenu/userin_ica4.png" alt=""></div>
+						<div><img src="/src/img/userspace/common/leftmenu/userin_ica4.png" alt=""></div>
 						<div>
 							<div>日誌</div>
 							<div>我要發佈我的生活文</div>
 						</div>
 					</li>
 					<li class="clearfloat">
-						<div><img src="/img/userspace/common/leftmenu/userin_ica6.png" alt=""></div>
+						<div><img src="/src/img/userspace/common/leftmenu/userin_ica6.png" alt=""></div>
 						<div>
 							<div>生活圈</div>
 							<div>我要發佈圈中話題</div>
 						</div>
 					</li>
 					<li class="clearfloat">
-						<div><img src="/img/userspace/common/leftmenu/userin_ica8.png" alt=""></div>
+						<div><img src="/src/img/userspace/common/leftmenu/userin_ica8.png" alt=""></div>
 						<div>
 							<div>二手</div>
 							<div>我要為閒置物找到好主人</div>
 						</div>
 					</li>
 					<li class="clearfloat">
-						<div><img src="/img/userspace/common/leftmenu/userin_ica7.png" alt=""></div>
+						<div><img src="/src/img/userspace/common/leftmenu/userin_ica7.png" alt=""></div>
 						<div>
 							<div>敗家誌</div>
 							<div>我要發佈我的嗮單</div>
@@ -270,12 +270,12 @@
 				</ul>
 			</div>
 		</div>
-		<script src="/js/common/page-header.js"></script>
-		<script src="/js/common/header&search&footer/searchBar.js"></script>
-		<script src="/js/common/header&search&footer/footer.js"></script>
-		<script src="/js/social/label/labeldetail/labeldetail.js"></script>
-		<script src="/js/social/label/labeldetail/labeldetail_data.js"></script>
-		<script src="/js/common/clickEvent.js"></script>
+		<script src="/src/js/common/page-header.js"></script>
+		<script src="/src/js/common/header&search&footer/searchBar.js"></script>
+		<script src="/src/js/common/header&search&footer/footer.js"></script>
+		<script src="/src/js/social/label/labeldetail/labeldetail.js"></script>
+		<script src="/src/js/social/label/labeldetail/labeldetail_data.js"></script>
+		<script src="/src/js/common/clickEvent.js"></script>
 		<!--排行榜-->
 		<script id="level-template" type="text/html">
 			<li class="chart-card-data-list" data-id="<%=id%>">
@@ -321,9 +321,9 @@
 								<div class="laster-text-name">
 									<span><%=classList[i].postuserName%></span>
 									<%if(classList[i].postusersex == 'Girl'){%>
-										<img src="/img/common/girl.png" alt="">
+										<img src="/src/img/common/girl.png" alt="">
 									<%}else{%>
-										<img src="/img/common/boy.png" alt="">
+										<img src="/src/img/common/boy.png" alt="">
 									<%}%>
 								</div>
 								<div class="laster-text-num"><span><%=classList[i].postTimeDiff%></span>前發佈</div>
@@ -332,13 +332,13 @@
 					</div>
 					<div class="shadow-box"></div>
 				</div>
-				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+				<div class="post-shadow"><img src="/src/img/social/label/labeldetail/hobg.png" alt=""></div>
 			</div>
 			<%}%>
 			<%}else if(classList.length == 0 && page == 0){%>
 			<div class="no-post-list">
 				<div>
-					<img src="/img/common/05.png" alt="">
+					<img src="/src/img/common/05.png" alt="">
 				</div>
 				<span>目前沒有任何內容哦!</span>
 			</div>
@@ -357,9 +357,9 @@
 								<div class="laster-text-name">
 									<span><%=classList[i].postuserName%></span>
 									<%if(classList[i].postusersex == 'Girl'){%>
-										<img src="/img/common/girl.png" alt="">
+										<img src="/src/img/common/girl.png" alt="">
 									<%}else{%>
-										<img src="/img/common/boy.png" alt="">
+										<img src="/src/img/common/boy.png" alt="">
 									<%}%>
 								</div>
 								<div class="laster-text-num"><span><%=classList[i].postTimeDiff%></span>前發佈</div>
@@ -383,13 +383,13 @@
 					</div>
 					<div class="shadow-box"></div>
 				</div>
-				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+				<div class="post-shadow"><img src="/src/img/social/label/labeldetail/hobg.png" alt=""></div>
 			</div>
 			<%}%>
 			<%}else if(classList.length == 0 && page == 0){%>
 			<div class="no-post-list">
 				<div>
-					<img src="/img/common/05.png" alt="">
+					<img src="/src/img/common/05.png" alt="">
 				</div>
 				<span>目前沒有任何內容哦!</span>
 			</div>
@@ -412,9 +412,9 @@
 								<div class="laster-text-name">
 									<span><%=classList[i].postuserName%></span>
 									<%if(classList[i].postusersex == 'Girl'){%>
-										<img src="/img/common/girl.png" alt="">
+										<img src="/src/img/common/girl.png" alt="">
 									<%}else{%>
-										<img src="/img/common/boy.png" alt="">
+										<img src="/src/img/common/boy.png" alt="">
 									<%}%>
 								</div>
 								<div class="laster-text-num"><span><%=classList[i].postTimeDiff%></span>前發佈</div>
@@ -442,18 +442,18 @@
 					</div>
 					<div class="shadow-box"></div>
 				</div>
-				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+				<div class="post-shadow"><img src="/src/img/social/label/labeldetail/hobg.png" alt=""></div>
 				<%if(classList[i].state == '无效'){%>
-				<div class="close-bg"><img src="/img/social/secondHand/secondHand_finished.png" alt=""></div>
+				<div class="close-bg"><img src="/src/img/social/secondHand/secondHand_finished.png" alt=""></div>
 				<%}else if(classList[i].state == '取消'){%>
-				<div class="close-bg"><img src="/img/social/secondHand/secondHand_cancel.png" alt=""></div>
+				<div class="close-bg"><img src="/src/img/social/secondHand/secondHand_cancel.png" alt=""></div>
 				<%}%>
 			</div>
 			<%}%>
 			<%}else if(classList.length == 0 && page == 0){%>
 			<div class="no-post-list">
 				<div>
-					<img src="/img/common/05.png" alt="">
+					<img src="/src/img/common/05.png" alt="">
 				</div>
 				<span>目前沒有任何內容哦!</span>
 			</div>
@@ -482,7 +482,7 @@
 								</div>
 								<div class="post-other-time clearfloat">
 									<div><span><%=classList[i].postTimeDiff%></span>前發佈</div>
-									<img src="/img/social/label/labeldetail/shot.png" alt="" class="post-other-img">
+									<img src="/src/img/social/label/labeldetail/shot.png" alt="" class="post-other-img">
 								</div>
 							</div>
 						</div>
@@ -499,9 +499,9 @@
 								<div class="laster-text-name">
 									<span><%=classList[i].postuserName%></span>
 									<%if(classList[i].postusersex == 'Girl'){%>
-										<img src="/img/common/girl.png" alt="">
+										<img src="/src/img/common/girl.png" alt="">
 									<%}else{%>
-										<img src="/img/common/boy.png" alt="">
+										<img src="/src/img/common/boy.png" alt="">
 									<%}%>
 								</div>
 							</div>
@@ -509,13 +509,13 @@
 					</div>
 					<div class="shadow-box"></div>
 				</div>
-				<div class="post-shadow"><img src="/img/social/label/labeldetail/hobg.png" alt=""></div>
+				<div class="post-shadow"><img src="/src/img/social/label/labeldetail/hobg.png" alt=""></div>
 			</div>
 			<%}%>
 			<%}else if(classList.length == 0 && page == 0){%>
 			<div class="no-post-list">
 				<div>
-					<img src="/img/common/05.png" alt="">
+					<img src="/src/img/common/05.png" alt="">
 				</div>
 				<span>目前沒有任何內容哦!</span>
 			</div>
@@ -553,7 +553,7 @@
 			<%}else if(classList.length == 0 && page == 0){%>
 			<div class="no-post-list">
 				<div>
-					<img src="/img/common/05.png" alt="">
+					<img src="/src/img/common/05.png" alt="">
 				</div>
 				<span>目前沒有任何內容哦!</span>
 			</div>

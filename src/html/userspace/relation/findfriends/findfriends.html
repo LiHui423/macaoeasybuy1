@@ -4,14 +4,14 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>用戶空間-查找宜粉頁</title>
-		<link rel="stylesheet" href="/css/common/yez_css_Reset.css">
-		<link rel="stylesheet" href="/css/common/common.css">
-		<link rel="stylesheet" href="/css/userspace/common/userspace_common.css">
-		<link rel="stylesheet" href="/css/userspace/friendsfans/findfriends/findfriends.css">
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/src/css/userspace/friendsfans/findfriends/findfriends.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-		<script src="/js/common/frameDomainJSON.js"></script>
-		<script src="/js/common/getData/getData_needLogin.js"></script>
-		<script src="/js/userspace/common/userspacebg.js" async></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/getData/getData_needLogin.js"></script>
+		<script src="/src/js/userspace/common/userspacebg.js" async></script>
 		<!--不需要帶參數進來，只要登錄就行-->
 	</head>
 	<body>
@@ -63,7 +63,7 @@
 										<p>搜索條件：</p>
 										<div class="conditions-label"></div>
 									</div>
-									<img src="/img/userspace/secondhand/state-arrow-select.png" class="arrow" alt="">
+									<img src="/src/img/userspace/secondhand/state-arrow-select.png" class="arrow" alt="">
 								</div>
 								<div class="search-result">
 									<div>您已找到<span></span>位符合條件的宜粉哦</div>
@@ -78,15 +78,15 @@
 			<footer></footer>
 		</div>
 
-		<script src="/js/plug/yez_js_Reset.js"></script>
-		<script src="/js/common/vendor/template-native.js"></script>
-		<script src="/js/userspace/common/userinfo.js" async></script>
-		<script src="/js/userspace/common/leftmenu.js" async></script>
-		<script src="/js/userspace/common/whitemenu.js" async></script>
-		<script src="/js/userspace/common/newspush.js" async></script>
-		<script src="/js/common/header&search&footer/footer.js" async></script>
-		<script src="/js/common/header&search&footer/header.js"></script>
-		<script src="/js/userspace/friendsfans/findfriends/findfriends.js"></script>
+		<script src="/src/js/plug/yez_js_Reset.js"></script>
+		<script src="/src/js/common/vendor/template-native.js"></script>
+		<script src="/src/js/userspace/common/userinfo.js" async></script>
+		<script src="/src/js/userspace/common/leftmenu.js" async></script>
+		<script src="/src/js/userspace/common/whitemenu.js" async></script>
+		<script src="/src/js/userspace/common/newspush.js" async></script>
+		<script src="/src/js/common/header&search&footer/footer.js" async></script>
+		<script src="/src/js/common/header&search&footer/header.js"></script>
+		<script src="/src/js/userspace/friendsfans/findfriends/findfriends.js"></script>
 		<!--用戶模板-->
 		<script id="easy_template" type="text/html" data-type="template">
 
@@ -95,16 +95,16 @@
 				<li class="result-box-item">
 					<div class="result-box-item-inner">
 						<%if(classList[i].isrecommend == 1){%>
-						<div class="recommen-label"><img src="/img/userspace/friendsfans/recommen-label.png" alt=""></div>
+						<div class="recommen-label"><img src="/src/img/userspace/friendsfans/recommen-label.png" alt=""></div>
 						<%}%>
 						<div class="head"><img src="<%=osURL%><%=classList[i].userPic%>" alt="" onerror="this.onerror=null;this.src='/img/common/loading_pc_headPic.png'"></div>
 
 						<div class="name">
 							<%=classList[i].userName%>
 							<%if(classList[i].sex == 'Girl'){%>
-							<img src="/img/common/girl.png">
+							<img src="/src/img/common/girl.png">
 							<%}else{%>
-							<img src="/img/common/boy.png">
+							<img src="/src/img/common/boy.png">
 							<%}%>
 						</div>
 						<div class="identity-level user">
@@ -137,7 +137,7 @@
 							<%}else{%>
 							<div class="user-skills-inner clearfloat">
 								<%for(var j=0;j<classList[i].infos.length;j++){%>
-								<div><img src="/img/userspace/label/label-arrow.png" alt="" class="arrow"><%=classList[i].infos[j]%></div>
+								<div><img src="/src/img/userspace/label/label-arrow.png" alt="" class="arrow"><%=classList[i].infos[j]%></div>
 								<%}%>
 							</div>
 							<%}%>
@@ -145,12 +145,12 @@
 						</div>
 						<div class="shadow-box"></div>
 					</div>
-					<div class="result-box-bottom"><img src="/img/social/market/treasureclassifydetail/mdetail-shadow.png" alt=""></div>
+					<div class="result-box-bottom"><img src="/src/img/social/market/treasureclassifydetail/mdetail-shadow.png" alt=""></div>
 				</li>
 				<%}%>
 			<%}else if(classList.length == 0 && page == 0){%>
 				<div class="no_result_box">
-					<div><img src="/img/common/05.png" alt=""></div>
+					<div><img src="/src/img/common/05.png" alt=""></div>
 					<p>沒有搜到任何內容哦！</p>
 				</div>
 			<%}%>
