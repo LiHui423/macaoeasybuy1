@@ -72,7 +72,7 @@ main.page-content {
     -o-border-radius: 10px;
 }
 .list-item:after {
-    background: url("/img/social/label/labeldetail/hobg.png") no-repeat;
+    background: url("/src/img/social/label/labeldetail/hobg.png") no-repeat;
     background-size: 100% 100%;
     width: 228px;
     height: 18px;
@@ -97,7 +97,7 @@ main.page-content {
     border-bottom:1px solid #ddd;
 }
 .item-img.nothing {
-    background-image: url("/img/userspace/album/album-no-img.png");
+    background-image: url("/src/img/userspace/album/album-no-img.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
@@ -163,16 +163,16 @@ main.page-content {
     float: left;
 }
 .icon.icon-see {
-    background: url("/img/social/easylive/album-classification-eye.png") no-repeat 2px 6px;
+    background: url("/src/img/social/easylive/album-classification-eye.png") no-repeat 2px 6px;
 }
 .icon.icon-comment {
-    background: url("/img/social/easylive/album-classification-mes.png") no-repeat 2px 4px;
+    background: url("/src/img/social/easylive/album-classification-mes.png") no-repeat 2px 4px;
 }
 .icon.icon-likes {
-    background: url("/img/social/easylive/album-classification-good.png") no-repeat 2px 2px;
+    background: url("/src/img/social/easylive/album-classification-good.png") no-repeat 2px 2px;
 }
 .icon.icon-collect {
-    background: url("/img/social/easylive/album-classification-cai.png") no-repeat 0 2px;
+    background: url("/src/img/social/easylive/album-classification-cai.png") no-repeat 0 2px;
 }
 .icon.left {
     margin-right: 10px;

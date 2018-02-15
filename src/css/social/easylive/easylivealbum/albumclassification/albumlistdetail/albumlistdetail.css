@@ -292,7 +292,7 @@ body{
 	background:#fff;
 }
 .picture-item.yez-selected .hover-check-box{
-	background:url("/img/social/easylive/check-select.png") center center no-repeat #fff;
+	background:url("/src/img/social/easylive/check-select.png") center center no-repeat #fff;
 }
 .album-lister .album-list .shadow-box p{
 	color:#fff;
