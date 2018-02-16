@@ -102,18 +102,18 @@
       background-repeat: no-repeat;
       width: 120px;
       background-position: 16% 44%;
-      background-image: url("/img/common/icon/header-shopping.png");
+      background-image: url("/src/img/common/icon/header-shopping.png");
       &:hover {
-        background-image: url("/img/common/icon/header-shopping-hover.png");
+        background-image: url("/src/img/common/icon/header-shopping-hover.png");
       }
     }
     .social span {
       background-repeat: no-repeat;
       width: 107px;
       background-position: 18% 48%;
-      background-image: url("/img/common/icon/header-social.png");
+      background-image: url("/src/img/common/icon/header-social.png");
       &:hover {
-        background-image: url("/img/common/icon/header-social-hover.png");
+        background-image: url("/src/img/common/icon/header-social-hover.png");
       }
     }
   }

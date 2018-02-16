@@ -190,6 +190,50 @@ class Easybuy {
           },
         });
       },
+      templateData(
+        apio,
+        scrolloading = {
+          open = false,
+          namesapce = 'loading',
+          viewport = window,
+          context = document,
+          fn = null,
+        } = null,
+        waterfall = {
+          container,
+          column = 2,
+          hGap = 0,
+          vGap = 20,
+        } = null,
+      ) {
+        const api = apio.api;
+        const params = apio.params;
+        const method = apio.method;
+        const page = params.page !== undefined ? params.page : null;
+        const size = params.size !== undefined ? params.size : null;
+        this.ajax({
+          api,
+          params,
+          method,
+          before: () => {
+            scrolloading !== null && this.scrolloading(scrolloading);
+            apio.before && apio.before();
+          },
+          after: ({ data }) => {
+            const result = data['result'];
+            const dataPackage = { page };
+            if (Array.isArray(result)) {
+              dataPackage.content = result;
+            } else {
+
+            }
+            apio.after && apio.after();
+          }
+        })
+      },
+      templateInsert() {
+
+      }
     };
     Object.keys(thisMethods).forEach((name) => {
       this[name] = (...arg) => {
@@ -367,11 +411,7 @@ class Easybuy {
      */
     if (this.data.login) {
       const loginUserInfo = sessionStorage.getItem('loginUserInfo');
-      if (loginUserInfo !== 'undefined') {
-        this.data.userInfo = JSON.parse(loginUserInfo);
-        sessionStorage.removeItem('loginUserInfo');
-        headerElements.insert();
-      } else {
+      if (loginUserInfo === 'undefined' || loginUserInfo === null) {
         this.ajax({
           api: 'http://userManager.macaoeasybuy.com/UserInfoManagerGetController/LoginTopInfo.easy',
           encrypt: true,
@@ -379,13 +419,98 @@ class Easybuy {
             data === '' && (window.location.href = link);
             this.data.userInfo = data['userInfo'];
             headerElements.insert();
-            this.uiBack && this.uiBack();
           }
         })
+      } else {
+        this.data.userInfo = JSON.parse(loginUserInfo);
+        sessionStorage.removeItem('loginUserInfo');
+        headerElements.insert();
       }
     }
 
-    this.after && this.after();
+    const easybuy = this;
+    this.Template = class {
+      constructor({
+        api,
+        params = {},
+        encrypt = false,
+        method = 'GET',
+        data = {},
+        container,
+        template,
+        beforeReq = null,
+        afterRes = null,
+        beforeInsert = null,
+        afterInsert = null,
+      }) {
+        this.request = {
+          api,
+          params,
+          encrypt,
+          method,
+        };
+        this.data = data;
+        this.container = container;
+        this.template = template;
+        this.beforeReq = beforeReq;
+        this.afterRes = afterRes;
+        this.beforeInsert = beforeInsert;
+        this.afterInsert = afterInsert;
+      }
+      run() {
+        const container = this.container;
+        const api = this.request.api;
+        const params = this.request.params;
+        easybuy.ajax({
+          api,
+          parmas,
+          method,
+          before() {
+            this.beforeReq && this.beforeReq();
+          },
+          after({ data }) {
+            const result = data['result'] || data['list'];
+            const dataPackage = { page };
+            if (Array.isArray(result)) {
+              dataPackage.content = result;
+            } else {
+              Object.keys(result).forEach((value) => {
+                (value === 'labellist' || value === 'pets')
+                ? (dataPackage.content = result['labellist'] || result['pets'])
+                : dataPackage[value] = result[value];
+              })
+            }
+            dataPackage.content === undefined && (dataPackage.content = []);
+            this.afterRes && this.afterRes(dataPackage);
+            this.beforeInsert && this.beforeInsert(dataPackage);
+
+            const containerChange = container === this.container;
+            const noData = dataPackage.content.length > 0 || Object.key(dataPackage).length > 1;
+            if (containerChange && noData) {
+              return;
+            }
+            Template.insert(container, easybuy.data.template[this.template], dataPackage);
+            this.afterInsert && this.afterInsert();
+          }
+        })
+      }
+      static insert(container, templateString, dataPackage) {
+        const isPaging = dataPackage.page !== undefined;
+        const isFirst = dataPackage.page === 0;
+
+        if (template === undefined) {
+          return;
+        }
+
+        const $container = $(container);
+        (isFirst || !isPaging)
+        ? $container.html(template.render(templateString, dataPackage))
+        : $container.append(template.render(templateString, dataPackage));
+      }
+      static execute(tos) {
+        Array.isArray(tos) ? apitos.forEach(to => to.run()) : to.run();
+      }
+    };
 
     /**
      * 绑定页面销毁事件
@@ -394,5 +519,31 @@ class Easybuy {
     window.addEventListener('unload', () => {
       sessionStorage.setItem('loginUserInfo', JSON.stringify(this.data.userInfo));
     });
+
+
+    /**
+     * 把页面上的模板字符串隐藏起来
+     */
+    this.data.template = {};
+    window.addEventListener('load', () => {
+      console.log(this);
+      document.querySelectorAll('script[data-art-template]').forEach(t => {
+        const ID = t.getAttribute('data-art-template');
+        const content = t.innerHTML;
+        this.data.template[ID] = content;
+        t.parentElement.removeChild(t);
+      })
+      if (this.data.login) {
+        const uiBackClock = setInterval(() => {
+          if (this.data.userInfo.id) {
+            clearInterval(uiBackClock);
+            this.uiBack && this.uiBack();
+          }
+        }, 25);
+      }
+      // ========== 一个钩子
+      this.after && this.after();
+    });
+
   }
 }

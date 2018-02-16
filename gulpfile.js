@@ -1,40 +1,50 @@
 const gulp = require('gulp');
-const gulpLoadPlugins = require('gulp-load-plugins');
+const babel = require('gulp-babel');
+const postcss = require('gulp-postcss');
+const base64 = require('gulp-base64');
+const filter = require('gulp-filter');
+const gif = require('gulp-if');
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
+const rename = require('gulp-rename');
+const replace = require('gulp-replace');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
+const htmlmin = require('gulp-htmlmin');
+const cssnano = require('cssnano');
+const autoprefixer = require('autoprefixer');
 const del = require('del');
 const path = require('path');
 
-const m = gulpLoadPlugins({lazy: true});
-function link(string, env) {
-    const css = {
-        dev: '//css.macaoeasybuy.com/css/',
-        prod: '//easystyle.macaoeasybuy'
-    };
-    const js = {
-        dev: '//js.macaoeasybuy.com/js/',
-        prod: '//easyscript.macaoeasybuy'
-    };
-    const img = {
-        dev: '//img.macaoeasybuy.com/img/',
-        prod: '//systemimages.macaoeasybuy'
-    };
-    let link = '';
-    string.indexOf('css') !== -1 && (link = env === 'dev' ? css.dev : css.prod);
-    string.indexOf('js') !== -1 && (link = env === 'dev' ? js.dev : js.prod);
-    string.indexOf('img') !== -1 && (link = env === 'dev' ? img.dev : img.prod);
+const link = {
+  css: ['//css.macaoeasybuy.com/css/', '//easystyle.macaoeasybuy.com/css/'],
+  js: ['//js.macaoeasybuy.com/js/', '//easyscript.macaoeasybuy.com/js/'],
+  img: ['//img.macaoeasybuy.com/img/', '//systemimages.macaoeasybuy.com/img/'],
+};
+
+function changLink(string, dev) {
+    let result = '';
+    string.indexOf('css') !== -1 && (result = dev ? css.dev : css.prod);
+    string.indexOf('js') !== -1 && (result = dev ? js.dev : js.prod);
+    string.indexOf('img') !== -1 && (result = dev ? img.dev : img.prod);
     return string.substring(0,1) + link;
 }
-function js(sp, dp) {
-    const srcPath = typeof sp === 'string' ? sp : 'src/js/**/*.js';
-    const destPath = typeof dp === 'string' ? dp : 'dev/js';
+/**
+ *
+ * @param {string} sp - src path
+ * @param {string} dp - dev path
+ */
+function js(srcPath = 'src/js/**/*.js', devPath = 'dev/js') {
     const isGlob = srcPath.indexOf('*') !== -1;
-    const filterVendorFile = m.filter(['**', '!**/vendor/*.js'], {restore: true});
+    const filterVendorFile = filter(['**', '!**/vendor/*.js'], {restore: true});
     return gulp.src(srcPath)
-        .pipe(m.if(isGlob, filterVendorFile))
-        .pipe(m.plumber())
-        .pipe(m.sourcemaps.init())
-        .pipe(m.replace(/("|'|\()\/(css|js|img)\//gim, match => link(match, 'dev')))
-        .pipe(m.babel({presets: ['env']}))
-        .pipe(m.sourcemaps.write('.'))
+        .pipe(gif(isGlob, filterVendorFile))
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
+        .pipe(replace(/("|'|\()\/src\/(css|js|img)\//gim, match => link(match, true)))
+        .pipe(babel({presets: ['env']}))
+        .pipe(sourcemaps.write('.'))
         .pipe(filterVendorFile.restore)
         .pipe(gulp.dest(destPath));
 }

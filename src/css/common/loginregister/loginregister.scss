@@ -3,7 +3,7 @@
 }
 .container-swapper{
 	min-height:850px;
-	background: url(/img/common/loginregister/bg.jpg) center 0px no-repeat;
+	background: url("/src/img/common/loginregister/bg.jpg") center 0px no-repeat;
 }
 .container-swapper-inner{
 	width:1397px;
@@ -20,6 +20,7 @@
 	border:2px solid #ff5b77;
 	background-color:#fff;
 	margin-top:80px;
+	visibility: hidden;
 }
 .easy-box .easy-nav{
 	width:100%;
@@ -31,6 +32,9 @@
 	text-align: center;
 	border-right:2px solid #ff5b77;
 	font-size:18px;
+	color:#ff5b77;
+	padding:10px 0px;
+	cursor: pointer;
 }
 .easy-box .easy-nav li.select{
 	background-color:#ff5b77;
@@ -38,18 +42,16 @@
 .easy-box .easy-nav li:last-of-type{
 	border-right:0px;
 }
-.easy-box .easy-nav li a{
-	display: block;
-	color:#ff5b77;
-	padding:10px 0px;
-}
-.easy-box .easy-nav li.select a{
+.easy-box .easy-nav li.select{
 	color:#fff;
 }
 .easy-box .easy-box-content{
 	padding:38px 45px 35px 45px;
+	display: none;
 }
-
+.easy-box .easy-box-content.select{
+	display: block;
+}
 input.easy-input{
 	width:100%;
 	padding:10px 12px;
@@ -58,7 +60,9 @@ input.easy-input{
 	color:#ff5b77;
 	border:1px solid #ccc;
 	letter-spacing: 1px;
-	margin-bottom:20px;
+}
+#register-page input.easy-input{
+	margin-bottom: 20px;
 }
 input.easy-input::-webkit-input-placeholder {
 	color:#ccc;
@@ -91,6 +95,185 @@ input.easy-input:-ms-input-placeholder {
 	padding:10px 0px;
 	cursor: pointer;
 }
+#users{
+	margin-bottom: 22px;
+}
+#find-password{
+	text-align: center;
+	margin:16px 0px;
+	font-size:16px;
+}
+#find-password span{
+	cursor: pointer;
+}
+#find-password span:hover hr{
+	background-color:#888;
+}
+#find-password hr{
+	width:66px;
+	height:1px;
+	background-color:transparent;
+	margin:0 auto;
+}
+.other-login .other-login-title{
+	text-align: center;
+}
+.other-login .other-login-title hr{
+	display: inline-block;
+	width: 32.5%;
+	height:1px;
+	background-color:#bbb;
+	margin-bottom:4px;
+}
+.other-login .other-login-title span{
+	display: inline-block;
+	font-size:18px;
+	color:#bbb;
+	letter-spacing: 2px;
+	padding:0px 8px 0px 12px;
+}
+.other-login .other-login-icon{
+	margin-top:18px;
+	text-align: center;
+	cursor: pointer;
+}
+#wechat-login{
+	margin-right:15px;
+}
+#find-password-box{
+	display: none;
+}
+#find-password-box .title{
+	font-size:22px;
+	text-align: center;
+	letter-spacing: 1px;
+	color:#ff5b77;
+	margin-bottom: 20px;
+}
+#find-password-box .find-password-nav{
+	width: 100%;
+	text-align: center;
+}
+#find-password-box .find-password-nav li{
+	float:left;
+	width:50%;
+}
+#find-password-box .find-password-nav li .nav-color{
+	width:100%;
+	height:8px;
+	background-color:#ccc;
+	position:relative;
+}
+#find-password-box .find-password-nav li.select .nav-color{
+	background-color:#ff5b77;
+}
+#find-password-box .find-password-nav li .nav-color div{
+	position:absolute;
+	left:50%;
+	top:50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	width:24px;
+	height:24px;
+	line-height:24px;
+	background-color:#ccc;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	color:#fff;
+	font-size:15px;
+}
+#find-password-box .find-password-nav li.select .nav-color div{
+	background-color:#ff5b77;
+}
+#find-password-box .find-password-nav li .nav-text{
+	color:#ccc;
+	font-size:16px;
+	padding:20px 0px;
+}
+#find-password-box .find-password-nav li.select .nav-text{
+	color:#ff5b77;
+}
+#find-password-box .code{
+	margin-top:20px;
+}
+#find-password-box .code div:first-of-type{
+	width:50%;
+	float:left;
+}
+#find-password-box .code div:last-of-type{
+	width:46%;
+	float:right;
+}
+#get-code{
+	height:44px;
+	padding:0px;
+	line-height:44px;
+}
+#next-btn,
+#new-password,
+#save-login{
+	margin-bottom:20px;
+}
+#cancel-one,
+#cancel-two{
+	background-color:#ccc;
+}
+#login-success{
+	position:fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	background-color:rgba(0,0,0,.8);
+}
+#login-success .login-success-box{
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	text-align: center;
+	color:#fff;
+	letter-spacing: 2px;
+}
+#login-success .login-success-box div:first-of-type{
+	font-size:24px;
+	margin:15px 0px;
+}
+#login-success .login-success-box div:last-of-type{
+	font-size:20px;
+	padding-left:28px;
+}
+#login-success .login-success-box div:last-of-type span{
+	float:left;
+}
+#login-success .login-success-box span.num{
+	padding-right:8px;
+}
+/*底部*/
+.footBaner{
+	margin-top:-72px;
+}
+.footerAdvertising{
+	margin-top:0px;
+}
+
+/*註冊*/
+#register-box{
+	/*display: none;*/
+}
+#set-user-info{
+	display: none;
+}
 .code div:first-of-type {
     width: 50%;
     float: left;
@@ -103,7 +286,7 @@ input.easy-input:-ms-input-placeholder {
     line-height: 44px;
 }
 #confirm-password{
-	margin-bottom: 0px;
+	margin-bottom: 0px !important;
 }
 #set-user-info>.text{
 	color:#ff5b77;
@@ -207,7 +390,7 @@ input.easy-input:-ms-input-placeholder {
 #sex-girl.select{
 	background-color:#FAB5C8;
 }
-#pass-btn {
+/*#pass-btn {
     text-align: center;
     font-size: 16px;
     margin-top:16px;
@@ -224,7 +407,7 @@ input.easy-input:-ms-input-placeholder {
 }
 #pass-btn span:hover hr{
 	background-color: #aaa;
-}
+}*/
 #country{
 	width:100%;
 	height:44px;
@@ -259,17 +442,4 @@ input.easy-input:-ms-input-placeholder {
 #country .country-select li:hover{
 	background-color:#ff5b77;
 	color:#fff;
-}
-/*底部*/
-.footBaner{
-	margin-top:-72px;
-}
-.footerAdvertising{
-	margin-top:0px;
-}
-#register-box{
-	/*display: none;*/
-}
-#set-user-info{
-	display: none;
 }

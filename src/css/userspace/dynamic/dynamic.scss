@@ -25,26 +25,26 @@
     cursor: pointer;
     padding-left: 60px;
     &:first-of-type {
-      background: url("/img/userspace/dynamic/dynamic_diaryIcon.png") no-repeat 5px 50%;
+      background: url("/src/img/userspace/dynamic/dynamic_diaryIcon.png") no-repeat 5px 50%;
       margin-bottom: 15px;
     }
     &:nth-of-type(2) {
-      background: url("/img/userspace/dynamic/dynamic_alnumIcon.png") no-repeat 7px 50%;
+      background: url("/src/img/userspace/dynamic/dynamic_alnumIcon.png") no-repeat 7px 50%;
       margin-bottom: 15px;
     }
     &:nth-of-type(3) {
-      background: url("/img/userspace/dynamic/dynamic_groupIcon.png") no-repeat 5px 50%;
+      background: url("/src/img/userspace/dynamic/dynamic_groupIcon.png") no-repeat 5px 50%;
       margin-bottom: 15px;
       margin-right: 0;
     }
     &:nth-of-type(4) {
-      background: url("/img/userspace/dynamic/dynamic_liveshotIcon.png") no-repeat 1px 50%;
+      background: url("/src/img/userspace/dynamic/dynamic_liveshotIcon.png") no-repeat 1px 50%;
     }
     &:nth-of-type(5) {
-      background: url("/img/userspace/dynamic/dynamic_secondHandIcon.png") no-repeat 5px 50%;
+      background: url("/src/img/userspace/dynamic/dynamic_secondHandIcon.png") no-repeat 5px 50%;
     }
     &:last-of-type {
-      background: url("/img/userspace/dynamic/dynamic_marketIcon.png") no-repeat 11px 50%;
+      background: url("/src/img/userspace/dynamic/dynamic_marketIcon.png") no-repeat 11px 50%;
       margin-right: 0;
     }
     .tab-info {
@@ -88,32 +88,32 @@
     cursor: pointer;
     color: #C5C5C5;
     &:first-of-type {
-      background: url("/img/common/icon/icon-clock-dark.png") no-repeat 31px 24px;
+      background: url("/src/img/common/icon/icon-clock-dark.png") no-repeat 31px 24px;
       text-indent: 20px;
     }
     &:nth-of-type(2) {
-      background: url("/img/common/icon/icon-msg-dark.png") no-repeat 34px 24px;
+      background: url("/src/img/common/icon/icon-msg-dark.png") no-repeat 34px 24px;
       text-indent: 20px;
     }
     &:last-of-type {
-      background: url("/img/common/icon/icon-good-dark.png") no-repeat 35px 22px;
+      background: url("/src/img/common/icon/icon-good-dark.png") no-repeat 35px 22px;
       text-indent: 20px;
     }
   }
   &[data-active="0"]>.tab:nth-of-type(1) {
     color: #e98900;
     border-bottom: 4px solid;
-    background-image: url("/img/common/icon/icon-clock-light.png");
+    background-image: url("/src/img/common/icon/icon-clock-light.png");
   }
   &[data-active="1"]>.tab:nth-of-type(2) {
     color: #e98900;
     border-bottom: 4px solid;
-    background-image: url("/img/common/icon/icon-msg-light.png");
+    background-image: url("/src/img/common/icon/icon-msg-light.png");
   }
   &[data-active="2"]>.tab:nth-of-type(3) {
     color: #e98900;
     border-bottom: 4px solid;
-    background-image: url("/img/common/icon/icon-good-light.png");
+    background-image: url("/src/img/common/icon/icon-good-light.png");
   }
 }
 
@@ -187,7 +187,7 @@
     width: 100%;
     border-radius: 10px;
     &::after {
-      background: url("/img/common/list-item-shadow.png") no-repeat;
+      background: url("/src/img/common/list-item-shadow.png") no-repeat;
       background-size: 100% 100%;
       position: absolute;
       bottom: -18px;
@@ -301,13 +301,13 @@
       color: #aaa;
       padding: 32px 0 10px 0;
       &:first-of-type {
-        background: url("/img/social/liveshot/ProdigalTopicList/eye.png") 28px 14px no-repeat;
+        background: url("/src/img/social/liveshot/ProdigalTopicList/eye.png") 28px 14px no-repeat;
       }
       &:nth-of-type(2) {
-        background: url("/img/social/liveshot/ProdigalTopicList/good.png") 30px 10px no-repeat;
+        background: url("/src/img/social/liveshot/ProdigalTopicList/good.png") 30px 10px no-repeat;
       }
       &:last-of-type {
-        background: url("/img/social/liveshot/ProdigalTopicList/message.png") 27px 13px no-repeat;
+        background: url("/src/img/social/liveshot/ProdigalTopicList/message.png") 27px 13px no-repeat;
       }
     }
   }
@@ -363,7 +363,7 @@
     letter-spacing: 1px;
     color: #fff;
     cursor: pointer;
-    background: url(/img/social/easylive/focus-white.png) no-repeat 10px 9px;
+    background: url("/src/img/social/easylive/focus-white.png") no-repeat 10px 9px;
     background-color: #E98900;
     background-size: 18px 18px;
     border-radius: 8px;
@@ -443,7 +443,7 @@
     background: #fff;
   }
   .album-list.select .hover-check-box-outer .hover-check-box {
-    background: url("/img/social/easylive/check-select.png") center center no-repeat #fff;
+    background: url("/src/img/social/easylive/check-select.png") center center no-repeat #fff;
   }
   .bottom-shadow {
     width: 98%;
@@ -534,13 +534,13 @@
     padding: 32px 0 10px 0;
   }
   .laster .laster-num li:first-of-type {
-    background: url("/img/social/liveshot/ProdigalTopicList/eye.png") 28px 14px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/eye.png") 28px 14px no-repeat;
   }
   .laster .laster-num li:nth-of-type(2) {
-    background: url("/img/social/liveshot/ProdigalTopicList/good.png") 30px 10px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/good.png") 30px 10px no-repeat;
   }
   .laster .laster-num li:last-of-type {
-    background: url("/img/social/liveshot/ProdigalTopicList/message.png") 27px 13px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/message.png") 27px 13px no-repeat;
   }
   .laster-look {
     padding: 15px;
@@ -664,13 +664,13 @@
     padding: 32px 0 10px 0;
   }
   .laster .laster-num li:first-of-type {
-    background: url(/img/social/liveshot/ProdigalTopicList/eye.png) 28px 14px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/eye.png") 28px 14px no-repeat;
   }
   .laster .laster-num li:nth-of-type(2) {
-    background: url(/img/social/liveshot/ProdigalTopicList/good.png) 30px 10px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/good.png") 30px 10px no-repeat;
   }
   .laster .laster-num li:last-of-type {
-    background: url(/img/social/liveshot/ProdigalTopicList/message.png) 27px 13px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/message.png") 27px 13px no-repeat;
   }
   .laster-look {
     padding: 15px;
@@ -850,7 +850,7 @@
     margin-bottom: 0;
   }
   .pillar .page-main .post-main-text ul li.area {
-    background: url(/img/social/label/labeldetail/area.png) no-repeat 1px 3px;
+    background: url("/src/img/social/label/labeldetail/area.png") no-repeat 1px 3px;
     text-indent: 20px;
   }
   .pillar .post-number {
@@ -876,13 +876,13 @@
     padding: 32px 0 10px 0;
   }
   .pillar .laster .laster-num li:first-of-type {
-    background: url(/img/social/liveshot/ProdigalTopicList/eye-w.png) 26px 14px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/eye-w.png") 26px 14px no-repeat;
   }
   .pillar .laster .laster-num li:nth-of-type(2) {
-    background: url(/img/social/liveshot/ProdigalTopicList/good-w.png) 26px 10px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/good-w.png") 26px 10px no-repeat;
   }
   .pillar .laster .laster-num li:last-of-type {
-    background: url(/img/social/liveshot/ProdigalTopicList/message-w.png) 26px 13px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/message-w.png") 26px 13px no-repeat;
   }
   .pillar .page-main .laster-look {
     margin-top: 34px;
@@ -1018,13 +1018,13 @@
     padding: 32px 0 10px 0;
   }
   .laster .laster-num li:first-of-type {
-    background: url(/img/social/market/treasureclassifydetail/shopin_heart.png) center 9px / 20px 20px no-repeat #f8f4ea;
+    background: url("/src/img/social/market/treasureclassifydetail/shopin_heart.png") center 9px / 20px 20px no-repeat #f8f4ea;
   }
   .laster .laster-num li:nth-of-type(2) {
-    background: url(/img/social/market/treasureclassifydetail/red-eyes.png) center 13px no-repeat #f8f4ea;
+    background: url("/src/img/social/market/treasureclassifydetail/red-eyes.png") center 13px no-repeat #f8f4ea;
   }
   .laster .laster-num li:last-of-type {
-    background: url(/img/social/market/treasureclassifydetail/red-mop.png) center 13px no-repeat #f8f4ea;
+    background: url("/src/img/social/market/treasureclassifydetail/red-mop.png") center 13px no-repeat #f8f4ea;
   }
   .laster-look {
     background-color: #fff;

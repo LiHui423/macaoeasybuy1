@@ -1,5 +1,5 @@
 body{
-	background: url(/img/common/easybuy_index/easybuy_index_bg.png)	fixed;
+	background: url("/src/img/common/easybuy_index/easybuy_index_bg.png")	fixed;
 }
 .containerBox{
 	margin: auto;
@@ -356,7 +356,7 @@ body{
 	top: 0;
 }
 .index_headBox_right_banner_intro ul .index_banner_curr{
-	background: url(/img/common/easybuy_index/banner_curr.png);
+	background: url("/src/img/common/easybuy_index/banner_curr.png");
 	width:163px;
 	border-bottom:none;
 	background-size:100% 100%;

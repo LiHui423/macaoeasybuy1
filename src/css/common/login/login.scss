@@ -3,7 +3,7 @@
 }
 .container-swapper{
 	min-height:850px;
-	background: url(/img/common/loginregister/bg.jpg) center 0px no-repeat;
+	background: url("/src/img/common/loginregister/bg.jpg") center 0px no-repeat;
 }
 .container-swapper-inner{
 	width:1397px;
@@ -19,32 +19,32 @@
 	width:408px;
 	border:2px solid #ff5b77;
 	background-color:#fff;
-	margin-top:80px;
-}
-.easy-box .easy-nav{
-	width:100%;
-	border-bottom:2px solid #ff5b77;
-}
-.easy-box .easy-nav li{
-	float:left;
-	width:33.333333%;
-	text-align: center;
-	border-right:2px solid #ff5b77;
-	font-size:18px;
-}
-.easy-box .easy-nav li.select{
-	background-color:#ff5b77;
-}
-.easy-box .easy-nav li:last-of-type{
-	border-right:0px;
-}
-.easy-box .easy-nav li a{
-	display: block;
-	color:#ff5b77;
-	padding:10px 0px;
-}
-.easy-box .easy-nav li.select a{
-	color:#fff;
+  margin-top:80px;
+  .easy-nav{
+    width:100%;
+    border-bottom:2px solid #ff5b77;
+    li{
+      float:left;
+      width:33.333333%;
+      text-align: center;
+      border-right:2px solid #ff5b77;
+      font-size:18px;
+      &.select{
+        background-color:#ff5b77;
+        a{
+          color:#fff;
+        }
+      }
+      &:last-of-type{
+        border-right:0px;
+      }
+      a{
+        display: block;
+        color:#ff5b77;
+        padding:10px 0px;
+      }
+    }
+  }
 }
 .easy-box .easy-box-content{
 	padding:38px 45px 35px 45px;
@@ -166,19 +166,11 @@ input.easy-input:-ms-input-placeholder {
 	position:absolute;
 	left:50%;
 	top:50%;
-	-webkit-transform: translate(-50%,-50%);
-	-moz-transform: translate(-50%,-50%);
-	-ms-transform: translate(-50%,-50%);
-	-o-transform: translate(-50%,-50%);
-	transform: translate(-50%,-50%);
+	transform: translate(-50%, -50%);
 	width:24px;
 	height:24px;
 	line-height:24px;
 	background-color:#ccc;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-o-border-radius: 50%;
 	border-radius: 50%;
 	color:#fff;
 	font-size:15px;

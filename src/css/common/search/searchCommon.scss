@@ -1,5 +1,5 @@
 .searchMainBox{
-	background: url(/img/easybuy/limited/limited_bg.png) fixed;
+	background: url("/src/img/easybuy/limited/limited_bg.png") fixed;
 	padding-bottom: 80px;
 }
 .searchMain{
@@ -16,9 +16,6 @@
 }
 .search_result_title span{
 	color: #FF527C;
-}
-.search_result_main{
-	
 }
 .search_result_null{
 	width: 100%;

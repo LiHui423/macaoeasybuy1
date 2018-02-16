@@ -15,10 +15,6 @@
 .search_sortBox{
 	height: 65px;
 	background-color: #FF527C;
-	-webkit-border-radius:8px 8px 0px 0px;
-	-ms-border-radius: 8px 8px 0px 0px;
-	-moz-border-radius: 8px 8px 0px 0px;
-	-o-border-radius:8px 8px 0px 0px;
 	border-radius:8px 8px 0px 0px;
 	padding: 0px 25px 0px 25px;
 }
@@ -51,7 +47,6 @@
 	line-height: 65px;
 }
 .search_sortBoxEach{
-	float: left;
 	display: inline-block;
 	position: relative;
 	z-index: 5;
@@ -96,10 +91,6 @@
 	border: none;
 }
 .search_topic_resultBox{
-	-webkit-border-radius:0px 0px 8px 8px;
-	-ms-border-radius:0px 0px 8px 8px;
-	-moz-border-radius:0px 0px 8px 8px;
-	-o-border-radius:0px 0px 8px 8px;
 	border-radius:0px 0px 8px 8px;
 }
 .search_label_noResult{
@@ -122,9 +113,6 @@
 	margin-top: 10px;
 	letter-spacing: 1px;
 }
-.search_topic_resultBox{
-	
-}
 .search_topic_resultEach{
 	padding: 20px 0;
 	background-color: #FFFFFF;
@@ -144,12 +132,6 @@
 	float: left;
 	width: 810px;
 	margin-left: 20px;
-}
-.search_topic_resultEach_mess{
-	
-}
-.search_topic_resultEach_mess p{
-	
 }
 .search_topic_resultEach_mess p:nth-of-type(1){
 	font-size: 20px;
@@ -197,17 +179,11 @@
 .search_topic_resultEach_pic{
 	margin-top: 30px;
 }
-.search_topic_resultEach_pic ul{
-	
-}
 .search_topic_resultEach_pic ul li{
 	float: left;
 	width: 120px;
 	height: 120px;
 	background-size:cover;
-	-moz-background-size:cover;
-	-webkit-background-size:cover;
-	-o-background-size:cover;
 	margin-right: 20px;
 }
 .search_topic_resultEach_data{
@@ -238,10 +214,6 @@
 	height: 55px;
 	line-height: 55px;
 	background-color: #FF527C;
-	-webkit-border-radius:8px 8px 0px 0px;
-	-ms-border-radius: 8px 8px 0px 0px;
-	-moz-border-radius: 8px 8px 0px 0px;
-	-o-border-radius:8px 8px 0px 0px;
 	border-radius:8px 8px 0px 0px;
 	padding: 0px 33px 0px 25px;
 	text-align: center;
@@ -252,18 +224,18 @@
 .search_result_right_tab{
 	background-color: #FFFFFF;
 	display: none;
-	
+
 }
 .search_result_right_tab_all{
 	display: block;
-	background:url(/img/common/search/search_post_all_bg.png);
+	background:url("/src/img/common/search/search_post_all_bg.png");
 }
 .search_result_right_tab_all ul li{
 	padding: 35px 35px 20px 35px;
 	cursor: pointer;
 }
 .search_result_right_tab_all ul li:hover{
-	background:url(/img/common/search/search_post_curr_bg.png);
+	background:url("/src/img/common/search/search_post_curr_bg.png");
 	box-shadow: 0px 5px 5px 0px #E3E3E3;
 }
 .search_result_right_post{
@@ -354,17 +326,11 @@
 .search_result_rightEach_pic{
 	margin-top: 15px;
 }
-.search_result_rightEach_pic ul{
-	
-}
 .search_result_rightEach_pic ul li{
 	float: left;
 	width: 100px;
 	height: 100px;
 	background-size:cover;
-	-moz-background-size:cover;
-	-webkit-background-size:cover;
-	-o-background-size:cover;
 	margin-right: 20px;
 }
 .search_result_rightEach_data{
