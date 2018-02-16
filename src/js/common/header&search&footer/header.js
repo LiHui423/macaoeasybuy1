@@ -18,7 +18,7 @@ function headerNavLoadLogin() {
     $('header').load('/common/header_login.html', function () {
         var formatNum = easyBuy.global.dep.formatNum;
         $('header').find('.easy_buy_username').html(data.name); //用戶名字
-        $('header').find('.header_picBox').html('<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/' + data.pic + '" onerror="this.onerror=null;this.src=\'/img/common/loading_pc_headPic.png\'">'); //用戶名字
+        $('header').find('.header_picBox').html('<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/' + data.pic + '" onerror="this.onerror=null;this.src=\'/src/img/common/loading_pc_headPic.png\'">'); //用戶名字
         $('#header_loveNum').html(formatNum(data.loveNum)); //心動
         $('#header_buyNum').html(formatNum(data.shopCarNum)); //購物籃
         $('#header_countNum').html('MOP ' + formatNum(data.mop)); //紅包

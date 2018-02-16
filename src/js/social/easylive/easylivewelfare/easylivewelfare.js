@@ -11,7 +11,7 @@ function welfareHeadReq(){
 			var newData = data.list[0];
 			$('#good-number').html(newData.bestCount);
 			$('#love-number').html(newData.seeNumber);
-			$('#top-image').html('<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/'+newData.img+' "onerror="this.src=\'/img/common/loading_pc_loadnow.jpg\'">');
+			$('#top-image').html('<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/'+newData.img+' "onerror="this.src=\'/src/img/common/loading_pc_loadnow.jpg\'">');
 			$('#top-artical-text').html(newData.title);
 	});
 }
@@ -21,7 +21,7 @@ function queryEasyBuyUserSee(){
 	$.getJSON(dataUrl,function(data){
 		var html = '';
 		$.each(data.list, function(k,y) {
-			html += '<li data-id="'+y.id+'"><img data-type="userAvatar" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/'+y.Pic+'" onerror="this.src=\'/img/common/loading_pc_headPic.png\'"></li>';
+			html += '<li data-id="'+y.id+'"><img data-type="userAvatar" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/'+y.Pic+'" onerror="this.src=\'/src/img/common/loading_pc_headPic.png\'"></li>';
 		});
 		$('#header-head-img').html(html);
 	});

@@ -316,9 +316,9 @@ class Easybuy {
       `;
     }
     const qrcode = [
-      { img: '/img/common/header&search&footer/QR code.png', tips: '微信訂閱號' },
-      { img: '/img/common/header&search&footer/QR code.png', tips: '微信服務號' },
-      { img: '/img/common/header&search&footer/QR code.png', tips: '客戶端下載' },
+      { img: '/src/img/common/header&search&footer/QR code.png', tips: '微信訂閱號' },
+      { img: '/src/img/common/header&search&footer/QR code.png', tips: '微信服務號' },
+      { img: '/src/img/common/header&search&footer/QR code.png', tips: '客戶端下載' },
     ];
     const qrCodeHTMLString = qrcode.reduce((HTMLString, item) => {
       return HTMLString + `<li><img src="${item.img}">${item.tips}</li>`;

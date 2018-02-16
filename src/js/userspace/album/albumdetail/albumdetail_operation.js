@@ -102,9 +102,9 @@ window.albumData.mineFunc.deletePhotos = function (selectId) {
 //辦定數字
 window.albumData.mineFunc.bindNum = function (count) {
     if (count == 0) {
-        $('#editor-btn img').attr('src', '/img/userspace/album/operation-icon.png');
-        $('#move-btn img').attr('src', '/img/userspace/album/move-icon.png');
-        $('#remove-btn img').attr('src', '/img/userspace/common/deletebtn.png');
+        $('#editor-btn img').attr('src', '/src/img/userspace/album/operation-icon.png');
+        $('#move-btn img').attr('src', '/src/img/userspace/album/move-icon.png');
+        $('#remove-btn img').attr('src', '/src/img/userspace/common/deletebtn.png');
         $('.edtor-btns-items').css({
             'background-color': '#fff',
             'color': '#aaa',
@@ -116,9 +116,9 @@ window.albumData.mineFunc.bindNum = function (count) {
             'cursor': 'default'
         });
     } else {
-        $('#editor-btn img').attr('src', '/img/userspace/album/operation-icon-s.png');
-        $('#move-btn img').attr('src', '/img/userspace/album/move-icon-s.png');
-        $('#remove-btn img').attr('src', '/img/userspace/common/deletebtn-s.png');
+        $('#editor-btn img').attr('src', '/src/img/userspace/album/operation-icon-s.png');
+        $('#move-btn img').attr('src', '/src/img/userspace/album/move-icon-s.png');
+        $('#remove-btn img').attr('src', '/src/img/userspace/common/deletebtn-s.png');
         $('.edtor-btns-items').css({
             'background-color': '#E98900',
             'color': '#fff',

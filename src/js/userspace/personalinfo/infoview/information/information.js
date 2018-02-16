@@ -31,11 +31,11 @@ function queryUserBasicSetting(){
 		$('#user-name').html(newData.name).addClass('select');
 		if(newData.sex == 'Boy'){
 			$('#user-sex span').html('男性');
-			$('#user-sex img').attr('src','/img/common/boy.png');
+			$('#user-sex img').attr('src','/src/img/common/boy.png');
 			$('#user-sex').addClass('boy');
 		}else{
 			$('#user-sex span').html('女性');
-			$('#user-sex img').attr('src','/img/common/girl.png');
+			$('#user-sex img').attr('src','/src/img/common/girl.png');
 			$('#user-sex').addClass('girl');
 		}
 		if(newData.birthday){

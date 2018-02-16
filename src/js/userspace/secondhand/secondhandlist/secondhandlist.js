@@ -52,7 +52,7 @@ function sortSelectOther(){
 			$.each(arr,function(k,y){
 				$('#'+y+type).data('isSelect',false).removeClass('select');
 			});
-			
+
 			var idx = $(this).index();
 			$(this).siblings('div').removeClass('select').end().addClass('select');
 			$('.sort-box').eq(k).siblings('.sort-box').removeClass('select').end().addClass('select');
@@ -183,7 +183,7 @@ function getSelect(arr){
 			'background-color':'#fff',
 			'border-color':'#aaa'
 		});
-		$('#album-delete').find('img').attr('src','/img/userspace/common/deletebtn.png');
+		$('#album-delete').find('img').attr('src','/src/img/userspace/common/deletebtn.png');
 		return false;
 	}else{
 		$('#album-delete').css({
@@ -192,7 +192,7 @@ function getSelect(arr){
 			'background-color':'#e98900',
 			'border-color':'#e98900'
 		});
-		$('#album-delete').find('img').attr('src','/img/userspace/common/deletebtn-s.png');
+		$('#album-delete').find('img').attr('src','/src/img/userspace/common/deletebtn-s.png');
 	}
 }
 //刪除帖子彈框辦定事件
@@ -201,11 +201,11 @@ function deletePostTips(){
 		if(requestObj.selectArr.length == 0) return false;
 		$('#delete-post').css('display','block');
 	});
-	
+
 	$('#delete-post .cancel-sure').on('click',function(){
 		$('#delete-post').css('display','none');
 	});
-	
+
 	$('#delete-post .sure-cancel').on('click',function(){
 		var arr = requestObj.selectArr;
 		if(arr.length == 0) return false;
@@ -274,7 +274,7 @@ function changePostState(data){
 			var idx;
 			switch(a){
 				case 0:
-					idx = '1'; //有效 
+					idx = '1'; //有效
 				break;
 				case 1:
 					idx = '0'; //無效

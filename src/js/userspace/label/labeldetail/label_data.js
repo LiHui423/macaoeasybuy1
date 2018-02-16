@@ -31,7 +31,7 @@ function queryLabelInfo(){
 				$('#label-create-from-other').html('#'+labelTypeHtml+'#'); //創建於
 				$('#label-user span').html(newData.username); //用戶名字
 				var sexHtml = newData.sex == 'Boy' ? 'boy' : 'girl';
-				$('#label-user img').attr('src','/img/common/'+sexHtml+'.png'); //用戶性別
+				$('#label-user img').attr('src','/src/img/common/'+sexHtml+'.png'); //用戶性別
 				//用戶頭像，Id
 				$('#label-user-head img').attr({
 					'src' : 'http://mbuy.oss-cn-hongkong.aliyuncs.com/'+newData.userPic,

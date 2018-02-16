@@ -1,5 +1,5 @@
-var oldImg = '/img/userspace/common/change.jpg';
-var img = '/img/userspace/common/Art-painting-meteor-planet-atmosphere-friction-fire_1920x1440.jpg';
+var oldImg = '/src/img/userspace/common/change.jpg';
+var img = '/src/img/userspace/common/Art-painting-meteor-planet-atmosphere-friction-fire_1920x1440.jpg';
 var timerBg = null;
 timerBg = setInterval(function(){
     var obj = document.getElementById('swapper');

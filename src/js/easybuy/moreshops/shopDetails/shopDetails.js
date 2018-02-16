@@ -17,26 +17,26 @@ function mygoodbanner(obj){
     	var childMargin = 0;
     }
     var oWidth = Math.ceil(banner.children().eq(0).width()) + childMargin;//一张图片的长度
-    
+
     banner.css('width',oWidth * banner.children().length);
     banner.css('left',-1 * oWidth);
     var goLeft = obj.goLeft;
     var goRight = obj.goRight;
     var index = 1;
     var len = banner.children().length-2; //图片的数量
-    
+
     var interval = 2500; //多久跳一次
     var gogogo = 600; // 一张图片切换需要的时间
     var timer;
     drawCircle()
-    
+
     function drawCircle(){
     	for(var i = 0;i < len;i++){
     		$('.circleBox').append("<span class='myborder-radius'></span>")
     	}
     	$('.circleBox span:nth-child(1)').addClass('circleBox_curr')
     }
-    
+
     function animate(offset){
         var left = parseInt(banner.css('left')) + offset;
         if(offset>0){
@@ -69,14 +69,14 @@ function mygoodbanner(obj){
     	first.clone(true,true).appendTo(banner);
     	last.clone(true,true).insertBefore(first);
     }
-    
+
     if(obj.now){
     	var now = obj.now;
 	     function showNow(index){
 	    	now.html(index);
 	    }
     }
-    
+
     function nextPage(){
     	if(banner.is(':animated')){
             return;
@@ -93,7 +93,7 @@ function mygoodbanner(obj){
         }
         $('.circleBox').find('span').eq(index - 1).addClass('circleBox_curr').siblings().removeClass('circleBox_curr');
     }
-    
+
     box.hover(stop,play); //鼠标移入 停止跳播
     play();
 }
@@ -126,23 +126,23 @@ function choostypeBar(){
 	$('.shopDetails_main_sorting_chooseLeft ul li').on('click',function(){
 		if($(this).hasClass('sorting_curr')){
 			if($(this).hasClass('choose_top')){
-				$(this).removeClass('choose_top').find('span:nth-of-type(2) img').attr('src','/img/easybuy/moreshops/shopDetails_bottom.png')
+				$(this).removeClass('choose_top').find('span:nth-of-type(2) img').attr('src','/src/img/easybuy/moreshops/shopDetails_bottom.png')
 			}else{
-				$(this).addClass('choose_top').find('span:nth-of-type(2) img').attr('src','/img/easybuy/moreshops/shopDetails_top.png')
+				$(this).addClass('choose_top').find('span:nth-of-type(2) img').attr('src','/src/img/easybuy/moreshops/shopDetails_top.png')
 			}
 		}else{
 			if($(this).hasClass('sorting_more')){
 				if($(this).hasClass('sorting_more_price')){
-					$(this).find('span:nth-of-type(2) img').attr('src','/img/easybuy/moreshops/shopDetails_bottom.png')	
+					$(this).find('span:nth-of-type(2) img').attr('src','/src/img/easybuy/moreshops/shopDetails_bottom.png')
 				}else{
-					$(this).find('span:nth-of-type(2) img').attr('src','/img/easybuy/moreshops/shopDetails_top.png')
+					$(this).find('span:nth-of-type(2) img').attr('src','/src/img/easybuy/moreshops/shopDetails_top.png')
 				}
 				$(this).addClass('sorting_curr').siblings().removeClass('sorting_curr ');
-				$(this).siblings('.sorting_more').removeClass('choose_top').find('span:nth-of-type(2) img').attr('src','/img/easybuy/moreshops/shopDetails_null.png')
+				$(this).siblings('.sorting_more').removeClass('choose_top').find('span:nth-of-type(2) img').attr('src','/src/img/easybuy/moreshops/shopDetails_null.png')
 			}else{
 				$(this).addClass('sorting_curr').siblings().removeClass('sorting_curr');
-				$(this).siblings('.sorting_more').removeClass('choose_top').find('span:nth-of-type(2) img').attr('src','/img/easybuy/moreshops/shopDetails_null.png')
-			}	
+				$(this).siblings('.sorting_more').removeClass('choose_top').find('span:nth-of-type(2) img').attr('src','/src/img/easybuy/moreshops/shopDetails_null.png')
+			}
 		}
 	})
 }

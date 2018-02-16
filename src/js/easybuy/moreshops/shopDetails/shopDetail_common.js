@@ -101,7 +101,7 @@ function getShopInfo(state){
 		//商店logo
 		topBox.find('.searchBarLeft_topLogo img').attr({
 			'src' : '//wap.macaoeasybuy.com/'+newData.logo,
-			'onerror' :'this.onerror = null;this.src=\'/img/common/loading_pc_shop.png\''
+			'onerror' :'this.onerror = null;this.src="/img/common/loading_pc_shop.png"'
 		}).css('visibility','visible');
 		//商店描述
 		topBox.find('.searchBarLeft_topData li').eq(0).find('div').html(newData.miao);
@@ -138,7 +138,7 @@ function getShopInfo(state){
 		$('.searchBarLeft_bottom ul').css('visibility','visible');
 		if(!state) return false;
 		//店主頭像
-		bottomBox.find('.shopDetails_shoper_head').html('<img data-type="userAvatar" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/'+newData.shoppic+'" onerror="this.src=\'/img/common/loading_pc_headPic.png\'">');
+		bottomBox.find('.shopDetails_shoper_head').html(`<img data-type="userAvatar" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/${newData.shoppic}"`);
 		//店主名字
 		bottomBox.find('.shopDetails_shoper_name').html('店主'+newData.shopMan+'：');
 		//商店描述
@@ -165,7 +165,7 @@ function getShopInfo(state){
 		bottomBox.find('.shopDetails_visitor .shopDetails_visitor_left p').html(easyBuy.global.dep.formatNum(newData.shopvisitors));
 		//到訪人頭
 		$.each(newData.userPicInfolist, function(k,y) {
-			var html = '<li><img data-type="userAvatar" src="//wap.macaoeasybuy.com/'+y+'" onerror="this.onerror=null;this.src=\'/img/common/loading_pc_headPic.png\'"></li>';
+			var html = `<li><img data-type="userAvatar" src="//wap.macaoeasybuy.com/${y}"></li>`;
 			bottomBox.find('.shopDetails_visitor .shopDetails_visitor_right ul').append(html);
 			html = null;
 		});

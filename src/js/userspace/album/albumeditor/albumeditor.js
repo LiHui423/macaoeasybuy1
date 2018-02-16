@@ -226,7 +226,7 @@ function photoDelete() {
 				'background-color': '#fff',
 				'border-color': '#aaa'
 			});
-			$('#remove-btn').find('img').attr('src', '/img/userspace/common/deletebtn.png');
+			$('#remove-btn').find('img').attr('src', '/src/img/userspace/common/deletebtn.png');
 		} else {
 			$('#remove-btn').css({
 				'color': '#fff',
@@ -234,7 +234,7 @@ function photoDelete() {
 				'background-color': '#e98900',
 				'border-color': '#e98900'
 			});
-			$('#remove-btn').find('img').attr('src', '/img/userspace/common/deletebtn-s.png');
+			$('#remove-btn').find('img').attr('src', '/src/img/userspace/common/deletebtn-s.png');
 		}
 		$('#remove-btn').off('click');
 		$('#delete-post .cancel-sure').off('click');

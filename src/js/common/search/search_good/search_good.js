@@ -26,7 +26,7 @@ function scrollLoading(){
 	function setImg(a){
 	    var aLi = $('.otherGoods.noPic .otherGoods_pic').children('img')
 	   	var src= $(aLi[a]).data('src');
-	   	if($(aLi[a]).attr('src') == '/img/common/loading_pc_220.jpg'){
+	   	if($(aLi[a]).attr('src') == '/src/img/common/loading_pc_220.jpg'){
 	   		$(aLi[a]).attr('src',src);
 	   	}else{
 	   		return false;

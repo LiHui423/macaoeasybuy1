@@ -1,4 +1,4 @@
- 
+
  //瀑布流
  function waterfall(outer, item, num, margin, width,flag){
 	outer.css('position','relative');
@@ -89,7 +89,7 @@ function queryLabelInfo(){
 		$('#label-update-time').html('創建於'+newData.addtime.split(' ')[0]); //創建時間
 		$('#label-look-number').html(formatNum(newData.seeNums)+'宜粉查看');
 		$('#label-love-number').html(formatNum(newData.loveNums)+'宜粉讃好');
-		
+
 		//查看是否有圖片
 		console.log(newData.picture);
 		if(newData.picture != undefined && newData.picture!=""){
@@ -99,7 +99,7 @@ function queryLabelInfo(){
 		}
 		$('#label-user-info .info-name span,#founder-other-btn span').html(newData.username); //標籤創建人名字
 		var sexHtml = newData.sex == 'Boy' ? 'boy' : 'girl';
-		$('#label-user-info .info-name img').attr('src','/img/common/'+sexHtml+'.png'); //用戶性別
+		$('#label-user-info .info-name img').attr('src','/src/img/common/'+sexHtml+'.png'); //用戶性別
 		//用戶頭像，Id
 		$('#label-user-info .head img').attr({
 			'src' : 'http://mbuy.oss-cn-hongkong.aliyuncs.com/'+newData.userPic,
@@ -189,7 +189,7 @@ function myCheckCard(){
 		var newData = data.result.userList;
 		var html = '';
 		$.each(newData, function(k,y) {
-			html += '<li data-id="'+y.id+'"><a><img data-type="userAvatar" src="//wap.macaoeasybuy.com/'+y.pic+'" alt="" title="'+y.name+'" onerror="this.src=\'/img/common/loading_pc_headPic.png\'"></a></li>';
+			html += '<li data-id="'+y.id+'"><a><img data-type="userAvatar" src="//wap.macaoeasybuy.com/'+y.pic+'" alt="" title="'+y.name+'" onerror="this.src=\'/src/img/common/loading_pc_headPic.png\'"></a></li>';
 		});
 		$('#recent-look-user').html(html);
 	})

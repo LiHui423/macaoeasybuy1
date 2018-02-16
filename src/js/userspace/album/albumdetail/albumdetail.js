@@ -152,7 +152,7 @@
             isSelf && $('#album-title-name').val(newData.thealbumName);
             $('#album-all-num').html('專輯數：' + newData.collectionNum + '張'); //專輯數目
             $('#selecter span').html(newData.className); //專輯類別
-            $('#album-cover').html('<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/' + newData.thecoverpictureurl + '" onerror="this.src=\'/img/userspace/album/album-no-img.png\'">'); //專輯圖片
+            $('#album-cover').html('<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/' + newData.thecoverpictureurl + '" onerror="this.src=\'/src/img/userspace/album/album-no-img.png\'">'); //專輯圖片
             var $li = $('#album-info-num li');
             $li.eq(0).find('div').eq(0).html(formatNum(newData.seeNum + newData.sSeeNum)); //宜粉查看
             $li.eq(1).find('div').eq(0).html(formatNum(newData.topicSum)); //宜粉回應
@@ -360,9 +360,9 @@
     //辦定數字
     window.albumData.mineFunc.bindNum = function (count) {
         if (count == 0) {
-            $('#editor-btn img').attr('src', '/img/userspace/album/operation-icon.png');
-            $('#move-btn img').attr('src', '/img/userspace/album/move-icon.png');
-            $('#remove-btn img').attr('src', '/img/userspace/common/deletebtn.png');
+            $('#editor-btn img').attr('src', '/src/img/userspace/album/operation-icon.png');
+            $('#move-btn img').attr('src', '/src/img/userspace/album/move-icon.png');
+            $('#remove-btn img').attr('src', '/src/img/userspace/common/deletebtn.png');
             $('.edtor-btns-items').css({
                 'background-color': '#fff',
                 'color': '#aaa',
@@ -374,9 +374,9 @@
                 'cursor': 'default'
             });
         } else {
-            $('#editor-btn img').attr('src', '/img/userspace/album/operation-icon-s.png');
-            $('#move-btn img').attr('src', '/img/userspace/album/move-icon-s.png');
-            $('#remove-btn img').attr('src', '/img/userspace/common/deletebtn-s.png');
+            $('#editor-btn img').attr('src', '/src/img/userspace/album/operation-icon-s.png');
+            $('#move-btn img').attr('src', '/src/img/userspace/album/move-icon-s.png');
+            $('#remove-btn img').attr('src', '/src/img/userspace/common/deletebtn-s.png');
             $('.edtor-btns-items').css({
                 'background-color': '#E98900',
                 'color': '#fff',

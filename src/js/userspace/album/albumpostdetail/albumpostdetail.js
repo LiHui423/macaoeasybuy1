@@ -83,7 +83,7 @@ function postImage(){
 				$('.articleBox .atricle_title').css('display','block');
 				$('.articleBox .atricle_title .atricle_title-left .atricle-from span:first-child').html(needData.collectUserName);
 				var imgObj=document.createElement('img');
-				$(imgObj).attr('src',needData.collectUserSex=='Girl'?'/img/common/girl.png':'/img/common/boy.png');
+				$(imgObj).attr('src',needData.collectUserSex=='Girl'?'/src/img/common/girl.png':'/src/img/common/boy.png');
 				$('.articleBox .atricle_title .atricle_title-left .atricle-from span:first-child').append(imgObj);
 				$('.articleBox .atricle_title .atricle_title-left .atricle-from span:last-child').html('《'+needData.collectAlbumName+'》'
 			);

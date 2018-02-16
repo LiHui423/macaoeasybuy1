@@ -19,7 +19,7 @@
 // 			picId:picId
 // 		},
 // 		dataType: "json", //返回格式为json
-// 		async: true, 
+// 		async: true,
 // 		type:"GET",
 // 		success:function(data){
 // 			console.log(data);
@@ -363,7 +363,7 @@ function personLeft(picId){
 			var newData=data1.result;
 			console.log(newData);
 			$('.person-left .messBox_mess_name span').html(newData.collectUserName);
-			$('.person-left .messBox_mess_name img').attr('src','/img/common/'+newData.collectUserSex+'.png');
+			$('.person-left .messBox_mess_name img').attr('src', '/src/img/common/'+newData.collectUserSex+'.png');
 			$('.person-left .messBox_mess_time .articleType span').html(newData.collectAlbumName);
 			$('.person-left .messBox_mess_time>p:last-of-type span').html(newData.uptime);
 			var html=template('bannerPic',data1);
@@ -373,5 +373,5 @@ function personLeft(picId){
 }
 // 專輯個人信息
 function personInfo(userId){
-	
+
 }

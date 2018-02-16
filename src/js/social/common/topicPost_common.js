@@ -98,7 +98,7 @@ function getContent(){
 			//官方小編
 			var posterBox = $('#poster');
 			posterBox.find('.poster_name').html(data.adminName); //小編 姓名
-			posterBox.find('.head-img').html('<img data-type="userAvatar" src="'+easyBuy.global.osURL+data.adminPic+'" onerror="this.onerror=null;this.src=\'/img/common/loading_pc_headPic.png\'">');
+			posterBox.find('.head-img').html('<img data-type="userAvatar" src="'+easyBuy.global.osURL+data.adminPic+'" onerror="this.onerror=null;this.src=\'/src/img/common/loading_pc_headPic.png\'">');
 			posterBox.find('.head-img').attr('data-id',data.adminId);
 			posterBox.find('.poster_hot_number').html(formatNum(data.shouldBuyCount)); //話題數
 			posterBox.find('.poster_welcome_number').html(formatNum(data.adminLoveCount)); //受歡迎數
@@ -457,7 +457,7 @@ function loadEditor(){
 		//登錄的
 		$('#editor-box').load('/userspace/common/postDetailEditor.html',function(){
 			editorFunc();
-			$('#what_say .head-img').html('<img src="'+easyBuy.global.osURL+easyBuy.easyUser.pic+'" onerror="this.onerror=null;this.src=\'/img/common/loading_pc_headPic.png\'">');
+			$('#what_say .head-img').html('<img src="'+easyBuy.global.osURL+easyBuy.easyUser.pic+'" onerror="this.onerror=null;this.src=\'/src/img/common/loading_pc_headPic.png\'">');
 			$('#what_say').css('display','block');
 		});
 	}else{

@@ -177,7 +177,7 @@ function getSelect(arr){
 			'background-color':'#fff',
 			'border-color':'#aaa'
 		});
-		$('#album-delete').find('img').attr('src','/img/userspace/common/deletebtn.png');
+		$('#album-delete').find('img').attr('src','/src/img/userspace/common/deletebtn.png');
 		return false;
 	}else{
 		$('#album-delete').css({
@@ -186,7 +186,7 @@ function getSelect(arr){
 			'background-color':'#e98900',
 			'border-color':'#e98900'
 		});
-		$('#album-delete').find('img').attr('src','/img/userspace/common/deletebtn-s.png');
+		$('#album-delete').find('img').attr('src','/src/img/userspace/common/deletebtn-s.png');
 	}
 }
 //刪除帖子彈框辦定事件

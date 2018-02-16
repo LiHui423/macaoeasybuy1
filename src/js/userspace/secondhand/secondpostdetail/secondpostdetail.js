@@ -281,9 +281,9 @@ function changePostStatus(isSelf,postStateNum){
 		}
 	}
 	function changeSelect(state,text){
-		$('#second-state>div.after-select .state-icon img').attr('src','/img/userspace/secondhand/'+state+'.png');
+		$('#second-state>div.after-select .state-icon img').attr('src','/src/img/userspace/secondhand/'+state+'.png');
 		$('#second-state>div.after-select span').html(text);
-		$('#second-state ul div.after-select .state-icon img').attr('src','/img/userspace/secondhand/'+state+'-after-select.png');
+		$('#second-state ul div.after-select .state-icon img').attr('src','/src/img/userspace/secondhand/'+state+'-after-select.png');
 		$('#second-state ul div.after-select span').html(text);
 		$('.atricle_title_second').html(text);
 	}

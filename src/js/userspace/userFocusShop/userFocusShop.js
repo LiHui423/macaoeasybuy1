@@ -137,17 +137,17 @@ function slideBtn(obj){
 			$(this).removeClass('focusShopEach_seeMore_btn_slide');
 			$(this).siblings('.focusShopEach_seeMore_slide').slideUp('fast');
 			$(this).find('span:nth-of-type(1)').text('展開更多信息');
-			$(this).find('span:nth-of-type(2) img').attr('src','/img/userspace/userFocusShop/focus_slide.png')
+			$(this).find('span:nth-of-type(2) img').attr('src','/src/img/userspace/userFocusShop/focus_slide.png')
 		}else{
 			$(this).parents('.focusShopEach').siblings().find('.focusShopEach_seeMore_btn').removeClass("focusShopEach_seeMore_btn_slide")
 			$(this).parents('.focusShopEach').siblings().find('.focusShopEach_seeMore_btn').find('span:nth-of-type(1)').text('展開更多信息');
-			$(this).parents('.focusShopEach').siblings().find('.focusShopEach_seeMore_btn').find('span:nth-of-type(2) img').attr('src','/img/userspace/userFocusShop/focus_slide.png');
+			$(this).parents('.focusShopEach').siblings().find('.focusShopEach_seeMore_btn').find('span:nth-of-type(2) img').attr('src','/src/img/userspace/userFocusShop/focus_slide.png');
 			$(this).parents('.focusShopEach').siblings().find('.focusShopEach_seeMore_slide').slideUp('fast')
 
 			$(this).addClass('focusShopEach_seeMore_btn_slide');
 			$(this).siblings('.focusShopEach_seeMore_slide').slideDown('fast');
 			$(this).find('span:nth-of-type(1)').text('收起更多信息')
-			$(this).find('span:nth-of-type(2) img').attr('src','/img/userspace/userFocusShop/focus_slide_up.png')
+			$(this).find('span:nth-of-type(2) img').attr('src','/src/img/userspace/userFocusShop/focus_slide_up.png')
 		}
 	})
 }

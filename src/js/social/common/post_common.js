@@ -62,9 +62,9 @@ function userInfo(a,b,c){
 	$('#messBox_pic img,#mine-other-poster img.head-img').attr('src','//wap.macaoeasybuy.com'+b);
 	$('#messBox_pic img,#mine-other-poster img.head-img').attr('data-type','userAvatar');
 	if(c=='Girl'){
-		$('#other-mess-name img').attr('src','/img/common/girl.png');
+		$('#other-mess-name img').attr('src','/src/img/common/girl.png');
 	}else{
-		$('#other-mess-name img').attr('src','/img/common/boy.png');
+		$('#other-mess-name img').attr('src','/src/img/common/boy.png');
 	}
 }
 //相關商店
@@ -538,7 +538,7 @@ function queryTopicCount(type,topicType){
 function updateSeeLog(type){
 	var type = type;
 	$.getJSON('http://userspace1.macaoeasybuy.com/seeLogController/updateSeeLog.easy?type='+type+'&seeId='+postId+'&userId='+userId+'&easybuyCallback=?',function(data){
-		
+
 		//成功就成功唄，關我屁事
 	})
 }

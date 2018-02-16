@@ -26,7 +26,7 @@
                     //姓名
                     $('#user-info .user-name-top').html(newData.userName);
                     //性別
-                    newData.sex == 'Girl' ? $('#user-info img.sex').attr('src','/img/common/girl.png') : $('#user-info img.sex').attr('src','/img/common/boy.png');
+                    newData.sex == 'Girl' ? $('#user-info img.sex').attr('src','/src/img/common/girl.png') : $('#user-info img.sex').attr('src','/src/img/common/boy.png');
                     //頭像
                     $('#user-info .head-pic').attr('src','http://mbuy.oss-cn-hongkong.aliyuncs.com/'+newData.userPic);
                     //寵物

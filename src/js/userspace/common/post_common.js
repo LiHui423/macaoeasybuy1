@@ -76,9 +76,9 @@ function userInfo(a,b,c){
 	$('#other-mess-name span').html(a);
 	$('#messBox_pic img').attr('src',easyBuy.global.osURL+b);
 	if(c=='Girl'){
-		$('#other-mess-name img').attr('src','/img/common/girl.png');
+		$('#other-mess-name img').attr('src','/src/img/common/girl.png');
 	}else{
-		$('#other-mess-name img').attr('src','/img/common/boy.png');
+		$('#other-mess-name img').attr('src','/src/img/common/boy.png');
 	}
 }
 //相關商店
