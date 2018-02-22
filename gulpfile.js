@@ -60,7 +60,7 @@ function javascript(src, env) {
   const DEV = ENV === 'dev';
   const DESTPATH = isSingleFile ? path.dirname(SRCPATH).replace('src', 'dev') : (DEV ? 'dev/js' : 'dist/js');
   const isGlob = SRCPATH.indexOf('*') !== -1;
-  const filterVendorFile = filter(['**', '!**/vendor/*.css'], {restore: true});
+  const filterVendorFile = filter(['**', '!**/vendor/*.js'], {restore: true});
   return gulp.src(SRCPATH)
     .pipe(gif(isGlob, filterVendorFile))
     .pipe(plumber())
