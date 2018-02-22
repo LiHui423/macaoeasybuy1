@@ -87,6 +87,7 @@ function requestData(){
 			}
 		},
 		success:function(data){
+			console.log(data);
 			var thisSize = 0;
 			for(var i=0;i<data.seeFoot.length;i++){
 				thisSize += data.seeFoot[i].count
