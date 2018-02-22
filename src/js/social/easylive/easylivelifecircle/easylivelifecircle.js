@@ -69,16 +69,20 @@ $(function(){
             type:"GET",
             async:true,
             success:function(data){
-                var newData=JSON.parse(data);
-                var html=template('everybody',newData);
-                $('.all-say-list').html(html);
-                slider({
-                    slider:$('.all-say-list'),
-                    item:$('.all-say-list-li'),
-                    len:4,
-                    next:$('#allsay-goRight'),
-                    prev:$('#allsay-goLeft'),
-                });
+                if(data === ''){
+                    $('.all-say').css('display','none');
+                }else{
+                    var newData=JSON.parse(data);
+                    var html=template('everybody',newData);
+                    $('.all-say-list').html(html);
+                    slider({
+                        slider:$('.all-say-list'),
+                        item:$('.all-say-list-li'),
+                        len:4,
+                        next:$('#allsay-goRight'),
+                        prev:$('#allsay-goLeft'),
+                    });
+                }
             }
         });
     }

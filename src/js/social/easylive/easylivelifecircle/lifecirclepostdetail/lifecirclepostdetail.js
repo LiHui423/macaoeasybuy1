@@ -29,6 +29,7 @@ var easyScrollRequest = easyBuy.global.dep.easyScrollRequest;
 //var postId = easyBuy.global.pageParameter.id;
 //var postId = 644;
 var postId=location.href.split('=')[1];
+console.log(postId);
 var checkFinsh = {
 	banner : false,
 	editor : false,

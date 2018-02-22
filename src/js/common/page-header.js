@@ -92,7 +92,7 @@
           login ?
           `<a href="#" data-count="">紅包</a>
           <a href="#" data-count="">積分</a>
-          <a href="http://userspace.macaoeasybuy.com/footprint/footprintgoods/footprintgoods.html">足跡</a>`
+          <a target="_blank" href="http://userspace.macaoeasybuy.com/footprint/footprintgoods/footprintgoods.html">足跡</a>`
           : ''
         }
         <a href="#">申請開店</a>
@@ -106,7 +106,6 @@
     </div>
   `;
   const header = document.querySelector('#page-header');
-  console.log(header);
   header.innerHTML = headerHTMLString;
   let headerElements = {};
   if (login) {

@@ -184,7 +184,8 @@ function at() {
 	$('#metiondPop-select')[0].arr = [];
 	$('#metiondPop-select')[0].nameArr = [];
 	$('#metiondPop-select')[0].accountArr = [];
-	var atPersonTemplate = easyBuy.global.template['at-person-template'];
+	// var atPersonTemplate = easyBuy.global.template['at-person-template'];
+	var atPersonTemplate = 'at-person-template';
 	//點擊確認添加返回結果
 	$('#at-btn').on('click', function() {
 		var idArr = $('#metiondPop-select')[0].arr;
@@ -300,7 +301,7 @@ function at() {
 				if(newData.length < size) {
 					btn[0].isComplete = true; //如果取回來的數據少於需要的數據，則標記完成
 				}
-				var html = template.render(atPersonTemplate, {
+				var html = template(atPersonTemplate, {
 					'data': newData,
 					'page' : page
 				}); //獲取模板
@@ -418,7 +419,7 @@ function at() {
 				success: function(data) {
 					btn[0].isClickSearch = false;
 					var newData = data.userList;
-					var html = template.render(atPersonTemplate, {
+					var html = template(atPersonTemplate, {
 						'data': newData,
 						'page' : page
 					}); //獲取模板
@@ -539,7 +540,8 @@ function label() {
 	var maxLabelNum = 10;
 	$('#addLabel-select')[0].arr = [];
 	$('#addLabel-select')[0].nameArr = [];
-	var labelTemplate = easyBuy.global.template['label-template'];
+	// var labelTemplate = easyBuy.global.template['label-template'];
+	var labelTemplate = 'label-template';
 	//點擊確認添加返回結果
 	$('#label-btn').on('click', function() {
 		var idArr = $('#addLabel-select')[0].arr;
@@ -591,7 +593,7 @@ function label() {
 		}
 	}
 	//獲取總數量
-	$.getJSON('http://userspace.macaoeasybuy.com/chooseLabelController/queryUserLabelCount.easy?easybuyCallback=?', function(data) {
+	$.getJSON('http://userspace1.macaoeasybuy.com/chooseLabelController/queryUserLabelCount.easy?easybuyCallback=?', function(data) {
 		for(var i in data.labelCount) {
 			$('#' + i).find('.num').html(formatNum(data.labelCount[i]));
 			$('#' + i)[0].page = 0;
@@ -625,7 +627,7 @@ function label() {
 	function getMyData(page, size, idx) {
 		var btn = $('#addLabel .classList li').eq(idx);
 		var box = $('#addLabel .LabelListBox ul').eq(idx);
-		var myUrl = 'http://userspace.macaoeasybuy.com/chooseLabelController/queryUserLabelByType.easy?type=' + idx + '&page=' + page + '&size=' + size + '&order=addtime&descOrAsc=asc&easybuyCallback=?';
+		var myUrl = 'http://userspace1.macaoeasybuy.com/chooseLabelController/queryUserLabelByType.easy?type=' + idx + '&page=' + page + '&size=' + size + '&order=addtime&descOrAsc=asc&easybuyCallback=?';
 		$.ajax({
 			url: myUrl,
 			type: "get",
@@ -646,7 +648,7 @@ function label() {
 				if(newData.length < size) {
 					btn[0].isComplete = true; //如果取回來的數據少於需要的數據，則標記完成
 				}
-				var html = template.render(labelTemplate,data); //獲取模板
+				var html = template(labelTemplate,data); //獲取模板
 				box.append(html); //模板插入
 				for(var i = 0; i < newData.length; i++) {
 					$('.' + newData[i].id + 'labelclass').each(function() {
@@ -740,7 +742,7 @@ function label() {
 		//發出請求
 		function requestSearch(name, type, page,btn) {
 			var ipUrl = 'http://userspace1.macaoeasybuy.com';
-			var easyUrl = 'http://userspace.macaoeasybuy.com';
+			var easyUrl = 'http://userspace1.macaoeasybuy.com';
 			name = encodeURI(encodeURI(name));
 			$.ajax({
 //				url: ipUrl + '/chooseLabelController/queryLabelByName.easy?match=0&name=' + name + '&type=' + type + '&size=' + size + '&page=' + page + '&order=addtime&descOrAsc=desc&easybuyCallback=?',
@@ -760,7 +762,7 @@ function label() {
 						y.seeNums = formatNum(y.seeNums);
 						y.loveNums = formatNum(y.loveNums);
 					});
-					var html = template.render(labelTemplate,data); //獲取模板
+					var html = template(labelTemplate,data); //獲取模板
 					if(page == 0) {
 						$('#other-label-box').html(html); //添加模板
 					} else {
@@ -894,7 +896,7 @@ function emoji() {
 	emojiList(); //表情列表
 	function getEmoji(id, obj) {
 		$.ajax({
-			url: 'http://userspace.macaoeasybuy.com/expressionClassController/getExpressionListByid.easy?id=' + id + '&easybuyCallback=?',
+			url: 'http://userspace1.macaoeasybuy.com/expressionClassController/getExpressionListByid.easy?id=' + id + '&easybuyCallback=?',
 			type: "get",
 			async: true,
 			dataType: 'jsonp',
@@ -961,7 +963,7 @@ function emoji() {
 		function emojiListRequest(page) {
 			var size = 10;
 			$.ajax({
-				url: 'http://userspace.macaoeasybuy.com/expressionClassController/getExpressionClassList.easy?page=' + page + '&size=' + size + '&order=theorder&descOrAsc=desc&easybuyCallback=?',
+				url: 'http://userspace1.macaoeasybuy.com/expressionClassController/getExpressionClassList.easy?page=' + page + '&size=' + size + '&order=theorder&descOrAsc=desc&easybuyCallback=?',
 				type: "get",
 				async: true,
 				dataType: 'jsonp',

@@ -222,7 +222,7 @@
 								<%if(list[i].commentAthourPic == ""){%>
 									<img src="/src/img/common/loading_pc_headPic.png">
 								<%}else{%>
-									<img src = 'http://wap.macaoeasybuy.com/<%=list[i].commentAthourPic%>' onerror="this.src='/img/common/headPic.png'">
+									<img src = 'http://wap.macaoeasybuy.com/<%=list[i].commentAthourPic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/headPic.png'">
 								<%}%>
 							</div>
 							<div class="popularDesign_commentMess_right">
@@ -319,7 +319,7 @@
 						<%if(list[0].listmap[i].userpic == ""){%>
 							<li><a data-id = "<%=list[0].listmap[i].userid%>"><div class="museumShowBox_bottom_right_seeBox_head"><img data-type="userAvatar" src="/src/img/common/loading_pc_headPic.png"></div></a></li>
 						<%}else{%>
-							<li><a data-id = "<%=list[0].listmap[i].userid%>"><div class="museumShowBox_bottom_right_seeBox_head"><img data-type="userAvatar" src='http://wap.macaoeasybuy.com/<%=list[0].listmap[i].userpic%>' onerror="this.src='/img/common/headPic.png'"></div></a></li>
+							<li><a data-id = "<%=list[0].listmap[i].userid%>"><div class="museumShowBox_bottom_right_seeBox_head"><img data-type="userAvatar" src='http://wap.macaoeasybuy.com/<%=list[0].listmap[i].userpic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/headPic.png'"></div></a></li>
 						<%}%>
 					<%}%>
 				</ul>

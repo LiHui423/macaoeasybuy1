@@ -112,7 +112,7 @@
 						</div>
 						<div class="liveshotBox_labelRank_main clearfloat">
 							<div class="liveshotBox_labelEach_showMess">
-								<div class="liveshotBox_labelEach_pic" style="background-image: url(/img/easybuy/museum/museum_theme_showPic.png);"></div>
+								<div class="liveshotBox_labelEach_pic" style="background-image: url(http://img.macaoeasybuy.com/img/social/label/labeldetail/showpic.png);"></div>
 								<div class="liveshotBox_labelEach_title">高士德</div>
 								<div class="liveshotBox_labelEach_intro">
 									<p>測試文字請別當真測試文字請別當真測試文字請別當真測試文字請別當真測試文字請別當真測試文字請別當真測試文字請別當真測試文字請別當真測試文字請別當真測試文字請別當真測試文字請別當真</p>
@@ -376,7 +376,7 @@
 			<li data-id = "<%=result[i].id%>">
 				<div class="liveshotBox_thumb_each">
 					<%if(result[i].pic==""){%>
-						<div class="liveshotBox_thumb_each_pic" style="background-image: url(/img/common/loading_pc_600.jpg);">
+						<div class="liveshotBox_thumb_each_pic" style="background-image: url(http://img.macaoeasybuy.com/img/common/loading_pc_600.jpg);">
 					<%}else{%>
 						<div class="liveshotBox_thumb_each_pic" style="background-image: url(http://wap.macaoeasybuy.com<%=result[i].pic%>);">
 					<%}%>
@@ -407,7 +407,7 @@
 			<div class="liveshotBox_talent_each" data-id = "<%=result[i].userId%>">
 				<div class="liveshotBox_talent_each_head clearfloat">
 					<div class="liveshotBox_talent_each_headLeft myborder-radiusliveshotBox_talent_each_headLeft myborder-radius" data-id='<%=result[i].userId%>'>
-						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=result[i].userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=result[i].userPic%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
 					<div class="liveshotBox_talent_each_headRight">
 						<div class="liveshotBox_talent_each_headName clearfloat">
 							<span><%=result[i].name%></span>
@@ -424,7 +424,7 @@
 				<div class="liveshotBox_talent_each_main clearfloat">
 					<%for(var k = 0;k <result[i].sentVolunteers.length;k++){%>
 						<%if(result[i].sentVolunteers[k].pic==""){%>
-							<div class="liveshotBox_talent_eachPic" data-id = "<%=result[i].sentVolunteers[k].id%>" style="background: url(/img/common/loading_pc_220.jpg);">
+							<div class="liveshotBox_talent_eachPic" data-id = "<%=result[i].sentVolunteers[k].id%>" style="background: url(http://img.macaoeasybuy.com/img/common/loading_pc_220.jpg);">
 						<%}else{%>
 							<div class="liveshotBox_talent_eachPic" data-id = "<%=result[i].sentVolunteers[k].id%>" style="background: url(http://wap.macaoeasybuy.com<%=result[i].sentVolunteers[k].pic%>);">
 						<%}%>
@@ -449,11 +449,11 @@
 			<li class="list-num">
 				<div class="header">
 					<%if(result[i].pic==""){%>
-						<div class="header_pic" style="background: url(/img/common/loading_pc_220.jpg);"></div>
+						<div class="header_pic" style="background: url(http://img.macaoeasybuy.com/img/common/loading_pc_220.jpg);"></div>
 					<%}else{%>
 						<div class="header_pic" style="background: url(http://wap.macaoeasybuy.com<%=result[i].pic%>);"></div>
 					<%}%>
-					<div class="head-radius myborder-radius"><img src="http://wap.macaoeasybuy.com<%=result[i].userPic%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></div>
+					<div class="head-radius myborder-radius"><img src="http://wap.macaoeasybuy.com<%=result[i].userPic%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
 					<div class="name">
 						<div class="name-title"><%=result[i].name%></div>
 						<div class="name-time"><%=result[i].uptime%>前發佈</div>
@@ -470,7 +470,7 @@
 					<div class="main-new">最新查看の宜粉：</div>
 					<ul class="main-head-img clearfloat">
 						<%for(var k = 0;k <result[i].visitorList.length;k++){%>
-							<li><img src="http://wap.macaoeasybuy.com<%=result[i].visitorList[k]%>" onerror="this.src='/img/common/loading_pc_headPic.png'"></li>
+							<li><img src="http://wap.macaoeasybuy.com<%=result[i].visitorList[k]%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></li>
 						<%}%>
 					</ul>
 				</div>
@@ -491,7 +491,7 @@
 				<div class="pillar">
 					<div class="page-main">
 						<a>
-							<img src="http://wap.macaoeasybuy.com<%=result.returnList[i].pic%>" onerror="this.src='/img/social/label/labeldetail/showpic.png'" class="page-main-head-img">
+							<img src="http://wap.macaoeasybuy.com<%=result.returnList[i].pic%>" onerror="this.src='http://img.macaoeasybuy.com/img/social/label/labeldetail/showpic.png'" class="page-main-head-img">
 						</a>
 						<div class="post-main-text">
 							<div class="post-title"><%=result.returnList[i].titlename%></div>

@@ -14,7 +14,7 @@ function beginCount(){
 
 function imgCount(){
 	var timeNum2 = 0;
-	interval_img = setInterval(function(){
+	var interval_img = setInterval(function(){
 		calcDownCountNotice(timeNum2);
 		timeNum2++;
 	}, 1000);

@@ -347,7 +347,7 @@ function bannerData() {
 		var html = '';
 		$.each(data.fairMess, function(k,y) {
 			if(y.titlephoto==""){
-				html += '<div><img src=//img.macaoeasybuy.com/img/common/loading_banner.jpg></div>';
+				html += '<div><img src=//img.macaoeasybuy.com/img/common/loadnow.jpg></div>';
 			}else{
 				html += '<div><img src=http://wap.macaoeasybuy.com/'+y.titlephoto+'></div>';
 			}
