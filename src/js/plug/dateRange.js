@@ -1195,7 +1195,7 @@ pickerDateRange.prototype.fillDate = function (year, month, index) {
     if (isTaTheme) {
         table.className = this.mOpts.dateTable;
 
-        cap = document.createElement('caption');
+        var cap = document.createElement('caption');
 
         //如果是magicSelect，用户自定义的选择年和月份
         if (this.mOpts.magicSelect) {
@@ -1217,19 +1217,19 @@ pickerDateRange.prototype.fillDate = function (year, month, index) {
         }
 
         $(table).append(cap);
-        thead = document.createElement('thead');
+        var thead = document.createElement('thead');
         tr = document.createElement('tr');
         var days = ['日', '一', '二', '三', '四', '五', '六'];
         for (var i = 0; i < 7; i++) {
-            th = document.createElement('th');
+            var th = document.createElement('th');
             $(th).append(days[i]);
             $(tr).append(th);
         }
         $(thead).append(tr);
         $(table).append(thead);
 
-        tr = document.createElement('tr');
-        td = document.createElement('td');
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
         // 如果是最后一个月的日期，则加上下一个月的链接
         if (!this.mOpts.magicSelect) {
             if (0 == index) {

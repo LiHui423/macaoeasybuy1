@@ -69,8 +69,10 @@ function calcNumber(){
 function tabDetailsSection(){
 	$('.museumDetails_TabEach').click(function(){
 		var mainHeight = $('.museumDetails_introductionBox_main').offset().top;
+		console.log(mainHeight);
 		$(this).addClass('museumDetails_TabEach_curr').siblings().removeClass('museumDetails_TabEach_curr');
-		var index = $('.museumDetails_TabEach').index(this)
+		var index = $('.museumDetails_TabEach').index(this);
+		console.log(index);
 		$('.introductionBox_each').eq(index).removeClass('hide').siblings().addClass('hide');
 		if($('.museumDetails_introductionBox_Tab').hasClass('nav_fixed')){
 			$("body").animate({

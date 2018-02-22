@@ -31,7 +31,6 @@ var easyScrollRequest = easyBuy.global.dep.easyScrollRequest;
 //var postId = easyBuy.global.pageParameter.id;
 //var postId = 633;
 var postId=location.href.split('=')[1];
-
 var checkFinsh = {
 	banner : false,
 	editor : false,
@@ -69,7 +68,6 @@ function selectPage(){
 }
 //帖子內容
 function postContent(){
-	console.log('55555');
 	$.ajax({
 		//url:'http://userspace1.macaoeasybuy.com/UserLiveShotConntroller/querySentVolunteersInfo.easy?userId='+userId+'&seeUserId='+seeUserId+'&id='+postId+'&easybuyCallback=?',
 		url:'http://userspace1.macaoeasybuy.com/UserLiveShotConntroller/querySentVolunteersInfo.easy?userId=5&seeUserId=6&id='+postId+'&easybuyCallback=?',

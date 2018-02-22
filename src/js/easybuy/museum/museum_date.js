@@ -25,7 +25,7 @@ function TodayDesignBox(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsYiPingController/queryYiShangpin/8/0/buy_date/desc/1.easy",function(json){
 		var TodayDesignList = json;
 		console.log(TodayDesignList);
-		if(TodayDesignList.list[0].length===0){
+		if(TodayDesignList.list[0].length === 0){
 			$('.museum_willSell').css('diaplay','none');
 			
 		}else{

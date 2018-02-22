@@ -166,6 +166,7 @@ function requestData(){
 			}
 		},
 		success:function(data){
+			console.log(data);
 			data = data.shangPinFoot;
 			showBackData(data,size,page);
 		}

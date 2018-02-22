@@ -12,7 +12,7 @@
 		<script src="/src/js/common/getData/getData_sinple.js"></script>
 		<script>easyBuy.global.hasNav = false;</script>
 		<!--不需要參數加載進來-->
-		<styl  e>
+		<style>
 			.navBar_borderBox{
 				width: 100%;
 				border-bottom: 2px solid #FF527C;
@@ -167,7 +167,7 @@
 								<%if(list[i].userpiclist[j] == ""){%>
 									<div class="discount_goodEach_visitEach"><img src="/src/img/common/headPic.png"></div>
 								<%}else{%>
-									<div class="discount_goodEach_visitEach"><img data-type="userAvatar" src='//wap.macaoeasybuy.com/<%=list[i].userpiclist[j]%>' onerror="this.src='/img/common/headPic.png'"></div>
+									<div class="discount_goodEach_visitEach"><img data-type="userAvatar" src='//wap.macaoeasybuy.com/<%=list[i].userpiclist[j]%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/headPic.png'"></div>
 								<%}%>
 							<%}%>
 							<a href="#"><img src="/src/img/easybuy/discount/discount_headPicHidden.png"></a>

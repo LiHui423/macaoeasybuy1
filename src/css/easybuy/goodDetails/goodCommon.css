@@ -2318,4 +2318,6 @@
 .museumDetails_introductionBox_main{
 	padding-top: 50px;
 }
-
+.hide{
+	display: none;
+}

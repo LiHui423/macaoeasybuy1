@@ -4,8 +4,10 @@ $(function(){
 	chooseSortLabel($(".typeBox ul li"),"typeBox_curr");
 	groupBuyEndHover($(".groupBuy_end_goodsEach"),".groupBuy_end_hover");
 	showDivTab();
-	page1 = null;page2 = null;page3 = null;
-	scrollLoad();
+	var page1 = null;
+	var page2 = null;
+	var page3 = null;
+	scrollLoad(page1,page2,page3);
 })
 
 function navTab(){
@@ -57,21 +59,21 @@ function showDivTab(){
 }
 
 
-function scrollLoad(){
+function scrollLoad(page1,page2,page3){
 	if(page1 >= 1){
-		page1 = page1;
+		let page1 = page1;
 	}else{
-		page1 = 1;
+		let page1 = 1;
 	}
 	if(page2 >= 1){
-		page2 = page2;
+		let page2 = page2;
 	}else{
-		page2 = 1;
+		let page2 = 1;
 	}
 	if(page3 >= 1){
-		page3 = page3;
+		let page3 = page3;
 	}else{
-		page3 = 1;
+		let page3 = 1;
 	}
 	var range = 0; //距下边界长度/单位px
     var totalheight = 300;

@@ -252,7 +252,7 @@
 	width: 220px;
 	height: 300px;
 	position: relative;
-	background:url("/src/img/common/loading_pc_220.jpg);
+	background:url("/src/img/common/loading_pc_220.jpg");
 }
 .ListBox_goodsEach_pic img{
 	display: inline-block;
