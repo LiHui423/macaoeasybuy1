@@ -190,25 +190,36 @@ class Easybuy {
           },
         });
       },
-      templateData(
-        apio,
-        scrolloading = {
-          open = false,
-          namesapce = 'loading',
-          viewport = window,
-          context = document,
-          fn = null,
-        } = null,
-        waterfall = {
-          container,
-          column = 2,
-          hGap = 0,
-          vGap = 20,
-        } = null,
-      ) {
-        const api = apio.api;
-        const params = apio.params;
-        const method = apio.method;
+      templatee(options = {
+        api,
+        params,
+        method,
+        container,
+        templateString = null,
+        scrolloading = null,
+        waterfall = null,
+        before = null,
+        after = null,
+      }) {
+        let sl = null;
+        let wf = null;
+        // 滚动加载的配置
+        if (scrolloading !== null) {
+          sl = {
+            open: scrolloading.open || false,
+            namesapce: scrolloading.namesapce || 'loading',
+            viewport: scrolloading.viewport || window,
+            context: scrolloading.context || document,
+          };
+        }
+        // 瀑布流的配置
+        if (waterfall !== null) {
+          wf = {
+            column: waterfall.column || 2,
+            hGap: waterfall.hGap || 0,
+            vGap: waterfall.vGap || 20,
+          };
+        }
         const page = params.page !== undefined ? params.page : null;
         const size = params.size !== undefined ? params.size : null;
         this.ajax({
@@ -216,8 +227,7 @@ class Easybuy {
           params,
           method,
           before: () => {
-            scrolloading !== null && this.scrolloading(scrolloading);
-            apio.before && apio.before();
+            sl !== null && this.scrolloading(sl);
           },
           after: ({ data }) => {
             const result = data['result'];
@@ -225,14 +235,111 @@ class Easybuy {
             if (Array.isArray(result)) {
               dataPackage.content = result;
             } else {
-
+              Object.keys(result).forEach((value) => {
+                (value === 'labellist' || value === 'pets')
+                  ? (dataPackage.content = result['labellist'] || result['pets'])
+                  : dataPackage[value] = result[value];
+              });
             }
-            apio.after && apio.after();
+            dataPackage.content === undefined && (dataPackage.content = []);
+            before && before(dataPackage);
+            this.templateInsert(container, templateString, dataPackage);
+            if (dataPackage.content.length === size && sl !== null) {
+              params.page++;
+              this.scrolloading(true, sl, () => this.templatee(options));
+            }
+            if (wf !== null) {
+                wf.container = container;
+                this.waterfall(wf);
+            }
+            after && after();
           }
         })
       },
-      templateInsert() {
+      templateInsert(container, templateString, dataPackage) {
+        const isPaging = dataPackage.page !== undefined;
+        const isFirst = dataPackage.page === 0;
 
+        if (template === undefined) {
+            return false;
+        }
+        const $container = container instanceof $ ? container : $(container);
+        (isFirst || !isPaging)
+          ? $container.html(template.render(templateString, dataPackage))
+          : $container.append(template.render(templateString, dataPackage));
+      },
+      /**
+       * 接口，参数，容器，
+       */
+      templateRender() {
+        /**
+         * 请求数据
+         * 插入HTML
+         */
+      },
+      /**
+       * @author Lzq
+       * @description 瀑布流
+       * @since 2018.2.22
+       * @param {HTMLElement|string|jQuery} container
+       * @param {number} [column]
+       * @param {number} [hGap]
+       * @param {number} [vGap]
+       */
+      waterfall({container, column = 2, hGap = 0, vGap = 20}) {
+        const $container = container instanceof jQuery ? container : $(container);
+        const $items = $c.children();
+        const containerWidth = $container.offsetWidth;
+        const columnWidth = containerWidth / column;
+          // 修改定位
+        const containerPosition = $container.css('position');
+        const itemPosition = $items.eq(0).css('position');
+        containerPosition !== 'relative' && containerPosition.css('position', 'relative');
+        let columnHeightArray = [];
+        for (let x = 0; x < column; x++) {
+          columnHeightArray[x] = 0;
+        }
+        $container.imagesLoaded().always(() => {
+          $items.forEach(($item) => {
+            const top = Math.min(...columnHeightArray);
+            const columnIn = columnHeightArray.indexOf(top);
+            $item.css({
+              'left': columnWidth * column === 0 ? '0' : columnWidth * column + 'px',
+              'top': top === 0 ? '0' : top + 'px',
+              'visibility': 'visible',
+              'position': 'absolute'
+            });
+            columnHeightArray[columnIn] = top + $item.height() + vGap;
+          });
+          const containerHeight = Math.max(...columnHeightArray);
+          $container.css('height', containerHeight + 'px');
+        });
+      },
+
+      /**
+       *
+       * @param {boolean} open - 状态
+       * @param {HTMLElement|string|jQuery} viewport - 可视窗口
+       * @param {HTMLElement|string|jQuery} [context] - 文档
+       * @param {string} [namespace] - 事件的命名空间
+       * @param {function} [callbackfn] - 回调函数
+       */
+      scrolloading({open, viewport, context = document, namespace = 'loading', callbackfn = null}) {
+        const $viewport = viewport instanceof jQuery ? viewport : $(viewport);
+        const event = `scroll.${namespace}`;
+        if (open === false) {
+          $viewport.off(event);
+        } else {
+          const $context = context instanceof jQuery ? context : $(context);
+          const vh = $viewport.height();
+          $viewport.on(event, () => {
+            const a = $(this).scrollTop();
+            const b = $context.height();
+            if (a + vh >= b * 0.8) {
+              callbackfn && callbackfn();
+            }
+          });
+        }
       }
     };
     Object.keys(thisMethods).forEach((name) => {

@@ -61,82 +61,70 @@ body {
 /*點擊發佈顯示彈框*/
 #sendpost-leftmenu-box {
   display: none;
+  .release-shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 899;
+  }
+  .release-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 900;
+    transform: translate(-50%, -50%);
+    width: 640px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px 30px;
+    .cancel-btn {
+      width: 30px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+      cursor: pointer;
+    }
+    ul li {
+      width: 50%;
+      height: 80px;
+      float: left;
+      overflow: hidden;
+      margin: 15px 0;
+      a {
+        width: 95%;
+        height: 100%;
+        display: block;
+        > div {
+          float: left;
+          p {
+            font-size: 14px;
+            color: #e98900;
+          }
+          > img {
+            margin-top: 9px;
+          }
+          :last-of-type {
+            margin-left: 10px;
+          }
+          > div:first-of-type {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e98900;
+            margin-top: 8px;
+          }
+          > div:last-of-type {
+            font-size: 16px;
+            color: #aaa;
+          }
+        }
+      }
+    }
+  }
 }
-
-#sendpost-leftmenu-box .release-shadow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, .5);
-  z-index: 899;
-}
-
-#sendpost-leftmenu-box .release-box {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 900;
-  transform: translate(-50%, -50%);
-  width: 640px;
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 20px 30px;
-}
-
-#sendpost-leftmenu-box .release-box .cancel-btn {
-  width: 30px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(50%, -50%);
-  cursor: pointer;
-}
-
-#sendpost-leftmenu-box .release-box ul li {
-  width: 50%;
-  height: 80px;
-  float: left;
-  overflow: hidden;
-  margin: 15px 0;
-}
-
-#sendpost-leftmenu-box .release-box ul li a {
-  width: 95%;
-  height: 100%;
-  display: block;
-}
-
-#sendpost-leftmenu-box .release-box ul li a > div {
-  float: left;
-}
-
-#sendpost-leftmenu-box .release-box ul li a > div > img {
-  margin-top: 9px;
-}
-
-#sendpost-leftmenu-box .release-box ul li a > div:last-of-type {
-  margin-left: 10px;
-}
-
-#sendpost-leftmenu-box .release-box ul li a > div > div:first-of-type {
-  font-size: 20px;
-  font-weight: bold;
-  color: #e98900;
-  margin-top: 8px;
-}
-
-#sendpost-leftmenu-box .release-box ul li a > div > div:last-of-type {
-  font-size: 16px;
-  color: #aaa;
-}
-
-#sendpost-leftmenu-box .release-box ul li a > div p {
-  font-size: 14px;
-  color: #e98900;
-}
-
 /*右側內容*/
 #right-content {
   float: right;
@@ -434,7 +422,7 @@ body {
   background-color: rgba(255, 255, 255, .3)
 }
 
-#white-menu {
+.space-nav {
   min-height: 985px;
   width: 100%;
   li {

@@ -26,7 +26,7 @@
             <div id="user-info"></div>
             <div class="e-container">
                 <div class="white-container">
-                    <ul id="white-menu"></ul>
+                    <ul id="space-nav" class="space-nav"></ul>
                     <ul id="news-push"></ul>
                 </div>
                 <div id="userspace-content">
@@ -39,9 +39,7 @@
 </div>
 <script src="/src/js/common/easyframe.js"></script>
 <script src="/src/js/common/vendor/modernizr-3.5.0.min.js"></script>
-<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
-<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
-<!-- <script src="/src/js/common/page-header.js"></script> -->
+<script src="/src/js/common/art-template-3.1.0.js"></script>
 <script src="/src/js/userspace/main.js"></script>
 <!-- 当前空间的用户信息 -->
 <script type="text/template" data-art-template="userInfo">
@@ -205,40 +203,40 @@
 </script>
 <!-- 左侧的空间导航栏 -->
 <script type="text/template" data-art-template="whitemenu">
-    <li data-space-nav="dynamic">
+    <li data-space-type="dynamic">
         <span>動態</span><span></span>
     </li>
-    <li data-space-nav="love">
+    <li data-space-type="love">
         <span>心動</span><span><%=userAllLoveNumber%></span>
     </li>
-    <li data-space-nav="praise">
+    <li data-space-type="praise">
         <span>贊好</span><span><%=userLikeNumber%></span>
     </li>
-    <li data-space-nav="daily">
+    <li data-space-type="daily">
         <span>日誌</span><span><%=userReleaseNumber%></span>
     </li>
-    <li data-space-nav="album">
+    <li data-space-type="album">
         <span>專輯</span><span><%=userAlbumNumber%></span>
     </li>
-    <li data-space-nav="life">
+    <li data-space-type="life">
         <span>生活圈</span><span><%=userSuitableLifeNumber%></span>
     </li>
-    <li data-space-nav="buy">
+    <li data-space-type="buy">
         <span>敗家誌</span><span><%=userSentVolunteersNumber%></span>
     </li>
-    <li data-space-nav="used">
+    <li data-space-type="used">
         <span>二手</span><span><%=userUsedNumber%></span>
     </li>
-    <li data-space-nav="fair">
+    <li data-space-type="fair">
         <span>市集</span><span><%=userFairNumber%></span>
     </li>
-    <li data-space-nav="label">
+    <li data-space-type="label">
         <span>標籤</span><span><%=userLabelControlNumber%></span>
     </li>
-    <li data-space-nav="shop">
+    <li data-space-type="shop">
         <span>關注的商店</span><span><%=userAttentionShopNumber%></span>
     </li>
-    <li data-space-nav="relation">
+    <li data-space-type="relation">
         <span>好友與粉絲</span><span></span>
     </li>
 </script>
@@ -315,6 +313,56 @@
             </li>
         </div>
     </div>
+</script>
+<script type="text/template" data-art-template="dynamic">
+  <div class="dynamic-type-tabs" data-active="0">
+    <div class="tab">
+        <div class="tab-info">
+            <p class="info-title">好友日誌</p>
+            <p class="info-news"></p>
+        </div>
+    </div>
+    <div class="tab">
+        <div class="tab-info">
+            <p class="info-title">好友專輯</p>
+            <p class="info-news"></p>
+        </div>
+    </div>
+    <div class="tab">
+        <div class="tab-info">
+            <p class="info-title">好友生活圈</p>
+            <p class="info-news"></p>
+        </div>
+    </div>
+    <div class="tab">
+        <div class="tab-info">
+            <p class="info-title">好友敗家誌</p>
+            <p class="info-news"></p>
+        </div>
+    </div>
+    <div class="tab">
+        <div class="tab-info">
+            <p class="info-title">好友二手</p>
+            <p class="info-news"></p>
+        </div>
+    </div>
+    <div class="tab">
+        <div class="tab-info">
+            <p class="info-title">好友市集</p>
+            <p class="info-news"></p>
+        </div>
+    </div>
+  </div>
+  <div class="sort-order-tabs" data-active="0">
+    <div class="tab">按發佈時間排序</div>
+    <div class="tab">按回覆數排序</div>
+    <div class="tab">按贊好數排序</div>
+  </div>
+  <div class="dynamic-content" data-active="0">
+    <div class="sort-box"></div>
+    <div class="sort-box"></div>
+    <div class="sort-box"></div>
+  </div>
 </script>
 </body>
 </html>

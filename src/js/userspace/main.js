@@ -1,4 +1,4 @@
-new Easybuy({
+const e = new Easybuy({
   data: {
     isSelf: null,
     elements: {
@@ -163,11 +163,11 @@ new Easybuy({
       });
     },
     // 动态
-    dynamic(name) {
+    dynamic() {
       const easybuy = this;
       const userId = this.data.userInfo.id;
       const seeUserId = this.data.search.spaceId;
-      let dynamicData = null;  // thi.data.dynamic
+      let dynamicData = null;  // this.data.dynamic
       const methods = {
         initData() {
           dynamicData = {
@@ -243,7 +243,9 @@ new Easybuy({
         changeSortTab(index, click = true) {
           const order = ['uptime', 'commentNums', 'loveNums'];
           const activeIndex = dynamicData.sortOrder;
-          click && this.statusBackup(index);
+          click && this.statusBackup(activeIndex);
+          $('.sort-order-tabs').attr('data-active', index);
+          dynamicData.sortOrder = index;
           if (dynamicData.status[index] !== undefined) {
             this.statusRecover(index);
             return;
@@ -255,7 +257,7 @@ new Easybuy({
         bindTabsClick() {
           const $typeTabs = $('.dynamic-type-tabs');
           const $sortTabs = $('.sort-order-tabs');
-          $typeTabs.on('click', '.tab' , event => {
+          $typeTabs.on('click', '.tab' , (event) => {
             const $e = easybuy.getTarget(event, '.tab');
             const activeIndex = dynamicData.dynamicType;
             const targetIndex = $e.index();
@@ -265,19 +267,17 @@ new Easybuy({
               this.typeTabsClickEvent(targetIndex);
             }
           });
-          $sortTabs.on('click', '.tab', event => {
+          $sortTabs.on('click', '.tab', (event) => {
             const $e = $(event.target);
             const activeIndex = dynamicData.sortOrder;
             const targetIndex = $e.index();
             if (activeIndex !== targetIndex) {
-              $sortTabs.attr('data-active', targetIndex);
-              dynamicData.sortOrder = targetIndex;
-              this.changeSortOrdreTab(targetIndex);
+              this.changeSortTab(targetIndex);
             }
           });
         },
         statusBackup(index) {
-          data.status[index] = JSON.stringify(dynamicData.active.params);
+          dynamicData.status[index] = JSON.stringify(dynamicData.active.params);
         },
         statusRecover(index) {
           const backup = dynamicData.status[index];
@@ -288,7 +288,10 @@ new Easybuy({
           dynamicData.active.params.order = 'uptime';
           dynamicData.status = [];
         },
-
+        requestData() {
+          const to =
+          easybuy.templateRender();
+        },
       };
       methods.initData();
       methods.htmlInsert();
@@ -296,7 +299,7 @@ new Easybuy({
     },
     getTarget(event, selector) {
       const $e = $(event.target);
-      return $e === $(selector) ? $e : $e.parents(selector);
+      return $e.hasClass(selector.substring(1)) ? $e : $e.parents(selector);
     },
     requestData(
       apio,
