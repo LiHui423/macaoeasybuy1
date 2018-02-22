@@ -33,7 +33,7 @@ const postcssPlugins = [
 /**
  *
  * @param {string} string
- * @param {boolean} dev
+ * @param {boolean} env
  */
 function changeURI(string, env) {
   let doo = '';
@@ -50,8 +50,8 @@ function changeURI(string, env) {
 }
 /**
  *
- * @param {string} sp - src path
- * @param {string} dp - dev path
+ * @param {string} src - src path
+ * @param {string} env - dev path
  */
 function javascript(src, env) {
   const isSingleFile = typeof src === 'string';
@@ -111,33 +111,33 @@ function html(src, env) {
   const SRCPATH = isSingleFile ? src : 'src/html/**/*.html';
   const ENV = env || 'dev';
   const DEV = ENV === 'dev';
-  const DESTPATH = isSingleFile ? path.dirname(SRCPATH).replace('src', 'dev') : (DEV ? 'dev/page' : 'dist/page');
+  const DESTPATH = isSingleFile ? path.dirname(SRCPATH).replace('src/html', 'dev/page') : (DEV ? 'dev/page' : 'dist/page');
   const isGlob = SRCPATH.indexOf('*') !== -1;
   return gulp.src(SRCPATH)
     .pipe(replace(REGEXP, match => changeURI(match, ENV)))
     .pipe(gulp.dest(DESTPATH));
 }
-function htmlP() {
-    const options = {
-        removeComments: true,
-        collapseWhitespace: false,
-        collapseBooleanAttributes: false,
-        removeEmptyAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        minifyJS: false,
-        minifyCSS: false
-    }
-    return gulp.src('dev/html/**/*.html')
-        .pipe(m.replace(/("|'|\()\/{2}(css|js|img).macaoeasybuy/gim, match => link(match, 'prod')))
-        .pipe(m.htmlmin(options))
-        .pipe(gulp.dest('dist/page'));
-}
-function cssP() {
-    return gulp.src('dev/css/**/*css')
-        .pipe(m.replace(/("|'|\()\/{2}(css|js|img).macaoeasybuy/gim, match => link(match, 'prod')))
-        .pipe(gulp.dest('dist/css'));
-}
+// function htmlP() {
+//     const options = {
+//         removeComments: true,
+//         collapseWhitespace: false,
+//         collapseBooleanAttributes: false,
+//         removeEmptyAttributes: true,
+//         removeScriptTypeAttributes: true,
+//         removeStyleLinkTypeAttributes: true,
+//         minifyJS: false,
+//         minifyCSS: false
+//     }
+//     return gulp.src('dev/html/**/*.html')
+//         .pipe(m.replace(/("|'|\()\/{2}(css|js|img).macaoeasybuy/gim, match => link(match, 'prod')))
+//         .pipe(m.htmlmin(options))
+//         .pipe(gulp.dest('dist/page'));
+// }
+// function cssP() {
+//     return gulp.src('dev/css/**/*css')
+//         .pipe(m.replace(/("|'|\()\/{2}(css|js|img).macaoeasybuy/gim, match => link(match, 'prod')))
+//         .pipe(gulp.dest('dist/css'));
+// }
 // gulp.task('build', gulp.parallel(htmlP, cssP));
 gulp.task('preview', gulp.parallel(javascript, styleCSS, styleSCSS, html));
 gulp.task('dev', () => {
