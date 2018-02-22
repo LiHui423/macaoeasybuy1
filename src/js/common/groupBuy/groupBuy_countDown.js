@@ -6,7 +6,7 @@ $(function(){
 
 function beginCount(){
 	var timeNum = 0;
-	interval_begin = setInterval(function(){
+	var interval_begin = setInterval(function(){
 		calcDownCount(timeNum);
 		timeNum++;
 	}, 1000);
