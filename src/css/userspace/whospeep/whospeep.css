@@ -12,7 +12,7 @@
     font-size: 20px;
     margin-left: 30px;
     cursor: pointer;
-    background: url(/img/userspace/album/state-arrow.png) right center no-repeat;
+    background: url("/src/img/userspace/album/state-arrow.png") right center no-repeat;
 }
 #sex-select {
     float: right;
@@ -123,7 +123,7 @@
     -ms-transform: translate(-50%,0px);
     -o-transform: translate(-50%,0px);
     transform: translate(-50%,0px);
-    display: none; 
+    display: none;
 }
 
 /*彈框用戶信息*/
@@ -149,7 +149,7 @@
     -webkit-transform: translate(-25%,0);
     -moz-transform: translate(-25%,0);
     -ms-transform: translate(-25%,0);
-    display: none; 
+    display: none;
 }
 .data-show ul>li:hover .result-box-item{
 	display: block;

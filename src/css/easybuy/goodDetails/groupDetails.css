@@ -56,7 +56,7 @@
 .groupBuy_joinGroup{
 	width: 330px;
 	height: 55px;
-	background: url(/img/easybuy/goodDetails/groupBuy_btnBg.png) no-repeat;
+	background: url("/src/img/easybuy/goodDetails/groupBuy_btnBg.png") no-repeat;
 	background-position-x:right;
 	-ms-background-position-x: right;
 	position: relative;
@@ -112,7 +112,7 @@
 	padding-bottom: 5px;
 }
 .shopMess{
-	margin-top: 20px;	
+	margin-top: 20px;
 }
 .museumDetails_goodMessBox_rightGift{
 	padding: 40px 10px;

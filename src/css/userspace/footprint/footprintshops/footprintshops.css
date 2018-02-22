@@ -5,7 +5,7 @@
     /*border-bottom: 2px solid #FF527C;*/
 }
 #container{
-	background:url(/img/userspace/footprint/bg.png) center center no-repeat;
+	background:url("/src/img/userspace/footprint/bg.png") center center no-repeat;
 	-webkit-background-size: 100%;
 	background-size:100%;
 	background-attachment: fixed;
@@ -68,7 +68,7 @@
 	font-size:20px;
 	margin-left:20px;
 	cursor:pointer;
-	background:url(/img/userspace/album/state-arrow.png) right center no-repeat;
+	background:url("/src/img/userspace/album/state-arrow.png") right center no-repeat;
 }
 #shop-select{
 	float:right;
@@ -80,7 +80,7 @@
 	/*margin-right:10px;*/
 }
 /*#shop-select.select .checkit-box{
-	background:url(/img/userspace/footprint/check-it.png) center center no-repeat #fff;
+	background:url("/src/img/userspace/footprint/check-it.png") center center no-repeat #fff;
 }*/
 #shop-select img{
 	margin:-5px 0px 0px 14px;
@@ -199,7 +199,7 @@
 }
 .data-show ul li>a .shop-info{
 	margin-top:15px;
-    background-image: url(/img/userspace/footprint/white-line.png);
+    background-image: url("/src/img/userspace/footprint/white-line.png");
     background-repeat: no-repeat;
     background-position: center center;
     -webkit-background-size: 0.5% 68%;
@@ -378,7 +378,7 @@
     display: inline-block;
     margin: 15px 0px;
 }
-#shop-bought .sure-cancel, 
+#shop-bought .sure-cancel,
 #shop-bought .cancel-sure {
 	width:170px;
     background-color: #FF527C;
@@ -410,7 +410,7 @@
     -moz-transform: translate(-50%,0px);
     -ms-transform: translate(-50%,0px);
     -o-transform: translate(-50%,0px);
-    display: none; 
+    display: none;
 }
 /*沒有任何內容*/
 #no-post{

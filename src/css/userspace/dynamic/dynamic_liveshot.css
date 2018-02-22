@@ -91,13 +91,13 @@
 	padding:32px 0px 10px 0px;
 }
 .pillar-all .laster .laster-num li:first-of-type{
-	background: url(/img/social/liveshot/ProdigalTopicList/eye.png) 28px 14px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/eye.png") 28px 14px no-repeat;
 }
 .pillar-all .laster .laster-num li:nth-of-type(2){
-	background: url(/img/social/liveshot/ProdigalTopicList/good.png) 30px 10px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/good.png") 30px 10px no-repeat;
 }
 .pillar-all .laster .laster-num li:last-of-type{
-	background: url(/img/social/liveshot/ProdigalTopicList/message.png) 27px 13px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/message.png") 27px 13px no-repeat;
 }
 .pillar-all .laster-look{
 	padding:15px;
@@ -201,5 +201,5 @@
 	width: 13px;
 	height: 13px;
 	background-color: #FF527C;
-	
+
 }

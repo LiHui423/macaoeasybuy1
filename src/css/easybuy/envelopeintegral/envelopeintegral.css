@@ -1,11 +1,11 @@
 #container{
-	background: url(/img/easybuy/envelopeintegral/bg.jpg) left center / 2000px no-repeat;
+	background: url("/src/img/easybuy/envelopeintegral/bg.jpg) left center / 2000px no-repeat;
 	background-attachment: fixed;
 }
 .container-swapper{
 	width:1397px;
 	margin:-1px auto 0px auto;
-	
+
 }
 .container-head{
 	border:1px solid #dcdcdc;
@@ -23,7 +23,7 @@
 }
 .envelope{
 	border-right:1px solid #dcdcdc;
-	background: url(/img/easybuy/envelopeintegral/envelope-logo.png) left bottom no-repeat;
+	background: url("/src/img/easybuy/envelopeintegral/envelope-logo.png") left bottom no-repeat;
 }
 .integral{
 	position:relative;

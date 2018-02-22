@@ -1,5 +1,5 @@
 body{
-	background: url(/img/shopCart/shopCart_bg.png) fixed;
+	background: url("/src/img/shopCart/shopCart_bg.png") fixed;
 }
 .transparent_bg{
 	width: 100%;
@@ -11,10 +11,10 @@ body{
 }
 
 .shopCart_tabBox{
-	
+
 }
 .shopCart_tabBox ul{
-	
+
 }
 .shopCart_tabBox ul li{
 	background-color: #e5e5e5;
@@ -203,7 +203,7 @@ body{
 	vertical-align:middle;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	overflow: hidden;    
+	overflow: hidden;
 }
 .shopCart_eachGood_size span:nth-child(1){
 	margin-right: 10px;
@@ -746,7 +746,7 @@ body{
 	display: inline-block;
 }
 .otherGoods_dataEach span:nth-child(1){
-	
+
 }
 .otherGoods_dataEach span:nth-child(2){
 	color: #ABABAB;
@@ -1024,7 +1024,7 @@ body{
 }
 .shopCart_eachGood_changeSize_sure{
 	margin-left: 55px;
-	
+
 }
 .shopCart_eachGood_changeSize_operating .shopCart_eachGood_changeSize_sure_curr{
 	background-color:#FF527C;
@@ -1062,7 +1062,7 @@ body{
 	padding: 35px 35px 25px 35px;
 }
 .shopCart_Redeem_main_mess{
-	
+
 }
 .shopCart_Redeem_main_messLeft{
 	float: left;
@@ -1104,26 +1104,26 @@ body{
 	border: none;
 	letter-spacing: 2px;
 }
-.shopCart_Redeem_main_input input[type = text]::-webkit-input-placeholder{ 
+.shopCart_Redeem_main_input input[type = text]::-webkit-input-placeholder{
 	font-size: 12px;
 	font-weight: 400;
 	color: #ABABAB;
-} 
-.shopCart_Redeem_main_input input[type = text]:-moz-placeholder{ 
+}
+.shopCart_Redeem_main_input input[type = text]:-moz-placeholder{
 	font-size: 12px;
 	font-weight: 400;
-	color: #ABABAB; 
-} 
-.shopCart_Redeem_main_input input[type = text]::-moz-placeholder{ 
+	color: #ABABAB;
+}
+.shopCart_Redeem_main_input input[type = text]::-moz-placeholder{
 	font-size: 14px;
 	font-weight: 400;
 	color: #ABABAB;
-} 
-.shopCart_Redeem_main_input input[type = text]:-ms-input-placeholder{ 
+}
+.shopCart_Redeem_main_input input[type = text]:-ms-input-placeholder{
 	font-size: 14px;
 	font-weight: 400;
 	color: #ABABAB;
-} 
+}
 .shopCart_Redeem_main_input span{
 	font-size: 16px;
 	color: #FF527C;
@@ -1147,7 +1147,7 @@ body{
 	opacity: 0;
 }
 .shopCart_Redeem_main_operating{
-	
+
 }
 .shopCart_Redeem_main_operating div{
 	float: left;
@@ -1316,30 +1316,30 @@ body{
 	margin: auto;
 	margin-bottom: 20px;
 }
-.shopCart_login_input input[type = text]::-webkit-input-placeholder{ 
+.shopCart_login_input input[type = text]::-webkit-input-placeholder{
 	font-size: 16x;
 	font-weight: 400;
 	color: #ABABAB;
 	letter-spacing: 2px;
-} 
-.shopCart_login_input input[type = text]:-moz-placeholder{ 
+}
+.shopCart_login_input input[type = text]:-moz-placeholder{
 	font-size: 16x;
 	font-weight: 400;
 	color: #ABABAB;
 	letter-spacing: 2px;
-} 
-.shopCart_login_input input[type = text]::-moz-placeholder{ 
+}
+.shopCart_login_input input[type = text]::-moz-placeholder{
 	font-size: 16x;
 	font-weight: 400;
 	color: #ABABAB;
 	letter-spacing: 2px;
-} 
-.shopCart_login_input input[type = text]:-ms-input-placeholder{ 
+}
+.shopCart_login_input input[type = text]:-ms-input-placeholder{
 	font-size: 16x;
 	font-weight: 400;
 	color: #ABABAB;
 	letter-spacing: 2px;
-} 
+}
 .shopCart_login_input input[type = text]:focus {
 	border: 1px solid #fafafa;
 	-webkit-box-shadow: 0px 0px 6px #007eff;

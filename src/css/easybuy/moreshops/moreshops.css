@@ -1,5 +1,5 @@
 body{
-	background: url(/img/easybuy/moreshops/moreshop_bg.png) fixed;
+	background: url("/src/img/easybuy/moreshops/moreshop_bg.png") fixed;
 }
 .navBar_borderBox{
 	width: 100%;
@@ -127,5 +127,5 @@ body{
 	display: none;
 }
 .moreshopsBox_goodShowBox{
-	height: 380px;	
+	height: 380px;
 }

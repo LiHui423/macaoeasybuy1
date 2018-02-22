@@ -1,5 +1,5 @@
 body{
-	background:url(/img/social/market/treasureclassifydetail/market-back.png) 0px 0px;
+	background:url("/src/img/social/market/treasureclassifydetail/market-back.png") 0px 0px;
 	background-attachment: fixed;
 	max-width:100%;
 	min-width:1397px;
@@ -535,13 +535,13 @@ body{
     padding: 32px 0px 10px 0px;
 }
 .laster .laster-num li:first-of-type{
-    background: url(/img/social/market/treasureclassifydetail/shopin_heart.png) center 9px / 20px 20px no-repeat #f8f4ea;
+    background: url("/src/img/social/market/treasureclassifydetail/shopin_heart.png") center 9px / 20px 20px no-repeat #f8f4ea;
 }
 .laster .laster-num li:nth-of-type(2){
-    background: url(/img/social/market/treasureclassifydetail/red-eyes.png) center 13px no-repeat #f8f4ea;
+    background: url("/src/img/social/market/treasureclassifydetail/red-eyes.png") center 13px no-repeat #f8f4ea;
 }
 .laster .laster-num li:last-of-type{
-    background: url(/img/social/market/treasureclassifydetail/red-mop.png) center 13px no-repeat #f8f4ea;
+    background: url("/src/img/social/market/treasureclassifydetail/red-mop.png") center 13px no-repeat #f8f4ea;
 }
 .laster-look {
     background-color: #fff;

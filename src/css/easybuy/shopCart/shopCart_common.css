@@ -1,5 +1,5 @@
 body{
-	background: url(/img/easybuy/shopCart/shopCart_bg.png) fixed;
+	background: url("/src/img/easybuy/shopCart/shopCart_bg.png") fixed;
 }
 /*購物籃的切換欄目*/
 .shopCart_searchBox{
@@ -176,7 +176,7 @@ body{
 	display: inline-block;
 }
 .otherGoods_dataEach span:nth-child(1){
-	
+
 }
 .otherGoods_dataEach span:nth-child(2){
 	color: #ABABAB;

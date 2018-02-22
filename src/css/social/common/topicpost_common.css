@@ -238,7 +238,7 @@
 	cursor: pointer;
 	text-indent: 25px;
 	padding: 5px 0px;
-	background: url(/img/social/liveshot/ProdigalPostDetail/message.png) 0px 4px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalPostDetail/message.png") 0px 4px no-repeat;
 	background-size: 20px;
 	-webkit-background-size: 20px;
 	-moz-background-size: 20px;
@@ -491,10 +491,10 @@
 	text-indent:20px;
 }
 .poster .poster-hot li div.topic{
-	background:url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/huati.png) 61px 2px no-repeat;
+	background:url("/src/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/huati.png") 61px 2px no-repeat;
 }
 .poster .poster-hot li div.welcome{
-	background:url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/zan.png) 45px 1px no-repeat;
+	background:url("/src/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/zan.png") 45px 1px no-repeat;
 }
 /*提及的商店*/
 .poster-about-shop{
@@ -643,10 +643,10 @@
 	color:#aaa;
 }
 .poster-about-shopping .shop-list li .shop-describe .describe-number div:first-of-type{
-	background : url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/eye.png) 0px 7px no-repeat;
+	background : url("/src/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/eye.png") 0px 7px no-repeat;
 }
 .poster-about-shopping .shop-list li .shop-describe .describe-number div:last-of-type{
-	background : url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/pack.png) 5px 3px no-repeat;
+	background : url("/src/img/social/liveshot/ProdigalTopicList/prodigalOfficialPost/pack.png") 5px 3px no-repeat;
 }
 
 /*我想說說*/

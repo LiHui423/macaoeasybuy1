@@ -1,5 +1,5 @@
 .secondHandBox{
-	background: url(//img.macaoeasybuy.com/img/social/secondHand/secondHand_bg.png) fixed;
+	background: url("/src/img/social/secondHand/secondHand_bg.png") fixed;
 }
 .secondHand_treaty{
 	width: 1397px;
@@ -62,7 +62,7 @@
 }
 .secondHand_exampleEach_titleLeft{
 	float: left;
-	background: url(//img.macaoeasybuy.com/img/social/secondHand/secondHand_titleBorder.png);
+	background: url("/src/img/social/secondHand/secondHand_titleBorder.png");
 	background-size:100%;
 	width: 385px;
 	height: 83px;

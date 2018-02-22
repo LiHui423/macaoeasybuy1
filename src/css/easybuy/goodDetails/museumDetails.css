@@ -1,5 +1,5 @@
 body{
-	background: url(//img.macaoeasybuy.com/img/easybuy/museum/museum_back.png) fixed;
+	background: url("/src/img/easybuy/museum/museum_back.png") fixed;
 	overflow-y: scroll;
 }
 .searchBox{

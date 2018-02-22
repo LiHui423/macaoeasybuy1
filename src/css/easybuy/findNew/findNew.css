@@ -1,5 +1,5 @@
 .findNewBox{
-	background: url(//img.macaoeasybuy.com/img/easybuy/findNew/findNew_bg.png) fixed;
+	background: url("/src/img/easybuy/findNew/findNew_bg.png") fixed;
 }
 .transparent_bg{
 	width: 100%;
@@ -213,7 +213,7 @@
 	position: relative;
 	width: 220px;
 	height: 300px;
-	background: url(/img/common/loading_pc_220.jpg);
+	background: url("/src/img/common/loading_pc_220.jpg);
 }
 .findNew_goodBox_each_pic img{
 	display: inline-block;

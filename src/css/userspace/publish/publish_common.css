@@ -135,7 +135,7 @@
 	position: relative;
 	width: 120px;
 	height: 120px;
-	background: url(/img/social/label/labeldetail/dragImg.png) 0 0 / 100% 100% no-repeat;
+	background: url("/src/img/social/label/labeldetail/dragImg.png") 0 0 / 100% 100% no-repeat;
 	margin: auto;
 }
 #publish_submit.select{

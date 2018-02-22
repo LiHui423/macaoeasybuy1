@@ -128,7 +128,7 @@
 	cursor: pointer;
 	text-indent: 25px;
 	padding: 5px 0px;
-	background: url(/img/social/liveshot/ProdigalPostDetail/message.png) 0px 4px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalPostDetail/message.png") 0px 4px no-repeat;
 	background-size: 20px;
 	-webkit-background-size: 20px;
 	-moz-background-size: 20px;
@@ -327,7 +327,7 @@
 	bottom:0px;
 	width:50px;
 	height:50px;
-	background:url(/img/common/big-glass.png) center center no-repeat rgba(0,0,0,.5);
+	background:url("/src/img/common/big-glass.png") center center no-repeat rgba(0,0,0,.5);
 	cursor: pointer;
 }
 #big-grass-page{
@@ -617,7 +617,7 @@
     float: left;
     list-style: none;
     height: 600px;
-    background: url(/img/common/postbanner-bg.png) center center;
+    background: url("/src/img/common/postbanner-bg.png") center center;
     cursor: pointer;
     visibility: hidden;
 }
@@ -776,7 +776,7 @@
 	overflow: hidden;
 	float:left;
 	position:relative;
-    background: url(/img/common/postbanner-bg.png) center center;
+    background: url("/src/img/common/postbanner-bg.png") center center;
 }
 .other-post .page-items .items-img img{
 	position:absolute;

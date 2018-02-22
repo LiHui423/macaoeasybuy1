@@ -187,7 +187,7 @@
 	margin-bottom:10px;
 }
 .star_score{
-	background:url(/img/easybuy/shopCart/start.png);
+	background:url("/src/img/easybuy/shopCart/start.png");
 	width:115px;
 	height: 20px;
 	position: relative;
@@ -202,12 +202,12 @@
 }
 
 .star_score a:hover {
-	background: url(/img/easybuy/shopCart/start_curr.png);
+	background: url("/src/img/easybuy/shopCart/start_curr.png");
 	left: 0;
 }
 
 .star_score a.clibg {
-	background: url(/img/easybuy/shopCart/start_curr.png);
+	background: url("/src/img/easybuy/shopCart/start_curr.png");
 	left: 0;
 }
 .eachstart_intro{
@@ -371,7 +371,7 @@
 	width: 100%;
 }
 .staycommend_success_settle{
-	
+
 }
 .staycommend_success_settle_title{
 	text-align: center;

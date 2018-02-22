@@ -1,5 +1,5 @@
 #userspace-content{
-	
+
 }
 /*頭*/
 .content-title{
@@ -246,7 +246,7 @@
 	outline: 0px;
 	position:relative;
 	z-index: 10;
-	background:url(/img/userspace/personalinfo/arrow-down.png) center right no-repeat #fff;
+	background:url("/src/img/userspace/personalinfo/arrow-down.png") center right no-repeat #fff;
 }
 #birthday-select .select-box select::-ms-expand{
     visibility: hidden;
@@ -325,7 +325,7 @@
 	margin:13px 15px 0px 0px;
 }
 .skill-lister .list-select .ul-box ul li.select div{
-	background:url(/img/userspace/album/check-select.png) center center / 80% no-repeat;
+	background:url("/src/img/userspace/album/check-select.png") center center / 80% no-repeat;
 }
 .skill-lister .list-select .ul-box ul li span{
 	float: left;

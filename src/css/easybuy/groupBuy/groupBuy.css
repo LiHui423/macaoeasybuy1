@@ -71,7 +71,7 @@
 	margin-left: 37px;
 }
 .groupBuy_mainBox{
-	background: url(//img.macaoeasybuy.com/img/easybuy/groupBuy/groupBuy_mainBG.png) fixed;
+	background: url("/src/img/easybuy/groupBuy/groupBuy_mainBG.png") fixed;
 	padding-bottom: 160px;
 }
 .groupBuy_mainBox:after{
@@ -301,7 +301,7 @@
 }
 .groupBuy_begin_status{
 	background-color: #FFFFFF;
-	background: url(//img.macaoeasybuy.com/img/easybuy/groupBuy/groupBuy_bg.png) no-repeat right;
+	background: url("/src/img/easybuy/groupBuy/groupBuy_bg.png") no-repeat right;
 	background-size:100%;
 	margin-right: -10px;
 	height:90px;

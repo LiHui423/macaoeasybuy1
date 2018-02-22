@@ -241,10 +241,10 @@
 }
 .replyBox_add .replyBox_addUl>li.emjoPop .expression-contains .expression-btn li.left {
 	border-right:1px solid #ccc !important;
-	background: url(/img/social/label/labeldetail/expression/left-btn.png) center center / 50% 50% no-repeat #fff;
+	background: url("/src/img/social/label/labeldetail/expression/left-btn.png") center center / 50% 50% no-repeat #fff;
 }
 .replyBox_add .replyBox_addUl>li.emjoPop .expression-contains .expression-btn li.right {
-	background: url(/img/social/label/labeldetail/expression/right-btn.png) center center / 50% 50% no-repeat #fff;
+	background: url("/src/img/social/label/labeldetail/expression/right-btn.png") center center / 50% 50% no-repeat #fff;
 }
 .replyBox_add .replyBox_addUl>li.emjoPop .expression-contains .expression-btn li.lr {
 	width: 30px;
@@ -708,7 +708,7 @@
 	border-right: 1px solid #ccc;
 	padding: 6px 20px;
 	font-weight: 600;
-	background: url(/img/social/label/labeldetail/product-add.png) 1px -3px no-repeat;
+	background: url("/src/img/social/label/labeldetail/product-add.png") 1px -3px no-repeat;
 	text-indent: 30px;
 }
 .replyBox_add ul li.add .add-contains-product .classList ul li{
@@ -802,7 +802,7 @@
 	left:0px;
 	width:200px;
 	height:300px;
-	background:url(/img/social/label/labeldetail/puman.png) center center no-repeat rgba(0,0,0,.6);
+	background:url("/src/img/social/label/labeldetail/puman.png") center center no-repeat rgba(0,0,0,.6);
 }
 .replyBox_add ul li.add .add-contains-product .select-product ul li.select .mycover{
 	display:block;
@@ -829,13 +829,13 @@
 	line-height: 60px;
 }
 .replyBox_add ul li.add .add-contains-product .select-product .bottom div:first-of-type{
-	background:url(/img/social/label/labeldetail/mylove.png) 22px 0px no-repeat;
+	background:url("/src/img/social/label/labeldetail/mylove.png") 22px 0px no-repeat;
 }
 .replyBox_add ul li.add .add-contains-product .select-product .bottom div:nth-of-type(2){
-	background:url(/img/social/label/labeldetail/myeye.png) 20px 3px no-repeat;
+	background:url("/src/img/social/label/labeldetail/myeye.png") 20px 3px no-repeat;
 }
 .replyBox_add ul li.add .add-contains-product .select-product .bottom div:nth-of-type(3){
-	background:url(/img/social/label/labeldetail/mypack.png) 26px 0px no-repeat;
+	background:url("/src/img/social/label/labeldetail/mypack.png") 26px 0px no-repeat;
 	border-right:0px;
 }
 
@@ -846,7 +846,7 @@
 	padding: 6px 20px;
 	font-weight: 600;
 	text-indent: 54px;
-	background: url(/img/social/label/labeldetail/shop-add.png) 19px -2px no-repeat;
+	background: url("/src/img/social/label/labeldetail/shop-add.png") 19px -2px no-repeat;
 }
 .replyBox_add ul li.add  .add-contains-shop .select-shop{
 	width:680px;
@@ -880,7 +880,7 @@
     left: 0px;
     right:0px;
     bottom:0px;
-    background: url(/img/social/label/labeldetail/puman.png) center center no-repeat rgba(0,0,0,.6);
+    background: url("/src/img/social/label/labeldetail/puman.png") center center no-repeat rgba(0,0,0,.6);
 }
 .replyBox_add ul li.add .add-contains-shop .select-shop ul li.select .mycover{
 	display:block;

@@ -1,5 +1,5 @@
 #userspace-content{
-	
+
 }
 /*頭*/
 .content-title{
@@ -162,7 +162,7 @@
 	margin:13px 15px 0px 0px;
 }
 .skill-lister .list-select .ul-box ul li.select div{
-	background:url(/img/userspace/album/check-select.png) center center / 80% no-repeat;
+	background:url("/src/img/userspace/album/check-select.png") center center / 80% no-repeat;
 }
 .skill-lister .list-select .ul-box ul li span{
 	float:left;

@@ -89,7 +89,7 @@
 	padding-right:30px;
 	padding-left:105px;
 	margin-right:30px;
-	background:url(/img/userspace/personalinfo/arrow-down-b.png) right center no-repeat;
+	background:url("/src/img/userspace/personalinfo/arrow-down-b.png") right center no-repeat;
 	cursor: pointer;
 }
 .content-box{
@@ -98,7 +98,7 @@
 }
 /*今日變化*/
 #today-change{
-	
+
 }
 #today-change ul{
 	padding:40px 0px;

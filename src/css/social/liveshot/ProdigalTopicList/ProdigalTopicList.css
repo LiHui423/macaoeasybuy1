@@ -33,7 +33,7 @@ html {
 	font-size: 22px;
 	text-indent: 78px;
 	padding: 20px 0;
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/title-icon.png) 16px center no-repeat #fff;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/title-icon.png") 16px center no-repeat #fff;
 	border-bottom: 1px solid #E3E3E3;
 }
 
@@ -107,16 +107,16 @@ html {
 }
 
 #container .container-swapper .top-one .top-one-right .main-info ul li:first-of-type {
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/eye.png) 0px 6px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/eye.png") 0px 6px no-repeat;
 }
 
 #container .container-swapper .top-one .top-one-right .main-info ul li:nth-of-type(2) {
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/message.png) 0px 4px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/message.png") 0px 4px no-repeat;
 }
 
 #container .container-swapper .top-one .top-one-right .main-info ul li:last-of-type {
 	margin-right: 0px;
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/good.png) 0px 2px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/good.png") 0px 2px no-repeat;
 }
 
 #container .container-swapper .top-one .top-one-right .comment {
@@ -328,16 +328,16 @@ html {
 }
 
 #container .container-swapper .list .list-num .main .info li:first-of-type {
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/eye.png) 30px 3.5px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/eye.png") 30px 3.5px no-repeat;
 }
 
 #container .container-swapper .list .list-num .main .info li:nth-of-type(2) {
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/message.png) 30px 2px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/message.png") 30px 2px no-repeat;
 }
 
 #container .container-swapper .list .list-num .main .info li:last-of-type {
 	border-right: 0px;
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/good.png) 30px 0px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/good.png") 30px 0px no-repeat;
 }
 
 #container .container-swapper .list .list-num .main .main-new {
@@ -388,7 +388,7 @@ html {
 	border: 1px solid #E98900;
 	color: #fff;
 	margin-left: 15px;
-	background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/20160707050504788040507545004.png) 24px 3px no-repeat #E98900;
+	background: url("/src/img/social/label/labeldetail/20160707050504788040507545004.png") 24px 3px no-repeat #E98900;
 	cursor: pointer;
 	height: 40px;
 	line-height: 40px;
@@ -400,7 +400,7 @@ html {
 .likeButton.hasLike {
 	text-indent: 36px;
 	color: #E98900;
-	background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/click-good.png) 30px 3px no-repeat #fff;
+	background: url("/src/img/social/label/labeldetail/click-good.png") 30px 3px no-repeat #fff;
 }
 
 .successBox {

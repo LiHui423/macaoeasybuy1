@@ -1,5 +1,5 @@
 body{
-	background:url(//img.macaoeasybuy.com/img/social/easylive/lifecircle-bg.png) center center no-repeat;
+	background:url("/src/img/social/easylive/lifecircle-bg.png") center center no-repeat;
 	background-attachment: fixed;
 }
 .navBar{
@@ -43,7 +43,7 @@ body{
 	float:left;
 	width:42.7%;
 	height:100%;
-	background:url(//img.macaoeasybuy.com/img/social/easylive/log-symbol-lifecircle.png) center 50px no-repeat;
+	background:url("/src/img/social/easylive/log-symbol-lifecircle.png") center 50px no-repeat;
 	position:relative;
 }
 .log-banner .log-banner-right p{
@@ -505,13 +505,13 @@ body{
     padding: 32px 0px 10px 0px;
 }
 .pillar-all .laster .laster-num li:first-of-type {
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/eye.png) 28px 14px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/eye.png") 28px 14px no-repeat;
 }
 .pillar-all .laster .laster-num li:nth-of-type(2) {
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/good.png) 30px 10px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/good.png") 30px 10px no-repeat;
 }
 .pillar-all .laster .laster-num li:last-of-type {
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/message.png) 27px 13px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/message.png") 27px 13px no-repeat;
 }
 .shadow-box {
     position: absolute;

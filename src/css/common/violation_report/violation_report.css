@@ -66,7 +66,7 @@
     color:#ccc;
     height:180px;
     line-height:320px;
-    background:url(//img.macaoeasybuy.com/img/common/icon/img-uploader.png) center center no-repeat;
+    background:url("/src/img/common/icon/img-uploader.png") center center no-repeat;
 }
 #violation-report .violation .img-upload .img-upload-inner .img-show{
 	background-color:#fff;

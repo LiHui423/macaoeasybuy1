@@ -4,13 +4,13 @@ html{
 	min-width: 550px;
 }
 body{
-	background-image: url(/img/common/postbanner-bg.png);
+	background-image: url("/src/img/common/postbanner-bg.png");
 	min-width: 550px;
 	width: 100%;
 	height: 100%;
 	overflow-x:hidden;
 	overflow-y: scroll;
-	
+
 }
 
 .share-out {
@@ -190,7 +190,7 @@ body{
 	background-color:#fff;
 }
 .easybuy-content .easybuy-content-nav{
-	
+
 }
 .easybuy-content .easybuy-content-nav .easybuy-content-nav-item{
 	width:25%;

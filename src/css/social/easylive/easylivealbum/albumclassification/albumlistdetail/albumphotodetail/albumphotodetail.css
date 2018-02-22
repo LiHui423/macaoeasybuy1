@@ -119,7 +119,7 @@ html {
     list-style: none;
     width: 818px;
     height: 600px;
-    background: url(//img.macaoeasybuy.com/img/common/postbanner-bg.png) center center;
+    background: url("/src/img/common/postbanner-bg.png") center center;
 }
 #foodBannerul li img {
 	vertical-align: middle;
@@ -141,7 +141,7 @@ html {
     text-indent: 46px;
     padding: 13px 0px;
     color: #fff;
-    background: url(//img.macaoeasybuy.com/img/social/easylive/album-classification-cai-white.png) 24px 6px no-repeat #E98900;
+    background: url("/src/img/social/easylive/album-classification-cai-white.png") 24px 6px no-repeat #E98900;
     text-align: center;
     font-size: 16px;
     border-radius: 8px;
@@ -337,7 +337,7 @@ html {
     cursor: pointer;
     text-indent: 25px;
     padding: 5px 0px;
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalPostDetail/message.png) 0px 4px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalPostDetail/message.png") 0px 4px no-repeat;
     background-size: 20px;
     -webkit-background-size: 20px;
     -moz-background-size: 20px;
@@ -748,7 +748,7 @@ html {
     text-indent: 46px;
     padding: 13px 0px;
     color: #fff;
-    background: url(//img.macaoeasybuy.com/img/social/easylive/album-classification-cai-white.png) 24px 6px no-repeat #E98900;
+    background: url("/src/img/social/easylive/album-classification-cai-white.png") 24px 6px no-repeat #E98900;
     text-align: center;
     font-size: 16px;
     border-radius: 8px;
@@ -1092,7 +1092,7 @@ html {
 	color:#fff;
 	cursor: pointer;
 	cursor: -ms-pointer;
-	background:url(//img.macaoeasybuy.com/img/social/easylive/focus-white.png) 24px 10px no-repeat #E98900;
+	background:url("/src/img/social/easylive/focus-white.png") 24px 10px no-repeat #E98900;
 	background-size:18px 18px;
 	-webkit-background-size:18px 18px;
 	-moz-background-size:18px 18px;
@@ -1191,7 +1191,7 @@ html {
     text-indent: 46px;
     padding: 13px 0px;
     color: #fff;
-    background: url(//img.macaoeasybuy.com/img/social/easylive/album-classification-cai-white.png) 24px 6px no-repeat #E98900;
+    background: url("/src/img/social/easylive/album-classification-cai-white.png") 24px 6px no-repeat #E98900;
     text-align: center;
     font-size: 16px;
     border-radius: 8px;

@@ -134,8 +134,8 @@ html {
 	width:42.5%;
 	height:461px;
 	float:left;
-	background:url(//img.macaoeasybuy.com/img/social/easylive/bottom-comma-topic.png) 440px 335px no-repeat,
-url(//img.macaoeasybuy.com/img/social/easylive/top-comma-topic.png) 65px 75px no-repeat;
+	background:url("/src/img/social/easylive/bottom-comma-topic.png") 440px 335px no-repeat,
+url("/src/img/social/easylive/top-comma-topic.png") 65px 75px no-repeat;
 }
 .global-top-one .top-one-top .top-artical>p{
 	position:absolute;

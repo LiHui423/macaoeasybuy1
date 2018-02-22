@@ -6,7 +6,7 @@
 	margin-top: 0px;
 }
 .themeDetailsBox{
-	background: url(/img/easybuy/moreTheme/themeDetails/themeDetails_bg.png) fixed center center no-repeat;
+	background: url("/src/img/easybuy/moreTheme/themeDetails/themeDetails_bg.png") fixed center center no-repeat;
 }
 .themeDetailsMain{
 	width: 1397px;
@@ -203,7 +203,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: url(/img/easybuy/moreTheme/themeDetails/redbag_notopen.png);
+	background: url("/src/img/easybuy/moreTheme/themeDetails/redbag_notopen.png");
 	width: 120px;
 	height: 120px;
 	background-size:100%;
@@ -222,7 +222,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: url(/img/easybuy/moreTheme/themeDetails/redbag_openIng.png);
+	background: url("/src/img/easybuy/moreTheme/themeDetails/redbag_openIng.png");
 	width: 120px;
 	height: 120px;
 	background-size:100%;

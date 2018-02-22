@@ -1,5 +1,5 @@
 .exchangeBox{
-	background: url(//img.macaoeasybuy.com/img/easybuy/exchange/exchange_bg.png) fixed;
+	background: url("/src/img/easybuy/exchange/exchange_bg.png") fixed;
 	min-width: 1397px;
 }
 .exchange_main{
@@ -105,7 +105,7 @@
 	position: absolute;
 	width: 115px;
 	height: 65px;
-	background: url(//img.macaoeasybuy.com/img/easybuy/exchange/redBagCost.png) no-repeat;
+	background: url("/src/img/easybuy/exchange/redBagCost.png") no-repeat;
 	bottom: 0px;
 	right: 5px;
 }
@@ -169,7 +169,7 @@
 	position: absolute;
 	width: 1425px;
 	height: 103px;
-	background: url(//img.macaoeasybuy.com/img/easybuy/exchange/head_bg.png) no-repeat;
+	background: url("/src/img/easybuy/exchange/head_bg.png") no-repeat;
 	margin: auto;
 	top: 0;
 	left: -14px;

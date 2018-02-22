@@ -55,14 +55,14 @@ body{
 	line-height:30px;
 	width:158px;
 	text-indent:-12px;
-	background:url(//img.macaoeasybuy.com/img/social/secondHand/secondhandclassifydetail/noclick-arrow.png) 120px center no-repeat;
+	background:url("/src/img/social/secondHand/secondhandclassifydetail/noclick-arrow.png") 120px center no-repeat;
 	cursor: pointer;
 	text-align: center;
 	border-right:2px solid #fff;
 }
 .nav .navbtn.select{
 	color:#03BBC3;
-	background:url(//img.macaoeasybuy.com/img/social/secondHand/secondhandclassifydetail/click-arrow.png) 120px center no-repeat #fff;
+	background:url("/src/img/social/secondHand/secondhandclassifydetail/click-arrow.png") 120px center no-repeat #fff;
 	height:100%;
 	line-height:60px;
 	margin-top:0px;
@@ -91,7 +91,7 @@ body{
 	-o-border-radius:4px;
 }
 .nav .check-box.select{
-	background: url(//img.macaoeasybuy.com/img/social/secondHand/secondhandclassifydetail/checked.png) center center no-repeat #eee;
+	background: url("/src/img/social/secondHand/secondhandclassifydetail/checked.png") center center no-repeat #eee;
 }
 .nav .price{
 	float:left;
@@ -244,7 +244,7 @@ body{
 #show-result-tips .no-result{
     line-height: 560px;
     height: 370px;
-    background: url(/img/common/05.png) center 12px no-repeat;
+    background: url("/src/img/common/05.png") center 12px no-repeat;
     font-weight: 600;
     font-size: 16px;
 	display:none;
@@ -276,7 +276,7 @@ body{
 }
 .pillar-all .pillar {
     width: 100%;
-    background: url(/img/social/label/labeldetail/hobg.png) center bottom no-repeat;
+    background: url("/src/img/social/label/labeldetail/hobg.png") center bottom no-repeat;
     background-size: 100%;
     padding-bottom: 17px;
     position:relative;
@@ -360,7 +360,7 @@ body{
 	margin-bottom: 0px;
 }
 .pillar-all .pillar .page-main .post-main-text ul li.area {
-    background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/area.png) 1px 3px no-repeat;
+    background: url("/src/img/social/label/labeldetail/area.png") 1px 3px no-repeat;
     text-indent: 20px;
 }
 .pillar-all .pillar .post-number {
@@ -390,13 +390,13 @@ body{
     padding: 32px 0px 10px 0px;
 }
 .pillar-all .pillar .laster .laster-num li:first-of-type {
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/eye-w.png) 36px 14px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/eye-w.png") 36px 14px no-repeat;
 }
 .pillar-all .pillar .laster .laster-num li:nth-of-type(2) {
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/good-w.png) 36px 10px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/good-w.png") 36px 10px no-repeat;
 }
 .pillar-all .pillar .laster .laster-num li:last-of-type {
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/message-w.png) 36px 13px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/message-w.png") 36px 13px no-repeat;
 }
 .pillar .page-main .laster-look {
     margin-top: 34px;

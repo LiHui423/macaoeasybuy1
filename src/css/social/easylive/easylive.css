@@ -78,7 +78,7 @@ html {
     width: 72px;
     height: 72px;
     overflow: hidden;
-    background: url(/img/social/easylive/noclass.png) no-repeat;
+    background: url("/src/img/social/easylive/noclass.png") no-repeat;
     background-size: 100% 100%;
     position: relative;
 }
@@ -604,12 +604,12 @@ html {
 .easylive-topic-nav-bottom {
     width: 100%;
     height: 36px;
-    background: url(/img/social/easylive/top-arrow.png) center center no-repeat;
+    background: url("/src/img/social/easylive/top-arrow.png") center center no-repeat;
     cursor: pointer;
 }
 
 .easylive-topic-nav-bottom {
-    background: url(/img/social/easylive/bottom-arrow.png) center center no-repeat;
+    background: url("/src/img/social/easylive/bottom-arrow.png") center center no-repeat;
 }
 
 .easylive-topic-nav-outer {

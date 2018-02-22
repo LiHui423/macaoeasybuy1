@@ -5,7 +5,7 @@
     /*border-bottom: 2px solid #FF527C;*/
 }
 #container{
-	background:url(/img/userspace/footprint/bg.png) center center no-repeat;
+	background:url("/src/img/userspace/footprint/bg.png") center center no-repeat;
 	-webkit-background-size: 100%;
 	background-size:100%;
 	background-attachment: fixed;
@@ -68,7 +68,7 @@
 	font-size:20px;
 	margin-left:20px;
 	cursor:pointer;
-	background:url(/img/userspace/album/state-arrow.png) right center no-repeat;
+	background:url("/src/img/userspace/album/state-arrow.png") right center no-repeat;
 }
 #museum-select{
 	float:right;
@@ -90,7 +90,7 @@
 }
 #shop-select.select .checkit-box,
 #museum-select.select .checkit-box{
-	background:url(/img/userspace/footprint/check-it.png) center center no-repeat #fff;
+	background:url("/src/img/userspace/footprint/check-it.png") center center no-repeat #fff;
 }
 #shop-select img,
 #museum-select img{
@@ -194,7 +194,7 @@
 	width:100%;
 	background-color:rgba(0,0,0,.5);
 	padding:10px 0px;
-	background-image: url(/img/userspace/footprint/white-line.png);
+	background-image: url("/src/img/userspace/footprint/white-line.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 	transition: all .2s;
@@ -221,7 +221,7 @@
 	left:0px;
 	right:0px;
 	bottom:0px;
-	background:url(/img/easybuy/discount/discount_sellOut.png) center center no-repeat rgba(0,0,0,.5);
+	background:url("/src/img/easybuy/discount/discount_sellOut.png") center center no-repeat rgba(0,0,0,.5);
 	-webkit-background-size: 65%;
 	-moz-background-size: 65%;
 	-ms-background-size: 65%;
@@ -439,7 +439,7 @@
     display: inline-block;
     margin: 15px 0px;
 }
-#shop-bought .sure-cancel, 
+#shop-bought .sure-cancel,
 #shop-bought .cancel-sure {
 	width:170px;
     background-color: #FF527C;
@@ -471,7 +471,7 @@
     -moz-transform: translate(-50%,0px);
     -ms-transform: translate(-50%,0px);
     -o-transform: translate(-50%,0px);
-    display: none; 
+    display: none;
 }
 /*沒有任何內容*/
 #no-post{

@@ -339,10 +339,10 @@
 }
 .replyBox_add .replyBox_addUl>li.emjoPop .expression-contains .expression-btn li.left {
 	border-right:1px solid #ccc !important;
-	background: url(/img/social/label/labeldetail/expression/left-btn.png) center center / 50% 50% no-repeat #fff;
+	background: url("/src/img/social/label/labeldetail/expression/left-btn.png") center center / 50% 50% no-repeat #fff;
 }
 .replyBox_add .replyBox_addUl>li.emjoPop .expression-contains .expression-btn li.right {
-	background: url(/img/social/label/labeldetail/expression/right-btn.png) center center / 50% 50% no-repeat #fff;
+	background: url("/src/img/social/label/labeldetail/expression/right-btn.png") center center / 50% 50% no-repeat #fff;
 }
 .replyBox_add .replyBox_addUl>li.emjoPop .expression-contains .expression-btn li.lr {
 	width: 30px;

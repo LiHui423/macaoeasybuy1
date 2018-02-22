@@ -1,5 +1,5 @@
 .liveshotBox{
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/liveshot_bg.png) fixed;
+	background: url("/src/img/social/liveshot/liveshot_bg.png") fixed;
 }
 .liveshotBox_main{
 	width: 1397px;
@@ -464,16 +464,16 @@
 }
 
 .liveshotBox_topic_main .list-num .main .info li:first-of-type {
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/eye.png) 30px 3.5px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/eye.png") 30px 3.5px no-repeat;
 }
 
 .liveshotBox_topic_main .list-num .main .info li:nth-of-type(2) {
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/message.png) 30px 2px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/message.png") 30px 2px no-repeat;
 }
 
 .liveshotBox_topic_main .list-num .main .info li:last-of-type {
 	border-right: 0px;
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/good.png) 30px 0px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/good.png") 30px 0px no-repeat;
 }
 
 .liveshotBox_topic_main .list-num .main .main-new {
@@ -814,13 +814,13 @@
 	padding:32px 0px 10px 0px;
 }
 .page-boss .laster .laster-num li:first-of-type{
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/eye.png) 28px 14px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/eye.png") 28px 14px no-repeat;
 }
 .page-boss .laster .laster-num li:nth-of-type(2){
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/good.png) 30px 10px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/good.png") 30px 10px no-repeat;
 }
 .page-boss .laster .laster-num li:last-of-type{
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/message.png) 27px 13px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/message.png") 27px 13px no-repeat;
 }
 .page-boss .laster-look{
 	padding:15px;

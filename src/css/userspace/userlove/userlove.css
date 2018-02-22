@@ -328,7 +328,7 @@
 }
 .groupBuy_begin_status{
 	background-color: #FFFFFF;
-    background: url(//img.macaoeasybuy.com/img/userspace/userlove/userlove_groupBuy_bg.png.png) no-repeat right;
+    background: url("/src/img/userspace/userlove/userlove_groupBuy_bg.png.png") no-repeat right;
     background-size: 100%;
     margin-right: -9px;
     height: 85px;
@@ -871,7 +871,7 @@
 	position: absolute;
     width: 105px;
     height: 55px;
-    background: url(//img.macaoeasybuy.com/img/easybuy/exchange/redBagCost.png) no-repeat;
+    background: url("/src/img/easybuy/exchange/redBagCost.png") no-repeat;
     background-size: 100%;
     bottom: 10px;
     right: 0px
@@ -1106,15 +1106,15 @@
 }
 
 .userlove_mainEach .item .item-info ul li .icon1 {
-	background: url(//img.macaoeasybuy.com/img/easybuy/museum/icon/shop-price-icon.png) 0 0 no-repeat;
+	background: url("/src/img/easybuy/museum/icon/shop-price-icon.png") 0 0 no-repeat;
 }
 
 .userlove_mainEach .item .item-info ul li .icon2 {
-	background: url(//img.macaoeasybuy.com/img/easybuy/museum/icon/shop-price-icon2.png) 0 0 no-repeat;
+	background: url("/src/img/easybuy/museum/icon/shop-price-icon2.png") 0 0 no-repeat;
 }
 
 .userlove_mainEach .item .item-info ul li .icon3 {
-	background: url(//img.macaoeasybuy.com/img/easybuy/museum/icon/shop-price-icon3.png) 0 0 no-repeat;
+	background: url("/src/img/easybuy/museum/icon/shop-price-icon3.png") 0 0 no-repeat;
 }
 
 .userlove_mainEach .item .item-info ul li .icon-num {
@@ -1391,7 +1391,7 @@
 	display: block;
 }
 .userLoveItem.select .hover-check-box-outer .hover-check-box{
-    background: url(/img/social/easylive/check-select.png) center center no-repeat #fff;
+    background: url("/src/img/social/easylive/check-select.png") center center no-repeat #fff;
 }
 /*取消心動*/
 #delete-post{

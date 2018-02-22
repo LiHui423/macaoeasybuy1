@@ -115,7 +115,7 @@
 	float: left;
 	width: 90px;
 	height: 90px;
-	background: url(/img/common/loading_pc_headPic.png) 0 0 / 100% 100% no-repeat;
+	background: url("/src/img/common/loading_pc_headPic.png") 0 0 / 100% 100% no-repeat;
 	overflow: hidden;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -169,7 +169,7 @@
 }
 #container .container-left .founder-info .info-about .add{
 	text-indent:24px;
-	background:url(//img.macaoeasybuy.com/img/social/label/labeldetail/add.png) 10px 9px no-repeat #E98900;
+	background:url("/src/img/social/label/labeldetail/add.png") 10px 9px no-repeat #E98900;
 	background-size:15px;
 	-webkit-background-size:15px;
 	-moz-background-size:15px;
@@ -448,7 +448,7 @@
 	-moz-border-radius: 10px 10px 0px 0px;
 	-webkit-border-radius: 10px 10px 0px 0px;
 	position:relative;
-    background: url(/img/common/postbanner-bg.png) center center;
+    background: url("/src/img/common/postbanner-bg.png") center center;
 }
 #container .container-right .cover.hasShadow{
 	-webkit-box-shadow:0px -55px 137px -50px #000 inset;
@@ -565,34 +565,34 @@
 	color: #fff;
 }
 #container .container-right .related-posts .related-posts-nav li:nth-of-type(1) {
-	background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/about.png) 27px 6px no-repeat;
+	background: url("/src/img/social/label/labeldetail/about.png") 27px 6px no-repeat;
 }
 #container .container-right .related-posts .related-posts-nav li:nth-of-type(1).select {
-	background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/about-select.png) 27px 6px no-repeat #C7C3E4;
+	background: url("/src/img/social/label/labeldetail/about-select.png") 27px 6px no-repeat #C7C3E4;
 }
 #container .container-right .related-posts .related-posts-nav li:nth-of-type(2) {
-	background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/about2.png) 17px 6px no-repeat;
+	background: url("/src/img/social/label/labeldetail/about2.png") 17px 6px no-repeat;
 }
 #container .container-right .related-posts .related-posts-nav li:nth-of-type(2).select {
-	background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/about2-select.png) 17px 6px no-repeat #C7C3E4;
+	background: url("/src/img/social/label/labeldetail/about2-select.png") 17px 6px no-repeat #C7C3E4;
 }
 #container .container-right .related-posts .related-posts-nav li:nth-of-type(3) {
-	background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/about3.png) 31px 5px no-repeat;
+	background: url("/src/img/social/label/labeldetail/about3.png") 31px 5px no-repeat;
 }
 #container .container-right .related-posts .related-posts-nav li:nth-of-type(3).select {
-	background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/about3-select.png) 31px 5px no-repeat #C7C3E4;
+	background: url("/src/img/social/label/labeldetail/about3-select.png") 31px 5px no-repeat #C7C3E4;
 }
 #container .container-right .related-posts .related-posts-nav li:nth-of-type(4) {
-	background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/about4.png) 17px 7px no-repeat;
+	background: url("/src/img/social/label/labeldetail/about4.png") 17px 7px no-repeat;
 }
 #container .container-right .related-posts .related-posts-nav li:nth-of-type(4).select {
-	background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/about4-selects.png) 17px 7px no-repeat #C7C3E4;
+	background: url("/src/img/social/label/labeldetail/about4-selects.png") 17px 7px no-repeat #C7C3E4;
 }
 #container .container-right .related-posts .related-posts-nav li:nth-of-type(5) {
-	background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/about5.png) 28px 7px no-repeat;
+	background: url("/src/img/social/label/labeldetail/about5.png") 28px 7px no-repeat;
 }
 #container .container-right .related-posts .related-posts-nav li:nth-of-type(5).select {
-	background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/about5-select.png) 28px 7px no-repeat #C7C3E4;
+	background: url("/src/img/social/label/labeldetail/about5-select.png") 28px 7px no-repeat #C7C3E4;
 }
 #container .container-right .related-posts .page {
 	border-radius: 0 0 10px 10px;
@@ -720,13 +720,13 @@
 	padding:32px 0px 10px 0px;
 }
 #container .related-posts .page-boss .laster .laster-num li:first-of-type{
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/eye.png) 28px 14px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/eye.png") 28px 14px no-repeat;
 }
 #container .related-posts .page-boss .laster .laster-num li:nth-of-type(2){
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/good.png) 30px 10px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/good.png") 30px 10px no-repeat;
 }
 #container .related-posts .page-boss .laster .laster-num li:last-of-type{
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/message.png) 27px 13px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/message.png") 27px 13px no-repeat;
 }
 #container .related-posts .page-boss .laster-look{
 	padding:15px;
@@ -853,13 +853,13 @@
 	color:#fff;
 }
 #container .related-posts .post-second .laster .laster-num li:first-of-type{
-	background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/eye-w.png) 28px 14px no-repeat;
+	background: url("/src/img/social/liveshot/ProdigalTopicList/eye-w.png") 28px 14px no-repeat;
 }
 #container .related-posts .post-second .laster .laster-num li:nth-of-type(2){
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/good-w.png) 30px 10px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/good-w.png") 30px 10px no-repeat;
 }
 #container .related-posts .post-second .laster .laster-num li:last-of-type{
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/message-w.png) 27px 13px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/message-w.png") 27px 13px no-repeat;
 }
 #container .related-posts .post-second .post-main-text p{
 	margin-bottom:14px;
@@ -872,7 +872,7 @@
 	color:#03BBC3;
 }
 #container .related-posts .post-second .post-main-text ul li.area{
-	background:url(//img.macaoeasybuy.com/img/social/label/labeldetail/area.png) 1px 3px no-repeat;
+	background:url("/src/img/social/label/labeldetail/area.png") 1px 3px no-repeat;
 	text-indent:20px;
 }
 #container .related-posts .post-second .post-main-text .post-number{
@@ -1039,13 +1039,13 @@
 	color:#aaa;
 }
 .post-topic .post-topic-box .box-main .box-main-head-bottom li:first-of-type{
-	background:url(//img.macaoeasybuy.com/img/common/eye.png) 18px 13px no-repeat;
+	background:url("/src/img/common/eye.png") 18px 13px no-repeat;
 }
 .post-topic .post-topic-box .box-main .box-main-head-bottom li:nth-of-type(2){
-	background:url(//img.macaoeasybuy.com/img/common/message.png) 18px 13px no-repeat;
+	background:url("/src/img/common/message.png") 18px 13px no-repeat;
 }
 .post-topic .post-topic-box .box-main .box-main-head-bottom li:last-of-type{
-	background:url(//img.macaoeasybuy.com/img/common/good.png) 18px 8px no-repeat;
+	background:url("/src/img/common/good.png") 18px 8px no-repeat;
 }
 .successBox {
     position: fixed;

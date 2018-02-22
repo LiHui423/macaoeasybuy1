@@ -101,7 +101,7 @@
 }
 .pillar-all .pillar {
     width: 100%;
-    background: url(/img/social/label/labeldetail/hobg.png) center bottom no-repeat;
+    background: url("/src/img/social/label/labeldetail/hobg.png") center bottom no-repeat;
     background-size: 100%;
     padding-bottom: 10px;
     position:relative;
@@ -182,7 +182,7 @@
 	margin-bottom: 0px;
 }
 .pillar-all .pillar .page-main .post-main-text ul li.area {
-    background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/area.png) 1px 3px no-repeat;
+    background: url("/src/img/social/label/labeldetail/area.png") 1px 3px no-repeat;
     text-indent: 20px;
 }
 .pillar-all .pillar .post-number {
@@ -212,13 +212,13 @@
     padding: 32px 0px 10px 0px;
 }
 .pillar-all .pillar .laster .laster-num li:first-of-type {
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/eye-w.png) 26px 14px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/eye-w.png") 26px 14px no-repeat;
 }
 .pillar-all .pillar .laster .laster-num li:nth-of-type(2) {
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/good-w.png) 26px 10px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/good-w.png") 26px 10px no-repeat;
 }
 .pillar-all .pillar .laster .laster-num li:last-of-type {
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/message-w.png) 26px 13px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/message-w.png") 26px 13px no-repeat;
 }
 .pillar .page-main .laster-look {
     margin-top: 34px;

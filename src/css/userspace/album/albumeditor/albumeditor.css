@@ -234,7 +234,7 @@
 	width:126px;
 	height:100%;
 	margin:0 auto;
-    background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/dragImg.png) 0 0 / 100% 100% no-repeat;
+    background: url("/src/img/social/label/labeldetail/dragImg.png") 0 0 / 100% 100% no-repeat;
     cursor: pointer;
     position:relative;
 }
@@ -282,7 +282,7 @@
     border:1px solid #eee;
 }
 .editor-upload .editor-lister li.select .editor-items-img .hover-check-box{
-	background: url(/img/userspace/album/check-select.png) center center / 80% 80% no-repeat #fff;
+	background: url("/src/img/userspace/album/check-select.png") center center / 80% 80% no-repeat #fff;
 }
 .editor-upload .editor-lister li .editor-items-value{
 	width:625px;

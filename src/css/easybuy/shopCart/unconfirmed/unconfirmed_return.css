@@ -58,7 +58,7 @@
 	color: #A8A8A8;
 }
 .unconfirmed_returnLeft_order{
-	padding: 15px 0; 
+	padding: 15px 0;
 	border-bottom: 1px solid #E3E3E3;
 }
 .unconfirmed_returnLeft_order p{
@@ -100,7 +100,7 @@
 	text-align: center;
 	line-height: 45px;
 	background-color:#ededed;
-	
+
 	font-size: 16px;
 	letter-spacing: 2px;
 	cursor: pointer;
@@ -537,7 +537,7 @@
 	width: 100%;
 }
 .unconfirmed_returnPop_main_intro{
-	
+
 }
 .unconfirmed_returnPop_main_intro p{
 	text-align: center;
@@ -587,14 +587,14 @@
 	position: relative;
 	width: 120px;
 	height: 120px;
-	background: url(/img/social/label/labeldetail/dragImg.png) 0 0 / 100% 100% no-repeat;
+	background: url("/src/img/social/label/labeldetail/dragImg.png") 0 0 / 100% 100% no-repeat;
 	margin: auto;
 }
 #return_filePicker{
 	position: relative;
 	width: 120px;
 	height: 120px;
-	background: url(/img/social/label/labeldetail/dragImg.png) 0 0 / 100% 100% no-repeat;
+	background: url("/src/img/social/label/labeldetail/dragImg.png") 0 0 / 100% 100% no-repeat;
 	margin: auto;
 }
 .change_filePicker_has{

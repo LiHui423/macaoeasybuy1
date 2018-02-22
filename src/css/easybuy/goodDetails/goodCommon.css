@@ -395,7 +395,7 @@
 	width: 360px;
 	position: absolute;
 	padding: 30px 10px;
-	background: url(//img.macaoeasybuy.com/img/easybuy/museum/rightGift_bg.png) no-repeat;
+	background: url("/src/img/easybuy/museum/rightGift_bg.png") no-repeat;
 	background-size:100%;
 	background-position-y: bottom;
 	min-height: 600px;
@@ -1057,7 +1057,7 @@
 .waterFallUl .blueprint_Each{
 	width: 265px;
 	float: left;
-	background: url(//img.macaoeasybuy.com/img/museum/hobg.png) no-repeat center bottom;
+	background: url("/src/img/museum/hobg.png") no-repeat center bottom;
 	background-size:98%;
 	position: relative;
 	padding-bottom: 16px;
@@ -1959,13 +1959,13 @@
     padding: 32px 0px 10px 0px;
 }
 .pillar-all .pillar .laster .laster-num li:first-of-type {
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/eye.png) 28px 14px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/eye.png") 28px 14px no-repeat;
 }
 .pillar-all .pillar .laster .laster-num li:nth-of-type(2) {
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/good.png) 28px 10px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/good.png") 28px 10px no-repeat;
 }
 .pillar-all .pillar .laster .laster-num li:last-of-type {
-    background: url(//img.macaoeasybuy.com/img/social/liveshot/ProdigalTopicList/message.png) 27px 13px no-repeat;
+    background: url("/src/img/social/liveshot/ProdigalTopicList/message.png") 27px 13px no-repeat;
 }
 .pillar-all .pillar .laster-look {
     border-top: 1px solid #ccc;

@@ -1,5 +1,5 @@
 #userspace-content{
-	
+
 }
 /*頭*/
 .content-title{
@@ -299,7 +299,7 @@
 	-moz-border-radius: 8px;
 	-ms-border-radius: 8px;
 	-o-border-radius: 8px;
-	border-radius: 8px; 
+	border-radius: 8px;
 	cursor: pointer;
 	letter-spacing: 2px;
 }
@@ -371,7 +371,7 @@
 }
 /*收貨時段*/
 #receiving-time{
-	
+
 }
 #receiving-time .select-btn{
 	position:relative;
@@ -490,7 +490,7 @@
 	-o-border-radius: 50%;
 	border-radius: 50%;
 	float:left;
-	background:url(/img/common/loading_pc_no-head.png) center center / 100% 100% no-repeat;
+	background:url("/src/img/common/loading_pc_no-head.png") center center / 100% 100% no-repeat;
 	overflow: hidden;
 }
 #change-head-img .box-content .head-img img{
@@ -508,7 +508,7 @@
 	height:302px;
 	background-color:#ccc;
 	margin-top:20px;
-	background: url(/img/common/img-mor.png) center center no-repeat;
+	background: url("/src/img/common/img-mor.png") center center no-repeat;
 	border:2px dashed #c1c1c1;
 	overflow: hidden;
 	text-align: center;
@@ -559,7 +559,7 @@
 	-moz-border-radius: 8px;
 	-ms-border-radius: 8px;
 	-o-border-radius: 8px;
-	border-radius: 8px; 
+	border-radius: 8px;
 	cursor: pointer;
 	letter-spacing: 2px;
 	position:relative;
@@ -649,7 +649,7 @@
 	left:0px;
 	right:0px;
 	bottom:0px;
-	background:url(/img/social/easylive/collect-select.png) center center / 35% no-repeat rgba(0,0,0,.5);
+	background:url("/src/img/social/easylive/collect-select.png") center center / 35% no-repeat rgba(0,0,0,.5);
 	display: none;
 }
 #change-head-img .box-content.select-page .pages ul li.select .li-shadow{
@@ -794,7 +794,7 @@
 	width:100%;
 	height:351px;
     border: 2px dashed #c1c1c1;
-    background: url(/img/common/img-mor.png) center center no-repeat;
+    background: url("/src/img/common/img-mor.png") center center no-repeat;
     border-radius: 6px;
     overflow: hidden;
 }
@@ -802,7 +802,7 @@
 	width:100%;
 }
 #crop-cover-img{
-	
+
 }
 #change-cover-img .upload-cover-change-btn img {
     margin: -3px 8px 0px 0px;
@@ -866,7 +866,7 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background: url(/img/social/easylive/collect-select.png) center center / 20% no-repeat rgba(0,0,0,.5);
+    background: url("/src/img/social/easylive/collect-select.png") center center / 20% no-repeat rgba(0,0,0,.5);
     display: none;
 }
 #change-cover-img .box-content.select-page .pages ul li.select .li-shadow{
@@ -976,7 +976,7 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background: url(/img/social/easylive/collect-select.png) center center / 20% no-repeat rgba(0,0,0,.5);
+    background: url("/src/img/social/easylive/collect-select.png") center center / 20% no-repeat rgba(0,0,0,.5);
     display: none;
 }
 #change-bg-img .select-box ul li.select .li-shadow {

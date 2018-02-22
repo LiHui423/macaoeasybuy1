@@ -141,7 +141,7 @@
 	width:126px;
 	height:100%;
 	margin:0 auto;
-    background: url(//img.macaoeasybuy.com/img/social/label/labeldetail/dragImg.png) 0 0 / 100% 100% no-repeat;
+    background: url("/src/img/social/label/labeldetail/dragImg.png") 0 0 / 100% 100% no-repeat;
     cursor: pointer;
     position:relative;
 }

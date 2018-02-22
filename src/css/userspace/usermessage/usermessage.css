@@ -183,7 +183,7 @@
 }
 /*系統通知*/
 .usermess_main_list{
-	
+
 }
 .usermess_main_listEach{
 	padding: 25px 35px;
@@ -363,7 +363,7 @@
     line-height: 30px;
 }
 .usermess_main_listEach_up .usermess_main_listEach_title{
-	display: block;	
+	display: block;
 }
 .usermess_main_listEach_up .usermess_main_listEach_slideBox{
 	display: none;
@@ -506,7 +506,7 @@
 .usermess_main_listEach_send_fans{
 	width: 630px;
 	height:108px;
-	background: url(/img/userspace/usermessage/usermessage_fans_bg.png) no-repeat;
+	background: url("/src/img/userspace/usermessage/usermessage_fans_bg.png") no-repeat;
 	background-size:100%;
 	padding: 15px 30px;
 }
@@ -583,7 +583,7 @@
 	letter-spacing: 1px;
 }
 .usermessEach_shop{
-	
+
 }
 .usermessEach_shopLeft{
 	float: left;
@@ -601,7 +601,7 @@
 	margin-left: 15px;
 }
 .usermessEach_shopRight_top{
-	
+
 }
 .usermessEach_shopRight_top span{
 	display: inline-block;
@@ -652,7 +652,7 @@
 	margin-right: 10px;
 }
 .usermess_main_listEach_shopMess{
-	margin-top: 5px;	
+	margin-top: 5px;
 }
 .usermess_main_listEach_shopMess_left{
 	float: left;
@@ -768,7 +768,7 @@
 	float: left;
 }
 .usermess_main_listEachMove .usermess_main_listEach_intro p{
-	line-height: 30px;	
+	line-height: 30px;
 }
 .usermess_main_listEachMove .usermess_main_listEach_other{
 	margin-top: 10px;

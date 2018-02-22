@@ -6,7 +6,7 @@
 	margin-top: 0px;
 }
 .addetailBox{
-	background: url(/img/easybuy/moreTheme/addetail/addetail_bg.png) fixed;
+	background: url("/src/img/easybuy/moreTheme/addetail/addetail_bg.png") fixed;
 }
 .addetailMain{
 	width: 1397px;

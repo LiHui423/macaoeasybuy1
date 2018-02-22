@@ -1,5 +1,5 @@
 body{
-	background: url(//img.macaoeasybuy.com/img/easybuy/shopCart/shopCart_bg.png) fixed;
+	background: url("/src/img/easybuy/shopCart/shopCart_bg.png") fixed;
 }
 .transparent_bg{
 	width: 100%;
@@ -464,10 +464,10 @@ body{
 	display: none;
 }
 .addressPop_main_oldEach_curr{
-	-moz-border-image:url(//img.macaoeasybuy.com/img/shopCart/address_bg.png) 5 5 round;
-	-webkit-border-image:url(//img.macaoeasybuy.com/img/shopCart/address_bg.png) 5 5 round;
-	-o-border-image:url(//img.macaoeasybuy.com/img/shopCart/address_bg.png)5 5 round;
-	border-image:url(//img.macaoeasybuy.com/img/shopCart/address_bg.png)5 5 round;
+	-moz-border-image:url("/src/img/shopCart/address_bg.png") 5 5 round;
+	-webkit-border-image:url("/src/img/shopCart/address_bg.png") 5 5 round;
+	-o-border-image:url("/src/img/shopCart/address_bg.png")5 5 round;
+	border-image:url("/src/img/shopCart/address_bg.png")5 5 round;
 }
 .addressPop_main_oldEach_curr .addressPop_main_oldEach_close{
 	display: block;

@@ -1,5 +1,5 @@
 .discountBox{
-	background: url(http://mbuy.oss-cn-hongkong.aliyuncs.com/systemImg/25/8/25/201608251000367873600250360036.png) fixed;
+	background: url(http://mbuy.oss-cn-hongkong.aliyuncs.com/systemImg/25/8/25/201608251000367873600250360036.png") fixed;
 }
 .discount_main{
 	width: 1397px;
@@ -19,7 +19,7 @@
     left: -250px;
     top: 130px;
     content: '';
-    background: url(//img.macaoeasybuy.com/img/easybuy/discount/discount_before.png) no-repeat;
+    background: url("/src/img/easybuy/discount/discount_before.png") no-repeat;
 }
 .discount_countDownBox:after{
 	width: 60%;
@@ -29,7 +29,7 @@
     right: -305px;
     top: 130px;
     content: '';
-    background: url(//img.macaoeasybuy.com/img/easybuy/discount/discount_before.png) no-repeat;
+    background: url("/src/img/easybuy/discount/discount_before.png") no-repeat;
 }
 .discount_Number{
 	font-size: 32px;
@@ -264,7 +264,7 @@
 	text-align: center;
 }
 .discount_goodEach_pic{
-	background-image: url(/img/common/loading_pc_600.jpg);
+	background-image: url("/src/img/common/loading_pc_600.jpg);
 	background-size: 100%;
 }
 .discount_goodEach_pic img{
@@ -275,7 +275,7 @@
     transition: opacity 0.4s ease-in-out;
 }
 .discount_goodEach_sizeShow{
-	background-image: url(/img/common/loading_pc_80.png);
+	background-image: url("/src/img/common/loading_pc_80.png");
 	background-size: 100%;
 }
 .loadingnow{
