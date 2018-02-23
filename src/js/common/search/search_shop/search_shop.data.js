@@ -25,7 +25,7 @@ function returnResult(){
 }
 
 function loadResult(){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrShopsController/QuerySolrShop.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Order="+Order+"&Page=0&Rows=6&easybuyCallback=?",function(data){
+	$.getJSON("http://192.168.3.29:8080/SolrShopsController/QuerySolrShop.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Order="+Order+"&Page=0&Rows=6&easybuyCallback=?",function(data){
 		console.log(data)
 		var searchShopNum = template("searchShopNum", data);
 		$('.search_result_title').html(searchShopNum);

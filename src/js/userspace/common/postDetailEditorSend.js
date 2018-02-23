@@ -46,7 +46,6 @@ function editorFunc(callBackAfterSend) {
 	$('#replyBox_sendMess').on('click.send', sendClick);
 
 	function sendClick() {
-		console.log('點擊調用的函數sendClick');
 		//點擊調用的函數
 		if($('.replyUserTips1314').length >= 1) {
 			var replyId = $('.replyUserTips1314')[0].id;
@@ -60,10 +59,8 @@ function editorFunc(callBackAfterSend) {
 		var atPos = resData.atPos;
 		var labelPos = resData.labelPos;
 		var bigexpression = '';
-		console.log($(this)[0].bigEmojiArr);
 		for(var i = 0; i < $(this)[0].bigEmojiArr.length; i++) {
 			bigexpression += '|' + $(this)[0].bigEmojiArr[i];
-			console.log(bigexpression);
 		}
 		if(res.length == 0) {
 			$('#comment-success-tips-empty').fadeIn(500).delay(1000).fadeOut(500);
@@ -85,12 +82,10 @@ function editorFunc(callBackAfterSend) {
 			async: true,
 			dataType: 'jsonp',
 			beforeSend: function(){
-				console.log(sendUrl);
 				$('#replyBox_sendMess').off('click.send');
 				$('#replyBox_sendMess').css('cursor', 'wait');
 			},
 			success: function(data) {
-				console.log(data);
 				if(callBackAfterSend) callBackAfterSend();
 				//清空內容跟大錶情
 				editor.obj.html('');

@@ -7,25 +7,25 @@
   let navSocialHTMLString = '';
   if (nav) {
     const shoppingPage = [
-      { name: '首頁', href: '#'},
-      { name: '限量搶購', href: '#' },
-      { name: '發現新品', href: '#' },
-      { name: '今日降價', href: '#' },
-      { name: '本週熱賣', href: '#' },
-      { name: '敗家誌', href: '#' },
-      { name: '尋寶市集', href: '#' },
-      { name: '量販團', href: '#' },
-      { name: '宜品館', href: '#' },
-      { name: '著數換領', href: '#' },
-      { name: '激平二手', href: '#' },
+      { name: '首頁', href: 'http://www.macaoeasybuy.com/page/html/easybuy_index.html'},
+      { name: '限量搶購', href: 'http://shopping.macaoeasybuy.com/limited/limited.html' },
+      { name: '發現新品', href: 'http://shopping.macaoeasybuy.com/findNew/new.html' },
+      { name: '今日降價', href: 'http://shopping.macaoeasybuy.com/discount/discount.html' },
+      { name: '本週熱賣', href: 'http://shopping.macaoeasybuy.com/hit/hit.html' },
+      { name: '敗家誌', href: 'http://social.macaoeasybuy.com/liveshot/liveshot.html' },
+      { name: '尋寶市集', href: 'http://social.macaoeasybuy.com/market/market.html' },
+      { name: '量販團', href: 'http://shopping.macaoeasybuy.com/gruopBuy/groupBuy.html' },
+      { name: '宜品館', href: 'http://shopping.macaoeasybuy.com/museum/museum.html' },
+      { name: '著數換領', href: 'http://shopping.macaoeasybuy.com/exchange/exchange.html' },
+      { name: '激平二手', href: 'http://social.macaoeasybuy.com/secondhand/secondHand.html' },
     ];
     const socialPage = [
-      { name: '全球筍貨', href: '#' },
-      { name: '福利社', href: '#' },
-      { name: '宜買話題', href: '#' },
-      { name: '生活圈', href: '#' },
-      { name: '宜粉日誌', href: '#' },
-      { name: '宜粉專輯', href: '#' },
+      { name: '全球筍貨', href: 'http://social.macaoeasybuy.com/easylive/easyliveglobalgoods/globalgoods.html' },
+      { name: '福利社', href: 'http://social.macaoeasybuy.com/easylive/easylivewelfare/easylivewelfare.html' },
+      { name: '宜買話題', href: 'http://social.macaoeasybuy.com/easylive/easylivebuytopic/easylivebuytopic.html' },
+      { name: '生活圈', href: 'http://social.macaoeasybuy.com/easylive/easylivelifecircle/easylivelifecircle.html' },
+      { name: '宜粉日誌', href: 'http://social.macaoeasybuy.com/easylive/easylivelog/easylivelog.html' },
+      { name: '宜粉專輯', href: 'http://social.macaoeasybuy.com/easylive/easylivealbum/easylivealbum.html' },
     ];
     const shoppingLi = shoppingPage.reduce((HTMLString, page) => {
       return HTMLString + `<li><a href="${page.href}">${page.name}</a></li>`;
@@ -34,14 +34,14 @@
       return HTMLString + `<li><a href="${page.href}">${page.name}</a></li>`;
     });
     navShoppingHTMLString = `
-      <div class="hidden">
+      <div class="hidden clearfloat" style="height:0px;overflow:hidden;transition:all .3s linear"">
         <ul class="e-container">
           ${shoppingLi}
         </ul>
       </div>
     `;
     navSocialHTMLString = `
-      <div class="hidden">
+      <div class="hidden clearfloat" style="height:0px;overflow:hidden;transition:all .3s linear">
         <ul class="e-container">
           ${socialLi}
         </ul>
@@ -134,4 +134,17 @@
       }
     }, 50);
   }
+  // 鼠標懸浮導航欄事件
+  $('.shopping').mouseover(function(){
+    $('.shopping>div').css('height','50px');
+  })
+  $('.shopping').mouseout(function(){
+    $('.shopping>div').css('height','0px');
+  })
+  $('.social').mouseover(function(){
+    $('.social>div').css('height','50px');
+  })
+  $('.social').mouseout(function(){
+    $('.social>div').css('height','0px');
+  })
 })());

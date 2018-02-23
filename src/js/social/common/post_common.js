@@ -115,6 +115,7 @@ function myContent(data){
 function labelClass(data){
 	console.log(data);
 	for(var i=0;i<data.length;i++){
+		
 		if(data[i].length == 0){
 			if(i==0){
 				$('#atricle_label li.placeLabel').remove();
@@ -140,7 +141,6 @@ function labelClass(data){
 		$(this).on('click',function(){
 			let content=$(this).attr('id').split('#')[1];
 			console.log(content);
-
 		})
 	});
 	if($('.atricle_label')) $('.atricle_label').css('display','block');
