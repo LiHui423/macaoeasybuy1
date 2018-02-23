@@ -122,7 +122,7 @@
 					<div class="search_result_seeOther_title"><img src="/src/img/easybuy/moreshops/seeOther_title.png"></div>
 					<div class="search_result_seeOther_main clearfloat">
 						<div class="otherGoods" data-id="0">
-							<div class="otherGoods_pic"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/\uploadfile\201610\20161031082231636135421510970025.jpg" onerror="this.src='/img/common/loading_pc_220.jpg'"></div>
+							<div class="otherGoods_pic"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/\uploadfile\201610\20161031082231636135421510970025.jpg" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_220.jpg'"></div>
 							<div class="otherGoods_mess">
 								<div class="otherGoods_mess_title hiddenText">
 									<a><span id="underline">（TEST）測試ETUDE HOUSE櫻桃唇膜</span></a>
@@ -218,7 +218,7 @@
 	<script type="text/html" id="searchGood" data-array = "searchGoodData">
 		<%for(var i = 0;i <list.solrModelInfo.object.length;i++){%>
 			<div class="otherGoods noPic" data-id="<%=list.solrModelInfo.object[i].spid%>" data-type = "<%=list.solrModelInfo.object[i].goodsType%>">
-				<div class="otherGoods_pic"><img src='' data-src = 'http://wap.macaoeasybuy.com<%=list.solrModelInfo.object[i].sppic%>' onerror="this.src='/img/common/loading_pc_220.jpg'"></div>
+				<div class="otherGoods_pic"><img src='' data-src = 'http://wap.macaoeasybuy.com<%=list.solrModelInfo.object[i].sppic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_220.jpg'"></div>
 				<div class="otherGoods_mess">
 					<div class="otherGoods_mess_title hiddenText">
 						<a><span id="underline"><%=list.solrModelInfo.object[i].sptitle%></span></a>
@@ -244,7 +244,7 @@
 	<script type="text/html" id="seeGood" data-array = "seeGoodData">
 		<%for(var i = 0;i <list.length;i++){%>
 			<div class="otherGoods noPic" data-id="<%=list[i].id%>" data-type = "<%=list[i].goodsType%>">
-				<div class="otherGoods_pic"><img src='' data-src = 'http://wap.macaoeasybuy.com/<%=list[i].pic%>' onerror="this.src='/img/common/loading_pc_220.jpg'"></div>
+				<div class="otherGoods_pic"><img src='' data-src = 'http://wap.macaoeasybuy.com/<%=list[i].pic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_220.jpg'"></div>
 				<div class="otherGoods_mess">
 					<div class="otherGoods_mess_title hiddenText">
 						<a><span id="underline"><%=list[i].title%></span></a></div>

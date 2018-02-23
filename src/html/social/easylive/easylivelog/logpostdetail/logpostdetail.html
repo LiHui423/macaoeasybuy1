@@ -463,7 +463,7 @@
 			<%}%>
 		</script>
 		<!--at人的模板-->
-		<script id="at-person-template" type="text/html" data-type="template">
+		<script id="at-person-template" type="text/html">
 			<%if(data.length != 0){%>
 			<%for(var i=0;i<data.length;i++){%>
 				<li id="<%=data[i].id%>user" class="<%=data[i].id%>userclass">
@@ -488,7 +488,7 @@
 			<%}%>
 		</script>
 		<!--標籤的模板-->
-		<script id="label-template" type="text/html" data-type="template">
+		<script id="label-template" type="text/html">
 			<%if(labelList.length != 0){%>
 			<%for(var i=0;i<labelList.length;i++){%>
 				<li id="<%=labelList[i].id%>label" class="<%=labelList[i].id%>labelclass" label="<%=labelList[i].labelName%>" type="<%=labelList[i].type%>" author="<%=labelList[i].userId%>">

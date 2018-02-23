@@ -16,6 +16,7 @@ easyBuy.global.afterDataJs = function(){
 	postContent(); //帖子內容
 	isClickLove(4,4); //查看用戶是否點讚
 	loadEditor(); ;//判斷登錄引入編輯框
+	selectPage()//選項卡
 	reportPost(); //舉報
 }
 easyBuy.social.isSocialPost = true;

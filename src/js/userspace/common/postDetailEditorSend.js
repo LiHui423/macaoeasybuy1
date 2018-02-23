@@ -46,6 +46,7 @@ function editorFunc(callBackAfterSend) {
 	$('#replyBox_sendMess').on('click.send', sendClick);
 
 	function sendClick() {
+		console.log('點擊調用的函數sendClick');
 		//點擊調用的函數
 		if($('.replyUserTips1314').length >= 1) {
 			var replyId = $('.replyUserTips1314')[0].id;
@@ -55,12 +56,14 @@ function editorFunc(callBackAfterSend) {
 			var replyUserId = 0;
 		}
 		var resData = editor.getYezContent();
-		var res = resData.newres;
+		var res = resData.newres;//回復的文字內容
 		var atPos = resData.atPos;
 		var labelPos = resData.labelPos;
 		var bigexpression = '';
+		console.log($(this)[0].bigEmojiArr);
 		for(var i = 0; i < $(this)[0].bigEmojiArr.length; i++) {
 			bigexpression += '|' + $(this)[0].bigEmojiArr[i];
+			console.log(bigexpression);
 		}
 		if(res.length == 0) {
 			$('#comment-success-tips-empty').fadeIn(500).delay(1000).fadeOut(500);
@@ -68,24 +71,26 @@ function editorFunc(callBackAfterSend) {
 			sendMsg(res, bigexpression, replyId, replyUserId, atPos, labelPos);
 		}
 	}
-
+	//str:回復的文字內容 bigexpression:大錶情的路徑 
 	function sendMsg(str, bigexpression, replyId, replyUserId, atPos, labelPos) {
-		var str = encodeURIComponent(str);
-		var type = easyBuy.userSpaceGlobal.replyPostType;
+		var str = encodeURIComponent(str);//回復的文字內容轉換為code
+		var typee = easyBuy.userSpaceGlobal.replyPostType;
 		var topicType = easyBuy.userSpaceGlobal.replyVolunteersType;
 		var replyId = replyId; //回復的id
 		var bigexpression = bigexpression; //大錶情
-		var sendUrl = 'http://userspace1.macaoeasybuy.com/topicReplyController/addReply.easy?id=' + postId + '&userId=' + userId + '&replyId=' + replyId + '&content=' + str + '&type=' + type + '&bigexpression=' + bigexpression + '&seeUserId=' + seeUserId + '&topicType=' + topicType + '&atPos=' + atPos + '&labelPos=' + labelPos + '&easybuyCallback=?';
+		var sendUrl = 'http://userspace1.macaoeasybuy.com/topicReplyController/addReply.easy?id=' + postId + '&userId=' + userId + '&replyId=' + replyId + '&content=' + str + '&type=' + typee + '&bigexpression=' + bigexpression + '&seeUserId=' + seeUserId + '&topicType=' + topicType + '&atPos=' + atPos + '&labelPos=' + labelPos + '&easybuyCallback=?';
 		$.ajax({
 			url: sendUrl,
 			type: "get",
 			async: true,
 			dataType: 'jsonp',
 			beforeSend: function(){
+				console.log(sendUrl);
 				$('#replyBox_sendMess').off('click.send');
 				$('#replyBox_sendMess').css('cursor', 'wait');
 			},
 			success: function(data) {
+				console.log(data);
 				if(callBackAfterSend) callBackAfterSend();
 				//清空內容跟大錶情
 				editor.obj.html('');
@@ -110,6 +115,7 @@ function editorFunc(callBackAfterSend) {
 				}
 			},
 			error: function() {
+				console.log('發生未知錯誤2222');
 				//錯誤提示
 				$('#replyBox_sendMess').on('click.send', sendClick);
 				$('#comment-success-tips-error').fadeIn(500).delay(1000).fadeOut(500);
@@ -121,8 +127,8 @@ function editorFunc(callBackAfterSend) {
 	function addComments(data) {
 		//評論成功，返回數據，添加進去頁面裡面
 		data.page = 1;
-		var responseTemplate = easyBuy.global.template['response'];
-		var html = template.render(responseTemplate, data.replyList);
+		var responseTemplate = 'response';
+		var html = template(responseTemplate, data.replyList);
 		$('#response-list').prepend(html);
 		if(data.replyList.integral != 0) {
 			$('#comment-success-tips .praise>div').eq(1).css('display', 'block');

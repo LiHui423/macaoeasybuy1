@@ -17,6 +17,7 @@ easyBuy.global.afterDataJs = function(){
 	isClickLove(7,7); //查看用戶是否點讚
 	loadEditor(); ;//判斷登錄引入編輯框
 	reportPost(); //舉報
+	selectPage()//選項卡
 	clickEvent(); //頁面點擊事件
 }
 easyBuy.social.isSocialPost = true;
@@ -75,7 +76,6 @@ function postContent(){
 		async:true,
 		dataType:'jsonp',
 		beforeSend:function(){
-			console.log('發出內容的請求')
 		},
 		success:function(data){
 			var newData = data.releaseInfo;
@@ -92,7 +92,6 @@ function postContent(){
 				$('#otherMess_shop').parent().remove();
 			}
 			userInfo(newData.username,newData.headPic,newData.sex); //用戶性別，頭像，姓名
-			console.log('55555555');
 			//吸頂檢測
 			checkFinsh.content = true;
 			checkAndGoScrollTop();

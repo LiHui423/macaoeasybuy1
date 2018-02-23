@@ -28,6 +28,13 @@ function returnResult(){
 
 /*數據加載函數*/
 function loadResult(){
+	console.log(keyword);
+	console.log(secondclass);
+	console.log(spStandardcode);
+	console.log(Parametercode);
+	console.log(Order);
+	console.log(AscOrDesc);
+	console.log(AscOrDesc);
 	$.getJSON("http://shopping1.macaoeasybuy.com/SolrGoodsController/QueryGoodsSolr.easy?Query="+ keyword +"&Page=0&Rows=72&AreaClassName="+ secondclass +"&spStandard="+ spStandardcode +"&Parameter="+ Parametercode +"&Order="+Order+"&AscOrDesc="+AscOrDesc+"&PriceStart="+PriceStart+"&PriceEnd="+PriceEnd+"&labelinfo="+labelinfo+"&easybuyCallback=?",function(data){
 		console.log(data)
 		/*取到二次分類*/

@@ -196,7 +196,7 @@ function allLookReq(){
 function clickEvent(){
 	$('body').on('click',function(e){
 		var target=e.target;
-		if($(target).hasClass('shadow-box')){
+		if($(target).hasClass('shadow-box') && $(target).parent().hasClass('pillar')){
 			var postId=$(target).parents('[id]').attr('id').split('-')[0];
 			console.log(postId);
 			window.open('http://social.macaoeasybuy.com/liveshot/ProdigalPostDetail/ProdigalPostDetail.html?postId='+postId);
