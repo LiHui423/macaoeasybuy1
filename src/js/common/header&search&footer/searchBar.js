@@ -208,10 +208,18 @@ function keyWord(){
 
 /*下拉框點擊事件*/
 function clickSecondClass(){
-	$('.searchBar_recommendEach_good .searchBar_recommendEach_main ul li').on('click',function(){
-		$('#searchInput').val($(this).text())
-		gotosearch()
+	console.log('99999');
+	$('.searchBar_recommendEach_good .searchBar_recommendEach_main ul li').on('click',function(e){
+		let $target=e.target;
+		console.log($target);
+		if($(this).text() !== ""){
+			$('#searchInput').val($(this).text());
+			gotosearch();
+		}else {
+			console.log('true');
+		}
 	})
+
 }
 
 
