@@ -6,7 +6,7 @@ const e = new Easybuy({
       control: document.querySelector('#left-menu'),
       userInfo: document.querySelector('#user-info'),
       newsPush: document.querySelector('#news-push'),
-      content: document.querySelector('#userspace-content'),
+      content: document.querySelector('.userspace-content'),
     },
     spaceNavIndex: 0,
   },
@@ -54,8 +54,9 @@ const e = new Easybuy({
         after: ({ data }) => {
           data['userSpaceCount'].self = this.data.isSelf;
           container.innerHTML = template.render(ts, data['userSpaceCount']);
-          // const type = container.children[0].getAttribute('data-space-type');
+          const type = container.children[0].getAttribute('data-space-type');
           container.setAttribute('data-active', 0);
+          $(this.data.elements.content).attr('data-type', type);
           this.bindSpaceNavClick(container);
         }
       });
@@ -64,13 +65,19 @@ const e = new Easybuy({
       const ts = this.data.template['newspush'];
       this.data.elements.newsPush.innerHTML = template.render(ts);
     },
+    resetData() {
+      $(this.data.elements.content).empty();
+      this.data.dynamic = null;
+    },
     bindSpaceNavClick(elements) {
       const $el = $(elements);
       $el.on('click', 'li', (e) => {
+        this.resetData();
         const $e = e.target.tagName === 'LI' ? $(e.target) : $(e.target).parent();
         const index = $e.index();
         const type = $e.attr('data-space-type');
         $el.attr('data-active', index);
+        $(this.data.elements.content).attr('data-type', type);
       });
     },
     userInfoBindClickPoint(followed, isSelf) {
@@ -162,6 +169,10 @@ const e = new Easybuy({
         }
       });
     },
+    getTarget(event, selector) {
+      const $e = $(event.target);
+      return $e.hasClass(selector.substring(1)) ? $e : $e.parents(selector);
+    },
     // 动态
     dynamic() {
       const easybuy = this;
@@ -192,8 +203,8 @@ const e = new Easybuy({
             status: [],
             dynamicType: 0,
             sortOrder: 0,
-            container: easybuy.data.elements.content
-
+            container: easybuy.data.elements.content,
+            list: null,
           };
           easybuy.data.dynamic = dynamicData;
         },
@@ -231,6 +242,8 @@ const e = new Easybuy({
             },
             after: ({ data }) => {
               dynamicData.lastClickTime = data.result;
+              dynamicData.active.params.lastClickTime = data.result;
+              this.requestData({index:type});
             },
           })
         },
@@ -246,13 +259,19 @@ const e = new Easybuy({
           click && this.statusBackup(activeIndex);
           $('.sort-order-tabs').attr('data-active', index);
           dynamicData.sortOrder = index;
+          this.setContainer(index);
           if (dynamicData.status[index] !== undefined) {
             this.statusRecover(index);
             return;
           }
           dynamicData.active.params.page = 0;
           dynamicData.active.params.order = order[index];
-          click && this.requestData();
+          click && this.requestData({index:dynamicData.dynamicType});
+        },
+        setContainer(index) {
+          const $c = $('.dynamic-content');
+          dynamicData.list = $c.children().eq(index);
+          $c.attr('data-active', index);
         },
         bindTabsClick() {
           const $typeTabs = $('.dynamic-type-tabs');
@@ -287,53 +306,42 @@ const e = new Easybuy({
           dynamicData.active.params.page = 0;
           dynamicData.active.params.order = 'uptime';
           dynamicData.status = [];
+          $('.sort-box').each(() => {
+            $(this).empty();
+          });
         },
-        requestData() {
-          const to =
-          easybuy.templateRender();
+        requestData({ index }) {
+          const tid = ['dynamic-daily', 'dynamic-album', 'dynamic-life', 'dynamic-buy', 'dynamic-used', 'dynamic-fair'];
+          const options = {
+            api: dynamicData.active.api,
+            params: dynamicData.active.params,
+            container: dynamicData.list,
+            templateString: easybuy.data.template[tid[index]],
+            waterfall: {
+              column: 4,
+            },
+            scrolloading: {
+              callbackfn:() => {
+                this.requestData({ index });
+              },
+            },
+          };
+          easybuy.templateRender(options);
         },
       };
       methods.initData();
       methods.htmlInsert();
       methods.bindTabsClick();
-    },
-    getTarget(event, selector) {
-      const $e = $(event.target);
-      return $e.hasClass(selector.substring(1)) ? $e : $e.parents(selector);
-    },
-    requestData(
-      apio,
-      {
-        open = false,
-        namesapce = 'loading',
-        viewport = window,
-        context = document,
-        fn = null,
-      } = {},
-      {
-        container,
-        column = 2,
-        hGap = 0,
-        vGap = 20,
-      } = {},
-    ) {
-      this.ajax({
-        api: apio.api,
-        params: apio.params,
-        before: () => {
-
-        },
-        after: ({ data }) => {
-
-        },
-      });
+      dynamicData.active.api = dynamicData.api[0];
+      methods.setContainer(0);
+      methods.updateClickTime(0);
     },
   },
   uiBack() {
     this.initUserSpace();
     this.insertSpaceInfo();
     this.insertSpaceNav();
-    this.dynamic();
+    this.data.isSelf && this.dynamic();
   },
   after() {
     this.insertControl();
