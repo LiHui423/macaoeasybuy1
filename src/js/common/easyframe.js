@@ -190,36 +190,29 @@ class Easybuy {
           },
         });
       },
-      templatee(options = {
+      /**
+       *
+       * @param {string} api 请求的接口
+       * @param {object} params 请求的参数
+       * @param {string} [method] 请求类型
+       * @param {string} templateString 模板字符串
+       * @param {HTMLElement|string|jQuery} container 渲染的容器
+       * @param {object} [waterfall] 瀑布流
+       * @param {object} [scrolloading] 滚动加载
+       * @param {function} [before] 模板插入之前
+       * @param {function} [after] 模板插入之后
+       */
+      templateRender({
         api,
         params,
-        method,
+        method = 'GET',
+        templateString,
         container,
-        templateString = null,
-        scrolloading = null,
         waterfall = null,
+        scrolloading = null,
         before = null,
-        after = null,
+        after = null
       }) {
-        let sl = null;
-        let wf = null;
-        // 滚动加载的配置
-        if (scrolloading !== null) {
-          sl = {
-            open: scrolloading.open || false,
-            namesapce: scrolloading.namesapce || 'loading',
-            viewport: scrolloading.viewport || window,
-            context: scrolloading.context || document,
-          };
-        }
-        // 瀑布流的配置
-        if (waterfall !== null) {
-          wf = {
-            column: waterfall.column || 2,
-            hGap: waterfall.hGap || 0,
-            vGap: waterfall.vGap || 20,
-          };
-        }
         const page = params.page !== undefined ? params.page : null;
         const size = params.size !== undefined ? params.size : null;
         this.ajax({
@@ -227,69 +220,49 @@ class Easybuy {
           params,
           method,
           before: () => {
-            sl !== null && this.scrolloading(sl);
+            if (params.page === -1) {
+              return;
+            }
+            scrolloading && this.scrolloading(false, scrolloading);
           },
           after: ({ data }) => {
-            const result = data['result'];
-            const dataPackage = { page };
-            if (Array.isArray(result)) {
-              dataPackage.content = result;
-            } else {
-              Object.keys(result).forEach((value) => {
-                (value === 'labellist' || value === 'pets')
-                  ? (dataPackage.content = result['labellist'] || result['pets'])
-                  : dataPackage[value] = result[value];
-              });
+            const content = data.result;
+            const dataPackage = { page, content };
+
+            before && before(dataPackage, data);
+
+            if (template === undefined) {
+              return;
             }
-            dataPackage.content === undefined && (dataPackage.content = []);
-            before && before(dataPackage);
-            this.templateInsert(container, templateString, dataPackage);
-            if (dataPackage.content.length === size && sl !== null) {
-              params.page++;
-              this.scrolloading(true, sl, () => this.templatee(options));
+
+            const $container = container instanceof jQuery ? container : $(container);
+            const tr = template.render(templateString, dataPackage);
+            (page === 0 || page === null) ? $container.html(tr) : $container.append(tr);
+
+            waterfall && this.waterfall($container, waterfall);
+            if (content.length === size) {
+              setTimeout(() => {
+                this.scrolloading(true, scrolloading);
+              }, 2000);
             }
-            if (wf !== null) {
-                wf.container = container;
-                this.waterfall(wf);
-            }
+            params.page = content.length === size ? (params.page + 1) : -1;
             after && after();
           }
         })
-      },
-      templateInsert(container, templateString, dataPackage) {
-        const isPaging = dataPackage.page !== undefined;
-        const isFirst = dataPackage.page === 0;
-
-        if (template === undefined) {
-            return false;
-        }
-        const $container = container instanceof $ ? container : $(container);
-        (isFirst || !isPaging)
-          ? $container.html(template.render(templateString, dataPackage))
-          : $container.append(template.render(templateString, dataPackage));
-      },
-      /**
-       * 接口，参数，容器，
-       */
-      templateRender() {
-        /**
-         * 请求数据
-         * 插入HTML
-         */
       },
       /**
        * @author Lzq
        * @description 瀑布流
        * @since 2018.2.22
-       * @param {HTMLElement|string|jQuery} container
-       * @param {number} [column]
-       * @param {number} [hGap]
-       * @param {number} [vGap]
+       * @param {HTMLElement|string|jQuery} container 作用瀑布流的容器
+       * @param {number} [column] 列数
+       * @param {number} [hGap] 水平间距
+       * @param {number} [vGap] 垂直间距
        */
-      waterfall({container, column = 2, hGap = 0, vGap = 20}) {
+      waterfall(container, {column = 2, hGap = 0, vGap = 20}) {
         const $container = container instanceof jQuery ? container : $(container);
-        const $items = $c.children();
-        const containerWidth = $container.offsetWidth;
+        const $items = $container.children();
+        const containerWidth = $container.width();
         const columnWidth = containerWidth / column;
           // 修改定位
         const containerPosition = $container.css('position');
@@ -300,11 +273,12 @@ class Easybuy {
           columnHeightArray[x] = 0;
         }
         $container.imagesLoaded().always(() => {
-          $items.forEach(($item) => {
+          $items.each((index, item) => {
+            const $item = $(item);
             const top = Math.min(...columnHeightArray);
             const columnIn = columnHeightArray.indexOf(top);
             $item.css({
-              'left': columnWidth * column === 0 ? '0' : columnWidth * column + 'px',
+              'left': (columnWidth * columnIn === 0) ? '0' : (columnWidth * columnIn + 'px'),
               'top': top === 0 ? '0' : top + 'px',
               'visibility': 'visible',
               'position': 'absolute'
@@ -318,13 +292,13 @@ class Easybuy {
 
       /**
        *
-       * @param {boolean} open - 状态
-       * @param {HTMLElement|string|jQuery} viewport - 可视窗口
-       * @param {HTMLElement|string|jQuery} [context] - 文档
-       * @param {string} [namespace] - 事件的命名空间
-       * @param {function} [callbackfn] - 回调函数
+       * @param {boolean} open 状态
+       * @param {HTMLElement|string|jQuery} viewport 可视窗口
+       * @param {HTMLElement|string|jQuery} [context] 文档
+       * @param {string} [namespace] 事件的命名空间
+       * @param {function} [callbackfn] 回调函数
        */
-      scrolloading({open, viewport, context = document, namespace = 'loading', callbackfn = null}) {
+      scrolloading(open, {viewport = window, context = document, namespace = 'loading', callbackfn = null}) {
         const $viewport = viewport instanceof jQuery ? viewport : $(viewport);
         const event = `scroll.${namespace}`;
         if (open === false) {
@@ -333,7 +307,7 @@ class Easybuy {
           const $context = context instanceof jQuery ? context : $(context);
           const vh = $viewport.height();
           $viewport.on(event, () => {
-            const a = $(this).scrollTop();
+            const a = $viewport.scrollTop();
             const b = $context.height();
             if (a + vh >= b * 0.8) {
               callbackfn && callbackfn();
