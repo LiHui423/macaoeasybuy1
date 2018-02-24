@@ -27,7 +27,7 @@
 
 
 
-window.easyBuy = {
+const easyBuy = {
 	easyUser : {}, //登錄用戶信息
 	pageUser : {}, //頁面所屬用戶信息
 	isLogin : false,  //用戶是否登錄過
@@ -57,9 +57,27 @@ window.easyBuy = {
 }
 
 function FrameDomain(){
+  /**
+   * 补丁
+   * 修补每次进入页面都要向后台请求
+   * 当前登录的用户的信息
+   *
+   */
+  window.addEventListener('unload', () => {
+    sessionStorage.setItem('loginUserInfo', JSON.stringify(window.easyBuy.easyUser));
+    sessionStorage.setItem('pageUser', JSON.stringify(window.easyBuy.pageUser));
+    sessionStorage.setItem('pageParameter', JSON.stringify(window.easyBuy.pageParameter));
+  });
+  function recoverBackup(name) {
+    const backup = sessionStorage.getItem(name);
+    sessionStorage.removeItem(name);
+    return backup;
+  }
+
+  const pageUser = recoverBackup('pageUser');
+  pageUser.indexOf('id') !== -1 && (easyBuy.pageUser = JSON.parse(pageUser));
+	const frameInnerObj = this;
 	this.domain = ".macaoeasybuy.com";
-	//**********獲取用戶信息對象開始**********
-	var frameInnerObj = this;
 	this.getUserInfo = {};
 	this.getUserInfo.go = function(fn){
 		var self = this;
@@ -104,26 +122,31 @@ function FrameDomain(){
 	}
 
 
-	//獲取用戶數據
-	this.getUserInfo.reqFunc = function(opt){
-		var self = this;
-		var _info = frameInnerObj.getCookie("ENYSTRINETI_STRING");
+  //獲取用戶數據
+	this.getUserInfo.reqFunc = function(opt) {
+		const self = this;
+    const _info = frameInnerObj.getCookie("ENYSTRINETI_STRING");
 		if(_info !== null){
 			//已登錄狀態
-      //有用戶信息，發送請求去後台獲取用戶信息
       window.easyBuy.isLogin = true;
-			var url = "http://userManager.macaoeasybuy.com/UserInfoManagerGetController/LoginTopInfo.easy?easybuyCallback=?";
-			url = frameInnerObj.addHref(url);
-			$.ajaxSettings.async = false;
-			$.getJSON(url, "", function(data) {
-				if (data != null && data != "") {
-					var datas = data.userInfo;
-					opt.hasLogin(datas);
-				}else{
-					opt.noLogin();
-				}
-				opt.afterCheckIsLogin();
-			});
+      const userInfo = recoverBackup('loginUserInfo');
+      if (userInfo.indexOf('id') === -1) {
+        let url = "http://userManager.macaoeasybuy.com/UserInfoManagerGetController/LoginTopInfo.easy?easybuyCallback=?";
+        url = frameInnerObj.addHref(url);
+        $.ajaxSettings.async = false;
+        $.getJSON(url, '', function(data) {
+          if (data != null && data != "") {
+            var datas = data.userInfo;
+            opt.hasLogin(datas);
+          }else{
+            opt.noLogin();
+          }
+          opt.afterCheckIsLogin();
+        });
+      } else {
+        opt.hasLogin(JSON.parse(userInfo));
+        opt.afterCheckIsLogin();
+      }
 		}else{
 			opt.noLogin();
 			opt.afterCheckIsLogin();
@@ -141,21 +164,16 @@ function FrameDomain(){
 
 	//獲取url後面所有的參數，存進全局對象組裡面
 	this.setGlobalParameter = function(){
-		var url = location.search; //获取url中"?"符后的字串
-		var theRequest = new Object();
-		if(url.indexOf("?") != -1) {
-			var str = url.substr(1);
-			var strs = str.split("&");
-			for(var i = 0; i < strs.length; i ++) {
-				theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
-			}
-		}
-		$.each(theRequest, function(k,y) {
-			easyBuy.global.pageParameter[k] = y;
-			if(k == 'userid'){
-				easyBuy.pageUser.id = parseInt(y);
-			}
-		});
+		const url = location.search; //获取url中"?"符后的字串
+    const theRequest = {};
+    const keyValueArray = url.substring(1).split('&');
+    keyValueArray.forEach((kv) => {
+      const keyValue = kv.split('=');
+      const key = keyValue[0];
+      const value = decodeURIComponent(keyValue[1]);
+      theRequest[key] = typeof +value === 'number' ? +value : value;
+    });
+    easyBuy.global.pageParameter = theRequest;
 	}
 	this.setGlobalParameter();
 
