@@ -1,25 +1,24 @@
-(function(){
-	var whiteMenuTime = null;
-	whiteMenuTime = setInterval(function(){
-		if(userId && seeUserId){
-			clearInterval(whiteMenuTime);
-			whiteMenuTime = null;
+void function () {
+  let userID = null;
+  const SID = easyBuy.global.pageParameter.spaceId;
+  function userSpaceWhiteMenu(){
+    $('#white-menu').load('/public/whitemenu.html', function () {
+      const $this = $(this);
+      const whiteNavName = easyBuy.userSpaceGlobal.whiteNavName;
+      whiteNavName !== null && $(`#white-menu li[data-name="${whiteNavName}"]`).addClass('select');
+      const url = `http://userspace1.macaoeasybuy.com/userSpaceIndexController/userSpaceInfoCount.easy?userId=${userID}&seeUserId=${SID}&easybuyCallback=?`;
+      $.getJSON(url, function (data) {
+        $.each(data.userSpaceCount, function (key, value) {
+          $this.find(`li[data-name=${key.split('user').join('')}]`).find('span:last-of-type').html(`共${value}篇`);
+        })
+      });
+    });
+  }
+	const clock = setInterval(function(){
+    if (easyBuy.easyUser.id !== undefined) {
+      userID = easyBuy.easyUser.id;
+      clearInterval(clock);
 			userSpaceWhiteMenu();
-		}
-	},1);
-})();
-/*
- 	給個全局變量 whiteNavName 然後是dataName就行了
- * */
-function userSpaceWhiteMenu(){
-	$('#white-menu').load('/page/userspace/common/whitemenu.html',function(){
-		var $this = $(this);
-		var whiteNavName = easyBuy.userSpaceGlobal.whiteNavName;
-		if(whiteNavName != null) $('#white-menu li[data-name='+whiteNavName+']').addClass('select');
-		$.getJSON('http://userspace1.macaoeasybuy.com/userSpaceIndexController/userSpaceInfoCount.easy?userId='+userId+'&seeUserId='+seeUserId+'&easybuyCallback=?',function(data){
-			$.each(data.userSpaceCount,function(k,v){
-				$this.find('li[data-name='+k.split('user').join('')+']').find('span:last-of-type').html('共'+v+'篇');
-			})
-		});
-	});
-}
+    }
+  }, 100);
+}()
