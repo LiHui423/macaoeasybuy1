@@ -208,18 +208,42 @@ function keyWord(){
 
 /*下拉框點擊事件*/
 function clickSecondClass(){
-	console.log('99999');
-	$('.searchBar_recommendEach_good .searchBar_recommendEach_main ul li').on('click',function(e){
-		let $target=e.target;
-		console.log($target);
-		if($(this).text() !== ""){
-			$('#searchInput').val($(this).text());
-			gotosearch();
-		}else {
-			console.log('true');
-		}
-	})
-
+	// 熱搜商品點擊
+	$('.searchBar_recommendEach_good .searchBar_recommendEach_main ul li').on('click',function(){
+		$('#searchInput').val($(this).text());
+		gotosearch();
+	});
+	// 熱搜商店點擊
+	$('.searchBar_recommendEach_shop .searchBar_recommendEach_main ul li').on('click',function(){
+		var children=$(this).children('.searchBar_recommendEach_shop_right').children()[0];
+		$('#searchInput').val($(children).text());
+		gotosearch();
+	});
+	// 熱搜標籤點擊
+	$('.searchBar_recommendEach_label .searchBar_recommendEach_main ul li').on('click',function(){
+		var labelName=$(this).children();
+		$('#searchInput').val($(labelName[0]).text().split('#')[1]);
+		gotosearch();
+	});
+	// 熱搜話題點擊
+	$('.searchBar_recommendEach_topic .searchBar_recommendEach_main ul li').on('click',function(){
+		var topicName=$(this).children();
+		$('#searchInput').val($(topicName[0]).text());
+		gotosearch();
+	});
+	// 熱搜帖子點擊
+	$('.searchBar_recommendEach_post .searchBar_recommendEach_main ul li').on('click',function(){
+		var postName=$(this).children();
+		$('#searchInput').val($(postName[0]).text());
+		gotosearch();
+	});
+	// 熱搜宜粉點擊
+	$('.searchBar_recommendEach_fans .searchBar_recommendEach_main ul li').on('click',function(){
+		var fansName=$(this).children();
+		var span=$(fansName).find('span')[0];
+		$('#searchInput').val($(span).text());
+		gotosearch();
+	});
 }
 
 

@@ -148,6 +148,7 @@
 		<script src="/src/js/easybuy/goodDetails/jquery.page.js"></script>
 		<!--加入購物車動畫-->
 		<script src="/src/js/easybuy/goodDetails/jquery.fly.min.js"></script>
+		<script src="/src/js/common/clickEvent.js"></script>
 
 
 
@@ -157,7 +158,9 @@
 			<img src="//wap.macaoeasybuy.com<%=list[0].shoplogo%>">
 		</div>
 		<div class="BusinessmenRight">
-			<p class="BusinessmenName"><%=list[0].shopname%></p>
+			<p class="BusinessmenName">
+				<a><span id="underline" data-id="<%=list[0].shopid%>"><%=list[0].shopname%></span></a>
+			</p>
 			<div class="BusinessmenEva">
 				<ul>
 					<li>

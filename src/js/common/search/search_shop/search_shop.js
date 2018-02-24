@@ -1,5 +1,5 @@
 $(function(){
-	chooseSort()
+	chooseSort();
 })
 
 /*商店搜索結果頁勾選條件*/
@@ -23,7 +23,15 @@ function chooseSort(){
 		loadResult()
 	})
 }
-
+/*點擊進店看看*/
+function enterShop(){
+	$('.search_shop_messRight_btn').on('click',function(){
+		console.log('進店看看被點擊了');
+		var shopId = $(this).parents('.search_resultBox_shopEach').attr('data-id');
+		console.log(shopId);
+		window.location.href="http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_index.html?shopId =" + shopId;
+	})
+}
 /*展示商品切換*/
 function shopScrollFunc(){
 	var i ;
@@ -33,7 +41,7 @@ function shopScrollFunc(){
 			if($(this).siblings(".search_shop_show_main ").find('ul').is(":animated")){
 				return;
 			}else{
-				l = parseInt($(this).siblings(".search_shop_show_main ").find('ul').css("left")) + 912;
+				let l = parseInt($(this).siblings(".search_shop_show_main ").find('ul').css("left")) + 912;
 				$(this).siblings(".search_shop_show_main ").find('ul').animate({
 					"left":l
 				},800)
@@ -51,7 +59,7 @@ function shopScrollFunc(){
 			if($(this).siblings(".search_shop_show_main ").find('ul').is(":animated")){
 				return;
 			}else{
-				l = parseInt($(this).siblings(".search_shop_show_main ").find('ul').css("left")) - 912;
+				let l = parseInt($(this).siblings(".search_shop_show_main ").find('ul').css("left")) - 912;
 				$(this).siblings(".search_shop_show_main ").find('ul').animate({
 					"left":l
 				},800)
@@ -65,7 +73,7 @@ function shopScrollFunc(){
 }
 
 /*搜索結果數量*/
-function resultNum(){
+function resultNum(keyword){
 	var allnum = $('.search_result_title').find('span:nth-of-type(2)').text();
 	$('.search_result_title').find('span:nth-of-type(1)').text(decodeURI(decodeURI(keyword)));
 	$('.search_result_null p span').text(decodeURI(decodeURI(keyword)));

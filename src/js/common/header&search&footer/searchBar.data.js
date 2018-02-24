@@ -9,7 +9,7 @@ $(function(){
 
 function goodKey(){
 	$.getJSON("http://social1.macaoeasybuy.com/SolrGoodsController/QueryHotSearchGoods.easy?easybuyCallback=?",function(data){
-		console.log(data);
+		
 		var html = template("goodKeyword", data);
 		$(".searchBar_recommendEach_good .searchBar_recommendEach_main ul").html(html);
 		clickSecondClass();
@@ -18,7 +18,7 @@ function goodKey(){
 
 function shopKey(){
 	$.getJSON("http://social1.macaoeasybuy.com/SolrShopsController/QuerySolrRandomShops.easy?easybuyCallback=?",function(data){
-		console.log(data);
+		
 		var html = template("shopKeyword", data);
 		$(".searchBar_recommendEach_shop .searchBar_recommendEach_main ul").html(html);
 		clickSecondClass();
@@ -29,6 +29,7 @@ function labelKey(){
 	$.getJSON("http://social1.macaoeasybuy.com/SolrLabelsController/QueryHotSearchLabels.easy?easybuyCallback=?",function(data){
 		var html = template("labelKeyword", data);
 		$(".searchBar_recommendEach_label .searchBar_recommendEach_main ul").html(html);
+		clickSecondClass();
 	});
 }
 
@@ -36,6 +37,7 @@ function topicKey(){
 	$.getJSON("http://social1.macaoeasybuy.com/SolrTopicsController/queryHotSearchTopic.easy?easybuyCallback=?",function(data){
 		var html = template("topicKeyword", data);
 		$(".searchBar_recommendEach_topic .searchBar_recommendEach_main ul").html(html);
+		clickSecondClass();
 	});
 }
 
@@ -43,6 +45,7 @@ function postKey(){
 	$.getJSON("http://social1.macaoeasybuy.com/SolrPostsController/QuerySearchPostsInfo.easy?easybuyCallback=?",function(data){
 		var html = template("postKeyword", data);
 		$(".searchBar_recommendEach_post .searchBar_recommendEach_main ul").html(html);
+		clickSecondClass();
 	});
 }
 
@@ -50,6 +53,7 @@ function fansKey(){
 	$.getJSON("http://social1.macaoeasybuy.com/SolrUsersController/QueryCommandSearchUser.easy?easybuyCallback=?",function(data){
 		var html = template("fansKeyword", data);
 		$(".searchBar_recommendEach_fans .searchBar_recommendEach_main ul").html(html);
+		clickSecondClass();
 	});
 }
 

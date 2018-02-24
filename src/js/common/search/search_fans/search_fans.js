@@ -1,5 +1,5 @@
 /*搜索結果數量*/
-function resultNum(){
+function resultNum(keyword){
 	var allnum = $('.search_result_title').find('span:nth-of-type(2)').text();
 	$('.search_result_title').find('span:nth-of-type(1)').text(decodeURI(decodeURI(keyword)));
 	$('.search_result_null p span').text(decodeURI(decodeURI(keyword)));

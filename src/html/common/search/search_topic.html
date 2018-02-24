@@ -9,10 +9,11 @@
 		<link rel="stylesheet" href="/src/css/common/search/searchCommon.css">
 		<link rel="stylesheet" href="/src/css/common/search/search_topic.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
 	</head>
 	<body>
 		<div class="transparent_bg"></div>
-		<header></header>
+		<header id="page-header"></header>
 		<div id ="searchBar">
 			<div class="searchBox">
 				<div class="searchBox_mainBox">
@@ -97,13 +98,14 @@
 	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
 	<script src="/src/js/common/search/search_topic/search_topic.data.js"></script>
 	<!--頭部文件的js-->
-	<script src="/src/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/page-header.js"></script>
 	<!--搜索框部份的js-->
 	<script src="/src/js/common/header&search&footer/searchBar.js"></script>
 	<!--話題搜索結果頁js-->
 	<script src="/src/js/common/search/search_topic/search_topic.js"></script>
 
 	<script src="/src/js/common/header&search&footer/footer.js"></script>
+	<script src="/src/js/common/clickEvent.js"></script>
 
 	<!--話題搜索結果-->
 	<script type="text/html" id="topicList" data-array = "topicListData">
@@ -111,8 +113,10 @@
 			<div class="search_topic_resultEach clearfloat search_topic_resultEach_nopic">
 				<div class="search_topic_resultEach_left myborder-radius"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].topicadminpic%>' data-src = 'http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].topicadminpic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
 				<div class="search_topic_resultEach_right">
-					<div class="search_topic_resultEach_mess">
-						<p><%=#list.classList[i].topicName%></p>
+					<div class="search_topic_resultEach_mess" data-id="<%=#list.classList[i].topicid%>">
+						<p>
+							<a><span id="underline"><%=#list.classList[i].topicName%></span></a>
+						</p>
 						<p><span><%=list.classList[i].topicadmin%></span><span><%=list.classList[i].topicTimeDiff%>前發佈</span>
 							<%if(list.classList[i].shouldClassState == '1'){%>
 								<span>/ 福利社 /</span>
@@ -164,7 +168,7 @@
 			<div class="search_result_topicEach_top clearfloat">
 				<div class="search_result_topicEach_topLeft"><span><img src="/src/img/common/search/search_topic_earth.png"></span><span>全球筍貨</span></div>
 				<div class="search_result_topicEach_topRight">
-					<a href="/page/social/easylive/easyliveglobalgoods/globalgoods.html"><span>更多筍貨</span><span><img src="/src/img/common/search/search_topic_more.png"></span></a>
+					<a target="_blank" href="http://social.macaoeasybuy.com/easylive/easyliveglobalgoods/globalgoods.html"><span>更多筍貨</span><span><img src="/src/img/common/search/search_topic_more.png"></span></a>
 				</div>
 			</div>
 			<div class="search_result_topicEach_main">
@@ -174,7 +178,9 @@
 						<div class="search_result_topicEach_headpic myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.Globalbambooshoots[0].adminpic%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
 						<p><%=list.Globalbambooshoots[0].admin%></p>
 					</div>
-					<div class="search_result_topicEach_title"><%=list.Globalbambooshoots[0].title%></div>
+					<div class="search_result_topicEach_title" data-id="">
+						<a><span id="underline"><%=list.Globalbambooshoots[0].title%></span></a>
+					</div>
 					<div class="search_result_topicEach_intro"><%=list.Globalbambooshoots[0].content%></div>
 					<div class="search_result_topicEach_time"><%=list.Globalbambooshoots[0].timeDiff%>前發佈</div>
 				</div>
@@ -192,7 +198,7 @@
 			<div class="search_result_topicEach_top clearfloat">
 				<div class="search_result_topicEach_topLeft"><span><img src="/src/img/common/search/search_topic_gift.png"></span><span>福利社</span></div>
 				<div class="search_result_topicEach_topRight">
-					<a href="/page/social/easylive/easylivewelfare/easylivewelfare.html"><span>更多福利</span><span><img src="/src/img/common/search/search_topic_more.png"></span></a>
+					<a target="_blank" href="http://social.macaoeasybuy.com/easylive/easylivewelfare/easylivewelfare.html"><span>更多福利</span><span><img src="/src/img/common/search/search_topic_more.png"></span></a>
 				</div>
 			</div>
 			<div class="search_result_topicEach_main">
@@ -202,7 +208,9 @@
 						<div class="search_result_topicEach_headpic myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.WelfareAgency[0].adminpic%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
 						<p><%=list.WelfareAgency[0].admin%></p>
 					</div>
-					<div class="search_result_topicEach_title"><%=list.WelfareAgency[0].title%></div>
+					<div class="search_result_topicEach_title" data-id="">
+						<a><span id="underline"><%=list.WelfareAgency[0].title%></span></a>
+					</div>
 					<div class="search_result_topicEach_intro"><%=list.WelfareAgency[0].content%></div>
 					<div class="search_result_topicEach_time"><%=list.WelfareAgency[0].timeDiff%>前發佈</div>
 				</div>
@@ -220,7 +228,7 @@
 			<div class="search_result_topicEach_top clearfloat">
 				<div class="search_result_topicEach_topLeft"><span><img src="/src/img/common/search/search_topic_chat.png "></span><span>宜買話題</span></div>
 				<div class="search_result_topicEach_topRight">
-					<a href="/page/social/easylive/easylivebuytopic/easylivebuytopic.html"><span>更多話題</span><span><img src="/src/img/common/search/search_topic_more.png"></span></a>
+					<a target="_blank" href="http://social.macaoeasybuy.com/easylive/easylivebuytopic/easylivebuytopic.html"><span>更多話題</span><span><img src="/src/img/common/search/search_topic_more.png"></span></a>
 				</div>
 			</div>
 			<div class="search_result_topicEach_main">
@@ -230,7 +238,9 @@
 						<div class="search_result_topicEach_headpic myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.BuyTopics[0].adminpic%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
 						<p><%=list.BuyTopics[0].admin%></p>
 					</div>
-					<div class="search_result_topicEach_title"><%=list.BuyTopics[0].title%></div>
+					<div class="search_result_topicEach_title" data-id="">
+						<a><span id="underline"><%=list.BuyTopics[0].title%></span></a>
+					</div>
 					<div class="search_result_topicEach_intro"><%=list.BuyTopics[0].content%></div>
 					<div class="search_result_topicEach_time"><%=list.BuyTopics[0].timeDiff%>前發佈</div>
 				</div>

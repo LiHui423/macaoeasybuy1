@@ -8,7 +8,7 @@ function returnResult(){
 	var url = window.location.search;
 	var str = url.split("?");
 	var strs = str[1].split("=");
-	keyword = strs[1];
+	var keyword = strs[1];
 
 	/*把搜索的結果填到搜索框里 這裡需要暫緩執行才能把值寫上去很奇怪*/
 	setTimeout(function(){
@@ -19,13 +19,13 @@ function returnResult(){
 		/*輸入內容為空*/
 		console.log('null')
 	}else{
-		loadResult()
+		loadResult(keyword);
 		seeOther()
 	}
 }
 
-function loadResult(){
-	$.getJSON("http://192.168.3.29:8080/SolrShopsController/QuerySolrShop.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Order="+Order+"&Page=0&Rows=6&easybuyCallback=?",function(data){
+function loadResult(keyword){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrShopsController/QuerySolrShop.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Order="+Order+"&Page=0&Rows=6&easybuyCallback=?",function(data){
 		console.log(data)
 		var searchShopNum = template("searchShopNum", data);
 		$('.search_result_title').html(searchShopNum);
@@ -33,14 +33,15 @@ function loadResult(){
 		var htmlsearchShop = template("shopList", data);
 		$('.search_resultBox_list').html(htmlsearchShop);
 
-		resultNum()
-		shopScrollFunc()
+		resultNum(keyword);
+		shopScrollFunc();
+		enterShop();//進店看看
 	})
 }
 
 /*選擇頁數*/
 function choosePage(page){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrShopsController/QuerySolrShop.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Order="+Order+"&Page="+page+"&Rows=6&easybuyCallback=?",function(data){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrShopsController/QuerySolrShop.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Order="+Order+"&Page="+page+"&Rows=6&easybuyCallback=?",function(data){
 
 		var htmlsearchShop = template("shopList", data);
 		$('.search_resultBox_list').html(htmlsearchShop);
@@ -51,10 +52,10 @@ function choosePage(page){
 
 
 function seeOther(){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrShopsController/QueryBottomRandomShops.easy?easybuyCallback=?",function(data){
-
+	$.getJSON("http://social1.macaoeasybuy.com/SolrShopsController/QueryBottomRandomShops.easy?easybuyCallback=?",function(data){
 		var seeOtherShop = template("seeOther", data);
 		$('.seeOtherShop_mian').html(seeOtherShop);
-		shopScrollFunc()
+		shopScrollFunc();
+		enterShop();//進店看看
 	})
 }

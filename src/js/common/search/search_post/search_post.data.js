@@ -10,7 +10,7 @@ function returnResult(){
 	var url = window.location.search;
 	var str = url.split("?");
 	var strs = str[1].split("=");
-	keyword = strs[1];
+	var keyword = strs[1];
 
 	/*把搜索的結果填到搜索框里 這裡需要暫緩執行才能把值寫上去很奇怪*/
 	setTimeout(function(){
@@ -21,14 +21,13 @@ function returnResult(){
 		/*輸入內容為空*/
 		console.log('null')
 	}else{
-		loadResult()
+		loadResult(keyword);
 	}
 }
 
-function loadResult(){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrPostsController/QueryPosts.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Orders="+Orders+"&Page=0&fq="+fq+"&fqtime="+fqTime+"&Rows=10&easybuyCallback=?",function(data){
+function loadResult(keyword){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrPostsController/QueryPosts.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Orders="+Orders+"&Page=0&fq="+fq+"&fqtime="+fqTime+"&Rows=10&easybuyCallback=?",function(data){
 		console.log(data)
-
 		/*搜索結果總數*/
 		var searchPostNum = template("searchPostNum", data);
 		$('.search_result_title').html(searchPostNum);
@@ -49,21 +48,22 @@ function loadResult(){
 		}else{
 			$('.search_label_noResult').hide()
 			searchPostScroll()
-			over = false
+			var over = false
 		}
 		chooseTab()
-		resultNum()
+		resultNum(keyword);
 	})
 }
 
-function chooseTypeGood(){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrPostsController/QueryPosts.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Orders="+Orders+"&Page=0&fq="+fq+"&fqtime="+fqTime+"&Rows=10&easybuyCallback=?",function(data){
+function chooseTypeGood(keyword){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrPostsController/QueryPosts.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Orders="+Orders+"&Page=0&fq="+fq+"&fqtime="+fqTime+"&Rows=10&easybuyCallback=?",function(data){
+		console.log(data);
 		if(data.list.numFound == 0){
 			$('.search_label_noResult').show()
 			$('.noMore').hide()
 		}else if(data.list.classList.length < 10){
 			$('.search_label_noResult').hide()
-			$('.noMore').show()
+			$('.noMore').show();
 		}else{
 			$('.search_label_noResult').hide()
 			searchPostScroll()
@@ -75,12 +75,12 @@ function chooseTypeGood(){
 	})
 }
 
-function loadResultTabAppend(){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrPostsController/QueryPosts.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Orders="+Orders+"&Page="+Page+"&fq="+fq+"&fqtime="+fqTime+"&Rows=10&easybuyCallback=?",function(data){
+function loadResultTabAppend(keyword){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrPostsController/QueryPosts.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Orders="+Orders+"&Page="+Page+"&fq="+fq+"&fqtime="+fqTime+"&Rows=10&easybuyCallback=?",function(data){
 		/*搜索結果*/
 		$('.loadNow').hide()
 		if(data.list.classList.length < 10){
-			over = true;
+			var over = true;
 			$('.noMore').show()
 		}else{
 
@@ -92,14 +92,14 @@ function loadResultTabAppend(){
 }
 
 function loadRightCommon(){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrPostsController/QueryPostForType.easy?Type="+fq+"",function(data){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrPostsController/QueryPostForType.easy?Type="+fq+"",function(data){
 		var htmlPostRight = template("postListRightCommon", data);
 		$('.search_result_right_tab_common').html(htmlPostRight);
 	})
 }
 
 function loadRightAlbum(){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrPostsController/QueryPostForType.easy?Type=5",function(data){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrPostsController/QueryPostForType.easy?Type=5",function(data){
 		var htmlsearchPost = template("postListRightAlbum", data);
 		$('.search_result_right_tab_album').html(htmlsearchPost);
 	})

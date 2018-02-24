@@ -94,7 +94,7 @@
 					</div>
 					<div class="search_shop_name"><%=list.classList[i].shopname%></div>
 					<div class="search_shop_mess clearfloat">
-						<div class="search_shop_messLeft myborder-radius"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].shoppic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
+						<div class="search_shop_messLeft myborder-radius"><img src='http://wap.macaoeasybuy.com/<%=list.classList[i].shoppic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
 						<div class="search_shop_messRight">
 							<p>店主 <%=list.classList[i].shopMan%></p>
 							<p><span>銷售數：<%=list.classList[i].buyNumbers%></span><span>粉絲數：<%=list.classList[i].attentionCount%></span></p>
@@ -148,7 +148,7 @@
 						<div class="search_shop_show_main clearfloat" data-page = "1">
 							<ul>
 								<%for(var k = 0;k <list.classList[i].shopPiclist.length;k++){%>
-									<li><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].shopPiclist[k]%>"></li>
+									<li><img src="http://wap.macaoeasybuy.com/<%=list.classList[i].shopPiclist[k]%>"></li>
 								<%}%>
 							</ul>
 						</div>
@@ -161,7 +161,7 @@
 
 	<!--搜索結果數量-->
 	<script type="text/html" id="searchShopNum" data-array = "searchShopNumData">
-		您搜索的 “<span>男裝</span>” 關鍵字一共有 <span><%=list.numFound%></span> 個相關商店：
+		您搜索的 “<span><%=list.classList[0].shopname%></span>” 關鍵字一共有 <span><%=list.numFound%></span> 個相關商店：
 	</script>
 
 	<!--隨便看看-->
@@ -175,7 +175,7 @@
 					</div>
 					<div class="search_shop_name"><%=list[i].shopname%></div>
 					<div class="search_shop_mess clearfloat">
-						<div class="search_shop_messLeft myborder-radius"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].shoppic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
+						<div class="search_shop_messLeft myborder-radius"><img src='http://wap.macaoeasybuy.com/<%=list[i].shoppic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
 						<div class="search_shop_messRight">
 							<p>店主 <%=list[i].shopMan%></p>
 							<p><span>銷售數：<%=list[i].buyNumbers%></span><span>粉絲數：<%=list[i].attentionCount%></span></p>
@@ -229,7 +229,7 @@
 						<div class="search_shop_show_main clearfloat" data-page = "1">
 							<ul>
 								<%for(var k = 0;k <list[i].shopPiclist.length;k++){%>
-									<li><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].shopPiclist[k]%>"></li>
+									<li><img src="http://wap.macaoeasybuy.com/<%=list[i].shopPiclist[k]%>"></li>
 								<%}%>
 							</ul>
 						</div>

@@ -9,10 +9,11 @@
 		<link rel="stylesheet" href="/src/css/common/search/searchCommon.css">
 		<link rel="stylesheet" href="/src/css/common/search/search_post.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
 	</head>
 	<body>
 		<div class="transparent_bg"></div>
-		<header></header>
+		<header id="page-header"></header>
 		<div id ="searchBar">
 			<div class="searchBox">
 				<div class="searchBox_mainBox">
@@ -102,7 +103,7 @@
 							<div class="search_result_right_tab search_result_right_tab_all clearfloat">
 								<ul>
 									<li class="clearfloat">
-										<a href="/page/social/easylive/easylivelog/easylivelog.html">
+										<a target="_blank" href="http://social.macaoeasybuy.com/easylive/easylivelog/easylivelog.html">
 											<div class="search_post_right_icon"><img src="/src/img/common/search/search_post-4.png"></div>
 											<div class="search_post_right_mess">
 												<p>日誌</p>
@@ -111,7 +112,7 @@
 										</a>
 									</li>
 									<li class="clearfloat">
-										<a href="/page/social/liveshot/ProdigalTopicList/ProdigalTopicList.html">
+										<a target="_blank" href="http://social.macaoeasybuy.com/liveshot/liveshot.html">
 											<div class="search_post_right_icon"><img src="/src/img/common/search/search_post-1.png"></div>
 											<div class="search_post_right_mess">
 												<p>敗家誌</p>
@@ -120,7 +121,7 @@
 										</a>
 									</li>
 									<li class="clearfloat">
-										<a href="//social.macaoeasybuy.com/market/market.html">
+										<a target="_blank" href="http://social.macaoeasybuy.com/market/market.html">
 											<div class="search_post_right_icon"><img src="/src/img/common/search/search_post-3.png"></div>
 											<div class="search_post_right_mess">
 												<p>市集</p>
@@ -129,7 +130,7 @@
 										</a>
 									</li>
 									<li class="clearfloat">
-										<a href="/page/social/secondhand/secondhandclassifydetail/secondhandclassifydetail.html">
+										<a target="_blank" href="http://social.macaoeasybuy.com/secondhand/secondHand.html">
 											<div class="search_post_right_icon"><img src="/src/img/common/search/search_post-2.png"></div>
 											<div class="search_post_right_mess">
 												<p>二手</p>
@@ -139,7 +140,7 @@
 									</li>
 
 									<li class="clearfloat">
-										<a href="/page/social/easylive/easylivealbum/easylivealbum.html">
+										<a target="_blank" href="http://social.macaoeasybuy.com/easylive/easylivealbum/easylivealbum.html">
 											<div class="search_post_right_icon"><img src="/src/img/common/search/search_post-5.png"></div>
 											<div class="search_post_right_mess">
 												<p>專輯</p>
@@ -148,7 +149,7 @@
 										</a>
 									</li>
 									<li class="clearfloat">
-										<a href="/page/social/easylive/easylivelifecircle/easylivelifecircle.html">
+										<a target="_blank" href="http://social.macaoeasybuy.com/easylive/easylivelifecircle/easylivelifecircle.html">
 											<div class="search_post_right_icon"><img src="/src/img/common/search/search_post-6.png"></div>
 											<div class="search_post_right_mess">
 												<p>生活圈</p>
@@ -177,13 +178,14 @@
 	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
 	<script src="/src/js/common/search/search_post/search_post.data.js"></script>
 	<!--頭部文件的js-->
-	<script src="/src/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/page-header.js"></script>
 	<!--搜索框部份的js-->
 	<script src="/src/js/common/header&search&footer/searchBar.js"></script>
 	<!--帖子搜索結果的js-->
 	<script src="/src/js/common/search/search_post/search_post.js"></script>
 
 	<script src="/src/js/common/header&search&footer/footer.js"></script>
+	<script src="/src/js/common/clickEvent.js"></script>
 
 	<!--搜索結果數量分類-->
 	<script type="text/html" id="postClassNum" data-array = "postClassNumData">
@@ -200,10 +202,12 @@
 	<script type="text/html" id="postList" data-array = "postListData">
 		<%for(var i = 0;i <list.classList.length;i++){%>
 			<div class="search_topic_resultEach clearfloat" data-id='<%=list.classList[i].postid%>'>
-				<div class="search_topic_resultEach_left myborder-radius"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].postuserpic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
+				<div class="search_topic_resultEach_left myborder-radius"><img src='http://wap.macaoeasybuy.com/<%=list.classList[i].postuserpic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
 				<div class="search_topic_resultEach_right">
 					<div class="search_topic_resultEach_mess">
-						<p><%=#list.classList[i].postName%></p>
+						<p>
+							<a><span id="underline"><%=#list.classList[i].postName%></span></a>
+						</p>
 						<p>
 							<span><%=list.classList[i].postuserName%></span>
 							<%if(list.classList[i].postusersex="Girl"){%>
@@ -218,7 +222,7 @@
 					<div class="search_topic_resultEach_pic clearfloat">
 						<ul>
 							<%for(var k = 0;k <list.classList[i].postPics.length;k++){%>
-								<li style="background-image: url(http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].postPics[k]%>);"></li>
+								<li style="background-image: url(http://wap.macaoeasybuy.com/<%=list.classList[i].postPics[k]%>);"></li>
 							<%}%>
 						</ul>
 					</div>
@@ -242,9 +246,11 @@
 		<%for(var i = 0;i <list.length;i++){%>
 			<div class="search_result_rightEach" data-id = "<%=list[i].postid%>">
 				<div class="search_result_rightEach_top clearfloat">
-					<div class="search_result_rightEach_headpic myborder-radius" data-userid="<%=list[i].postuserid%>"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].postuserpic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
+					<div class="search_result_rightEach_headpic myborder-radius" data-userid="<%=list[i].postuserid%>"><img src='http://wap.macaoeasybuy.com/<%=list[i].postuserpic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
 					<div class="search_result_rightEach_mess">
-						<p class="hiddenText"><%=list[i].titlename%></p>
+						<p class="hiddenText">
+							<a><span id="underline"><%=list[i].titlename%></span></a>
+						</p>
 						<p>
 							<span><%=list[i].postuserName%></span>
 							<%if(list[i].sex=="Girl"){%>
@@ -265,7 +271,7 @@
 				<div class="search_result_rightEach_pic clearfloat">
 					<ul>
 						<%for(var k = 0;k<list[i].Postpics.length;k++){%>
-							<li style="background-image: url(http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].Postpics[k]%>);"></li>
+							<li style="background-image: url(http://wap.macaoeasybuy.com/<%=list[i].Postpics[k]%>);"></li>
 						<%}%>
 					</ul>
 				</div>
@@ -284,9 +290,11 @@
 		<%for(var i = 0;i <list.length;i++){%>
 			<div class="search_result_rightEach" data-id = "<%=list[i].postid%>">
 				<div class="search_result_rightEach_top clearfloat">
-					<div class="search_result_rightEach_headpic myborder-radius" data-userid="<%=list[i].postuserid%>"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].postuserpic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
+					<div class="search_result_rightEach_headpic myborder-radius" data-userid="<%=list[i].postuserid%>"><img src='http://wap.macaoeasybuy.com/<%=list[i].postuserpic%>' onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
 					<div class="search_result_rightEach_mess">
-						<p class="hiddenText"><%=list[i].titlename%></p>
+						<p class="hiddenText">
+							<a><span id="underline"><%=list[i].titlename%></span></a>
+						</p>
 						<p>
 							<span><%=list[i].postuserName%></span>
 							<%if(list[i].sex=="Girl"){%>

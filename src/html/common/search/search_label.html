@@ -9,10 +9,11 @@
 		<link rel="stylesheet" href="/src/css/common/search/searchCommon.css">
 		<link rel="stylesheet" href="/src/css/common/search/search_label.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
 	</head>
 	<body>
 		<div class="transparent_bg"></div>
-		<header></header>
+		<header id="page-header"></header>
 		<div id ="searchBar">
 			<div class="searchBox">
 				<div class="searchBox_mainBox">
@@ -25,7 +26,7 @@
 		</div>
 		<div class="searchMainBox">
 			<div class="searchMain">
-				<div class="search_result_title">您搜索的 “<span>男裝</span>” 關鍵字一共有 <span>12</span> 個相關標籤：</div>
+				<div class="search_result_title">您搜索的 “<span>&nbsp;</span>” 關鍵字一共有 <span>12</span> 個相關標籤：</div>
 				<div class="search_result_main clearfloat">
 					<!--標籤搜索結果頁左側開始-->
 					<div class="search_result_mainLeft">
@@ -48,7 +49,7 @@
 						<div class="search_label_resultBox">
 							<div class="search_label_noResult">
 								<div class="search_result_nullIcon"><img src="/src/img/common/05.png"></div>
-								<p>沒有搜索到 “男裝” 的相關標籤哦！</p>
+								<p>沒有搜索到“<span>男裝</span>”的相關標籤哦！</p>
 							</div>
 							<div class="search_label_resultEachBox"></div>
 							<div class="loadNow"><img src="/src/img/common/loadingnow .gif"></div>
@@ -86,13 +87,14 @@
 	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
 	<script src="/src/js/common/search/search_label/search_label.data.js"></script>
 	<!--頭部文件的js-->
-	<script src="/src/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/page-header.js"></script>
 	<!--搜索框部份的js-->
 	<script src="/src/js/common/header&search&footer/searchBar.js"></script>
 	<!--標籤搜索結果頁的js-->
 	<script src="/src/js/common/search/search_label/search_label.js"></script>
 
 	<script src="/src/js/common/header&search&footer/footer.js"></script>
+	<script src="/src/js/common/clickEvent.js"></script>
 
 	<!--搜索結果得標籤-->
 	<script type="text/html" id="labelList" data-array = "labelListData">
@@ -108,7 +110,7 @@
 					</div>
 				<%}else{%>
 					<div class="search_label_resultEach nopiclabel clearfloat" data-id="<%=list.classList[i].labelid%>">
-					<div class="search_label_resultEach_left" data-basrc="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.classList[i].labelPic%>">
+					<div class="search_label_resultEach_left" data-basrc="http://wap.macaoeasybuy.com<%=list.classList[i].labelPic%>">
 						<div class="search_label_resultEach_left_cover">
 							<div class="label-instruc"><%=#list.classList[i].labelDescribe%></div>
 							<div class="look-btn">查看該標籤相關帖子&gt;</div>
@@ -158,10 +160,12 @@
 	<!--搜索標籤結果頁右側-->
 	<script type="text/html" id="rightLabelList" data-array = "rightLabelListData">
 		<%for(var i = 0;i <list.length;i++){%>
-			<div class="search_result_hotLabel clearfloat">
-				<div class="search_result_hotLabel_title hiddenText"><%=list[i].labelName%></div>
+			<div class="search_result_hotLabel clearfloat" data-id="<%=list[i].labelid%>">
+				<div class="search_result_hotLabel_title hiddenText">
+					<a><span id="underline"><%=list[i].labelName%></span></a>
+				</div>
 				<div class="search_result_hotLabel_mess clearfloat">
-					<div class="search_result_hotLabel_headpic myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list[i].labeluserpic%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
+					<div class="search_result_hotLabel_headpic myborder-radius"><img src="http://wap.macaoeasybuy.com<%=list[i].labeluserpic%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
 					<div class="search_result_hotLabel_messRight">
 						<div class="search_result_hotLabel_name">
 							<span><%=list[i].labeluserName%></span>

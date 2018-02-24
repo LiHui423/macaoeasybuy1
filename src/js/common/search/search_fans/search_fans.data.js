@@ -8,7 +8,7 @@ function returnResult(){
 	var url = window.location.search;
 	var str = url.split("?");
 	var strs = str[1].split("=");
-	keyword = strs[1];
+	var keyword = strs[1];
 
 	/*把搜索的結果填到搜索框里 這裡需要暫緩執行才能把值寫上去很奇怪*/
 	setTimeout(function(){
@@ -16,13 +16,13 @@ function returnResult(){
 	},100)
 
 
-	loadResult();
+	loadResult(keyword);
 }
 
 var Page;
 
-function loadResult(){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrUsersController/QueryUsers.easy?&Query="+keyword+"&Page=0&Rows=16&easybuyCallback=?",function(data){
+function loadResult(keyword){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrUsersController/QueryUsers.easy?&Query="+keyword+"&Page=0&Rows=16&easybuyCallback=?",function(data){
 
 		console.log(data);
 
@@ -42,12 +42,12 @@ function loadResult(){
 			searchFanScroll()
 			over = false
 		}
-		resultNum()
+		resultNum(keyword)
 	})
 }
 
 function appendLoading(){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrUsersController/QueryUsers.easy?&Query="+keyword+"&Page="+Page+"&Rows=16&easybuyCallback=?",function(data){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrUsersController/QueryUsers.easy?&Query="+keyword+"&Page="+Page+"&Rows=16&easybuyCallback=?",function(data){
 		var htmlsearchFans = template("fansList", data);
 		$('.search_fansList #search_fansList_ul').append(htmlsearchFans);
 	})
