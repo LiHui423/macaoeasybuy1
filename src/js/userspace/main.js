@@ -78,6 +78,7 @@ const e = new Easybuy({
         const type = $e.attr('data-space-type');
         $el.attr('data-active', index);
         $(this.data.elements.content).attr('data-type', type);
+        window.location.href = `http://userspace.macaoeasybuy.com/${type}/index.html`;
       });
     },
     userInfoBindClickPoint(followed, isSelf) {

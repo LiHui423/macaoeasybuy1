@@ -29,7 +29,7 @@
                     <ul id="space-nav" class="space-nav"></ul>
                     <ul id="news-push"></ul>
                 </div>
-                <div id="userspace-content">
+                <div id="userspace-content" class="userspace-content" data-type="">
                     <iframe src="" frameborder="0"></iframe>
                 </div>
             </div>
@@ -40,6 +40,7 @@
 <script src="/src/js/common/easyframe.js"></script>
 <script src="/src/js/common/vendor/modernizr-3.5.0.min.js"></script>
 <script src="/src/js/common/art-template-3.1.0.js"></script>
+<script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 <script src="/src/js/userspace/main.js"></script>
 <!-- 当前空间的用户信息 -->
 <script type="text/template" data-art-template="userInfo">
@@ -363,6 +364,221 @@
     <div class="sort-box"></div>
     <div class="sort-box"></div>
   </div>
+</script>
+<script type="text/template" data-art-template="dynamic-daily">
+  <%for(var i=0, item; item = content[i++];) {%>
+    <div class="diary-item dynamic-item">
+        <div class="item-body">
+            <div class="page-main">
+                <a href=""><img src="<%=image(item.pictureurl)%>" class="page-main-head-img"></a>
+                <div class="post-main-text">
+                    <div class="post-title"><%=item.titlename%></div>
+                    <div class="post-description"><%=item.contents%></div>
+                </div>
+            </div>
+            <div class="laster">
+                <ul class="laster-num clearfloat">
+                    <li><%=formatNums(item.seeNums)%></li>
+                    <li><%=formatNums(item.loveNums)%></li>
+                    <li><%=formatNums(item.commentNums)%></li>
+                </ul>
+                <div class="item-user-info">
+                    <div class="info-poster-avatar"><img src="<%=image(item.userPic)%>"></div>
+                    <div class="info-post-info">
+                        <div class="info-poster-name"><span><%=item.name%></span><%=#sexIcon(item.sex)%></div>
+                        <div class="info-post-time"><%=item.uptime%>前發佈</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%}%>
+</script>
+<script type="text/template" data-art-template="dynamic-album">
+  <%for(var i=0, item; item = content[i++];) {%>
+    <div class="album-item dynamic-item">
+        <div class="album-relative item-body">
+            <div class="album-list-title"><%=item.classname%></div>
+            <%if(item.extra_Pic.length !== 0) {%>
+            <div class="album-img-none-box">
+                <div class="album-top-img">
+                    <img src="<%=osURL%><%=item.extra_Pic[0]%>">
+                </div>
+                <div class="album-img-list clearfloat">
+                    <%for(var p=1, picURL; picURL = item.extra_Pic[p++];) {%>
+                  <img src="<%=osURL%><%=picURL%>">
+                    <%}%>
+                </div>
+            </div>
+            <%}%>
+            <div class="album-state clearfloat">
+                <div><img src="/src/img/social/easylive/album-classification-eye.png" alt=""><%=item.seeNums%></div>
+                <div><img src="/src/img/social/easylive/album-classification-mes.png" alt=""><%=item.commentNums%></div>
+                <div><img src="/src/img/social/easylive/album-classification-good.png" alt=""><%=item.loveNums%></div>
+                <div><img src="/src/img/social/easylive/album-classification-cai.png" alt=""><%=item.collectNums%></div>
+            </div>
+            <div class="album-poster">
+                <div class="item-user-info">
+                    <div class="info-poster-avatar"><img src="<%=osURL%><%=item.userPic%>"></div>
+                    <div class="info-post-info">
+                        <div class="info-poster-name"><span><%=item.name%></span><%=#sexIcon(item.sex)%></div>
+                        <div class="info-post-time"><%=item.uptime%>前發佈</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <%}%>
+</script>
+<script type="text/template" data-art-template="dynamic-life">
+  <%for(var i=0, item; item = content[i++];) {%>
+    <div class="living-circle-item dynamic-item">
+        <div class="pillar item-body">
+            <div class="page-main">
+                <div class="item-user-info">
+                    <div class="info-poster-avatar"><img src="<%=osURL%><%=item.userPic%>"></div>
+                    <div class="info-post-info">
+                        <div class="info-poster-name"><span><%=item.name%></span><%=#sexIcon(item.sex)%></div>
+                        <div class="info-post-time"><%=item.uptime%>前發佈</div>
+                    </div>
+                </div>
+                <a href=""><img src="<%=osURL%><%=item.userPic%>"></a>
+                <div class="post-main-text">
+                    <div class="post-title"><%=item.titlename%><span>/<%=item.typename%>/</span></div>
+                    <div class="post-description"><%=item.lifecontent%></div>
+                </div>
+            </div>
+            <div class="laster">
+                <ul class="laster-num clearfloat">
+                    <li><%=formatNums(item.seeNums)%></li>
+                    <li><%=formatNums(item.loveNums)%></li>
+                    <li><%=formatNums(item.commentNums)%></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <%}%>
+</script>
+<script type="text/template" data-art-template="dynamic-buy">
+  <%for(var i=0, item; item = content[i++];) {%>
+    <div class="buyFamily-item dynamic-item">
+        <div class="pillar item-body">
+            <div class="page-main">
+                <a href=""><img src="<%=osURL%><%=item.pic%>" class="page-main-head-img"></a>
+                <div class="post-main-text">
+                    <div class="post-title"><%=item.titlename%></div>
+                    <div class="post-description"><%=item.purchasedfrom%></div>
+                    <div class="post-description-other">
+                        <div class="post-description-other-right">
+                            <p>#香港旺角</p>
+                            <p>#NIKE旺角專賣店#</p>
+                        </div>
+                        <div class="post-other-time clearfloat">
+                            <div><%=item.uptime%>前發佈</div>
+                            <img src="/src/img/social/label/labeldetail/shot.png" alt="" class="post-other-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="laster">
+                <ul class="laster-num clearfloat">
+                    <li><%=formatNums(item.seeNums)%></li>
+                    <li><%=formatNums(item.loveNums)%></li>
+                    <li><%=formatNums(item.commentNums)%></li>
+                </ul>
+              <div class="item-user-info">
+                <div class="info-poster-avatar"><img src="<%=osURL%><%=item.userPic%>"></div>
+                <div class="info-post-info">
+                  <div class="info-poster-name"><span><%=item.name%></span><%=#sexIcon(item.sex)%></div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <%}%>
+</script>
+<script type="text/template" data-art-template="dynamic-used">
+  <%for(var i=0, item; item = content[i++];){%>
+    <div class="used-item dynamic-item">
+        <!--capable 有狀態(已經賣了)  usercancel 用戶取消  -->
+        <div class="pillar">
+            <div class="page-main">
+                <div class="top-banner"><%=item.fineness%>&nbsp;/&nbsp;MOP&nbsp;4937</div>
+                <a href=""><img src="<%=osURL%><%=item.pic%>" class="page-main-head-img"></a>
+                <div class="laster-look clearfloat">
+                    <div class="laster-head">
+                        <img src="<%=osURL%><%=item.userPic%>">
+                    </div>
+                    <div class="laster-text">
+                        <div class="laster-text-name clearfloat">
+                            <span><%=item.name%></span>
+                          <%=#sexIcon(item.sex)%>
+                        </div>
+                        <div class="laster-text-num"><%=item.uptime%>前發佈</div>
+                    </div>
+                </div>
+                <div class="post-second-line"></div>
+
+                <div class="post-main-text">
+                    <p><%=item.titlename%></p>
+                    <div class="post-title"><%=item.usedcontent%></div>
+                    <ul>
+                        <li>功能：<%=item.usedfunction%></li>
+                        <li>外觀：<%=item.appearance%></li>
+                        <li>私保：<%=item.insurance%></li>
+                        <li>保養期：<%=item.period%></li>
+                        <li class="area"><span>名治交院无率</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="laster">
+                <ul class="laster-num clearfloat">
+                    <li><%=formatNum(item.seeNums)%></li>
+                    <li><%=formatNum(item.loveNums)%></li>
+                    <li><%=formatNum(item.commentNums)%></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <%}%>
+</script>
+<script type="text/template" data-art-template="dynamic-fair">
+  <%for(var i=0, item; item = content[i++];){%>
+    <div class="market-item mine dynamic-item">
+        <div class="pillar item-body">
+            <div class="pillar-inner">
+                <div class="page-main">
+                    <a href="#">
+                        <!--增加圖片，下面一行的not去掉-->
+                        <div class="top-banner">原價-<span>83</span>%</div>
+                        <img src="<%=osURL%><%=item.picture%>" class="page-main-head-img ">
+                    </a>
+                    <div class="post-main-text">
+                        <div class="post-description"><%=item.title%></div>
+                    </div>
+                </div>
+                <div class="laster">
+                    <ul class="laster-num clearfloat ">
+                        <li><%=formatNums(item.loveNums)%></li>
+                        <li><%=formatNums(item.seeNums)%></li>
+                        <li><%=formatNums(item.commentNums)%></li>
+                    </ul>
+                    <div class="laster-look clearfloat other">
+                        <div class="laster-head"><img src="<%=osURL%><%=item.userPic%>"></div>
+                        <div class="laster-text">
+                            <div class="laster-text-name"><span><%=item.name%></span><%=sexIcon(item.sex)%></div>
+                            <div class="laster-text-num "><%=item.uptime%>前發佈</div>
+                        </div>
+                    </div>
+                    <div class="laster-add ">
+                        <img src="/src/img/social/market/treasureclassifydetail/arrow.png " alt=" " class="add-arrow ">
+                        <div class="laster-main "><%=item.content%></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%}%>
 </script>
 </body>
 </html>
