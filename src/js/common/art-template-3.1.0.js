@@ -639,7 +639,7 @@ template.helper('formatNums', (num) => {
   return ret_num + str_last;
 })
 template.helper('image', function (link) {
-  const dev = true;
+  const dev = false;
   const server = dev ? 'https:' : 'http://mbuy.oss-cn-hongkong.aliyuncs.com';
   const image = link.replace(/\\/gim, '/');
   return server + image;
