@@ -172,7 +172,6 @@ $primaryColor: #e98900;
   font-size: 16px;
   padding: 30px 20px 30px 30px;
   position: relative;
-  z-index: 501;
   background-color: #fff;
 }
 
@@ -286,10 +285,6 @@ $primaryColor: #e98900;
   width: 110px;
   float: left;
   position: relative;
-}
-
-.editor-bottom .album-info .album-classification .classification-top div {
-  /*cursor: pointer;*/
 }
 
 #selecter {
@@ -549,7 +544,6 @@ $primaryColor: #e98900;
   width: 98%;
   display: block;
   margin: 0 auto;
-  vertical-align: top;
 }
 
 /*沒有更多內容*/
@@ -893,9 +887,6 @@ $primaryColor: #e98900;
     height: 270px;
     overflow-y: auto;
     overflow-x: hidden;
-  }
-  #album-move .album-move-box .album-select ul {
-
   }
   #album-move .album-move-box .album-select ul li {
     float: left;

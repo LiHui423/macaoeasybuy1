@@ -584,7 +584,6 @@ header {
   border: 1px solid #ff527c;
   width: 600px;
   height: 50px;
-  z-index: 7;
   position: relative;
   @include clearfloat;
 }
@@ -1154,7 +1153,7 @@ header {
   top: 61px;
   left: -464px;
   width: 550px;
-  z-index: 8;
+  z-index: 1;
 }
 
 .topMenu_appLoad:hover {
