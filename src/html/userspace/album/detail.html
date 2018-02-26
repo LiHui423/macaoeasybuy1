@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<title>用戶空間-專輯詳情頁</title>
+		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
+		<link rel="stylesheet" href="/src/css/common/common.css">
+		<link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
+		<link rel="stylesheet" href="/src/css/userspace/album/albumdetail/albumdetail.css">
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="/src/js/common/frameDomainJSON.js"></script>
+    <script src="/src/js/common/getData/getData_needLogin.js"></script>
+		<script src="/src/js/userspace/common/userspacebg.js" async></script>
+		<script>easyBuy.userSpaceGlobal.whiteNavName = 'AlbumNumber';</script>
+	</head>
+	<body>
+		<div id="swapper">
+			<header></header>
+			<div id="container" class="clearfloat">
+				<div id="left-menu"></div>
+				<div id="right-content">
+					<div id="user-info"></div>
+					<div class="clearfloat">
+						<div class="white-container">
+							<ul id="white-menu"></ul>
+							<ul id="news-push"></ul>
+						</div>
+						<div id="userspace-content">
+							<!--這裡是內容-->
+							<div class="userspace-content-inner">
+								<div class="editor-top-info">
+									<div class="editor-bottom clearfloat">
+										<div class="album-cover" id="album-cover"></div>
+										<div class="album-info">
+											<div class="clearfloat">
+												<div class="album-title">
+													<div class="album-title-input select" id="album-title-name-show">&nbsp;</div>
+													<input type="text" maxlength="10" class="album-title-input" id="album-title-name">
+												</div>
+												<div id="contenteditable-btn"><img src="/src/img/userspace/album/opeartion.png" alt="">設置</div>
+											</div>
+											<div class="album-allnum" id="album-all-num">&nbsp;</div>
+											<div class="album-classification clearfloat">
+												<div>分類：</div>
+												<div class="classification-top">
+													<div class="select-shadow"></div>
+													<div id="selecter"><span>未選擇</span><img src="/src/img/userspace/album/state-arrow.png" alt=""></div>
+													<ul id="class-select"></ul>
+												</div>
+											</div>
+											<ul class="album-info-num clearfloat" id="album-info-num">
+												<li>
+													<div>&nbsp;</div>
+													<div>宜粉查看</div>
+												</li>
+												<li>
+													<div>&nbsp;</div>
+													<div>宜粉回應</div>
+												</li>
+												<li>
+													<div>&nbsp;</div>
+													<div>宜粉讃好</div>
+												</li>
+												<li>
+													<div>&nbsp;</div>
+													<div>宜粉採集</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="editor-top clearfloat other">
+										<div class="describe-title">
+											<div class="sort-shadow"></div>
+											<div class="sort-menu-select">
+												<div class="sort-menu-select-top">
+													<div class="sort-menu-icon"><img src="/src/img/userspace/album/news-sort.png" alt=""></div>
+													<div class="sort-menu-text">按發佈時間排序</div>
+													<div class="sort-menu-arrow"><img src="/src/img/userspace/secondhand/state-arrow.png" alt=""></div>
+												</div>
+												<div class="sort-menu-select-bottom-shadow"></div>
+												<div class="sort-menu-select-bottom">
+													<ul>
+														<li><img src="/src/img/userspace/album/news-sort.png" alt="">按發佈時間排序</li>
+														<li><img src="/src/img/userspace/album/mes-sort.png" alt="">按回覆數排序</li>
+														<li><img src="/src/img/userspace/album/goods-sort.png" alt="">按讃好數排序</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<ul class="edtor-btns clearfloat">
+											<li id="add-album"><a href="/page/userspace/album/albumaddimg/albumaddimg.html"><img src="/src/img/social/easylive/focus-white.png" alt="">添加</a></li>
+											<li id="editor-btn" class="edtor-btns-items"><a target="_blank"><img src="/src/img/userspace/album/operation-icon.png" alt="">編輯(<span>0</span>)</a></li>
+											<li id="move-btn" class="edtor-btns-items"><img src="/src/img/userspace/album/move-icon.png" alt="">移動(<span>0</span>)</li>
+											<li id="remove-btn" class="edtor-btns-items"><img src="/src/img/userspace/common/deletebtn.png" alt="">刪除(<span>0</span>)</li>
+										</ul>
+									</div>
+
+									<div class="editor-top clearfloat mine">
+										<div class="describe-title-mine">
+											<div class="select"><img src="/src/img/userspace/album/news-sort.png" alt="" class="no-select"><img src="/src/img/userspace/album/news-sort-w.png" alt="" class="select">按發佈時間排序<div></div></div>
+											<div><img src="/src/img/userspace/album/mes-sort.png" alt="" class="no-select"><img src="/src/img/userspace/album/mes-sort-w.png" alt="" class="select">按回覆數排序<div></div></div>
+											<div><img src="/src/img/userspace/album/goods-sort.png" alt="" class="no-select"><img src="/src/img/userspace/album/goods-sort-w.png" alt="" class="select">按讃好數排序<div></div></div>
+										</div>
+										<ul class="edtor-btns clearfloat">
+											<li id="collect-btn">批量採集(<span>0</span>)</li>
+										</ul>
+									</div>
+
+								</div>
+
+								<!--發佈排序-->
+								<div id="uptime-box" class="album-lister clearfloat select">
+									<div class="album-lister-inner clearfloat"></div>
+									<p class="no-more">~沒有更多內容了~</p>
+								</div>
+								<!--評論排序-->
+								<div id="commentNums-box" class="album-lister clearfloat">
+									<div class="album-lister-inner clearfloat"></div>
+									<p class="no-more">~沒有更多內容了~</p>
+								</div>
+								<!--讃好排序-->
+								<div id="loveNums-box" class="album-lister clearfloat">
+									<div class="album-lister-inner clearfloat"></div>
+									<p class="no-more">~沒有更多內容了~</p>
+								</div>
+
+							</div>
+							<!--內容的結束標識-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+		<!--更改封面-->
+		<div id="change-cover-box">
+			<div class="cover-box-shadow"></div>
+			<div class="cover-box-select">
+				<img src="/src/img/social/easylive/close-collect.png" alt="" class="close-btn">
+				<div class="cover-box-select-title">更換封面</div>
+				<div id="change-cover-innerbox">
+					<ul class="clearfloat scrollIe scrollOther">
+						<div class="ul-inner">
+
+						</div>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--修改成功提示-->
+		<div id="chagne-success-tips" class="yez-tips-box chagne-success-tips">
+            <img src="/src/img/social/label/labeldetail/fancurr.png" alt="">已成功編輯資料！</div>
+		<!--移動成功提示-->
+		<div id="move-success-tips" class="yez-tips-box chagne-success-tips">
+            <img src="/src/img/social/label/labeldetail/fancurr.png" alt="">已成功編輯專輯！</div>
+		<!--勾選數量提示-->
+		<div id="select-max-tips" class="yez-tips-box chagne-success-tips">勾選數量達到上限！</div>
+		<!--修改專輯保存專輯-->
+		<div id="change-post">
+			<div class="delete-post-shadow"></div>
+			<div class="cancel-tips-box on-middle yez-tips-box">
+				<div class="cancels-title">確認保存</div>
+				<div>
+					<div class="cancels-xc"><img src="/src/img/common/02.png" alt=""></div>
+					<div class="cancel-tips-text">你還沒有保存哦，確定要離開嗎？</div>
+					<div class="clearfloat sure-button">
+						<div class="sure-cancel">保存并離開</div>
+						<div class="cancel-sure">不保存</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--修改專輯資料陰影-->
+		<div id="album-change-shadow"></div>
+		<!--刪除專輯-->
+		<div id="delete-post">
+			<div class="delete-post-shadow"></div>
+			<div class="cancel-tips-box on-middle yez-tips-box">
+				<div class="cancels-title">批量刪除</div>
+				<div>
+					<div class="cancels-xc"><img src="/src/img/common/02.png" alt=""></div>
+					<div class="cancel-tips-text">你確定要刪除嗎？</div>
+					<div class="clearfloat sure-button">
+						<div class="sure-cancel">確認</div>
+						<div class="cancel-sure">取消</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--移動專輯-->
+		<div id="album-move">
+			<div class="album-move-shadow"></div>
+			<div class="album-move-box">
+				<img src="/src/img/social/easylive/close-collect.png" alt="" class="close-btn">
+				<div class="album-move-title">移動圖片</div>
+				<div class="album-move-box-inner">
+					<div class="album-move-text-title">已選的圖片(<span>0</span>)：</div>
+					<div class="album-move-list">
+						<ul class="clearfloat move-list"></ul>
+					</div>
+					<div class="album-move-text-title">我要把圖片移動至新專輯：</div>
+					<div class="album-create clearfloat">
+						<input type="text" placeholder="輸入新專輯名稱" maxlength="10">
+						<div class="no-select">創建</div>
+						<p class="input-count"><span>0</span>/10</p>
+					</div>
+					<div class="album-move-text-title">我要把圖片移動至專輯：</div>
+					<div class="album-select scrollIe scrollOther" id="other-album-list">
+						<ul class="clearfloat" id="other-album-inner"></ul>
+					</div>
+				</div>
+				<div class="move-btn-outer">
+					<div class="move-btn">確定移動</div>
+				</div>
+			</div>
+        </div>
+        <div id="pcollector" class="pcollector-container"></div>
+
+        <script src="/src/js/plug/yez_js_Reset.js"></script>
+        <script src="/src/js/common/art-template-3.1.0.js"></script>
+        <script src="/src/js/userspace/common/userinfo.js"></script>
+        <script src="/src/js/userspace/common/leftmenu.js" async></script>
+        <script src="/src/js/userspace/common/whitemenu.js" async></script>
+        <script src="/src/js/userspace/common/newspush.js" async></script>
+        <script src="/src/js/common/header&search&footer/footer.js" async></script>
+        <script src="/src/js/common/header&search&footer/header.js" async></script>
+        <script src="/src/js/common/components/pcollector.js"></script>
+        <script src="/src/js/userspace/album/albumdetail/albumdetail.js"></script>
+        <script id="album-template" type="text/html" data-type="template">
+            <%if(albumList.length !=0){%>
+                <%for(var i=0;i<albumList.length;i++){%>
+                    <div class="album-list <%=albumList[i].id%>-albumlist" id="<%=albumList[i].id%>-albumlist-<%=order%>">
+                        <div class="album-relative">
+                            <div class="album-top-img"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=albumList[i].groupurl%>" alt=""></div>
+                            <div class="album-state clearfloat">
+                                <div><img src="/src/img/social/easylive/album-classification-eye.png" alt=""><span><%=albumList[i].seeNums%></span>查看</div>
+                                <div><img src="/src/img/social/easylive/album-classification-mes.png" alt=""><span><%=albumList[i].commentNums%></span>回應</div>
+                                <div><img src="/src/img/social/easylive/album-classification-good.png" alt=""><span><%=albumList[i].loveNums%></span>讃好</div>
+                                <div><img src="/src/img/social/easylive/album-classification-cai.png" alt=""><span></span>採集</div>
+                            </div>
+
+                            <div class="album-poster clearfloat">
+                                <%if(isSelf == 0){%>
+                                <div class="laster-text-head" id="<%=user.id%>user"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=user.pic%>" alt=""></div>
+                                <%}%>
+                                <div class="laster-text-num mine">
+                                    <%if(isSelf == 0){%>
+                                    <div class="laster-text-num-first">
+                                        <span><%=user.name%></span>
+                                        <%if(user.sex == 'Girl'){%>
+                                            <img src="/src/img/common/girl.png" alt=""></div>
+                                        <%}else{%>
+                                            <img src="/src/img/common/boy.png" alt=""></div>
+                                        <%}%>
+                                    <%}%>
+                                    <div><span><%=albumList[i].uptime%></span>前發佈</div>
+                                </div>
+                            </div>
+
+                            <a href="#" class="shadow-box">
+                                <p><%=albumList[i].groupdetailed%></p>
+                            </a>
+                            <div class="hover-check-box-outer">
+                                <div class="hover-check-box"></div>
+                            </div>
+                        </div>
+                        <div class="bottom-shadow"><img src="/src/img/social/label/labeldetail/hobg.png" alt=""></div>
+                    </div>
+                <%}%>
+            <%}else if(albumList.length == 0 && page ==0){%>
+                <div id="no-post">
+                    <div>
+                        <img src="/src/img/common/05.png" alt="">
+                    </div>
+                    <span>目前沒有任何內容哦!</span>
+                </div>
+            <%}%>
+        </script>
+        <script id="other-album-list-template" type="text/html" data-type="template">
+            <%if(albumList.length !=0){%>
+            <%for(var i=0;i<albumList.length;i++){%>
+                <li id="<%=albumList[i].id%>otheralbum">
+                    <div class="collect-list-div">
+                        <img class="collect-list-div-img" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=albumList[i].pic%>" alt="" onerror="this.src='/img/userspace/album/album-no-img.png'">
+                        <div class="img-number"><%=albumList[i].count%></div>
+                        <div class="collect-select"><img src="/src/img/social/easylive/collect-select.png" alt=""></div>
+                    </div>
+                    <div class="collect-list-div"><%=albumList[i].name%></div>
+                </li>
+            <%}%>
+            <%}else if(albumList.length ==0 && page == 0){%>
+                <div id="no-cover-album">
+                    <img src="/src/img/userspace/album/album-no-img.png" alt="">
+                    <div>沒有任何內容哦!</div>
+                </div>
+            <%}%>
+        </script>
+        <script id="cover-template" type="text/html" data-type="template">
+            <%if(albumPics.length !=0){%>
+                <%for(var i=0;i<albumPics.length;i++){%>
+                <li id="<%=albumPics[i].id%>coverId">
+                    <img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=albumPics[i].pic%>" alt="">
+                    <div class="shadow"></div>
+                </li>
+                <%}%>
+            <%}else if(albumPics.length ==0 && page ==0){%>
+                <div id="no-cover-album">
+                    <img src="/src/img/userspace/album/album-no-img.png" alt="">
+                    <div>沒有任何圖片哦!</div>
+                </div>
+            <%}%>
+        </script>
+	</body>
+</html>
