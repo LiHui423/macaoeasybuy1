@@ -28,7 +28,8 @@ function returnResult(){
 
 /*數據加載函數*/
 function loadResult(){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrGoodsController/QueryGoodsSolr.easy?Query="+ keyword +"&Page=0&Rows=72&AreaClassName="+ secondclass +"&spStandard="+ spStandardcode +"&Parameter="+ Parametercode +"&Order="+Order+"&AscOrDesc="+AscOrDesc+"&PriceStart="+PriceStart+"&PriceEnd="+PriceEnd+"&labelinfo="+labelinfo+"&easybuyCallback=?",function(data){
+	console.log(keyword);
+	$.getJSON("http://social1.macaoeasybuy.com/SolrGoodsController/QueryGoodsSolr.easy?Query="+ keyword +"&Page=0&Rows=72&AreaClassName="+ secondclass +"&spStandard="+ spStandardcode +"&Parameter="+ Parametercode +"&Order="+Order+"&AscOrDesc="+AscOrDesc+"&PriceStart="+PriceStart+"&PriceEnd="+PriceEnd+"&labelinfo="+labelinfo+"&easybuyCallback=?",function(data){
 		console.log(data)
 		/*取到二次分類*/
 		var htmlsecondClass = template("secondClass", data);
@@ -62,7 +63,9 @@ function loadResult(){
 /*選擇頁數數據加載函數*/
 function choosePage(page){
 	$.getJSON("http://shopping1.macaoeasybuy.com/SolrGoodsController/QueryGoodsSolr.easy?Query="+ keyword +"&Page="+ page +"&Rows=72&AreaClassName="+ secondclass +"&spStandard="+ spStandardcode +"&Parameter="+ Parametercode +"&Order="+Order+"&AscOrDesc="+AscOrDesc+"&PriceStart="+PriceStart+"&PriceEnd="+PriceEnd+"&labelinfo="+labelinfo+"&easybuyCallback=?",function(data){
+	//$.getJSON("http://shopping1.macaoeasybuy.com/SolrGoodsController/QueryGoodsSolr.easy?Query="+ keyword +"&Page=1&Rows=72&AreaClassName="+ secondclass +"&spStandard="+ spStandardcode +"&Parameter="+ Parametercode +"&Order="+Order+"&AscOrDesc="+AscOrDesc+"&PriceStart="+PriceStart+"&PriceEnd="+PriceEnd+"&labelinfo="+labelinfo+"&easybuyCallback=?",function(data){
 		/*結果的商品*/
+		console.log(data);
 		var htmlsearchGood = template("searchGood", data);
 		$('.search_result_goodList').html(htmlsearchGood);
 		uploadType()
@@ -72,7 +75,6 @@ function choosePage(page){
 /*隨便看看*/
 function seeOther(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/ShangpinBottomController/queryShopRandomSp/0/12.easy?easybuyCallback=?",function(data){
-		console.log(data);
 		var seeOtherGood = template("seeGood", data);
 		$('.search_result_seeOther_main').html(seeOtherGood);
 		uploadType()

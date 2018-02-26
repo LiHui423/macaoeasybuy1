@@ -8,10 +8,11 @@
 		<link rel="stylesheet" href="/src/css/common/common.css">
 		<link rel="stylesheet" href="/src/css/common/search/searchCommon.css">
 		<link rel="stylesheet" href="/src/css/common/search/search_fans.css">
-		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>.
+		<script src="/src/js/common/frameDomainJSON.js"></script>
 	</head>
 	<body>
-		<header></header>
+		<header id="page-header"></header>
 		<div id ="searchBar">
 			<div class="searchBox">
 				<div class="searchBox_mainBox">
@@ -54,7 +55,7 @@
 	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
 	<script src="/src/js/common/search/search_fans/search_fans.data.js"></script>
 	<!--頭部文件的js-->
-	<script src="/src/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/page-header.js"></script>
 	<!--搜索框部份的js-->
 	<script src="/src/js/common/header&search&footer/searchBar.js"></script>
 	<!--粉絲搜索的js-->
@@ -71,7 +72,7 @@
 					<div class="result-box-item-inner special">
 				<%}%>
 					<div class="recommen-label"><img src="/src/img/userspace/friendsfans/recommen-label.png" alt=""></div>
-					<div class="head myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.classList[i].userPic%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
+					<div class="head myborder-radius"><img src="http://wap.macaoeasybuy.com<%=list.classList[i].userPic%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
 					<div class="name">
 						<%=list.classList[i].userName%>
 						<%if(list.classList[i].sex=="Girl"){%>
@@ -81,9 +82,9 @@
 						<%}%>
 					</div>
 					<div class="identity-level user">用戶身份：
-						<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].expertPic%>" alt="" onerror="this.onerror=null;this.parentNode.removeChild(this);">
+						<img src="http://wap.macaoeasybuy.com/<%=list.classList[i].expertPic%>" alt="" onerror="this.onerror=null;this.parentNode.removeChild(this);">
 					</div>
-					<div class="identity-level pet">寵物等級：<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.classList[i].petPic%>"><span><%=list.classList[i].petName%></span><span>LV.<%=list.classList[i].petlevel%></span></div>
+					<div class="identity-level pet">寵物等級：<img src="http://wap.macaoeasybuy.com<%=list.classList[i].petPic%>"><span><%=list.classList[i].petName%></span><span>LV.<%=list.classList[i].petlevel%></span></div>
 					<ul class="clearfloat user-info">
 						<li>
 							<div><%=list.classList[i].attentionCount%></div>

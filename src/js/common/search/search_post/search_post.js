@@ -7,7 +7,11 @@ function chooseTab(){
 	$('.search_sortBox_left ul li').on('click',function(){
 		$(this).addClass('search_sortBox_left_curr').siblings().removeClass('search_sortBox_left_curr')
 		fq = $(this).data('icon');
-		chooseTypeGood()
+		var url = window.location.search;
+		var str = url.split("?");
+		var strs = str[1].split("=");
+		var keyword = strs[1];
+		chooseTypeGood(keyword);
 		Page = 1;
 		if(fq == '0'){
 			$('.search_result_mainRight_title').text('宜生活')
@@ -27,32 +31,36 @@ function chooseTab(){
 function chooseSort(){
 	$('.search_sortBoxEach span').on('click',function(){
 		if($(this).parents('.search_sortBoxEach').hasClass('search_sortBox_right_down')){
-			$(this).parents('.search_sortBoxEach').removeClass('search_sortBox_right_down')
+			$(this).parents('.search_sortBoxEach').removeClass('search_sortBox_right_down');
 			$(this).parents('.search_sortBoxEach').find('.search_sortBox_right_slide').slideUp('fast');
-			$('.transparent_bg').hide()
+			$('.transparent_bg').hide();
 		}else{
-			$(this).parents('.search_sortBoxEach').addClass('search_sortBox_right_down')
+			$(this).parents('.search_sortBoxEach').addClass('search_sortBox_right_down');
 			$(this).parents('.search_sortBoxEach').siblings().find('.search_sortBox_right_slide').slideUp('fast');
 			$(this).parents('.search_sortBoxEach').siblings().removeClass('search_sortBox_right_down')
 			$(this).parents('.search_sortBoxEach').find('.search_sortBox_right_slide').slideDown('fast');
-			$('.transparent_bg').show()
+			$('.transparent_bg').show();
 		}
 	})
 	$('.search_sortBox_right_slide ul li').on('click',function(){
 		$(this).parents('.search_sortBoxEach').find('span:nth-of-type(1)').text($(this).text());
-		$(this).parents('.search_sortBoxEach').removeClass('search_sortBox_right_down')
+		$(this).parents('.search_sortBoxEach').removeClass('search_sortBox_right_down');
 		$(this).parents('.search_sortBoxEach').find('.search_sortBox_right_slide').slideUp('fast');
+		var url = window.location.search;
+		var str = url.split("?");
+		var strs = str[1].split("=");
+		var keyword = strs[1];
 		if($(this).parents('.search_sortBoxEach').hasClass('search_sortBoxEach_time')){
-			fqTime = $(this).data('time')
-			loadResult()
+			fqTime = $(this).data('time');
+			loadResult(keyword);
 			Page = 1
 		}else{
 			DescOrAsc = $(this).data('asc')
 			Orders = $(this).data('order')
-			chooseTypeGood()
+			chooseTypeGood(keyword);
 			Page = 1
 		}
-		$('.transparent_bg').hide()
+		$('.transparent_bg').hide();
 	})
 	$('.transparent_bg').on('click',function(){
 		$('.search_sortBoxEach').removeClass('search_sortBox_right_down')
@@ -62,7 +70,7 @@ function chooseSort(){
 }
 
 /*搜索結果數量*/
-function resultNum(){
+function resultNum(keyword){
 	var allnum = $('.search_result_title').find('span:nth-of-type(2)').text();
 	$('.search_result_title').find('span:nth-of-type(1)').text(decodeURI(decodeURI(keyword)));
 	$('.search_label_noResult p span').text(decodeURI(decodeURI(keyword)))
@@ -79,7 +87,7 @@ function searchPostScroll(){
 	/*定義頁碼*/
 	Page = 1;
 	/*定義是否滾動完的參數*/
-	over = false;
+	var over = false;
 	/*距下边界长度*/
 	var range = 50;
 	
@@ -110,8 +118,12 @@ function searchPostScroll(){
         var totalheight = parseFloat($(window).height()) + parseFloat(srollPos);//加了400是想在距離底部還有400px的時候就提前請求
         if(over == false){
         	if(($(document).height()-range) <= totalheight) {
-        		$('.loadNow').show()
-	        	loadResultTabAppend();
+				$('.loadNow').show();
+				var url = window.location.search;
+				var str = url.split("?");
+				var strs = str[1].split("=");
+				var keyword = strs[1];
+	        	loadResultTabAppend(keyword);
 				Page++;
 	        }	
         }else{

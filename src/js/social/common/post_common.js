@@ -108,12 +108,14 @@ function myContent(data){
 			$(this).addClass('label-content');
 		}else if(/at/.test(html)){
 			$(this).addClass('at-content');
-		}
+		}	``
 	});
 }
 //標籤分類
 function labelClass(data){
+	console.log(data);
 	for(var i=0;i<data.length;i++){
+		
 		if(data[i].length == 0){
 			if(i==0){
 				$('#atricle_label li.placeLabel').remove();
@@ -136,6 +138,10 @@ function labelClass(data){
 	}
 	$('#atricle_label a').each(function(){
 		//這裡可以改跳轉
+		$(this).on('click',function(){
+			let content=$(this).attr('id').split('#')[1];
+			console.log(content);
+		})
 	});
 	if($('.atricle_label')) $('.atricle_label').css('display','block');
 }
@@ -155,7 +161,6 @@ function reportPost(){
 function loadEditor(fn){
 	if(easyBuy.isLogin){
 		//登錄的
-		console.log('已登錄');
 		// $('#editor-box').load('http://userspace.macaoeasybuy.com/public/postDetailEditor.html',function(){
 		// 	console.log('已登錄');
 		// 	$(this).prepend('<div class="replyBox_title">我想說說...</div>');
@@ -351,8 +356,8 @@ function loadEditor(fn){
 				<div class="no-login-tips">
 					<div class="no-login-tips-text">未登入無法留言哦！</div>
 					<div class="clearfloat no-login-tips-btn">
-						<div>馬上登入</div>
-						<div>馬上註冊</div>
+						<div><a href="http://usermanager.macaoeasybuy.com/login.html">馬上登入</a></div>
+						<div><a>馬上註冊</a></div>
 					</div>
 				</div>
 			</div>
@@ -537,7 +542,6 @@ function mygoodCard(objBtn,postType){
 	var page = 0;
 	var size = 24;
 	var goodTemplate = easyBuy.global.template['good'];
-	console.log(goodTemplate);
 	firstBlood(page,size);
 	function firstBlood(page,size){
 		$.ajax({

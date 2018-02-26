@@ -8,7 +8,11 @@ function chooseTab(){
 	$('.search_sortBox_left ul li').on('click',function(){
 		$(this).addClass('search_sortBox_left_curr').siblings().removeClass('search_sortBox_left_curr')
 		fq = $(this).data('icon');
-		chooseTypeGood()
+		var url = window.location.search;
+		var str = url.split("?");
+		var strs = str[1].split("=");
+		var keyword = strs[1];
+		chooseTypeGood(keyword);
 		Page = 1
 	})
 	
@@ -44,7 +48,11 @@ function chooseSort(){
 		$('.search_sortBox_right_slide').slideUp('fast');
 		DescOrAsc = $(this).data('asc')
 		Order = $(this).data('order')
-		chooseTypeGood()
+		var url = window.location.search;
+		var str = url.split("?");
+		var strs = str[1].split("=");
+		var keyword = strs[1];
+		chooseTypeGood(keyword);
 		Page = 1
 		$('.transparent_bg').hide()
 	})
@@ -80,7 +88,7 @@ function rightCeil(){
 
 
 /*搜索結果數量*/
-function resultNum(){
+function resultNum(keyword){
 	var allnum = $('.search_result_title').find('span:nth-of-type(2)').text();
 	$('.search_result_title').find('span:nth-of-type(1)').text(decodeURI(decodeURI(keyword)));
 	$('.search_result_null p span').text(decodeURI(decodeURI(keyword)));
@@ -158,7 +166,8 @@ function searchTopicScroll(){
 	}
 	function setImg(index){
 	    var aLiImg = $('.search_label_resultBox .search_label_resultEach.nopiclabel').children('.search_label_resultEach_left')
-	   	var src= $(aLiImg[index]).data('basrc');
+		   var src= $(aLiImg[index]).data('basrc');
+		   console.log(src);
 	    $(aLiImg[index]).css("background-image","url(" + src + ")");
 	}
 	

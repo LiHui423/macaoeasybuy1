@@ -29,6 +29,13 @@
     color: #fff;
   }
 }
+.clearfloat:after{
+  clear: both;
+  display: table;
+  overflow: hidden;
+  height: 0;
+  visibility: both;
+}
 #page-header {
   background-color: $color21;
   height: 70px;

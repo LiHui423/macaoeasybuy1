@@ -1,5 +1,6 @@
 $(function(){
-	returnResult()
+	returnResult();
+	
 })
 
 var DescOrAsc='',Orders='',Page = 0,fq = 0,fqTime = 0;//fq(1是福利社2是宜買話題3是全球筍貨)fqTime(0是不限時間1是一個月內2是三個月內)
@@ -10,7 +11,7 @@ function returnResult(){
 	var url = window.location.search;
 	var str = url.split("?");
 	var strs = str[1].split("=");
-	keyword = strs[1];
+	var keyword = strs[1];
 
 	/*把搜索的結果填到搜索框里 這裡需要暫緩執行才能把值寫上去很奇怪*/
 	setTimeout(function(){
@@ -21,13 +22,13 @@ function returnResult(){
 		/*輸入內容為空*/
 		console.log('null')
 	}else{
-		loadResult()
+		loadResult(keyword);
 		rightLoadPart()
 	}
 }
 
-function loadResult(){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrTopicsController/QueryTopics.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Orders="+Orders+"&Page=0&fq="+fq+"&fqTime="+fqTime+"&Rows=10&easybuyCallback=?",function(data){
+function loadResult(keyword){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrTopicsController/QueryTopics.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Orders="+Orders+"&Page=0&fq="+fq+"&fqTime="+fqTime+"&Rows=10&easybuyCallback=?",function(data){
 
 		/*搜索結果總數*/
 		var searchTopicNum = template("searchTopicNum", data);
@@ -51,13 +52,14 @@ function loadResult(){
 			searchTopicScroll()
 			over = false
 		}
-		chooseTab()
-		resultNum()
+		chooseTab();
+		resultNum(keyword)
 	})
 }
 
-function chooseTypeGood(){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrTopicsController/QueryTopics.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Orders="+Orders+"&Page=0&fq="+fq+"&fqTime="+fqTime+"&Rows=10&easybuyCallback=?",function(data){
+function chooseTypeGood(keyword){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrTopicsController/QueryTopics.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Orders="+Orders+"&Page=0&fq="+fq+"&fqTime="+fqTime+"&Rows=10&easybuyCallback=?",function(data){
+		console.log(data);
 		if(data.list.numFound == 0){
 			$('.search_label_noResult').show()
 			$('.noMore').hide()
@@ -76,9 +78,10 @@ function chooseTypeGood(){
 }
 
 function loadResultTabAppend(){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrTopicsController/QueryTopics.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Orders="+Orders+"&Page="+Page+"&fq="+fq+"&fqTime="+fqTime+"&Rows=10&easybuyCallback=?",function(data){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrTopicsController/QueryTopics.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Orders="+Orders+"&Page="+Page+"&fq="+fq+"&fqTime="+fqTime+"&Rows=10&easybuyCallback=?",function(data){
 		/*搜索結果*/
-		$('.loadNow').hide()
+		console.log(data);
+		$('.loadNow').hide();
 		if(data.list.classList.length < 10){
 			over = true;
 			$('.noMore').show()
@@ -93,8 +96,8 @@ function loadResultTabAppend(){
 
 //請求右側數據
 function rightLoadPart(){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrTopicsController/QueryOtherTopics.easy?easybuyCallback=?",function(data){
-		console.log(data)
+	$.getJSON("http://social1.macaoeasybuy.com/SolrTopicsController/QueryOtherTopics.easy?easybuyCallback=?",function(data){
+		console.log(data);
 		var html = template("topicRightPart", data);
 		$('.search_result_mainRight').append(html);
 	})
