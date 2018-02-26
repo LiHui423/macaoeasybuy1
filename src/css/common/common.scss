@@ -624,7 +624,7 @@ header {
   display: none;
   top: 0;
   left: 0;
-  z-index: 6;
+  // z-index: 6;
 }
 
 .searchBox_right_bottomLeft {
@@ -642,6 +642,7 @@ header {
   top: 48px;
   background-color: #fff;
   display: none;
+  z-index: 4;
 }
 
 .searchBar_typeBox ul li {
