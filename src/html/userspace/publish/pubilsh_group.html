@@ -149,7 +149,7 @@
 		<%if(data.length != 0){%>
 		<%for(var i=0;i<data.length;i++){%>
 			<li id="<%=data[i].id%>user" class="<%=data[i].id%>userclass">
-				<div class="fandPic"><img src="<%=osURL%><%=data[i].pic%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
+				<div class="fandPic"><img src="<%=osURL%><%=data[i].pic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
 				<div class="fansMess clearfloat">
 					<span><%=data[i].name%></span>
 					<%if(data[i].sex == 'Girl'){%>
@@ -176,7 +176,7 @@
 			<li id="<%=labelList[i].id%>label" class="<%=labelList[i].id%>labelclass" label="<%=labelList[i].labelName%>" type="<%=labelList[i].type%>" author="<%=labelList[i].userId%>">
 				<div class="LabelList_Filter"></div>
 				<span class="LabelList_checked"><img src="/src/img/social/label/labeldetail/fancurr.png"></span>
-				<div class="labelList_left"><img src="<%=osURL%><%=labelList[i].picture%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_80.png';this.style.width='120px'"></div>
+				<div class="labelList_left"><img src="<%=osURL%><%=labelList[i].picture%>" onerror="this.src='/src/img/common/loading_pc_80.png';this.style.width='120px'"></div>
 				<div class="labelList_right">
 					<div class="labelList_title"><%=labelList[i].labelName%></div>
 					<div class="labelList_main">
@@ -273,7 +273,7 @@
 				<%}%>
 					<div class="top">
 						<img src="<%=osURL%><%=shop[i].logo%>" alt="" class="top-banner" onerror="this.src='/img/common/loading_pc_shop.png'">
-						<div class="top-head"><img src="<%=osURL%><%=shop[i].shopPic%>" alt="" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
+						<div class="top-head"><img src="<%=osURL%><%=shop[i].shopPic%>" alt="" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
 					</div>
 					<div class="bottom">
 						<div class="bottom-title"><img src="/src/img/social/label/labeldetail/shop-house.png" alt=""><span><%=shop[i].shopName%></span></div>

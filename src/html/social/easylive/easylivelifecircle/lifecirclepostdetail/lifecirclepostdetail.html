@@ -15,7 +15,7 @@
     	<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
     	<script src="/src/js/common/frameDomainJSON.js"></script>
 		<script src="/src/js/common/getData/getData_sinple.js"></script>
-		
+
 		<script>easyBuy.global.hasNav = false;</script>
 		<!--不需要參數加載進來-->
     	<!--userid頁面所屬用戶id   id帖子Id-->
@@ -348,7 +348,7 @@
 				<li id="<%=loveList[a].id%>good-id" data-id="<%=loveList[a].id%>">
 					<a>
 						<div class="respondBox_fandPic">
-							<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=loveList[a].pic%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'">
+							<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=loveList[a].pic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'">
 						</div>
 						<div class="respondBox_fansMess clearfloat">
 							<div>
@@ -372,7 +372,7 @@
 			<li data-id="<%=userList[k].id%>">
 				<a>
 					<div class="respondBox_fandPic">
-						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=userList[k].pic%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'">
+						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=userList[k].pic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'">
 					</div>
 					<div class="respondBox_fansMess clearfloat">
 						<div>
@@ -395,7 +395,7 @@
 			<%if(replyList.length > 0){%>
 				<%for(var i=0;i<replyList.length;i++){%>
 				<li class="clearfloat" id="<%=replyList[i].id%>response">
-					<div class="person-head" id="replyList[i].userid"><img src="//wap.macaoeasybuy.com<%=replyList[i].pic%>" alt="" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
+					<div class="person-head" id="replyList[i].userid"><img src="//wap.macaoeasybuy.com<%=replyList[i].pic%>" alt="" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
 					<div class="person-info">
 						<div class="person-info-name">
 							<%=replyList[i].name%>
@@ -421,7 +421,7 @@
 							<% if(replyList[i].reply != undefined){ %>
 								<li class="clearfloat" id="<%=replyList[i].reply.id%>response-reply">
 									<div class="person-info-record-head">
-										<img src="//wap.macaoeasybuy.com<%=replyList[i].reply.pic%>" alt="" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'">
+										<img src="//wap.macaoeasybuy.com<%=replyList[i].reply.pic%>" alt="" onerror="this.src='/src/img/common/loading_pc_headPic.png'">
 									</div>
 									<div class="person-info-record-info">
 										<div class="person-info-name">
@@ -464,7 +464,7 @@
 			<%if(data.length != 0){%>
 			<%for(var i=0;i<data.length;i++){%>
 				<li id="<%=data[i].id%>user" class="<%=data[i].id%>userclass">
-					<div class="fandPic"><img src="//wap.macaoeasybuy.com<%=data[i].pic%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
+					<div class="fandPic"><img src="//wap.macaoeasybuy.com<%=data[i].pic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
 					<div class="fansMess clearfloat">
 						<span><%=data[i].name%></span>
 						<%if(data[i].sex == 'Girl'){%>
@@ -491,7 +491,7 @@
 				<li id="<%=labelList[i].id%>label" class="<%=labelList[i].id%>labelclass" label="<%=labelList[i].labelName%>" type="<%=labelList[i].type%>" author="<%=labelList[i].userId%>">
 					<div class="LabelList_Filter"></div>
 					<span class="LabelList_checked"><img src="/src/img/social/label/labeldetail/fancurr.png"></span>
-					<div class="labelList_left"><img src="//wap.macaoeasybuy.com<%=labelList[i].picture%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_80.png';this.style.width='120px'"></div>
+					<div class="labelList_left"><img src="//wap.macaoeasybuy.com<%=labelList[i].picture%>" onerror="this.src='/src/img/common/loading_pc_80.png';this.style.width='120px'"></div>
 					<div class="labelList_right">
 						<div class="labelList_title"><%=labelList[i].labelName%></div>
 						<div class="labelList_main">
@@ -570,7 +570,7 @@
 								<%if(type == 'other' && result.returnList[i].user != null){%>
 									<div class="laster-look clearfloat">
 										<div class="laster-head">
-											<img src="//wap.macaoeasybuy.com<%=result.returnList[i].user.pic%>" onerror="this.src='http://img.macaoeasybuy.com/img/common/loading_pc_headPic.png'"></div>
+											<img src="//wap.macaoeasybuy.com<%=result.returnList[i].user.pic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
 										<div class="laster-text">
 											<div class="laster-text-name">
 												<span><%=result.returnList[i].user.name%></span>

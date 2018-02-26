@@ -80,7 +80,7 @@ function shopLoad(keyword){
 		}else{
 			for(var i = 0;i < data.list.length;i++){
 				if(data.list[i].shopLogo == ''){
-					data.list[i].shopLogo = 'http://img.macaoeasybuy.com/src/img/common/loading_pc_shop.png'
+					data.list[i].shopLogo = '/src/src/img/common/loading_pc_shop.png'
 				}else{
 					data.list[i].shopLogo = 'http://mbuy.oss-cn-hongkong.aliyuncs.com/'+ data.list[i].shopLogo
 				}
