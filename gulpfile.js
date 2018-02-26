@@ -17,9 +17,9 @@ const autoprefixer = require('autoprefixer');
 const del = require('del');
 const path = require('path');
 
-
 const REGEXP = /\/src\/(img|js|css)/gim;
 
+const DEV = process.env.NODE_ENV === 'development';
 const DOMAIN = {
   style: { dev: 'css', prod: 'easystyle' },
   javascript: { dev: 'js', prod: 'easyscript' },
@@ -33,31 +33,26 @@ const postcssPlugins = [
 /**
  *
  * @param {string} string
- * @param {boolean} env
  */
-function changeURI(string, env) {
+function changeURI(string) {
   let doo = '';
-  const dev = env === 'dev';
   if (string.indexOf('css') !== -1) {
-    doo = dev ? DOMAIN.style.dev : DOMAIN.style.prod;
+    doo = DEV ? DOMAIN.style.dev : DOMAIN.style.prod;
   } else if (string.indexOf('js') !== -1) {
-    doo = dev ? DOMAIN.javascript.dev : DOMAIN.javascript.prod;
+    doo = DEV ? DOMAIN.javascript.dev : DOMAIN.javascript.prod;
   } else {
-    doo = dev ? DOMAIN.images.dev : DOMAIN.images.prod;
+    doo = DEV ? DOMAIN.images.dev : DOMAIN.images.prod;
   }
-  doo = string.replace('/src', `//${doo}.macaoeasybuy.com`);
+  doo = string.replace('/src', DEV ? `//${doo}.macaoeasybuy.com` : `//${doo}.macaoeasybuy.com`);
   return doo;
 }
 /**
  *
  * @param {string} src - src path
- * @param {string} env - dev path
  */
-function javascript(src, env) {
+function javascript(src) {
   const isSingleFile = typeof src === 'string';
   const SRCPATH = isSingleFile ? src : 'src/js/**/*.js';
-  const ENV = env || 'dev';
-  const DEV = ENV === 'dev';
   const DESTPATH = isSingleFile ? path.dirname(SRCPATH).replace('src', 'dev') : (DEV ? 'dev/js' : 'dist/js');
   const isGlob = SRCPATH.indexOf('*') !== -1;
   const filterVendorFile = filter(['**', '!**/vendor/*.js'], {restore: true});
@@ -65,31 +60,27 @@ function javascript(src, env) {
     .pipe(gif(isGlob, filterVendorFile))
     .pipe(plumber())
     .pipe(gif(DEV, sourcemaps.init()))
-    .pipe(replace(REGEXP, match => changeURI(match, ENV)))
+    .pipe(replace(REGEXP, match => changeURI(match)))
     .pipe(babel({ presets: ['env'] }))
     .pipe(gif(DEV, sourcemaps.write('.')))
     .pipe(filterVendorFile.restore)
     .pipe(gulp.dest(DESTPATH));
 }
-function styleCSS(src, env) {
+function styleCSS(src) {
   const isSingleFile = typeof src === 'string';
   const SRCPATH = isSingleFile ? src : 'src/css/**/*.css';
-  const ENV = env || 'dev';
-  const DEV = ENV === 'dev';
   const DESTPATH = isSingleFile ? path.dirname(SRCPATH).replace('src', 'dev') : (DEV ? 'dev/css' : 'dist/css');
   const isGlob = SRCPATH.indexOf('*') !== -1;
   const filterVendorFile = filter(['**', '!**/vendor/*.css'], {restore: true});
   return gulp.src(SRCPATH)
     .pipe(gif(isGlob, filterVendorFile))
-    .pipe(replace(REGEXP, match => changeURI(match, ENV)))
+    .pipe(replace(REGEXP, match => changeURI(match)))
     .pipe(filterVendorFile.restore)
     .pipe(gulp.dest(DESTPATH));
 }
-function styleSCSS(src, env) {
+function styleSCSS(src) {
   const isSingleFile = typeof src === 'string';
   const SRCPATH = isSingleFile ? src : 'src/css/**/*.scss';
-  const ENV = env || 'dev';
-  const DEV = ENV === 'dev';
   const DESTPATH = isSingleFile ? path.dirname(SRCPATH).replace('src', 'dev') : (DEV ? 'dev/css' : 'dist/css');
   const isGlob = SRCPATH.indexOf('*') !== -1;
   return gulp.src(SRCPATH)
@@ -102,19 +93,17 @@ function styleSCSS(src, env) {
       maxImageSize: 8 * 1024,
       debug: true,
     }))
-    .pipe(replace(REGEXP, match => changeURI(match, ENV)))
+    .pipe(replace(REGEXP, match => changeURI(match)))
     .pipe(gif(DEV, sourcemaps.write('.')))
     .pipe(gulp.dest(DESTPATH));
 }
-function html(src, env) {
+function html(src) {
   const isSingleFile = typeof src === 'string';
   const SRCPATH = isSingleFile ? src : 'src/html/**/*.html';
-  const ENV = env || 'dev';
-  const DEV = ENV === 'dev';
   const DESTPATH = isSingleFile ? path.dirname(SRCPATH).replace('src/html', 'dev/page') : (DEV ? 'dev/page' : 'dist/page');
   const isGlob = SRCPATH.indexOf('*') !== -1;
   return gulp.src(SRCPATH)
-    .pipe(replace(REGEXP, match => changeURI(match, ENV)))
+    .pipe(replace(REGEXP, match => changeURI(match)))
     .pipe(gulp.dest(DESTPATH));
 }
 // function htmlP() {
@@ -128,17 +117,21 @@ function html(src, env) {
 //         minifyJS: false,
 //         minifyCSS: false
 //     }
-//     return gulp.src('dev/html/**/*.html')
-//         .pipe(m.replace(/("|'|\()\/{2}(css|js|img).macaoeasybuy/gim, match => link(match, 'prod')))
-//         .pipe(m.htmlmin(options))
+//     return gulp.src('dev/page/**/*.html')
+//         .pipe(replace(/("|'|\()\/{2}(css|js|img).macaoeasybuy/gim, match => changeURI(match, 'prod')))
+//         // .pipe(htmlmin(options))
 //         .pipe(gulp.dest('dist/page'));
 // }
 // function cssP() {
 //     return gulp.src('dev/css/**/*css')
-//         .pipe(m.replace(/("|'|\()\/{2}(css|js|img).macaoeasybuy/gim, match => link(match, 'prod')))
+//         .pipe(m.replace(/("|'|\()\/{2}(css|js|img).macaoeasybuy/gim, match => changeURI(match, 'prod')))
 //         .pipe(gulp.dest('dist/css'));
 // }
-// gulp.task('build', gulp.parallel(htmlP, cssP));
+// function jsP() {
+//   return gulp.src('dev/js/**/*.js')
+//     .pipe(m.replace)
+// }
+gulp.task('build', gulp.parallel(javascript, styleCSS, styleSCSS, html));
 gulp.task('preview', gulp.parallel(javascript, styleCSS, styleSCSS, html));
 gulp.task('dev', () => {
     gulp.watch('src/**/*.(js|css|scss|html)').on('all', (event, file) => {
