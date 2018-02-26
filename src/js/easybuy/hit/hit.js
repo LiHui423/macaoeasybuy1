@@ -66,7 +66,7 @@ function chooseTypeBox(){
 }
 
 //本周熱賣滾動加載
-/*function hitScrollLoad(){
+function hitScrollLoad(){
 	var page = 1;
 	var range = 100; //距下边界长度/单位px
     var totalheight = 300;
@@ -100,7 +100,7 @@ function chooseTypeBox(){
 			page++
        }
     });
-}*/
+}
 
 //瀑布流
 function waterfall(outer,item,num,margin,width) {
@@ -273,7 +273,7 @@ function hitScroll(){
 	function lazyLoad(){
 		var aLi = $('.hit_main_goodList .hit_main_goodEach.noPic');
 	    var t = document.documentElement.clientHeight + (document.documentElement.scrollTop || document.body.scrollTop)-300;
-	    for (var i = 0, l = aLi.length; i < l; i++) {
+		for (var i = 0, l = aLi.length; i < l; i++) {
 	        var oLi = aLi[i];
 	        //检查oLi是否在可视区域
 	        var h = getH(oLi);

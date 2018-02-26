@@ -32,16 +32,16 @@
     }, '');
     const socialLi = socialPage.reduce((HTMLString, page) => {
       return HTMLString + `<li><a href="${page.href}">${page.name}</a></li>`;
-    });
+    },'');
     navShoppingHTMLString = `
-      <div class="hidden clearfloat" style="height:0px;overflow:hidden;transition:all .3s linear"">
+      <div class="hidden clearfloat" style="height:0px;overflow:hidden;transition:all .2s linear"">
         <ul class="e-container">
           ${shoppingLi}
         </ul>
       </div>
     `;
     navSocialHTMLString = `
-      <div class="hidden clearfloat" style="height:0px;overflow:hidden;transition:all .3s linear">
+      <div class="hidden clearfloat" style="height:0px;overflow:hidden;transition:all .2s linear">
         <ul class="e-container">
           ${socialLi}
         </ul>
@@ -146,5 +146,12 @@
   })
   $('.social').mouseout(function(){
     $('.social>div').css('height','0px');
+  })
+  //鼠標點擊導航事件
+  $('.shopping>span').on('click',function(){
+    window.location.href="http://www.macaoeasybuy.com/page/html/easybuy_index.html";
+  })
+  $('.social>span').on('click',function(){
+    window.location.href="http://social.macaoeasybuy.com/easylive/easylive.html";
   })
 })());

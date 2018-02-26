@@ -175,17 +175,17 @@ function clacTimeFormat(){
 		var end_overTime = $(this).find(".GroupBuy_end_overTime").val();
 		
 		var end_overTime_date = new Date(end_overTime);
-		end_overTime_month = end_overTime_date.getMonth() + 1;
-		end_overTime_day = end_overTime_date.getDate();
-		end_overTime_hour = end_overTime_date.getHours();
-		end_overTime_minute = end_overTime_date.getMinutes();
-		end_overTime_second = end_overTime_date.getSeconds();
+		let end_overTime_month = end_overTime_date.getMonth() + 1;
+		let end_overTime_day = end_overTime_date.getDate();
+		let end_overTime_hour = end_overTime_date.getHours();
+		let end_overTime_minute = end_overTime_date.getMinutes();
+		let end_overTime_second = end_overTime_date.getSeconds();
 		
-		overTime_month = (String(end_overTime_month).length >= 2) ? end_overTime_month : '0' + end_overTime_month;
-		overTime_day = (String(end_overTime_day).length >= 2) ? end_overTime_day : '0' + end_overTime_day;
-		overTime_hour = (String(end_overTime_hour).length >= 2) ? end_overTime_hour : '0' + end_overTime_hour;
-		overTime_minute = (String(end_overTime_minute).length >= 2) ? end_overTime_minute : '0' + end_overTime_minute;
-		overTime_second = (String(end_overTime_second).length >= 2) ? end_overTime_second : '0' + end_overTime_second;
+		let overTime_month = (String(end_overTime_month).length >= 2) ? end_overTime_month : '0' + end_overTime_month;
+		let overTime_day = (String(end_overTime_day).length >= 2) ? end_overTime_day : '0' + end_overTime_day;
+		let overTime_hour = (String(end_overTime_hour).length >= 2) ? end_overTime_hour : '0' + end_overTime_hour;
+		let overTime_minute = (String(end_overTime_minute).length >= 2) ? end_overTime_minute : '0' + end_overTime_minute;
+		let overTime_second = (String(end_overTime_second).length >= 2) ? end_overTime_second : '0' + end_overTime_second;
 		
 		$(this).find(".GroupBuy_end_overTimeBox").find('.end_overTime_month').text(overTime_month);
 		$(this).find(".GroupBuy_end_overTimeBox").find('.end_overTime_day').text(overTime_day);

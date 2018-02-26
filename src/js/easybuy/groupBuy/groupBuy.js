@@ -27,7 +27,7 @@ function chooseSortLabel(labelClick,classCurr){
 		}else{
 			$(this).addClass(classCurr);
 		}
-		page1 = 1,page2 = 1,page3 = 1;
+		var page1 = 1,page2 = 1,page3 = 1;
 		getLabelJson()
 	})
 }
@@ -61,19 +61,19 @@ function showDivTab(){
 
 function scrollLoad(page1,page2,page3){
 	if(page1 >= 1){
-		let page1 = page1;
+		page1 = page1;
 	}else{
-		let page1 = 1;
+		page1 = 1;
 	}
 	if(page2 >= 1){
-		let page2 = page2;
+		page2 = page2;
 	}else{
-		let page2 = 1;
+		page2 = 1;
 	}
 	if(page3 >= 1){
-		let page3 = page3;
+		page3 = page3;
 	}else{
-		let page3 = 1;
+		page3 = 1;
 	}
 	var range = 0; //距下边界长度/单位px
     var totalheight = 300;
@@ -84,7 +84,7 @@ function scrollLoad(page1,page2,page3){
         totalheight = parseFloat($(window).height()) + parseFloat(srollPos);  
         if(($(document).height()-range) <= totalheight) {
         	if(Tabnum == 1 ){
-				tabStatusBox(page1)
+				tabStatusBox(page1);
         		page1 ++;
 			}else if(Tabnum == 2){
 				tabStatusBox(page2)
