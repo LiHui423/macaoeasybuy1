@@ -80,12 +80,12 @@
 		<% if(list[i].thecoverpictureurl !== "") { %>
 		<div class="item-img">
 			<div class="img-banner">
-				<img src="//wap.macaoeasybuy.com<%=list[i].thecoverpictureurl%>" onerror="this.src='/img/userspace/album/album-no-img.png'">
+				<img src="//wap.macaoeasybuy.com<%=list[i].thecoverpictureurl%>" onerror="this.src='/src/img/userspace/album/album-no-img.png'">
 			</div>
 			<ul class="img-other clearfloat">
 				<% for(var img=0; img<4; img++) { %>
 				<% if(list[i].guropList[img] !== undefined) { %>
-				<li><img src="//wap.macaoeasybuy.com<%=list[i].guropList[img]%>" onerror="this.src='/img/userspace/album/album-no-img.png'"></li>
+				<li><img src="//wap.macaoeasybuy.com<%=list[i].guropList[img]%>" onerror="this.src='/src/img/userspace/album/album-no-img.png'"></li>
 				<% } else { %>
 				<li><img src="/src/img/userspace/album/album-no-img.png"></li>
 				<% } %>
@@ -128,7 +128,7 @@
 	<div class="album-hot-list">
 		<div class="hot-list-poster-position">
 			<div class="hot-list-top-img">
-				<img src="//wap.macaoeasybuy.com<%=list[i].thealbumPic%>" onerror="this.src='/img/userspace/album/album-no-img.png'">
+				<img src="//wap.macaoeasybuy.com<%=list[i].thealbumPic%>" onerror="this.src='/src/img/userspace/album/album-no-img.png'">
 				<div class="hot-list-top-number"><%=list[i].thealbums%></div>
 			</div>
 			<div class="hot-list-poster">
