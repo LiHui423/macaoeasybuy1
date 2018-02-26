@@ -72,6 +72,7 @@
 	width: 680px;
 	height: 605px;
 	position: relative;
+	background-image: url("//img.macaoeasybuy.com/img/common/loading_pc_600.jpg");
 }
 .marketBlock_main_themeCover{
 	position: absolute;
@@ -106,6 +107,7 @@
 }
 .marketBlock_main_theme img{
 	width: 100%;
+	opacity: 0.2;
 }
 .marketBlock_main_goodsBox{
 
@@ -119,9 +121,11 @@
 	height: 294px;
 	cursor: pointer;
 	overflow: hidden;
+	background-image: url("/img/common/loading_pc_220.jpg");
 }
 .marketBlock_main_each img{
 	width: 100%;
+	opacity: 0.2;
 }
 .marketBlock_main_eachCover{
 	position: absolute;

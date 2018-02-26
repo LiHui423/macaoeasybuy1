@@ -71,6 +71,7 @@
       padding: 17px 0;
       &:hover div {
         display: block;
+        border-bottom: 1px solid $color21;
       }
       &:last-child {
         width: 107px;
@@ -84,7 +85,6 @@
         width: 100vw;
         height: 50px;
         line-height: 50px;
-        border-bottom: 1px solid $color21;
         z-index: 1;
       }
     }

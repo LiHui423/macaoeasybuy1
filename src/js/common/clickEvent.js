@@ -1,7 +1,6 @@
 ( () => {
     $("body").on('click',function(e){
         const $e = $(e.target);
-        console.log($e);
         // 判断是否是用户头像被点击
         if($e.attr('data-type') === 'userAvatar'){
             const spaceId = $e.parents('[data-id]').attr('data-id');

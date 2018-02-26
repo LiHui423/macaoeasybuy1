@@ -20,7 +20,7 @@ function currLabel(){
 	var $placeLis = $(".regionBox_curr");
 	var $typeLis = $(".typeBox_curr");
 	place = "";
-	var expertlable = "";
+	expertlable = "";
 	$.each($placeLis,function(index){
 		if(index == $placeLis.length - 1){
 			place = place + $(this).data("id");
@@ -40,6 +40,10 @@ function currLabel(){
 function getLabelJson(){
 	currLabel();
 	var status = $(".groupBuy_tabBar_curr").data("id");
+	console.log(place);
+	console.log(expertlable);
+	console.log(status);
+
 	$.getJSON('http://shopping1.macaoeasybuy.com/goodsGroupBuyingController/queryTuanShangpin/'+ place +'/'+ expertlable +'/12/0/'+ status +'.easy?easybuyCallback?',function(json){
 		if(status == "1"){
 			var GroupBuyBeginList = json;
@@ -92,6 +96,7 @@ function emptyLoad(page){
 }
 
 function tabStatusBox(page){
+	console.log(page);
 	currLabel();
 	var status = $(".groupBuy_tabBar_curr").data("id");
 	$.getJSON('http://shopping1.macaoeasybuy.com/goodsGroupBuyingController/queryTuanShangpin/'+ place +'/'+ expertlable +'/12/'+ page +'/'+ status +'.easy?easybuyCallback=?',function(json){
