@@ -22,7 +22,11 @@
             }
         }else if($e.hasClass('museum_goods_radius')){
             const productId = $e.parents('[data-id]').attr('data-id');
+<<<<<<< HEAD
+            window.open('http://shopping.macaoeasybuy.com/goodDetails/museumDetails.html?id=' + productId);
+=======
             window.open('http://shopping.macaoeasybuy.com/goodDetails/museumDetails.html?id='+productId);
+>>>>>>> 1ffa6abe98e5c0402ce9536e825507cebe55cc60
         }else if($e.hasClass('yez-mask')){
             const albumId = $e.parents('[data-id]').attr('data-id');
             window.open('http://social.macaoeasybuy.com/easylive/easylivealbum/albumclassification/albumlistdetail/albumlistdetail.html?albumId=' + albumId);
@@ -54,6 +58,8 @@
             const productId=$e.parents('[data-id]').attr('data-id');
             console.log(productId);
             jump('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id=',productId);
+<<<<<<< HEAD
+=======
         }//限量搶購商品詳情頁跳轉到商店詳情頁
         else if(location.href.indexOf('limitedDetail.html') !== -1 && $e.attr('id') === 'underline'){
             var minishopId=$e.attr('data-id');
@@ -101,6 +107,7 @@
                     window.open(url+para);
                 }
             }
+>>>>>>> 1ffa6abe98e5c0402ce9536e825507cebe55cc60
         }
     })
     function jump(url,para){

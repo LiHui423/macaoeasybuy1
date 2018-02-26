@@ -621,6 +621,23 @@ template.helper('format', function(num) {
 });
 
 // template.helper('osURL', easyBuy.global.osURL);
+template.helper('formatNums', (num) => {
+  const str = num + '';//转换成字符串
+  const str_num = str.split('.')[0];
+  var str_last = str.split('.')[1] == undefined ? '' : '.'+str.split('.')[1];
+  var ret_num = '';
+  var counter = 0;
+  for(var i=str_num.length-1;i>=0;i--){
+  ret_num = str_num.charAt(i) + ret_num;
+  counter++;
+  if(counter==3){
+    counter = 0;
+    if(i!=0){
+      ret_num = ',' + ret_num;
+    }
+  }}
+  return ret_num + str_last;
+})
 template.helper('image', function (link) {
   const dev = false;
   const server = dev ? 'https:' : 'http://mbuy.oss-cn-hongkong.aliyuncs.com';

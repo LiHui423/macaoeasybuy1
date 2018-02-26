@@ -1,8 +1,8 @@
 /*global $ */
 /*
- * 
+ *
  * easyBuy.global.dep <-----以下是這個庫裡面的東西
- * 
+ *
  	uuid(); //生成UUID
  	arrayGetMax(); //獲取數組最大值
  	deleteArr(); //刪除數組裡面指定的值
@@ -25,7 +25,7 @@
 	createFormSubmit(); //動態創建form並且提交（實現post跨域，異步無刷新，前端agency.html做代理，後台返回iframe讓前台引入agency，在url上傳遞參數）
 	easyScrollRequest(); //滾動加載請求
 	getRequestURL(); //get請求加密，傳參數
-	
+
  * */
 (function(easyGlobal){
     //生成UUID
@@ -49,6 +49,16 @@
             }
         }
         return max;
+    };
+    easyGlobal.getTarget = (element, selector) => {
+      const $e = element instanceof jQuery ? element : $(element);
+      const $es = $(selector);
+      const isSelf = $es.indexOf($e) !== -1;
+      if (isSelf) {
+        return $e;
+      }
+      const $t = $e.parents(selector);
+      return $t;
     };
     //刪除數組裡面指定的值！！！
     easyGlobal.deleteArr = function(arr, val){
@@ -552,7 +562,7 @@
     //滾動加載
     // state 辦定事件獲取解綁事件，selecter事件選擇器，showBox顯示的盒子，fn回調函數，innerBox裡面容器高度
     /**
-     * 
+     *
      * @param {string} openState 开启为"on", 关闭为"off"
      * @param {string} evenSelector 事件选择器, 用于取消事件
      * @param {string|Object} viewport 窗口
@@ -692,13 +702,13 @@
         });
     };
     //克隆對象
-    easyGlobal.cloneObject = function(myObj){  
-        if(typeof(myObj) != 'object') return myObj;  
+    easyGlobal.cloneObject = function(myObj){
+        if(typeof(myObj) != 'object') return myObj;
         if(myObj == null) return myObj;
         var myNewObj = new Object();
-        for(var i in myObj)  
+        for(var i in myObj)
             myNewObj[i] = cloneObject(myObj[i]);
-        return myNewObj;  
+        return myNewObj;
     };
     //獲取之前n日的時間 返回 year-month-day 這樣的格式
     easyGlobal.getBeforeDate = function(n){
@@ -729,17 +739,17 @@
         var a = 60 *1000;
         var b = 3600 *1000;
         var c = 24 * 3600 *1000;
-        var diff=endDate.getTime() - startDate.getTime();//时间差的毫秒数 
-        //计算出相差天数  
+        var diff=endDate.getTime() - startDate.getTime();//时间差的毫秒数
+        //计算出相差天数
         var days=Math.floor(diff/c) < 0 ? 0 : Math.floor(diff/c);
-        //计算出小时数  
-        var leave1=diff%c;    //计算天数后剩余的毫秒数  
+        //计算出小时数
+        var leave1=diff%c;    //计算天数后剩余的毫秒数
         var hours=Math.floor(leave1/b) < 0 ? 0 : Math.floor(leave1/b);
-        //计算相差分钟数  
-        var leave2=leave1%b;        //计算小时数后剩余的毫秒数  
+        //计算相差分钟数
+        var leave2=leave1%b;        //计算小时数后剩余的毫秒数
         var minutes=Math.floor(leave2/a) < 0 ? 0 : Math.floor(leave2/a);
-        //计算相差秒数  
-        var leave3=leave2%a;      //计算分钟数后剩余的毫秒数  
+        //计算相差秒数
+        var leave3=leave2%a;      //计算分钟数后剩余的毫秒数
         var seconds=Math.round(leave3/1000) < 0 ? 0 : Math.round(leave3/1000);
         var arr = [];
         arr.push(days);
@@ -752,9 +762,9 @@
     easyGlobal.createFormSubmit = function(sendData,dataUrl){
         var ifr;
         try {
-            ifr = document.createElement('<iframe name="myIframeName">'); 
+            ifr = document.createElement('<iframe name="myIframeName">');
         } catch (ex) {
-            ifr = document.createElement('iframe'); 
+            ifr = document.createElement('iframe');
             ifr.name = 'myIframeName';
         }
         ifr.id = 'myIframeId';
@@ -814,7 +824,7 @@
     /**
 	 * author: Junhang
 	 * version: 2017.11.21 18:01
-	 * 
+	 *
 	 * @param {string} targetURL 请求的目标链接
 	 * @param {object} requestData 请求的参数
 	 * @param {boolean} encryptData 是否加密请求的参数

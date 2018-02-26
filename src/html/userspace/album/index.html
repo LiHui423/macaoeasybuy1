@@ -14,9 +14,9 @@
 		<script>
 			easyBuy.userSpaceGlobal.afterSetIsSelf = function(state){
 				if(state){
-					easyFrame.loadCss('/css/userspace/album/albumlist/albumlist-mine.css');
+					easyFrame.loadCss('/src/css/userspace/album/albumlist/albumlist-mine.css');
 				}else{
-					easyFrame.loadCss('/css/userspace/album/albumlist/albumlist-other.css');
+					easyFrame.loadCss('/src/css/userspace/album/albumlist/albumlist-other.css');
 				}
 			}
 		</script>
@@ -105,7 +105,7 @@
 		</div>
 
 		<script src="/src/js/plug/yez_js_Reset.js"></script>
-		<script src="/src/js/common/vendor/template-native.js"></script>
+		<script src="/src/js/common/art-template-3.1.0.js"></script>
 		<script src="/src/js/common/header&search&footer/header.js"></script>
 		<script src="/src/js/userspace/common/userinfo.js"></script>
 		<script src="/src/js/userspace/common/userinfo_perform.js" async></script>
@@ -125,18 +125,18 @@
 								<%if(albumList.albumList[i].extra_Pic.length != 0){%>
 									<%if(albumList.albumList[i].extra_Pic.length == 1){%>
 										<div class="album-top-img">
-											<img src="<%=osURL%><%=albumList.albumList[i].extra_Pic[0]%>" alt="">
+											<img src="<%=image(albumList.albumList[i].extra_Pic[0])%>" alt="">
 										</div>
 										<div class="album-img-list clearfloat">
-											<div><img src="<%=osURL%><%=albumList.albumList[i].extra_Pic[0]%>" alt=""></div>
+											<div><img src="<%=image(albumList.albumList[i].extra_Pic[0])%>" alt=""></div>
 										</div>
 									<%}else{%>
 										<div class="album-top-img">
-											<img src="<%=osURL%><%=albumList.albumList[i].extra_Pic[0]%>" alt="">
+											<img src="<%=image(albumList.albumList[i].extra_Pic[0])%>" alt="">
 										</div>
 										<div class="album-img-list clearfloat">
 											<%for(var j=1;j<albumList.albumList[i].extra_Pic.length;j++){%>
-												<div><img src="<%=osURL%><%=albumList.albumList[i].extra_Pic[j]%>" alt=""></div>
+												<div><img src="<%=image(albumList.albumList[i].extra_Pic[j])%>" alt=""></div>
 											<%}%>
 										</div>
 									<%}%>
@@ -156,7 +156,7 @@
 							<div class="album-poster">
 								<div class="laster-look clearfloat">
 									<%if(albumList.isSelf == 0){%>
-										<div class="laster-head"><img src="<%=osURL%><%=albumList.user.pic%>" alt=""></div>
+										<div class="laster-head"><img src="<%=image(albumList.user.pic)%>" alt=""></div>
 									<%}%>
 									<div class="laster-text">
 										<%if(albumList.isSelf == 0){%>
@@ -179,7 +179,7 @@
 						<div class="bottom-shadow"><img src="/src/img/social/label/labeldetail/hobg.png" alt=""></div>
 					</div>
 				<%}%>
-			<%}else if(albumList.albumList.length == 0 && page == 0){%>
+			<%}else if(albumList.albumList.length === 0 && page === 0){%>
 				<div id="no-post">
 					<div>
 						<img src="/src/img/common/05.png" alt="">
