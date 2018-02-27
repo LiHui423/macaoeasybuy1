@@ -189,7 +189,7 @@ function myCheckCard(){
 		var newData = data.result.userList;
 		var html = '';
 		$.each(newData, function(k,y) {
-			html += '<li data-id="'+y.id+'"><a><img data-type="userAvatar" src="//wap.macaoeasybuy.com/'+y.pic+'" alt="" title="'+y.name+'" onerror="this.src=\'/src/img/common/loading_pc_headPic.png\'"></a></li>';
+			html += '<li data-id="'+y.id+'"><a><img data-type="userAvatar" src="//wap.macaoeasybuy.com/'+y.pic+'" alt="" title="'+y.name+'" onerror="this.onerror=null;this.src=\'/src/img/common/loading_pc_headPic.png\'"></a></li>';
 		});
 		$('#recent-look-user').html(html);
 	})

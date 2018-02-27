@@ -181,7 +181,7 @@
 					<%if(list.userinfolist[i].pic == ""){%>
 						<li data-id = "<%=list.userinfolist[i].UserId%>"><img src = "/src/img/common/headPic.png"></li>
 					<%}else{%>
-						<li data-id = "<%=list.userinfolist[i].UserId%>"><img data-type="userAvatar" src = 'http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.userinfolist[i].pic%>' onerror="this.src='/src/img/common/headPic.png'"></li>
+						<li data-id = "<%=list.userinfolist[i].UserId%>"><img data-type="userAvatar" src = 'http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.userinfolist[i].pic%>' onerror="this.onerror=null;this.src='/src/img/common/headPic.png'"></li>
 					<%}%>
 				<%}%>
 			</ul>

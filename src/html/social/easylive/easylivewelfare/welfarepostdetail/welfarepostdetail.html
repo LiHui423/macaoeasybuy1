@@ -297,7 +297,7 @@
 			<li data-id="<%=userList[k].id%>">
 				<a>
 					<div class="respondBox_fandPic">
-						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=userList[k].pic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'">
+						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=userList[k].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'">
 					</div>
 					<div class="respondBox_fansMess clearfloat">
 						<div>
@@ -321,7 +321,7 @@
 				<li id="<%=loveList[a].id%>good-id" data-id="<%=loveList[a].id%>">
 					<a>
 						<div class="respondBox_fandPic">
-							<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=loveList[a].pic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'">
+							<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=loveList[a].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'">
 						</div>
 						<div class="respondBox_fansMess clearfloat">
 							<div>
@@ -345,7 +345,7 @@
 				<%for(var i=0;i<replyList.length;i++){%>
 				<li class="clearfloat" id="<%=replyList[i].id%>response">
 					<div class="person-head" data-id="<%=replyList[i].userid%>">
-						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=replyList[i].pic%>" alt="" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
+						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=replyList[i].pic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 					<div class="person-info">
 						<div class="person-info-name">
 							<%=replyList[i].name%>
@@ -371,7 +371,7 @@
 							<% if(replyList[i].reply != undefined){ %>
 								<li class="clearfloat" id="<%=replyList[i].reply.id%>response-reply">
 									<div class="person-info-record-head">
-										<img src="//wap.macaoeasybuy.com<%=replyList[i].reply.pic%>" alt="" onerror="this.src='/src/img/common/loading_pc_headPic.png'">
+										<img src="//wap.macaoeasybuy.com<%=replyList[i].reply.pic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'">
 									</div>
 									<div class="person-info-record-info">
 										<div class="person-info-name">
@@ -414,7 +414,7 @@
 			<%if(data.length != 0){%>
 			<%for(var i=0;i<data.length;i++){%>
 				<li id="<%=data[i].id%>user" class="<%=data[i].id%>userclass">
-					<div class="fandPic"><img src="//wap.macaoeasybuy.com<%=data[i].pic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
+					<div class="fandPic"><img src="//wap.macaoeasybuy.com<%=data[i].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 					<div class="fansMess clearfloat">
 						<span><%=data[i].name%></span>
 						<%if(data[i].sex == 'Girl'){%>
@@ -441,7 +441,7 @@
 				<li id="<%=labelList[i].id%>label" class="<%=labelList[i].id%>labelclass" label="<%=labelList[i].labelName%>" type="<%=labelList[i].type%>" author="<%=labelList[i].userId%>">
 					<div class="LabelList_Filter"></div>
 					<span class="LabelList_checked"><img src="/src/img/social/label/labeldetail/fancurr.png"></span>
-					<div class="labelList_left"><img src="//wap.macaoeasybuy.com<%=labelList[i].picture%>" onerror="this.src='/src/img/common/loading_pc_80.png';this.style.width='120px'"></div>
+					<div class="labelList_left"><img src="//wap.macaoeasybuy.com<%=labelList[i].picture%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_80.png';this.style.width='120px'"></div>
 					<div class="labelList_right">
 						<div class="labelList_title"><%=labelList[i].labelName%></div>
 						<div class="labelList_main">

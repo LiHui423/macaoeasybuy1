@@ -235,7 +235,7 @@
                                 <li><%=data[i].commentCount%></li>
                             </ul>
                             <div class="laster-look clearfloat">
-                                <div class="laster-head"><img src="//wap.macaoeasybuy.com<%=data[i].userPic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
+                                <div class="laster-head"><img src="//wap.macaoeasybuy.com<%=data[i].userPic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
                                 <div class="laster-text">
                                     <div class="laster-text-name"><%=data[i].userName%> <i class="icon <%=easySex(data[i].sex)%>"></i></div>
                                     <div class="laster-text-num"><span><%=data[i].uptime%></span>前發佈</div>

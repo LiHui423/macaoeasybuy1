@@ -111,7 +111,7 @@
 	<script type="text/html" id="topicList" data-array = "topicListData">
 		<%for(var i = 0;i <list.classList.length;i++){%>
 			<div class="search_topic_resultEach clearfloat search_topic_resultEach_nopic">
-				<div class="search_topic_resultEach_left myborder-radius"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].topicadminpic%>' data-src = 'http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].topicadminpic%>' onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
+				<div class="search_topic_resultEach_left myborder-radius"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].topicadminpic%>' data-src = 'http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].topicadminpic%>' onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 				<div class="search_topic_resultEach_right">
 					<div class="search_topic_resultEach_mess" data-id="<%=#list.classList[i].topicid%>">
 						<p>
@@ -175,7 +175,7 @@
 				<div class="search_result_topicEach_messMain">
 					<div class="search_result_topicEach_pic"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.Globalbambooshoots[0].shouldbuyPic%>"></div>
 					<div class="search_result_topicEach_mess">
-						<div class="search_result_topicEach_headpic myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.Globalbambooshoots[0].adminpic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
+						<div class="search_result_topicEach_headpic myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.Globalbambooshoots[0].adminpic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 						<p><%=list.Globalbambooshoots[0].admin%></p>
 					</div>
 					<div class="search_result_topicEach_title" data-id="">
@@ -205,7 +205,7 @@
 				<div class="search_result_topicEach_messMain">
 					<div class="search_result_topicEach_pic"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.WelfareAgency[0].shouldbuyPic%>"></div>
 					<div class="search_result_topicEach_mess">
-						<div class="search_result_topicEach_headpic myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.WelfareAgency[0].adminpic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
+						<div class="search_result_topicEach_headpic myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.WelfareAgency[0].adminpic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 						<p><%=list.WelfareAgency[0].admin%></p>
 					</div>
 					<div class="search_result_topicEach_title" data-id="">
@@ -235,7 +235,7 @@
 				<div class="search_result_topicEach_messMain">
 					<div class="search_result_topicEach_pic"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.BuyTopics[0].shouldbuyPic%>"></div>
 					<div class="search_result_topicEach_mess">
-						<div class="search_result_topicEach_headpic myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.BuyTopics[0].adminpic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
+						<div class="search_result_topicEach_headpic myborder-radius"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com<%=list.BuyTopics[0].adminpic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 						<p><%=list.BuyTopics[0].admin%></p>
 					</div>
 					<div class="search_result_topicEach_title" data-id="">

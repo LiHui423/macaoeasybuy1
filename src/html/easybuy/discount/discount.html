@@ -167,7 +167,7 @@
 								<%if(list[i].userpiclist[j] == ""){%>
 									<div class="discount_goodEach_visitEach"><img src="/src/img/common/headPic.png"></div>
 								<%}else{%>
-									<div class="discount_goodEach_visitEach"><img data-type="userAvatar" src='//wap.macaoeasybuy.com/<%=list[i].userpiclist[j]%>' onerror="this.src='/src/img/common/headPic.png'"></div>
+									<div class="discount_goodEach_visitEach"><img data-type="userAvatar" src='//wap.macaoeasybuy.com/<%=list[i].userpiclist[j]%>' onerror="this.onerror=null;this.src='/src/img/common/headPic.png'"></div>
 								<%}%>
 							<%}%>
 							<a href="#"><img src="/src/img/easybuy/discount/discount_headPicHidden.png"></a>

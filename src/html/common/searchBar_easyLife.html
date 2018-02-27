@@ -106,7 +106,7 @@
 <script type="text/html" id="shopKeyword" data-array = "shopKeywordData">
 	<%for(var i = 0;i <list.length;i++){%>
 		<li class="clearfloat" data-id = "<%=list[i].id%>">
-			<div class="searchBar_recommendEach_shop_left"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].logo%>' onerror="this.src='/img/common/loading_pc_shop.png'"></div>
+			<div class="searchBar_recommendEach_shop_left"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].logo%>' onerror="this.onerror=null;this.src='/img/common/loading_pc_shop.png'"></div>
 			<div class="searchBar_recommendEach_shop_right">
 				<p><%=list[i].shopname%></p>
 				<p><span><%=list[i].goodsType%></span><span><%=list[i].goodsCount%>款商品</span><span><%=list[i].attentionCount%>位粉絲</span></p>
@@ -136,7 +136,7 @@
 <script type="text/html" id="fansKeyword" data-array = "fansKeywordData">
 	<%for(var i = 0;i <list.length;i++){%>
 		<li class="clearfloat" data-id = "<%=list[i].id%>">
-			<div class="searchBar_recommendEach_headpic myborder-radius"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].pic%>' onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
+			<div class="searchBar_recommendEach_headpic myborder-radius"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].pic%>' onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 			<div class="searchBar_recommendEach_mess">
 				<div class="searchBar_recommendEach_mess_top">
 					<span><%=list[i].name%></span>

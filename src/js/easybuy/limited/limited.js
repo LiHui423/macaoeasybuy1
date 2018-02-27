@@ -1,10 +1,17 @@
-easyBuy.global.beforeDataJs = function(){
+// easyBuy.global.beforeDataJs = function(){
+// 	limitedScroll();
+// 	bannerPicBox(); //加載banner
+// 	hottestBox(); //加載最搶手模塊
+// 	recentlyLookBox(); //加載最近查看的粉絲
+// 	hotListBoxHtml();  //限量清單模板
+// }
+(function(){
 	limitedScroll();
 	bannerPicBox(); //加載banner
 	hottestBox(); //加載最搶手模塊
 	recentlyLookBox(); //加載最近查看的粉絲
 	hotListBoxHtml();  //限量清單模板
-}
+})
 //最搶手 的進度條
 function calcProgressBar(){
 	var $schedule = $(".hottestBox_each_schedule");

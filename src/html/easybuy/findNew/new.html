@@ -194,7 +194,7 @@
 					<%if(list.userinfolist[i].pic==""){%>
 						<li data-id="<%=list.userinfolist[i].UserId%>"><img data-type="userAvatar" src="/src/img/common/loading_pc_headPic.png"></li>
 					<%}else{%>
-						<li data-id="<%=list.userinfolist[i].UserId%>"><img data-type="userAvatar" src='http://wap.macaoeasybuy.com/<%=list.userinfolist[i].pic%>' onerror="this.src='/src/img/common/headPic.png'"></li>
+						<li data-id="<%=list.userinfolist[i].UserId%>"><img data-type="userAvatar" src='http://wap.macaoeasybuy.com/<%=list.userinfolist[i].pic%>' onerror="this.onerror=null;this.src='/src/img/common/headPic.png'"></li>
 					<%}%>
 				<%}%>
 			</ul>
@@ -219,7 +219,7 @@
 					<img src="/src/img/easybuy/findNew/findNew_sellOut.png">
 				</div>
 				<div class="findNew_goodBox_each_pic">
-					<img  src="//wap.macaoeasybuy.com/<%=list[i].pic%>" onerror="this.src='/img/common/loading_pc_220.jpg'">
+					<img  src="//wap.macaoeasybuy.com/<%=list[i].pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_220.jpg'">
 					<div class="findNew_goodBox_each_move">
 						<span><img src="/src/img/easybuy/exchange/filling_like.png"></span><span><%=list[i].loveNumber%>人心動</span>
 					</div>

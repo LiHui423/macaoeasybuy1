@@ -175,8 +175,8 @@
 		<!--輪播圖的js-->
 		<script src="/src/js/plug/gradientBanner.js"></script>
 		<!--限時搶購的js-->
-		<script src="/src/js/easybuy/limited/limited.js"></script>
 		<script src="/src/js/easybuy/limited/limited_date.js"></script>
+		<script src="/src/js/easybuy/limited/limited.js"></script>
 		<!-- 页面点击事件 -->
 		<script src="/src/js/common/clickEvent.js"></script>
 
@@ -232,7 +232,7 @@
 				<%for(var i=0; i<list.userinfolist.length;i++){%>
 					<li data-id = "<%=list.userinfolist[i].UserId%>">
 						<a>
-							<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=list.userinfolist[i].pic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'">
+							<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=list.userinfolist[i].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'">
 						</a>
 					</li>
 				<%}%>

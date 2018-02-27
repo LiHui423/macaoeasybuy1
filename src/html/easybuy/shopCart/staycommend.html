@@ -512,7 +512,7 @@
 		<%for(var i = 0;i <list.length;i++){%>
 		<li>
 			<div class="otherGoods" data-id="<%=list[i].id%>">
-				<div class="otherGoods_pic"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].pic%>' onerror="this.src='/img/common/loading_pc_220.jpg'"></div>
+				<div class="otherGoods_pic"><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].pic%>' onerror="this.onerror=null;this.src='/img/common/loading_pc_220.jpg'"></div>
 				<div class="otherGoods_mess">
 					<div class="otherGoods_mess_title hiddenText">
 						<%=list[i].title%>
