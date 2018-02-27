@@ -1,4 +1,17 @@
-easyBuy.global.beforeDataJs = function(){
+// easyBuy.global.beforeDataJs = function(){
+// 	queryTopicCount(5,'SentVolunteers'); //评论查看赞好数统计
+// 	responseCard(5); //回復查看讃好，數據
+// 	//輪播圖
+// 	postBanner({
+// 		dataUrl : 'http://userspace1.macaoeasybuy.com/UserLiveShotConntroller/querySentVolunteersInfoPics.easy',
+// 		values : 'sentVolunteersInfoPics'
+// 	});
+// 	mineOtherReq(); //帖主還有其他帖子
+// 	allLookReq(); //他們都在看其他帖子
+// 	clickEvent();//頁面點擊事件
+// 	selectPage();//查看攢好數據
+// }
+$(function(){
 	queryTopicCount(5,'SentVolunteers'); //评论查看赞好数统计
 	responseCard(5); //回復查看讃好，數據
 	//輪播圖
@@ -10,7 +23,7 @@ easyBuy.global.beforeDataJs = function(){
 	allLookReq(); //他們都在看其他帖子
 	clickEvent();//頁面點擊事件
 	selectPage();//查看攢好數據
-}
+})
 easyBuy.global.afterDataJs = function(){
 	if(easyBuy.isLogin){
 		updateSeeLog(3); //查看用戶統計
