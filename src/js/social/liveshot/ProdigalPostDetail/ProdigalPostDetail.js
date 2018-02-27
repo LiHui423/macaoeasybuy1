@@ -23,8 +23,6 @@ $(function(){
 	allLookReq(); //他們都在看其他帖子
 	clickEvent();//頁面點擊事件
 	selectPage();//查看攢好數據
-})
-easyBuy.global.afterDataJs = function(){
 	if(easyBuy.isLogin){
 		updateSeeLog(3); //查看用戶統計
 	}
@@ -32,7 +30,16 @@ easyBuy.global.afterDataJs = function(){
 	isClickLove(3,3); //查看用戶是否點讚
 	loadEditor(); ;//判斷登錄引入編輯框
 	reportPost(); //舉報
-}
+})
+// easyBuy.global.afterDataJs = function(){
+// 	if(easyBuy.isLogin){
+// 		updateSeeLog(3); //查看用戶統計
+// 	}
+// 	postContent(); //帖子內容
+// 	isClickLove(3,3); //查看用戶是否點讚
+// 	loadEditor(); ;//判斷登錄引入編輯框
+// 	reportPost(); //舉報
+// }
 easyBuy.social.isSocialPost = true;
 easyBuy.userSpaceGlobal.replyPostType = '5';
 easyBuy.userSpaceGlobal.replyVolunteersType = 'replySentVolunteers'; //回復貼子分類
