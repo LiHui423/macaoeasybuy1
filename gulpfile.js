@@ -19,7 +19,8 @@ const path = require('path');
 
 const REGEXP = /\/src\/(img|js|css)/gim;
 
-const DEV = process.env.NODE_ENV === 'development';
+const DEV = true;
+
 const DOMAIN = {
   style: { dev: 'css', prod: 'easystyle' },
   javascript: { dev: 'js', prod: 'easyscript' },

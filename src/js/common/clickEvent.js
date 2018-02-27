@@ -26,11 +26,16 @@
         }else if($e.hasClass('yez-mask')){
             const albumId = $e.parents('[data-id]').attr('data-id');
             window.open('http://social.macaoeasybuy.com/easylive/easylivealbum/albumclassification/albumlistdetail/albumlistdetail.html?albumId=' + albumId);
-        }//跳轉到宜品館商品詳細頁
+        }//發現新品跳轉到普通商品詳情頁
+        else if(location.href.indexOf('new.html') !== -1 && $e.attr('id') === "underline"){
+            const newId=$e.parents('[data-id]').attr('data-id');
+            console.log(newId);
+            jump('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id=',newId);
+        }
+        //跳轉到宜品館商品詳細頁
         else if(location.href.indexOf('museumList_beautiful.html') !== -1 || location.href.indexOf('museumList_practical.html') !== -1 || location.href.indexOf('museumList_magical.html') !== -1){
             if($e.attr('id') === "underline"){
                 const id = $e.parents('[data-id]').attr('data-id');
-                console.log(id);
                 jump('http://shopping.macaoeasybuy.com/goodDetails/museumDetails.html?id=',id);
             }
         }//跳轉到宜粉日誌帖子詳細頁

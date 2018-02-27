@@ -5,7 +5,7 @@
 // 	recentlyLookBox(); //加載最近查看的粉絲
 // 	hotListBoxHtml();  //限量清單模板
 // }
-(function(){
+$(function(){
 	limitedScroll();
 	bannerPicBox(); //加載banner
 	hottestBox(); //加載最搶手模塊

@@ -256,19 +256,19 @@ function gotosearch(){
 	if(type == '1'){
 		if(keyword == ''){
 			keyword = encodeURI(encodeURI($('.searchBar_recommendBox').find("[data-id = '1']").find('.searchBar_recommendEach_main ul li:nth-of-type(1)').text()))
-			window.location.href = '/common/search/search_good.html?keyword='+ keyword +''
+			window.location.href = 'http://social.macaoeasybuy.com/common/search/search_good.html?keyword='+ keyword +''
 		}else{
-			window.location.href = '/common/search/search_good.html?keyword='+ keyword +''
+			window.location.href = 'http://social.macaoeasybuy.com/common/search/search_good.html?keyword='+ keyword +''
 		}
 	}else if(type == '2'){
-		window.location.href = '/common/search/search_shop.html?keyword='+ keyword +''
+		window.location.href = 'http://social.macaoeasybuy.com/common/search/search_shop.html?keyword='+ keyword +''
 	}else if(type == '3'){
-		window.location.href = '/common/search/search_label.html?keyword='+ keyword +''
+		window.location.href = 'http://social.macaoeasybuy.com/common/search/search_label.html?keyword='+ keyword +''
 	}else if(type == '4'){
-		window.location.href = '/common/search/search_topic.html?keyword='+ keyword +''
+		window.location.href = 'http://social.macaoeasybuy.com/common/search/search_topic.html?keyword='+ keyword +''
 	}else if(type == '5'){
-		window.location.href = '/common/search/search_post.html?keyword='+ keyword +''
+		window.location.href = 'http://social.macaoeasybuy.com/common/search/search_post.html?keyword='+ keyword +''
 	}else{
-		window.location.href = '/common/search/search_fans.html?keyword='+ keyword +''
+		window.location.href = 'http://social.macaoeasybuy.com/common/search/search_fans.html?keyword='+ keyword +''
 	}
 }

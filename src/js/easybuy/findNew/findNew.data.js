@@ -91,7 +91,6 @@ function findNewListBoxHtml(order,Hbstate,Areaid){
 		var html = template("showFindNewGood", findNewGoodList);
 		$(".findNew_main_goodBox_goodList").html(html);
 		$(".noMore").hide();
-		findNewOnload()
 	});
 }
 /*發現新品商品數據加載（補充）*/
@@ -111,7 +110,6 @@ function findNewListBoxAppend(page,order,Hbstate,Areaid){
 			var html = template("showFindNewGood", findNewGoodList);
 			$(".findNew_main_goodBox_goodList").append(html);
 		}
-		findNewOnload()
 	});
 }
 

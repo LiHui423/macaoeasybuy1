@@ -197,12 +197,5 @@ function limitedScroll(){
 	$(window).off('scroll').on('scroll',throttling(handle, 300, 1000))
 }
 
-/*發現新品詳情頁跳轉*/
-function findNewOnload(){
-	$('.findNew_main_goodBox_goodEach').on('click',function(){
-		var id = $(this).data('id');
-		clickNum(id,0)
-		window.open('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id=' + id +'');
-	})
-}
+
 
