@@ -83,7 +83,7 @@
 			<div class="moreshopsBox_shopEach" data-id = "<%=list[i].id%>">
 				<div class="moreshopsBox_shopMess clearfloat">
 					<div class="moreshopsBox_shopMess_logo" onclick="goShopDetail(this,event)">
-						<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].logo%>' onerror="this.src='/img/common/loading_pc_shop.png'">
+						<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].logo%>' onerror="this.onerror=null;this.src='/img/common/loading_pc_shop.png'">
 					</div>
 					<div class="moreshopsBox_shopMess_data">
 						<div class="moreshopsBox_shopMess_dataEach"><span><img src="/src/img/common/icon/seeIcon_dark.png"></span><span><%=list[i].seeNumber%>次查看</span></div>
@@ -96,7 +96,7 @@
 							<%if(list[i].spPiclist[j]==""){%>
 								<img src='/img/common/loading_pc_600.jpg'>
 							<%}else{%>
-								<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].spPiclist[j]%>' onerror="this.src='/img/common/loading_pc_600.jpg'">
+								<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].spPiclist[j]%>' onerror="this.onerror=null;this.src='/img/common/loading_pc_600.jpg'">
 							<%}%>
 						</div>
 					<%}%>

@@ -202,7 +202,7 @@
 							<div class="focusShopEach_showBox_main clearfloat">
 								<ul>
 									<%for(var k = 0;k <shop[i].shangpinPicList.length;k++){%>
-									<li><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=shop[i].shangpinPicList[k]%>' onerror="this.src = '/src/img/common/loading_pc_80.png'"></li>
+									<li><img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=shop[i].shangpinPicList[k]%>' onerror="this.onerror=null;this.src = '/src/img/common/loading_pc_80.png'"></li>
 									<%}%>
 								</ul>
 							</div>

@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="/src/css/common/search/search_shop.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 		<script src="/src/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/getData/getData_sinple.js"></script>
 	</head>
 	<body>
 		<header></header>
@@ -89,12 +90,12 @@
 			<div class="search_resultBox_shopEach clearfloat" data-id="<%=list.classList[i].shopid%>">
 				<div class="search_resultBox_shopEach_left">
 					<div class="search_shop_pic">
-						<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].shopLogo%>' onerror="this.src='/img/common/loading_pc_shop.png'">
+						<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list.classList[i].shopLogo%>' onerror="this.onerror=null;this.src='/img/common/loading_pc_shop.png'">
 						<div class="search_shop_pic_icon"><img src="/src/img/common/search/search_shop_shoppic.png"></div>
 					</div>
 					<div class="search_shop_name"><%=list.classList[i].shopname%></div>
 					<div class="search_shop_mess clearfloat">
-						<div class="search_shop_messLeft myborder-radius"><img src='http://wap.macaoeasybuy.com/<%=list.classList[i].shoppic%>' onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
+						<div class="search_shop_messLeft myborder-radius"><img src='http://wap.macaoeasybuy.com/<%=list.classList[i].shoppic%>' onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 						<div class="search_shop_messRight">
 							<p>店主 <%=list.classList[i].shopMan%></p>
 							<p><span>銷售數：<%=list.classList[i].buyNumbers%></span><span>粉絲數：<%=list.classList[i].attentionCount%></span></p>
@@ -170,12 +171,12 @@
 			<div class="search_resultBox_shopEach clearfloat" data-id="<%=list[i].shopid%>">
 				<div class="search_resultBox_shopEach_left">
 					<div class="search_shop_pic">
-						<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].shopLogo%>' onerror="this.src='/img/common/loading_pc_shop.png'">
+						<img src='http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=list[i].shopLogo%>' onerror="this.onerror=null;this.src='/img/common/loading_pc_shop.png'">
 						<div class="search_shop_pic_icon"><img src="/src/img/common/search/search_shop_shoppic.png"></div>
 					</div>
 					<div class="search_shop_name"><%=list[i].shopname%></div>
 					<div class="search_shop_mess clearfloat">
-						<div class="search_shop_messLeft myborder-radius"><img src='http://wap.macaoeasybuy.com/<%=list[i].shoppic%>' onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
+						<div class="search_shop_messLeft myborder-radius"><img src='http://wap.macaoeasybuy.com/<%=list[i].shoppic%>' onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 						<div class="search_shop_messRight">
 							<p>店主 <%=list[i].shopMan%></p>
 							<p><span>銷售數：<%=list[i].buyNumbers%></span><span>粉絲數：<%=list[i].attentionCount%></span></p>

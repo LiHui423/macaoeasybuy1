@@ -80,6 +80,7 @@ function hitScroll(){
 		let src = $(aLiImg[index]).attr('src');
 		$(aLiImg[index]).attr('src',src);
 		$(aLiImg[index]).css('opacity','1');
+		$('.marketBlock_main_theme img').css('opacity','1');
 		$(aLiImg[index]).parents('.marketBlock_main_each').removeClass('noPic');
 	}
 	function getH(obj){

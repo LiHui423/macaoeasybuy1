@@ -11,7 +11,7 @@ function albumDetailInfo() {
         }
         $('#album-all-num').html('專輯數：' + newData.albumGroupNums + '張'); //專輯數目
         $('#selecter span').html(newData.classname); //專輯類別
-        $('#album-cover').html('<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/' + newData.thecoverpictureurl + '" onerror="this.src=\'/src/img/userspace/album/album-no-img.png\'">'); //專輯圖片
+        $('#album-cover').html('<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/' + newData.thecoverpictureurl + '" onerror="this.onerror=null;this.src=\'/src/img/userspace/album/album-no-img.png\'">'); //專輯圖片
         var $li = $('#album-info-num li');
         $li.eq(0).find('div').eq(0).html(formatNum(newData.seeNums)); //宜粉查看
         $li.eq(1).find('div').eq(0).html(formatNum(newData.commentNums)); //宜粉回應

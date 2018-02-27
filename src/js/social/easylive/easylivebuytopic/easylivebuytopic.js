@@ -70,7 +70,7 @@ function queryEasyBuyUserSee(){
 		console.log(data);
 		var html = '';
 		$.each(data.list, function(k,y) {
-			html += '<li data-id="'+y.id+'"><img data-type="userAvatar" src="http://wap.macaoeasybuy.com/'+y.Pic+'" onerror="this.src=\'/src/img/common/loading_pc_headPic.png\'"></li>';
+			html += '<li data-id="'+y.id+'"><img data-type="userAvatar" src="http://wap.macaoeasybuy.com/'+y.Pic+'" onerror="this.onerror=null;this.src=\'/src/img/common/loading_pc_headPic.png\'"></li>';
 		});
 		$('#header-head-img').html(html);
 	});
@@ -85,7 +85,7 @@ function hotTopicReq(){
 		$('#list-hot-cover').html('<img src="http://wap.macaoeasybuy.com/'+newData.shouldbuygroupPic+'">');
 		$('#list-hot-cover').parent().attr('id',newData.id);
 		//頭像
-		$('#hot-box-main-head-img').html('<img data-type="userAvatar" src="http://wap.macaoeasybuy.com/'+newData.adminpic+'" onerror="this.src=\'/src/img/common/loading_pc_headPic.png\'">');
+		$('#hot-box-main-head-img').html('<img data-type="userAvatar" src="http://wap.macaoeasybuy.com/'+newData.adminpic+'" onerror="this.onerror=null;this.src=\'/src/img/common/loading_pc_headPic.png\'">');
 		$('#hot-box-main-head-img').parent().attr('data-id',newData.adminid);
 		//標題
 		$('#hot-box-main-head-info-title').html(newData.title);

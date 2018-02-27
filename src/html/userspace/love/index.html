@@ -606,7 +606,7 @@
 			<%if(result.length != 0){%>
 			<%for(var i=0,leni=result.length;i<leni;i++){%>
 			<div class="userLoveItem otherGoods otherItem<%=result[i].id%>">
-				<div class="otherGoods_pic"><img src="<%=osURL%><%=result[i].pic%>" onerror="this.src='/img/common/loading_pc_220.jpg'"></div>
+				<div class="otherGoods_pic"><img src="<%=osURL%><%=result[i].pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_220.jpg'"></div>
 				<div class="otherGoods_mess">
 					<div class="otherGoods_mess_title hiddenText"><%=result[i].title%></div>
 					<p class="otherGoods_mess_nowPrice">MOP<%=result[i].nowPrice%></p>

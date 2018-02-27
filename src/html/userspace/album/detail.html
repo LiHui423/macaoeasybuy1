@@ -284,7 +284,7 @@
             <%for(var i=0;i<albumList.length;i++){%>
                 <li id="<%=albumList[i].id%>otheralbum">
                     <div class="collect-list-div">
-                        <img class="collect-list-div-img" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=albumList[i].pic%>" alt="" onerror="this.src='/img/userspace/album/album-no-img.png'">
+                        <img class="collect-list-div-img" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=albumList[i].pic%>" alt="" onerror="this.onerror=null;this.src='/img/userspace/album/album-no-img.png'">
                         <div class="img-number"><%=albumList[i].count%></div>
                         <div class="collect-select"><img src="/src/img/social/easylive/collect-select.png" alt=""></div>
                     </div>

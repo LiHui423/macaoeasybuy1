@@ -143,7 +143,7 @@
 		<%if(data.length != 0){%>
 		<%for(var i=0;i<data.length;i++){%>
 			<li id="<%=data[i].id%>user" class="<%=data[i].id%>userclass">
-				<div class="fandPic"><img src="<%=osURL%><%=data[i].pic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
+				<div class="fandPic"><img src="<%=osURL%><%=data[i].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 				<div class="fansMess clearfloat">
 					<span><%=data[i].name%></span>
 					<%if(data[i].sex == 'Girl'){%>
@@ -170,7 +170,7 @@
 			<li id="<%=labelList[i].id%>label" class="<%=labelList[i].id%>labelclass" label="<%=labelList[i].labelName%>" type="<%=labelList[i].type%>" author="<%=labelList[i].userId%>">
 				<div class="LabelList_Filter"></div>
 				<span class="LabelList_checked"><img src="/src/img/social/label/labeldetail/fancurr.png"></span>
-				<div class="labelList_left"><img src="<%=osURL%><%=labelList[i].picture%>" onerror="this.src='/src/img/common/loading_pc_80.png';this.style.width='120px'"></div>
+				<div class="labelList_left"><img src="<%=osURL%><%=labelList[i].picture%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_80.png';this.style.width='120px'"></div>
 				<div class="labelList_right">
 					<div class="labelList_title"><%=labelList[i].labelName%></div>
 					<div class="labelList_main">
@@ -238,7 +238,7 @@
 				<li id="<%=good[i].shangpinId%>-good-<%=type%>" class="<%=good[i].shangpinId%>-good storegood-item">
 				<%}%>
 					<div class="goods-item-box">
-						<img src="<%=osURL%><%=good[i].pic%>" alt="" onerror="this.src='/img/common/loading_pc_220.jpg'">
+						<img src="<%=osURL%><%=good[i].pic%>" alt="" onerror="this.onerror=null;this.src='/img/common/loading_pc_220.jpg'">
 						<div class="bottom clearfloat">
 							<div class="goodLove"><%=good[i].loveCount%></div>
 							<div class="goodSee"><%=good[i].seeCount%></div>
@@ -266,8 +266,8 @@
 				<li id="<%=shop[i].shopId%>-shop-<%=type%>" class="<%=shop[i].shopId%>-shop storegood-item">
 				<%}%>
 					<div class="top">
-						<img src="<%=osURL%><%=shop[i].logo%>" alt="" class="top-banner" onerror="this.src='/img/common/loading_pc_shop.png'">
-						<div class="top-head"><img src="<%=osURL%><%=shop[i].shopPic%>" alt="" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
+						<img src="<%=osURL%><%=shop[i].logo%>" alt="" class="top-banner" onerror="this.onerror=null;this.src='/img/common/loading_pc_shop.png'">
+						<div class="top-head"><img src="<%=osURL%><%=shop[i].shopPic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 					</div>
 					<div class="bottom">
 						<div class="bottom-title"><img src="/src/img/social/label/labeldetail/shop-house.png" alt=""><span><%=shop[i].shopName%></span></div>
@@ -292,7 +292,7 @@
 		<%for(var i=0;i<list.length;i++){%>
 		<div class="showbox_main_good_each clearfloat" id="<%=list[i].id%>-add-good-item">
 			<div class="showbox_main_good_eachLeft">
-				<img src="<%=osURL%><%=list[i].pic%>" onerror="this.src='/img/common/loading_pc_220.jpg'">
+				<img src="<%=osURL%><%=list[i].pic%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_220.jpg'">
 			</div>
 			<div class="showbox_main_good_eachRight">
 				<p><%=list[i].title%></p>
@@ -328,7 +328,7 @@
 	<script id="add-shop-template" type="text/html" data-type="template">
 		<%for(var i=0;i<list.length;i++){%>
 		<div class="showbox_main_shop_each" id="<%=list[i].id%>-add-shop-item">
-			<img src="<%=osURL%><%=list[i].logo%>" onerror="this.src='/img/common/loading_pc_shop.png'">
+			<img src="<%=osURL%><%=list[i].logo%>" onerror="this.onerror=null;this.src='/img/common/loading_pc_shop.png'">
 			<div class="showbox_main_shop_each_close"><img src="/src/img/userspace/publish/pubilsh_close.png"></div>
 		</div>
 		<%}%>

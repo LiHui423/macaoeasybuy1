@@ -453,7 +453,7 @@
 					<%}else{%>
 						<div class="header_pic" style="background: url(http://wap.macaoeasybuy.com<%=result[i].pic%>);"></div>
 					<%}%>
-					<div class="head-radius myborder-radius"><img src="http://wap.macaoeasybuy.com<%=result[i].userPic%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></div>
+					<div class="head-radius myborder-radius"><img src="http://wap.macaoeasybuy.com<%=result[i].userPic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 					<div class="name">
 						<div class="name-title"><%=result[i].name%></div>
 						<div class="name-time"><%=result[i].uptime%>前發佈</div>
@@ -470,7 +470,7 @@
 					<div class="main-new">最新查看の宜粉：</div>
 					<ul class="main-head-img clearfloat">
 						<%for(var k = 0;k <result[i].visitorList.length;k++){%>
-							<li><img src="http://wap.macaoeasybuy.com<%=result[i].visitorList[k]%>" onerror="this.src='/src/img/common/loading_pc_headPic.png'"></li>
+							<li><img src="http://wap.macaoeasybuy.com<%=result[i].visitorList[k]%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></li>
 						<%}%>
 					</ul>
 				</div>
