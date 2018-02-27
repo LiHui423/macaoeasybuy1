@@ -1,173 +1,214 @@
-(function () {
-    var UID = null;
-    var OID = +easyFrame.getUrlParam('id');
-    var AID = +easyFrame.getUrlParam('aid');
-    var isSelf = null;
-    var clock = setInterval(function () {
-        if (easyBuy.easyUser.id !== undefined) {
-            clearInterval(clock);
-            UID = easyBuy.easyUser.id;
-            isSelf = UID === OID;
-            myState(isSelf);
+void function () {
+  const data = {
+    userId: null,
+    spaceId: easyBuy.global.pageParameter.spaceId,
+    albumId: easyBuy.global.pageParameter.albumId,
+    isSelf: easyBuy.global.isSelf,
+    listdata: [
+      { order: 'uptime', page: 0, isFirst: true, isComplate: false },
+      { order: 'commentNums', page: 0, isFirst: true, isComplate: false },
+      { order: 'loveNums', page: 0, isFirst: true, isComplate: false },
+    ],
+    collect: {}, //用戶採集
+    selectIdx: 0, //目前顯示的排序盒子
+    listRequestSize: 12, //一次請求6個數據
+    selectId: [], //存儲Id的數組
+    selectMaxSize: 6, //最多選擇6個專輯進行操作
+    otherAlbum: { //移動專輯那裡是否已經請求過專輯列表了
+      isFirst: true,
+      isComplate: false,
+      page: 0,
+      size: 6,
+      selectAlbum: null,
+      newAlbum: null,
+      hasAddAlbum: false
+    },
+    editorAlbum: {
+      isClass: false, //是否已經請求過分類列表了
+      isCover: false, //是否已經請求過封面列表了
+      cover: {
+        page: 0,
+        isFirst: true,
+        isComplate: false,
+        size: 9
+      },
+      albumInfo: {} //專輯詳細信息
+    },
+    otherFunc: {}, //看他人的方法
+    mineFunc: {}, //看自己的方法
+    albumPhotoNum: 0, //專輯的總數目
+    isCanSubmit: true //是否可以發送修改專輯請求
+  };
+  const methods = {
+    formatNum: easyBuy.global.dep.formatNum,
+    deleteArrObj: easyBuy.global.dep.deleteArrObj,
+    init() {
+      if (isSelf) {
+        $('.editor-top.mine').remove();
+        $('#album-collect').remove();
+        $('.album-poster .laster-text-head').remove();
+        $('.album-poster .laster-text-num .laster-text-num-first').remove();
+        sortSelect(); //看自己的選項排序
+      } else {
+        $('#contenteditable-btn').remove();
+        $('#selecter img').remove();
+        $('.classification-top ul').remove();
+        $('.editor-top.other').remove();
+        $('#change-cover-box').remove();
+        $('#chagne-success-tips').remove();
+        $('#move-success-tips').remove();
+        $('#change-post').remove();
+        $('#album-change-shadow').remove();
+        $('#delete-post').remove();
+        $('#album-move').remove();
+        $('#album-title-name').remove();
+        $('#collect-btn').click(function() {
+            Object.keys(albumData.collect).length > 0 && pcollector.open(albumData.collect);
+        });
+        sortSelectOther(); //看別人的選項排序
+      }
+      albumDetailInfo(); //獲取專輯信息
+    },
+    getAlbumDetail() {
+      const url = `http://userspace1.macaoeasybuy.com/UserThealbumConntroller/queryTheAlbumInfo.easy?id=${data.albumId}&easybuyCallback=?`;
+      $.getJSON(url, (res) => {
+        const _data = res.albumInfo;
+        $('#album-title-name-show').html(_data.thealbumName);
+        data.isSelf && $('#album-title-name').val(_data.thealbumName);
+        $('#album-all-num').html(`專輯數：${_data.collectionNum}張`); //專輯數目
+        $('#selecter span').html(_data.className); //專輯類別
+        $('#album-cover').html(`<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/${_data.thecoverpictureurl}" onerror="this.src="/src/img/userspace/album/album-no-img.png"">`); //專輯圖片
+        const $li = $('#album-info-num li');
+        $li.eq(0).find('div').eq(0).html(formatNum(_data.seeNum + _data.sSeeNum)); //宜粉查看
+        $li.eq(1).find('div').eq(0).html(formatNum(_data.topicSum)); //宜粉回應
+        $li.eq(2).find('div').eq(0).html(formatNum(_data.loveNum + _data.sLoveNum)); //宜粉讃好
+        // $li.eq(3).find('div').eq(0).html(formatNum(_data.seeNums)); //宜粉採集
+        data.editorAlbum.albumInfo = {
+          albumTitle: _data.thealbumName,
+          albumCover: _data.thecoverpictureurl ? _data.thecoverpictureurl : null,
+          albumClass: _data.className ? _data.className : '未選擇',
+          classId: 0,
         }
-    }, 50);
-    var formatNum = easyBuy.global.dep.formatNum;
-    var deleteArrObj = easyBuy.global.dep.deleteArrObj;
-
-    window.albumData = {
-        listdata: [{
-                order: 'uptime',
-                page: 0,
-                isFirst: true,
-                isComplate: false
-            },
-            {
-                order: 'commentNums',
-                page: 0,
-                isFirst: true,
-                isComplate: false
-            },
-            {
-                order: 'loveNums',
-                page: 0,
-                isFirst: true,
-                isComplate: false
-            }
-        ],
-        collect: {}, //用戶採集
-        selectIdx: 0, //目前顯示的排序盒子
-        listRequestSize: 12, //一次請求6個數據
-        selectId: [], //存儲Id的數組
-        selectMaxSize: 6, //最多選擇6個專輯進行操作
-        otherAlbum: { //移動專輯那裡是否已經請求過專輯列表了
-            isFirst: true,
-            isComplate: false,
-            page: 0,
-            size: 6,
-            selectAlbum: null,
-            newAlbum: null,
-            hasAddAlbum: false
+        data.albumPhotoNum = _data.collectionNum;
+        data.isSelf && data.mineFunc.chagneAlbum();
+      });
+    },
+    getListData(listData) {
+      const box = $(`#${listData.order}-box`); //顯示的盒子
+      const idx = box.index() - 1;
+      const size = data.listRequestSize;
+      const page = listData.page;
+      const order = listData.order;
+      const url = `http://userspace1.macaoeasybuy.com/UserThealbumConntroller/queryTheAlbumGroup.easy?id=${data.albumId}&userId=${data.userId}&seeUserId=${data.spaceId}&size=${size}&order=${order}&page=${page}&descOrAsc=desc&easybuyCallback=?`;
+      $.ajax({
+        url: dataUrl,
+        type: 'get',
+        dataType: 'jsonp',
+        beforeSend() {
+          listData.isFirst = false;
+          bindScroll('off');
+          if (listData.isComplate) {
+            return;
+          }
         },
-        editorAlbum: {
-            isClass: false, //是否已經請求過分類列表了
-            isCover: false, //是否已經請求過封面列表了
-            cover: {
-                page: 0,
-                isFirst: true,
-                isComplate: false,
-                size: 9
-            },
-            albumInfo: {} //專輯詳細信息
-        },
-        otherFunc: {}, //看他人的方法
-        mineFunc: {}, //看自己的方法
-        albumPhotoNum: 0, //專輯的總數目
-        isCanSubmit: true //是否可以發送修改專輯請求
-    };
-
-
-    function myState(isSelf) {
-        if (isSelf) {
-            $('.editor-top.mine').remove();
-            $('#album-collect').remove();
-            $('.album-poster .laster-text-head').remove();
-            $('.album-poster .laster-text-num .laster-text-num-first').remove();
-            sortSelect(); //看自己的選項排序
-        } else {
-            $('#contenteditable-btn').remove();
-            $('#selecter img').remove();
-            $('.classification-top ul').remove();
-            $('.editor-top.other').remove();
-            $('#change-cover-box').remove();
-            $('#chagne-success-tips').remove();
-            $('#move-success-tips').remove();
-            $('#change-post').remove();
-            $('#album-change-shadow').remove();
-            $('#delete-post').remove();
-            $('#album-move').remove();
-            $('#album-title-name').remove();
-            $('#collect-btn').click(function() {
-                Object.keys(albumData.collect).length > 0 && pcollector.open(albumData.collect);
+        success(res) {
+          if (res.theAlbumInfoGroup === null) {
+              return false;
+          }
+          const _data = res.theAlbumInfoGroup;
+          for (let i = 0; i < _data.albumList.length; i++) {
+            _data.albumList[i].seeNums = methods.formatNum(_data.albumList[i].seeNums);
+            _data.albumList[i].loveNums = methods.formatNum(_data.albumList[i].loveNums);
+            _data.albumList[i].commentNums = methods.formatNum(_data.albumList[i].commentNums);
+            _data.albumList[i].commentNums = methods.formatNum(_data.albumList[i].commentNums);
+          }
+          const htmlString = easyBuy.global.template['album-template'];
+          const html = template.render(htmlString, _data);
+          if (page === 0) {
+            box.find('.album-lister-inner').html(html);
+          } else {
+            box.find('.album-lister-inner').append(html);
+          }
+          listData.page += 1; //頁數加一
+          //判斷加載是否完成
+          if (newData.albumList.length === size) {
+            //存儲最後一個的Id
+            bindScroll('on', idx);
+          } else {
+            listData.isComplate = true;
+            bindScroll('off');
+            box.find('.no-more').css('display', 'block');
+          }
+          //如果什麼數據都沒有，則隱藏沒有更多了哦，顯示沒有內容
+          if (listData.page === 1 && newData.albumList.length === 0) {
+            box.find('.no-more').css('display', 'none');
+          }
+          //存儲節點信息
+          for (let i = 0; i < _data.albumList.length; i++) {
+            const $item = $(`#${_data.albumList[j].id}-albumlist-${newData.order}`);
+            $item.data('data', {
+              groupurl: _data.albumList[j].groupurl,
+              id: _data.albumList[j].id,
+              groupdetailed: _data.albumList[j].groupdetailed
             });
-            sortSelectOther(); //看別人的選項排序
+            bindSelectEvent($item, _data.isSelf); //辦定勾選事件
+          }
         }
-        albumDetailInfo(); //獲取專輯信息
+      });
+    },
+    bindSelectEvent($el, state) {
+      const el = $el[0];
+      el.isSelect = false;  // 自定义属性
+      $el.hover(function () {
+        $el.find('.hover-check-box-outer').css('display', 'block');
+      }, function () {
+        if (el.isSelect) {
+          return false;
+        } else {
+          $el.find('.hover-check-box-outer').css('display', 'none');
+        }
+      });
+      $el.find('.hover-check-box-outer').on('click', function () {
+        const _data = $el.data('data');
+        const listData = data.collect;
+        const listMax = data.selectMaxSize;
+        if (el.isSelect) {
+          $el.removeClass('select');
+          el.isSelect = false;
+          deleteArrObj(listData, 'id', _data.id);
+        } else {
+          if (listData.length === listMax) {
+            const $item = $('#select-max-tips');
+            $item.css('display') === 'none' && $item.fadeIn(500).delay(1000).fadeOut(500);
+            return false; //限制數量
+          }
+          $el.addClass('select');
+          el.isSelect = true;
+          listData[data.id] = {
+            pic: data.groupurl
+          };
+        }
+        switch (state) {
+          case 0:
+            data.otherFunc.albumCollect();
+            break;
+          case 1:
+            data.mineFunc.bindNum(listData.length);
+            data.mineFunc.deletePhotos(listData);
+            data.mineFunc.albumMove(listData);
+            data.mineFunc.goEditor(listData);
+            break;
+        }
+      });
     }
-
-
-    //图片选择
-    function albumSelectId(obj, state) {
-        obj[0].isSelect = false;
-        $(obj).hover(function () {
-            $(this).find('.hover-check-box-outer').css('display', 'block');
-        }, function () {
-            if ($(this)[0].isSelect) {
-                return false;
-            } else {
-                $(this).find('.hover-check-box-outer').css('display', 'none');
-            }
-        });
-        obj.find('.hover-check-box-outer').on('click', function () {
-            var data = obj.data('data');
-            var golbal = window.albumData;
-            var listData = golbal.collect;
-            var listMax = golbal.selectMaxSize;
-            if (obj[0].isSelect) {
-                obj.removeClass('select');
-                obj[0].isSelect = false;
-                deleteArrObj(listData, 'id', data.id);
-            } else {
-                if (listData.length === listMax) {
-                    var $item = $('#select-max-tips');
-                    $item.css('display') === 'none' && $item.fadeIn(500).delay(1000).fadeOut(500);
-                    return false; //限制數量
-                }
-                obj.addClass('select');
-                obj[0].isSelect = true;
-                listData[data.id] = {
-                    pic: data.groupurl
-                };
-            }
-            switch (state) {
-                case 0:
-                    golbal.otherFunc.albumCollect();
-                    break;
-                case 1:
-                    golbal.mineFunc.bindNum(listData.length);
-                    golbal.mineFunc.deletePhotos(listData);
-                    golbal.mineFunc.albumMove(listData);
-                    golbal.mineFunc.goEditor(listData);
-                    break;
-            }
-        });
+  };
+  const start = setInterval(() => {
+    if (easyBuy.easyUser.id !== undefined) {
+      clearInterval(start);
+      data.userId = easyBuy.easyUser.id;
+      init();
     }
-
-    //獲取專輯信息
-    function albumDetailInfo() {
-        var dataUrl = 'http://userspace1.macaoeasybuy.com/UserThealbumConntroller/queryTheAlbumInfo.easy?id=' + AID + '&easybuyCallback=?';
-        $.getJSON(dataUrl, function (data) {
-            var newData = data.albumInfo;
-            $('#album-title-name-show').html(newData.thealbumName); //專輯名字
-            //專輯名字
-            isSelf && $('#album-title-name').val(newData.thealbumName);
-            $('#album-all-num').html('專輯數：' + newData.collectionNum + '張'); //專輯數目
-            $('#selecter span').html(newData.className); //專輯類別
-            $('#album-cover').html('<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/' + newData.thecoverpictureurl + '" onerror="this.src=\'/src/img/userspace/album/album-no-img.png\'">'); //專輯圖片
-            var $li = $('#album-info-num li');
-            $li.eq(0).find('div').eq(0).html(formatNum(newData.seeNum + newData.sSeeNum)); //宜粉查看
-            $li.eq(1).find('div').eq(0).html(formatNum(newData.topicSum)); //宜粉回應
-            $li.eq(2).find('div').eq(0).html(formatNum(newData.loveNum + newData.sLoveNum)); //宜粉讃好
-            // $li.eq(3).find('div').eq(0).html(formatNum(newData.seeNums)); //宜粉採集
-            window.albumData.editorAlbum.albumInfo = {
-                albumTitle: newData.thealbumName,
-                albumCover: newData.thecoverpictureurl ? newData.thecoverpictureurl : 'null',
-                albumClass: newData.className ? newData.className : '未選擇',
-                classId: 0,
-            };
-            window.albumData.albumPhotoNum = newData.collectionNum;
-            isSelf && window.albumData.mineFunc.chagneAlbum();
-        });
-    }
+  }, 100);
 
     //獲取專輯列表信息
     function getListData(listData) {
@@ -176,7 +217,7 @@
         var size = window.albumData.listRequestSize;
         var page = listData.page;
         var order = listData.order;
-        var dataUrl = 'http://userspace1.macaoeasybuy.com/UserThealbumConntroller/queryTheAlbumGroup.easy?id=' + AID + '&userId=' + UID + '&seeUserId=' + OID + '&size=' + size + '&order=' + order + '&page=' + page + '&descOrAsc=desc&easybuyCallback=?';
+        var dataUrl = 'http://userspace1.macaoeasybuy.com/UserThealbumConntroller/queryTheAlbumGroup.easy?id=' + AID + '&userId=' + UID + '&seeUserId=' + SID + '&size=' + size + '&order=' + order + '&page=' + page + '&descOrAsc=desc&easybuyCallback=?';
         var formatNum = easyBuy.global.dep.formatNum;
         $.ajax({
             url: dataUrl,
@@ -1047,4 +1088,4 @@
             })
         }
     }
-}());
+}()
