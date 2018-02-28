@@ -6,9 +6,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "cross-env NODE_ENV=production && gulp build",
-    "preview": "cross-env NODE_ENV=development && gulp build",
-    "start": "cross-env NODE_ENV=development && gulp dev"
+    "build": "set NODE_ENV=production && gulp build",
+    "preview": "gulp preview",
+    "start": "gulp dev"
   },
   "devDependencies": {
     "autoprefixer": "^8.0.0",

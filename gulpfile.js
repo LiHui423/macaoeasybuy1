@@ -17,9 +17,19 @@ const autoprefixer = require('autoprefixer');
 const del = require('del');
 const path = require('path');
 
-const REGEXP = /\/src\/(img|js|css)/gim;
+const DEV = process.env.NODE_ENV !== 'production';
 
-const DEV = true;
+const REGEXP = /\/src\/(img|js|css)/gim;
+const htmlminOptions = {
+  removeComments: true,
+  collapseWhitespace: false,
+  collapseBooleanAttributes: false,
+  removeEmptyAttributes: true,
+  removeScriptTypeAttributes: true,
+  removeStyleLinkTypeAttributes: true,
+  minifyJS: false,
+  minifyCSS: false
+};
 
 const DOMAIN = {
   style: { dev: 'css', prod: 'easystyle' },
@@ -92,7 +102,7 @@ function styleSCSS(src) {
       baseDir: './',
       extensions: ['svg', 'png', 'jpg', 'jpeg'],
       maxImageSize: 8 * 1024,
-      debug: true,
+      debug: false,
     }))
     .pipe(replace(REGEXP, match => changeURI(match)))
     .pipe(gif(DEV, sourcemaps.write('.')))
@@ -107,33 +117,7 @@ function html(src) {
     .pipe(replace(REGEXP, match => changeURI(match)))
     .pipe(gulp.dest(DESTPATH));
 }
-// function htmlP() {
-//     const options = {
-//         removeComments: true,
-//         collapseWhitespace: false,
-//         collapseBooleanAttributes: false,
-//         removeEmptyAttributes: true,
-//         removeScriptTypeAttributes: true,
-//         removeStyleLinkTypeAttributes: true,
-//         minifyJS: false,
-//         minifyCSS: false
-//     }
-//     return gulp.src('dev/page/**/*.html')
-//         .pipe(replace(/("|'|\()\/{2}(css|js|img).macaoeasybuy/gim, match => changeURI(match, 'prod')))
-//         // .pipe(htmlmin(options))
-//         .pipe(gulp.dest('dist/page'));
-// }
-// function cssP() {
-//     return gulp.src('dev/css/**/*css')
-//         .pipe(m.replace(/("|'|\()\/{2}(css|js|img).macaoeasybuy/gim, match => changeURI(match, 'prod')))
-//         .pipe(gulp.dest('dist/css'));
-// }
-// function jsP() {
-//   return gulp.src('dev/js/**/*.js')
-//     .pipe(m.replace)
-// }
 gulp.task('build', gulp.parallel(javascript, styleCSS, styleSCSS, html));
-gulp.task('preview', gulp.parallel(javascript, styleCSS, styleSCSS, html));
 gulp.task('dev', () => {
     gulp.watch('src/**/*.(js|css|scss|html)').on('all', (event, file) => {
         const DIRNAME = path.dirname(file).replace(/\\/gim, '/');
