@@ -13,7 +13,7 @@ function headerNavLoad(fr) {
     });
 }
 
-function headerNavLoadLogin() {
+function headerNavLoadLogin() { 
     var data = easyBuy.easyUser;
     $('header').load('/common/header_login.html', function () {
         var formatNum = easyBuy.global.dep.formatNum;
