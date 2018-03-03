@@ -436,13 +436,13 @@
         <div class="pillar item-body">
             <div class="page-main">
                 <div class="item-user-info">
-                    <div class="info-poster-avatar"><img src="<%=osURL%><%=item.userPic%>"></div>
+                    <div class="info-poster-avatar"><img src="<%=image(item.userPic)%>"></div>
                     <div class="info-post-info">
                         <div class="info-poster-name"><span><%=item.name%></span><%=#sexIcon(item.sex)%></div>
                         <div class="info-post-time"><%=item.uptime%>前發佈</div>
                     </div>
                 </div>
-                <a href=""><img src="<%=osURL%><%=item.userPic%>"></a>
+                <a href="" class="e-img"><img src="<%=image(item.pictureurl)%>"></a>
                 <div class="post-main-text">
                     <div class="post-title"><%=item.titlename%><span>/<%=item.typename%>/</span></div>
                     <div class="post-description"><%=item.lifecontent%></div>
@@ -464,7 +464,7 @@
     <div class="buyFamily-item dynamic-item">
         <div class="pillar item-body">
             <div class="page-main">
-                <a href=""><img src="<%=osURL%><%=item.pic%>" class="page-main-head-img"></a>
+                <a href=""><img src="<%=image(item.pic)%>" class="page-main-head-img"></a>
                 <div class="post-main-text">
                     <div class="post-title"><%=item.titlename%></div>
                     <div class="post-description"><%=item.purchasedfrom%></div>
@@ -487,7 +487,7 @@
                     <li><%=formatNums(item.commentNums)%></li>
                 </ul>
               <div class="item-user-info">
-                <div class="info-poster-avatar"><img src="<%=osURL%><%=item.userPic%>"></div>
+                <div class="info-poster-avatar"><img src="<%=image(item.userPic)%>"></div>
                 <div class="info-post-info">
                   <div class="info-poster-name"><span><%=item.name%></span><%=#sexIcon(item.sex)%></div>
                 </div>
