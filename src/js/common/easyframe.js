@@ -599,6 +599,7 @@ class Easybuy {
      */
     window.addEventListener('unload', () => {
       sessionStorage.setItem('loginUserInfo', JSON.stringify(this.data.userInfo));
+      sessionStorage.setItem('pageUser', JSON.stringify(this.data.spaceInfo));
     });
 
 
