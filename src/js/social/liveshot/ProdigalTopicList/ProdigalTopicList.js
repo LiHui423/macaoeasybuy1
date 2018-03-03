@@ -3,7 +3,9 @@ var domain = "http://social1.macaoeasybuy.com";
 
 var topicHot = {
     targetURL: domain + '/sentVolunteersSocialConntroller/queryMostCommentSentVolunteers.easy',
-    requestData: {},
+    requestData: {
+        userId : easyBuy.easyUser.id
+    },
     templateID: 'topicHot',
     container: '.container-swapper > .top-one',
     data: {}
@@ -31,6 +33,24 @@ var topicList = {
     container: '.container-swapper > .list',
     data: {}
 };
+/**
+ * Author: Junhang
+ * Version:
+ * @param {object} templateObj - 需要获取数据的模板对象
+ */
+
+// $(function(){
+//     if(easyBuy.isLogin === false) {
+//         topicHot.requestData.userId = -1
+//     } else {
+//         topicHot.requestData.userId = easyBuy.easyUser.id;
+//     }
+//     insertTemplate(topicHot);
+//     insertTemplate(topicList);
+// })
+
+
+
 
 easyBuy.global.beforeDataJs = function () {
     if(easyBuy.isLogin === false) {
@@ -42,11 +62,7 @@ easyBuy.global.beforeDataJs = function () {
     insertTemplate(topicList);
 };
 
-/**
- * Author: Junhang
- * Version:
- * @param {object} templateObj - 需要获取数据的模板对象
- */
+
 function insertTemplate(templateObj) {
     $.ajax({
         type: "GET",
@@ -121,7 +137,8 @@ function insertTemplate(templateObj) {
             }
         }
         if(topicHotComment.requestData.id === undefined) {
-            topicHotComment.requestData.id = data.result.topicId;
+            // topicHotComment.requestData.id = data.result.topicId;
+            topicHotComment.requestData.id = data.list.loveCount;
             console.log(topicHotComment.requestData.id);
             insertTemplate(topicHotComment);
         };

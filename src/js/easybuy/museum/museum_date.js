@@ -63,6 +63,7 @@ function popularCommentBox(){
 function willSellBox(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsYiPingController/queryYiShangpin/4/0/NEWID()/desc/2.easy",function(json){
 		var willSellList = json;
+		console.log(willSellList);
 		if(willSellList.list[0].length === 0){
 			$('.museum_willSell').css('display','none');
 		}else{

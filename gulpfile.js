@@ -17,7 +17,7 @@ const autoprefixer = require('autoprefixer');
 const del = require('del');
 const path = require('path');
 
-const DEV = process.env.NODE_ENV !== 'production';
+const DEV = process.env.NODE_ENV === undefined;
 
 const REGEXP = /\/src\/(img|js|css)/gim;
 const htmlminOptions = {

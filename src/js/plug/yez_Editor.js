@@ -95,7 +95,7 @@ YezEditor.prototype = {
     	this.obj.focus();
 	},
 	insertEmoji:function(src,id,func){
-		var newImg = '<img id="'+id+'" class="small-emoji-insert-'+id+' small-emoji-insert-item" src="'+src+'">';
+		var newImg = '<img id="'+id+'" class="small-emoji-insert-'+id+' small-emoji-insert-item" src="//wap.macaoeasybuy.com'+src+'">';
 		this.insertHTML(newImg);
 		$('.small-emoji-insert-'+id).each(function(){
 			$(this)[0].saveSrc = src;
@@ -157,6 +157,8 @@ YezEditor.prototype = {
 	getYezContent:function(){
 		var obj = this.obj;
 		$('.small-emoji-insert-item').each(function(){
+			console.log($(this)[0].src);
+			console.log($(this)[0].saveSrc);
 			$(this).attr('src',$(this)[0].saveSrc);
 			$(this).removeAttr('class');
 		});

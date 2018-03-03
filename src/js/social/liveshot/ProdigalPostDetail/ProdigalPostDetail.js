@@ -125,7 +125,7 @@ function mineOtherReq(){
 	var page = 0;
 	var size = 15;
 	var isComplete = false;
-	var postTemplate = easyBuy.global.template['post-template'];
+	var postTemplate = 'post-template';
 	var box = $('#masonry .mine_main_inner');
 	reqFunc();
 	function reqFunc(){
@@ -149,7 +149,7 @@ function mineOtherReq(){
 					y.commentCount = formatNum(y.commentCount);
 					y.purchasedfrom = y.purchasedfrom.replace(/src="/g,'src="'+easyBuy.global.osURL+'');
 				});
-				var html = template.render(postTemplate,data);
+				var html = template(postTemplate,data);
 				box.append(html);
 				waterfall($('#masonry'),$('#masonry .pillar-all'),6,4,0,true);
 				page++;
@@ -171,7 +171,7 @@ function allLookReq(){
 	var page = 0;
 	var size = 20;
 	var isComplete = false;
-	var postTemplate = easyBuy.global.template['post-template'];
+	var postTemplate = 'post-template';
 	var box = $('#all-look-post-inner .all_main_container_inner');
 	reqFunc();
 	function reqFunc(){
@@ -195,7 +195,7 @@ function allLookReq(){
 					y.commentCount = formatNum(y.commentCount);
 					y.purchasedfrom = y.purchasedfrom.replace(/src="/g,'src="'+easyBuy.global.osURL+'');
 				});
-				var html = template.render(postTemplate,data);
+				var html = template(postTemplate,data);
 				box.append(html);
 				waterfall($('#all-look-post-inner'),$('#all-look-post-inner .pillar-all'),6,4,0,true);
 				page++;

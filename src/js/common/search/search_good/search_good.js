@@ -298,7 +298,8 @@ function resultNum(){
 			pageCount: pageCount,
 			current: 1,
 			backFn: function(p) {
-				scrollListTop()
+				// scrollListTop();
+				window.scrollTo(0,0);
 				choosePage(p-1)
 			}
 		});

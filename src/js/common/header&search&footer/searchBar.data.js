@@ -66,7 +66,7 @@ function goodLoad(keyword){
 				html = html + '<li class="typeNormal"><p>'+ data.list[i] +'</p></li>'
 			}
 		}
-		$('.searchBar_recommendEach_searching.searching_good .searchBar_recommendEach_main ul').html(html)
+		$('.searchBar_recommendEach_searching.searching_good .searchBar_recommendEach_main ul').html(html);
 		keyWord();
 	});
 }
@@ -92,13 +92,13 @@ function shopLoad(keyword){
 								'</li>'
 			}
 		}
-		$('.searchBar_recommendEach_searching.searching_shop .searchBar_recommendEach_main ul').html(html)
+		$('.searchBar_recommendEach_searching.searching_shop .searchBar_recommendEach_main ul').html(html);
 		keyWord();
 	});
 }
 
 function labelLoad(keyword){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrLabelsController/QueryLabelsForTitle.easy?Query="+ keyword +"&easybuyCallback=?",function(data){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrLabelsController/QueryLabelsForTitle.easy?Query="+ keyword +"&easybuyCallback=?",function(data){
 		var html = '';
 		if(data.list.length == 0||data.list == null){
 			html = '<li class="typeNormal"><p>暫無推薦選項</p></li>';
@@ -107,12 +107,13 @@ function labelLoad(keyword){
 				html = html + '<li class="typeNormal"><p>'+ data.list[i] +'</p></li>'
 			}
 		}
-		$('.searchBar_recommendEach_searching.searching_label .searchBar_recommendEach_main ul').html(html)
+		$('.searchBar_recommendEach_searching.searching_label .searchBar_recommendEach_main ul').html(html);
+		keyWord();
 	});
 }
 
 function topicLoad(keyword){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrTopicsController/queryTopicsForTitle.easy?Query="+ keyword +"&easybuyCallback=?",function(data){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrTopicsController/queryTopicsForTitle.easy?Query="+ keyword +"&easybuyCallback=?",function(data){
 		var html = '';
 		if(data.list.length == 0||data.list == null){
 			html = '<li class="typeNormal"><p>暫無推薦選項</p></li>';
@@ -121,12 +122,13 @@ function topicLoad(keyword){
 				html = html + '<li class="typeTopic" data-classid = "'+ data.list[i].classid +'" data-id = "'+ data.list[i].topicid +'"><p>'+ data.list[i].topicName +'</p><p>'+ data.list[i].topicContent +'</p></li>'
 			}
 		}
-		$('.searchBar_recommendEach_searching.searching_topic .searchBar_recommendEach_main ul').html(html)
+		$('.searchBar_recommendEach_searching.searching_topic .searchBar_recommendEach_main ul').html(html);
+		keyWord();
 	});
 }
 
 function postLoad(keyword){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrPostsController/QueryPostsForTitle.easy?Query="+ keyword +"&easybuyCallback=?",function(data){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrPostsController/QueryPostsForTitle.easy?Query="+ keyword +"&easybuyCallback=?",function(data){
 		var html = '';
 		if(data.list.length == 0||data == null){
 			html = '<li class="typeNormal"><p>暫無推薦選項</p></li>';
@@ -148,12 +150,13 @@ function postLoad(keyword){
 				html = html + '<li class="typePost" data-id = "'+ data.list[i].postid +'" data-type = "'+ data.list[i].postState +'"><p class="hiddenText">'+ data.list[i].postName +'</p>&nbsp;&nbsp;<p>/'+ data.list[i].postState +'/</p><p>'+ data.list[i].postContent +'</p></li>'
 			}
 		}
-		$('.searchBar_recommendEach_searching.searching_post .searchBar_recommendEach_main ul').html(html)
+		$('.searchBar_recommendEach_searching.searching_post .searchBar_recommendEach_main ul').html(html);
+		keyWord();
 	});
 }
 
 function fansLoad(keyword){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrUsersController/QueryUsersForTitle.easy?Query="+ keyword +"&easybuyCallback=?",function(data){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrUsersController/QueryUsersForTitle.easy?Query="+ keyword +"&easybuyCallback=?",function(data){
 		var html = '';
 		if(data.list.length == 0||data == null){
 			html = '<li class="typeNormal"><p>暫無推薦選項</p></li>';
@@ -175,6 +178,7 @@ function fansLoad(keyword){
 								'</li>'
 			}
 		}
-		$('.searchBar_recommendEach_searching.searching_fans .searchBar_recommendEach_main ul').html(html)
+		$('.searchBar_recommendEach_searching.searching_fans .searchBar_recommendEach_main ul').html(html);
+		keyWord();
 	});
 }

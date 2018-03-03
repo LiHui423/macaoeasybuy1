@@ -1,9 +1,20 @@
-easyBuy.global.afterDataJs = function(){
+$(function(){
+	var day = new Date().getDay();
+	setCookie('MEB_Route',window.location.href,day);
 	leftNav();
 	indexBanner();
 	indexScrollFunc();
 	indexChangeFunc();
-};
+	
+})
+// easyBuy.global.afterDataJs = function(){
+// 	leftNav();
+// 	indexBanner();
+// 	indexScrollFunc();
+// 	indexChangeFunc();
+// 	var day = new Date().getDay();
+// 	setCookie('MEB_Route',window.location.href,day);
+// };
 
 /*頭部左側導航欄上下切換*/
 function leftNav(){

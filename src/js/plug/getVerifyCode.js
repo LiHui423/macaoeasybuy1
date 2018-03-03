@@ -1,6 +1,6 @@
-;(function (window,document){
+(function (window,document){
 	function getVerifyCode(options) {
-		var fn = arguments.callee;
+		//var fn = arguments.callee;
 		return function() {
 			clearInterval(timer);
 			if(!(options && Object.prototype.toString.call(options.callBack) == "[object Function]")) {
@@ -19,11 +19,12 @@
 				timeRunnigText = options.timeRunnigText || "s後重新獲取";
 			that.off("click");
 			that.addClass(unabledClass);
-			timer = setTimeout(function() {
+			timer = setTimeout((function djs() {
 				var wucha = 0,//计算误差
 					//下一次执行时间,下一次执行时间 = 每次执行间隔 - 误差
-					nextRunTime = interval,
-					currentFn = arguments.callee;
+					nextRunTime = interval;
+					//currentFn = arguments.callee;
+					// currentFn = getVerifyCode(options);
 				count ++;
 				wucha = new Date().getTime() - (start + count * interval);
 				wucha = (wucha <= 0) ? 0 : wucha;
@@ -34,7 +35,7 @@
 					clearTimeout(timer);
 					/*time = 60;*/
 					that.html(timeIsUpText).removeClass(unabledClass);
-					that.on("click", fn(options));
+					that.on("click", getVerifyCode(options));
 				}else{
 					time--;
 					that.html(time + timeRunnigText);
@@ -42,9 +43,9 @@
 					if(options.getCurrentTime && (Object.prototype.toString.call(options.getCurrentTime) == "[object Function]")){
 						options.getCurrentTime.call(that,time);
 					}
-					timer = setTimeout(currentFn,nextRunTime);
+					timer = setTimeout(djs,nextRunTime);
 				}
-			}, interval);
+			}), interval);
 			//执行回调函数
 			options.callBack.call(that);
 		}

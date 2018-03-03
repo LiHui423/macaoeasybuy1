@@ -1,6 +1,6 @@
 $(function(){
-	goodDetails()
-	otherGoodShow()
+	goodDetails();
+	otherGoodShow();
 })
 var shopId;
 function goodDetails(){

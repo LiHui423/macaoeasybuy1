@@ -40,15 +40,20 @@ function loadResult(keyword){
 		}else{
 			$('.search_result_null').hide()
 			searchFanScroll()
-			over = false
+			var over = false
 		}
 		resultNum(keyword)
 	})
 }
 
-function appendLoading(){
+function appendLoading(keyword){
 	$.getJSON("http://social1.macaoeasybuy.com/SolrUsersController/QueryUsers.easy?&Query="+keyword+"&Page="+Page+"&Rows=16&easybuyCallback=?",function(data){
+		console.log(data);
 		var htmlsearchFans = template("fansList", data);
 		$('.search_fansList #search_fansList_ul').append(htmlsearchFans);
+		if(data.list.classList.length === 0){
+			$('.loadNow').hide();
+			$('.noMore').show();
+		}
 	})
 }

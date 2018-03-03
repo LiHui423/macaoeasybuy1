@@ -1,12 +1,63 @@
+// 參數加密算法
+function parameIcy5c(str){
+	var _in = "";
+	str = str.toLowerCase();
+	var su = 1;
+	for ( var i = 0,len=str.length; i < len; i++) {
+		var ins = str[i];
+		if (!isNaN(ins) && $.trim(ins) != "") {
+			if (ins == 0)
+				ins = "∝";
+			if (ins == 1)
+				ins = "∽";
+			if (ins == 2)
+				ins = "∈";
+			if (ins == 3)
+				ins = "∞";
+			if (ins == 4)
+				ins = "≌";
+			if (ins == 5)
+				ins = "∉";
+			if (ins == 6)
+				ins = "∥";
+			if (ins == 7)
+				ins = "∬";
+			if (ins == 8)
+				ins = "∭";
+			if (ins == 9)
+				ins = "∂";
+		}
+		if (su == 10000) {
+			su = 1;
+		}
+		var os = (ins.charCodeAt(ins) + su) + "";
+		su++;
+		if (os.length == 1) {
+			os = "00000" + os;
+		} else if (os.length == 2) {
+			os = "0000" + os;
+		} else if (os.length == 3) {
+			os = "000" + os;
+		} else if (os.length == 4) {
+			os = "00" + os;
+		} else if (os.length == 5) {
+			os = "0" + os;
+		}
+		_in += os;
+	}
+	return _in;
+}
 //查詢訂單信息
 function getShopOrders(){
 	var reqObj = window.reqObj;
 	var page = reqObj.page;
 	var size = reqObj.size;
-	var dataUrl = 'http://shopping1.macaoeasybuy.com/ShopOrderController/queryOrdersResult.easy?page='+page+'&size='+size+'&userid='+userId+'&OrdersiState=0&shoppingState=0&easybuyCallback=?';
+	var userId = easyBuy.easyUser.id;
+	console.log(parameIcy5c("'"+userId+"'"));
+	var dataUrl = 'http://shopping1.macaoeasybuy.com/ShopOrderController/queryOrdersResult.easy?page=' + page + '&size=' + size + '&userid=' + parameIcy5c("'"+userId+"'") + '&OrdersiState=0&shoppingState=0&easybuyCallback=?';
 	
 	$.ajax({
-		url:dataUrl,
+		url:getWay.addHref(dataUrl),
 		type:"get",
 		async:true,
 		dataType:'jsonp',
@@ -96,6 +147,9 @@ function getShopOrders(){
 				shopScrollFunc('off');
 				preObj.css('display','block');
 			}
+		},
+		error:function(){
+			console.log('發生未知錯誤');
 		}
 	});
 	

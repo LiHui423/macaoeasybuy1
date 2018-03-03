@@ -3,6 +3,7 @@ $(function(){
 	chooseTypeSlide()
 	hitScroll();
 	var timer = setInterval(scrollText,5000);
+	
 })
 
 /*選擇分類的下拉*/
@@ -49,7 +50,7 @@ function chooseTypeBox(){
 		}else{
 			hitListBoxHtml(order,0,Areaid)
 		}
-		hitScrollLoad()
+		hitScrollLoad();
 	})
 	$(".trueEach").click(function(){
 		var Areaid = $(".goodBox_choose_type_curr").data("id");
@@ -61,7 +62,7 @@ function chooseTypeBox(){
 			$(this).addClass("choose_sortCurr");
 			hitListBoxHtml(order,1,Areaid)
 		}
-		hitScrollLoad()
+		hitScrollLoad();
 	})
 }
 
@@ -145,7 +146,7 @@ function arrayGetMax(a){
 }
 //評論上下滾動
 //以下是針對每一個評論創建一個計時器
-/*function scrollText(){
+function scrollText(){
 	var scrollBox = document.getElementsByClassName('goodEach_commentMain_ul');
 	for(var i = 0; i<scrollBox.length;i++){
 		(function(){
@@ -173,7 +174,7 @@ function arrayGetMax(a){
 			}
 		})()
 	}
-}*/
+}
 //以下是只創建一個計時器
 function scrollText(){
 	var scrollBox = document.getElementsByClassName('goodEach_commentMain_ul');
@@ -192,15 +193,6 @@ function scrollText(){
 		}
 	});
 }
-
-/*發現新品詳情頁跳轉*/
-function hitOnload(){
-	$('.hit_main_goodEach_mess').on('click',function(){
-		var id = $(this).parents('[data-id]').attr('data-id');
-		window.open('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id=' + id +'');
-	})
-}
-
 
 function hitScroll(){
 	/*定義頁碼*/

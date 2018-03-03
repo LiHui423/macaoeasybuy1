@@ -40,7 +40,7 @@ function loadResult(keyword){
 }
 
 /*選擇頁數*/
-function choosePage(page){
+function choosePage(page,keyword){
 	$.getJSON("http://social1.macaoeasybuy.com/SolrShopsController/QuerySolrShop.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Order="+Order+"&Page="+page+"&Rows=6&easybuyCallback=?",function(data){
 
 		var htmlsearchShop = template("shopList", data);

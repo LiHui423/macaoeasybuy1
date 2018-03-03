@@ -1,19 +1,25 @@
+$(function(){
+	beforeDataJs();
+})
 function beforeDataJs(){
 	otherGoodShow();
+	startJs();
+
 }
-function startJs(data){
+function startJs(){
 	shopcartTab();
 	countOtderTopicInfo();
-	goodDetails();
 	QueryUserBonusPoints();
+	goodDetails();
 	confirmDel();
 	JiangTime();
 	shopCartSettlement();
-	shopCartSecondNav(data.id);
+	shopCartSecondNav();
 }
 
-function shopCartSecondNav(userId){
-	var dataUrl = 'http://shopping.macaoeasybuy.com/shopCartController/QueryShopCartCount.easy?iuserid='+userId+'&easybuyCallback=?';
+function shopCartSecondNav(){
+	var userId = easyBuy.easyUser.id;
+	var dataUrl = '//shopping1.macaoeasybuy.com/shopCartController/QueryShopCartCount.easy?iuserid='+userId+'&easybuyCallback=?';
 	var box = $('#shopCart_tabBox_box li');
 	$.getJSON(dataUrl,function(data){
 		var data = data.list[0];
@@ -26,11 +32,18 @@ function shopCartSecondNav(userId){
 
 /*全部商品*/
 function goodDetails(){
-	$.get("http://shopping.macaoeasybuy.com/shopCartController/queryShopCartInfo/100/0/0.easy",function(json){
-        var jsonData={
+	$.getJSON("//shopping1.macaoeasybuy.com/shopCartController/queryShopCartInfo/100/0/0.easy?easybuyCallback=?",function(json){
+		console.log(json);
+		console.log(json.list);
+
+
+
+
+		var jsonData={
         		list:json
-        }
-		var shopCarttabMainallhtml = template("shopCarttabMainall", jsonData);
+		}
+		console.log(jsonData);
+		var shopCarttabMainallhtml = template("shopCarttabMainall", json);
 		$(".shopCart_tabMain_all").html(shopCarttabMainallhtml);
 		allEvent();
 	});
@@ -38,10 +51,10 @@ function goodDetails(){
 
 /*降價商品*/
 function goodDiscountDetails(){
-	$.get("http://shopping.macaoeasybuy.com/shopCartController/queryShopCartInfo/100/0/1.easy",function(json){
+	$.getJSON("//shopping1.macaoeasybuy.com/shopCartController/queryShopCartInfo/100/0/1.easy",function(json){
         var jsonData={
         		list:json
-        }
+		}
 		var shopCarttabMainallhtml = template("shopCarttabMainall", jsonData);
 		$(".shopCart_tabMain_discount").html(shopCarttabMainallhtml);
 		allEvent();
@@ -50,10 +63,10 @@ function goodDiscountDetails(){
 
 /*即將售罄*/
 function goodSellOutDetails(){
-	$.get("http://shopping.macaoeasybuy.com/shopCartController/queryShopCartInfo/100/0/2.easy",function(json){
+	$.getJSON("//shopping1.macaoeasybuy.com/shopCartController/queryShopCartInfo/100/0/2.easy",function(json){
         var jsonData={
         		list:json
-        }
+		}
 		var shopCarttabMainallhtml = template("shopCarttabMainall", jsonData);
 		$(".shopCart_tabMain_sellOut").html(shopCarttabMainallhtml);
 		
@@ -64,10 +77,10 @@ function goodSellOutDetails(){
 
 /*下架商品*/
 function goodOffSellDetails(){
-	$.get("http://shopping.macaoeasybuy.com/shopCartController/queryShopCartInfo/100/0/3.easy",function(json){
+	$.getJSON("//shopping1.macaoeasybuy.com/shopCartController/queryShopCartInfo/100/0/3.easy",function(json){
         var jsonData={
         		list:json
-        }
+		}
 		var shopCarttabMainallhtml = template("shopCarttabMainoffSell", jsonData);
 		$(".shopCart_tabMain_offSell").html(shopCarttabMainallhtml);
 		
@@ -77,7 +90,7 @@ function goodOffSellDetails(){
 
 /*用戶紅包積分*/
 function QueryUserBonusPoints(){
-	$.getJSON("http://shopping.macaoeasybuy.com/bonusPointsController/queryUserBonusPoints.easy?easybuyCallback=?",function(json){
+	$.getJSON("//shopping1.macaoeasybuy.com/bonusPointsController/queryUserBonusPoints.easy?easybuyCallback=?",function(json){
 		$(".UserPoint").html(json.list[0].point);
 		$(".UserMop").html(json.list[0].mop);
 		Redeem(json.list[0].moneyintegral);
@@ -87,7 +100,7 @@ function QueryUserBonusPoints(){
 
 /*用户兑换红包*/
 function ExchangeBonusPoints(ExchangPoint){
-	$.getJSON("http://shopping.macaoeasybuy.com/bonusPointsController/ExchangeBonusPoints/"+ExchangPoint+".easy?easybuyCallback=?",function(json){
+	$.getJSON("//shopping1.macaoeasybuy.com/bonusPointsController/ExchangeBonusPoints/"+ExchangPoint+".easy?easybuyCallback=?",function(json){
 		if(json.messageState>-1){
 			$(".shopCart_Redeem").fadeOut("fast");
 			QueryUserBonusPoints();
@@ -98,13 +111,13 @@ function ExchangeBonusPoints(ExchangPoint){
 
 /*刪除購物籃商品*/
 function DeleteShopCartGoods(idlist){
-	$.get("http://shopping.macaoeasybuy.com/shopCartController/deleteShopCart/"+idlist+".easy",function(json){
+	$.get("//shopping1.macaoeasybuy.com/shopCartController/deleteShopCart/"+idlist+".easy",function(json){
 	});
 }
 
 /*更新购物车商品数量*/
 function UpdateShopCartGoodsiCount(iCount,id){
-	$.get("http://shopping.macaoeasybuy.com/shopCartController/updateShopCart/"+iCount+"/"+id+".easy",function(json){
+	$.get("//shopping1.macaoeasybuy.com/shopCartController/updateShopCart/"+iCount+"/"+id+".easy",function(json){
 	});
 }
 
@@ -112,7 +125,7 @@ function UpdateShopCartGoodsiCount(iCount,id){
 function updateShopCartsStandard(sStandard,id,iGoodsid,iCount,Specifications){
 	sStandard = encodeURI(encodeURI(sStandard));
 	Specifications = encodeURI(encodeURI(Specifications));
-	$.get("http://shopping.macaoeasybuy.com/shopCartController/updateShopCartsStandard/"+sStandard+"/"+id+"/"+iGoodsid+"/"+iCount+"/"+Specifications+".easy",function(json){
+	$.get("//shopping1.macaoeasybuy.com/shopCartController/updateShopCartsStandard/"+sStandard+"/"+id+"/"+iGoodsid+"/"+iCount+"/"+Specifications+".easy",function(json){
 	});
 }
 

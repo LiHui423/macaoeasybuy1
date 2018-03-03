@@ -198,11 +198,35 @@ function searchBar(){
 
 function keyWord(){
 	$('.searchBox_right_bottomRight').off('click').on('click',function(){
-		gotosearch()
+		gotosearch();
 	});
 	$('.typeNormal').off('click').on('click',function(){
 		$('#searchInput').val($(this).text())
-		gotosearch()
+		gotosearch();
+	});
+	// 搜索商店
+	$('.searchShop').off('click').on('click',function(){
+		let title=$(this).children('.searchBar_recommendEach_shop_right').find('p');
+		$('#searchInput').val($(title[0]).text());
+		gotosearch();
+	});
+	// 搜話題
+	$('.typeTopic').off('click').on('click',function(){
+		let title=$(this).find('p');
+		$('#searchInput').val($(title[0]).text());
+		gotosearch();
+	});
+	// 搜帖子
+	$('.typePost').off('click').on('click',function(){
+		let title=$(this).find('p');
+		$('#searchInput').val($(title[0]).text());
+		gotosearch();
+	});
+	// 搜宜粉
+	$('.typeFans').off('click').on('click',function(){
+		let title=$(this).find('p');
+		$('#searchInput').val($(title[0]).text());
+		gotosearch();
 	});
 }
 
@@ -250,7 +274,8 @@ function clickSecondClass(){
 /*執行搜索*/
 function gotosearch(){
 	/*獲取輸入框裡面的文字，假如沒有輸入關鍵字*/
-	var keyword = encodeURI(encodeURI($('#searchInput').val()))
+	//var keyword = encodeURI(encodeURI($('#searchInput').val().split('#')[1]));
+	var keyword = $('#searchInput').val().indexOf('#')===-1?encodeURI(encodeURI($('#searchInput').val())):encodeURI(encodeURI($('#searchInput').val().split('#')[1]));
 	var type = $('.searchBar_typeBox_curr').data('id')
 	/*通過選擇的分類來選擇跳轉的結果頁面*/
 	if(type == '1'){

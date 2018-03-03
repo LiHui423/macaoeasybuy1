@@ -55,6 +55,7 @@ function editorFunc(callBackAfterSend) {
 			var replyUserId = 0;
 		}
 		var resData = editor.getYezContent();
+		console.log(resData);
 		var res = resData.newres;//回復的文字內容
 		var atPos = resData.atPos;
 		var labelPos = resData.labelPos;
@@ -68,7 +69,7 @@ function editorFunc(callBackAfterSend) {
 			sendMsg(res, bigexpression, replyId, replyUserId, atPos, labelPos);
 		}
 	}
-	//str:回復的文字內容 bigexpression:大錶情的路徑 
+	//str:回復的文字內容 biggexpression:大錶情的路徑 
 	function sendMsg(str, bigexpression, replyId, replyUserId, atPos, labelPos) {
 		var str = encodeURIComponent(str);//回復的文字內容轉換為code
 		var typee = easyBuy.userSpaceGlobal.replyPostType;
@@ -86,6 +87,7 @@ function editorFunc(callBackAfterSend) {
 				$('#replyBox_sendMess').css('cursor', 'wait');
 			},
 			success: function(data) {
+				console.log(data);
 				if(callBackAfterSend) callBackAfterSend();
 				//清空內容跟大錶情
 				editor.obj.html('');
@@ -122,6 +124,7 @@ function editorFunc(callBackAfterSend) {
 	function addComments(data) {
 		//評論成功，返回數據，添加進去頁面裡面
 		data.page = 1;
+		console.log(data);
 		var responseTemplate = 'response';
 		var html = template(responseTemplate, data.replyList);
 		$('#response-list').prepend(html);
@@ -1114,7 +1117,7 @@ function emoji() {
 				var imgId = parseInt($(this).find('img').attr('id')) + '';
 				if(size == 'small') {
 					//添加小表情
-					editor.insertEmoji('http://mbuy.oss-cn-hongkong.aliyuncs.com/'+saveSrc, imgId);
+					editor.insertEmoji(saveSrc, imgId);
 				} else if(size == 'big') {
 					//判斷大錶情的個數
 					if($('#big-expression p .now')[0].bigExpNum >= $('#big-expression p .now')[0].bigExpMax) return false;

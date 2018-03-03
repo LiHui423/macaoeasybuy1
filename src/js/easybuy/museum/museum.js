@@ -3,6 +3,7 @@ $(function(){
 	museumBanner();
 	todayDesign();
 	popularDesign();
+	
 })
 
 function museumHeadSlide(){

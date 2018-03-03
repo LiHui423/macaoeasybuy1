@@ -128,32 +128,40 @@ function calcMuseumBegin() {
 	var $groupBuy_goodsEach = $(".museum_willSellBoxEach");
 	$.each($groupBuy_goodsEach, function(){
 		var begindate_notice = $(this).find(".museumBeginTime").val();
-		var begin_date = new Date(begindate_notice), // 開始時間
-			current_date = currentDate(); // 獲得一個固定的當前時間的值
+		var begin_date = new Date(begindate_notice);// 開始時間
+		// console.log(begin_date);
+		// console.log(typeof begin_date);
+		var current_date = currentDate(); // 獲得一個固定的當前時間的值
 		// 計算差值
 		var difference = begin_date - current_date;
-		// 初始化單位
-		var _second = 1000,
-			_minute = _second * 60,
-			_hour = _minute * 60,
-			_day = _hour * 24;
+		if(difference !== NaN){
+			// 初始化單位
+			var _second = 1000,
+				_minute = _second * 60,
+				_hour = _minute * 60,
+				_day = _hour * 24;
 
-		// 計算時間
-		var days = Math.floor(difference / _day),
-			hours = Math.floor((difference % _day) / _hour),
-			minutes = Math.floor((difference % _hour) / _minute),
-			seconds = Math.floor((difference % _minute) / _second);
+			// 計算時間
+			var days = Math.floor(difference / _day),
+				hours = Math.floor((difference % _day) / _hour),
+				minutes = Math.floor((difference % _hour) / _minute),
+				seconds = Math.floor((difference % _minute) / _second);
 
-		// 強制顯示兩位
-		days = (String(days).length >= 2) ? days : '0' + days;
-		hours = (String(hours).length >= 2) ? hours : '0' + hours;
-		minutes = (String(minutes).length >= 2) ? minutes : '0' + minutes;
-		seconds = (String(seconds).length >= 2) ? seconds : '0' + seconds;
-		// 賦值
-		$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_days').text(days);
-		$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_hours').text(hours);
-		$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_mins').text(minutes);
-		$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_seconds').text(seconds);
+			// 強制顯示兩位
+			days = (String(days).length >= 2) ? days : '0' + days;
+			hours = (String(hours).length >= 2) ? hours : '0' + hours;
+			minutes = (String(minutes).length >= 2) ? minutes : '0' + minutes;
+			seconds = (String(seconds).length >= 2) ? seconds : '0' + seconds;
+			// 賦值時間
+			$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_days').text(days);
+			$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_hours').text(hours);
+			$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_mins').text(minutes);
+			$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_seconds').text(seconds);
+		}else{
+			// 賦值
+			var html = '<span>已經開賣啦</span>'
+			$(this).find(".museum_willSellBoxEach_reciprocal").html(html);
+		}
 	});
 }
 
@@ -164,8 +172,10 @@ function currentDate(){
 	var date = new Date();
 	// 將獲取到的時間轉化為UTC格式
 	var utc = date.getTime() + (date.getTimezoneOffset() * 60000);
+	// console.log(utc + (3600000 * 8));
 	// 計算算入偏移量后的當地時間
-	var new_date = new Date(utc + (3600000 * 8))
+	var new_date = new Date(utc + (3600000 * 8));
+	//console.log(new_date);//Sat Mar 03 2018 09:22:18 GMT+0800 (中国标准时间) object
 	return new_date;
 };
 

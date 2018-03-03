@@ -89,8 +89,10 @@ var queryReleaseClassList = new YEZTemplateObj({
         //日誌帖子點擊事件
         $('.shop-list').on('click',function(e){
             var target=e.target;
+            console.log(target);
             if($(target).attr('class')=='pillar'){
                 var postId=$(target).parent().attr('id');
+                console.log(postId);
                 window.open('http://social.macaoeasybuy.com/easylive/easylivelog/logpostdetail/logpostdetail.html?id='+postId);
             }
         })
