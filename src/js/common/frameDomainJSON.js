@@ -70,12 +70,12 @@ function FrameDomain(){
   });
   function recoverBackup(name) {
     const backup = sessionStorage.getItem(name);
-    sessionStorage.removeItem(name);
+	sessionStorage.removeItem(name);
     return backup;
   }
 
   const pageUser = recoverBackup('pageUser');
-  pageUser.indexOf('id') !== -1 && (easyBuy.pageUser = JSON.parse(pageUser));
+  typeof pageUser === 'string' && pageUser.indexOf('id') !== -1 && (easyBuy.pageUser = JSON.parse(pageUser));
 	const frameInnerObj = this;
 	this.domain = ".macaoeasybuy.com";
 	this.getUserInfo = {};
@@ -129,13 +129,13 @@ function FrameDomain(){
 		if(_info !== null){
 			//已登錄狀態
       window.easyBuy.isLogin = true;
-      const userInfo = recoverBackup('loginUserInfo');
-      if (userInfo.indexOf('id') === -1) {
+	  const userInfo = recoverBackup('loginUserInfo');
+	  if (userInfo === null || userInfo.indexOf('id') === -1) {
         let url = "http://userManager.macaoeasybuy.com/UserInfoManagerGetController/LoginTopInfo.easy?easybuyCallback=?";
         url = frameInnerObj.addHref(url);
         $.ajaxSettings.async = false;
         $.getJSON(url, '', function(data) {
-          if (data != null && data != "") {
+          if (data !== null && data !== "") {
             var datas = data.userInfo;
             opt.hasLogin(datas);
           }else{
@@ -573,5 +573,109 @@ FrameDomain.prototype = {
 		}else if(str2 == 'd'){
 			return str1 * 24 * 60 * 60 * 1000;
 		}
+	}
+}
+//const getWay = new FrameDomain();
+// 設置cookie來自frameDomainJSON.js
+
+// setCookie('MEB_Route',window.location.href,new Date().getDay());
+// function setCookie(name, value, time){
+// 	var cookieArr = new Array();
+// 	//獲取原有cookie
+// 	var currentCookie = document.cookie.split(";");
+// 	if(value==='http://usermanager.macaoeasybuy.com/login.html'){
+		
+// 	}
+// 	var length = currentCookie.length;
+// 	$.each(currentCookie,function(k,y){
+// 		var cookieObj = {key0:'',key1:'',key2:'',key3:'',key4:''};
+// 		if(y.indexOf('MEB_Route') !== -1){ //說明有已經存儲的cookie路徑
+// 			var json = JSON.parse(unescape(y.split('=')[1]));
+// 			var arr = [];//用來存儲MEB_Route中的地址
+// 			arr.push(value);
+// 			for(var item in json){
+// 				arr.push(json[item]);
+// 				if(arr.length>5){
+// 					arr.pop();
+// 				}
+// 				cookieObj.key0 = arr[0];
+// 				cookieObj.key1 = arr[1];
+// 				cookieObj.key2 = arr[2];
+// 				cookieObj.key3 = arr[3];
+// 				cookieObj.key4 = arr[4];
+// 				if(value === 'http://usermanager.macaoeasybuy.com/login.html'){
+// 					cookieObj.key0 = arr[1];
+// 					cookieObj.key1 = arr[2];
+// 					cookieObj.key2 = arr[3];
+// 					cookieObj.key3 = arr[4];
+// 					cookieObj.key4 = arr[0];
+
+
+// 					document.cookie = name + '=' + escape(JSON.stringify(cookieObj)) + '; path=/';
+					
+// 				}else{
+// 					document.cookie = name + '=' + escape(JSON.stringify(cookieObj)) + '; Domain=.macaoeasybuy.com' + '; path=/';
+// 				}
+// 			}
+// 		}else{
+// 			length--;
+// 			if(length <= 0){
+// 				var cookieObj = {key0:'',key1:'',key2:'',key3:'',key4:''};
+// 				cookieObj.key0 = window.location.href;
+// 				document.cookie = name + '=' + escape(JSON.stringify(cookieObj)) + '; Domain=.macaoeasybuy.com' + '; path=/';
+// 			}
+// 		}
+// 	})
+// }
+
+function SetCookie(){
+	let cookieArr = new Array();
+	//獲取原有的cookie
+	let currentCookie = document.cookie.split(";");
+	let length = currentCookie.length;
+
+	this.operate('MEB_Route',window.location.href,new Date().getDay());
+}
+SetCookie.prototype = {
+	operate : function(name, value, time){
+		$.each(currentCookie,function(k,y){
+			var cookieObj = {key0:'',key1:'',key2:'',key3:'',key4:''};
+			if(y.indexOf('MEB_Route') !== -1){ //說明有已經存儲的cookie路徑
+				var json = JSON.parse(unescape(y.split('=')[1]));
+				var arr = [];//用來存儲MEB_Route中的地址
+				arr.push(value);
+				for(var item in json){
+					arr.push(json[item]);
+					if(arr.length>5){
+						arr.pop();
+					}
+					cookieObj.key0 = arr[0];
+					cookieObj.key1 = arr[1];
+					cookieObj.key2 = arr[2];
+					cookieObj.key3 = arr[3];
+					cookieObj.key4 = arr[4];
+					if(value === 'http://usermanager.macaoeasybuy.com/login.html'){
+						cookieObj.key0 = arr[1];
+						cookieObj.key1 = arr[2];
+						cookieObj.key2 = arr[3];
+						cookieObj.key3 = arr[4];
+						cookieObj.key4 = arr[0];
+
+
+						document.cookie = name + '=' + escape(JSON.stringify(cookieObj)) + '; path=/';
+						
+					}else{
+						document.cookie = name + '=' + escape(JSON.stringify(cookieObj)) + '; Domain=.macaoeasybuy.com' + '; path=/';
+					}
+				}
+			}else{
+				length--;
+				if(length <= 0){
+					var cookieObj = {key0:'',key1:'',key2:'',key3:'',key4:''};
+					cookieObj.key0 = window.location.href;
+					document.cookie = name + '=' + escape(JSON.stringify(cookieObj)) + '; Domain=.macaoeasybuy.com' + '; path=/';
+				}
+			}
+		})
 	}
 }

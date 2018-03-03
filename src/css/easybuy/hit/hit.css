@@ -114,7 +114,7 @@
 	width: 685px;
 	float: left;
 	position: absolute;
-	cursor: pointer;
+	/* cursor: pointer; */
 }
 .hit_goodEach_messLeft{
 	float: left;

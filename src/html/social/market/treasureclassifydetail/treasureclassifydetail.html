@@ -110,7 +110,7 @@
 		<script src="/src/js/social/market/treasureclassifydetail/treasureclassifydetail.js "></script>
 		<script src="/src/js/common/clickEvent.js"></script>
 		<!--市集話題模板-->
-		<script id="townDataHtml" type="text/html" data-type="template">
+		<script id="townDataHtml" type="text/html">
 			<%for(var i=0;i<totalCount;i++){%>
 				<li>
 					<div class="mdetail_div_topic_detail">
@@ -125,7 +125,7 @@
 			<%}%>
 		</script>
 		<!--導航模板-->
-		<script id="queryFairClassInfo-template" type="text/html" data-type="template">
+		<script id="queryFairClassInfo-template" type="text/html">
 			<%for(var i=0;i<result.length;i++){%>
 			<%if(i != 0){%>
 				<li id="<%=result[i].id%>-queryFairClassInfo">
@@ -147,7 +147,7 @@
 			<%}%>
 		</script>
 		<!--導航對應盒子模板-->
-		<script id="info-box-template" type="text/html" data-type="template">
+		<script id="info-box-template" type="text/html">
 			<%for(var i=0;i<result.length;i++){%>
 			<%if(i != 0){%>
 				<div class="mdcategory_title clearfloat" id="<%=result[i].id%>-queryFairClassInfo-box">
@@ -176,7 +176,7 @@
 			<%}%>
 		</script>
 		<!--item列表模板-->
-		<script id="ideas" type="text/html" data-type="template">
+		<script id="ideas" type="text/html">
 			<%if(result.length != 0){%>
 				<%for(var i=0;i<result.length;i++){%>
 				<div class="pillar-all" id="<%=result[i].id%>-item-<%=itemType%>">

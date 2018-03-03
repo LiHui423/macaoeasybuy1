@@ -327,7 +327,10 @@
 	margin-left: 5px;
 	letter-spacing: 2px;
 }
-
+.liveshotBox_topic_title .liveshotBox_labelRank_icon{
+	float:right;
+	font-size:22px;
+}
 .liveshotBox_topic_main{
 	background-color: #ededed;
 	padding: 8px;
@@ -556,6 +559,7 @@
 .liveshotBox_labelRank_icon span{
 	display: block;
 	float: left;
+	margin-top:2px;
 }
 
 .liveshotBox_labelRank_icon span:nth-child(2){

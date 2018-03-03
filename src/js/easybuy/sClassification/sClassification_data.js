@@ -97,6 +97,7 @@ function getBottomFunc(){
 				if(isComplete) return false;
 			},
 			success:function(data){
+				console.log(data);
 				var html=template('subclasses_listBox_template',data);
 				$('#subclasses_listBox_box').append(html);
 				page++;

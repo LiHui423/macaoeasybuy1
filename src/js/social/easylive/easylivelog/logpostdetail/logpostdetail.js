@@ -1,3 +1,25 @@
+var postId=location.href.split('?')[1].split('=')[1];
+console.log(postId);
+// $(function(){
+// 	postContent(); //帖子內容
+// 	queryTopicCount(3,'release'); //评论查看赞好数统计
+// 	responseCard(3); //回復查看讃好，數據
+// 	//輪播圖
+// 	postBanner({
+// 		dataUrl : 'http://userspace1.macaoeasybuy.com/UserDiaryConntroller/queryReleasePics.easy',
+// 		values : 'releaseInfoPics'
+// 	});
+// 	mineOtherReq(); //帖主還有其他帖子
+// 	allLookReq(); //他們都在看其他帖子
+// 	if(easyBuy.isLogin){
+// 		updateSeeLog(7); //查看用戶統計
+// 	}
+// 	isClickLove(7,7); //查看用戶是否點讚
+// 	loadEditor(); ;//判斷登錄引入編輯框
+// 	reportPost(); //舉報
+// 	selectPage()//選項卡
+// 	clickEvent(); //頁面點擊事件
+// });
 easyBuy.global.beforeDataJs = function(){
 	queryTopicCount(3,'release'); //评论查看赞好数统计
 	responseCard(3); //回復查看讃好，數據
@@ -75,8 +97,6 @@ function postContent(){
 		type:"get",
 		async:true,
 		dataType:'jsonp',
-		beforeSend:function(){
-		},
 		success:function(data){
 			var newData = data.releaseInfo;
 			$('#messBox_mess_time p.articleType span').html(newData.classname); //帖子類型
@@ -103,7 +123,7 @@ function mineOtherReq(){
 	var page = 0;
 	var size = 15;
 	var isComplete = false;
-	var postTemplate = easyBuy.global.template['post-template'];
+	var postTemplate = 'post-template';
 	var box = $('#masonry .mine_main_inner');
 	reqFunc();
 	function reqFunc(){
@@ -127,7 +147,7 @@ function mineOtherReq(){
 					y.commentCount = formatNum(y.commentCount);
 					y.contents = y.contents.replace(/src="/g,'src="'+easyBuy.global.osURL+'"');
 				});
-				var html = template.render(postTemplate,data);
+				var html = template(postTemplate,data);
 				box.append(html);
 				waterfall($('#masonry'),$('#masonry .pillar-all'),6,4,0,true);
 				page++;
@@ -149,7 +169,7 @@ function allLookReq(){
 	var page = 0;
 	var size = 20;
 	var isComplete = false;
-	var postTemplate = easyBuy.global.template['post-template'];
+	var postTemplate = 'post-template';
 	var box = $('#all-look-post-inner .all_main_container_inner');
 	reqFunc();
 	function reqFunc(){
@@ -173,7 +193,7 @@ function allLookReq(){
 					y.commentCount = formatNum(y.commentCount);
 					y.contents = y.contents.replace(/src="/g,'src="'+easyBuy.global.osURL+'"');
 				});
-				var html = template.render(postTemplate,data);
+				var html = template(postTemplate,data);
 				box.append(html);
 				waterfall($('#all-look-post-inner'),$('#all-look-post-inner .pillar-all'),6,4,0,true);
 				page++;

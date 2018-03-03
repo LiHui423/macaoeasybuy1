@@ -13,7 +13,7 @@ function otherGoodShow(){
 	}
 	function reqFunc(){
 		bindClickFunc('off');
-		var dataUrl = 'http://shopping.macaoeasybuy.com/ShangpinBottomController/queryShopRandomSp/0/6.easy?easybuyCallback=?';
+		var dataUrl = '//shopping1.macaoeasybuy.com/ShangpinBottomController/queryShopRandomSp/0/6.easy?easybuyCallback=?';
 		$.getJSON(dataUrl,function(json){
 			var otherGoodShowData = json;
 			var html = template("otherGoodShow", otherGoodShowData);
@@ -24,7 +24,7 @@ function otherGoodShow(){
 }
 //訂單數量統計
 function countOtderTopicInfo(){
-	var dataUrl = 'http://shopping.macaoeasybuy.com/shopCartController/querySpCartandSpOrderTopicInfo.easy?easybuyCallback=?';
+	var dataUrl = '//shopping1.macaoeasybuy.com/shopCartController/querySpCartandSpOrderTopicInfo.easy?easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
 		$('#shopCart_searchBoxLeft_box li').eq(0).find('p span').html(data.headInfo[0].shopCartCount); //購物籃
 		$('#shopCart_searchBoxLeft_box li').eq(1).find('p span').html(data.headInfo[0].shipmentpendingCount); //待發貨

@@ -1,7 +1,11 @@
-easyBuy.global.beforeDataJs = function(){
+$(function(){
 	goodDetails();
 	otherGoodShow();
-}
+})
+// easyBuy.global.beforeDataJs = function(){
+// 	goodDetails();
+// 	otherGoodShow();
+// }
 /*計算數量寬度*/
 function clacWidth(){
 	var last = $('.goodMessBox_messBox_Remaining').text();

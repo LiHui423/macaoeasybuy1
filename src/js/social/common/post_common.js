@@ -55,6 +55,7 @@ function rightScrollTop(){
 }
 //用戶姓名，頭像，性別
 function userInfo(a,b,c){
+	console.log(a,b,c);
 	$('#other-mess-name span,#mine-other-post .poster-name,#mine-other-poster .poster-name').html(a);
 	$('#messBox_pic img,#mine-other-poster img.head-img').attr('src','//wap.macaoeasybuy.com'+b);
 	$('#messBox_pic img,#mine-other-poster img.head-img').attr('data-type','userAvatar');
@@ -733,6 +734,7 @@ function postBanner(opt){
 		dataType:'jsonp',
 		success:function(data){
 			var newData = data[values];
+			console.log(newData);
 			if(newData.length == 0){
 				$('#foodBannerul').parents('.showPicBox').remove();
 				checkFinsh.banner = true;

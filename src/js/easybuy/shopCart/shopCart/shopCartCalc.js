@@ -543,7 +543,7 @@ function formSubmit(elementValue) {
 	document.body.appendChild(turnForm);
 	turnForm.method = 'post';
 	turnForm.enctype="multipart/form-data";
-	turnForm.action = 'http://shopping.macaoeasybuy.com/ShopCartConfirmController/queryShopCartConfirmInfo.easy';
+	turnForm.action = '//shopping1.macaoeasybuy.com/ShopCartConfirmController/queryShopCartConfirmInfo.easy';
 	turnForm.target = '_self';
 	//创建隐藏表单
 	var newElement = document.createElement("input");

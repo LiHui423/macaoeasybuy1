@@ -76,7 +76,7 @@ function searchTopicScroll(){
 	/*定義頁碼*/
 	Page = 1;
 	/*定義是否滾動完的參數*/
-	over = false;
+	var over = false;
 	/*距下边界长度*/
 	var range = 50;
 	
@@ -107,8 +107,12 @@ function searchTopicScroll(){
         var totalheight = parseFloat($(window).height()) + parseFloat(srollPos);//加了400是想在距離底部還有400px的時候就提前請求
         if(over == false){
         	if(($(document).height()-range) <= totalheight) {
-        		$('.loadNow').show()
-	        	loadResultTabAppend();
+				$('.loadNow').show();
+				var url = window.location.search;
+				var str = url.split("?");
+				var strs = str[1].split("=");
+				var keyword = strs[1];
+	        	loadResultTabAppend(keyword);
 				Page++;
 	        }	
         }else{

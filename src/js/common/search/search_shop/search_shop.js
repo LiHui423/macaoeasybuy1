@@ -92,8 +92,10 @@ function resultNum(keyword){
 			pageCount: pageCount,
 			current: 1,
 			backFn: function(p) {
-				scrollListTop()
-				choosePage(p-1)
+				// scrollListTop();
+				//分頁回頂
+				window.scrollTo(0,0);
+				choosePage(p-1,keyword);
 			}
 		});
 	}

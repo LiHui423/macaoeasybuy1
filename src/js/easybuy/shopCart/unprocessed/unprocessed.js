@@ -1,15 +1,6 @@
-//$(function(){
-//	allBindClickFunc(); //彈框按鈕辦定事件
-//	
-//	
-//	countOtderTopicInfo(); //訂單數量統計
-//	
-//	getShopOrders(); //查詢訂單信息
-//	
-//	
-//	
-//	otherGoodShow(); //底部其他商品
-//});
+$(function(){
+	startJs();
+});
 var reqObj = {
 	page : 0,
 	size : 2,

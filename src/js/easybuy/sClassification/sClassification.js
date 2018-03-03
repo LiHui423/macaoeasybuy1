@@ -1,3 +1,6 @@
+$(function(){
+	beforeDataJs();
+})
 function beforeDataJs(){
 	SubclassesSlide();
 	setNavOnLoad(); //設置導航

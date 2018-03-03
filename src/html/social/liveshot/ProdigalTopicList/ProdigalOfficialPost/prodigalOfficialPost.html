@@ -17,7 +17,11 @@
 	    	easyBuy.global.hasNav = false;
 	    	easyBuy.social.postListSeeNum = 7; //帖子列表查看顯示多少個頭像
 	    </script>
-	    <!--postid 話題帖子Id-->
+		<!--postid 話題帖子Id-->
+		<script>
+			var postid = location.href.split('=')[1];
+			console.log(postid);
+		</script>
 	</head>
 	<body>
 		<div id="swapper">
@@ -323,7 +327,7 @@
 	    <script src="/src/js/common/header&search&footer/searchBar.js" async></script>
 	    <script src="/src/js/common/header&search&footer/footer.js" async></script>
 	    <script src="/src/js/common/header&search&footer/header.js"></script>
-	    <script src="//js.macaoeasybuy.com/img/js/plug/yez_Editor.js"></script>
+	    <script src="//js.macaoeasybuy.com/js/plug/yez_Editor.js"></script>
 	    <script src="/src/js/userspace/common/postDetailEditorSend.js"></script>
 	    <script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 		<script src="/src/js/social/common/topicPost_common.js"></script>
@@ -377,7 +381,7 @@
 			<%}%>
 		</script>
 		<!--回復評論帖子-->
-		<script id="response" type="text/html" data-type="template">
+		<script id="response" type="text/html">
 			<%if(replyList.length > 0){%>
 				<%for(var i=0;i<replyList.length;i++){%>
 				<li class="clearfloat" id="<%=replyList[i].id%>response">
@@ -446,7 +450,7 @@
 			<%}%>
 		</script>
 		<!--at人的模板-->
-		<script id="at-person-template" type="text/html" data-type="template">
+		<script id="at-person-template" type="text/html">
 			<%if(data.length != 0){%>
 			<%for(var i=0;i<data.length;i++){%>
 				<li id="<%=data[i].id%>user" class="<%=data[i].id%>userclass">
@@ -471,7 +475,7 @@
 			<%}%>
 		</script>
 		<!--標籤的模板-->
-		<script id="label-template" type="text/html" data-type="template">
+		<script id="label-template" type="text/html">
 			<%if(labelList.length != 0){%>
 			<%for(var i=0;i<labelList.length;i++){%>
 				<li id="<%=labelList[i].id%>label" class="<%=labelList[i].id%>labelclass" label="<%=labelList[i].labelName%>" type="<%=labelList[i].type%>" author="<%=labelList[i].userId%>">

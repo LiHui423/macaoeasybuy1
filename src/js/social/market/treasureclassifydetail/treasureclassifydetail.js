@@ -1,9 +1,16 @@
-easyBuy.global.beforeDataJs = function(){
+$(function(){
 	bannerData();
 	queryFairClassInfoFunc();
 	townData();
 	goTopicDetail();//話題列表點擊事件
-}
+})
+	
+// easyBuy.global.beforeDataJs = function(){
+// 	bannerData();
+// 	queryFairClassInfoFunc();
+// 	townData();
+// 	goTopicDetail();//話題列表點擊事件
+// }
 var mygoodbanner = easyBuy.global.dep.mygoodbanner;
 var formatNum = easyBuy.global.dep.formatNum;
 var waterfall = easyBuy.global.dep.waterfall;
@@ -369,17 +376,17 @@ function queryFairClassInfoFunc(){
 	var ipUrl = 'http://social1.macaoeasybuy.com';
 	var easyUrl = 'http://social.macaoeasybuy.com';
 	var dataUrl = ipUrl + '/fairQuerySocialController/queryFairClassInfo.easy?easybuyCallback=?';
-	var queryFairClassInfoTemplate = easyBuy.global.template['queryFairClassInfo-template'];
-	var infoBoxTemplate = easyBuy.global.template['info-box-template'];
+	var queryFairClassInfoTemplate = 'queryFairClassInfo-template';
+	var infoBoxTemplate = 'info-box-template';
 	$.getJSON(dataUrl,function(data){
 		queryFairClassDetailInfo(data.result[0].id,data.result[0].fairClassName); //請求內容頭信息
-		var html = template.render(queryFairClassInfoTemplate,data);
+		var html = template(queryFairClassInfoTemplate,data);
 		$('#nav-scroll').html(html);
 		imagesLoaded($('#nav-scroll img'),function(){
 			menuScroll();
 			menuSelect();
 		});
-		var boxHtml = template.render(infoBoxTemplate,data);
+		var boxHtml = template(infoBoxTemplate,data);
 		$('#contaner-box').append(boxHtml);
 		$.each(data.result, function(k,y) {
 			$('#' + y.id + '-queryFairClassInfo').data('data',y);
@@ -431,7 +438,7 @@ function queryFairList(obj){
 	var ipUrl = 'http://social1.macaoeasybuy.com';
 	var easyUrl = 'http://social.macaoeasybuy.com';
 	var dataUrl = ipUrl + '/fairQuerySocialController/queryFairList.easy?id='+id+'&size='+size+'&page='+page+'&easybuyCallback=?';
-	var ideasTemplate = easyBuy.global.template['ideas'];
+	var ideasTemplate = 'ideas';
 	$.ajax({
 		url:dataUrl,
 		type:"get",
@@ -450,7 +457,7 @@ function queryFairList(obj){
 				y.moneyNew = formatNum(y.moneyNew);
 				$('#'+y.id+'-item-'+id+' .laster-main').html(y.content);
 			});
-			var html = template.render(ideasTemplate,data);
+			var html = template(ideasTemplate,data);
 			showBox.append(html);
 			$.each(data.result, function(k,y) {
 				$('#'+y.id+'-item-'+id+' .laster-main').html(y.content);
@@ -489,11 +496,11 @@ function bindScrollItem(state,obj){
 function townData() {
 	var size = 4;
 	var dataUrl = 'http://social1.macaoeasybuy.com/fairQuerySocialController/queryFairTopic.easy?size='+size+'&page=0&easybuyCallback=?';
-	var townDataHtmlTemplate = easyBuy.global.template['townDataHtml'];
+	var townDataHtmlTemplate = 'townDataHtml';
 	$.getJSON(dataUrl,function(data){
 		var newData = data.result;
 		console.log(newData);
-		var html = template.render(townDataHtmlTemplate, newData);
+		var html = template(townDataHtmlTemplate, newData);
 		$('#itemContainer').html(html);
 
 		//多少個宜粉查看

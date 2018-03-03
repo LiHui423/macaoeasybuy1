@@ -1,3 +1,6 @@
+$(function(){
+	startJs();
+})
 function startJs(){
 	window.history.forward(1);
 	clacHeight();
@@ -40,10 +43,19 @@ function chooseTime(){
 		})
 	});
 	
+	//點擊其他地方，彈框消失，不依賴遮罩層
 	maskClick('.chooseTime_slideBox',function(){
 		$('.chooseTime_slideBox').stop().slideUp();
 	});
-	
+	function maskClick(el,func,str){
+		str = str == undefined ? 'maskClick' : str;
+        $(document).off('mouseup.'+str);
+        $(document).on('mouseup.'+str,function(e){
+            if(!$(el).is(e.target) && $(el).has(e.target).length === 0){
+                if(func) func();
+            }
+        });
+	}
 }
 /*選擇地址*/
 function chooseAddress(){
@@ -106,8 +118,8 @@ function chooseAddress(){
 	/*監測手機號碼時候正確*/
 	$('#old_change_num').off('click').on('keypress keyup',function(){
 		var phoneNum = $('#old_change_num').val();
-		reg = /^1[3|4|5|7|8][0-9]\d{8}$/;
-		/*reg = /^6[6|8][0-9]\d{5}$/*/
+		var reg = /^1[3|4|5|7|8][0-9]\d{8}$/;
+		/*var reg = /^6[6|8][0-9]\d{5}$/*/
 		if(reg.test(phoneNum)){
 			$('.addressPop_main_old_changeBtn').off('click').off('click').removeClass('change_sendCode').addClass('change_sendCode_curr')
 			$('.change_sendCode_curr').on("click",getVerifyCode({
@@ -133,8 +145,8 @@ function chooseAddress(){
 	/*創建新的地址*/
 	$('#new_change_num').off('keypress keyup').on('keypress keyup',function(){
 		var phoneNum = $('#new_change_num').val();
-		reg = /^1[3|4|5|7|8][0-9]\d{8}$/;//大陸手機號碼驗證
-		/*reg = /^6[6|8][0-9]\d{5}$/*/
+		var reg = /^1[3|4|5|7|8][0-9]\d{8}$/;//大陸手機號碼驗證
+		/*var reg = /^6[6|8][0-9]\d{5}$/*/
 		if(reg.test(phoneNum)){
 			$('.addressPop_main_new_changeBtn').off('click').addClass('change_sendCode_curr');
 			$('.change_sendCode_curr').on("click",getVerifyCode({
@@ -242,7 +254,7 @@ function formSubmit(data) {
 	document.body.appendChild(turnForm);
 	turnForm.method = 'post';
 	turnForm.enctype="multipart/form-data";
-	turnForm.action = 'http://shopping.macaoeasybuy.com/ShopCartConfirmController/saveShopCartOrders.easy';
+	turnForm.action = '//shopping1.macaoeasybuy.com/ShopCartConfirmController/saveShopCartOrders.easy';
 	turnForm.target = '_self';
 	//创建隐藏表单
 	for(var key in data){

@@ -50,7 +50,7 @@ function loadResult(keyword){
 		}else{
 			$('.search_label_noResult').hide()
 			searchTopicScroll()
-			over = false
+			var over = false
 		}
 		chooseTab();
 		resultNum(keyword)
@@ -77,13 +77,13 @@ function chooseTypeGood(keyword){
 	})
 }
 
-function loadResultTabAppend(){
+function loadResultTabAppend(keyword){
 	$.getJSON("http://social1.macaoeasybuy.com/SolrTopicsController/QueryTopics.easy?&Query="+keyword+"&DescOrAsc="+DescOrAsc+"&Orders="+Orders+"&Page="+Page+"&fq="+fq+"&fqTime="+fqTime+"&Rows=10&easybuyCallback=?",function(data){
 		/*搜索結果*/
 		console.log(data);
 		$('.loadNow').hide();
 		if(data.list.classList.length < 10){
-			over = true;
+			var over = true;
 			$('.noMore').show()
 		}else{
 

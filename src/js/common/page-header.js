@@ -54,8 +54,8 @@
     { img: '/src/img/common/header&search&footer/QR code.png', tips: '客戶端下載' },
   ];
   const qrCodeHTMLString = qrcode.reduce((HTMLString, item) => {
-    return HTMLString + `<li><img src="${item.img}">${item.tips}</li>`;
-  });
+    return HTMLString + `<li><img src="${item.img}"><span>${item.tips}</span></li>`;
+  },'');
   const headerHTMLString = `
     <div class="e-container">
       <div class="nav">
@@ -85,9 +85,9 @@
         }
         ${
           login ? ''
-          : `<a href="${link}">登入</a><a :href="${link}">註冊</a>`
+          : `<a href="${link}" id="login">登入</a><a :href="${link}" id="register">註冊</a>`
         }
-        <a href="#" data-count="">購物籃</a>
+        <a href="http://www.macaoeasybuy.com/shopCartController/ShoppingCart.easy" data-count="">購物籃</a>
         ${
           login ?
           `<a href="#" data-count="">紅包</a>
@@ -98,7 +98,7 @@
         <a href="#">申請開店</a>
         <div class="appdl">
           <span>APP下載</span>
-          <ul class="hidden">
+          <ul class="hidden" style="width:490px;">
             ${qrCodeHTMLString}
           </ul>
         </div>
@@ -154,4 +154,9 @@
   $('.social>span').on('click',function(){
     window.location.href="http://social.macaoeasybuy.com/easylive/easylive.html";
   })
+  // $('#login').on('click',function(){
+  //   console.log('登入按鈕被點擊');
+  //   document.cookie="url"+window.location.href;
+  //   console.log(document.cookie);
+  // })
 })());

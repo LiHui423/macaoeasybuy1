@@ -5,7 +5,7 @@
 
 /*宜粉們都在看*/
 .post-list{
-	position:relative;
+	/* position:relative; */
 	padding-bottom:50px;
 }
 .post-list-title{
@@ -32,7 +32,7 @@
 }
 .post-list-content .list-num .header {
     width: 100%;
-    position: relative;
+    /* position: relative; */
 }
 .post-list-content .list-num .header .header_pic{
 	width: 100%;

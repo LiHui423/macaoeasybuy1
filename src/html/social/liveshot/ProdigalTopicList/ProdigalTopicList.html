@@ -14,7 +14,7 @@
 	<body>
 
 		<div id="swapper">
-			<header></header>
+			<header id="page-header"></header>
 			<div id="searchBar">
 				<div class="searchBox">
 					<div class="searchBox_mainBox">
@@ -58,11 +58,12 @@
 		<script src="/src/js/plug/yez_js_Reset.js"></script>
 		<script src="/src/js/common/header&search&footer/searchBar.js" async></script>
 		<script src="/src/js/common/header&search&footer/footer.js" async></script>
-		<script src="/src/js/common/header&search&footer/header.js"></script>
+		<script src="/src/js/common/page-header.js"></script>
 		<script src="/src/js/social/liveshot/ProdigalTopicList/ProdigalTopicList.js"></script>
 		<script src="/src/js/social/liveshot/ProdigalTopicList/ProdigalTopicList_data.js"></script>
+		<script src="/src/js/common/clickEvent.js"></script>
 		<!--內容模板-->
-		<script id="topicHot" type="text/html" data-type="template">
+		<script id="topicHot" type="text/html">
 			<div class="top-one-left">
 				<img src="/src/img/social/liveshot/ProdigalTopicList/title-logo.png" class="icon">
 				<img src="<%=osURL%><%=result.pic%>" class="main">
@@ -112,17 +113,19 @@
 		<!--列表模板-->
 		<script id="topicList" type="text/html" data-type="template">
 			<%for(var i=0,j=list.length;i<j;i++){%>
-				<li class="list-num">
+				<li class="list-num" data-id="<%=list[i].topicId%>">
 					<div class="header">
-						<img src="<%=osURL%><%=list[i].pic%>">
-						<div class="head-radius myborder-radius"><img src="<%=osURL%><%=list[i].userPic%>"></div>
+						<img src="//wap.macaoeasybuy.com<%=list[i].pic%>" onerror="this.onerror=null;this.src='/src/common/loading_pc_600.jpg'">
+						<div class="head-radius myborder-radius"><img src="//wap.macaoeasybuy.com<%=list[i].userPic%>" onerror="this.onerror=null;this.src='/src/common/loading_pc_headPic.png'"></div>
 						<div class="name">
 							<div class="name-title"><%=list[i].name%></div>
 							<div class="name-time"><span><%=list[i].uptime%></span>前發布</div>
 						</div>
 					</div>
 					<div class="main">
-						<div class="main-title"><%=list[i].title%></div>
+						<div class="main-title">
+							<a><span id="underline"><%=list[i].title%></span></a>
+						</div>
 						<div class="main-container"><%=list[i].content%></div>
 						<ul class="info clearfloat">
 							<li><%=list[i].seeCount%></li>
@@ -132,7 +135,7 @@
 						<div class="main-new">最新查看の宜粉：</div>
 						<ul class="main-head-img clearfloat">
 							<%for(var vu=0, vul=list[i].visitorList.length; vu < vul; vu++){%>
-								<li id="<%=list[i].visitorList[vu].id%>"><img src="<%=osURL%><%=list[i].visitorList[vu].pic%>"></li>
+								<li id="<%=list[i].visitorList[vu].id%>"><img src="//wap.macaoeasybuy.com<%=list[i].visitorList[vu].pic%>" onerror="this.onerror=null;this.src='/src/common/loading_pc_headPic.png'"></li>
 							<%}%>
 						</ul>
 					</div>

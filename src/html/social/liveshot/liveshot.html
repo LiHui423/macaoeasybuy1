@@ -69,7 +69,18 @@
 						<div class="liveshotBox_talent_main clearfloat"></div>
 					</div>
 					<div class="liveshotBox_topic">
-						<div class="liveshotBox_topic_title"><span><img src="/src/img/social/liveshot/liveshot.png"></span><span>敗家話題</span></div>
+						<div class="liveshotBox_topic_title">
+							<span><img src="/src/img/social/liveshot/liveshot.png"></span>
+							<span>敗家話題</span>
+							<div class="liveshotBox_labelRank_icon">
+								<span>
+									<a href="http://social.macaoeasybuy.com/liveshot/ProdigalTopicList/ProdigalTopicList.html" target="_blank">
+										想看更多
+									</a>
+								</span>
+								<span><img src="//img.macaoeasybuy.com/img/social/liveshot/labelRank_next.png"></span>
+							</div>
+						</div>
 						<div class="liveshotBox_topic_main clearfloat">
 							<div class="liveshotBox_topic_Btn liveshotBox_topic_leftBtn"><img src="/src/img/common/icon/prevBtn_white.png"></div>
 							<div class="liveshotBox_topic_Btn liveshotBox_topic_rightBtn"><img src="/src/img/common/icon/nextBtn_white.png"></div>
@@ -470,7 +481,7 @@
 					<div class="main-new">最新查看の宜粉：</div>
 					<ul class="main-head-img clearfloat">
 						<%for(var k = 0;k <result[i].visitorList.length;k++){%>
-							<li><img src="http://wap.macaoeasybuy.com<%=result[i].visitorList[k]%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></li>
+							<li><img src="http://wap.macaoeasybuy.com<%=result[i].visitorList[k].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></li>
 						<%}%>
 					</ul>
 				</div>

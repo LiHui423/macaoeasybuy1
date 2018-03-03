@@ -30,7 +30,7 @@
 		</script>
 	</head>
 	<body>
-		<header></header>
+		<header id="page-header"></header>
 
 		<div id ="searchBar">
 			<div class="searchBox">
@@ -94,14 +94,15 @@
 	<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
 	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
 	<!--頭部文件的js-->
-	<script src="/src/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/page-header.js"></script>
 	<script src="/src/js/common/header&search&footer/footer.js"></script>
 	<!--搜索框部份的js-->
 	<script src="/src/js/common/header&search&footer/searchBar.js"></script>
 	<!--更多主題的js-->
 	<script src="/src/js/easybuy/sClassification/sClassification.js"></script>
 	<script src="/src/js/easybuy/sClassification/sClassification_data.js"></script>
-
+	
+	<!-- 子分類的列表內容部分 -->
 	<script id="subclasses_listBox_template" type="text/html">
 		<%for(var i=0;i<list.length;i++){%>
 		<li>

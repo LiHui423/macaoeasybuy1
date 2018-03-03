@@ -530,7 +530,7 @@ header {
   height: 24px;
   line-height: 24px;
   padding-left: 220px;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
   @include clearfloat;
 }
 
@@ -998,6 +998,7 @@ header {
 
 .searchBar_recommendEach_searching .searchBar_recommendEach_main ul .typeFans {
   margin-top: 20px;
+  cursor:pointer;
 }
 
 .typeFans .searchBar_recommendEach_mess .searchBar_recommendEach_mess_top p {

@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "build": "set NODE_ENV=production && gulp build",
-    "preview": "gulp preview",
+    "preview": "gulp build",
     "start": "gulp dev"
   },
   "devDependencies": {

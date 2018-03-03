@@ -1,6 +1,7 @@
 ( () => {
     $("body").on('click',function(e){
         const $e = $(e.target);
+        // console.log($e);
         // 判断是否是用户头像被点击
         if($e.attr('data-type') === 'userAvatar'){
             const spaceId = $e.parents('[data-id]').attr('data-id');
@@ -26,11 +27,26 @@
         }else if($e.hasClass('yez-mask')){
             const albumId = $e.parents('[data-id]').attr('data-id');
             window.open('http://social.macaoeasybuy.com/easylive/easylivealbum/albumclassification/albumlistdetail/albumlistdetail.html?albumId=' + albumId);
-        }//發現新品跳轉到普通商品詳情頁
+        }//本週熱賣跳轉到普通商品詳細頁
+        else if(location.href.indexOf('hit.html') !== -1 ){
+            if($e.attr('id') === "underline" || $e.html() === "打開看看"){
+                const productId = $e.parents('[data-id]').attr('data-id');
+                jump('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id=',productId);
+            }
+        }
+        //發現新品跳轉到普通商品詳情頁
         else if(location.href.indexOf('new.html') !== -1 && $e.attr('id') === "underline"){
-            const newId=$e.parents('[data-id]').attr('data-id');
+            const newId = $e.parents('[data-id]').attr('data-id');
             console.log(newId);
             jump('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id=',newId);
+        }//宜買話題詳細頁跳轉到宜買話題詳細頁
+        else if(location.href.indexOf('buytopicpostdetail.html') !== -1 && $e.attr('id') === 'underline'){
+            const postId = $e.parents('[data-id]').attr('data-id');
+            location.href = 'http://social.macaoeasybuy.com/easylive/easylivebuytopic/buytopicpostdetail/buytopicpostdetail.html?id='+postId;
+        }//敗家志話題列表頁跳轉到敗家志話題帖子詳細頁
+        else if(location.href.indexOf('ProdigalTopicList.html') !== -1 && $e.attr('id') === 'underline'){
+            const topicId = $e.parents('[data-id]').attr('data-id');
+            jump('http://social.macaoeasybuy.com/liveshot/ProdigalTopicList/ProdigalOfficialPost/ProdigalOfficialPost.html?id=',topicId);
         }
         //跳轉到宜品館商品詳細頁
         else if(location.href.indexOf('museumList_beautiful.html') !== -1 || location.href.indexOf('museumList_practical.html') !== -1 || location.href.indexOf('museumList_magical.html') !== -1){

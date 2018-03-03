@@ -6,6 +6,7 @@ function QueryUserUsedAddress(){
 		var jsonData={
 				list:json
 		}
+
 		if(json.length>0){
 			$(".shopAddress_noAddress").css("display","none");
 		}else{
@@ -27,6 +28,7 @@ function ShopCartConfirmOldSiteBox(){
 		var jsonData={
 				list:json
 		}
+		
 		var html = template("ShopCartConfirmoldEachBox", jsonData);
 		$(".addressPop_main_oldEachBox").html(html);
 		chooseAddress();
@@ -36,12 +38,12 @@ function ShopCartConfirmOldSiteBox(){
 }
 
 /**
- * 發送驗證碼短信
+ * 發送驗證碼短信z`
  * @param Phone
  * @param state
  */
 function SendPhoneAuthCode(Phone,state){
-	var dataUrl = "http://118.190.114.118:8081/yez_sendTextMessages/messagesConterllor/sendMesgs.easy?phone="+Phone+"&type=goodsReceipt";
+	var dataUrl = "http://118.190.114.118:8081/messagesConterllor/sendMesgs.easy?phone="+Phone+"&type=goodsReceipt";
 	dataUrl = fr.addHref(dataUrl);
 	$.getJSON(dataUrl,function(json){
 		console.log(json);
@@ -55,7 +57,7 @@ function SendPhoneAuthCode(Phone,state){
  * @param authCode
  */
 function SaveUserAddress(data,authCode){
-	var dataUrl="http://118.190.114.118:8081/yez_sendTextMessages/messagesConterllor/verifyMess.easy?phone="+data.phone+"&str="+authCode;
+	var dataUrl="http://118.190.114.118:8081/messagesConterllor/verifyMess.easy?phone="+data.phone+"&str="+authCode;
 	dataUrl = fr.addHref(dataUrl);
 	$.getJSON(dataUrl,function(json){
 		if(json.info=="2"){
@@ -94,7 +96,7 @@ function SaveUserAddress(data,authCode){
  * @param authCode
  */
 function UpdateUserAddress(data,authCode){
-	var dataUrl="http://118.190.114.118:8081/yez_sendTextMessages/messagesConterllor/verifyMess.easy?phone="+data.phone+"&str="+authCode;
+	var dataUrl="http://118.190.114.118:8081/messagesConterllor/verifyMess.easy?phone="+data.phone+"&str="+authCode;
 	dataUrl = fr.addHref(dataUrl);
 	$.getJSON(dataUrl,function(json){
 		if(json.info=="2"){

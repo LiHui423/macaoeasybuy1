@@ -61,8 +61,8 @@ function loadResult(){
 }
 
 /*選擇頁數數據加載函數*/
-function choosePage(page){
-	$.getJSON("http://shopping1.macaoeasybuy.com/SolrGoodsController/QueryGoodsSolr.easy?Query="+ keyword +"&Page="+ page +"&Rows=72&AreaClassName="+ secondclass +"&spStandard="+ spStandardcode +"&Parameter="+ Parametercode +"&Order="+Order+"&AscOrDesc="+AscOrDesc+"&PriceStart="+PriceStart+"&PriceEnd="+PriceEnd+"&labelinfo="+labelinfo+"&easybuyCallback=?",function(data){
+function choosePage(page,keyword){
+	$.getJSON("http://social1.macaoeasybuy.com/SolrGoodsController/QueryGoodsSolr.easy?Query="+ keyword +"&Page="+ page +"&Rows=72&AreaClassName="+ secondclass +"&spStandard="+ spStandardcode +"&Parameter="+ Parametercode +"&Order="+Order+"&AscOrDesc="+AscOrDesc+"&PriceStart="+PriceStart+"&PriceEnd="+PriceEnd+"&labelinfo="+labelinfo+"&easybuyCallback=?",function(data){
 	//$.getJSON("http://shopping1.macaoeasybuy.com/SolrGoodsController/QueryGoodsSolr.easy?Query="+ keyword +"&Page=1&Rows=72&AreaClassName="+ secondclass +"&spStandard="+ spStandardcode +"&Parameter="+ Parametercode +"&Order="+Order+"&AscOrDesc="+AscOrDesc+"&PriceStart="+PriceStart+"&PriceEnd="+PriceEnd+"&labelinfo="+labelinfo+"&easybuyCallback=?",function(data){
 		/*結果的商品*/
 		console.log(data);

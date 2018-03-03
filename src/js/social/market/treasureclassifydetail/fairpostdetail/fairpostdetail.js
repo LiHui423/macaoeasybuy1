@@ -1,4 +1,4 @@
-easyBuy.global.beforeDataJs = function(){
+$(function(){
 	queryTopicCount(7,'Fair'); //评论查看赞好数统计
 	responseCard(7); //回復查看讃好，數據
 	//輪播圖
@@ -10,8 +10,6 @@ easyBuy.global.beforeDataJs = function(){
 	allLookReq(); //他們都在看其他帖子
 	clickEvent();//页面点击事件
 	selectPage();
-}
-easyBuy.global.afterDataJs = function(){
 	if(easyBuy.isLogin){
 		updateSeeLog(11); //查看用戶統計
 	}
@@ -23,7 +21,33 @@ easyBuy.global.afterDataJs = function(){
 		$('#wechat-num').html($('#wechat-num')[0].num);
 	});
 	reportPost(); //舉報
-}
+})
+// easyBuy.global.beforeDataJs = function(){
+// 	queryTopicCount(7,'Fair'); //评论查看赞好数统计
+// 	responseCard(7); //回復查看讃好，數據
+// 	//輪播圖
+// 	postBanner({
+// 		dataUrl : 'http://userspace1.macaoeasybuy.com/UserFairsConntroller/queryFairInfoPics.easy',
+// 		values : 'fairInfoPics'
+// 	});
+// 	mineOtherReq(); //帖主還有其他帖子
+// 	allLookReq(); //他們都在看其他帖子
+// 	clickEvent();//页面点击事件
+// 	selectPage();
+// }
+// easyBuy.global.afterDataJs = function(){
+// 	if(easyBuy.isLogin){
+// 		updateSeeLog(11); //查看用戶統計
+// 	}
+// 	postContent(); //帖子內容
+// 	isClickLove(9,9); //查看用戶是否點讚
+// 	//判斷登錄引入編輯框
+// 	loadEditor(function(){
+// 		$('#whatsapp-num').html($('#whatsapp-num')[0].num);
+// 		$('#wechat-num').html($('#wechat-num')[0].num);
+// 	});
+// 	reportPost(); //舉報
+// }
 easyBuy.social.isSocialPost = true;
 easyBuy.userSpaceGlobal.replyPostType = '7';
 easyBuy.userSpaceGlobal.replyVolunteersType = 'replyShiJi'; //回復貼子分類
