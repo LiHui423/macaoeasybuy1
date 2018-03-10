@@ -102,8 +102,9 @@ function tabDetailsSection(){
 }
 /*商品加入購物籃*/
 function goodAddCart(){
-	var offset = $(".topMenu_hover_shopcar").offset(); //结束的地方的元素
-	$(".addShopCart").click(function(event) { //是$(".addcar")这个元素点击促发的 开始动画的位置就是这个元素的位置为起点
+	var offset = $("#shopCart").offset(); //结束的地方的元素位置
+	console.log(offset);;
+	$(".addShopCart,.museumDetails_addShopCar").click(function(event) { //是$(".addcar")这个元素点击促发的 开始动画的位置就是这个元素的位置为起点
 		if($('.picSelected').length == '0'|| $('#goodChooseNumber').val() == "0"){
 			$('.noChooseSize').fadeIn('fast')
 		}else{

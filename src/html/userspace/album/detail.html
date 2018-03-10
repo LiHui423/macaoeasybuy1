@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<div id="swapper">
-			<header></header>
+			<header id="page-header"></header>
 			<div id="container" class="clearfloat">
 				<div id="left-menu"></div>
 				<div id="right-content">
@@ -226,9 +226,10 @@
         <script src="/src/js/userspace/common/whitemenu.js" async></script>
         <script src="/src/js/userspace/common/newspush.js" async></script>
         <script src="/src/js/common/header&search&footer/footer.js" async></script>
-        <script src="/src/js/common/header&search&footer/header.js" async></script>
+        <script src="/src/js/common/page-header.js" async></script>
         <script src="/src/js/common/components/pcollector.js"></script>
-        <script src="/src/js/userspace/album/albumdetail/albumdetail.js"></script>
+		<script src="/src/js/userspace/album/albumdetail/albumdetail.js"></script>
+		<!-- 專輯詳細頁專輯列表 -->
         <script id="album-template" type="text/html" data-type="template">
             <%if(albumList.length !=0){%>
                 <%for(var i=0;i<albumList.length;i++){%>

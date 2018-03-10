@@ -63,10 +63,13 @@ function FrameDomain(){
    * 当前登录的用户的信息
    *
    */
+  const oldCookie1 = document.cookie.match(/ENYSTRINETI_STRING=\S+/gim);
+  const oldCookie = oldCookie1 !== null ? oldCookie1[0].replace(';', '') : null;
   window.addEventListener('unload', () => {
     sessionStorage.setItem('loginUserInfo', JSON.stringify(window.easyBuy.easyUser));
     sessionStorage.setItem('pageUser', JSON.stringify(window.easyBuy.pageUser));
-    sessionStorage.setItem('pageParameter', JSON.stringify(window.easyBuy.pageParameter));
+	sessionStorage.setItem('pageParameter', JSON.stringify(window.easyBuy.pageParameter));
+	sessionStorage.setItem('loginCookie', oldCookie);
   });
   function recoverBackup(name) {
     const backup = sessionStorage.getItem(name);
@@ -128,9 +131,11 @@ function FrameDomain(){
     const _info = frameInnerObj.getCookie("ENYSTRINETI_STRING");
 		if(_info !== null){
 			//已登錄狀態
-      window.easyBuy.isLogin = true;
+	  window.easyBuy.isLogin = true;
+	  let oldCookie = recoverBackup('loginCookie') || '';
+	  oldCookie = oldCookie.replace('ENYSTRINETI_STRING=', '');
 	  const userInfo = recoverBackup('loginUserInfo');
-	  if (userInfo === null || userInfo.indexOf('id') === -1) {
+	  if (oldCookie !== _info || userInfo === null || userInfo.indexOf('id') === -1) {
         let url = "http://userManager.macaoeasybuy.com/UserInfoManagerGetController/LoginTopInfo.easy?easybuyCallback=?";
         url = frameInnerObj.addHref(url);
         $.ajaxSettings.async = false;
@@ -575,107 +580,191 @@ FrameDomain.prototype = {
 		}
 	}
 }
-//const getWay = new FrameDomain();
-// 設置cookie來自frameDomainJSON.js
-
-// setCookie('MEB_Route',window.location.href,new Date().getDay());
-// function setCookie(name, value, time){
-// 	var cookieArr = new Array();
-// 	//獲取原有cookie
-// 	var currentCookie = document.cookie.split(";");
-// 	if(value==='http://usermanager.macaoeasybuy.com/login.html'){
-		
-// 	}
-// 	var length = currentCookie.length;
-// 	$.each(currentCookie,function(k,y){
-// 		var cookieObj = {key0:'',key1:'',key2:'',key3:'',key4:''};
-// 		if(y.indexOf('MEB_Route') !== -1){ //說明有已經存儲的cookie路徑
-// 			var json = JSON.parse(unescape(y.split('=')[1]));
-// 			var arr = [];//用來存儲MEB_Route中的地址
-// 			arr.push(value);
-// 			for(var item in json){
-// 				arr.push(json[item]);
-// 				if(arr.length>5){
-// 					arr.pop();
-// 				}
-// 				cookieObj.key0 = arr[0];
-// 				cookieObj.key1 = arr[1];
-// 				cookieObj.key2 = arr[2];
-// 				cookieObj.key3 = arr[3];
-// 				cookieObj.key4 = arr[4];
-// 				if(value === 'http://usermanager.macaoeasybuy.com/login.html'){
-// 					cookieObj.key0 = arr[1];
-// 					cookieObj.key1 = arr[2];
-// 					cookieObj.key2 = arr[3];
-// 					cookieObj.key3 = arr[4];
-// 					cookieObj.key4 = arr[0];
-
-
-// 					document.cookie = name + '=' + escape(JSON.stringify(cookieObj)) + '; path=/';
-					
-// 				}else{
-// 					document.cookie = name + '=' + escape(JSON.stringify(cookieObj)) + '; Domain=.macaoeasybuy.com' + '; path=/';
-// 				}
-// 			}
-// 		}else{
-// 			length--;
-// 			if(length <= 0){
-// 				var cookieObj = {key0:'',key1:'',key2:'',key3:'',key4:''};
-// 				cookieObj.key0 = window.location.href;
-// 				document.cookie = name + '=' + escape(JSON.stringify(cookieObj)) + '; Domain=.macaoeasybuy.com' + '; path=/';
-// 			}
-// 		}
-// 	})
+// 完整已實現
+function SetCookie(obj){
+	this.name = obj.name;
+	this.value = obj.value;
+	this.time = obj.time;
+}
+// SetCookie.prototype = {
+	// 	// 設置cookie
+	// 	operate : function(){
+	// 		var cookieKey = 'MEB_Route';
+	// 		var cookieArr = [];
+	// 		//獲取原有的cookie
+	// 		var currentCookie = document.cookie.split(";");
+	// 		var length = currentCookie.length;
+	// 		var that = this;
+	// 		// 操作時間
+	// 		let strsec = that.getsec(that.time);
+	// 		let exp = new Date();
+	// 		exp.setTime(exp.getTime() + strsec * 1);
+	// 		currentCookie.forEach(Concrete);
+	// 		function Concrete(item1,index){
+	// 			var cookieObj = {key0:'',key1:'',key2:'',key3:'',key4:''};
+	// 				if(item1.indexOf(cookieKey) !== -1){ //說明有已經存儲的cookie路徑
+	// 					var json = JSON.parse(unescape(item1.split('=')[1]));
+	// 					var arr = [];//用來存儲MEB_Route中的地址
+	// 					arr.push(that.value);
+	// 					for(var item in json){
+	// 						arr.push(json[item]);
+	// 						if(arr.length>5){
+	// 							arr.pop();
+	// 						}
+	// 						cookieObj.key0 = arr[0];
+	// 						cookieObj.key1 = arr[1];
+	// 						cookieObj.key2 = arr[2];
+	// 						cookieObj.key3 = arr[3];
+	// 						cookieObj.key4 = arr[4];
+	// 						if(that.value === 'http://usermanager.macaoeasybuy.com/login.html'){
+	// 							break;
+	// 							that.delete(that.name);
+	// 							cookieObj.key0 = arr[1];
+	// 							cookieObj.key1 = arr[2];
+	// 							cookieObj.key2 = arr[3];
+	// 							cookieObj.key3 = arr[4];
+	// 							cookieObj.key4 = arr[0];
+	// 							document.cookie = that.name + '=' + escape(JSON.stringify(cookieObj)) + '; path=/; expires=' + exp.toGMTString();
+	// 						}else{
+	// 							document.cookie = that.name + '=' + escape(JSON.stringify(cookieObj)) + '; Domain=.macaoeasybuy.com' + '; path=/; expires=' + exp.toGMTString();
+	// 						}
+	// 					}
+	// 				}else{
+	// 					length--;
+	// 					if(length <= 0){
+	// 						var cookieObj = {key0:'',key1:'',key2:'',key3:'',key4:''};
+	// 						cookieObj.key0 = window.location.href;
+	// 						document.cookie = cookieKey + '=' + escape(JSON.stringify(cookieObj)) + '; Domain=.macaoeasybuy.com' + '; path=/; expires=' + exp.toGMTString();
+	// 					}
+	// 				}
+	// 		}
+	// 	},
+	// 	// 刪除cookie
+	// 	delete : function(cookieName){
+	// 		var cookies = document.cookie.split(";");//将所有cookie键值对通过分号分割为数组
+	//     	//循环遍历所有cookie键值对
+	//     	for (var i = 0; i < cookies.length; i++) {
+	//         	//比较每个cookie的名称，找到要删除的那个cookie键值对
+	// 			if (cookies[i].indexOf(cookieName) !== -1) {
+	// 				let exp = new Date();//获取客户端本地当前系统时间
+	// 				exp.setTime(exp.getTime() - 1);//将exp设置为客户端本地时间1分钟以前，将exp赋值给cookie作为过期时间后，就表示该cookie已经过期了, 那么浏览器就会将其立刻删除掉
+	// 				document.cookie = cookies[i] + ";expires=" + exp.toUTCString();//设置要删除的cookie的过期时间，即在该cookie的键值对后面再添加一个expires键值对，并将上面的exp赋给expires作为值(注意expires的值必须为UTC或者GMT时间，不能用本地时间），那么浏览器就会将该cookie立刻删除掉
+	// 				console.log('9999999');
+	// 				//break;//要删除的cookie已经在客户端被删除掉，跳出循环
+	// 			}
+	//     	}
+	// 	},
+	// 	// 操作時間
+	// 	getsec : function(str){
+	// 		var str1 = str.substring(1,str.length) * 1;
+	// 		var str2 = str.substring(0,1);
+	// 		if(str2 == 's'){
+	// 			return str1 * 1000;
+	// 		}else if(str == 'm'){
+	// 			return str1 * 60 * 1000;
+	// 		}else if(str2 == 'h'){
+	// 			return str1 * 60 * 60 * 1000;
+	// 		}else if(str2 == 'd'){
+	// 			return str1 * 24 * 60 * 60 * 1000;
+	// 		}
+	// 	}
 // }
 
-function SetCookie(){
-	let cookieArr = new Array();
-	//獲取原有的cookie
-	let currentCookie = document.cookie.split(";");
-	let length = currentCookie.length;
 
-	this.operate('MEB_Route',window.location.href,new Date().getDay());
-}
+
 SetCookie.prototype = {
-	operate : function(name, value, time){
-		$.each(currentCookie,function(k,y){
+	// 設置cookie
+	operate : function(){
+		var cookieKey = 'MEB_Route';
+		var cookieArr = [];
+		//獲取原有的cookie
+		var currentCookie = document.cookie.split(";");
+		var length = currentCookie.length;
+		var that = this;
+		// 操作時間
+		let strsec = that.getsec(that.time);
+		let exp = new Date();
+		exp.setTime(exp.getTime() + strsec * 1);
+		currentCookie.forEach(Concrete);
+		function Concrete(item1,index){
 			var cookieObj = {key0:'',key1:'',key2:'',key3:'',key4:''};
-			if(y.indexOf('MEB_Route') !== -1){ //說明有已經存儲的cookie路徑
-				var json = JSON.parse(unescape(y.split('=')[1]));
-				var arr = [];//用來存儲MEB_Route中的地址
-				arr.push(value);
-				for(var item in json){
-					arr.push(json[item]);
-					if(arr.length>5){
-						arr.pop();
-					}
-					cookieObj.key0 = arr[0];
-					cookieObj.key1 = arr[1];
-					cookieObj.key2 = arr[2];
-					cookieObj.key3 = arr[3];
-					cookieObj.key4 = arr[4];
-					if(value === 'http://usermanager.macaoeasybuy.com/login.html'){
-						cookieObj.key0 = arr[1];
-						cookieObj.key1 = arr[2];
-						cookieObj.key2 = arr[3];
-						cookieObj.key3 = arr[4];
-						cookieObj.key4 = arr[0];
-
-
-						document.cookie = name + '=' + escape(JSON.stringify(cookieObj)) + '; path=/';
-						
+				if(item1.indexOf(cookieKey) !== -1){ //說明有已經存儲的cookie路徑
+					if(that.value === 'http://usermanager.macaoeasybuy.com/login.html'){
+						that.delete(cookieKey);
 					}else{
-						document.cookie = name + '=' + escape(JSON.stringify(cookieObj)) + '; Domain=.macaoeasybuy.com' + '; path=/';
+						var json = JSON.parse(unescape(item1.split('=')[1]));
+						var arr = [];//用來存儲MEB_Route中的地址
+						arr.push(that.value);
+						for(var item in json){
+							arr.push(json[item]);
+							if(arr.length>5){
+								arr.pop();
+							}
+							cookieObj.key0 = arr[0];
+							cookieObj.key1 = arr[1];
+							cookieObj.key2 = arr[2];
+							cookieObj.key3 = arr[3];
+							cookieObj.key4 = arr[4];
+							document.cookie = that.name + '=' + escape(JSON.stringify(cookieObj)) + '; Domain=.macaoeasybuy.com' + '; path=/; expires=' + exp.toGMTString();
+							// if(that.value === 'http://usermanager.macaoeasybuy.com/login.html'){
+							// 	break;
+							// 	that.delete(that.name);
+							// 	cookieObj.key0 = arr[1];
+							// 	cookieObj.key1 = arr[2];
+							// 	cookieObj.key2 = arr[3];
+							// 	cookieObj.key3 = arr[4];
+							// 	cookieObj.key4 = arr[0];
+							// 	document.cookie = that.name + '=' + escape(JSON.stringify(cookieObj)) + '; path=/; expires=' + exp.toGMTString();
+							// }else{
+								
+							// }
+						}
+					}
+				}else{
+					length--;
+					if(length <= 0){
+						var cookieObj = {key0:'',key1:'',key2:'',key3:'',key4:''};
+						cookieObj.key0 = window.location.href;
+						document.cookie = cookieKey + '=' + escape(JSON.stringify(cookieObj)) + '; Domain=.macaoeasybuy.com' + '; path=/; expires=' + exp.toGMTString();
 					}
 				}
-			}else{
-				length--;
-				if(length <= 0){
-					var cookieObj = {key0:'',key1:'',key2:'',key3:'',key4:''};
-					cookieObj.key0 = window.location.href;
-					document.cookie = name + '=' + escape(JSON.stringify(cookieObj)) + '; Domain=.macaoeasybuy.com' + '; path=/';
-				}
+		}
+	},
+	// 刪除cookie
+	delete : function(cookieName){
+		var cookies = document.cookie.split(";");//将所有cookie键值对通过分号分割为数组
+    	//循环遍历所有cookie键值对
+    	for (var i = 0; i < cookies.length; i++) {
+        	//比较每个cookie的名称，找到要删除的那个cookie键值对
+			if (cookies[i].indexOf(cookieName) !== -1) {
+				let exp = new Date();//获取客户端本地当前系统时间
+				exp.setTime(exp.getTime() - 1);//将exp设置为客户端本地时间1分钟以前，将exp赋值给cookie作为过期时间后，就表示该cookie已经过期了, 那么浏览器就会将其立刻删除掉
+				document.cookie = cookies[i] + ";expires=" + exp.toUTCString();//设置要删除的cookie的过期时间，即在该cookie的键值对后面再添加一个expires键值对，并将上面的exp赋给expires作为值(注意expires的值必须为UTC或者GMT时间，不能用本地时间），那么浏览器就会将该cookie立刻删除掉
+				console.log('9999999');
+				//break;//要删除的cookie已经在客户端被删除掉，跳出循环
 			}
-		})
+    	}
+	},
+	// 操作時間
+	getsec : function(str){
+		var str1 = str.substring(1,str.length) * 1;
+		var str2 = str.substring(0,1);
+		if(str2 == 's'){
+			return str1 * 1000;
+		}else if(str == 'm'){
+			return str1 * 60 * 1000;
+		}else if(str2 == 'h'){
+			return str1 * 60 * 60 * 1000;
+		}else if(str2 == 'd'){
+			return str1 * 24 * 60 * 60 * 1000;
+		}
 	}
 }
+// 實例化
+var Instantiate = new SetCookie({
+	name : 'MEB_Route',
+	value : window.location.href,
+	time : new Date().getDate().toString()
+});
+
+Instantiate.operate();

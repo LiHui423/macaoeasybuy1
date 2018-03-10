@@ -55,7 +55,6 @@ function editorFunc(callBackAfterSend) {
 			var replyUserId = 0;
 		}
 		var resData = editor.getYezContent();
-		console.log(resData);
 		var res = resData.newres;//回復的文字內容
 		var atPos = resData.atPos;
 		var labelPos = resData.labelPos;
@@ -87,7 +86,6 @@ function editorFunc(callBackAfterSend) {
 				$('#replyBox_sendMess').css('cursor', 'wait');
 			},
 			success: function(data) {
-				console.log(data);
 				if(callBackAfterSend) callBackAfterSend();
 				//清空內容跟大錶情
 				editor.obj.html('');
@@ -124,9 +122,8 @@ function editorFunc(callBackAfterSend) {
 	function addComments(data) {
 		//評論成功，返回數據，添加進去頁面裡面
 		data.page = 1;
-		console.log(data);
 		var responseTemplate = 'response';
-		var html = template(responseTemplate, data.replyList);
+		var html = template('response', data.replyList);
 		$('#response-list').prepend(html);
 		if(data.replyList.integral != 0) {
 			$('#comment-success-tips .praise>div').eq(1).css('display', 'block');
@@ -409,7 +406,7 @@ function at() {
 		//發出請求
 		function requestSearch(str, type, page,btn) {
 			str = encodeURI(encodeURI(str));
-			var dataUrl = 'http://shopping1.macaoeasybuy.com/SolrUsersController/queryUserByName.easy?userId=' + userId + '&name=' + str + '&type=' + type + '&size=' + size + '&page=' + page + '&order=addtime&descOrAsc=desc&easybuyCallback=?';
+			var dataUrl = 'http://social1.macaoeasybuy.com/SolrUsersController/queryUserByName.easy?userId=' + userId + '&name=' + str + '&type=' + type + '&size=' + size + '&page=' + page + '&order=addtime&descOrAsc=desc&easybuyCallback=?';
 //			var dataUrl = 'http://userspace.macaoeasybuy.com/atUserController/queryUserByName.easy?userId=' + userId + '&name=' + str + '&type=' + type + '&size=' + size + '&page=' + page + '&order=addtime&descOrAsc=desc&easybuyCallback=?';
 			$.ajax({
 				url: dataUrl,
@@ -642,6 +639,7 @@ function label() {
 				if(btn[0].isComplete == true) return false;
 			},
 			success: function(data) {
+				console.log(data);
 				var newData = data.labelList;
 				data.page = page;
 				$.each(newData, function(k,y) {
@@ -750,7 +748,7 @@ function label() {
 			name = encodeURI(encodeURI(name));
 			$.ajax({
 //				url: ipUrl + '/chooseLabelController/queryLabelByName.easy?match=0&name=' + name + '&type=' + type + '&size=' + size + '&page=' + page + '&order=addtime&descOrAsc=desc&easybuyCallback=?',
-				url : 'http://shopping1.macaoeasybuy.com/SolrLabelsController/QueryLabelForUserSpace.easy?match=0&name=' + name + '&type=' + type + '&size=' + size + '&page=' + page + '&order=addtime&descOrAsc=desc&easybuyCallback=?',
+				url : 'http://social1.macaoeasybuy.com/SolrLabelsController/QueryLabelForUserSpace.easy?match=0&name=' + name + '&type=' + type + '&size=' + size + '&page=' + page + '&order=addtime&descOrAsc=desc&easybuyCallback=?',
 				type: "get",
 				async: true,
 				dataType: 'jsonp',
@@ -759,6 +757,7 @@ function label() {
 //					if($('#other-label-box')[0].isComplete) return false;
 				},
 				success: function(data) {
+					console.log(data);
 					btn[0].isClickSearch = false;
 					var newData = data.labelList;
 					data.page = page;

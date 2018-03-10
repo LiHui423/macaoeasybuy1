@@ -110,6 +110,7 @@ function getListdata(){
 			requestObj[type].isFirst = false;
 		},
 		success:function(data){
+			console.log(data);
 			data.order = order;
 			data.page = page;
 			var newData = data.fairList.fairList;

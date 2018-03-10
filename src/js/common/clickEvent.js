@@ -1,22 +1,25 @@
 ( () => {
     $("body").on('click',function(e){
         const $e = $(e.target);
-        // console.log($e);
+        console.log($e);
         // 判断是否是用户头像被点击
         if($e.attr('data-type') === 'userAvatar'){
+
             const spaceId = $e.parents('[data-id]').attr('data-id');
             console.log('被点击的用户头像的id为：'+spaceId);
-            //window.open("http://userspace.macaoeasybuy.com/?spaceid ="+spaceId);
+            window.open("http://userspace.macaoeasybuy.com/?spaceid="+spaceId);
             // 判斷是否立即購買
         }else if($e.attr('data-type') === 'buyNow'){
             const goodId = $e.parents('[data-id]').attr('data-id');
             console.log('被点击的商品的id为：'+goodId);
             window.open('http://shopping.macaoeasybuy.com/goodDetails/limitedDetail.html?id=' + goodId);
-            // 判斷是否點擊進店逛逛
-        }else if($e.html().indexOf('進店逛逛') !==-1 ){
-            window.open('http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_index.html?shopId=' + shopId);
-            // 判斷是否為查看商品
-        }else if($e.parents().hasClass('begin_hover_seeGoodDetails') || $e.parents().hasClass('begin_status_btn')){
+        }// 判斷是否為進店逛逛
+        else if($e.html() === '進店逛逛'){
+            let shopId = $('.BusinessmenName a').attr('href').split('=')[1];
+            jump('http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_index.html?shopId=',shopId);
+        }
+        // 判斷是否為換一換按鈕
+        else if($e.parents().hasClass('begin_hover_seeGoodDetails') || $e.parents().hasClass('begin_status_btn')){
             if($e.html().indexOf('換一換') === -1){
                 const id = $e.parents('.groupBuy_goodsEach_begin').data('id');
                 window.open('http://shopping.macaoeasybuy.com/goodDetails/groupDetail.html?id=' + id +'');
@@ -75,10 +78,6 @@
             const productId=$e.parents('[data-id]').attr('data-id');
             console.log(productId);
             jump('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id=',productId);
-        }//限量搶購商品詳情頁跳轉到商店詳情頁
-        else if(location.href.indexOf('limitedDetail.html') !== -1 && $e.attr('id') === 'underline'){
-            var minishopId=$e.attr('data-id');
-            jump('http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_index.html?shopId=',minishopId);
         }//搜索結果（標籤）頁跳轉到標籤詳細頁
         else if(location.href.indexOf('search_label.html') !== -1){
             if($e.attr('id') === 'underline' || $e.hasClass('look-btn')){
@@ -121,6 +120,49 @@
                 function jump(url,para){
                     window.open(url+para);
                 }
+            }
+        }// 用戶空間-心動，跳轉到商品詳細頁
+        else if(location.href.indexOf('love/index.html') !== -1){
+            if($e.hasClass('shadow')){
+                let type = $($e.parents('.userlove_mainEach')).attr('id').split('_')[0];
+                if(type.indexOf('Buy') !== -1){
+                    type = type.split('Buy')[0];
+                }
+                let id = $($e.parents('.userLoveItem')).attr('class').split('Item')[2];
+
+                if(type === 'fair'){
+                    window.open('http://userspace.macaoeasybuy.com/fair/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + id);
+                }else if(type === 'other'){
+                    window.open('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id='+id);
+                }else{
+                    window.open('http://shopping.macaoeasybuy.com/goodDetails/'+type+'Detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + id);
+                }
+            }
+        }// 用戶空間-攢好，跳轉到相關帖子詳細頁
+        else if(location.href.indexOf('praise') !== -1){
+            if($e.hasClass('shadow-box') || $e.hasClass('box-shadow')){
+                let type = $($e.parents('.pillar-all')).attr('id').split('_')[1].split('Item')[0];
+                if(type === 'liveshot'){
+                    type = 'buy';
+                }else if(type === 'secondHand'){
+                    type = 'used';
+                }
+                let id = $($e.parents('.pillar-all')).attr('id').split('_')[0];
+                window.open('http://userspace.macaoeasybuy.com/'+type+'/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + id);
+            }
+        }// 用戶空間-生活圈，跳轉到生活圈詳細頁
+        else if(location.href.indexOf('life/index.html') !== -1){
+            if($e.hasClass('shadow-box')){
+                let postId = $e.parents('.pillar-all').attr('id').replace(/[^0-9]/ig,"");
+                console.log(postId);
+                console.log(postId.length);
+                jump('http://userspace.macaoeasybuy.com/life/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&postId=' , postId);
+            }
+        }//用戶空間-專輯，跳轉到專輯詳情頁
+        else if(location.href.indexOf('album/index.html') !== -1){
+            if($e.hasClass('shadow-box')){
+                let albumId = $e.parents('.album-list').attr('id').replace(/\D/gim, '');
+                jump('http://userspace.macaoeasybuy.com/album/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&albumId=',albumId);
             }
         }
     })

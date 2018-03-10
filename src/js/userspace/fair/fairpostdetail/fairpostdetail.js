@@ -1,8 +1,9 @@
-var postId = easyBuy.global.pageParameter.postid || 494;
+var postId = easyBuy.global.pageParameter.id || 494;
 easyBuy.global.startJs = function(){
 	easyBuy.userSpaceGlobal.replyPostType = '7';
 	easyBuy.userSpaceGlobal.replyVolunteersType = 'replyShiJi'; //回復貼子分類
 	userStatus(); //帖子狀態
+	// loadEditor();
 }
 //判斷是自己看還是他人看
 function userStatus(){
@@ -29,7 +30,7 @@ function userStatus(){
 		$('#wechat-num').html($('#wechat-num')[0].num);
 	}
 	//編輯器
-	$('#editor-box').load('/page/userspace/common/postDetailEditor.html',function(){
+	$('#editor-box').load('/public/postDetailEditor.html',function(){
 		editorFunc(afterSendFunc);
 	});
 	postContent();//帖子內容
@@ -57,10 +58,10 @@ function selectPage(){
 			page.eq(k).siblings('.statistics-page-item').removeClass('select').end().addClass('select');
 			if(k==0){
 				boxTop({
-					box:$('#editor-box'),
-					boxOuter:$('.userspace-content-inner'),
-					referBox:$('.statistics'),
-					fadeTime:150,
+					box:$('#editor-box'),// 編輯框
+					boxOuter:$('.userspace-content-inner'),// 編輯框的父元素
+					referBox:$('.statistics'),// 編輯框的下一個兄弟元素
+					fadeTime:150,// 淡入淡出時間
 				});
 			}else{
 				restoreEditorBox($('#editor-box'));
@@ -127,6 +128,7 @@ function handPost(){
 	var handPostTemplate = easyBuy.global.template['handPost'];
 	//上一篇
 	$.getJSON('http://userspace1.macaoeasybuy.com/UserFairsConntroller/queryPreFair.easy?userId='+userId+'&seeUserId='+seeUserId+'&id='+postId+'&easybuyCallback=?',function(data){
+		console.log(data);
 		if(data.preFair){
 			if(data.preFair.inventory == '0'){
 				data.preFair.inventory = '沒有現貨，可提供代購哦！';

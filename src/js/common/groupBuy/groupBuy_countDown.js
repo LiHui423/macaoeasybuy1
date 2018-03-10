@@ -142,25 +142,26 @@ function calcMuseumBegin() {
 				_day = _hour * 24;
 
 			// 計算時間
-			var days = Math.floor(difference / _day),
-				hours = Math.floor((difference % _day) / _hour),
-				minutes = Math.floor((difference % _hour) / _minute),
-				seconds = Math.floor((difference % _minute) / _second);
-
-			// 強制顯示兩位
-			days = (String(days).length >= 2) ? days : '0' + days;
-			hours = (String(hours).length >= 2) ? hours : '0' + hours;
-			minutes = (String(minutes).length >= 2) ? minutes : '0' + minutes;
-			seconds = (String(seconds).length >= 2) ? seconds : '0' + seconds;
-			// 賦值時間
-			$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_days').text(days);
-			$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_hours').text(hours);
-			$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_mins').text(minutes);
-			$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_seconds').text(seconds);
-		}else{
-			// 賦值
-			var html = '<span>已經開賣啦</span>'
-			$(this).find(".museum_willSellBoxEach_reciprocal").html(html);
+			var days = Math.floor(difference / _day) <= 0 ? 0 : Math.floor(difference / _day),
+				hours = Math.floor((difference % _day) / _hour) <= 0 ? 0 : Math.floor((difference % _day) / _hour),
+				minutes = Math.floor((difference % _hour) / _minute) <= 0 ? 0 : Math.floor((difference % _hour) / _minute),
+				seconds = Math.floor((difference % _minute) / _second) <= 0 ? 0 : Math.floor((difference % _minute) / _second);
+			if(days === 0 && hours === 0 && minutes === 0 && seconds === 0){
+				// 賦值
+				var html = '<span>已經開賣啦</span>'
+				$(this).find(".museum_willSellBoxEach_reciprocal").html(html);
+			}else{
+				// 強制顯示兩位
+				days = (String(days).length >= 2) ? days : '0' + days;
+				hours = (String(hours).length >= 2) ? hours : '0' + hours;
+				minutes = (String(minutes).length >= 2) ? minutes : '0' + minutes;
+				seconds = (String(seconds).length >= 2) ? seconds : '0' + seconds;
+				// 賦值時間
+				$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_days').text(days);
+				$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_hours').text(hours);
+				$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_mins').text(minutes);
+				$(this).find(".museum_willSellBoxEach_reciprocal").find('.willSellBoxEach_seconds').text(seconds);
+			}
 		}
 	});
 }

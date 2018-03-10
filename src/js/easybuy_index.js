@@ -1,10 +1,9 @@
 $(function(){
-	var day = new Date().getDay();
-	setCookie('MEB_Route',window.location.href,day);
 	leftNav();
-	indexBanner();
+	
 	indexScrollFunc();
 	indexChangeFunc();
+	indexBanner();
 	
 })
 // easyBuy.global.afterDataJs = function(){
@@ -182,7 +181,7 @@ function indexScrollFunc(){
 			if($(this).parents('.index_headBox_right_showshop_bottom').siblings(".index_headBox_right_showshop_middle").find('ul').is(":animated")){
 				return;
 			}else{
-				l = parseInt($(this).parents('.index_headBox_right_showshop_bottom').siblings(".index_headBox_right_showshop_middle").find('ul').css("left")) + 798;
+				var l = parseInt($(this).parents('.index_headBox_right_showshop_bottom').siblings(".index_headBox_right_showshop_middle").find('ul').css("left")) + 798;
 				$(this).parents('.index_headBox_right_showshop_bottom').siblings(".index_headBox_right_showshop_middle").find('ul').animate({
 					"left":l
 				},800)
@@ -198,7 +197,7 @@ function indexScrollFunc(){
 			if($(this).parents('.index_headBox_right_showshop_bottom').siblings(".index_headBox_right_showshop_middle").find('ul').is(":animated")){
 				return;
 			}else{
-				l = parseInt($(this).parents('.index_headBox_right_showshop_bottom').siblings(".index_headBox_right_showshop_middle").find('ul').css("left")) - 798;
+				var l = parseInt($(this).parents('.index_headBox_right_showshop_bottom').siblings(".index_headBox_right_showshop_middle").find('ul').css("left")) - 798;
 				$(this).parents('.index_headBox_right_showshop_bottom').siblings(".index_headBox_right_showshop_middle").find('ul').animate({
 					"left":l
 				},800)

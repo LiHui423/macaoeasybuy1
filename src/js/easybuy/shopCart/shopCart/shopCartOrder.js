@@ -168,14 +168,16 @@ function chooseAddress(){
 /*添加地址*/
 function AddAddress(){
 	$(".addressPop_main_old_change_btn").off('click').on('click',function(){
-		var Phone=$("#new_change_num").val();
-		var receiptName=$("#receiptName").val();
-		var receiptAddress=$("#receiptAddress").val();
-		var receiptArea=$(".addressPop_main_new").find(".change_local_curr").html();
-		var PhoneAuthCode=$("#PhoneAuthCode").val();
+		var Phone = $("#new_change_num").val();
+		// var receiptName=$("#receiptName").val();
+		// var receiptAddress=$("#receiptAddress").val();
+		// var receiptArea=$(".addressPop_main_new").find(".change_local_curr").html();
+		var PhoneAuthCode = $("#PhoneAuthCode").val();
 
+		var receiptName = encodeURIComponent($("#receiptName").val());
+		var receiptAddress = encodeURIComponent($("#receiptAddress").val());
+		var receiptArea = encodeURIComponent($(".addressPop_main_new").find(".change_local_curr").html());
 		var data={"phone":Phone,"receiptName":receiptName,"receiptAddress":receiptAddress,"receiptArea":receiptArea}
-		
 		SaveUserAddress(data,PhoneAuthCode);
 	});
 }

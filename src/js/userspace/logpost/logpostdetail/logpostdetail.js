@@ -1,4 +1,5 @@
-var postId = easyBuy.global.pageParameter.postid || 2141;
+var postId = easyBuy.global.pageParameter.id || 2141;
+var seeUserId = easyBuy.global.pageParameter.spaceid;
 easyBuy.global.startJs = function(){
 	easyBuy.userSpaceGlobal.replyPostType = '3';
 	easyBuy.userSpaceGlobal.replyVolunteersType = 'replylog'; //回復貼子分類
@@ -25,14 +26,14 @@ function userStatus(){
 		reportPost(); //舉報帖子
 	}
 	//編輯器
-	$('#editor-box').load('/page/userspace/common/postDetailEditor.html',function(){
+	$('#editor-box').load('/public/postDetailEditor.html',function(){
 		editorFunc();
 	});
 	//輪播圖
 	postContent();//帖子內容
 	//輪播圖
 	postBanner({
-		dataUrl : 'http://userspace.macaoeasybuy.com/UserDiaryConntroller/queryReleasePics.easy',
+		dataUrl : 'http://userspace1.macaoeasybuy.com/UserDiaryConntroller/queryReleasePics.easy',
 		values : 'releaseInfoPics'
 	});
 	queryTopicCount(3,'release');//评论查看赞好数统计
@@ -82,7 +83,7 @@ function selectPage(){
 //帖子內容
 function postContent(){
 	$.ajax({
-		url:'http://userspace.macaoeasybuy.com/UserDiaryConntroller/queryUserReleaseInfo.easy?userId='+userId+'&seeUserId='+seeUserId+'&id='+postId+'&easybuyCallback=?',
+		url:'http://userspace1.macaoeasybuy.com/UserDiaryConntroller/queryUserReleaseInfo.easy?userId='+userId+'&seeUserId='+seeUserId+'&id='+postId+'&easybuyCallback=?',
 		type:"get",
 		async:true,
 		dataType:'jsonp',
@@ -121,7 +122,7 @@ function postContent(){
 function handPost(){
 	var handPostTemplate = easyBuy.global.template['handPost'];
 	//上一篇
-	$.getJSON('http://userspace.macaoeasybuy.com/UserDiaryConntroller/queryPreRelease.easy?userId='+userId+'&seeUserId='+seeUserId+'&id='+postId+'&easybuyCallback=?',function(data){
+	$.getJSON('http://userspace1.macaoeasybuy.com/UserDiaryConntroller/queryPreRelease.easy?userId='+userId+'&seeUserId='+seeUserId+'&id='+postId+'&easybuyCallback=?',function(data){
 		if(data.preRelease){
 			var html = template.render(handPostTemplate,data.preRelease);
 			$('.other-post-box.first').html(html);
@@ -141,7 +142,7 @@ function handPost(){
 		}
 	});
 	//下一篇
-	$.getJSON('http://userspace.macaoeasybuy.com/UserDiaryConntroller/queryLastRelease.easy?userId='+userId+'&seeUserId='+seeUserId+'&id='+postId+'&easybuyCallback=?',function(data){
+	$.getJSON('http://userspace1.macaoeasybuy.com/UserDiaryConntroller/queryLastRelease.easy?userId='+userId+'&seeUserId='+seeUserId+'&id='+postId+'&easybuyCallback=?',function(data){
 		if(data.lastRelease){
 			var html = template.render(handPostTemplate,data.lastRelease);
 			$('.other-post-box.second').html(html);
@@ -172,7 +173,7 @@ function changePostStatus(isSelf,postStateNum){
 	if(isSelf == 1) postState('on');
 	function innerChange(state){
 		//改狀態
-		var dataUrl = 'http://userspace.macaoeasybuy.com/UserDiaryConntroller/changeStatus.easy?id='+postId+'&state='+state+'&easybuyCallback=?';
+		var dataUrl = 'http://userspace1.macaoeasybuy.com/UserDiaryConntroller/changeStatus.easy?id='+postId+'&state='+state+'&easybuyCallback=?';
 		$.ajax({
 			url:dataUrl,
 			type:"get",

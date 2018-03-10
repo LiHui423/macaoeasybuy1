@@ -51,9 +51,9 @@ function sentLoveStatus(){
 
 /*加入購物籃的請求*/
 function sentAddCartStatus(){
-	var id = getId()
-	var iCount = $('#goodChooseNumber').val();
-	var $sizeEach = $('.selected')
+	var id = getId();//商品id
+	var iCount = $('#goodChooseNumber').val();//數量
+	var $sizeEach = $('.selected')//規格
 	var Standard = '';
 	if($sizeEach.length == "3"){
 		$.each($sizeEach,function(k){
@@ -70,14 +70,31 @@ function sentAddCartStatus(){
 	}else if($sizeEach.length == "1"){
 		Standard = $sizeEach.text() + "||"
 	}
-	Standard = encodeURI(encodeURI(Standard));
 	console.log(Standard);
-	$.getJSON("http://shopping1.macaoeasybuy.com/goodsdetailController/insertIntoShoppingCart/"+ id +"/"+ Standard +"/"+ iCount +".easy?easybuyCallback=?",function(json){
-		
-		if(json.state == "1"){
+	Standard = encodeURIComponent(encodeURIComponent(Standard));
+	var url = 'http://shopping1.macaoeasybuy.com/goodsdetailController/insertIntoShoppingCart/'+id+'/'+Standard+'/'+iCount+'.easy?easybuyCallback=?'
+	$.getJSON(url,function(json){
+		if(json.state >= 1){
 			setTimeout(function(){
-				$('.addShopCart_success').fadeIn('fast')
+				$('.addShopCart_success').fadeIn('fast');
+				var a = $('.right').find('[data-count]');
+				console.log(a);
+				if($(a).length === 2){
+					var count = parseInt($($(a)[1]).attr('data-count'));
+					count += parseInt(iCount);
+					$($(a)[1]).attr('data-count',count);
+				}else if($(a).length === 1){
+					var count = parseInt($($(a)[0]).attr('data-count'));
+					count += parseInt(iCount);
+					$($(a)[0]).attr('data-count',count);
+				}
 			},500)
+		}else{
+			var p = $('.cancelPop .cancelThumbsPop_right').find('p');
+			console.log($(p));
+			$($(p)[0]).html('加入購物車失敗');
+			$($(p)[1]).html('請再次嘗試');
+			$('.noChooseSize').fadeIn('fast')
 		}
 	});
 }

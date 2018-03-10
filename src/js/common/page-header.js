@@ -87,7 +87,7 @@
           login ? ''
           : `<a href="${link}" id="login">登入</a><a :href="${link}" id="register">註冊</a>`
         }
-        <a href="http://www.macaoeasybuy.com/shopCartController/ShoppingCart.easy" data-count="">購物籃</a>
+        <a href="http://www.macaoeasybuy.com/shopCartController/ShoppingCart.easy" data-count="0" id="shopCart">購物籃</a>
         ${
           login ?
           `<a href="#" data-count="">紅包</a>
@@ -133,6 +133,17 @@
         headerElements.insert();
       }
     }, 50);
+  };
+  // 購物籃商品數量查詢
+  queryShopCartCount();
+  function queryShopCartCount(){
+    if(easyBuy.easyUser.id !== undefined){
+      var dataUrl = '//shopping1.macaoeasybuy.com/shopCartController/queryNoLoginShopCartInfo/0.easy?easybuyCallback=?';
+      $.getJSON(dataUrl,function(data){
+        console.log(data.length);
+        $('#shopCart').attr('data-count',data.length);
+      });
+    }
   }
   // 鼠標懸浮導航欄事件
   $('.shopping').mouseover(function(){

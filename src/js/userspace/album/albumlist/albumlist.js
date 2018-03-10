@@ -27,7 +27,7 @@ void function () {
     }
   };
   let userID = null;
-  const SID = easyBuy.global.pageParameter.spaceId;
+  const SID = easyBuy.global.pageParameter.spaceid;
   const clock = setInterval(() => {
     if (easyBuy.easyUser.id !== undefined) {
       userID = easyBuy.easyUser.id;
@@ -36,15 +36,15 @@ void function () {
     }
   }, 100);
 
-  function clickEvent() {
-    const $c = $('.sort-box');
-    $c.on('click', '.album-list', function () {
-      const $e = $(this);
-      const albumID = $e.attr('id').replace(/\D/gim, '');
-      window.location.href = `http://userspace.macaoeasybuy.com/album/detail.html?spaceId=${SID}&albumId=${albumID}`;
-    });
-  }
-  clickEvent();
+  // function clickEvent() {
+  //   const $c = $('.sort-box');
+  //   $c.on('click', '.album-list', function () {
+  //     const $e = $(this);
+  //     const albumID = $e.attr('id').replace(/\D/gim, '');
+  //     window.location.href = `http://userspace.macaoeasybuy.com/album/detail.html?spaceId=${SID}&albumId=${albumID}`;
+  //   });
+  // }
+  // clickEvent();
 
   //判斷是自己看還是他人看
   function userStatus() {

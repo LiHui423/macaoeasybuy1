@@ -50,9 +50,6 @@ function GuigebtnClick(guigeRules){
 		var rule = ',' + (Rules[$(this).attr('title')] || []).join() + ',';
 		
 		var spguigeId=$(this).closest('ul').attr('id');
-
-		console.log(rule);
-		console.log(spguigeId);
 		
 		if($(this).hasClass("selected"))
 		{   

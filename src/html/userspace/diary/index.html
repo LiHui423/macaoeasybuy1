@@ -25,7 +25,7 @@
 	</head>
 	<body>
 		<div id="swapper">
-			<header></header>
+			<header id="page-header"></header>
 			<div id="container" class="clearfloat">
 				<div id="left-menu"></div>
 				<div id="right-content">
@@ -81,13 +81,14 @@
 			</div>
 		</div>
 		<script src="/src/js/plug/yez_js_Reset.js"></script>
-		<script src="/src/js/common/vendor/template-native.js"></script>
+		<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+		<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
 		<script src="/src/js/userspace/common/userinfo.js" async></script>
 		<script src="/src/js/userspace/common/leftmenu.js" async></script>
 		<script src="/src/js/userspace/common/whitemenu.js" async></script>
 		<script src="/src/js/userspace/common/newspush.js" async></script>
 		<script src="/src/js/common/header&search&footer/footer.js" async></script>
-		<script src="/src/js/common/header&search&footer/header.js"></script>
+		<script src="/src/js/common/page-header.js"></script>
 		<script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 		<script src="/src/js/userspace/logpost/logpostlist/logpostlist.js"></script>
 		<!--數據模板-->
@@ -98,7 +99,7 @@
 							<div class="pillar">
 								<div class="page-main">
 									<%if(userReleaseList.releaseList[i].pictureurl != undefined){%>
-										<a href=""><img src="<%=osURL%><%=userReleaseList.releaseList[i].pictureurl%>" class="page-main-head-img"></a>
+										<a href=""><img src="//wap.macaoeasybuy.com<%=userReleaseList.releaseList[i].pictureurl%>" class="page-main-head-img"></a>
 									<%}%>
 									<div class="post-main-text">
 										<div class="post-title"><%=userReleaseList.releaseList[i].titlename%></div>
@@ -107,13 +108,13 @@
 								</div>
 								<div class="laster">
 									<ul class="laster-num clearfloat">
-										<li><%=formatNum(userReleaseList.releaseList[i].seeNums)%></li>
-										<li><%=formatNum(userReleaseList.releaseList[i].loveNums)%></li>
-										<li><%=formatNum(userReleaseList.releaseList[i].balckNum)%></li>
+										<li><%=userReleaseList.releaseList[i].seeNums%></li>
+										<li><%=userReleaseList.releaseList[i].loveNums%></li>
+										<li><%=userReleaseList.releaseList[i].balckNum%></li>
 									</ul>
 									<div class="laster-look clearfloat">
 										<%if(userReleaseList.isSelf == 0){%>
-											<div class="laster-head"><img src="<%=osURL%><%=userReleaseList.seeUser.pic%>" alt=""></div>
+											<div class="laster-head"><img src="//wap.macaoeasybuy.com<%=userReleaseList.seeUser.pic%>" alt=""></div>
 										<%}%>
 										<div class="laster-text">
 											<%if(userReleaseList.isSelf == 0){%>

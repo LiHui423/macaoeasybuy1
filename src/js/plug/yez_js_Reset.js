@@ -655,6 +655,9 @@
     };
     //從數組裡面刪除指定內容的對象
     easyGlobal.deleteArrObj = function(arr,key,val){
+        console.log(arr);
+        console.log(key);
+        console.log(val);
         var delInx = null;
         for(var i=0;i<arr.length;i++){
             if(arr[i][key] == val){

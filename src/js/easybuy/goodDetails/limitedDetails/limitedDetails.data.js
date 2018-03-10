@@ -62,7 +62,3 @@ function otherGoodShow(){
 		$(".ordinarySeeOther ul").html(html);
 	});
 }
-// 頁面點擊事件
-function clickEvent(){
-	window.open('http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_index.html?shopId='+shopId); 
-}

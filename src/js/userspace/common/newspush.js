@@ -1,3 +1,3 @@
 (function(){
-	$('#news-push').load('/page/userspace/common/newspush.html');
+	$('#news-push').load('/public/newspush.html');
 })();

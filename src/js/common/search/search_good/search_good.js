@@ -300,7 +300,7 @@ function resultNum(){
 			backFn: function(p) {
 				// scrollListTop();
 				window.scrollTo(0,0);
-				choosePage(p-1)
+				choosePage(p-1,keyword);
 			}
 		});
 	}

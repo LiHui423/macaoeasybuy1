@@ -1,3 +1,7 @@
+$(function () {
+	afterDataJs();
+	beforeDataJs();
+});
 function beforeDataJs(){
 	otherGoodShow();
 }
@@ -11,7 +15,7 @@ function afterDataJs(){
 }
 
 function shopCartSecondNav(){
-	var dataUrl = 'http://shopping.macaoeasybuy.com/shopCartController/QueryNoLoginShopCartCount.easy';
+	var dataUrl = '//shopping1.macaoeasybuy.com/shopCartController/QueryNoLoginShopCartCount.easy';
 	var box = $('#shopCart_tabBox_box li');
 	$.getJSON(dataUrl,function(data){
 		var data = data.list[0];		
@@ -30,9 +34,9 @@ function countOtderTopicInfoNoLogin(){
 
 /*全部商品*/
 function goodDetails(){
-	$.get("http://shopping.macaoeasybuy.com/shopCartController/queryNoLoginShopCartInfo/0.easy",function(json){
+	$.getJSON("//shopping1.macaoeasybuy.com/shopCartController/queryNoLoginShopCartInfo/0.easy?easybuyCallback=?",function(json){
         var jsonData={
-        		list:json
+        		list:json.list
         }
 		var shopCarttabMainallhtml = template("shopCarttabMainall", jsonData);
 		$(".shopCart_tabMain_all").html(shopCarttabMainallhtml);
@@ -43,9 +47,9 @@ function goodDetails(){
 
 /*降價商品*/
 function goodDiscountDetails(){
-	$.get("http://shopping.macaoeasybuy.com/shopCartController/queryNoLoginShopCartInfo/1.easy",function(json){
+	$.getJSON("//shopping1.macaoeasybuy.com/shopCartController/queryNoLoginShopCartInfo/1.easy?easybuyCallback=?",function(json){
         var jsonData={
-        	list:json
+        	list:json.list
         }
 		var shopCarttabMainallhtml = template("shopCarttabMainall", jsonData);
 		$(".shopCart_tabMain_discount").html(shopCarttabMainallhtml);
@@ -56,10 +60,10 @@ function goodDiscountDetails(){
 
 /*即將售罄*/
 function goodSellOutDetails(){
-	$.get("http://shopping.macaoeasybuy.com/shopCartController/queryNoLoginShopCartInfo/2.easy",function(json){
+	$.getJSON("//shopping1.macaoeasybuy.com/shopCartController/queryNoLoginShopCartInfo/2.easy?easybuyCallback=?",function(json){
         var jsonData={
-        		list:json
-        }
+        		list:json.list
+		}
 		var shopCarttabMainallhtml = template("shopCarttabMainall", jsonData);
 		$(".shopCart_tabMain_sellOut").html(shopCarttabMainallhtml);
 		
@@ -70,13 +74,14 @@ function goodSellOutDetails(){
 
 /*下架商品*/
 function goodOffSellDetails(){
-	$.get("http://shopping.macaoeasybuy.com/shopCartController/queryNoLoginShopCartInfo/3.easy",function(json){
+	$.getJSON("//shopping1.macaoeasybuy.com/shopCartController/queryNoLoginShopCartInfo/3.easy?easybuyCallback=?",function(json){
         var jsonData={
-        		list:json
-        }
-		var shopCarttabMainallhtml = template("shopCarttabMainoffSell", jsonData);
-		$(".shopCart_tabMain_offSell").html(shopCarttabMainallhtml);
-		
+        		list:json.list
+		}
+		if(jsonData.list !== null){
+			var shopCarttabMainallhtml = template("shopCarttabMainoffSell", jsonData);
+			$(".shopCart_tabMain_offSell").html(shopCarttabMainallhtml);
+		}
 		allEvent();
 	});
 }
@@ -84,11 +89,23 @@ function goodOffSellDetails(){
 
 /*刪除購物籃商品*/
 function DeleteShopCartGoods(idlist){
+	function getShopCartCookie(name){
+		var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+		if(arr=document.cookie.match(reg)){
+			var ShopCartCookie=decodeURIComponent(arr[2]);
+			console.log(JSON.parse(ShopCartCookie));
+			return JSON.parse(ShopCartCookie);
+		}else{
+			return 0;
+		}
+	}
 	
 	var idInfoArr=idlist.split(",");
 	
-	var ShopCartCookie=getCookie("ShopCartCookie");
-	var ShopCartCookieJSON=new Function('return ('+ShopCartCookie+')')();
+	var ShopCartCookie=getShopCartCookie("ShopCartCookie");
+
+	// var ShopCartCookieJSON=new Function('return ('+ShopCartCookie+')')();
+	var ShopCartCookieJSON=JSON.stringify(ShopCartCookie);
 	var ShopCartCookieJSONData=JSON.parse(ShopCartCookieJSON);
 	
 	for(var j=0;j<idInfoArr.length;j++){
@@ -106,11 +123,10 @@ function DeleteShopCartGoods(idlist){
 		}
 	}
 	
-	clearCookie("ShopCartCookie");
-	
-	if(ShopCartCookieJSONData.length>0){
-		var ShopCartCookieJSONDataJson=JSON.stringify(JSON.stringify(ShopCartCookieJSONData));
-		setCookie("ShopCartCookie", ShopCartCookieJSONDataJson, 5);
+	// clearCookie("ShopCartCookie");
+	if(ShopCartCookieJSONData.length >= 0){ 
+		var ShopCartCookieJSONDataJson=JSON.stringify(ShopCartCookieJSONData);
+		setCookie("ShopCartCookie", encodeURIComponent(ShopCartCookieJSONDataJson), 5);
 	}
 	
 	

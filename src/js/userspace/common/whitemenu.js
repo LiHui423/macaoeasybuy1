@@ -1,9 +1,14 @@
 void function () {
   let userID = null;
-  const SID = easyBuy.global.pageParameter.spaceId;
+  const SID = easyBuy.global.pageParameter.spaceid;
   function userSpaceWhiteMenu(){
     $('#white-menu').load('/public/whitemenu.html', function () {
       const $this = $(this);
+      var aArray = $this.find('a');
+      $.each(aArray,function(k,y){
+       var newHref = $(y).attr('href') + '?spaceid=' + easyBuy.global.pageParameter.spaceid;
+       $(aArray[k]).attr('href',newHref);
+      })
       const whiteNavName = easyBuy.userSpaceGlobal.whiteNavName;
       whiteNavName !== null && $(`#white-menu li[data-name="${whiteNavName}"]`).addClass('select');
       const url = `http://userspace1.macaoeasybuy.com/userSpaceIndexController/userSpaceInfoCount.easy?userId=${userID}&seeUserId=${SID}&easybuyCallback=?`;

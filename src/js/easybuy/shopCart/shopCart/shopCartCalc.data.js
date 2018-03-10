@@ -32,18 +32,12 @@ function shopCartSecondNav(){
 
 /*全部商品*/
 function goodDetails(){
-	$.getJSON("//shopping1.macaoeasybuy.com/shopCartController/queryShopCartInfo/100/0/0.easy?easybuyCallback=?",function(json){
-		console.log(json);
-		console.log(json.list);
-
-
-
-
-		var jsonData={
-        		list:json
-		}
-		console.log(jsonData);
-		var shopCarttabMainallhtml = template("shopCarttabMainall", json);
+	var url="//shopping1.macaoeasybuy.com/shopCartController/queryShopCartInfo/100/0/0.easy?easybuyCallback=?";//
+	//url=fr.addHref(url);
+	$.getJSON(url, function (result) {
+		var jsonList={list:result.list};
+		console.log(jsonList);
+		var shopCarttabMainallhtml = template("shopCarttabMainall", jsonList);
 		$(".shopCart_tabMain_all").html(shopCarttabMainallhtml);
 		allEvent();
 	});
@@ -53,7 +47,7 @@ function goodDetails(){
 function goodDiscountDetails(){
 	$.getJSON("//shopping1.macaoeasybuy.com/shopCartController/queryShopCartInfo/100/0/1.easy",function(json){
         var jsonData={
-        		list:json
+        		list:json.list
 		}
 		var shopCarttabMainallhtml = template("shopCarttabMainall", jsonData);
 		$(".shopCart_tabMain_discount").html(shopCarttabMainallhtml);
@@ -65,7 +59,7 @@ function goodDiscountDetails(){
 function goodSellOutDetails(){
 	$.getJSON("//shopping1.macaoeasybuy.com/shopCartController/queryShopCartInfo/100/0/2.easy",function(json){
         var jsonData={
-        		list:json
+        		list:json.list
 		}
 		var shopCarttabMainallhtml = template("shopCarttabMainall", jsonData);
 		$(".shopCart_tabMain_sellOut").html(shopCarttabMainallhtml);
@@ -79,7 +73,7 @@ function goodSellOutDetails(){
 function goodOffSellDetails(){
 	$.getJSON("//shopping1.macaoeasybuy.com/shopCartController/queryShopCartInfo/100/0/3.easy",function(json){
         var jsonData={
-        		list:json
+        		list:json.list
 		}
 		var shopCarttabMainallhtml = template("shopCarttabMainoffSell", jsonData);
 		$(".shopCart_tabMain_offSell").html(shopCarttabMainallhtml);
@@ -111,7 +105,11 @@ function ExchangeBonusPoints(ExchangPoint){
 
 /*刪除購物籃商品*/
 function DeleteShopCartGoods(idlist){
-	$.get("//shopping1.macaoeasybuy.com/shopCartController/deleteShopCart/"+idlist+".easy",function(json){
+	$.getJSON("//shopping1.macaoeasybuy.com/shopCartController/deleteShopCart/"+idlist+".easy?easybuyCallback=?",function(json){
+		if(json.state ==='1'){
+			
+			comsole.log('商品已成功刪除');
+		}
 	});
 }
 

@@ -279,6 +279,8 @@ function delGoods(obj){
 	DeleteShopCartGoods(idlist);
 }
 
+
+
 /*删除商品后购物栏商品刷新*/
 function GoodsChangePageInfo(){
 	var index=$(".shopCart_tabBox_curr").index();
@@ -543,7 +545,7 @@ function formSubmit(elementValue) {
 	document.body.appendChild(turnForm);
 	turnForm.method = 'post';
 	turnForm.enctype="multipart/form-data";
-	turnForm.action = '//shopping1.macaoeasybuy.com/ShopCartConfirmController/queryShopCartConfirmInfo.easy';
+	turnForm.action = '//www.macaoeasybuy.com/ShopCartConfirmController/queryShopCartConfirmInfo.easy';
 	turnForm.target = '_self';
 	//创建隐藏表单
 	var newElement = document.createElement("input");

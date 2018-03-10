@@ -26,6 +26,7 @@ function otherGoodShow(){
 function countOtderTopicInfo(){
 	var dataUrl = '//shopping1.macaoeasybuy.com/shopCartController/querySpCartandSpOrderTopicInfo.easy?easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
+		$($($('.right').find('[data-count]'))[1]).attr('data-count',data.headInfo[0].shopCartCount);
 		$('#shopCart_searchBoxLeft_box li').eq(0).find('p span').html(data.headInfo[0].shopCartCount); //購物籃
 		$('#shopCart_searchBoxLeft_box li').eq(1).find('p span').html(data.headInfo[0].shipmentpendingCount); //待發貨
 		$('#shopCart_searchBoxLeft_box li').eq(2).find('p span').html(data.headInfo[0].confirmedCount); //待確認

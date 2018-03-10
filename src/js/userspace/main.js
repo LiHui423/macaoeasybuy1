@@ -12,13 +12,13 @@ const e = new Easybuy({
   },
   methods: {
     initUserSpace() {
-      const seeUserId = this.data.search.spaceId;
+      const seeUserId = this.data.search.spaceid;
       const userId = this.data.userInfo.id;
       this.data.isSelf = seeUserId === this.data.userInfo.id;
     },
     insertSpaceInfo() {
       const userId = this.data.userInfo.id;
-      const seeUserId = this.data.search.spaceId;
+      const seeUserId = this.data.search.spaceid;
       this.ajax({
         api: 'http://userspace1.macaoeasybuy.com/userSpaceIndexController/queryUserSpaceInfo.easy',
         params: {
@@ -26,6 +26,7 @@ const e = new Easybuy({
           seeUserId,
         },
         after: ({ data }) => {
+          console.log(data);
           this.data.spaceInfo = data['userInfo'];
           const ts = this.data.template['userInfo'];
           this.data.elements.userInfo.innerHTML = template.render(ts, this.data.spaceInfo);
@@ -44,7 +45,7 @@ const e = new Easybuy({
       const container = this.data.elements.spaceNav;
       const ts = this.data.template['whitemenu'];
       const userId = this.data.userInfo.id;
-      const seeUserId = this.data.search.spaceId;
+      const seeUserId = this.data.search.spaceid;
       this.ajax({
         api: 'http://userspace1.macaoeasybuy.com/userSpaceIndexController/userSpaceInfoCount.easy',
         params: {
@@ -340,6 +341,7 @@ const e = new Easybuy({
   },
   uiBack() {
     this.initUserSpace();
+    this.data.isSelf === false && (location.href = 'http://userspace.macaoeasybuy.com/love/index.html?spaceid=' + this.data.search.spaceid);
     this.insertSpaceInfo();
     this.insertSpaceNav();
     this.data.isSelf && this.dynamic();

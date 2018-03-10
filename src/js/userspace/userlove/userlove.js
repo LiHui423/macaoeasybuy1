@@ -6,7 +6,7 @@ easyBuy.global.startJs = function(){
 	cancelLoveFunc(); //取消心動綁定事件，發出請求
 }
 var getRequestURL = easyBuy.global.dep.getRequestURL;
-var formatNum = easyBuy.global.dep.formatNum;
+// var formatNum = easyBuy.global.dep.formatNum;
 var waterfall = easyBuy.global.dep.waterfall;
 var easyScrollRequest = easyBuy.global.dep.easyScrollRequest;
 var diffTime = easyBuy.global.dep.diffTime;
@@ -27,9 +27,9 @@ var requestObj = {
 }
 //用戶心動商品、帖子查看接口
 function queryUserLoveDetial(){
-	var type = requestObj.selectType;
-	var requestData = requestObj[type];
-	var size = requestObj.size;
+	var type = requestObj.selectType;// groupBuy
+	var requestData = requestObj[type];// obj
+	var size = requestObj.size;//16
 	var templateHtml = easyBuy.global.template[requestData.templateId];
 	var box = $('#' + requestData.boxId + ' .userlove_mainEach_inner');
 	var page = requestData.page;
@@ -264,13 +264,20 @@ function queryUserLoveNum(){
 		dataType:'jsonp',
 		success:function(data){
 			var data = data.count;
-			$('#groupByCount').html(formatNum(data.groupByCount));
-			$('#freeCount').html(formatNum(data.freeCount));
-			$('#cutCount').html(formatNum(data.cutCount));
-			$('#changeCount').html(formatNum(data.changeCount));
-			$('#yiCount').html(formatNum(data.yiCount));
-			$('#fairCount').html(formatNum(data.fairCount));
-			$('#otherCount').html(formatNum(data.otherCount));
+			// $('#groupByCount').html(formatNum(data.groupByCount));
+			// $('#freeCount').html(formatNum(data.freeCount));
+			// $('#cutCount').html(formatNum(data.cutCount));
+			// $('#changeCount').html(formatNum(data.changeCount));
+			// $('#yiCount').html(formatNum(data.yiCount));
+			// $('#fairCount').html(formatNum(data.fairCount));
+			// $('#otherCount').html(formatNum(data.otherCount));
+			$('#groupByCount').html(data.groupByCount.toString());
+			$('#freeCount').html(data.freeCount.toString());
+			$('#cutCount').html(data.cutCount.toString());
+			$('#changeCount').html(data.changeCount.toString());
+			$('#yiCount').html(data.yiCount.toString());
+			$('#fairCount').html(data.fairCount.toString());
+			$('#otherCount').html(data.otherCount.toString());
 		}
 	});
 }

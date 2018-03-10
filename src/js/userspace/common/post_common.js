@@ -43,13 +43,15 @@ function restoreEditorBox(box){
 function positionBox(box,boxOuter,referBox,fadeTime){
 	var min = box.attr('min-offset');
 	var max = referBox.offset().top + referBox.outerHeight() - box.outerHeight(true);
-	var scrollTop = $(this).scrollTop();
+	// var scrollTop = $(this).scrollTop();
+	var scrollTop = $(window).scrollTop();
 	if(scrollTop <= min){
 		box.css({
 			'position':'absolute',
 			'top':parseInt(box.attr('now-top')),
 			'left':'0px',
-			'box-shadow':'0px 0px 0px transparent'
+			'box-shadow':'0px 0px 0px transparent',
+			'height':'300px'
 		});
 		box.stop().fadeIn(fadeTime);
 	}else if(scrollTop > min && scrollTop < max){
@@ -57,7 +59,8 @@ function positionBox(box,boxOuter,referBox,fadeTime){
 			'position':'fixed',
 			'top':'0px',
 			'left':boxOuter.offset().left - $(this).scrollLeft(),
-			'box-shadow': '0px 5px 15px #ccc'
+			'box-shadow': '0px 5px 15px #ccc',
+			'height':'300px'
 		});
 		box.stop().fadeIn(fadeTime);
 	}else{
@@ -65,7 +68,8 @@ function positionBox(box,boxOuter,referBox,fadeTime){
 			'position':'fixed',
 			'top' : max - scrollTop,
 			'left':boxOuter.offset().left - $(this).scrollLeft(),
-			'box-shadow': '0px 5px 15px #ccc'
+			'box-shadow': '0px 5px 15px #ccc',
+			'height':'300px'
 		});
 		box.stop().fadeOut(fadeTime);
 	}
@@ -185,7 +189,6 @@ function reportPost(){
 		alert('舉報你哦，大壞蛋');
 	});
 }
-
 //輪播圖
 function postBanner(opt){
 	var dataUrl = opt.dataUrl;
@@ -196,13 +199,14 @@ function postBanner(opt){
 		async:true,
 		dataType:'jsonp',
 		success:function(data){
-			var newData = data[values];
+			console.log(data);
+			var newData = data.releaseInfoPics || data.sentVolunteersInfoPics || data.usedInfoPics || data.suitableLifeInfoPics;
 			if(newData.length == 0){
 				$('#foodBannerul').parents('.showPicBox').remove();
 				return false;
 			}
 			for(var i=0;i<newData.length;i++){
-				var html = '<li><img middle="true" src="'+easyBuy.global.osURL+newData[i].pic+'"></li>';
+				var html = '<li><img middle="true" src="//wap.macaoeasybuy.com'+newData[i].pic+'"></li>';
 				$('#foodBannerul').append(html);
 			}
 			easyBuy.global.dep.mygoodbanner({
@@ -289,15 +293,16 @@ function checkCard(objBtn,postType){
 				$('.person-check .click-upload-more span').off('click');
 			},
 			success:function(data){
-				var html = template.render(checkTemplate,data.topicSee);
+				console.log(data);
+				var html = template.render(checkTemplate,data.result);
 				if(page == 0){
-					var tourists = '<li class="tourists"><div class="respondBox_fandPic"><div>'+data.topicSee.touristcount+'</div><div>遊客</div></div><div class="respondBox_fansMess clearfloat"><div></div><div></div></div></li>';
+					var tourists = '<li class="tourists"><div class="respondBox_fandPic"><div>'+data.result.touristcount+'</div><div>遊客</div></div><div class="respondBox_fansMess clearfloat"><div></div><div></div></div></li>';
 					$('#check-list').html(tourists);
 					objBtn[0].flag = false;
 				}
 				$('.tourists').before(html);
 				page++;
-				if(data.topicSee.userList.length == size){
+				if(data.result.userList.length == size){
 					$('.person-check .click-upload-more span').on('click',function(){
 						firstBlood(page,size);
 					});
@@ -329,8 +334,9 @@ function responseCard(postType){
 				$('.person-messaage .click-upload-more span').off('click');
 			},
 			success:function(data){
+				console.log(data);
 				data.replyList.page = page;
-				var html = template.render(responseTemplate,data.replyList);
+				var html = template('response',data.replyList);
 				$('#response-list').append(html);
 				if(data.replyList.replyList.length == 0 && page == 0){
 					$('.person-messaage .no-more').remove();

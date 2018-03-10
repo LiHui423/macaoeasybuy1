@@ -2,12 +2,12 @@
  * 獲取用戶最近使用的一個地址
  */
 function QueryUserUsedAddress(){
-	$.get("http://shopping.macaoeasybuy.com/ShopCartConfirmController/queryUserUsedAddress.easy",function(json){
+	$.getJSON("http://shopping1.macaoeasybuy.com/ShopCartConfirmController/queryUserUsedAddress.easy?easybuyCallback=?",function(json){
 		var jsonData={
-				list:json
+				list:json.list
 		}
 
-		if(json.length>0){
+		if(json.list.length>0){
 			$(".shopAddress_noAddress").css("display","none");
 		}else{
 			$(".shopAddress_noAddress").css("display","block");
@@ -24,9 +24,9 @@ function QueryUserUsedAddress(){
  * 獲取用戶地址
  */
 function ShopCartConfirmOldSiteBox(){
-	$.get("http://shopping.macaoeasybuy.com/ShopCartConfirmController/queryUserAddress.easy",function(json){
+	$.getJSON("http://shopping1.macaoeasybuy.com/ShopCartConfirmController/queryUserAddress.easy?easybuyCallback=?",function(json){
 		var jsonData={
-				list:json
+				list:json.list
 		}
 		
 		var html = template("ShopCartConfirmoldEachBox", jsonData);
@@ -57,30 +57,42 @@ function SendPhoneAuthCode(Phone,state){
  * @param authCode
  */
 function SaveUserAddress(data,authCode){
+	console.log(data);
 	var dataUrl="http://118.190.114.118:8081/messagesConterllor/verifyMess.easy?phone="+data.phone+"&str="+authCode;
 	dataUrl = fr.addHref(dataUrl);
 	$.getJSON(dataUrl,function(json){
-		if(json.info=="2"){
-			$.ajax({
-		         type: 'post',
-		         url:'http://shopping.macaoeasybuy.com/ShopCartConfirmController/SaveUserAddress.easy',
-		         cache:false,
-		         data:JSON.stringify(data),
-		         contentType: 'application/json',
-		         dataType: 'json',
-		         success:function(result){
-		    	 	 if(result!=-1){
-		    	 		ShopCartConfirmOldSiteBox();
-	        		    $('.transparent_bg').hide();
-	        		    $('.addressPop').slideUp('fast');
-	        		    QueryUserUsedAddress(); 
-		        	 }else{
-		        		 alert("请填写完整信息");
-		        	 }
+		if(json.info == "2"){
+			//$.getJSON('http://shopping1.macaoeasybuy.com/ShopCartConfirmController/SaveUserAddress.easy?phone='+data.phone+'&receiptName='+data.receiptName+'&receiptAddress='+data.receiptAddress+'&receiptArea='+data.receiptArea+'&easybuyCallback=?',function(result){
+			$.getJSON('http://shopping1.macaoeasybuy.com/ShopCartConfirmController/SaveUserAddress.easy?easybuyCallback=?',data,function(result){
+				if(result!=-1){
+					ShopCartConfirmOldSiteBox();
+				   $('.transparent_bg').hide();
+				   $('.addressPop').slideUp('fast');
+				   QueryUserUsedAddress(); 
+				}else{
+					alert("请填写完整信息");
+				}
+			})
+			// $.ajax({
+		    //      type: 'post',
+		    //      url:'http://shopping1.macaoeasybuy.com/ShopCartConfirmController/SaveUserAddress.easy',
+		    //      cache:false,
+		    //      data:JSON.stringify(data),
+		    //      contentType: 'application/json',
+		    //      dataType: 'json',
+		    //      success:function(result){
+		    // 	 	 if(result!=-1){
+		    // 	 		ShopCartConfirmOldSiteBox();
+	        // 		    $('.transparent_bg').hide();
+	        // 		    $('.addressPop').slideUp('fast');
+	        // 		    QueryUserUsedAddress(); 
+		    //     	 }else{
+		    //     		 alert("请填写完整信息");
+		    //     	 }
 		        	 
-		         },
+		    //      },
 		         
-		     });
+		    //  });
 		}else{
 			$(".NewauthSuccessOrBNot").css("display","inline-block");
 		}
@@ -102,7 +114,7 @@ function UpdateUserAddress(data,authCode){
 		if(json.info=="2"){
 			$.ajax({
 		         type: 'post',
-		         url:'http://shopping.macaoeasybuy.com/ShopCartConfirmController/UpdateUserAddress.easy',
+		         url:'http://shopping1.macaoeasybuy.com/ShopCartConfirmController/UpdateUserAddress.easy',
 		         cache:false,
 		         data:JSON.stringify(data),
 		         contentType: 'application/json',
@@ -137,7 +149,7 @@ function UpdateUserAddress(data,authCode){
  * @param id
  */
 function QueryUserAddressById(id){
-	$.get("http://shopping.macaoeasybuy.com/ShopCartConfirmController/queryUserByIdAddress/"+id+".easy",function(json){
+	$.get("http://shopping1.macaoeasybuy.com/ShopCartConfirmController/queryUserByIdAddress/"+id+".easy",function(json){
 		if(json.length==1){
 			$(".addressPop_main_old_change").data("id",json[0].id);
 			$("#old_change_num").val(json[0].phone);
@@ -163,7 +175,7 @@ function QueryUserAddressById(id){
  * 获取收货时间日期
  */
 function GetTakeDate(){
-	$.getJSON("http://shopping.macaoeasybuy.com/ShopCartConfirmController/QueryTakeDate.easy?easybuyCallback=?",function(json){
+	$.getJSON("http://shopping1.macaoeasybuy.com/ShopCartConfirmController/QueryTakeDate.easy?easybuyCallback=?",function(json){
 		var appendhtml="<ul>";
 		for(var i=0;i<json.list.length;i++){
 			appendhtml+="<li id='"+json.list[i].id+"'><a>"+json.list[i].date+"</a></li>";
@@ -179,7 +191,7 @@ function GetTakeDate(){
  * 获取收货时间段
  */
 function GetTakeTime(){
-	$.getJSON("http://shopping.macaoeasybuy.com/ShopCartConfirmController/QueryTakeTime.easy?easybuyCallback=?",function(json){
+	$.getJSON("http://shopping1.macaoeasybuy.com/ShopCartConfirmController/QueryTakeTime.easy?easybuyCallback=?",function(json){
 		var appendhtml="<ul>";
 		for(var i=0;i<json.list.length;i++){
 			appendhtml+="<li id='"+json.list[i].id+"'><a>"+json.list[i].time+"</a></li>";

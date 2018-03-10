@@ -628,6 +628,25 @@ $primaryColor: #e98900;
     display: none;
     box-shadow: 4px 4px 30px #aaa;
   }
+  // 勾選數量提示
+  #select-max-tips{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: #fff;
+    border: 2px solid #ff5b77;
+    padding: 10px 40px;
+    color: #ff5b77;
+    font-size: 16px;
+    display: none;
+    box-shadow: 4px 4px 30px #aaa;
+  }
   .chagne-success-tips img {
     width: 30px;
     margin-top: -3px;

@@ -124,7 +124,7 @@ void function () {
   }
   const clock = setInterval(() => {
     let userID = null;
-    const SID = easyBuy.global.pageParameter.spaceId;
+    const SID = easyBuy.global.pageParameter.spaceid;
     if (easyBuy.easyUser.id !== undefined) {
       userID = easyBuy.easyUser.id;
       clearInterval(clock);

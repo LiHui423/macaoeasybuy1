@@ -176,7 +176,6 @@ function deleteGood(){
 		var sStandard=$(this).closest(".shopCart_tabMain_eachGood").find(".shopCart_eachGood_size").attr("data");
 		DeleteShopCartGoods(id+":"+sStandard);
 		GoodsChangePageInfo();
-		
 	})
 	/*批量刪除*/
 	$('.shopCart_Settlement_delete').off("click").on('click',function(){

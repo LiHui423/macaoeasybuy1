@@ -434,7 +434,7 @@ body{
 	border: 1px solid #E3E3E3;
 	float: left;
 	margin-top: 25px;
-	cursor: pointer;
+	/* cursor: pointer; */
 }
 .museum_willSellBoxEach:nth-child(2n){
 	margin-left:50px;

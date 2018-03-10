@@ -4,7 +4,8 @@ easyBuy.global.startJs = function(data){
 var waterfall = easyBuy.global.dep.waterfall;
 var getRequestURL = easyBuy.global.dep.getRequestURL;
 var easyScrollRequest = easyBuy.global.dep.easyScrollRequest;
-
+var userId = easyBuy.easyUser.id;
+var seeUserId = easyBuy.global.pageParameter.spaceid;
 var deleteIntegral = 0;
 var requestObj = {
 	selectArr : [],
@@ -32,7 +33,7 @@ function userStatus(){
 }
 //刪除帖子積分查詢
 function deleteIntegraFunc(){
-	$.getJSON('http://userspace.macaoeasybuy.com/integralController/queryTopicIntegral.easy?type=releaselog&easybuyCallback=?',function(data){
+	$.getJSON('http://userspace1.macaoeasybuy.com/integralController/queryTopicIntegral.easy?type=releaselog&easybuyCallback=?',function(data){
 		deleteIntegral = data.Integral;
 		sortSelectOther();
 	});
@@ -84,7 +85,7 @@ function getListdata(){
 	var isComplete = requestObj[type].isComplete;
 	var boxId = '#'+requestObj[type].showBoxId;
 	var order = type;
-	var dataUrl = 'http://userspace.macaoeasybuy.com/UserDiaryConntroller/queryUserRelease.easy';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/UserDiaryConntroller/queryUserRelease.easy';
 	dataUrl = getRequestURL({
 		targetURL : dataUrl,
 		requestData : {
@@ -110,6 +111,7 @@ function getListdata(){
 			requestObj[type].isFirst = false;
 		},
 		success:function(data){
+			console.log(data);
 			data.order = order;
 			data.page = page;
 			var newData = data.userReleaseList.releaseList;
@@ -212,7 +214,7 @@ function deletePostTips(){
 				idStr += parseInt(arr[i]) + ',';
 			}
 		}
-		$.getJSON('http://userspace.macaoeasybuy.com/UserDiaryConntroller/deleteBatchRelease.easy?idStr='+idStr+'&userId='+userId+'&integral='+arr.length * deleteIntegral+'&easybuyCallback=?',function(data){
+		$.getJSON('http://userspace1.macaoeasybuy.com/UserDiaryConntroller/deleteBatchRelease.easy?idStr='+idStr+'&userId='+userId+'&integral='+arr.length * deleteIntegral+'&easybuyCallback=?',function(data){
 			if(data.status == 'success'){
 				$('#delete-post').css('display','none');
 				//只要刪除數據的，其他盒子點過去的時候都要重新刷過
