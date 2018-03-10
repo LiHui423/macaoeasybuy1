@@ -20,12 +20,12 @@ class PCollector {
         size: 8,
         order: 'uptime',
         descOrasc: 'desc',
-        userId,
+        userId: easyBuy.easyUser.id
       },
       encryptData: true
     };
     this.uploadData = {
-      userId,
+      userId: easyBuy.easyUser.id,
       userName: null,
       collects: [],
       ids: '',
@@ -37,14 +37,13 @@ class PCollector {
 
   init() {
     this.insertPanel();
-
+    this.setElements();
   }
 
   insertPanel() {
     $('head > link[rel="stylesheet"]:last').after('<link rel="stylesheet" href="/src/css/common/components/pcollector.css">');
     $(this.els.$container).load('/common/components/pcollector.html .pcollector-panel', () => {
-      // this.getElements();
-      this.setElements();
+      this.getAlbumList();
       this.bindEvent();
     });
   }
@@ -60,6 +59,7 @@ class PCollector {
   }
 
   bindEvent() {
+    console.log(this.els.$closeBtn);
     this.els.$closeBtn.on('click', () => {
       this.displayPanel(false);
     });
@@ -90,9 +90,9 @@ class PCollector {
       method: 'GET',
       dataType: 'JSON',
       url: this.getRequestURL(this.albumList),
-      beforeSend: () => {
-        this.lazyload && $methods.lazyload(false);
-      },
+      // beforeSend: () => {
+      //   this.lazyload && $methods.lazyload(false);
+      // },
       success: ({result}) => {
         const page = this.albumList.parameters.page;
         const content = result;
@@ -311,7 +311,7 @@ class PCollector {
       const parameters = paramObj.parameters;
       const encryptData = paramObj.encryptData;
       let requestURL;
-      paramString = Object.keys(parameters).reduce(function (pre, paramName) {
+      let paramString = Object.keys(parameters).reduce(function (pre, paramName) {
         return `${pre + paramName}=${parameters[paramName]}&`;
       }, '');
       requestURL = targetURL + '?' + paramString + 'easybuyCallback=?';
