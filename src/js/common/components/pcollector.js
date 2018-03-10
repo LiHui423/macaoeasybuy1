@@ -43,7 +43,8 @@ class PCollector {
   insertPanel() {
     $('head > link[rel="stylesheet"]:last').after('<link rel="stylesheet" href="/src/css/common/components/pcollector.css">');
     $(this.els.$container).load('/common/components/pcollector.html .pcollector-panel', () => {
-      this.getElements();
+      // this.getElements();
+      this.setElements();
       this.bindEvent();
     });
   }

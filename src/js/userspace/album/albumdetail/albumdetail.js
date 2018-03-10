@@ -63,7 +63,8 @@ void function () {
         $('#album-move').remove();
         $('#album-title-name').remove();
         $('#collect-btn').click(function() {
-            Object.keys(albumData.collect).length > 0 && pcollector.open(albumData.collect);
+            // Object.keys(albumData.collect).length > 0 && pcollector.open(albumData.collect);
+            Object.keys(data.collect).length > 0 && new PCollector(data.collect);
         });
         sortSelectOther(); //看別人的選項排序
       }
@@ -194,8 +195,8 @@ void function () {
           methods.deleteArrObj(listData, 'id', _data.id);
         } else {
           if (listData.length === listMax) {
+            $('#shade').fadeIn(500).delay(1000).fadeOut(500);
             const $item = $('#select-max-tips');
-            console.log($item.css('display'));
             $item.css('display') === 'none' && $item.fadeIn(500).delay(1000).fadeOut(500);
             return false; //限制數量
           }
@@ -1099,6 +1100,7 @@ void function () {
                 'cursor': 'normal'
             })
         } else {
+            $('#collect-btn span').html(collectList.length);
             $('#collect-btn').css({
                 'background': '#e98900',
                 'border-color': '#e98900',
