@@ -1,4 +1,4 @@
-var postId = easyBuy.global.pageParameter.postid || 500;
+var postId = easyBuy.global.pageParameter.postId || 500;
 easyBuy.global.startJs = function(){
 	easyBuy.userSpaceGlobal.replyPostType = '1';
 	easyBuy.userSpaceGlobal.replyVolunteersType = 'replySuitableLife'; //回復貼子分類
@@ -31,7 +31,8 @@ function userStatus(){
 	//輪播圖
 	postBanner({
 		dataUrl : 'http://userspace1.macaoeasybuy.com/UserSuitableLifeConntroller/querySuitableLifeInfoPics.easy',
-		values : 'suitableLifeInfoPics'
+		values : 'suitableLifeInfoPics',
+		id: postId
 	});
 	queryTopicCount(1,'suitablelife');//评论查看赞好数统计
 	isClickLove(4,4); //點讚

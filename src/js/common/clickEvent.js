@@ -179,8 +179,8 @@
         }//用戶空間-日誌列表頁，跳轉到日誌詳細頁
         else if(location.href.indexOf('diary/index.html') !== -1){
             if($e.hasClass('shadow-box')){
-                let diaryId = $($e.parents('.pillar-all')).attr('id').replace(/\D/gim, '');
-                jump('http://userspace.macaoeasybuy.com/diary/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&diaryId=',diaryId);
+                let postId = $($e.parents('.pillar-all')).attr('id').replace(/\D/gim, '');
+                jump('http://userspace.macaoeasybuy.com/diary/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&diaryId=',postId);
             }
         }
     })

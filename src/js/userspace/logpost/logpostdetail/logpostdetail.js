@@ -36,7 +36,7 @@ function userStatus(){
 		dataUrl : 'http://userspace1.macaoeasybuy.com/UserDiaryConntroller/queryReleasePics.easy',
 		values : 'releaseInfoPics'
 	});
-	queryTopicCount(3,'release');//评论查看赞好数统计
+	queryTopicCount(3,'release',postId);//评论查看赞好数统计
 	isClickLove(7,7); //點讚
 	responseCard(3);//回復查看讃好，數據
 	handPost();//上下篇

@@ -193,6 +193,7 @@ function reportPost(){
 function postBanner(opt){
 	var dataUrl = opt.dataUrl;
 	var values = opt.values;
+	var postId = opt.id;
 	$.ajax({
 		url:dataUrl+'?id='+postId+'&easybuyCallback=?',
 		type:"get",
@@ -400,7 +401,7 @@ function responseCard(postType){
 	}
 }
 //评论查看赞好数统计
-function queryTopicCount(type,topicType){
+function queryTopicCount(type,topicType,postId){
 	var type = type;
 	var topicType = topicType;
 	$.getJSON('http://userspace1.macaoeasybuy.com/userSpaceIndexController/queryTopicCount.easy?type=5&id='+postId+'&topicType='+topicType+'&easybuyCallback=?',function(data){
