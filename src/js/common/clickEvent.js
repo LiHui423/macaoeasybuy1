@@ -15,7 +15,7 @@
             window.open('http://shopping.macaoeasybuy.com/goodDetails/limitedDetail.html?id=' + goodId);
         }// 判斷是否為進店逛逛
         else if($e.html() === '進店逛逛'){
-            let shopId = $('.BusinessmenName a').attr('href').split('=')[1];
+            let shopId = $e.attr('data-id');
             jump('http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_index.html?shopId=',shopId);
         }
         // 判斷是否為換一換按鈕
@@ -163,6 +163,23 @@
             if($e.hasClass('shadow-box')){
                 let albumId = $e.parents('.album-list').attr('id').replace(/\D/gim, '');
                 jump('http://userspace.macaoeasybuy.com/album/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&albumId=',albumId);
+            }
+        }//用戶空間-專輯詳細頁，跳轉到專輯圖片詳細頁
+        else if(location.href.indexOf('album/detail.html') !== -1){
+            if($e.hasClass('shadow-box') || $e.is('p')){
+                let albumPostId = $($e.parents('.album-list')).attr('id').split('-')[0];
+                jump('http://userspace.macaoeasybuy.com/album/albumpostdetail/albumpostdetail.html?spaceid='+easyBuy.global.pageParameter.spaceid+'&albumId='+easyBuy.global.pageParameter.spaceid+'&albumPostId=',albumPostId);
+            }
+        }//用戶空間-關注店鋪，跳轉到商店詳細頁
+        else if(location.href.indexOf('hop/index.html') !== -1){
+            if($e.html() === '進店看看'){
+                let shopId = $e.parents('.focusShopEach').attr('data-id');
+                jump('http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_index.html?shopId=',shopId);
+            }
+        }//用戶空間-日誌列表頁，跳轉到日誌詳細頁
+        else if(location.href.indexOf('diary/index.html') !== -1){
+            if($e.hasClass('shadow-box')){
+                console.log('true');
             }
         }
     })

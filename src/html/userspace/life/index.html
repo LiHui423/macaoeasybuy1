@@ -14,7 +14,7 @@
 		<script>
 			easyBuy.userSpaceGlobal.afterSetIsSelf = function(state){
 				if(state){
-					easyFrame.loadCss('/css/userspace/lifecircle/lifecirclelist/lifecirclelist-mine.css');
+					easyFrame.loadCss('/src/css/userspace/lifecircle/lifecirclelist/lifecirclelist-mine.css');
 				}
 			}
 		</script>
@@ -111,8 +111,10 @@
 										</div>
 									</div>
 								<%}%>
-								<%if(userSuitableLifeList.suitableLifeList[i].pictureurl != undefined){%>
+								<%if(userSuitableLifeList.suitableLifeList[i].pictureurl !== ''){%>
 									<a href=""><img src="//wap.macaoeasybuy.com<%=userSuitableLifeList.suitableLifeList[i].pictureurl%>" class="page-main-head-img"></a>
+								<%}else{%>
+									<a href=""><img src="/src/img/userspace/album/album-no-img.png" class="page-main-head-img"></a>
 								<%}%>
 								<div class="post-main-text">
 									<div class="post-title"><%=userSuitableLifeList.suitableLifeList[i].titlename%><span>/<%=userSuitableLifeList.suitableLifeList[i].typename%>/</span></div>

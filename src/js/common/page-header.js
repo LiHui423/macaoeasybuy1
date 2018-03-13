@@ -140,7 +140,6 @@
     if(easyBuy.easyUser.id !== undefined){
       var dataUrl = '//shopping1.macaoeasybuy.com/shopCartController/queryNoLoginShopCartInfo/0.easy?easybuyCallback=?';
       $.getJSON(dataUrl,function(data){
-        console.log(data.length);
         $('#shopCart').attr('data-count',data.length);
       });
     }

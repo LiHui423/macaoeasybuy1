@@ -34,7 +34,7 @@ function userStatus(){
 
 //刪除帖子積分查詢
 function deleteIntegralFunc(){
-	$.getJSON('http://userspace.macaoeasybuy.com/integralController/queryTopicIntegral.easy?type=releaseUsed&easybuyCallback=?',function(data){
+	$.getJSON('http://userspace1.macaoeasybuy.com/integralController/queryTopicIntegral.easy?type=releaseUsed&easybuyCallback=?',function(data){
 		window.deleteIntegral = data.Integral;
 		sortSelectOther();
 	});
@@ -88,7 +88,7 @@ function getListdata(){
 	var isComplete = requestObj[type].isComplete;
 	var boxId = '#'+requestObj[type].showBoxId;
 	var order = type;
-	var dataUrl = 'http://userspace.macaoeasybuy.com/UserUsedConntroller/queryUserUsed.easy';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/UserUsedConntroller/queryUserUsed.easy';
 	dataUrl = getRequestURL({
 		targetURL : dataUrl,
 		requestData : {
@@ -217,7 +217,7 @@ function deletePostTips(){
 				idStr += parseInt(arr[i]) + ',';
 			}
 		}
-		$.getJSON('http://userspace.macaoeasybuy.com/UserUsedConntroller/deleteBatchUserUsed.easy?idStr='+idStr+'&userId='+userId+'&integral='+arr.length * deleteIntegral+'&easybuyCallback=?',function(data){
+		$.getJSON('http://userspace1.macaoeasybuy.com/UserUsedConntroller/deleteBatchUserUsed.easy?idStr='+idStr+'&userId='+userId+'&integral='+arr.length * deleteIntegral+'&easybuyCallback=?',function(data){
 			if(data.status == 'success'){
 				$('#delete-post').css('display','none');
 				//只要刪除數據的，其他盒子點過去的時候都要重新刷過
@@ -289,7 +289,7 @@ function changePostState(data){
 }
 //改變帖子狀態，發送請求
 function stateChange(idx,postId,p){
-	$.getJSON('http://userspace.macaoeasybuy.com/UserUsedConntroller/changeUsedState.easy?status='+idx+'&id='+postId+'&easybuyCallback=?',function(data){
+	$.getJSON('http://userspace1.macaoeasybuy.com/UserUsedConntroller/changeUsedState.easy?status='+idx+'&id='+postId+'&easybuyCallback=?',function(data){
 		if(data.status == 'success'){
 			changeUsedState(p,idx);
 			var type = requestObj.selectKey;

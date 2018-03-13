@@ -1,4 +1,7 @@
-const Effect = parent.window.Effect;
+// const Effect = parent.window.Effect;
+function Effect(){
+    
+}
 const label = new Effect({
     el: '#label-list',
     data: {

@@ -37,7 +37,7 @@ void function () {
     otherFunc: {}, //看他人的方法
     mineFunc: {}, //看自己的方法
     albumPhotoNum: 0, //專輯的總數目
-    isCanSubmit: true //是否可以發送修改專輯請求
+    isCanSubmit: true, //是否可以發送修改專輯請求
   };
   const methods = {
     formatNum: easyBuy.global.dep.formatNum,
@@ -63,7 +63,6 @@ void function () {
         $('#album-move').remove();
         $('#album-title-name').remove();
         $('#collect-btn').click(function() {
-            // Object.keys(albumData.collect).length > 0 && pcollector.open(albumData.collect);
             Object.keys(data.collect).length > 0 && new PCollector(data.collect);
         });
         sortSelectOther(); //看別人的選項排序
@@ -203,7 +202,9 @@ void function () {
           $el.addClass('select');
           el.isSelect = true;
           listData[listData.length] = {
-            pic: _data.groupurl
+            pic: _data.groupurl,
+            id: _data.id,
+            desc: ''
           };
         }
         switch (state) {

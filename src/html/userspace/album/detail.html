@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="/src/css/common/common.css">
 		<link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
 		<link rel="stylesheet" href="/src/css/userspace/album/albumdetail/albumdetail.css">
+		<link rel="stylesheet" href="/src/css/common/components/pcollector.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 		<script src="/src/js/common/frameDomainJSON.js"></script>
 		<script src="/src/js/common/getData/getData_needLogin.js"></script>
@@ -231,6 +232,7 @@
         <script src="/src/js/common/page-header.js" async></script>
         <script src="/src/js/common/components/pcollector.js"></script>
 		<script src="/src/js/userspace/album/albumdetail/albumdetail.js"></script>
+		<script src="/src/js/common/clickEvent.js"></script>
 		<!-- 專輯詳細頁專輯列表 -->
         <script id="album-template" type="text/html" data-type="template">
             <%if(albumList.length !=0){%>
@@ -263,7 +265,7 @@
                                 </div>
                             </div>
 
-                            <a href="#" class="shadow-box">
+                            <a class="shadow-box">
                                 <p><%=albumList[i].groupdetailed%></p>
                             </a>
                             <div class="hover-check-box-outer">

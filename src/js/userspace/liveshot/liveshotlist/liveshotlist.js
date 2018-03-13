@@ -34,7 +34,7 @@ function userStatus(){
 
 //刪除帖子積分查詢
 function deleteIntegraFunc(){
-	$.getJSON('http://userspace.macaoeasybuy.com/integralController/queryTopicIntegral.easy?type=releaseSentVolunteers&easybuyCallback=?',function(data){
+	$.getJSON('http://userspace1.macaoeasybuy.com/integralController/queryTopicIntegral.easy?type=releaseSentVolunteers&easybuyCallback=?',function(data){
 		deleteIntegral = data.Integral;
 		sortSelectOther();
 	});

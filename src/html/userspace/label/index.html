@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>用戶空間-標籤列表頁</title>
     <!-- 加载公共CSS -->
-    <link rel="stylesheet" href="/src/css/common/easyframe/easyframe.css">
+    <!-- <link rel="stylesheet" href="/src/css/common/easyframe/easyframe.css"> -->
+    <link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
     <link rel="stylesheet" href="/src/css/common/common.css">
     <!-- 加载模块公共CSS -->
     <link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
@@ -17,9 +18,9 @@
     <script>
         easyBuy.userSpaceGlobal.afterSetIsSelf = function (state) {
             if (state) {
-                easyFrame.loadCss('/css/userspace/label/labellist/labellist-mine.css');
+                easyFrame.loadCss('/src/css/userspace/label/labellist/labellist-mine.css');
             } else {
-                easyFrame.loadCss('/css/userspace/label/labellist/labellist-other.css');
+                easyFrame.loadCss('/src/css/userspace/label/labellist/labellist-other.css');
             }
         }
     </script>
@@ -32,7 +33,7 @@
 
 <body>
     <div id="swapper">
-        <header></header>
+        <header id="page-header"></header>
         <div id="container" class="clearfloat">
             <div id="left-menu"></div>
             <div id="right-content">
@@ -113,22 +114,24 @@
         <footer></footer>
     </div>
     <script src="/src/js/plug/yez_js_Reset.js"></script>
-    <script src="/src/js/common/vendor/template-native.js"></script>
+    <script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
     <script src="/src/js/userspace/common/userinfo.js" async></script>
     <script src="/src/js/userspace/common/leftmenu.js" async></script>
     <script src="/src/js/userspace/common/whitemenu.js" async></script>
     <script src="/src/js/userspace/common/newspush.js" async></script>
     <script src="/src/js/common/header&search&footer/footer.js" async></script>
-    <script src="/src/js/common/header&search&footer/header.js"></script>
+    <script src="/src/js/common/page-header.js"></script>
     <script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
     <script src="/src/js/common/ebtemplate-jquery.js"></script>
     <script src="/src/js/userspace/label/labellist/labellist.js"></script>
-    <script id="queryUserSpaceLabel" type="text/html" data-eb-template>
+    
+    <script id="queryUserSpaceLabel" type="text/html">
         <%for(var i=0, item; (item = content[i++]);) {%>
             <div class="label-item">
                 <%if(item.labelPic !== '') {%>
                     <div class="label-picture">
-                        <img src="<%=osURL%><%=item.labelPic%>" alt="">
+                        <img src="//wap.macaoeasybuy.com<%=item.labelPic%>" alt="">
                     </div>
                     <%}%>
                         <div class="label-describe">
@@ -188,11 +191,11 @@
             </div>
             <%}%>
     </script>
-    <script id="queryUserSpaceUsedLabel" type="text/html" data-eb-template>
+    <script id="queryUserSpaceUsedLabel" type="text/html">
         <%for(var i = 0, item; item = content[i++];) {%>
             <div class="post-item">
                 <div class="post-picture">
-                    <img src="<%=osURL%><%=item.postPics%>" alt="">
+                    <img src="//wap.macaoeasybuy.com<%=item.postPics%>" alt="">
                 </div>
                 <div class="post-content">
                     <div class="title clearfloat">
@@ -241,7 +244,7 @@
                                     </div>
                                     <div class="clearfloat">
                                         <div class="post-use-head">
-                                            <img src="<%=osURL%><%=label.labeluserpic%>" alt="">
+                                            <img src="//wap.macaoeasybuy.com<%=label.labeluserpic%>" alt="">
                                         </div>
                                         <div class="post-use-name-from">
                                             <div class="post-use-name">
@@ -261,7 +264,7 @@
             </div>
             <%}%>
     </script>
-    <script id="queryLabelForUserSpace" type="text/html" data-eb-template>
+    <script id="queryLabelForUserSpace" type="text/html">
         <%for(var i = 0, item; (item = content[i++]);) {%>
             <li>
                 <span><%=#item.labelName%></span>

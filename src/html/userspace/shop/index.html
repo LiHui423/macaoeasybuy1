@@ -22,7 +22,7 @@
 	<body>
 		<div class="transparent_bg"></div>
 		<div id="swapper">
-			<header></header>
+			<header id="page-header"></header>
 			<div id="container" class="clearfloat">
 				<div id="left-menu"></div>
 				<div id="right-content">
@@ -86,15 +86,17 @@
 		</div>
 
 		<script src="/src/js/plug/yez_js_Reset.js"></script>
-		<script src="/src/js/common/vendor/template-native.js"></script>
+		<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+		<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
 		<script src="/src/js/userspace/common/userinfo.js" async></script>
 		<script src="/src/js/userspace/common/leftmenu.js" async></script>
 		<script src="/src/js/userspace/common/whitemenu.js" async></script>
 		<script src="/src/js/userspace/common/newspush.js" async></script>
 		<script src="/src/js/common/header&search&footer/footer.js" async></script>
-		<script src="/src/js/common/header&search&footer/header.js"></script>
+		<script src="/src/js/common/page-header.js"></script>
 		<script src="/src/js/userspace/userFocusShop/userFocusShop.js"></script>
 		<script src="/src/js/userspace/userFocusShop/userFocusShop.data.js"></script>
+		<script src="/src/js/common/clickEvent.js"></script>
 		<!--關注的商店的模板-->
 		<script type="text/html" id="focusShop_template" data-array="focusShopData" data-type="template">
 			<%if(shop.length != 0){%>
@@ -105,7 +107,7 @@
 				<div class="focusShopEach" data-id="<%=shop[i].id%>" id="focusShopEach<%=shop[i].id%>">
 					<%}%>
 					<div class="focusShopEach_top clearfloat">
-						<div class="focusShopEach_logo"><img src='<%=osURl%><%=shop[i].logo%>' onerror="this.onerror = null;this.src = '/img/common/loading_pc_shop.png'"></div>
+						<div class="focusShopEach_logo"><img src='//wap.macaoeasybuy.com<%=shop[i].logo%>' onerror="this.onerror = null;this.src = '/img/common/loading_pc_shop.png'"></div>
 						<div class="focusShopEach_title">
 							<%=shop[i].shopName%>
 						</div>
@@ -120,10 +122,10 @@
 						</div>
 						<div class="focusShopEach_num clearfloat">
 							<div class="focusShopEach_numEach">
-								<span>銷售數</span><span><%=formatNum(shop[i].salesCount)%></span>
+								<span>銷售數</span><span><%=shop[i].salesCount%></span>
 							</div>
 							<div class="focusShopEach_numEach">
-								<span>粉絲數</span><span><%=formatNum(shop[i].fansCount)%></span>
+								<span>粉絲數</span><span><%=shop[i].fansCount%></span>
 							</div>
 						</div>
 						<div class="focusShopEach_seeMore">
@@ -141,7 +143,7 @@
 									<div class="focusShopEach_seeMore_messEach clearfloat">
 										<div class="focusShopEach_seeMore_messEach_title">商品數量</div>
 										<div class="focusShopEach_seeMore_messEach_main">
-											<%=formatNum(shop[i].shangpinCount)%>件</div>
+											<%=shop[i].shangpinCount%>件</div>
 									</div>
 									<div class="focusShopEach_seeMore_messEach clearfloat">
 										<div class="focusShopEach_seeMore_messEach_title">商家評級</div>

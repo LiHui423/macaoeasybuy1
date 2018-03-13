@@ -1,11 +1,11 @@
 class PCollector {
-  constructor({
-    container = '.pcollector-container',
-    btn = '#collect-btn',
-    userId = null,
-  }) {
+  constructor(picArray) {
+    console.log(picArray);
+    this.container = '.pcollector-container',
+    this.btn = '#collect-btn',
+    this.userId = null,
     this.els = {
-      $container: container instanceof jQuery ? container : $(container),
+      $container: this.container instanceof jQuery ? this.container : $(this.container),
       $pictureList: null,
       $albumList: null,
       $closeBtn: null,
@@ -13,6 +13,7 @@ class PCollector {
       $newAlbumNameInput: null,
       $collectBtn: null,
     };
+    this.picArray = picArray,
     this.albumList = {
       targetURL: 'http://social1.macaoeasybuy.com/thealbumSocialConntroller/queryUserAlbums.easy',
       parameters: {
@@ -26,7 +27,7 @@ class PCollector {
     };
     this.uploadData = {
       userId: easyBuy.easyUser.id,
-      userName: null,
+      userName: easyBuy.easyUser.name,
       collects: [],
       ids: '',
       albumName: null,
@@ -37,34 +38,38 @@ class PCollector {
 
   init() {
     this.insertPanel();
-    this.setElements();
+    this.displayPanel(true);
+    
   }
 
   insertPanel() {
-    $('head > link[rel="stylesheet"]:last').after('<link rel="stylesheet" href="/src/css/common/components/pcollector.css">');
+    console.log($(this.els.$container));
     $(this.els.$container).load('/common/components/pcollector.html .pcollector-panel', () => {
+      this.setElements();
       this.getAlbumList();
       this.bindEvent();
+      this.insertPictureList(this.picArray);
+      this.insertAlbumList();
     });
   }
 
   setElements() {
     const $c = this.els.$container;
-    this.els.$pictureList = $c.find('.picture-list');
-    this.els.$albumList = $c.find('.album-list');
-    this.els.$closeBtn = $c.find('.panel-close-btn');
-    this.els.$createBtn = $c.find('.create-album button');
-    this.els.$newAlbumNameInput = $c.find('.create-album input');
-    this.els.$collectBtn = $c.find('.panel-footer button');
+    this.els.$pictureList = $c.find('.picture-list');//圖片ul
+    this.els.$albumList = $c.find('.album-list');//專輯ul
+    console.log(this.els.$albumList);
+    this.els.$closeBtn = $c.find('.panel-close-btn');//關閉按鈕
+    this.els.$createBtn = $c.find('.create-album button');//創建按鈕
+    this.els.$newAlbumNameInput = $c.find('.create-album input');//創建專輯名稱
+    this.els.$collectBtn = $c.find('.panel-footer button');//收藏至專輯按鈕
   }
 
   bindEvent() {
-    console.log(this.els.$closeBtn);
     this.els.$closeBtn.on('click', () => {
       this.displayPanel(false);
     });
     this.els.$createBtn.on('click', () => {
-      this.createNewAlbum();
+      this.createNewAlbum(this.els.$newAlbumNameInput.val());
     });
     this.els.$collectBtn.on('click', () => {
       this.collect();
@@ -73,10 +78,10 @@ class PCollector {
 
   displayPanel(open) {
     if (open) {
-      $($settings.panelContainer).css('display', 'block');
+      $(this.els.$container).css('display', 'block');
       $(document.body).css('overflow', 'hidden');
     } else {
-      $($settings.panelContainer).css('display', 'none');
+      $(this.els.$container).css('display', 'none');
       $(document.body).css('overflow', 'auto');
     }
   }
@@ -94,6 +99,7 @@ class PCollector {
       //   this.lazyload && $methods.lazyload(false);
       // },
       success: ({result}) => {
+        console.log(result);
         const page = this.albumList.parameters.page;
         const content = result;
         callback && callback({ page, content });
@@ -106,8 +112,9 @@ class PCollector {
    */
   insertAlbumList() {
     const $c = this.els.$albumList;
+    console.log($c);
     this.getAlbumList(({ page, content }) => {
-      const html = this.generateAlbumItem(param);
+      const html = this.generateAlbumItem(content);
       page === 0 ? $c.html(html) : $c.append(html);
       content.forEach(({ albumId, albumTitle }) => {
         const album = $c.children(`#${albumId}`);
@@ -135,23 +142,26 @@ class PCollector {
     const ids = '';
     const userId = easyBuy.easyUser.id;
     const userName = easyBuy.easyUser.name;
-    const $is = this.els.$pictureList.children();
+    const $is = this.els.$pictureList.children();// 图片列表的li
     $is.each((i, el) => {
       const $el = $(el);
       const desc = $el.find('textarea').val() === '' ? $el.find('textarea').attr('placeholder') : $el.find('textarea').val();
-      collects.push({ desc: desc, pic: '', id: $el.data('id') });
-      (i !== $is.length - 1) ? (ud.ids += $(this).data('id') + ',') : (ud.ids += $(this).data('id'));
+      collects.push({ desc: desc, pic: '', id: $el.attr('id') });
+      console.log(collects);
+      //(i !== $is.length - 1) ? (ud.ids += $(this).data('id') + ',') : (ud.ids += $(this).data('id'));
     });
-    this.uploadData.collects
-    const pass = !!uploadData.albumId && !!uploadData.albumName && !!uploadData.userId && !!uploadData.userName && uploadData.collects.length !== 0;
-    pass ? this.requestData() : (!this.uploadData.albumId && alert('未選擇專輯'));
+    this.uploadData.collects = collects;
+    const pass = !!this.uploadData.albumId && !!this.uploadData.albumName && !!this.uploadData.userId && !!this.uploadData.userName && this.uploadData.collects.length !== 0;
+    console.log(pass);
+    pass ? this.requestData(this.uploadData) : (!this.uploadData.albumId && alert('未選擇專輯'));
   }
   /**
    * @desc 插入圖片列表
    * @param {array} param 圖片數組
    */
   insertPictureList(param) {
-    const $c = this.els.$pictureList;
+    const $c = $('.picture-list');
+    console.log($c);
     const htmlString = this.generatePictureListHTML(param);
     this.textAreaChange(false);
     $c.html(htmlString);
@@ -166,13 +176,15 @@ class PCollector {
    * @param {Array} list 圖片數組
    */
   generatePictureListHTML(list) {
-    return Object.keys(list).reduce((string, pid) => {
+    const htmlString = '';
+    console.log(Object.keys(list));
+    return Object.keys(list).reduce((htmlString, pid) => {
       const desc = list[pid].desc !== undefined ? list[pid].desc : '';
       return htmlString +
         `<li class="picture-item" id="${pid}">
           <div class="item-img">
             <div class="img-container">
-              <img class="e" src="//mbuy.oss-cn-hongkong.aliyuncs.com/${list[pid].pic}">
+              <img class="e" src="//wap.macaoeasybuy.com/${list[pid].pic}">
             </div>
           </div>
           <div class="item-content"><textarea class="scrollIe scrollOther" placeholder="${desc}"></textarea></div>
@@ -197,7 +209,7 @@ class PCollector {
         }
       })
     } else {
-      const $tas = this.els.$pictureList.find('textarea');
+      const $tas = $(this.els.$pictureList).find('textarea');
       $tas.length !== 0 && $tas.each((i, el) => {
         $(el).off('focus');
         $(el).off('blur');
@@ -232,11 +244,11 @@ class PCollector {
    * @param {object} param 請求回的專輯數據
    */
   generateAlbumItem(param) {
-    return param.data.reduce((itemString, {albumId, picCount, coverPic, albumTitle}) => {
+    return param.reduce((itemString, {albumId, picCount, coverPic, albumTitle}) => {
       return itemString +
         `<li id="${albumId}" class="album-item" data-total="${picCount}">
           <div class="img-container">
-            <img class="e" src="//mbuy.oss-cn-hongkong.aliyuncs.com/${coverPic}">
+            <img class="e" src="//wap.macaoeasybuy.com/${coverPic}">
           </div>
           <span>${albumTitle}</span>
         </li>`;
@@ -278,6 +290,10 @@ class PCollector {
       },
     });
   }
+
+  // open(picArray) {
+  //   console.log(picArray);
+  // }
 
 
   // 辅助函数

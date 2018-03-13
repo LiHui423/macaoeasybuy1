@@ -18,7 +18,7 @@
 	</head>
 	<body>
 		<div id="swapper">
-			<header></header>
+			<header id="page-header"></header>
 			<div id="container" class="clearfloat">
 				<div id="left-menu"></div>
 				<div id="right-content">
@@ -116,13 +116,14 @@
 		</div>
 
 		<script src="/src/js/plug/yez_js_Reset.js"></script>
-		<script src="/src/js/common/vendor/template-native.js"></script>
+		<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+		<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
 		<script src="/src/js/userspace/common/userinfo.js" async></script>
 		<script src="/src/js/userspace/common/leftmenu.js" async></script>
 		<script src="/src/js/userspace/common/whitemenu.js" async></script>
 		<script src="/src/js/userspace/common/newspush.js" async></script>
 		<script src="/src/js/common/header&search&footer/footer.js" async></script>
-		<script src="/src/js/common/header&search&footer/header.js"></script>
+		<script src="/src/js/common/page-header.js"></script>
 
 		<script src="/src/js/userspace/friendsfans/friendsandfans/friendsandfans.js"></script>
 		<script id="fans-template" type="text/html" data-type="template">
@@ -131,7 +132,7 @@
 					<li class="result-box-item <%=fan[i].id%><%=fan[i].type%>" id="<%=fan[i].id%><%=fan[i].type%><%=fan[i].sexType%>">
 						<div class="result-box-item-inner">
 							<!--<div class="head special"><img src="/src/img/userspace/friendsfans/newfanspoint.png" alt="" class="point"></div>-->
-							<div class="head"><img src="<%=osURL%><%=fan[i].pic%>" alt="" class="head-img"></div>
+							<div class="head"><img src="//wap.macaoeasybuy.com<%=fan[i].pic%>" alt="" class="head-img"></div>
 							<div class="name">
 								<span><%=fan[i].name%></span>
 								<%if(fan[i].sex == 'Girl'){%>

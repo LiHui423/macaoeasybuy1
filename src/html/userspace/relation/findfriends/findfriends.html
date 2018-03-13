@@ -16,7 +16,7 @@
 	</head>
 	<body>
 		<div id="swapper">
-			<header></header>
+			<header id="page-header"></header>
 			<div id="container" class="clearfloat">
 				<div id="left-menu"></div>
 				<div id="right-content">
@@ -79,13 +79,14 @@
 		</div>
 
 		<script src="/src/js/plug/yez_js_Reset.js"></script>
-		<script src="/src/js/common/vendor/template-native.js"></script>
+		<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+		<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
 		<script src="/src/js/userspace/common/userinfo.js" async></script>
 		<script src="/src/js/userspace/common/leftmenu.js" async></script>
 		<script src="/src/js/userspace/common/whitemenu.js" async></script>
 		<script src="/src/js/userspace/common/newspush.js" async></script>
 		<script src="/src/js/common/header&search&footer/footer.js" async></script>
-		<script src="/src/js/common/header&search&footer/header.js"></script>
+		<script src="/src/js/common/page-header.js"></script>
 		<script src="/src/js/userspace/friendsfans/findfriends/findfriends.js"></script>
 		<!--用戶模板-->
 		<script id="easy_template" type="text/html" data-type="template">
@@ -97,7 +98,7 @@
 						<%if(classList[i].isrecommend == 1){%>
 						<div class="recommen-label"><img src="/src/img/userspace/friendsfans/recommen-label.png" alt=""></div>
 						<%}%>
-						<div class="head"><img src="<%=osURL%><%=classList[i].userPic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
+						<div class="head"><img src="//wap.macaoeasybuy.com<%=classList[i].userPic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 
 						<div class="name">
 							<%=classList[i].userName%>
@@ -109,9 +110,9 @@
 						</div>
 						<div class="identity-level user">
 							用戶身份：
-							<img src="<%=osURL%><%=classList[i].expertPic%>" alt="" onerror="this.onerror=null;this.parentNode.removeChild(this);">
+							<img src="//wap.macaoeasybuy.com<%=classList[i].expertPic%>" alt="" onerror="this.onerror=null;this.parentNode.removeChild(this);">
 						</div>
-						<div class="identity-level pet">寵物等級：<img src="<%=osURL%><%=classList[i].petPic%>" alt=""><span><%=classList[i].petName%></span><span>LV.<%=classList[i].petlevel%></span></div>
+						<div class="identity-level pet">寵物等級：<img src="//wap.macaoeasybuy.com<%=classList[i].petPic%>" alt=""><span><%=classList[i].petName%></span><span>LV.<%=classList[i].petlevel%></span></div>
 						<ul class="clearfloat user-info">
 							<li>
 								<div><%=classList[i].attentionCount%></div>
