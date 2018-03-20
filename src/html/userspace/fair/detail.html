@@ -244,7 +244,7 @@
 									<div class="other-post-title second">下一篇</div>
 									<div class="other-post-box clearfloat second"></div>
 								</div>
-								<div class="return-list"><a href="http://userspace.macaoeasybuy.com/fair/index.html">返回市集列表</a></div>
+								<div class="return-list"><a>返回市集列表</a></div>
 
 							</div>
 							<!--內容的結束標識-->
@@ -342,16 +342,17 @@
 		<script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 		<script src="/src/js/userspace/common/post_common.js"></script>
 		<script src="/src/js/userspace/fair/fairpostdetail/fairpostdetail.js"></script>
+		<script src="/src/js/common/clickEvent.js"></script>
 
 
 		<!--上一篇下一篇-->
 		<script id="handPost" type="text/html" data-type="template">
 			<div id="<%=id%>handPost" class="page-items clearfloat">
 				<div class="page-items-list">
-					<a href="" class="clearfloat">
+					<a class="clearfloat">
 						<%if(pictureurl != undefined){%>
 							<div class="items-img">
-								<img middle="true" src="//wap.macaoeasybuycom<%=pictureurl%>" alt="">
+								<img middle="true" src="//wap.macaoeasybuy.com<%=pictureurl%>" alt="">
 							</div>
 						<%}%>
 						<%if(pictureurl != undefined){%>
@@ -359,7 +360,7 @@
 						<%}else{%>
 							<div class="items-text" style="width:100%">
 						<%}%>
-							<div><%=title%></div>
+							<div><span id="underline"><%=title%></span></div>
 							<p><%=inventory%></p>
 							<div class="handPost-content"></div>
 							<div>
@@ -378,7 +379,7 @@
 			<li id="<%=userList[k].id%>">
 				<a href="">
 					<div class="respondBox_fandPic">
-						<img src="<%=osURL%><%=userList[k].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'">
+						<img src="//wap.macaoeasybuy.com<%=userList[k].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'">
 					</div>
 					<div class="respondBox_fansMess clearfloat">
 						<div>
@@ -442,7 +443,7 @@
 						<div class="big-expression">
 							<%if(replyList[i].bigexpressionGroup != undefined){%>
 								<%for(var k=0; k<replyList[i].bigexpressionGroup.length; k++){%>
-									<img src="<%=osURL%><%=replyList[i].bigexpressionGroup[k]%>" alt="">
+									<img src="//wap.macaoeasybuy.com<%=replyList[i].bigexpressionGroup[k]%>" alt="">
 								<%}%>
 							<%}%>
 						</div>

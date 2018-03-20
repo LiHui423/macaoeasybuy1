@@ -11,7 +11,7 @@ function btnOnSubmitFunc(obj,btn){
 	//否則，點擊是繼續上傳圖片
 	$(btn).off('click.uploader');
 	var flag = true;
-	$.each(self.list,function(k,y){
+	$.each(self.uploadList,function(k,y){
 		if(!y.isComplete) flag = false;
 	});
 	if(self.list.length == 0 || flag){
@@ -21,6 +21,114 @@ function btnOnSubmitFunc(obj,btn){
 			if(!y.isComplete) self.upload(y.id);
 		});
 	}
+}
+// 調用新的上傳插件
+function newUpload(){	
+	var uploadShowImg = easyBuy.global.template['upload-show-img'];
+	new EasyUplader({
+		pickerId : 'publish_submit',
+		server : 'http://userspace1.macaoeasybuy.com/UserPublishController/preUpload.easy',
+		submitBtnId : 'replyBox_sendMess',
+		multiple : true,
+		method : 'POST',
+		isDropUpload:true,
+		isPreview:true,
+		maxlength : 6,
+		maxSize:2,
+		fileType : ['image/png','image/gif','image/jpeg'],
+		onSelectImage : function(file,imgobj){
+			var count = $('#nowNum').html();
+			$('form').append(imgobj);
+			var self = this;
+			//在body中动态生成div，其中包含img和span删除按钮
+			var itemId='linshi'+Math.floor(Math.random()*100);
+			/*var itemId = file.name.split('.')[0] + 'item';*/
+			var html = '<div id='+itemId+'><span></span></div>';
+			/*$('.drop_area').append(html);*/
+			// $('body').append(html);
+			$('#preview-box').prepend(html);
+			$('#publish_submit').addClass('select');
+			count++;
+			$('#nowNum').html(count);
+			$('#'+itemId).css({'position':'relative','display':'inline-block','margin-top':'5px'});
+			$('#'+itemId).append(imgobj);
+			var span=$('#'+itemId).find('span');
+			$(span).css({
+				'position':'absolute',
+				'cursor':'pointer',
+				'width':'20px',
+				'height':'20px',
+				'border-radius':'10px',
+				'background-color':'white',
+				'line-height':'20px',
+				'text-align':'center'
+			})
+			span.addClass('file-temp-btn').html('&times;');
+			span.attr('id',itemId+'item');
+			span.on('click',function(){
+				self.cancelFile(file.id);
+				var count = $('#nowNum').html();
+				count--;
+				$('#nowNum').html(count);
+				$(this).parent().remove();
+			});
+
+			
+		},
+		onSelectFile:function(file){
+			var str = file.name + '这是自定义的参数';
+			// this.setFileParam(str);
+		},
+		onError : function(type){
+			if(type == 'size'){
+				alert('文件大小超过限制');
+			}else if(type == 'type'){
+				alert('文件格式有问题');
+			}else if(type=='number'){
+				alert('文件数量有问题')
+			}else if(type == 'upload'){
+				alert('發生未知錯誤');
+			}
+		},
+		onBeforeSend : function(){
+			console.log(self);
+			var re = checkPost();
+			console.log(re);
+			if(re == false) return false; //先去檢查內容，是否允許上傳
+			//如果沒有要上傳的圖片了，就直接發送內容
+			//否則，點擊時繼續上傳圖片
+			$('#replyBox_sendMess').off('click.uploader');
+			var flag = true;
+			$.each(self.uploadList,function(k,y){
+				if(!y.isComplete) flag = false;
+			});
+			if(self.uploadList.length == 0 || flag){
+				// sendRequest(re);
+				this.setParm(re);
+			}else{
+				$.each(self.uploadList,function(k,y){
+					if(!y.isComplete) self.EasyUplader(y.id);
+				});
+			}
+			// var title = $('#diaryTitle').val();
+			// var content = $('#editor').html();
+			// console.log(title);
+			// console.log(content);
+			// if(title === '' || content === ''){
+			// 	alert('帖子標題或內文不能為空');
+			// }else{
+			// 	this.setParm({
+			// 		title : title,
+			// 		content : content,
+			// 	});
+			// }
+		},
+		onSubmitSuccess:function(data){
+			if(data.result == 'success'){
+				alert('上傳完成');
+			}
+		},
+	});
 }
 //調用上傳插件
 function imgUpLoad(){
@@ -54,7 +162,7 @@ function imgUpLoad(){
 		compress : false, //是否壓縮文件
 		//點擊發佈
 		submitBtnClick : function(btn){
-			btnOnSubmitFunc(this,btn);
+			btnOnSubmitFunc(this,btn); 
 		},
 		 //顯示圖片 , 文件插入隊列時觸發
 		showImg : function(fileURL,file){
@@ -156,6 +264,7 @@ function imgUpLoad(){
 		}
 	});
 }
+
 //監聽標題框的長度並且輸出
 function showInputNum(){
 	$('#diaryTitle').on('keyup',function(){
@@ -168,7 +277,7 @@ function errorFunc(){
 		y.isComplete = false;
 	});
 	$('#replyBox_sendMess').on('click.uploader',function(){
-		btnOnSubmitFunc(window.uploader,$(this)[0]);
+		btnOnSubmitFunc(window.EasyUplader,$(this)[0]);
 	});
 }
 //返回的callback

@@ -1,6 +1,9 @@
-easyBuy.global.startJs = function(data){
-	userStatus();//用戶的狀態
-}
+$(function(){
+	userStatus();
+})
+// easyBuy.global.startJs = function(data){
+// 	userStatus();//用戶的狀態
+// }
 var waterfall = easyBuy.global.dep.waterfall;
 var getRequestURL = easyBuy.global.dep.getRequestURL;
 var easyScrollRequest = easyBuy.global.dep.easyScrollRequest;

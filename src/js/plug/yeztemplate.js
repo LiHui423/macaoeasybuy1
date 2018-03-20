@@ -11,7 +11,7 @@ function YEZTemplateObj(paramObj) {
 	paramObj.beforeGetData !== undefined && (this.beforeGetData = paramObj.beforeGetData);
 	paramObj.afterGetData !== undefined && (this.afterGetData = paramObj.afterGetData);
 	paramObj.beforeInsert !== undefined && (this.beforeInsert = paramObj.beforeInsert);
-    paramObj.afterInsert !== undefined && (this.afterInsert = paramObj.afterInsert);
+	paramObj.afterInsert !== undefined && (this.afterInsert = paramObj.afterInsert);
 }
 YEZTemplateObj.prototype = {
 	constructor: YEZTemplateObj,
@@ -35,9 +35,9 @@ YEZTemplateObj.prototype = {
     insertTemplate: function(templateObj, data, isCache) {
         var isPaging = data.page !== undefined;         // 判断是否是分页
         var isFirst = isPaging && data.page === 0;      // 判断是否是第一页
-        var templateStrArr = easyBuy.global.template;   // 页面内模板字符串所在全局里的数组
+		var templateStrArr = easyBuy.global.template;   // 页面内模板字符串所在全局里的数组
         var container = $(templateObj.container);          // 容器
-        var templateString = templateStrArr[templateObj.templateID];        // 模板字符串
+		var templateString = templateStrArr[templateObj.templateID];        // 模板字符串
 
         // html: 第一页，不分页，缓存     after: 懒加载
         if(isCache || !isPaging || isFirst) {
@@ -48,6 +48,7 @@ YEZTemplateObj.prototype = {
     }
 };
 function templateProcessor(templateObjArr) {
+	console.log(templateObjArr);
 	var templateStrArr = easyBuy.global.template;
 	if(!!jQuery) {
 		$.each(templateObjArr, function(index) {

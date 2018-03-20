@@ -58,7 +58,8 @@ function positionBox(box,boxOuter,referBox,fadeTime){
 		box.css({
 			'position':'fixed',
 			'top':'0px',
-			'left':boxOuter.offset().left - $(this).scrollLeft(),
+			// 'left':boxOuter.offset().left - $(this).scrollLeft(),
+			'left' :'940px',
 			'box-shadow': '0px 5px 15px #ccc',
 			'height':'300px'
 		});
@@ -114,7 +115,7 @@ function commodity(data){
 function bigEmoji(data){
 	if(data == undefined) return false;
 	for(var i=0;i<data.length;i++){
-		var html = '<li><img src="'+easyBuy.global.osURL+data[i]+'"></li>'
+		var html = '<li><img src="//wap.macaoeasybuy.com'+data[i]+'"></li>'
 		$('#atricle_emjo').append(html);
 	}
 }
@@ -189,6 +190,9 @@ function reportPost(){
 		alert('舉報你哦，大壞蛋');
 	});
 }
+
+
+
 //輪播圖
 function postBanner(opt){
 	var dataUrl = opt.dataUrl;
@@ -201,13 +205,17 @@ function postBanner(opt){
 		dataType:'jsonp',
 		success:function(data){
 			console.log(data);
-			var newData = data.releaseInfoPics || data.sentVolunteersInfoPics || data.usedInfoPics || data.suitableLifeInfoPics;
+			var newData = data.releaseInfoPics || data.sentVolunteersInfoPics || data.usedInfoPics || data.suitableLifeInfoPics || data.fairInfoPics;
 			if(newData.length == 0){
 				$('#foodBannerul').parents('.showPicBox').remove();
 				return false;
 			}
 			for(var i=0;i<newData.length;i++){
-				var html = '<li><img middle="true" src="//wap.macaoeasybuy.com'+newData[i].pic+'"></li>';
+				if(newData[i].pic !== undefined){
+					var html = '<li><img middle="true" src="//wap.macaoeasybuy.com'+newData[i].pic+'"></li>';
+				}else{
+					var html = '<li><img middle="true" src="/src/img/common/loadnow.jpg"></li>';
+				}
 				$('#foodBannerul').append(html);
 			}
 			easyBuy.global.dep.mygoodbanner({
@@ -441,6 +449,7 @@ function isClickLove(lovetype,type){
 			$('#good-for-post').on('click',function(){
 				var goUrl = 'http://userspace1.macaoeasybuy.com/UserLikeConntroller/changeLove.easy?userId='+userId+'&id='+postId+'&type='+type+'&status=1&easybuyCallback=?';
 				$.getJSON(goUrl,function(data){
+					console.log(data);
 					var html = template.render(goodTemplate,data);
 					if($('#good-list>li').length > 0){
 						$('#good-list').prepend(html);

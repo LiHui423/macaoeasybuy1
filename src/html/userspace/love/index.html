@@ -3,6 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+		<meta http-equiv="Access-Control-Allow-Methods" content="GET, POST, PUT, DELETE, OPTIONS" />
+		<meta http-equiv="Access-Control-Allow-Headers" content="Accept,Authorization,Cache-Control,Content-Type,Pragma,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Mx-ReqToken,X-Requested-With" />
+
 		<title>用戶空間-心動</title>
 		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
 		<link rel="stylesheet" href="/src/css/common/common.css">
@@ -142,16 +146,17 @@
 		<script src="/src/js/plug/yez_js_Reset.js"></script>
 		<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
 		<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
+		<script src="/src/js/common/vendor/socket.io.js"></script>
 		<script src="/src/js/userspace/common/userinfo.js" async></script>
-		<script src="/src/js/userspace/common/leftmenu.js" async></script>
 		<script src="/src/js/userspace/common/whitemenu.js" async></script>
 		<script src="/src/js/userspace/common/newspush.js" async></script>
 		<script src="/src/js/common/header&search&footer/footer.js" async></script>
 		<script src="/src/js/common/page-header.js"></script>
 		<script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 		<script src="/src/js/userspace/userlove/userlove.js"></script>
-		<script src="/src/js/userspace/userlove/userlove_data.js"></script>
+		<!-- <script src="/src/js/userspace/userlove/userlove_data.js"></script> -->
 		<script src="/src/js/common/clickEvent.js"></script>
+		
 		<!--量販團-->
 		<!--groupBuy_goodsEach_begin 已經開團人數不夠-->
 		<!--groupBuy_begin_finishBox 團購開始，人數夠，時間到了-->
@@ -299,7 +304,7 @@
 						<div class="ListBox_goodsEach_picCover">
 							<img src="/src/img/easybuy/limited/snap_up.png">
 						</div>
-						<img src="<%=osURL%><%=result[i].pic%>">
+						<img src="//wap.macaoeasybuy.com<%=result[i].pic%>">
 						<%if(result[i].leftNum == 0){%>
 						<div class="sticker"><img src="/src/img/easybuy/limited/snap_up.png" alt=""></div>
 						<%}%>
@@ -359,16 +364,16 @@
 			<%if(result.length != 0){%>
 			<%for(var i=0,leni=result.length;i<leni;i++){%>
 			<div class="userLoveItem discount_goodEach discountItem<%=result[i].id%>">
-				<div class="discount_goodEach_pic"><img src="<%=osURL%><%=result[i].pic%>"></div>
+				<div class="discount_goodEach_pic"><img src="//wap.macaoeasybuy.com<%=result[i].pic%>"></div>
 				<div class="discount_goodEach_mess">
 					<div class="discount_goodEach_size clearfloat">
 						<%if(result[i].samePicList.length <= 2){%>
 						<%for(var j=0,lenj=result[i].samePicList.length;j<lenj;j++){%>
-						<div class="discount_goodEach_sizeBox discount_goodEach_sizeShow"><img src="<%=osURL%><%=result[i].samePicList[j]%>"></div>
+						<div class="discount_goodEach_sizeBox discount_goodEach_sizeShow"><img src="//wap.macaoeasybuy.com<%=result[i].samePicList[j]%>"></div>
 						<%}%>
 						<%}else{%>
 						<%for(var j=0;j<2;j++){%>
-						<div class="discount_goodEach_sizeBox discount_goodEach_sizeShow"><img src="<%=osURL%><%=result[i].samePicList[j]%>"></div>
+						<div class="discount_goodEach_sizeBox discount_goodEach_sizeShow"><img src="//wap.macaoeasybuy.com<%=result[i].samePicList[j]%>"></div>
 						<%}%>
 						<%}%>
 						<div class="discount_goodEach_sizeBox discount_goodEach_sizeNum">
@@ -431,7 +436,7 @@
 					<div class="interchange_eachLeft">
 						<div class="willbeShelves_EachTop">
 							<div class="willbeShelves_sellOut_cover"><img src="/src/img/easybuy/exchange/exchange_sellOut.png"></div>
-							<img src="<%=osURL%><%=result[i].pic%>">
+							<img src="//wap.macaoeasybuy.com<%=result[i].pic%>">
 							<div class="interchange_each_like">
 								<span><img src="/src/img/easybuy/exchange/filling_like.png"></span><span><%=result[i].loveCount%>人心動</span>
 							</div>
@@ -455,7 +460,7 @@
 					<div class="interchange_eachRight">
 						<%for(var j=0,lenj=result[i].detailPicList.length;j<lenj;j++){%>
 						<div class="interchange_eachRightsEach">
-							<img src="<%=osURL%><%=result[i].detailPicList[j]%>">
+							<img src="//wap.macaoeasybuy.com<%=result[i].detailPicList[j]%>">
 							<!--<div class="eachRightsEach_cover">
 								<div class="eachRightsEach_cover_num">
 									<p>僅剩</p>
@@ -493,7 +498,7 @@
 			<%for(var i=0,leni=result.length;i<leni;i++){%>
 			<div class="userLoveItem item museumItem<%=result[i].id%>">
 				<div class="item-img">
-					<img src="<%=osURL%><%=result[i].pic%>" alt="">
+					<img src="//wap.macaoeasybuy.com<%=result[i].pic%>" alt="">
 				</div>
 				<div class="item-price">
 					<div class="item-price-title hiddenText"><%=result[i].title%></div>
@@ -541,11 +546,11 @@
 		<script id="fair_template" type="text/html" data-type="template">
 			<%if(result.length != 0){%>
 			<%for(var i=0,leni=result.length;i<leni;i++){%>
-			<div class="userLoveItem userlove_marketEachBox fairItem<%=result[i].id%>">
+			<div class="userLoveItem userlove_marketEachBox fairItem<%=result[i].id%>" data-id="<%=result[i].userId%>">
 				<div class="userlove_marketEach">
 					<%if(result[i].pic != ''){%>
 					<div class="userlove_marketEach_pic">
-						<img src="<%=osURL%><%=result[i].pic%>">
+						<img src="//wap.macaoeasybuy.com<%=result[i].pic%>">
 					</div>
 					<%}%>
 					<div class="userlove_marketEach_title">
@@ -576,7 +581,7 @@
 					<div class="userlove_marketEach_visit clearfloat">
 						<ul>
 							<%for(var j=0,lenj=result[i].seeUserPics.length;j<lenj;j++){%>
-							<li class="myborder-radius"><img src="//wap.macaoeasybuy.com<%=result[i].seeUserPics[j]%>" onerror="this.onerror:null;this.src='/src/img/common/loading_pc_headPic.png'"></li>
+							<li class="myborder-radius"><img src="//wap.macaoeasybuy.com<%=result[i].seeUserPics[j]%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></li>
 							<%}%>
 						</ul>
 					</div>
@@ -642,6 +647,7 @@
 				</div>
 			<%}%>
 		</script>
+		<script src="/src/js/userspace/common/leftmenu.js" async></script>
 
 	</body>
 

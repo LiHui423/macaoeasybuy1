@@ -38,7 +38,8 @@ function userStatus(){
 	postContent();//帖子內容
 	postBanner({
 		dataUrl : 'http://userspace1.macaoeasybuy.com/UserUsedConntroller/queryUsedInfoPics.easy',
-		values : 'usedInfoPics'
+		values : 'usedInfoPics',
+		id: postId
 	});
 	queryTopicCount(4,'Used');//评论查看赞好数统计
 	isClickLove(2,2); //點讚

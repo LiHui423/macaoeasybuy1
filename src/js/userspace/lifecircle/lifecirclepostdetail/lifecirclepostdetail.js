@@ -34,7 +34,7 @@ function userStatus(){
 		values : 'suitableLifeInfoPics',
 		id: postId
 	});
-	queryTopicCount(1,'suitablelife');//评论查看赞好数统计
+	queryTopicCount(1,'suitablelife',postId);//评论查看赞好数统计
 	isClickLove(4,4); //點讚
 	responseCard(1);//回復查看讃好，數據
 	handPost();//上下篇
@@ -133,7 +133,7 @@ function handPost(){
 				$(this).remove();
 			});
 			if(data.preSuitableLife.pictureurl){
-				imgOnMiddle($('.other-post .first .page-items .page-items-list .items-img')); //圖片居中
+				easyBuy.global.dep.imgOnMiddle($('.other-post .first .page-items .page-items-list .items-img')); //圖片居中
 			}
 		}else{
 			$('.other-post .other-post-title.first').remove();
@@ -153,7 +153,7 @@ function handPost(){
 				$(this).remove();
 			});
 			if(data.lastSuitableLife.pictureurl){
-				imgOnMiddle($('.other-post .second .page-items .page-items-list .items-img')); //圖片居中
+				easyBuy.global.dep.imgOnMiddle($('.other-post .second .page-items .page-items-list .items-img')); //圖片居中
 			}
 		}else{
 			$('.other-post .other-post-title.second').remove();

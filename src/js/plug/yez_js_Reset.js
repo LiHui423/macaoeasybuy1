@@ -655,16 +655,16 @@
     };
     //從數組裡面刪除指定內容的對象
     easyGlobal.deleteArrObj = function(arr,key,val){
-        console.log(arr);
-        console.log(key);
-        console.log(val);
         var delInx = null;
-        for(var i=0;i<arr.length;i++){
+        for(var i = 0; i < arr.length; i++){
             if(arr[i][key] == val){
                 delInx = i;
             }
         }
         arr.splice(delInx,1);
+        if(arr.length === 0){
+            $('#collect-btn span').html('0');
+        }
         return arr;
     };
     //修改數組指定字段對象的值

@@ -4,7 +4,8 @@ easyBuy.global.startJs = function(){
 		editor = new YezEditor('#editor'); //實例編輯器
 		addSelect(true);
 	});
-	imgUpLoad();
+	// imgUpLoad();
+	newUpload();
 	showInputNum(); //監聽標題框的長度並且輸出
 
 	chooseType(); //選擇文章類型

@@ -93,6 +93,7 @@
 		<script src="/src/js/common/page-header.js"></script>
 		<script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 		<script src="/src/js/userspace/fair/fairlist/fairlist.js"></script>
+		<script src="/src/js/common/clickEvent.js"></script>
 
 		<script id="post-template" type="text/html" data-type="template">
 			<%if(fairList.fairList.length != 0){%>
@@ -106,7 +107,7 @@
 											<div class="top-banner not">原價-<span><%=fairList.fairList[i].discount%></span>%</div>
 										<%}else{%>
 											<div class="top-banner">原價-<span><%=fairList.fairList[i].discount%></span>%</div>
-											<img src="<%=osURL%><%=fairList.fairList[i].picture%>" class="page-main-head-img ">
+											<img src="//wap.macaoeasybuy.com<%=fairList.fairList[i].picture%>" class="page-main-head-img ">
 										<%}%>
 									</a>
 									<div class="post-main-text">
@@ -120,13 +121,13 @@
 								</div>
 								<div class="laster">
 									<ul class="laster-num clearfloat ">
-										<li><%=formatNum(fairList.fairList[i].loveNums)%></li>
-										<li><%=formatNum(fairList.fairList[i].seeNums)%></li>
-										<li><%=formatNum(fairList.fairList[i].moneyNew)%></li>
+										<li><%=fairList.fairList[i].loveNums%></li>
+										<li><%=fairList.fairList[i].seeNums%></li>
+										<li><%=fairList.fairList[i].moneyNew%></li>
 									</ul>
 									<%if(fairList.isSelf == 0){%>
 										<div class="laster-look clearfloat other">
-											<div class="laster-head"><img src="<%=osURL%><%=fairList.seeUser.pic%>" alt=" "></div>
+											<div class="laster-head"><img src="//wap.macaoeasybuy.com<%=fairList.seeUser.pic%>" alt=" "></div>
 											<div class="laster-text">
 												<div class="laster-text-name clearfloat">
 													<div><%=fairList.seeUser.name%></div>

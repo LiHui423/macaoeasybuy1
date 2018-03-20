@@ -1,6 +1,14 @@
 void function() {
+  checkLogin();
   $('#left-menu').load('/public/leftmenu.html', function () {
+    navChange();
     $('#sendpost-leftmenu')[0].flag = true;
+    let li = $('#sendpost-leftmenu-box ul li');
+    $.each(li,function(k,y){
+        let a = $(y).find('a');
+        let preHref = $(a).attr('href');
+        $(a).attr('href',preHref+'?spaceid='+easyBuy.global.pageParameter.spaceid);
+    })
     $('#sendpost-leftmenu').on('click.post', function () {
         if ($(this)[0].flag) {
             $(this)[0].flag = false;
@@ -17,5 +25,56 @@ void function() {
     $('#sendpost-leftmenu-box img.cancel-btn').on('click', function () {
         $('#sendpost-leftmenu-box').css('display', 'none');
     });
+    // 左側按鈕點擊事件
+    $('#left-menu ul li').on('click',function(){
+        let type = $(this).attr('id').split('-')[0];
+        if(type === 'index'){
+            location.href = 'http://userspace.macaoeasybuy.com/?spaceid=' + easyBuy.easyUser.id;
+        }else if(type === 'easylife'){
+            location.href = 'http://social.macaoeasybuy.com/easylive/easylive.html';
+        }else if(type === 'setinfo'){
+            location.href = 'http://userspace.macaoeasybuy.com/personalinfo/infoset/information/information.html?spaceid=' + easyBuy.easyUser.id;
+        }else if(type === 'inform'){
+            location.href = 'http://userspace.macaoeasybuy.com/usermessage/usermessage.html?spaceid=' + easyBuy.easyUser.id;
+        }else if(type === 'peep'){
+            location.href = 'http://userspace.macaoeasybuy.com/whospeep/whospeep.html?spaceid=' + easyBuy.easyUser.id;
+        }else if(type ==='findfriend'){
+            location.href = 'http://userspace.macaoeasybuy.com/relation/findfriends/findfriends.html?spaceid=' + easyBuy.easyUser.id;
+        }
+    })
+    function navChange(){
+        let url = location.href.split('?')[0];
+        if(url === 'http://userspace.macaoeasybuy.com/usermessage/usermessage.html'){
+            $($($('#left-menu ul li')[4]).children()[1]).css('display','table');
+        }else if(url === 'http://userspace.macaoeasybuy.com/personalinfo/infoset/information/information.html'){
+            $($($('#left-menu ul li')[2]).children()[1]).css('display','table');
+        }else if(url === 'http://userspace.macaoeasybuy.com/'){
+            $($($('#left-menu ul li')[0]).children()[1]).css('display','table');
+        }
+        let liArray = $('#left-menu ul li');
+        $.each(liArray,function(k,y){
+            let id = $(y).attr('id').split('-')[0];
+            if(url.indexOf(id) !== -1){
+                $($(y).children()[1]).css('display','table');
+            }
+        })
+    }
 });
 }();
+
+//是否登录
+function checkLogin(){
+	var url="http://userManager.macaoeasybuy.com/userInfoManagerController/checkLogin.easy?easybuyCallback=?";
+	var frame=new FrameDomain();
+	var href=frame.addHref(url);
+	$.getJSON(href, function (data) {
+		var parmae=data.Info;
+		if(parmae!=null&&parmae!==''){
+			// var socket = io.connect('ws://116.62.109.210:26840?token='+parmae);
+			// //消息监听事件
+            // socket.on('MsgEvent', function (data) {
+            //     console.log(data);
+            // });
+		}
+	});
+}

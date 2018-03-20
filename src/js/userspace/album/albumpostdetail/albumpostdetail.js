@@ -1,15 +1,19 @@
 var postId = easyBuy.global.pageParameter.albumPostId;
 var albumId = easyBuy.global.pageParameter.albumId; //专辑id
-var picId = easyBuy.global.pageParameter.picId || 3;
-var userId=easyBuy.easyUser.id;
-var seeUserIdd=easyBuy.global.pageParameter.spaceid;
-
-easyBuy.global.startJs = function(){
+var picId = easyBuy.global.pageParameter.albumPostId || 3; //點擊圖片的id
+var userId=easyBuy.easyUser.id;//用戶id
+var seeUserIdd=easyBuy.global.pageParameter.spaceid;//正在看的用戶id
+$(function(){
 	easyBuy.userSpaceGlobal.replyPostType = '6';
 	easyBuy.userSpaceGlobal.replyVolunteersType = 'replyTheAlbum'; //专辑回復貼子分類
 	userStatus(); //帖子狀態
+})
+// easyBuy.global.startJs = function(){
+// 	easyBuy.userSpaceGlobal.replyPostType = '6';
+// 	easyBuy.userSpaceGlobal.replyVolunteersType = 'replyTheAlbum'; //专辑回復貼子分類
+// 	userStatus(); //帖子狀態
 
-}
+// }
 var imgOnMiddle = easyBuy.global.dep.imgOnMiddle;
 var mathValueLength = easyBuy.global.dep.mathValueLength;
 var getRequestURL = easyBuy.global.dep.getRequestURL;
@@ -48,59 +52,64 @@ function userStatus(){
 	$('#editor-box').load('/public/postDetailEditor.html',function(){
 		editorFunc();
 	});
-	postImage();//图片描述
+	
 	otherImage();//专辑其他图片
 	manyImage();//专辑其他图片多图片
 	collectFuns();//宜粉採集到
 	otherAlbum();//上下篇
 
-	queryTopicCount(6,'[Group]');//评论查看赞好数统计
+	queryTopicCount(6,'[Group]',albumId);//评论查看赞好数统计
 	isClickLove(8,8); //點讚
 
 	responseCard(6);//回復查看讃好，數據
-
+	postImage();//图片描述
+	
 }
-// easyframe('getRequestURL')(
 //图片描述-第一個接口
 function postImage(){
-	var url = '//userspace1.macaoeasybuy.com/yez_easyBuyMall_userSpace/UserThealbumConntroller/queryAlbumPicDetail.easy?picId=8'
-	$.ajax({
-		url: url,
-		type: "get",
-		async: true,
-		dataType: 'jsonp',
-		success: function(data){
-			var needData=data.result;
-			albumBanner(needData.pic);
+	$.getJSON('//userspace1.macaoeasybuy.com/UserThealbumConntroller/queryAlbumPicDetail.easy?picId=' + picId + '&easybuyCallback=?', function(data){
+		var needData=data.result;
+		console.log(needData);
+		albumBanner(needData.pic);
 
-			if(easyBuy.global.isSelf){
-				albumCover(needData.isCover==0? false : true); //专辑封面
-			}
-			$('.articleMain>p').html(needData.picDesc);
-			if(needData.isCollect==0){
-				$('.articleBox .atricle_title').css('display','none');
-			}else{
-				$('.articleBox .atricle_title').css('display','block');
-				$('.articleBox .atricle_title .atricle_title-left .atricle-from span:first-child').html(needData.collectUserName);
-				var imgObj=document.createElement('img');
-				$(imgObj).attr('src',needData.collectUserSex=='Girl'?'/src/img/common/girl.png':'/src/img/common/boy.png');
-				$('.articleBox .atricle_title .atricle_title-left .atricle-from span:first-child').append(imgObj);
-				$('.articleBox .atricle_title .atricle_title-left .atricle-from span:last-child').html('《'+needData.collectAlbumName+'》'
-			);
-				var year=needData.uptime.substring(0,10);
-				var second=needData.uptime.substring(11);
-				$('.articleBox .atricle_title .atricle_title-left .atricle-time span:first-child').html(year);
-				$('.articleBox .atricle_title .atricle_title-left .atricle-time span:last-child').html(second);
-				$('.messBox_mess_time p:last-child span').html(needData.uptime);
-			}
+		if(easyBuy.global.isSelf){
+			albumCover(needData.isCover==0? false : true); //专辑封面
 		}
+		$('.articleMain>p').html(needData.picDesc);
+		if(needData.isCollect==0){
+			$('.messBox_mess_time p:last-child span').html(needData.uptime);
+			$('.articleBox .atricle_title').css('display','none');
+		}else{
+			$('.articleBox .atricle_title').css('display','block');
+			$('.articleBox .atricle_title .atricle_title-left .atricle-from span:first-child').html(needData.collectUserName);
+			var imgObj=document.createElement('img');
+			$(imgObj).attr('src',needData.collectUserSex=='Girl'?'/src/img/common/girl.png':'/src/img/common/boy.png');
+			$('.articleBox .atricle_title .atricle_title-left .atricle-from span:first-child').append(imgObj);
+			$('.articleBox .atricle_title .atricle_title-left .atricle-from span:last-child').html('《'+needData.collectAlbumName+'》'
+		);
+			var year=needData.uptime.substring(0,10);
+			var second=needData.uptime.substring(11);
+			$('.articleBox .atricle_title .atricle_title-left .atricle-time span:first-child').html(year);
+			$('.articleBox .atricle_title .atricle_title-left .atricle-time span:last-child').html(second);
+			$('.messBox_mess_time p:last-child span').html(needData.uptime);
+		}
+		// 點擊我要採集
+		$('#collect-btn').on('click',function() {
+			var collectObj = [{
+				pic:needData.pic,
+				id:needData.picId,
+				desc:needData.picDesc
+			}]
+			console.log(collectObj);
+			new PCollector(collectObj);
+		});
 	});
 	//专辑图组放大
 	function albumBanner(url){
 		var imgObj=document.createElement('img');
 		// var divObj=document.createElement('div');
 		$(imgObj).attr({
-			src :easyBuy.global.osURL+url,
+			src :'//wap.macaoeasybuy.com'+url,
 			middle : true
 		});
 		$('#foodBannerul li').append(imgObj);
@@ -135,11 +144,17 @@ function otherImage(){
 		},
 		type: 'get',
 		async: true,
-		dataType: 'jsonp',
+		// dataType: 'jsonp',
 		success: function(data){
+			data = JSON.parse(data);
+			console.log(data);
 			var needData=data.albumInfo;
 			var imgObj=document.createElement('img');
-			$(imgObj).attr('src',easyBuy.global.osURL+needData.thecoverpictureurl);
+			if(needData.thecoverpictureurl === ""){
+				$(imgObj).attr('src','/src/img/userspace/album/album-no-img.png');
+			}else{
+				$(imgObj).attr('src','//wap.macaoeasybuy.com'+needData.thecoverpictureurl);
+			}
 			$(imgObj).css({'width':'170px','height':'166px'});
 			$('.album-cover').append(imgObj);
 			$('.album-detail-info .album-detail-info-title span').html('《'+needData.thealbumName+'》');
@@ -151,7 +166,7 @@ function otherImage(){
 			$('.album-info .album-detail-info ul li:last-child div:first-child').html(needData.collectionNum);
 			$('.messBox_mess_time p:first-child span').html(needData.className);
 			var pic=document.createElement('img');
-			$(pic).attr('src',easyBuy.global.osURL+needData.userPic);
+			$(pic).attr('src','//wap.macaoeasybuy.com'+needData.userPic);
 			$('.messBox_pic').append(pic);
 		}
 	});
@@ -177,18 +192,19 @@ function manyImage(){
 			},
 			type:'get',
 			async: true,
-			dataType: 'jsonp',
-			beforeSend:function(){
-				easyBuy.global.dep.easyScrollRequest('off','otherImage',$('#scrollDiv'));//外面的容器
-				if(isComplate) return false;
-			},
+			// dataType: 'jsonp',
+			// beforeSend:function(){
+			// 	easyBuy.global.dep.easyScrollRequest('off','otherImage',$('#scrollDiv'));//外面的容器
+			// 	if(isComplate) return false;
+			// },
 			success:function(data){
+				data = JSON.parse(data);
 				console.log(data);
 				data.type='other';
 				data.page=page;
 				var html=template('imgDetails',data);
 				box.append(html);
-				waterfall($('.album-photo-inner'),$('.album-photo-inner .photo-items'),4,4,0,true);
+				//waterfall($('.album-photo-inner'),$('.album-photo-inner .photo-items'),4,4,0,true);
 				page++;
 				if(data.albumPics.length==size){
 					easyBuy.global.dep.easyScrollRequest('off','otherImage',$('#scrollDiv'),box,function(){
@@ -217,10 +233,13 @@ function collectFuns(){
 		},
 		type:'get',
 		async: true,
-		dataType: 'jsonp',
+		// dataType: 'jsonp',
 		success:function(data){
+			data = JSON.parse(data);
+			console.log(data);
 			var templateHtml=template('collect-photo',data);
 			$('.suggestCollect .CollectedBox .CollectedBox-inner').html(templateHtml);
+			
 		},
 		error:function(){
 			console.log('發生未知錯誤');
@@ -243,8 +262,10 @@ function otherAlbum(){
 		},
 		type:'get',
 		async:true,
-		dataType:'jsonp',
+		// dataType:'jsonp',
 		success:function(data){
+			data = JSON.parse(data);
+			console.log(data);
 			var templateHtml=template('albumOther',data.albumList);
 			$('#upDown').html(templateHtml);
 			var moved=0;

@@ -19,11 +19,11 @@
 	  new YMDselect('year1','month1','day1',1990,2);
 	  new YMDselect('year1','month1','day1',1990,2,10);
 \*** 程序制作/版权所有:Kevin QQ:251378427 E-Mail:yeminch@qq.com 网址:http://iulog.com ***/
-SYT="年份";
-SMT="月份";
-SDT="日期";
-BYN=80;//年份范围往前50年
-AYN=0;//年份范围往后0年
+const SYT="年份";
+const SMT="月份";
+const SDT="日期";
+const BYN=80;//年份范围往前50年
+const AYN=0;//年份范围往后0年
 function YMDselect(){
 	this.SelY=document.getElementsByName(arguments[0])[0];
 	this.SelM=document.getElementsByName(arguments[1])[0];
@@ -39,13 +39,13 @@ function YMDselect(){
 };
 //设置年份
 YMDselect.SetY=function(YMD){
-	dDate = new Date();
-	dCurYear = dDate.getFullYear();
+	let dDate = new Date();
+	let dCurYear = dDate.getFullYear();
 	YMD.SelY.options.add(new Option(SYT,'0'));
-	for(i = dCurYear+AYN; i>(dCurYear-BYN); i--){
-		YMDYT=i+'年';
-		YMDYV=i;
-		OptY = new Option(YMDYT,YMDYV);
+	for(let i = dCurYear+AYN; i>(dCurYear-BYN); i--){
+		let YMDYT=i+'年';
+		let YMDYV=i;
+		let OptY = new Option(YMDYT,YMDYV);
 		YMD.SelY.options.add(OptY);
 		if(YMD.DefY==YMDYV) OptY.selected=true
 	}
@@ -58,9 +58,9 @@ YMDselect.SetM=function(YMD){
 	if(YMD.SelY.value>0){
 		for(var i=1;i<=12;i++){
 			i = i<10 ? '0'+i : i;
- 			YMDMT=i+'月';
-			YMDMV=i;
-			OptM=new Option(YMDMT,YMDMV);
+ 			let YMDMT=i+'月';
+			let YMDMV=i;
+			let OptM=new Option(YMDMT,YMDMV);
 			YMD.SelM.options.add(OptM);
 			if(YMD.DefM==YMDMV) OptM.selected=true
 		}
@@ -69,18 +69,18 @@ YMDselect.SetM=function(YMD){
 };
 //设置日期
 YMDselect.SetD=function(YMD){
-	YI=YMD.SelY.value;
-	MI=YMD.SelM.value;
+	let YI=YMD.SelY.value;
+	let MI=YMD.SelM.value;
 	YMD.SelD.length = 0;
 	YMD.SelD.options.add(new Option(SDT,'0'));
 	if(YI>0 && MI>0){
-		dPrevDate = new Date(YI, MI, 0);
-		daysInMonth=dPrevDate.getDate();
-		for (d = 1; d <= parseInt(daysInMonth); d++) {
+		let dPrevDate = new Date(YI, MI, 0);
+		let daysInMonth=dPrevDate.getDate();
+		for (let d = 1; d <= parseInt(daysInMonth); d++) {
 			d = d<10 ? '0'+d : d;
-			YMDDT=d+'日';
-			YMDDV=d;
-			OptD=new Option(YMDDT,YMDDV);
+			let YMDDT=d+'日';
+			let YMDDV=d;
+			let OptD=new Option(YMDDT,YMDDV);
 			YMD.SelD.options.add(OptD);
 			if(YMD.DefD==YMDDV)OptD.selected=true
 		}

@@ -4,12 +4,13 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv="Pragma" contect="no-cache">
-		<title>用戶空間-專輯詳細頁</title>
+		<title>用戶空間-專輯圖片詳細頁</title>
 		<link rel="stylesheet" href="/src/css/common/yez_css_Reset.css">
 		<link rel="stylesheet" href="/src/css/common/common.css">
 		<link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
 		<link rel="stylesheet" href="/src/css/userspace/common/postCommon.css">
 		<link rel="stylesheet" href="/src/css/userspace/common/PostDetailEditor.css">
+		<link rel="stylesheet" href="/src/css/common/components/pcollector.css">
 		<link rel="stylesheet" href="/src/css/common/yez_Editor.css">
 		<link rel="stylesheet" href="/src/css/userspace/album/albumpostdetail/albumpostdetail.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
@@ -285,7 +286,7 @@
 									</div>
 								</div>
 								<!-- 返回列表 -->
-								<div class="return-list"><a href="">返回專輯列表</a></div>
+								<div class="return-list"><a>返回專輯列表</a></div>
 
 							</div>
 							<!--內容的結束標識-->
@@ -409,8 +410,53 @@
 		<div id="set-cover">
 			<div class="success-tips-box"><img src="/src/img/social/easylive/collect-select.png" alt="">已成功設此圖為該專輯封面！</div>
 		</div>
-
-
+		<!-- 採集圖片 -->
+		<div id="pcollector" class="pcollector-container" style="display: none;"><div class="collect-box pcollector-panel">
+            <div class="panel-header">
+                <div class="title">採集圖片</div>
+                <span class="panel-close-btn"></span>
+            </div>
+            <div class="panel-body">
+                <div class="picture-box">
+                    <div class="title">您可以把這些圖片收藏至您的專屬專輯中哦！</div>
+                    <div class="picture-list-box scrollIe scrollOther">
+                        <ul class="picture-list"><li class="picture-item" id="0">
+          <div class="item-img">
+            <div class="img-container">
+              <img class="e" src="//wap.macaoeasybuy.com//uploadfile/201611/20161125050050636156900506372842.jpg" id="3836">
+            </div>
+          </div>
+          <div class="item-content"><textarea class="scrollIe scrollOther" placeholder=""></textarea></div>
+        </li></ul>
+                    </div>
+                </div>
+                <div class="album-box">
+                    <div class="title">選擇一個專輯 or 創建一個新專輯</div>
+                    <div class="create-album">
+                        <input type="text">
+                        <button>創建</button>
+                    </div>
+                    <div class="album-list-box">
+                        <div class="active-album-name">當前選中的專輯為：</div>
+                        <div class="list-container scrollIe scrollOther">
+                            <ul class="album-list"><li id="1119" class="album-item" data-total="0">
+          <div class="img-container">
+            <img class="e" src="//img.macaoeasybuy.com/img/common/pixel.png" style="background-image: url(&quot;//wap.macaoeasybuy.com//uploadfile/201712/201712210155246364946132484537360.jpg&quot;);">
+          </div>
+          <span>去玩兒完全而</span>
+        </li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-primary">收藏至專輯</button>
+            </div>
+		</div></div>
+		<!-- 遮罩層 -->
+		<div id="shade" style="display: none;"></div>
+		<!-- 提示 -->
+		<div id="select-max-tips" class="yez-tips-box chagne-success-tips">勾選數量達到上限！</div>
 
 		<script src="/src/js/plug/yez_js_Reset.js"></script>
 		<script src="//js.macaoeasybuy.com/js/common/vendor/art-template-3.1.0.min.js"></script>
@@ -425,9 +471,9 @@
 		<script src="/src/js/userspace/common/postDetailEditorSend.js"></script>
 		<script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 		<script src="/src/js/userspace/common/post_common.js"></script>
-
+		<script src="/src/js/common/components/pcollector.js"></script>
 		<script src="/src/js/userspace/album/albumpostdetail/albumpostdetail.js"></script>
-
+		<script src="/src/js/common/clickEvent.js"></script>
 		<!-- 专辑图片详情 -->
 		<script id='imgDetails' type='text/html'>
 			<%for(var i=0;i<albumPics.length;i++){%>
@@ -619,15 +665,15 @@
 		<!-- 上下篇 -->
 		<script id="albumOther" type="text/html">
 			<%for(var i=0;i<albumList.length;i++){%>
-				<div class="album-list mine">
+				<div class="album-list mine" data-id="<%=albumList[i].id%>">
 					<div class="album-relative">
 						<div class="album-list-title"><%=albumList[i].thealbumname%></div>
-						<div class="album-top-img"><img src="//wap.macaoeasybuy.com<%=albumList[i].coverPic%>" style="width:205px;height:205px;"></div>
+						<div class="album-top-img"><img src="//wap.macaoeasybuy.com<%=albumList[i].coverPic%>" onerror="this.onerror=null;this.src='/src/img/userspace/album/album-no-img.png'" style="width:205px;height:205px;"></div>
 						<div class="album-img-list clearfloat">
-							<img src="//wap.macaoeasybuy.com<%=albumList[i].extra_Pic[0]%>" style="width:97px;height:97px;">
-							<img src="//wap.macaoeasybuy.com<%=albumList[i].extra_Pic[1]%>" style="width:97px;height:97px;">
-							<img src="//wap.macaoeasybuy.com<%=albumList[i].extra_Pic[2]%>" style="width:97px;height:97px;">
-							<img src="//wap.macaoeasybuy.com<%=albumList[i].extra_Pic[3]%>" style="width:97px;height:97px;">
+							<img src="//wap.macaoeasybuy.com<%=albumList[i].extra_Pic[0]%>" onerror="this.onerror=null;this.src='/src/img/userspace/album/album-no-img.png'" style="width:97px;height:97px;">
+							<img src="//wap.macaoeasybuy.com<%=albumList[i].extra_Pic[1]%>" onerror="this.onerror=null;this.src='/src/img/userspace/album/album-no-img.png'" style="width:97px;height:97px;">
+							<img src="//wap.macaoeasybuy.com<%=albumList[i].extra_Pic[2]%>" onerror="this.onerror=null;this.src='/src/img/userspace/album/album-no-img.png'" style="width:97px;height:97px;">
+							<img src="//wap.macaoeasybuy.com<%=albumList[i].extra_Pic[3]%>" onerror="this.onerror=null;this.src='/src/img/userspace/album/album-no-img.png'" style="width:97px;height:97px;">
 						</div>
 						<div class="album-state clearfloat">
 							<div><img src="/src/img/social/easylive/album-classification-eye.png" alt=""><%=albumList[i].seeNums%></div>
@@ -657,7 +703,7 @@
 					<div class="img"><img src="/src/img/common/05.png" alt=""></div>
 					<div class="title">暫無宜粉採集哦！</div>
 					<div class="title">來成為第一個採集的宜粉吧</div>
-					<div class="no-btn">我要採集</div>
+					<div class="no-btn" id="collect-btn">我要採集</div>
 				</div>
 			<%}else{%>
 				<%for(var i=0;i<result.length;i++){%>

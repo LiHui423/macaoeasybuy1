@@ -1,10 +1,11 @@
-// const Effect = parent.window.Effect;
-function Effect(){
-    
+
+// const Effect = window.Effect;
+function Effect(obj){
+    const initApiO = obj.methods.initApiO();
 }
 const label = new Effect({
     el: '#label-list',
-    data: {
+    $_data: {
         doms: {
             labelTab: {
                 show: '.labelTabs',
@@ -36,7 +37,9 @@ const label = new Effect({
         },
         ApiO: {
             active: {},
-        }
+        },
+        isSelf: easyBuy.global.isSelf,
+        userID: easyBuy.global.pageParameter.spaceid
     },
     methods: {
         /**
@@ -78,30 +81,44 @@ const label = new Effect({
             const sortOrderIndex = +$(this.$_data.doms.sortOrderTab.show).attr('data-eb-active');
             return labelTabIndex + '' + sortOrderIndex;
         },
+        template(obj) {
+            $.ajax({
+                url:obj.api,
+                data:obj.params,
+                type:'GET',
+                success:function(data){
+                    console.log(data);
+                    const html = template.render(obj.templateID,data);
 
+                },
+                erroe:function(){
+                    console.log('發生未知錯誤')
+                }
+            });
+        },
         // 初始化ApiO
         initApiO() {
-            const effect = this;
+            // const effect = this;
             this.$_data.ApiO = {
                 // 创建的标签数量
                 queryLabelPrevCount: this.template({
                     api: 'http://userspace1.macaoeasybuy.com/UserLabelConntroller/queryLabelPrevCount.easy',
                     params: {
-                        userId: this.$_data.userID
+                        userId: easyBuy.global.pageParameter.spaceid
                     },
                 }),
                 // 用过的标签数量
                 queryUserUsedLabelCount: this.template({
                     api: 'http://social1.macaoeasybuy.com/SolrLabelsController/QueryUserUsedLabelCount.easy',
                     params: {
-                        userId: this.$_data.userID
+                        userId: easyBuy.global.pageParameter.spaceid
                     }
                 }),
                 // 创建的标签列表
                 queryUserSpaceLabel: this.template({
                     api: 'http://social1.macaoeasybuy.com/SolrLabelsController/queryUserSpaceLabel.easy',
                     params: {
-                        userId: this.$_data.userID,
+                        userId: easyBuy.global.pageParameter.spaceid,
                         page: 0,
                         size: 10,
                         order: 'uptime',
@@ -130,7 +147,7 @@ const label = new Effect({
                 queryUserSpaceUsedLabel: this.template({
                     api: 'http://social1.macaoeasybuy.com/SolrLabelsController/queryUserSpaceUsedLabel.easy',
                     params: {
-                        userId: this.$_data.userID,
+                        userId: easyBuy.global.pageParameter.spaceid,
                         type: 0,
                         page: 0,
                         size: 10,
@@ -497,3 +514,6 @@ const label = new Effect({
         this.setTemplateObjectContainer(0);
     }
 });
+
+label.methods.initApiO();
+

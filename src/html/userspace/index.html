@@ -40,6 +40,8 @@
 <script src="/src/js/common/easyframe.js"></script>
 <script src="/src/js/common/vendor/modernizr-3.5.0.min.js"></script>
 <script src="/src/js/common/art-template-3.1.0.js"></script>
+<script src="/src/js/common/vendor/socket.io.js"></script>
+<script src="/src/js/userspace/common/leftmenu.js" async></script>
 <script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 <script src="/src/js/userspace/main.js"></script>
 <!-- 当前空间的用户信息 -->
@@ -402,11 +404,11 @@
             <%if(item.extra_Pic.length !== 0) {%>
             <div class="album-img-none-box">
                 <div class="album-top-img">
-                    <img src="<%=osURL%><%=item.extra_Pic[0]%>">
+                    <img src="//wap.macaoeasybuy.com<%=item.extra_Pic[0]%>">
                 </div>
                 <div class="album-img-list clearfloat">
                     <%for(var p=1, picURL; picURL = item.extra_Pic[p++];) {%>
-                  <img src="<%=osURL%><%=picURL%>">
+                  <img src="//wap.macaoeasybuy.com<%=picURL%>">
                     <%}%>
                 </div>
             </div>
@@ -419,7 +421,7 @@
             </div>
             <div class="album-poster">
                 <div class="item-user-info">
-                    <div class="info-poster-avatar"><img src="<%=osURL%><%=item.userPic%>"></div>
+                    <div class="info-poster-avatar"><img src="//wap.macaoeasybuy.com<%=item.userPic%>"></div>
                     <div class="info-post-info">
                         <div class="info-poster-name"><span><%=item.name%></span><%=#sexIcon(item.sex)%></div>
                         <div class="info-post-time"><%=item.uptime%>前發佈</div>
@@ -504,10 +506,10 @@
         <div class="pillar">
             <div class="page-main">
                 <div class="top-banner"><%=item.fineness%>&nbsp;/&nbsp;MOP&nbsp;4937</div>
-                <a href=""><img src="<%=osURL%><%=item.pic%>" class="page-main-head-img"></a>
+                <a href=""><img src="//wap.macaoeasybuy.com<%=item.pic%>" class="page-main-head-img"></a>
                 <div class="laster-look clearfloat">
                     <div class="laster-head">
-                        <img src="<%=osURL%><%=item.userPic%>">
+                        <img src="//wap.macaoeasybuy.com<%=item.userPic%>">
                     </div>
                     <div class="laster-text">
                         <div class="laster-text-name clearfloat">
@@ -551,7 +553,7 @@
                     <a href="#">
                         <!--增加圖片，下面一行的not去掉-->
                         <div class="top-banner">原價-<span>83</span>%</div>
-                        <img src="<%=osURL%><%=item.picture%>" class="page-main-head-img ">
+                        <img src="//wap.macaoeasybuy.com<%=item.picture%>" class="page-main-head-img ">
                     </a>
                     <div class="post-main-text">
                         <div class="post-description"><%=item.title%></div>
@@ -564,7 +566,7 @@
                         <li><%=formatNums(item.commentNums)%></li>
                     </ul>
                     <div class="laster-look clearfloat other">
-                        <div class="laster-head"><img src="<%=osURL%><%=item.userPic%>"></div>
+                        <div class="laster-head"><img src="//wap.macaoeasybuy.com<%=item.userPic%>"></div>
                         <div class="laster-text">
                             <div class="laster-text-name"><span><%=item.name%></span><%=sexIcon(item.sex)%></div>
                             <div class="laster-text-num "><%=item.uptime%>前發佈</div>

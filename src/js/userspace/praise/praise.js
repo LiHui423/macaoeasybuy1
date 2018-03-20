@@ -127,7 +127,7 @@ function requestGetData(){
 	var order = simpleRequest.order; //uptime(發佈時間)，commentCount(評論數)。loveCount(贊好數)
 	var isComplete = simpleRequest.isComplete;
 	var count = simpleRequest.count;
-	var dataUrl = 'http://userspace1.macaoeasybuy.com/UserLikeConntroller/queryLike.easy?page='+page+'&size='+size+'&order='+order+'&userId='+userId+'&seeUserId='+seeUserId+'&type='+type+'&easybuyCallback=?';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/UserLikeConntroller/queryLike.easy?page='+page+'&size='+size+'&order='+order+'&userId='+userId+'&seeUserId='+easyBuy.global.pageParameter.spaceid+'&type='+type+'&easybuyCallback=?';
 	var templateId = simpleRequest.template;
 	var boxId = simpleRequest.box;
 	var templateHtml = easyBuy.global.template[templateId];
@@ -140,6 +140,7 @@ function requestGetData(){
 			if(isComplete) return false;
 		},
 		success:function(data){
+			console.log(data);
 			var data = data.result;
 			var resLen = data.returnList.length;
 			data.page = page;

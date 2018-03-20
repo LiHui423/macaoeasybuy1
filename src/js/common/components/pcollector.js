@@ -1,6 +1,5 @@
 class PCollector {
   constructor(picArray) {
-    console.log(picArray);
     this.container = '.pcollector-container',
     this.btn = '#collect-btn',
     this.userId = null,
@@ -43,7 +42,6 @@ class PCollector {
   }
 
   insertPanel() {
-    console.log($(this.els.$container));
     $(this.els.$container).load('/common/components/pcollector.html .pcollector-panel', () => {
       this.setElements();
       this.getAlbumList();
@@ -57,7 +55,6 @@ class PCollector {
     const $c = this.els.$container;
     this.els.$pictureList = $c.find('.picture-list');//圖片ul
     this.els.$albumList = $c.find('.album-list');//專輯ul
-    console.log(this.els.$albumList);
     this.els.$closeBtn = $c.find('.panel-close-btn');//關閉按鈕
     this.els.$createBtn = $c.find('.create-album button');//創建按鈕
     this.els.$newAlbumNameInput = $c.find('.create-album input');//創建專輯名稱
@@ -99,7 +96,6 @@ class PCollector {
       //   this.lazyload && $methods.lazyload(false);
       // },
       success: ({result}) => {
-        console.log(result);
         const page = this.albumList.parameters.page;
         const content = result;
         callback && callback({ page, content });
@@ -112,7 +108,6 @@ class PCollector {
    */
   insertAlbumList() {
     const $c = this.els.$albumList;
-    console.log($c);
     this.getAlbumList(({ page, content }) => {
       const html = this.generateAlbumItem(content);
       page === 0 ? $c.html(html) : $c.append(html);
@@ -139,20 +134,20 @@ class PCollector {
    */
   collect() {
     const collects = [];
-    const ids = '';
+    let ids = '';
     const userId = easyBuy.easyUser.id;
     const userName = easyBuy.easyUser.name;
     const $is = this.els.$pictureList.children();// 图片列表的li
     $is.each((i, el) => {
       const $el = $(el);
       const desc = $el.find('textarea').val() === '' ? $el.find('textarea').attr('placeholder') : $el.find('textarea').val();
-      collects.push({ desc: desc, pic: '', id: $el.attr('id') });
-      console.log(collects);
-      //(i !== $is.length - 1) ? (ud.ids += $(this).data('id') + ',') : (ud.ids += $(this).data('id'));
+      (i !== $is.length - 1) ? (ids += $el.find('img').attr('id') + ',') : (ids += $el.find('img').attr('id'));
+      collects.push({ desc: desc, id: $el.find('img').attr('id') });
     });
     this.uploadData.collects = collects;
+    this.uploadData.ids = ids;
     const pass = !!this.uploadData.albumId && !!this.uploadData.albumName && !!this.uploadData.userId && !!this.uploadData.userName && this.uploadData.collects.length !== 0;
-    console.log(pass);
+   
     pass ? this.requestData(this.uploadData) : (!this.uploadData.albumId && alert('未選擇專輯'));
   }
   /**
@@ -161,7 +156,6 @@ class PCollector {
    */
   insertPictureList(param) {
     const $c = $('.picture-list');
-    console.log($c);
     const htmlString = this.generatePictureListHTML(param);
     this.textAreaChange(false);
     $c.html(htmlString);
@@ -177,14 +171,13 @@ class PCollector {
    */
   generatePictureListHTML(list) {
     const htmlString = '';
-    console.log(Object.keys(list));
     return Object.keys(list).reduce((htmlString, pid) => {
       const desc = list[pid].desc !== undefined ? list[pid].desc : '';
       return htmlString +
         `<li class="picture-item" id="${pid}">
           <div class="item-img">
             <div class="img-container">
-              <img class="e" src="//wap.macaoeasybuy.com/${list[pid].pic}">
+              <img class="e" src="//wap.macaoeasybuy.com/${list[pid].pic}" id=${list[pid].id}>
             </div>
           </div>
           <div class="item-content"><textarea class="scrollIe scrollOther" placeholder="${desc}"></textarea></div>
@@ -283,7 +276,20 @@ class PCollector {
       dataType: 'JSON',
       methods: 'GET',
       success: function (res) {
-          console.log(res);
+        if(res.result !== 'faild'){
+          $('#shade').fadeIn(500).delay(1000).fadeOut(500);
+          $('#select-max-tips').html('您已成功採集');
+          $('#select-max-tips').css('display') === 'none' &&  $('#select-max-tips').fadeIn(500).delay(1000).fadeOut(500);
+          $('#pcollector').css('display','none');
+          let sel = $('.album-lister .yez-selected');
+          $.each(sel,function(k,y){
+            $(y).removeClass('yez-selected');
+          })
+          $('body').css('overflow','auto');
+        }else{
+          $('#select-max-tips').html('採集失敗請重試');
+          $('#select-max-tips').css('display') === 'none' &&  $('#select-max-tips').fadeIn(500).delay(1000).fadeOut(500);
+        }
       },
       error: function (res) {
           console.log(res);

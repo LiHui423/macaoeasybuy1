@@ -129,7 +129,7 @@ function at() {
 		}
 	}
 	//獲取總數量
-	$.getJSON('http://userspace.macaoeasybuy.com/atUserController/queryUserCount.easy?userId=' + userId + '&easybuyCallback=?', function(data) {
+	$.getJSON('http://userspace1.macaoeasybuy.com/atUserController/queryUserCount.easy?userId=' + userId + '&easybuyCallback=?', function(data) {
 		for(var i in data.atUserCount) {
 			$('#' + i).find('.num').html(formatNum(data.atUserCount[i]));
 			$('#' + i)[0].page = 0;
@@ -165,11 +165,11 @@ function at() {
 		var box = $('#metiondPop .fansListBox ul').eq(idx);
 		var atPersonTemplate = easyBuy.global.template['at-person-template'];
 		if(idx == 0) {
-			var myUrl = 'http://userspace.macaoeasybuy.com/atUserController/queryUserFriendsList.easy?userId=' + userId + '&page=' + page + '&size=' + size + '&order=addtime&descOrAsc=desc&easybuyCallback=?';
+			var myUrl = 'http://userspace1.macaoeasybuy.com/atUserController/queryUserFriendsList.easy?userId=' + userId + '&page=' + page + '&size=' + size + '&order=addtime&descOrAsc=desc&easybuyCallback=?';
 		} else if(idx == 1) {
-			var myUrl = 'http://userspace.macaoeasybuy.com/atUserController/queryUserFansList.easy?userId=' + userId + '&page=' + page + '&size=' + size + '&order=addtime&descOrAsc=desc&easybuyCallback=?';
+			var myUrl = 'http://userspace1.macaoeasybuy.com/atUserController/queryUserFansList.easy?userId=' + userId + '&page=' + page + '&size=' + size + '&order=addtime&descOrAsc=desc&easybuyCallback=?';
 		} else if(idx == 2) {
-			var myUrl = 'http://userspace.macaoeasybuy.com/atUserController/quryUserNoAttentionList.easy?userId=' + userId + '&page=' + page + '&size=' + size + '&order=addtime&descOrAsc=desc&easybuyCallback=?';
+			var myUrl = 'http://userspace1.macaoeasybuy.com/atUserController/quryUserNoAttentionList.easy?userId=' + userId + '&page=' + page + '&size=' + size + '&order=addtime&descOrAsc=desc&easybuyCallback=?';
 		}
 		$.ajax({
 			url: myUrl,
@@ -296,7 +296,7 @@ function at() {
 			var atPersonTemplate = easyBuy.global.template['at-person-template'];
 			str = encodeURI(encodeURI(str));
 			var dataUrl = 'http://shopping1.macaoeasybuy.com/SolrUsersController/queryUserByName.easy?userId=' + userId + '&name=' + str + '&type=' + type + '&size=' + size + '&page=' + page + '&order=addtime&descOrAsc=desc&easybuyCallback=?';
-			//var dataUrl = 'http://userspace.macaoeasybuy.com/atUserController/queryUserByName.easy?userId=' + userId + '&name=' + str + '&type=' + type + '&size=' + size + '&page=' + page + '&order=addtime&descOrAsc=desc&easybuyCallback=?';
+			//var dataUrl = 'http://userspace1.macaoeasybuy.com/atUserController/queryUserByName.easy?userId=' + userId + '&name=' + str + '&type=' + type + '&size=' + size + '&page=' + page + '&order=addtime&descOrAsc=desc&easybuyCallback=?';
 			$.ajax({
 				url: dataUrl,
 				type: "get",
@@ -479,7 +479,7 @@ function label() {
 		}
 	}
 	//獲取總數量
-	$.getJSON('http://userspace.macaoeasybuy.com/chooseLabelController/queryUserLabelCount.easy?easybuyCallback=?', function(data) {
+	$.getJSON('http://userspace1.macaoeasybuy.com/chooseLabelController/queryUserLabelCount.easy?easybuyCallback=?', function(data) {
 		for(var i in data.labelCount) {
 			$('#' + i).find('.num').html(formatNum(data.labelCount[i]));
 			$('#' + i)[0].page = 0;
@@ -514,7 +514,7 @@ function label() {
 		var btn = $('#addLabel .classList li').eq(idx);
 		var box = $('#addLabel .LabelListBox ul').eq(idx);
 		var labelTemplate = easyBuy.global.template['label-template'];
-		var myUrl = 'http://userspace.macaoeasybuy.com/chooseLabelController/queryUserLabelByType.easy?type=' + idx + '&page=' + page + '&size=' + size + '&order=addtime&descOrAsc=asc&easybuyCallback=?';
+		var myUrl = 'http://userspace1.macaoeasybuy.com/chooseLabelController/queryUserLabelByType.easy?type=' + idx + '&page=' + page + '&size=' + size + '&order=addtime&descOrAsc=asc&easybuyCallback=?';
 		$.ajax({
 			url: myUrl,
 			type: "get",
@@ -629,8 +629,8 @@ function label() {
 		//發出請求
 		function requestSearch(name, type, page,btn) {
 			var newLabelName = name;
-			var ipUrl = 'http://userspace1.macaoeasybuy.com';
-			var easyUrl = 'http://userspace.macaoeasybuy.com';
+			var ipUrl = 'http://userspace11.macaoeasybuy.com';
+			var easyUrl = 'http://userspace1.macaoeasybuy.com';
 			var newLabelTemplate = easyBuy.global.template['new-label-template'];
 			var labelTemplate = easyBuy.global.template['label-template'];
 			name = encodeURI(encodeURI(name));
@@ -792,7 +792,7 @@ function emoji(noBigEmoji) {
 	emojiList(); //表情列表
 	function getEmoji(id, obj) {
 		$.ajax({
-			url: 'http://userspace.macaoeasybuy.com/expressionClassController/getExpressionListByid.easy?id=' + id + '&easybuyCallback=?',
+			url: 'http://userspace1.macaoeasybuy.com/expressionClassController/getExpressionListByid.easy?id=' + id + '&easybuyCallback=?',
 			type: "get",
 			async: true,
 			dataType: 'jsonp',
@@ -859,7 +859,7 @@ function emoji(noBigEmoji) {
 		function emojiListRequest(page) {
 			var size = 10;
 			var ipUrl = 'http://userspace1.macaoeasybuy.com';
-			var easyUrl = 'http://userspace.macaoeasybuy.com';
+			var easyUrl = 'http://userspace1.macaoeasybuy.com';
 			if(noBigEmoji){
 				var sendDataUrl = ipUrl + '/expressionClassController/getExpressionClassList.easy?isSize=0&page=' + page + '&size=' + size + '&order=theorder&descOrAsc=desc&easybuyCallback=?';
 			}else{
@@ -1016,7 +1016,8 @@ function emoji(noBigEmoji) {
 				var imgId = parseInt($(this).find('img').attr('id')) + '';
 				if(size == 'small') {
 					//添加小表情
-					editor.insertEmoji('http://mbuy.oss-cn-hongkong.aliyuncs.com/'+saveSrc, imgId);
+					// editor.insertEmoji('http://mbuy.oss-cn-hongkong.aliyuncs.com/'+saveSrc, imgId);
+					editor.insertEmoji(saveSrc, imgId);
 				} else if(size == 'big') {
 					//判斷大錶情的個數
 					if($('#big-expression .now')[0].bigExpNum >= $('#big-expression .max')[0].bigExpMax) return false;
@@ -1066,8 +1067,8 @@ function emoji(noBigEmoji) {
 	}
 }
 function storegoods(){
-	var ipUrl = 'http://userspace1.macaoeasybuy.com';
-	var easyUrl = 'http://userspace.macaoeasybuy.com';
+	var ipUrl = 'http://userspace11.macaoeasybuy.com';
+	var easyUrl = 'http://userspace1.macaoeasybuy.com';
 	myDefault(); //設置初始值
 	//看過商店，看過商品第一次點擊去請求東西
 	$('#store-goods .product,#store-goods .shop').on('click.first',function(){

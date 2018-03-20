@@ -15,9 +15,9 @@ void function () {
         //性別
         newData.sex == 'Girl' ? $('#user-info img.sex').attr('src', '/src/img/common/girl.png') : $('#user-info img.sex').attr('src', '/src/img/common/boy.png');
         //頭像
-        $('#user-info .head-pic').attr('src', 'http://mbuy.oss-cn-hongkong.aliyuncs.com/' + newData.userPic);
+        $('#user-info .head-pic').attr('src', 'http://wap.macaoeasybuy.com/' + newData.userPic);
         //寵物
-        $('#user-info img.pet').attr('src', 'http://mbuy.oss-cn-hongkong.aliyuncs.com/' + newData.petGradePic);
+        $('#user-info img.pet').attr('src', 'http://wap.macaoeasybuy.com/' + newData.petGradePic);
         $('#user-info .pet-level').html(newData.petGradeName);
         //身份
         $('#user-info .identity').html(newData.userIdentity ? newData.userIdentity : '普通用戶');

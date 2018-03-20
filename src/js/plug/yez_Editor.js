@@ -157,8 +157,6 @@ YezEditor.prototype = {
 	getYezContent:function(){
 		var obj = this.obj;
 		$('.small-emoji-insert-item').each(function(){
-			console.log($(this)[0].src);
-			console.log($(this)[0].saveSrc);
 			$(this).attr('src',$(this)[0].saveSrc);
 			$(this).removeAttr('class');
 		});

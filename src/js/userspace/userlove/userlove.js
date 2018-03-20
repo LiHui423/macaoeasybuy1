@@ -56,7 +56,7 @@ function queryUserLoveDetial(){
 	dataUrl = getRequestURL({
 		targetURL : dataUrl,
 		requestData : {
-			userId : userId,
+			userId : easyBuy.global.pageParameter.spaceid,
 			size : size,
 			page : page,
 			order : order //uptime(心動時間)，salecount(銷量),lovecount(心動數量)，nowprice(當前價格),seecount(按查看數)
@@ -70,6 +70,7 @@ function queryUserLoveDetial(){
 		dataType:'jsonp',
 		cache: requestObj.easyState == 1 ? false : true,
 		success:function(data){
+			console.log(data);
 			if(type == 'groupBuy'){
 				data = groupBuyDataFilter(data);
 			}
@@ -253,7 +254,7 @@ function queryUserLoveNum(){
 	dataUrl = getRequestURL({
 		targetURL : dataUrl,
 		requestData : {
-			userId : userId
+			userId : easyBuy.global.pageParameter.spaceid
 		},
 		encryptData : true
 	});
@@ -263,6 +264,7 @@ function queryUserLoveNum(){
 		async:true,
 		dataType:'jsonp',
 		success:function(data){
+			console.log(data);
 			var data = data.count;
 			// $('#groupByCount').html(formatNum(data.groupByCount));
 			// $('#freeCount').html(formatNum(data.freeCount));

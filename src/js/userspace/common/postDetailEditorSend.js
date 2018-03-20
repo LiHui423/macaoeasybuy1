@@ -46,6 +46,8 @@ function editorFunc(callBackAfterSend) {
 	$('#replyBox_sendMess').on('click.send', sendClick);
 
 	function sendClick() {
+		// 判斷是否登錄過期
+		checkLogin();
 		//點擊調用的函數
 		if($('.replyUserTips1314').length >= 1) {
 			var replyId = $('.replyUserTips1314')[0].id;
@@ -57,6 +59,7 @@ function editorFunc(callBackAfterSend) {
 		var resData = editor.getYezContent();
 		var res = resData.newres;//回復的文字內容
 		var atPos = resData.atPos;
+		
 		var labelPos = resData.labelPos;
 		var bigexpression = '';
 		for(var i = 0; i < $(this)[0].bigEmojiArr.length; i++) {
@@ -68,6 +71,35 @@ function editorFunc(callBackAfterSend) {
 			sendMsg(res, bigexpression, replyId, replyUserId, atPos, labelPos);
 		}
 	}
+	// 判斷是否登錄過期
+	function checkLogin(){
+		var url="http://userManager.macaoeasybuy.com/userInfoManagerController/checkLogin.easy?easybuyCallback=?";
+		var frame=new FrameDomain();
+		var href=frame.addHref(url);
+		$.getJSON(href, function (data) {
+			var parmae=data.Info;
+			if(parmae!=null&&parmae!==''){
+				var socket = io.connect('ws://notices.macaoeasybuy.com?token='+parmae);
+				registrationEvent(socket);
+			}
+		});
+	}
+	// 註冊事件，用於實時通知
+	function registrationEvent(socket){
+		var atIds = [];
+		var inputArray = $('#editor').find('input');
+		$.each(inputArray,function(k,y){
+			var className = $(y).attr('class');
+			if(className.indexOf('username') !== -1){
+				atIds.push(className.replace(/[^0-9]/ig,""));
+			}
+		})
+	   socket.emit('MsgEvent', {
+		   type : 'Msg',
+		   userIds: atIds
+	   });
+	   console.log(atIds);
+   }
 	//str:回復的文字內容 biggexpression:大錶情的路徑 
 	function sendMsg(str, bigexpression, replyId, replyUserId, atPos, labelPos) {
 		var str = encodeURIComponent(str);//回復的文字內容轉換為code

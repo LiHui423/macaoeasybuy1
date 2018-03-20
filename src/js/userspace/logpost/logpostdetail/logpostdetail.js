@@ -28,13 +28,16 @@ function userStatus(){
 	//編輯器
 	$('#editor-box').load('/public/postDetailEditor.html',function(){
 		editorFunc();
+
+
 	});
 	//輪播圖
 	postContent();//帖子內容
 	//輪播圖
 	postBanner({
 		dataUrl : 'http://userspace1.macaoeasybuy.com/UserDiaryConntroller/queryReleasePics.easy',
-		values : 'releaseInfoPics'
+		values : 'releaseInfoPics',
+		id: postId
 	});
 	queryTopicCount(3,'release',postId);//评论查看赞好数统计
 	isClickLove(7,7); //點讚
@@ -134,7 +137,7 @@ function handPost(){
 				$(this).remove();
 			});
 			if(data.preRelease.pictureurl){
-				imgOnMiddle($('.other-post .page-items .page-items-list .items-img')); //圖片居中
+				easyBuy.global.dep.imgOnMiddle($('.other-post .page-items .page-items-list .items-img')); //圖片居中
 			}
 		}else{
 			$('.other-post .other-post-title.first').remove();
@@ -154,7 +157,7 @@ function handPost(){
 				$(this).remove();
 			});
 			if(data.lastRelease.pictureurl){
-				imgOnMiddle($('.other-post .page-items .page-items-list .items-img')); //圖片居中
+				easyBuy.global.dep.imgOnMiddle($('.other-post .page-items .page-items-list .items-img')); //圖片居中
 			}
 		}else{
 			$('.other-post .other-post-title.second').remove();

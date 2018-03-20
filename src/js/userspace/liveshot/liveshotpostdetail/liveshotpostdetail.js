@@ -35,9 +35,10 @@ function userStatus(){
 	//輪播圖
 	postBanner({
 		dataUrl : 'http://userspace1.macaoeasybuy.com/UserLiveShotConntroller/querySentVolunteersInfoPics.easy',
-		values : 'sentVolunteersInfoPics'
+		values : 'sentVolunteersInfoPics',
+		id: postId
 	});
-	queryTopicCount(5,'SentVolunteers');//评论查看赞好数统计
+	queryTopicCount(5,'SentVolunteers',postId);//评论查看赞好数统计
 	isClickLove(3,3); //點讚
 	responseCard(5);//回復查看讃好，數據
 	handPost();//上下篇
@@ -51,6 +52,7 @@ function postContent(){
 		async:true,
 		dataType:'jsonp',
 		success:function(data){
+			console.log(data);
 			var newData = data.suitableLifeInfo;
 			$('#messBox_mess_time span').html(newData.addtime); //發佈時間
 			$('#atricle_title').html(newData.titlename); //標題

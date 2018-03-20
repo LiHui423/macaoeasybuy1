@@ -1,19 +1,43 @@
 void function () {
   const albumID = easyBuy.global.pageParameter.albumId;
   const m = easyBuy.global.dep;
-  const $btn = $('.album-btn');
+  const $btn = $('.album-btn');//批量採集按鈕
+  // 專輯標題圖片和描述
   const queryThealBumData = new YEZTemplateObj({
     targetURL: 'http://social1.macaoeasybuy.com/thealbumSocialConntroller/queryThealBumData.easy',
     parameters: {
       id: albumID,
     },
     templateID: 'albumInfo',
-    container: '#swapper > #container',
+    container: '#swapper > #container .detail-title',
+    beforeGetData: function(){
+      templateProcessor([queryThealBumData]);
+      console.log('發送數據前');
+    },
     afterInsert: function (data) {
-      templateProcessor([queryThealBumGroupData]);
-      collectionBtn(queryThealBumGroupData.data.selectPic);
+      console.log(data);
+      templateProcessor([queryThealBumData]);
+      collectionBtn(queryThealBumData.data.selectPic);
     }
   });
+  // 最近訪問
+  const queryThealVisitor = new YEZTemplateObj({
+    targetURL: 'http://social1.macaoeasybuy.com/thealbumSocialConntroller/queryThealBumData.easy',
+    parameters: {
+      id: albumID,
+    },
+    templateID: 'visitor',
+    container: '#swapper > #container .container-swapper',
+    beforeGetData: function(){
+      console.log('發送數據前');
+    },
+    afterInsert: function (data) {
+      console.log(data);
+      templateProcessor([queryThealBumGroupData]);
+      collectionBtn(queryThealBumGroupData.data.selectPic);
+    } 
+  });
+  // 專輯圖組
   const queryThealBumGroupData = new YEZTemplateObj({
     targetURL: 'http://social1.macaoeasybuy.com/thealbumSocialConntroller/queryThealBumGroupData.easy',
     parameters: {
@@ -27,9 +51,11 @@ void function () {
       selectPic: {}
     },
     beforeGetData: function () {
+      console.log('發送數據前');
       this.methods.lazyload && this.methods.lazyload(false);
     },
     afterInsert: function (data) {
+      console.log(data);
       pictureSelector();
       if(data.data.length < this.requestData.parameters.size) {
         this.methods.lazyload = null
@@ -50,7 +76,7 @@ void function () {
   });
   const pictureColloect = null;
   function pictureClick() {
-    const $c = $('.picture-list');
+    const $c = $('.album-list');
     $c.on('click', '.picture-item', (e) => {
       const $e = m.getTarget(e.target, '.picture-item');
       const id = $e.attr('id');
@@ -64,9 +90,9 @@ void function () {
 
 
 }()
-easyBuy.global.beforeDataJs = function () {
-  templateProcessor([queryThealBumData]);
-};
+// easyBuy.global.beforeDataJs = function () {
+//   templateProcessor([queryThealBumData]);
+// };
 function pictureSelector() {
     var itemArr = $('.page' + queryThealBumGroupData.requestData.parameters.page).children();
     var selectPic = queryThealBumGroupData.data.selectPic;

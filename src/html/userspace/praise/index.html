@@ -18,7 +18,7 @@
 
 	<body>
 		<div id="swapper">
-			<header></header>
+			<header id="page-header"></header>
 			<div id="container" class="clearfloat">
 				<div id="left-menu"></div>
 				<div id="right-content">
@@ -145,23 +145,23 @@
 	<script src="/src/js/userspace/common/newspush.js" async></script>
 	<script src="/src/js/common/header&search&footer/footer.js" async></script>
 
-	<script src="/src/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/page-header.js"></script>
 
 	<script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 	<!--贊好的js-->
 	<script src="/src/js/userspace/praise/praise.js"></script>
-	<script src="/src/js/userspace/praise/praise_data.js"></script>
+	<!-- <script src="/src/js/userspace/praise/praise_data.js"></script> -->
 	<script src="/src/js/common/clickEvent.js"></script>
 
 	<!--日誌的模板-->
 	<script id="praise_diary_template" type="text/html" data-type="template">
 		<%if(returnList.length != 0){%>
 		<%for(var i=0,len=returnList.length;i<len;i++){%>
-			<div class="pillar-all mine clearfloat praise_item_box" id="<%=returnList[i].diaryId%>_diaryItem">
+			<div class="pillar-all mine clearfloat praise_item_box" id="<%=returnList[i].diaryId%>_diaryItem" data-id="<%=returnList[i].userId%>">
 				<div class="pillar">
 					<div class="page-main">
 						<%if(returnList[i].diaryPic != ''){%>
-						<a href=""><img src="//wap.macaoeasybuy.com<%=returnList[i].diaryPic%>" class="page-main-head-img"></a>
+						<a href=""><img src="//wap.macaoeasybuy.com<%=returnList[i].diaryPic%>" class="page-main-head-img" onerror="this.onerror:null;this.src='/src/img/userspace/album/album-no-img.png'"></a>
 						<%}%>
 						<div class="post-main-text">
 							<div class="post-title"><%=returnList[i].title%></div>
@@ -205,7 +205,7 @@
 	<script id="praise_album_template" type="text/html" data-type="template">
 		<%if(returnList.length != 0){%>
 		<%for(var i=0,len=returnList.length;i<len;i++){%>
-		<li class="sort-box-items sort-box-news clearfloat praise_item_box" id="<%=returnList[i].albumId%>_albumItem">
+		<li class="sort-box-items sort-box-news clearfloat praise_item_box" id="<%=returnList[i].albumId%>_albumItem"  data-id="<%=returnList[i].userid%>">
 			<div class="album-list">
 				<div class="album-relative">
 					<div class="album-list-title"><%=returnList[i].albumName%></div>
@@ -276,7 +276,7 @@
 	<script id="praise_group_template" type="text/html" data-type="template">
 		<%if(returnList.length != 0){%>
 		<%for(var i=0,len=returnList.length;i<len;i++){%>
-			<div class="pillar-all mine praise_item_box" id="<%=returnList[i].lifeId%>_groupItem">
+			<div class="pillar-all mine praise_item_box" id="<%=returnList[i].lifeId%>_groupItem" data-id="<%=returnList[i].userid%>">
 				<div class="pillar">
 					<div class="page-main">
 						<div class="laster-look clearfloat">
@@ -324,7 +324,7 @@
 	<script id="praise_liveshot_template" type="text/html" data-type="template">
 		<%if(returnList.length != 0){%>
 		<%for(var i=0,len=returnList.length;i<len;i++){%>
-			<div class="pillar-all mine praise_item_box" id="<%=returnList[i].dissipateId%>_liveshotItem">
+			<div class="pillar-all mine praise_item_box" id="<%=returnList[i].dissipateId%>_liveshotItem" data-id="<%=returnList[i].userid%>">
 				<div class="pillar">
 					<div class="page-main">
 						<%if(returnList[i].sPic != ''){%>
@@ -382,7 +382,7 @@
 	<script id="praise_secondHand_template" type="text/html" data-type="template">
 		<%if(returnList.length != 0){%>
 		<%for(var i=0,len=returnList.length;i<len;i++){%>
-			<div class="pillar-all praise_item_box" id="<%=returnList[i].secondHandId%>_secondHandItem">
+			<div class="pillar-all praise_item_box" id="<%=returnList[i].secondHandId%>_secondHandItem" data-id="<%=returnList[i].userid%>">
 				<div class="close-bg"></div>
 				<div class="pillar">
 					<div class="page-main">
@@ -444,7 +444,7 @@
 	<script id="praise_welfare_template" type="text/html" data-type="template">
 		<%if(returnList.length != 0){%>
 		<%for(var i=0,len=returnList.length;i<len;i++){%>
-		<div class="praise_mainList_welfareEach praise_item_box" id="<%=returnList[i].welfareId%>_welfareItem">
+		<div class="praise_mainList_welfareEach praise_item_box" id="<%=returnList[i].welfareId%>_welfareItem" data-id="<%=returnList[i].userid%>">
 			<div class="praise_welfareEach_top"><img src="//wap.macaoeasybuy.com<%=returnList[i].topicPic%>"></div>
 			<div class="praise_welfareEach_author">
 				<div class="praise_welfareEach_author_head myborder-radius">
@@ -487,7 +487,7 @@
 	<script id="praise_topic_template" type="text/html" data-type="template">
 		<%if(returnList.length != 0){%>
 		<%for(var i=0,len=returnList.length;i<len;i++){%>
-		<div class="praise_topicEach clearfloat praise_item_box" id="<%=returnList[i].welfareId%>_topicItem">
+		<div class="praise_topicEach clearfloat praise_item_box" id="<%=returnList[i].welfareId%>_topicItem"  data-id="<%=returnList[i].userid%>">
 			<div class="praise_topicEach_left"><img src="//wap.macaoeasybuy.com<%=returnList[i].topicPic%>"></div>
 			<div class="praise_topicEach_right">
 				<div class="praise_topicEach_mess clearfloat">
@@ -531,7 +531,7 @@
 	<script id="praise_label_template" type="text/html" data-type="template">
 		<%if(returnList.length != 0){%>
 		<%for(var i=0,len=returnList.length;i<len;i++){%>
-		<div class="praise_labelEach clearfloat praise_item_box" id="<%=returnList[i].labelId%>">
+		<div class="praise_labelEach clearfloat praise_item_box" id="<%=returnList[i].labelId%>" data-id="<%=returnList[i].userid%>">
 			<div class="search_label_resultEach_left">
 				<div class="search_label_resultEach_left_image">
 					<%if(returnList[i].labelPic != ''){%>

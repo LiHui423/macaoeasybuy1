@@ -13,6 +13,7 @@ void function () {
       whiteNavName !== null && $(`#white-menu li[data-name="${whiteNavName}"]`).addClass('select');
       const url = `http://userspace1.macaoeasybuy.com/userSpaceIndexController/userSpaceInfoCount.easy?userId=${userID}&seeUserId=${SID}&easybuyCallback=?`;
       $.getJSON(url, function (data) {
+        console.log(data);
         $.each(data.userSpaceCount, function (key, value) {
           $this.find(`li[data-name=${key.split('user').join('')}]`).find('span:last-of-type').html(`共${value}篇`);
         })

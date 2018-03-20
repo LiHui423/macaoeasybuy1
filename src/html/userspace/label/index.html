@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hant">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>用戶空間-標籤列表頁</title>
     <!-- 加载公共CSS -->
@@ -11,7 +10,7 @@
     <link rel="stylesheet" href="/src/css/common/common.css">
     <!-- 加载模块公共CSS -->
     <link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
-    <!-- 加载页面CSS -->
+    <!-- 加载页面CSS -->
     <link rel="stylesheet" href="/src/css/userspace/label/labellist/labellist.css">
     <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
     <script src="/src/js/common/frameDomainJSON.js"></script>
@@ -126,7 +125,7 @@
     <script src="/src/js/common/ebtemplate-jquery.js"></script>
     <script src="/src/js/userspace/label/labellist/labellist.js"></script>
     
-    <script id="queryUserSpaceLabel" type="text/html">
+    <script id="queryUserSpaceLabel" type="text/html" data-type="template">
         <%for(var i=0, item; (item = content[i++]);) {%>
             <div class="label-item">
                 <%if(item.labelPic !== '') {%>

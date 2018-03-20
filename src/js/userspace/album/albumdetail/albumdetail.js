@@ -43,7 +43,7 @@ void function () {
     formatNum: easyBuy.global.dep.formatNum,
     deleteArrObj: easyBuy.global.dep.deleteArrObj,
     init() {
-      if (!data.isSelf) {
+      if (data.isSelf) {
         $('.editor-top.mine').remove();
         $('#album-collect').remove();
         $('.album-poster .laster-text-head').remove();
@@ -74,7 +74,6 @@ void function () {
     getAlbumDetail() {
       const url = `http://userspace1.macaoeasybuy.com/UserThealbumConntroller/queryTheAlbumInfo.easy?id=${data.albumId}&easybuyCallback=?`;
       $.getJSON(url, (res) => {
-        console.log(res);
         const _data = res.albumInfo;
         $('#album-title-name-show').html(_data.thealbumName);
         data.isSelf && $('#album-title-name').val(_data.thealbumName);
@@ -155,7 +154,6 @@ void function () {
           //存儲節點信息
           for (let i = 0; i < _data.albumList.length; i++) {
             const $item = $('.' + _data.albumList[i].id + '-albumlist');
-            //console.log($item);
             $item.data('data', {
               groupurl: _data.albumList[i].groupurl,
               id: _data.albumList[i].id,

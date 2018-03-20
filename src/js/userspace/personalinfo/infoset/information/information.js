@@ -11,7 +11,7 @@ easyBuy.global.startJs = function(){
 }
 //關於我
 function aboutMeData(){
-	var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/queryUserAboutMeEditor.easy?userId='+userId+'&easybuyCallback=?';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserAboutMeEditor.easy?userId='+userId+'&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
 		var newData = data.userBasicInfo;
 		 //賬號
@@ -52,7 +52,7 @@ function radioSelect(data,box,parentId){
 		box.addClass('select');
 	}
 	btn.on('click.request',function(){
-		var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/querySelectList.easy?parentId='+parentId+'&secondClassId='+data.id+'&easybuyCallback=?';
+		var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/querySelectList.easy?parentId='+parentId+'&secondClassId='+data.id+'&easybuyCallback=?';
 		$.ajax({
 			url:dataUrl,
 			type:"get",
@@ -178,7 +178,7 @@ function submitBtn(){
 
 
 function through(){
-	var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/queryUserSetting.easy?userId='+userId+'&classId=2&easybuyCallback=?';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserSetting.easy?userId='+userId+'&classId=2&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
 		var newData = data.settingList[0];
 		var html = template('through-template',newData);
@@ -242,7 +242,7 @@ function through(){
 		var secondData = obj.parents('.second-list').data('data');
 		var id = secondData.id;
 		var newList = secondData.newList;
-		var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/querySelectList.easy?parentId='+parentId+'&secondClassId='+id+'&easybuyCallback=?';
+		var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/querySelectList.easy?parentId='+parentId+'&secondClassId='+id+'&easybuyCallback=?';
 		$.ajax({
 			url:dataUrl,
 			type:"get",
@@ -423,7 +423,7 @@ function through(){
 		function submitSend(res){
 			resData.name = encodeURIComponent(resData.name);
 			res = encodeURIComponent(res);
-			var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/updateUserBasicSetting.easy?userId='+userId+'&sex='+resData.sex+'&name='+resData.name+'&birthday='+resData.birthday+'&info='+res+'&easybuyCallback=?';
+			var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/updateUserBasicSetting.easy?userId='+userId+'&sex='+resData.sex+'&name='+resData.name+'&birthday='+resData.birthday+'&info='+res+'&easybuyCallback=?';
 			$.ajax({
 				url:dataUrl,
 				type:"get",

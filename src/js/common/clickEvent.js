@@ -1,7 +1,7 @@
 ( () => {
     $("body").on('click',function(e){
         const $e = $(e.target);
-        console.log($e);
+        // console.log($e);
         // 判断是否是用户头像被点击
         if($e.attr('data-type') === 'userAvatar'){
 
@@ -121,7 +121,7 @@
                     window.open(url+para);
                 }
             }
-        }// 用戶空間-心動，跳轉到商品詳細頁
+        }// 用戶空間-心動，跳轉到相關頁面
         else if(location.href.indexOf('love/index.html') !== -1){
             if($e.hasClass('shadow')){
                 let type = $($e.parents('.userlove_mainEach')).attr('id').split('_')[0];
@@ -131,11 +131,15 @@
                 let id = $($e.parents('.userLoveItem')).attr('class').split('Item')[2];
 
                 if(type === 'fair'){
-                    window.open('http://userspace.macaoeasybuy.com/fair/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + id);
+                    let userId = $e.parents('[data-id]').attr('data-id');
+                    window.open('http://userspace.macaoeasybuy.com/fair/detail.html?spaceid=' + userId + '&id=' + id);
                 }else if(type === 'other'){
                     window.open('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id='+id);
-                }else{
-                    window.open('http://shopping.macaoeasybuy.com/goodDetails/'+type+'Detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + id);
+                }else if(type === 'group'){
+                    window.open('http://shopping.macaoeasybuy.com/goodDetails/'+type+'Detail.html?id=' + id)
+                }
+                else{
+                    window.open('http://shopping.macaoeasybuy.com/goodDetails/'+type+'Details.html?id=' + id);
                 }
             }
         }// 用戶空間-攢好，跳轉到相關帖子詳細頁
@@ -147,28 +151,44 @@
                 }else if(type === 'secondHand'){
                     type = 'used';
                 }
-                let id = $($e.parents('.pillar-all')).attr('id').split('_')[0];
-                window.open('http://userspace.macaoeasybuy.com/'+type+'/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + id);
+                let postId = $($e.parents('.pillar-all')).attr('id').replace(/[^0-9]/ig,"");
+                let userId = $($e.parents('.pillar-all')).attr('data-id');
+                jump('http://userspace.macaoeasybuy.com/'+type+'/detail.html?spaceid=' + userId + '&id=' , postId);
             }
         }// 用戶空間-生活圈，跳轉到生活圈詳細頁
         else if(location.href.indexOf('life/index.html') !== -1){
             if($e.hasClass('shadow-box')){
                 let postId = $e.parents('.pillar-all').attr('id').replace(/[^0-9]/ig,"");
-                console.log(postId);
-                console.log(postId.length);
-                jump('http://userspace.macaoeasybuy.com/life/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&postId=' , postId);
+                location.href = 'http://userspace.macaoeasybuy.com/life/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&postId=' + postId;
             }
-        }//用戶空間-專輯，跳轉到專輯詳情頁
+        }//用戶空間-生活圈詳細頁，轉到上下篇或返回生活圈列表
+        else if(location.href.indexOf('life/detail.html') !== -1){
+            if($e.attr('id') === 'underline'){
+                let id = $e.parents('.page-items').attr('id').replace(/\D/gim, '');
+                location.href = 'http://userspace.macaoeasybuy.com/life/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&postId=' + id;
+            }else if($e.is('a') && $e.parents().hasClass('return-list')){
+                location.href = 'http://userspace.macaoeasybuy.com/life/index.html?spaceid=' + easyBuy.global.pageParameter.spaceid;
+            }
+        }
+        //用戶空間-專輯，跳轉到專輯詳情頁
         else if(location.href.indexOf('album/index.html') !== -1){
             if($e.hasClass('shadow-box')){
                 let albumId = $e.parents('.album-list').attr('id').replace(/\D/gim, '');
-                jump('http://userspace.macaoeasybuy.com/album/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&albumId=',albumId);
+                location.href = 'http://userspace.macaoeasybuy.com/album/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&albumId=' + albumId;
             }
         }//用戶空間-專輯詳細頁，跳轉到專輯圖片詳細頁
         else if(location.href.indexOf('album/detail.html') !== -1){
             if($e.hasClass('shadow-box') || $e.is('p')){
                 let albumPostId = $($e.parents('.album-list')).attr('id').split('-')[0];
-                jump('http://userspace.macaoeasybuy.com/album/albumpostdetail/albumpostdetail.html?spaceid='+easyBuy.global.pageParameter.spaceid+'&albumId='+easyBuy.global.pageParameter.spaceid+'&albumPostId=',albumPostId);
+                location.href = 'http://userspace.macaoeasybuy.com/album/albumpostdetail/albumpostdetail.html?spaceid='+easyBuy.global.pageParameter.spaceid+'&albumId='+easyBuy.global.pageParameter.albumId+'&albumPostId=' + albumPostId;
+            }
+        }//用戶空間-專輯圖片詳細頁，轉到專輯列表頁貨其他專輯圖片詳細頁
+        else if(location.href.indexOf('albumpostdetail/albumpostdetail.html') !== -1){
+            if($e.hasClass('album-shadow-box')){
+                let albumId = $e.parents('.album-list').attr('data-id');
+                location.href = 'http://userspace.macaoeasybuy.com/album/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&albumId=' + albumId;
+            }else if($e.is('a') && $e.parents().hasClass('return-list')){
+                location.href = 'http://userspace.macaoeasybuy.com/album/index.html?spaceid=' + easyBuy.global.pageParameter.spaceid;
             }
         }//用戶空間-關注店鋪，跳轉到商店詳細頁
         else if(location.href.indexOf('hop/index.html') !== -1){
@@ -179,8 +199,46 @@
         }//用戶空間-日誌列表頁，跳轉到日誌詳細頁
         else if(location.href.indexOf('diary/index.html') !== -1){
             if($e.hasClass('shadow-box')){
-                let postId = $($e.parents('.pillar-all')).attr('id').replace(/\D/gim, '');
-                jump('http://userspace.macaoeasybuy.com/diary/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&diaryId=',postId);
+                let id = $($e.parents('.pillar-all')).attr('id').replace(/\D/gim, '');
+                location.href = 'http://userspace.macaoeasybuy.com/diary/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + id;
+            }
+        }//用戶空間-日誌詳細頁，轉到上下篇和返回日誌列表
+        else if(location.href.indexOf('diary/detail.html') !== -1){
+            if($e.attr('id') === 'underline'){
+                let id = $e.parents('.page-items').attr('id').replace(/\D/gim, '');
+                location.href = 'http://userspace.macaoeasybuy.com/diary/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + id;
+            }else if($e.is('a') && $e.parents().hasClass('return-list')){
+                location.href = 'http://userspace.macaoeasybuy.com/diary/index.html?spaceid=' + easyBuy.global.pageParameter.spaceid;
+            }
+        }//用戶空間-二手詳細頁，轉到上下篇和返回二手列表頁
+        else if(location.href.indexOf('used/detail.html') !== -1){
+            if($e.attr('id') === 'underline'){
+                let id = $e.parents('.page-items').attr('id').replace(/\D/gim, '');
+                location.href = 'http://userspace.macaoeasybuy.com/used/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + id;
+            }else if($e.is('a') && $e.parents().hasClass('return-list')){
+                location.href = 'http://userspace.macaoeasybuy.com/used/index.html?spaceid=' + easyBuy.global.pageParameter.spaceid;
+            }
+        }//用戶空間-市集列表頁，轉到市集詳細頁
+        else if(location.href.indexOf('fair/index.html') !== -1){
+            let postId = $e.parents('.pillar-all').attr('id').replace(/\D/gim, '');
+            console.log(postId);
+            location.href = 'http://userspace.macaoeasybuy.com/fair/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + postId;
+        }
+        //用戶空間-市集詳細頁，轉到上下篇和返回市集列表頁
+        else if(location.href.indexOf('fair/detail.html') !== -1){
+            if($e.attr('id') === 'underline'){
+                let id = $e.parents('.page-items').attr('id').replace(/\D/gim, '');
+                location.href = 'http://userspace.macaoeasybuy.com/fair/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + id;
+            }else if($e.is('a') && $e.parents().hasClass('return-list')){
+                location.href = 'http://userspace.macaoeasybuy.com/fair/index.html?spaceid=' + easyBuy.global.pageParameter.spaceid;
+            }
+        }//用戶空間-敗家志詳細頁，轉到上下篇和返回敗家志列表
+        else if(location.href.indexOf('buy/detail.html') !== -1){
+            if($e.attr('id') === 'underline'){
+                let id = $e.parents('.page-items').attr('id').replace(/\D/gim, '');
+                location.href = 'http://userspace.macaoeasybuy.com/buy/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + id;
+            }else if($e.is('a') && $e.parents().hasClass('return-list')){
+                location.href = 'http://userspace.macaoeasybuy.com/buy/index.html?spaceid=' + easyBuy.global.pageParameter.spaceid;
             }
         }
     })

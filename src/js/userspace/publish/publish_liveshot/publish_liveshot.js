@@ -4,7 +4,11 @@ $(function(){
 		window.editor = new YezEditor('#editor'); //實例編輯器
 		addSelect(true);
 	});
-	imgUpLoad();
+	//imgUpLoad();
+	newUpload();
+	// $('#publish_submit').on('click',function(){
+	// 	newUpload();
+	// })
 	showInputNum(); //監聽標題框的長度並且輸出
 });
 //點擊按鈕先去檢查內容

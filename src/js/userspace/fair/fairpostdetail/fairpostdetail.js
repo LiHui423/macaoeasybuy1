@@ -37,9 +37,10 @@ function userStatus(){
 	//輪播圖
 	postBanner({
 		dataUrl : 'http://userspace1.macaoeasybuy.com/UserFairsConntroller/queryFairInfoPics.easy',
-		values : 'fairInfoPics'
+		values : 'fairInfoPics',
+		id: postId
 	});
-	queryTopicCount(7,'Fair');//评论查看赞好数统计
+	queryTopicCount(7,'Fair',postId);//评论查看赞好数统计
 	isClickLove(9,9); //點讚
 	responseCard(7);//回復查看讃好，數據
 	handPost();//上下篇
@@ -145,7 +146,7 @@ function handPost(){
 				$(this).remove();
 			});
 			if(data.preFair.pictureurl){
-				imgOnMiddle($('.other-post .page-items .page-items-list .items-img')); //圖片居中
+				easyBuy.global.dep.imgOnMiddle($('.other-post .page-items .page-items-list .items-img')); //圖片居中
 			}
 		}else{
 			$('.other-post .other-post-title.first').remove();
@@ -170,7 +171,7 @@ function handPost(){
 				$(this).remove();
 			});
 			if(data.lastFair.pictureurl){
-				imgOnMiddle($('.other-post .page-items .page-items-list .items-img')); //圖片居中
+				easyBuy.global.dep.imgOnMiddle($('.other-post .page-items .page-items-list .items-img')); //圖片居中
 			}
 		}else{
 			$('.other-post .other-post-title.second').remove();

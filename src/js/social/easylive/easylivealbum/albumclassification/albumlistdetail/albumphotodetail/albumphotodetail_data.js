@@ -352,7 +352,7 @@ $(function() {
 });
 // 專輯圖片放大
 function personLeft(picId){
-	var url="http://192.168.3.127:8089/yez_easyBuyMall_userSpace/UserThealbumConntroller/queryAlbumPicDetail.easy?picId="+picId;
+	var url="http://userspace1.macaoeasybuy.com/UserThealbumConntroller/queryAlbumPicDetail.easy?picId="+picId;
 	$.ajax({
 		url:url,
 		type:"GET",
