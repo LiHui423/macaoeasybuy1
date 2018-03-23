@@ -361,7 +361,7 @@
 }
 .showbox_main_shop_each{
 	width: 210px;
-	height: 102px;
+	min-height: 220px;
 	position: relative;
 	overflow: hidden;
 	float: left;

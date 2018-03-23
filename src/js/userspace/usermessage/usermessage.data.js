@@ -10,7 +10,7 @@ var userId=1445,
 
 /*添加小紅點*/
 function newReminder(){
-	$.getJSON("http://192.168.3.123:8092/yez_easyBuyMall_userSpace//userNoticleController/queryUserNotLookInfo.easy?userId="+userId+"&easybuyCallback=?",function(data){
+	$.getJSON("http://userspace1.macaoeasybuy.com/userNoticleController/queryUserNotLookInfo.easy?userId="+userId+"&easybuyCallback=?",function(data){
 		if(data.noticNum.numNotEasy != '0'){
 			$('.noslideLi_easy').find('.newMessIcon').show();
 		}else if(data.noticNum.numNotShop != '0'){
@@ -36,7 +36,7 @@ function loadMessList(){
 	var listMetionTemplate = templateList['listMetion'];
 	var listGreatTemplate = templateList['listGreat'];
 	var listrespondTemplate = templateList['templateList'];
-	$.getJSON("http://192.168.3.123:8092/yez_easyBuyMall_userSpace/userNoticleController/queryUserSyatemInfo.easy?userId="+userId+"&page=0&size=20&order=time&ascOrdesc=desc&type="+type+"&receiveType="+receiveType+"&ifLook="+ifLook+"&easybuyCallback=?",function(data){
+	$.getJSON("http://userspace1.macaoeasybuy.com/userNoticleController/queryUserSyatemInfo.easy?userId="+userId+"&page=0&size=20&order=time&ascOrdesc=desc&type="+type+"&receiveType="+receiveType+"&ifLook="+ifLook+"&easybuyCallback=?",function(data){
 		if(type == 0){
 			if(receiveType == 0){
 				/*宜買系統消息*/
@@ -82,13 +82,13 @@ function loadMessList(){
 
 /*查閱通知*/
 function hadsee(ids){
-	$.getJSON("http://192.168.3.123:8092/yez_easyBuyMall_userSpace/userNoticleController/updateUserSystemInfo.easy?systemSeeId="+ids+"&easybuyCallback=?",function(data){
+	$.getJSON("http://userspace1.macaoeasybuy.com/userNoticleController/updateUserSystemInfo.easy?systemSeeId="+ids+"&easybuyCallback=?",function(data){
 		
 	});
 }
 /*刪除通知*/
 function deletemess(ids){
-	$.getJSON("http://192.168.3.123:8092/yez_easyBuyMall_userSpace/userNoticleController/deleteSystemInfo.easy?systemSeeId="+ids+"&easybuyCallback=?",function(data){
+	$.getJSON("http://userspace1.macaoeasybuy.com/userNoticleController/deleteSystemInfo.easy?systemSeeId="+ids+"&easybuyCallback=?",function(data){
 		
 	});
 }

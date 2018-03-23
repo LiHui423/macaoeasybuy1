@@ -1,6 +1,6 @@
 var resData = new Object();
 var deleteArrObj = easyBuy.global.dep.deleteArrObj;
-easyBuy.global.startJs = function(){
+$(function(){
 	aboutMeData(); //關於我
 	$('#submit-btn').data('data',{
 		isCanSubmit : false,//是否修改了
@@ -8,7 +8,16 @@ easyBuy.global.startJs = function(){
 		secondArr : [] //修改了的二級分類數組
 	});
 	through();//經歷
-}
+})
+// easyBuy.global.startJs = function(){
+// 	aboutMeData(); //關於我
+// 	$('#submit-btn').data('data',{
+// 		isCanSubmit : false,//是否修改了
+// 		sendRes : '', //發送的結果
+// 		secondArr : [] //修改了的二級分類數組
+// 	});
+// 	through();//經歷
+// }
 //關於我
 function aboutMeData(){
 	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserAboutMeEditor.easy?userId='+userId+'&easybuyCallback=?';
@@ -178,8 +187,9 @@ function submitBtn(){
 
 
 function through(){
-	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserSetting.easy?userId='+userId+'&classId=2&easybuyCallback=?';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserSetting.easy?userId='+userId+'&classId=2&seeUserId='+easyBuy.easyUser.id+'&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
+		console.log(data);
 		var newData = data.settingList[0];
 		var html = template('through-template',newData);
 		$('#live-content').html(html); //模板添加
@@ -348,6 +358,7 @@ function through(){
 		var oneRes = '';
 		//點擊觸發
 		sendBtn.on('click.submit',function(){
+			console.log(sendData.isCanSubmit);
 			if(sendData.isCanSubmit){
 				oneRes = getAboutMe();
 				res = getRes();
@@ -421,6 +432,7 @@ function through(){
 		}
 		//發送數據
 		function submitSend(res){
+			console.log(res);
 			resData.name = encodeURIComponent(resData.name);
 			res = encodeURIComponent(res);
 			var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/updateUserBasicSetting.easy?userId='+userId+'&sex='+resData.sex+'&name='+resData.name+'&birthday='+resData.birthday+'&info='+res+'&easybuyCallback=?';
@@ -433,6 +445,7 @@ function through(){
 					sendData.isCanSubmit = false;
 				},
 				success:function(data){
+					console.log(data);
 					if(data.status != 'success') return false;
 					resData.aboutMe.splice(resData.aboutMe.length-2,1);
 					if($('#praise-post').css('display')=='none') $('#praise-post').fadeIn(500).delay(1000).fadeOut(500);
@@ -441,6 +454,9 @@ function through(){
 						$(this).data('data').isChange = false;
 					});
 					sendBtn.addClass('can-not-save');
+				},
+				error:function(){
+					console.log('發生未知錯誤');
 				}
 			});
 		}

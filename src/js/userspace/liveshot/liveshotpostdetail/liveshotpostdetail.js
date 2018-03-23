@@ -1,4 +1,4 @@
-var postId = easyBuy.global.pageParameter.id || 24;
+var postId = easyBuy.global.pageParameter.postId || 24;
 var seeUserId = easyBuy.global.pageParameter.spaceid;
 easyBuy.global.startJs = function(){
 	easyBuy.userSpaceGlobal.replyPostType = '5';

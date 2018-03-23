@@ -629,7 +629,7 @@ function label() {
 		//發出請求
 		function requestSearch(name, type, page,btn) {
 			var newLabelName = name;
-			var ipUrl = 'http://userspace11.macaoeasybuy.com';
+			var ipUrl = 'http://userspace1.macaoeasybuy.com';
 			var easyUrl = 'http://userspace1.macaoeasybuy.com';
 			var newLabelTemplate = easyBuy.global.template['new-label-template'];
 			var labelTemplate = easyBuy.global.template['label-template'];
@@ -1067,7 +1067,7 @@ function emoji(noBigEmoji) {
 	}
 }
 function storegoods(){
-	var ipUrl = 'http://userspace11.macaoeasybuy.com';
+	var ipUrl = 'http://userspace1.macaoeasybuy.com';
 	var easyUrl = 'http://userspace1.macaoeasybuy.com';
 	myDefault(); //設置初始值
 	//看過商店，看過商品第一次點擊去請求東西
@@ -1110,7 +1110,7 @@ function storegoods(){
 					$(this).removeClass('select');
 					$(this).data('data').isSelect = false;
 				});
-				deleteArrObj($('#goods-btn').data('data').list,'id',objData.id);
+				easyBuy.global.dep.deleteArrObj($('#goods-btn').data('data').list,'id',objData.id);
 				$('#ProductNumber').html($('#goods-btn').data('data').list.length);
 				$('#add-good-show-box .publishBox_showbox_title span').html($('#goods-btn').data('data').list.length);
 				$(this).parent().remove();
@@ -1143,7 +1143,7 @@ function storegoods(){
 					$(this).removeClass('select');
 					$(this).data('data').isSelect = false;
 				});
-				deleteArrObj($('#shop-btn').data('data').list,'id',objData.id);
+				easyBuy.global.dep.deleteArrObj($('#shop-btn').data('data').list,'id',objData.id);
 				$('#shopNumber').html($('#shop-btn').data('data').list.length);
 				$('#add-shop-show-box .publishBox_showbox_title span').html($('#shop-btn').data('data').list.length);
 				$(this).parent().remove();
@@ -1306,7 +1306,7 @@ function storegoods(){
 					$(this).data('data').isSelect = false;
 					$(this).removeClass('select');
 				});
-				deleteArrObj(btn.data('data').list,'id',data.id);
+				easyBuy.global.dep.deleteArrObj(btn.data('data').list,'id',data.id);
 			}
 			showNum.html(btn.data('data').list.length);
 		});
@@ -1325,7 +1325,7 @@ function storegoods(){
 		newObj.on('click',function(){
 			var className = $(this).attr('class').split(' ')[0];
 			var newData = $(this).data('data');
-			deleteArrObj(btn.data('data').list,'id',newData.id);
+			easyBuy.global.dep.deleteArrObj(btn.data('data').list,'id',newData.id);
 			showNum.html(btn.data('data').list.length);
 			box.parent().find('ul>li.'+className).each(function(){
 				$(this).data('data').isSelect = false;

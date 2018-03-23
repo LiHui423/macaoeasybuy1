@@ -1,4 +1,5 @@
 var classId = 6; //技能設置
+var seeUserId = easyBuy.global.pageParameter.spaceid;
 easyBuy.global.startJs = function(){
 	getData(userId, classId);
 	$('#submit-btn').data('data', {
@@ -8,8 +9,9 @@ easyBuy.global.startJs = function(){
 	})
 }
 function getData(userId, classId) {
-	var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/queryUserSetting.easy?userId=' + userId + '&classId=' + classId + '&easybuyCallback=?';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserSetting.easy?userId=' + userId + '&classId=' + classId + '&seeUserId=' + seeUserId +'&easybuyCallback=?';
 	$.getJSON(dataUrl, function(data) {
+		console.log(data);
 		var newData = data.settingList[0];
 		var html = template('skill-data', newData);
 		$('#skill-lister').html(html); //模板添加
@@ -71,7 +73,7 @@ function getListData(obj) {
 	var secondData = obj.parents('.second-list').data('data');
 	var id = secondData.id;
 	var newList = secondData.newList;
-	var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/querySelectList.easy?parentId=' + parentId + '&secondClassId=' + id + '&easybuyCallback=?';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/querySelectList.easy?parentId=' + parentId + '&secondClassId=' + id + '&easybuyCallback=?';
 	$.ajax({
 		url: dataUrl,
 		type: "get",
@@ -225,7 +227,7 @@ function submitClick() {
 	//發送數據
 	function submitSend(res) {
 		res = encodeURIComponent(res);
-		var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/updateInfo.easy?userId=' + userId + '&infos=' + res + '&easybuyCallback=?';
+		var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/updateInfo.easy?userId=' + userId + '&infos=' + res + '&easybuyCallback=?';
 		$.ajax({
 			url: dataUrl,
 			type: "get",

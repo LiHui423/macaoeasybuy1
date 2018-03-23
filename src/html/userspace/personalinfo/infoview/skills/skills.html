@@ -25,7 +25,7 @@
 	</head>
 	<body>
 		<div id="swapper">
-			<header></header>
+			<header id="page-header"></header>
 			<div id="container" class="clearfloat">
 				<div id="left-menu"></div>
 				<div id="right-content">
@@ -33,11 +33,11 @@
 					<div class="clearfloat">
 						<div class="white-container">
 							<ul id="white-menu">
-								<li><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica13.png" alt=""></div><span>信息</span><span>3/10</span></a></li>
-								<li><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica14.png" alt=""></div><span>興趣</span><span>10/11</span></a></li>
-								<li class="select"><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica15.png" alt=""></div><span>技能</span><span>6/6</span></a></li>
-								<li id="sentiment"><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica16.png" alt=""></div><span>人氣</span><span>248/1000</span></a></li>
-								<li id="growth"><a href=""><div><img src="/src/img/userspace/common/leftmenu/userin_ica17.png" alt=""></div><span>成長</span><span>LV2</span></a></li>
+								<li><a><div><img src="/src/img/userspace/common/leftmenu/userin_ica13.png" alt=""></div><span>信息</span><span>3/10</span></a></li>
+								<li><a><div><img src="/src/img/userspace/common/leftmenu/userin_ica14.png" alt=""></div><span>興趣</span><span>10/11</span></a></li>
+								<li class="select"><a><div><img src="/src/img/userspace/common/leftmenu/userin_ica15.png" alt=""></div><span>技能</span><span>6/6</span></a></li>
+								<li id="sentiment"><a><div><img src="/src/img/userspace/common/leftmenu/userin_ica16.png" alt=""></div><span>人氣</span><span>248/1000</span></a></li>
+								<li id="growth"><a><div><img src="/src/img/userspace/common/leftmenu/userin_ica17.png" alt=""></div><span>成長</span><span>LV2</span></a></li>
 							</ul>
 						</div>
 						<div id="userspace-content">
@@ -64,12 +64,14 @@
 		</div>
 	</body>
 	<script src="/src/js/plug/yez_js_Reset.js"></script>
-	<script src="/src/js/common/vendor/template-native.js"></script>
+	<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
 	<script src="/src/js/userspace/common/userinfo.js" async></script>
 	<script src="/src/js/userspace/common/leftmenu.js" async></script>
 	<script src="/src/js/common/header&search&footer/footer.js" async></script>
-	<script src="/src/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/page-header.js"></script>
 	<script src="/src/js/userspace/personalinfo/infoview/skills/skills.js"></script>
+	<script src="/src/js/common/clickEvent.js"></script>
 	<!--模板-->
 	<script id="list_template" type="text/html" data-type="template">
 		<%for(var i=0;i<nextClassList.length;i++){%>

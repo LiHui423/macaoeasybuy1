@@ -4,7 +4,7 @@
 }
 body {
   // overflow: hidden;
-  width: 970px;
+  // width: 970px;
 }
 .tabsBar {
   width: 100%;
@@ -18,7 +18,7 @@ body {
     display: table;
   }
   .labelTabs {
-    width: 40%;
+    width: 480px;
     height: 100%;
     float: left;
     &[data-eb-active="0"] .tab:first-of-type {
@@ -50,6 +50,8 @@ body {
         position: relative;
         overflow: hidden;
         z-index: 1;
+        background: url('/src/img/userspace/label/arrow-y.png') no-repeat ;
+        background-position: 250px; 
         &:hover {
           height: calc(70px * 6);
         }
@@ -265,7 +267,9 @@ body {
     display: block;
   }
   .label-item{
-    width:48.5%;
+    float:left;
+    margin-left:10px;
+    width:464px;
     background-color:#fff;
     border-radius: 8px;
     overflow: hidden;

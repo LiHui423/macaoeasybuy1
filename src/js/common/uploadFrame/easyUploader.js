@@ -246,6 +246,7 @@ EasyUplader.prototype = {
         file.id = fileId;
         this.uploadList.push(file);
         this.formData.append('file', file);
+        console.log(this.formData.get('file'));
         var aaa = this.formData.get('file');
         if(this.isPreview){
             this.preview(file, function(a, b){
@@ -314,27 +315,45 @@ EasyUplader.prototype = {
     doSubmit:function(){
         var self=this;
         this.submitBtn.on('click', function(){
-            if(self.uploadList.length!==0){
-                self.onBeforeSend&&self.onBeforeSend.call(self);
-                self.formData.append('param', JSON.stringify(self.param));
-                /*self.uploadProgress();*/
-                $.ajax({
-                    url:self.server,
-                    type:self.method,
-                    data:self.formData,
-                    dataType:'json',
-                    processData: false,
-                    contentType: false,
-                    success:function (data) {
-                        self.onSubmitSuccess&&self.onSubmitSuccess.apply(self, [data]);
-                    },
-                    error:function (error) {
-                        self.onError('upload');
-                    }
-                });
-            }else{
-                self.onError('upload');
-            }
+            self.onBeforeSend&&self.onBeforeSend.call(self);
+
+            self.formData.append('param', JSON.stringify(self.param));
+            /*self.uploadProgress();*/
+            $.ajax({
+                url:self.server,
+                type:self.method,
+                data:self.formData,
+                dataType:'json',
+                processData: false,
+                contentType: false,
+                success:function (data) {
+                    self.onSubmitSuccess&&self.onSubmitSuccess.apply(self, [data]);
+                },
+                error:function (error) {
+                    self.onError('upload');
+                }
+            });
+            // if(self.uploadList.length!==0){
+            //     self.onBeforeSend&&self.onBeforeSend.call(self);
+            //     self.formData.append('param', JSON.stringify(self.param));
+            //     /*self.uploadProgress();*/
+            //     $.ajax({
+            //         url:self.server,
+            //         type:self.method,
+            //         data:self.formData,
+            //         dataType:'json',
+            //         processData: false,
+            //         contentType: false,
+            //         success:function (data) {
+            //             self.onSubmitSuccess&&self.onSubmitSuccess.apply(self, [data]);
+            //         },
+            //         error:function (error) {
+            //             self.onError('upload');
+            //         }
+            //     });
+            // }else{
+            //     self.onError('upload');
+            // }
         })
     },
     uploadProgress:function(){

@@ -91,7 +91,8 @@ function newUpload(){
 			}
 		},
 		onBeforeSend : function(){
-			console.log(self);
+			var self = this;
+			console.log(self.uploadList);
 			var re = checkPost();
 			console.log(re);
 			if(re == false) return false; //先去檢查內容，是否允許上傳
@@ -104,10 +105,11 @@ function newUpload(){
 			});
 			if(self.uploadList.length == 0 || flag){
 				// sendRequest(re);
-				this.setParm(re);
+				self.setParm(re);
 			}else{
 				$.each(self.uploadList,function(k,y){
-					if(!y.isComplete) self.EasyUplader(y.id);
+					self.setParm(re);
+					if(!y.isComplete) self.doSubmit();
 				});
 			}
 			// var title = $('#diaryTitle').val();

@@ -505,7 +505,7 @@
                         <%=content[0].comment.userName%><%=content[0].comment.sex%>
                     </div>
                     <div class="person-info-contain">
-                        <div class="person-info-text"><%=content[0].comment.replycontent%></div>
+                        <div class="person-info-text"><%=#content[0].comment.replycontent%></div>
                     </div>
                     <div class="person-info-time"><span><%=content[0].comment.uptime%></span>前發佈</div>
                 </div>
@@ -516,7 +516,7 @@
         <%for(var i=1, item; item = content[i++];) {%>
         <div class="post-topic-box clearfloat">
             <div class="box-img e-img">
-                <img src="<%=item.welfarePic%>">
+                <img src="//wap.macaoeasybuy.com<%=item.welfarePic%>">
             </div>
             <div class="box-main">
                 <div class="box-main-head">
@@ -559,7 +559,7 @@
 <script id="queryEasyBuyTopicDetailList" type="text/html" data-eb-template>
     <%for(var i=0, item; item = content[i++];) {%>
     <div class="post-topic-box clearfloat">
-        <div class="box-img e-img"><img src="<%=item.topicPic%>"></div>
+        <div class="box-img e-img"><img src="<%=item.topicPic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_80.png'"></div>
         <div class="box-main">
             <div class="box-main-head">
                 <div class="box-main-head-info">

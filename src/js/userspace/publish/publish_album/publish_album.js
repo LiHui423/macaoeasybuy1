@@ -94,7 +94,7 @@ function chooseAlbum() {
 		flag = false;
 	});
 	//點擊其他地方收回盒子
-	maskClick($('.publishBox_articleTitleLeft'), function() {
+	easyBuy.global.dep.maskClick($('.publishBox_articleTitleLeft'), function() {
 		hideTo();
 	});
 	//請求專輯回來

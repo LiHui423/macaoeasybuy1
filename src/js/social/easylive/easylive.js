@@ -63,9 +63,10 @@ var store = (function () {
 					$.each($('.easylive-topic-nav li'), function (index) {
 						index === 0 && $(this).attr('data-eb-active', '');
 						$(this).children('div').on('click', function () {
-							$(this).siblings('[data-eb-active]').removeAttr('data-eb-active').end().attr('data-eb-active', '');
-							queryEasyBuyTopicDetailList.requestOptions.parameters.classId = $(this).attr('id');
-							templateProcessor([queryEasyBuyTopicDetailList]);
+							console.log($(this).parent().attr('id'));
+							$(this).parent().siblings('[data-eb-active]').removeAttr('data-eb-active').end().attr('data-eb-active', '');
+							templateObjects.queryEasyBuyTopicDetailList.requestOptions.parameters.classId = $(this).parent().attr('id');
+							Ebtemplate.processor([templateObjects.queryEasyBuyTopicDetailList]);
 						})
 					});
 					easyBuy.global.dep.ebSlide({

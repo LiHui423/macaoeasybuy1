@@ -19,7 +19,7 @@
 
 	<body>
 		<div id="swapper">
-			<header></header>
+			<header id="page-header"></header>
 			<div id="container" class="clearfloat">
 				<div id="left-menu"></div>
 				<div id="right-content">
@@ -28,19 +28,19 @@
 						<div class="white-container">
 							<ul id="white-menu">
 								<li>
-									<a href="#">
+									<a>
 										<div><img src="/src/img/userspace/common/leftmenu/userin_ica13.png" alt=""></div><span>信息</span><span>3/10</span></a>
 								</li>
 								<li class="select">
-									<a href="#">
+									<a>
 										<div><img src="/src/img/userspace/common/leftmenu/userin_ica14.png" alt=""></div><span>興趣</span><span>10/11</span></a>
 								</li>
 								<li>
-									<a href="#">
+									<a>
 										<div><img src="/src/img/userspace/common/leftmenu/userin_ica15.png" alt=""></div><span>技能</span><span>10/10</span></a>
 								</li>
 								<li>
-									<a href="#">
+									<a>
 										<div><img src="/src/img/userspace/common/leftmenu/userin_ica18.png" alt=""></div><span>基本</span><span>3/3</span></a>
 								</li>
 							</ul>
@@ -173,12 +173,14 @@
 	</body>
 
 	<script src="/src/js/plug/yez_js_Reset.js"></script>
-	<script src="/src/js/common/vendor/template-native.js"></script>
+	<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
 	<script src="/src/js/userspace/common/userinfo.js" async></script>
 	<script src="/src/js/userspace/common/leftmenu.js" async></script>
 	<script src="/src/js/common/header&search&footer/footer.js" async></script>
-	<script src="/src/js/common/header&search&footer/header.js"></script>
+	<script src="/src/js/common/page-header.js"></script>
 	<script src="/src/js/userspace/personalinfo/infoset/interest/interest.js"></script>
+	<script src="/src/js/common/clickEvent.js"></script>
 
 	<script id="data-template" type="text/html" data-type="template">
 		<%for(var i=0;i<nextClassList.length;i++){%>

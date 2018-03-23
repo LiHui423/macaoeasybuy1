@@ -10,9 +10,12 @@
 		<link rel="stylesheet" href="/src/css/userspace/common/userspace_common.css">
 		<link rel="stylesheet" href="/src/css/userspace/label/labeldetail/labeldetail.css">
 		<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+		<script src="/src/js/common/frameDomainJSON.js"></script>
+		<script src="/src/js/common/getData/getData_needLogin.js"></script>
+    	<script src="/src/js/userspace/common/userspacebg.js" async></script>
 	</head>
 	<body>
-			<header></header>
+			<header id="page-header"></header>
 			<div id="container" class="clearfloat">
 				<div id="left-menu"></div>
 				<div id="right-content">
@@ -231,6 +234,14 @@
 		</div>
 	</body>
 	<script src="/src/js/plug/yez_js_Reset.js"></script>
+    <script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
+	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
+    <script src="/src/js/userspace/common/userinfo.js" async></script>
+    <script src="/src/js/userspace/common/leftmenu.js" async></script>
+    <script src="/src/js/userspace/common/whitemenu.js" async></script>
+    <script src="/src/js/userspace/common/newspush.js" async></script>
+    <script src="/src/js/common/header&search&footer/footer.js" async></script>
+    <script src="/src/js/common/page-header.js"></script>
 	<script src="/src/js/plug/webuploader.nolog.min.js"></script>
 	<script src="/src/js/common/uploadFrame/uploadFrame.js"></script>
 	<script src="/src/js/userspace/label/labeldetail/labeleditor.js"></script>
@@ -242,7 +253,7 @@
 			<li id="<%=loveList[i].id%>good-id">
 				<a href="">
 					<div class="respondBox_fandPic">
-						<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=loveList[i].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'">
+						<img src="//wap.macaoeasybuy.com<%=loveList[i].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'">
 					</div>
 					<div class="respondBox_fansMess clearfloat">
 						<div><%=loveList[i].name%></div>
@@ -264,7 +275,7 @@
 			<li id="<%userList[i].id%>check-id">
 				<a href="">
 					<div class="respondBox_fandPic">
-						<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=userList[i].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'">
+						<img src="//wap.macaoeasybuy.com<%=userList[i].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'">
 					</div>
 					<div class="respondBox_fansMess clearfloat">
 						<div><%=userList[i].name%></div>
@@ -288,7 +299,7 @@
 			<div class="pillar">
 				<div class="page-main">
 					<%if(classList[i].postPics.length != 0){%>
-					<a href=""><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=classList[i].postPics[0]%>" class="page-main-head-img"></a>
+					<a href=""><img src="//wap.macaoeasybuy.com<%=classList[i].postPics[0]%>" class="page-main-head-img"></a>
 					<%}%>
 					<div class="post-main-text">
 						<div class="post-title"><%=classList[i].postName%></div>
@@ -302,7 +313,7 @@
 						<li><%=classList[i].replyCount%></li>
 					</ul>
 					<div class="laster-look clearfloat">
-						<div class="laster-head"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=classList[i].postuserpic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
+						<div class="laster-head"><img src="//wap.macaoeasybuy.com<%=classList[i].postuserpic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 						<div class="laster-text">
 							<div class="laster-text-name">
 								<span><%=classList[i].postuserName%></span>
@@ -338,7 +349,7 @@
 			<div class="pillar">
 				<div class="page-main">
 					<div class="laster-look clearfloat">
-						<div class="laster-head"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=classList[i].postuserpic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
+						<div class="laster-head"><img src="//wap.macaoeasybuy.com<%=classList[i].postuserpic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 						<div class="laster-text">
 							<div class="laster-text-name">
 								<span><%=classList[i].postuserName%></span>
@@ -352,7 +363,7 @@
 						</div>
 					</div>
 					<%if(classList[i].postPics.length != 0){%>
-					<a href=""><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=classList[i].postPics[0]%>" class="page-main-head-img"></a>
+					<a href=""><img src="//wap.macaoeasybuy.com<%=classList[i].postPics[0]%>" class="page-main-head-img"></a>
 					<%}%>
 					<div class="post-main-text">
 						<div class="post-title"><%=classList[i].postName%><span>/<%=classList[i].classname%>/</span></div>
@@ -390,10 +401,10 @@
 				<div class="page-main">
 					<div class="top-banner"><%=classList[i].fineness%>/MOP<%=classList[i].price%></div>
 					<%if(classList[i].postPics.length != 0){%>
-					<a href=""><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=classList[i].postPics[0]%>" class="page-main-head-img"></a>
+					<a href=""><img src="//wap.macaoeasybuy.com<%=classList[i].postPics[0]%>" class="page-main-head-img"></a>
 					<%}%>
 					<div class="laster-look clearfloat">
-						<div class="laster-head"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=classList[i].postuserpic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
+						<div class="laster-head"><img src="//wap.macaoeasybuy.com<%=classList[i].postuserpic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 						<div class="laster-text">
 							<div class="laster-text-name">
 								<span><%=classList[i].postuserName%></span>
@@ -453,7 +464,7 @@
 			<div class="pillar">
 				<div class="page-main">
 					<%if(classList[i].postPics.length != 0){%>
-					<a href=""><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=classList[i].postPics[0]%>" class="page-main-head-img"></a>
+					<a href=""><img src="//wap.macaoeasybuy.com<%=classList[i].postPics[0]%>" class="page-main-head-img"></a>
 					<%}%>
 					<div class="post-main-text">
 						<div class="post-title"><%=classList[i].postName%></div>
@@ -480,7 +491,7 @@
 						<li><%=classList[i].replyCount%></li>
 					</ul>
 					<div class="laster-look">
-						<div class="laster-head"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=classList[i].postuserpic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
+						<div class="laster-head"><img src="//wap.macaoeasybuy.com<%=classList[i].postuserpic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></div>
 						<div class="laster-text">
 							<div class="laster-text-name">
 								<span><%=classList[i].postuserName%></span>
@@ -512,11 +523,11 @@
 		<%if(classList.length != 0){%>
 		<%for(var i=0;i<classList.length;i++){%>
 		<div class="post-topic-box clearfloat">
-			<div class="box-img"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=classList[i].topicPics[0]%>" class="page-main-head-img" onerror="this.onerror=null;this.src='/img/common/PC765x404.jpg'"></div>
+			<div class="box-img"><img src="//wap.macaoeasybuy.com<%=classList[i].topicPics[0]%>" class="page-main-head-img" onerror="this.onerror=null;this.src='/img/common/PC765x404.jpg'"></div>
 			<div class="box-main">
 				<div class="box-main-head clearfloat">
 					<div class="box-main-head-img">
-						<img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/<%=classList[i].topicadminpic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'">
+						<img src="//wap.macaoeasybuy.com<%=classList[i].topicadminpic%>" alt="" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'">
 					</div>
 					<div class="box-main-head-info">
 						<div class="box-main-head-info-title"><%=classList[i].topicName%></div>

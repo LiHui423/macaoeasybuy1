@@ -420,7 +420,7 @@ function queryFairClassDetailInfo(id,className){
 		});
 		var html = ''
 		$.each(data.result[0].userList, function(k,y) {
-			html += '<li data-id='+y.id+'><img data-type="userAvatar" src=http://mbuy.oss-cn-hongkong.aliyuncs.com/' + y.pic + '></li>';
+			html += '<li data-id='+y.id+'><a><img data-type="userAvatar" src=//wap.macaoeasybuy.com/' + y.pic + '></a></li>';
 		});
 		html = html == '' ? '<div>暫無人訪問</div>' : html;
 		$('#' + id + '-queryFairClassInfo-box .artTempFans').html(html);

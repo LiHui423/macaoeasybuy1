@@ -24,8 +24,9 @@ function userState(){
 }
 //關於
 function queryUserBasicSetting(){
-	var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/queryUserBasicSetting.easy?userId='+userId+'&easybuyCallback=?';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserBasicSetting.easy?userId='+userId+'&seeUserId='+easyBuy.global.pageParameter.spaceid+'&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
+		console.log(data);
 		var newData = data.userBasicInfo;
 		$('#user-account').html(newData.account).addClass('select');
 		$('#user-name').html(newData.name).addClass('select');
@@ -61,7 +62,7 @@ function queryUserBasicSetting(){
 	
 //動態
 function queryUserDynamicInfo(){
-	var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/queryUserDynamicInfo.easy?userId='+userId+'&easybuyCallback=?';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserDynamicInfo.easy?userId='+userId+'&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
 		var newData = data.dynamicInfo;
 		$('#user-registration').html(newData.addtime); //註冊時間
@@ -74,7 +75,7 @@ function queryUserDynamicInfo(){
 }
 //誰來偷看
 function querySeeUser(){
-	var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/querySeeUser.easy?userId='+userId+'&easybuyCallback=?';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/querySeeUser.easy?userId='+userId+'&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
 		var newData = data.seeUserList;
 		if(newData.length == 0){
@@ -82,7 +83,7 @@ function querySeeUser(){
 			return false;
 		}
 		for(var i=0;i<newData.length;i++){
-			var li = '<li data-id="'+newData[i].id+'"><img src="http://mbuy.oss-cn-hongkong.aliyuncs.com/'+newData[i].pic+'" alt=""></li>';
+			var li = '<li data-id="'+newData[i].id+'"><img data-type="userAvatar" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/'+newData[i].pic+'" alt=""></li>';
 			$('#whos-look-me').append(li);
 		}
 		li = null;
@@ -91,7 +92,7 @@ function querySeeUser(){
 //經歷
 function queryUserBasicSettingInfo(){
 	var classId = 2;
-	var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/queryUserSetting.easy?userId='+userId+'&classId='+classId+'&easybuyCallback=?'
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserSetting.easy?userId='+userId+'&classId='+classId+'&seeUserId='+easyBuy.global.pageParameter.spaceid+'&easybuyCallback=?'
 	$.getJSON(dataUrl,function(data){
 		var myArr = [];
 		var newData = data.settingList[0];

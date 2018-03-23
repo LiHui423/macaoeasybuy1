@@ -77,6 +77,7 @@
 	cursor: pointer;
 }
 .replyBox_add .replyBox_addUl>li .contains {
+	width:355px;
 	position: absolute;
 	z-index: 100;
 	display: none;

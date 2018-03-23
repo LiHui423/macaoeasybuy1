@@ -1,6 +1,6 @@
 
 easyBuy.global.afterDataJs = function () {
-    var domain = 'http://userspace.macaoeasybuy.com/';
+    var domain = 'http://userspace1.macaoeasybuy.com/';
 var queryUserGrowUpBasic = new Ebtemplate({
     targetURL: domain + 'UserGrowUpController/queryUserGrowUpBasic.easy',
     parameters: {

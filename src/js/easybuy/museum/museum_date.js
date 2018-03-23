@@ -38,6 +38,7 @@ function TodayDesignBox(){
 /*人氣設計的左邊商品數據*/
 function popoularBox(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsYiPingController/queryYiShangpin/30/0/NEWID()/desc/3.easy",function(json){
+		console.log(json);
 		var popoularList = json;
 		var html = template("showPopularBox", popoularList);
 		$(".museum_popularDesign").html(html);
@@ -49,6 +50,7 @@ function popoularBox(){
 /*人氣設計的右邊評論滾動請求數據*/
 function popularCommentBox(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsYiPingController/queryYiShangpinDicuss.easy",function(json){
+		console.log(json);
 		var popularCommentList = json;
 		var html = template("showPopularComment", popularCommentList);
 		$(".popularDesign_right_commentBox ul").html(html);

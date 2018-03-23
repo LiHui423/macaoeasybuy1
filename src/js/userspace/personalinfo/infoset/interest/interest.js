@@ -1,11 +1,13 @@
 var cloneObject = easyBuy.global.dep.cloneObject;
 var deleteArrObj = easyBuy.global.dep.deleteArrObj;
+var seeUserId = easyBuy.global.pageParameter.spaceid;
 easyBuy.global.startJs = function(){
 	getMyData();
 }
 function getMyData(){
-	var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/queryUserSetting.easy?userId=' + userId + '&classId=3,4,5&easybuyCallback=?';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserSetting.easy?userId=' + userId + '&classId=3,4,5&seeUserId=' + seeUserId + '&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
+		console.log(data);
 		var newData = data.settingList;
 		for(var i=0;i<newData.length;i++){
 			if(i !=2 ){
@@ -97,7 +99,7 @@ function getListData(obj) {
 	var secondData = obj.parents('.second-list').data('data');
 	var id = secondData.id;
 	var newList = secondData.newList;
-	var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/querySelectList.easy?parentId=' + parentId + '&secondClassId=' + id + '&easybuyCallback=?';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/querySelectList.easy?parentId=' + parentId + '&secondClassId=' + id + '&easybuyCallback=?';
 	$.ajax({
 		url: dataUrl,
 		type: "get",
@@ -340,7 +342,7 @@ function addBoring(obj){
 	var secondData = $('#add-boring').data('data');
 	var id = secondData.id;
 	var newList = secondData.newList;
-	var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/querySelectList.easy?parentId=' + parentId + '&secondClassId=' + id + '&easybuyCallback=?';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/querySelectList.easy?parentId=' + parentId + '&secondClassId=' + id + '&easybuyCallback=?';
 	$.ajax({
 		url: dataUrl,
 		type: "get",

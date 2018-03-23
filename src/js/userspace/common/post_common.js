@@ -79,7 +79,7 @@ function positionBox(box,boxOuter,referBox,fadeTime){
 //用戶姓名，頭像，性別
 function userInfo(a,b,c){
 	$('#other-mess-name span').html(a);
-	$('#messBox_pic img').attr('src',easyBuy.global.osURL+b);
+	$('#messBox_pic img').attr('src','//wap.macaoeasybuy.com'+b);
 	if(c=='Girl'){
 		$('#other-mess-name img').attr('src','/src/img/common/girl.png');
 	}else{

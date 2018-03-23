@@ -102,7 +102,7 @@
                             </div>
                         </div>
                         <div class="item-container" data-eb-active="0">
-                            <div></div>
+                            <div id="label-list"></div>
                             <div></div>
                             <div></div>
                         </div>
@@ -123,11 +123,13 @@
     <script src="/src/js/common/page-header.js"></script>
     <script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
     <script src="/src/js/common/ebtemplate-jquery.js"></script>
-    <script src="/src/js/userspace/label/labellist/labellist.js"></script>
+    <!-- <script src="/src/js/userspace/label/labellist/labellist.js"></script> -->
+    <script src="/src/js/userspace/label/labellist/labellist1.js"></script>
+    <script src="/src/js/common/clickEvent.js"></script>
     
-    <script id="queryUserSpaceLabel" type="text/html" data-type="template">
-        <%for(var i=0, item; (item = content[i++]);) {%>
-            <div class="label-item">
+    <script id="queryUserSpaceLabel" type="text/html">
+        <%for(var i=0, item; (item = result[i++]);) {%>
+            <div class="label-item" data-id="<%=item.labelId%>">
                 <%if(item.labelPic !== '') {%>
                     <div class="label-picture">
                         <img src="//wap.macaoeasybuy.com<%=item.labelPic%>" alt="">
@@ -135,7 +137,7 @@
                     <%}%>
                         <div class="label-describe">
                             <div class="label-name">
-                                <%=item.labelName%>
+                                <a><span id="underline" style="color:#e98900"><%=item.labelName%></span></a>
                             </div>
                             <div class="label-create-time">
                                 <img src="/src/img/social/label/labelranklist/clock.png" alt="">
@@ -157,10 +159,10 @@
                             <div class="label-num clearfloat">
                                 <div>
                                     <img src="/src/img/common/eye.png" alt="">
-                                    <%=formatNum(item.seeCount)%>宜粉查看過</div>
+                                    <%=item.seeCount%>宜粉查看過</div>
                                 <div>
                                     <img src="/src/img/common/good.png" alt="">
-                                    <%=formatNum(item.loveCount)%>宜粉讃好</div>
+                                    <%=item.loveCount%>宜粉讃好</div>
                             </div>
                             <div class="label-post">
                                 <div>該標籤精彩帖子</div>
@@ -222,15 +224,15 @@
                     <ul class="post-num clearfloat">
                         <li>
                             <img src="/src/img/common/eye.png" alt="">
-                            <%=formatNum(item.postSeeNumber)%>
+                            <%=item.postSeeNumber%>
                         </li>
                         <li>
                             <img src="/src/img/common/message.png" alt="">
-                            <%=formatNum(item.replyCount)%>
+                            <%=item.replyCount%>
                         </li>
                         <li>
                             <img src="/src/img/common/good.png" alt="">
-                            <%=formatNum(item.postLoveNumber)%>
+                            <%=item.postLoveNumber%>
                         </li>
                     </ul>
                     <div class="post-label">

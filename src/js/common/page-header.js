@@ -34,14 +34,14 @@
       return HTMLString + `<li><a href="${page.href}">${page.name}</a></li>`;
     },'');
     navShoppingHTMLString = `
-      <div class="hidden clearfloat" style="height:0px;overflow:hidden;transition:all .2s linear;z-index:2">
+      <div class="hidden clearfloat" style="height:0px;overflow:hidden;transition:all .2s linear;z-index:6">
         <ul class="e-container">
           ${shoppingLi}
         </ul>
       </div>
     `;
     navSocialHTMLString = `
-      <div class="hidden clearfloat" style="height:0px;overflow:hidden;transition:all .2s linear;z-index:2">
+      <div class="hidden clearfloat" style="height:0px;overflow:hidden;transition:all .2s linear;z-index:6">
         <ul class="e-container">
           ${socialLi}
         </ul>

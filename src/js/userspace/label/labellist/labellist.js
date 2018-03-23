@@ -1,8 +1,6 @@
 
-// const Effect = window.Effect;
-function Effect(obj){
-    const initApiO = obj.methods.initApiO();
-}
+const Effect = window.Effect;
+
 const label = new Effect({
     el: '#label-list',
     $_data: {
@@ -99,7 +97,7 @@ const label = new Effect({
         // 初始化ApiO
         initApiO() {
             // const effect = this;
-            this.$_data.ApiO = {
+            ApiO = {
                 // 创建的标签数量
                 queryLabelPrevCount: this.template({
                     api: 'http://userspace1.macaoeasybuy.com/UserLabelConntroller/queryLabelPrevCount.easy',

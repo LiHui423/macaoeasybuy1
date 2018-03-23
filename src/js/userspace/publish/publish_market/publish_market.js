@@ -197,7 +197,7 @@ function getCost(){
 }
 //折扣價計算
 function clacCost(){
-	justNumInput('marketOld',function(){
+	easyBuy.global.dep.justNumInput('marketOld',function(){
 		if($(this).val() == ''){
 			return;
 		}else{
@@ -205,7 +205,7 @@ function clacCost(){
 			returnCost();
 		}
 	});
-	justNumInput('marketNew',function(){
+	easyBuy.global.dep.justNumInput('marketNew',function(){
 		if($(this).val() == ''){
 			return;
 		}else{

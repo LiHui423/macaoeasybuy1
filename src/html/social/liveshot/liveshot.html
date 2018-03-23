@@ -481,7 +481,7 @@
 					<div class="main-new">最新查看の宜粉：</div>
 					<ul class="main-head-img clearfloat">
 						<%for(var k = 0;k <result[i].visitorList.length;k++){%>
-							<li><img src="http://wap.macaoeasybuy.com<%=result[i].visitorList[k].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></li>
+							<li data-id="<%=result[i].visitorList[k].id%>"><a><img data-type="userAvatar" src="http://wap.macaoeasybuy.com<%=result[i].visitorList[k].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'"></a></li>
 						<%}%>
 					</ul>
 				</div>

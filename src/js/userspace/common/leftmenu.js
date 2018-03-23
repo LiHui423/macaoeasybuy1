@@ -27,37 +27,40 @@ void function() {
     });
     // 左側按鈕點擊事件
     $('#left-menu ul li').on('click',function(){
+        let seeUserId = easyBuy.global.pageParameter.spaceid;
+        let userId = easyBuy.easyUser.id;
         let type = $(this).attr('id').split('-')[0];
         if(type === 'index'){
-            location.href = 'http://userspace.macaoeasybuy.com/?spaceid=' + easyBuy.easyUser.id;
+            location.href = 'http://userspace.macaoeasybuy.com/?spaceid=' + userId;
         }else if(type === 'easylife'){
             location.href = 'http://social.macaoeasybuy.com/easylive/easylive.html';
         }else if(type === 'setinfo'){
-            location.href = 'http://userspace.macaoeasybuy.com/personalinfo/infoset/information/information.html?spaceid=' + easyBuy.easyUser.id;
+            location.href = 'http://userspace.macaoeasybuy.com/personalinfo/infoset/information/information.html?spaceid=' + userId;
         }else if(type === 'inform'){
-            location.href = 'http://userspace.macaoeasybuy.com/usermessage/usermessage.html?spaceid=' + easyBuy.easyUser.id;
+            location.href = 'http://userspace.macaoeasybuy.com/usermessage/usermessage.html?spaceid=' + userId;
         }else if(type === 'peep'){
-            location.href = 'http://userspace.macaoeasybuy.com/whospeep/whospeep.html?spaceid=' + easyBuy.easyUser.id;
+            location.href = 'http://userspace.macaoeasybuy.com/whospeep/whospeep.html?spaceid=' + userId;
         }else if(type ==='findfriend'){
-            location.href = 'http://userspace.macaoeasybuy.com/relation/findfriends/findfriends.html?spaceid=' + easyBuy.easyUser.id;
+            location.href = 'http://userspace.macaoeasybuy.com/relation/findfriends/findfriends.html?spaceid=' + userId;
         }
     })
     function navChange(){
         let url = location.href.split('?')[0];
         if(url === 'http://userspace.macaoeasybuy.com/usermessage/usermessage.html'){
             $($($('#left-menu ul li')[4]).children()[1]).css('display','table');
-        }else if(url === 'http://userspace.macaoeasybuy.com/personalinfo/infoset/information/information.html'){
+        }else if(url === 'http://userspace.macaoeasybuy.com/personalinfo/infoset/information/information.html' || url === 'http://userspace.macaoeasybuy.com/personalinfo/infoview/information/information.html'){
             $($($('#left-menu ul li')[2]).children()[1]).css('display','table');
         }else if(url === 'http://userspace.macaoeasybuy.com/'){
             $($($('#left-menu ul li')[0]).children()[1]).css('display','table');
+        }else{
+            let liArray = $('#left-menu ul li');
+            $.each(liArray,function(k,y){
+                let id = $(y).attr('id').split('-')[0];
+                if(url.indexOf(id) !== -1){
+                    $($(y).children()[1]).css('display','table');
+                }
+            })
         }
-        let liArray = $('#left-menu ul li');
-        $.each(liArray,function(k,y){
-            let id = $(y).attr('id').split('-')[0];
-            if(url.indexOf(id) !== -1){
-                $($(y).children()[1]).css('display','table');
-            }
-        })
     }
 });
 }();

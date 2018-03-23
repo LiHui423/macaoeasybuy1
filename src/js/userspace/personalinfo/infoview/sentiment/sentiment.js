@@ -79,31 +79,31 @@ function fansChange(id,paraObj) {
 }
 function getSentimentData(){
 	//凈增粉絲數
-	var queryUserPopularity = 'http://userspace.macaoeasybuy.com/userPopularityController/queryUserPopularity.easy?userId='+userId+'&easybuyCallback=?';
+	var queryUserPopularity = 'http://userspace1.macaoeasybuy.com/userPopularityController/queryUserPopularity.easy?userId='+userId+'&easybuyCallback=?';
 	$.getJSON(queryUserPopularity,function(data){
 		var newData = data.userPopularity;
 		showData($('#fans-add'),newData);
 	});
 	//帖子閱讀數
-	var queryUserReadCount = 'http://userspace.macaoeasybuy.com/userPopularityController/queryUserReadCount.easy?userId='+userId+'&easybuyCallback=?';
+	var queryUserReadCount = 'http://userspace1.macaoeasybuy.com/userPopularityController/queryUserReadCount.easy?userId='+userId+'&easybuyCallback=?';
 	$.getJSON(queryUserReadCount,function(data){
 		var newData = data.userPopularity;
 		showData($('#post-read'),newData);
 	});
 	//帖子讃好數
-	var queryUserLoveCount = 'http://userspace.macaoeasybuy.com/userPopularityController/queryUserLoveCount.easy?userId='+userId+'&easybuyCallback=?';
+	var queryUserLoveCount = 'http://userspace1.macaoeasybuy.com/userPopularityController/queryUserLoveCount.easy?userId='+userId+'&easybuyCallback=?';
 	$.getJSON(queryUserLoveCount,function(data){
 		var newData = data.userPopularity;
 		showData($('#post-good'),newData);
 	});
 	//互動數
-	var queryUserHuDongCount = 'http://userspace.macaoeasybuy.com/userPopularityController/queryUserHuDongCount.easy?userId='+userId+'&easybuyCallback=?';
+	var queryUserHuDongCount = 'http://userspace1.macaoeasybuy.com/userPopularityController/queryUserHuDongCount.easy?userId='+userId+'&easybuyCallback=?';
 	$.getJSON(queryUserHuDongCount,function(data){
 		var newData = data.userPopularity;
 		showData($('#users-interactive'),newData);
 	});
 	//空間瀏覽量
-	var queryUserPageViewsCount = 'http://userspace.macaoeasybuy.com/userPopularityController/queryUserPageViewsCount.easy?userId='+userId+'&easybuyCallback=?';
+	var queryUserPageViewsCount = 'http://userspace1.macaoeasybuy.com/userPopularityController/queryUserPageViewsCount.easy?userId='+userId+'&easybuyCallback=?';
 	$.getJSON(queryUserPageViewsCount,function(data){
 		var newData = data.userPopularity;
 		showData($('#users-browse'),newData);
@@ -121,16 +121,16 @@ function queryFansVariation(id,paraObj,beginDate,finalDate){
 	var downId = id+'-down';
 	if(id == 'fans-change'){
 		//粉絲變化
-		var dataUrl = 'http://userspace.macaoeasybuy.com/userPopularityController/queryFansVariation.easy?userId='+userId+'&beginDate='+beginDate+'&finalDate='+finalDate+'&easybuyCallback=?';
+		var dataUrl = 'http://userspace1.macaoeasybuy.com/userPopularityController/queryFansVariation.easy?userId='+userId+'&beginDate='+beginDate+'&finalDate='+finalDate+'&easybuyCallback=?';
 	}else if(id == 'interactive-change'){
 		//互動變化
-		var dataUrl = 'http://userspace.macaoeasybuy.com/userPopularityController/queryInteractionVariation.easy?userId='+userId+'&beginDate='+beginDate+'&finalDate='+finalDate+'&easybuyCallback=?';
+		var dataUrl = 'http://userspace1.macaoeasybuy.com/userPopularityController/queryInteractionVariation.easy?userId='+userId+'&beginDate='+beginDate+'&finalDate='+finalDate+'&easybuyCallback=?';
 	}else if(id == 'space-change'){
 		//我的空間
-		var dataUrl = 'http://userspace.macaoeasybuy.com/userPopularityController/queryMySpace.easy?userId='+userId+'&beginDate='+beginDate+'&finalDate='+finalDate+'&easybuyCallback=?';
+		var dataUrl = 'http://userspace1.macaoeasybuy.com/userPopularityController/queryMySpace.easy?userId='+userId+'&beginDate='+beginDate+'&finalDate='+finalDate+'&easybuyCallback=?';
 	}else if(id == 'mine-change'){
 		//我的發佈
-		var dataUrl = 'http://userspace.macaoeasybuy.com/userPopularityController/queryPublishCount.easy?userId='+userId+'&beginDate='+beginDate+'&finalDate='+finalDate+'&easybuyCallback=?';
+		var dataUrl = 'http://userspace1.macaoeasybuy.com/userPopularityController/queryPublishCount.easy?userId='+userId+'&beginDate='+beginDate+'&finalDate='+finalDate+'&easybuyCallback=?';
 	}
 	$.getJSON(dataUrl,function(data){
 		if(id == 'fans-change'){

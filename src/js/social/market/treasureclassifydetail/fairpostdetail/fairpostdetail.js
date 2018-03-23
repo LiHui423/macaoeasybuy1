@@ -116,7 +116,7 @@ function postContent(){
 			$('#atricle_title').html(newData.title); //標題
 			bigEmoji(newData.bigExpressionGroup);//大錶情
 			myContent(newData.content);//內容
-			userInfo(newData.username,newData.headPic,newData.sex); //用戶性別，頭像，姓名
+			userInfo(newData.username,newData.headPic,newData.sex,newData.userId); //用戶性別，頭像，姓名,id
 			//吸頂檢測
 			checkFinsh.content = true;
 			checkAndGoScrollTop();

@@ -20,7 +20,7 @@
 
 		<ul class="clearfloat">
 			<li id="go-editor-userinfo" class="">
-				<a class="go-editor-userinfo-inner" href="/page/userspace/personalinfo/infoview/information/information.html">
+				<a class="go-editor-userinfo-inner">
 					<div>個人</div>
 					<div>資料</div>
 				</a>
@@ -65,3 +65,8 @@
 		</div>
 	</div>
 </div>
+<script>
+	$('.go-editor-userinfo-inner').on('click',function(){
+		window.open('http://userspace.macaoeasybuy.com/personalinfo/infoview/information/information.html?spaceid='+easyBuy.global.pageParameter.spaceid);
+	})
+</script>

@@ -12,8 +12,9 @@ easyBuy.global.startJs = function(){
 }
 var justNumInput  = easyBuy.global.dep.justNumInput;
 var baseInfo = new Object();
+var seeUserId = easyBuy.global.pageParameter.spaceid;
 function getBaseInfoData(){
-var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/queryUserReceive.easy?userId='+userId+'&easybuyCallback=?';
+var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserReceive.easy?userId='+userId+'&seeUserId='+seeUserId+'&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
 		var newData = data.userReceive;
 		//進度條
@@ -195,7 +196,7 @@ function changePhoneNum() {
 		$(this)[0].flag = false;
 		
 		var phone = window.baseInfo.phone;
-		var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/updateUserPhone.easy?phone='+phone+'&userId='+userId+'&easybuyCallback=?';
+		var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/updateUserPhone.easy?phone='+phone+'&userId='+userId+'&easybuyCallback=?';
 		$.getJSON(dataUrl,function(data){
 			console.log(data);
 			self[0].flag = true;
@@ -218,7 +219,7 @@ function areaSelect() {
 	});
 	function getAreaSelectData(obj){
 		obj[0].flag = false;
-		var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/queryReceivePlace.easy?easybuyCallback=?';
+		var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryReceivePlace.easy?easybuyCallback=?';
 		$.getJSON(dataUrl,function(data){
 			var newData = data.placeList;
 			var html = '';
@@ -270,10 +271,10 @@ function timeSelect(){
 		obj[0].flag = false;
 		switch(idx){
 			case 0:
-				var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/queryReceiveDate.easy?easybuyCallback=?';
+				var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryReceiveDate.easy?easybuyCallback=?';
 			break;
 			case 1:
-				var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/queryReceiveTime.easy?easybuyCallback=?';
+				var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryReceiveTime.easy?easybuyCallback=?';
 			break;
 		}
 		$.getJSON(dataUrl,function(data){
@@ -336,9 +337,10 @@ function submitAllInfo(){
 		var Address = baseData.address;
 		var receiveDay = baseData.data;
 		var receiveTime = baseData.time;
-		var dataUrl = 'http://userspace.macaoeasybuy.com/userSettingController/updateUserReceive.easy?userId='+userId+'&realName='+realName+'&AddressArea='+AddressArea+'&Address='+Address+'&receiveDay='+receiveDay+'&receiveTime='+receiveTime+'&easybuyCallback=?';
+		var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/updateUserReceive.easy?userId='+userId+'&realName='+realName+'&AddressArea='+AddressArea+'&Address='+Address+'&receiveDay='+receiveDay+'&receiveTime='+receiveTime+'&easybuyCallback=?';
 		$.getJSON(dataUrl,function(data){
 			if(data.status != 'success') return false;
+			$('#praise-post').css('display','block');
 			$('#praise-post').fadeIn(500).delay(1000).fadeOut(500);
 			$('#submit-btn')[0].flag = true;
 		});

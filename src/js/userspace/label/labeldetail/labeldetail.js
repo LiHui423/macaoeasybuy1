@@ -3,7 +3,7 @@ easyBuy.global.startJs = function(){
 }
 var mathValueLength = easyBuy.global.dep.mathValueLength;
 function userState(){
-	if(yezState == 'mine'){
+	if(easyBuy.global.isSelf == 'mine'){
 		$('#labeler-header').remove();
 		editorLabel();
 	}else{

@@ -100,7 +100,7 @@
 							<div class="pillar">
 								<div class="page-main">
 									<%if(userReleaseList.releaseList[i].pictureurl != undefined){%>
-										<a href=""><img src="//wap.macaoeasybuy.com<%=userReleaseList.releaseList[i].pictureurl%>" class="page-main-head-img"></a>
+										<a href=""><img src="//wap.macaoeasybuy.com<%=userReleaseList.releaseList[i].pictureurl%>" onerror="this.onerror=null;this.src='/src/img/userspace/album/album-no-img.png'" class="page-main-head-img"></a>
 									<%}%>
 									<div class="post-main-text">
 										<div class="post-title"><%=userReleaseList.releaseList[i].titlename%></div>

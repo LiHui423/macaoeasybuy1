@@ -285,6 +285,7 @@ class PCollector {
           $.each(sel,function(k,y){
             $(y).removeClass('yez-selected');
           })
+          // $('.hover-check-box-outer').css('display','none');
           $('body').css('overflow','auto');
         }else{
           $('#select-max-tips').html('採集失敗請重試');

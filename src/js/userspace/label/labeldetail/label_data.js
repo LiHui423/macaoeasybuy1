@@ -1,4 +1,4 @@
-
+var postId = easyBuy.global.pageParameter.labelId;
 //內容數據
 function queryLabelInfo(){
 	var sendUrl = 'http://userspace1.macaoeasybuy.com/UserLabelConntroller/queryLabelInfo.easy?id='+postId+'&easybuyCallback=?';
