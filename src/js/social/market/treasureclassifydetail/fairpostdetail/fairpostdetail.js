@@ -190,7 +190,6 @@ function allLookReq(){
 			},
 			success:function(data){
 				var data = {result : {returnList : data.result}}; //修改數據格式
-				console.log(data);
 				data.type = 'other';
 				data.page = page;
 				$.each(data.result.returnList, function(k,y) {
@@ -221,9 +220,7 @@ function clickEvent(){
 	$('body').on('click',function(e){
 		var target=e.target;
 		if($(target).hasClass('pillar-shadow')){
-			console.log('true');
 			var postId=$(target).parents('.pillar-all').attr('id').split('-')[0];
-			console.log(postId);
 			window.location.href="http://social.macaoeasybuy.com/market/treasureclassifydetail/fairpostdetail/fairpostdetail.html?id="+postId;
 		}
 	})

@@ -8,7 +8,7 @@ $(function(){
 
 function clickTabFunction($targetDiv,showNumber,$leftBtn,$RightBtn,scrollWidth,scrollNumber){
 	var i = 1;
-	$length = $targetDiv.find("li").length/scrollNumber;
+	var $length = $targetDiv.find("li").length/scrollNumber;
 	$leftBtn.click(function(){
 		if(i > 1){
 			if($(this).siblings(".willbeShelves_scroll").find('ul').is(":animated")){
@@ -76,19 +76,19 @@ function interchangeEachRightsEachHover(){
 
 function changeScrollLoad(){
 	if(page1 >= 1){
-		page1 = page1;
+		var page1 = page1;
 	}else{
-		page1 = 1;
+		var page1 = 1;
 	}
 	if(page2 >= 1){
-		page2 = page2;
+		var page2 = page2;
 	}else{
-		page2 = 1;
+		var page2 = 1;
 	}
 	if(page3 >= 1){
-		page3 = page3;
+		var page3 = page3;
 	}else{
-		page3 = 1;
+		var page3 = 1;
 	}
 	var range = 50; //距下边界长度/单位px
     var totalheight = 300;;

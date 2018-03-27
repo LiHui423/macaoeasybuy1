@@ -13,7 +13,6 @@ $(function(){
 function museumBannerBox(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/MallshopingMessController/queryMessAdvertisement/10126/10107/false/true.easy",function(json){
 		var museumBannerList = json;
-		console.log(museumBannerList);
 		var html = template("showMuseumBanner", museumBannerList);
 		$(".museum_bannerBox").html(html);
 		$(".museum_banner_tabBox ul li:nth-child(1)").addClass('museum_banner_tabcurr');
@@ -24,7 +23,6 @@ function museumBannerBox(){
 function TodayDesignBox(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsYiPingController/queryYiShangpin/8/0/buy_date/desc/1.easy",function(json){
 		var TodayDesignList = json;
-		console.log(TodayDesignList);
 		if(TodayDesignList.list[0].length === 0){
 			$('.museum_willSell').css('diaplay','none');
 			
@@ -38,7 +36,6 @@ function TodayDesignBox(){
 /*人氣設計的左邊商品數據*/
 function popoularBox(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsYiPingController/queryYiShangpin/30/0/NEWID()/desc/3.easy",function(json){
-		console.log(json);
 		var popoularList = json;
 		var html = template("showPopularBox", popoularList);
 		$(".museum_popularDesign").html(html);
@@ -50,7 +47,6 @@ function popoularBox(){
 /*人氣設計的右邊評論滾動請求數據*/
 function popularCommentBox(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsYiPingController/queryYiShangpinDicuss.easy",function(json){
-		console.log(json);
 		var popularCommentList = json;
 		var html = template("showPopularComment", popularCommentList);
 		$(".popularDesign_right_commentBox ul").html(html);
@@ -65,7 +61,6 @@ function popularCommentBox(){
 function willSellBox(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsYiPingController/queryYiShangpin/4/0/NEWID()/desc/2.easy",function(json){
 		var willSellList = json;
-		console.log(willSellList);
 		if(willSellList.list[0].length === 0){
 			$('.museum_willSell').css('display','none');
 		}else{
@@ -125,7 +120,6 @@ function showMagicalBox(){
 
 function DetailsPopBox(id){
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsYiPingController/QueryShangpinInfoById/"+ id +".easy",function(json){
-		//console.log(json);
 		var DetailsPopList = json;
 		var html = template("showDetailsPop", DetailsPopList);
 		$(".headPop_BG").html(html);

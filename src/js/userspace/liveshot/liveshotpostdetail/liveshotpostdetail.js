@@ -153,7 +153,7 @@ function handPost(){
 				$(this).remove();
 			});
 			if(data.lastSentVolunteers.pictureurl){
-				imgOnMiddle($('.other-post .page-items .page-items-list .items-img')); //圖片居中
+				easyBuy.global.dep.imgOnMiddle($('.other-post .page-items .page-items-list .items-img')); //圖片居中
 			}
 		}else{
 			$('.other-post .other-post-title.second').remove();

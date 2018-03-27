@@ -1,17 +1,14 @@
 ( () => {
     $("body").on('click',function(e){
         const $e = $(e.target);
-        // console.log($e);
         // 判断是否是用户头像被点击
         if($e.attr('data-type') === 'userAvatar'){
 
             const spaceId = $e.parents('[data-id]').attr('data-id');
-            console.log('被点击的用户头像的id为：'+spaceId);
             window.open("http://userspace.macaoeasybuy.com/?spaceid="+spaceId);
             // 判斷是否立即購買
         }else if($e.attr('data-type') === 'buyNow'){
             const goodId = $e.parents('[data-id]').attr('data-id');
-            console.log('被点击的商品的id为：'+goodId);
             window.open('http://shopping.macaoeasybuy.com/goodDetails/limitedDetail.html?id=' + goodId);
         }// 判斷是否為進店逛逛
         else if($e.html() === '進店逛逛'){
@@ -40,7 +37,6 @@
         //發現新品跳轉到普通商品詳情頁
         else if(location.href.indexOf('new.html') !== -1 && $e.attr('id') === "underline"){
             const newId = $e.parents('[data-id]').attr('data-id');
-            console.log(newId);
             jump('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id=',newId);
         }//宜買話題詳細頁跳轉到宜買話題詳細頁
         else if(location.href.indexOf('buytopicpostdetail.html') !== -1 && $e.attr('id') === 'underline'){
@@ -59,24 +55,19 @@
             }
         }//跳轉到宜粉日誌帖子詳細頁
         else if(location.href.indexOf('logpostdetail.html') !== -1 && $e.hasClass('shadow-box')){
-            console.log('true');
             const postid=$e.parents('.pillar-all').attr('id').split('-')[0];
-            console.log(postid);
             jump('http://social.macaoeasybuy.com/easylive/easylivelog/logpostdetail/logpostdetail.html?id=',postid);
         }//跳轉到福利社話題帖子詳細頁
         else if(location.href.indexOf('welfarepostdetail.html') !== -1 && $e.hasClass('shadow')){
             const postId=$e.parents('.list-num').attr('data-id');
-            console.log(postId);
             jump('http://social.macaoeasybuy.com/easylive/easylivewelfare/welfarepostdetail/welfarepostdetail.html?id=',postId);
         }//跳轉到尋寶市集話題帖子詳細頁
         else if(location.href.indexOf('fairofficialpost.html') !==-1 && $e.attr('id') === "underline"){
-            console.log('true');
             const postId=$e.parents('[data-id]').attr('data-id');
             jump('http://social.macaoeasybuy.com/market/treasureclassifydetail/fairofficialpost/fairofficialpost.html?id=',postId);
         }//更多主題頁面商品跳轉到普通商品詳情頁
         else if(location.href.indexOf('moreTheme.html') !==-1 && $e.parents('.moreThemeMain_left_goodBox')){
             const productId=$e.parents('[data-id]').attr('data-id');
-            console.log(productId);
             jump('http://shopping.macaoeasybuy.com/goodDetails/ordinaryGoodDetais.html?id=',productId);
         }//搜索結果（標籤）頁跳轉到標籤詳細頁
         else if(location.href.indexOf('search_label.html') !== -1){
@@ -94,9 +85,7 @@
             for(var i=0;i<cla.length;i++){
                 if($(cla[i]).hasClass('search_sortBox_left_curr')){
                     var classNumber=$(cla[i]).attr('data-icon');
-                    console.log(classNumber);
                     var pId=$e.parents('[data-id]').attr('data-id');
-                    console.log(pId)
                     if(classNumber === "1"){
                         //跳轉到日誌帖子詳細頁
                         jump('http://social.macaoeasybuy.com/easylive/easylivelog/logpostdetail/logpostdetail.html?id=',pId);
@@ -139,7 +128,7 @@
                     window.open('http://shopping.macaoeasybuy.com/goodDetails/'+type+'Detail.html?id=' + id)
                 }
                 else{
-                    if(type === 'limited'){
+                    if(type === 'limited' || type === 'exchange'){
                         window.open('http://shopping.macaoeasybuy.com/goodDetails/'+type+'Detail.html?id=' + id);
                     }else{
                         window.open('http://shopping.macaoeasybuy.com/goodDetails/'+type+'Details.html?id=' + id);
@@ -228,7 +217,6 @@
         else if(location.href.indexOf('fair/index.html') !== -1){
             if($e.hasClass('pillar-shadow')){
                 let postId = $e.parents('.pillar-all').attr('id').replace(/\D/gim, '');
-                console.log(postId);
                 location.href = 'http://userspace.macaoeasybuy.com/fair/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + postId;
             }
         }
