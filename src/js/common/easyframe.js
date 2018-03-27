@@ -382,14 +382,14 @@ class Easybuy {
         return HTMLString + `<li><a href="${page.href}">${page.name}</a></li>`;
       });
       navShoppingHTMLString = `
-        <div class="hidden">
+        <div>
           <ul class="e-container">
             ${shoppingLi}
           </ul>
         </div>
       `;
       navSocialHTMLString = `
-        <div class="hidden">
+        <div>
           <ul class="e-container">
             ${socialLi}
           </ul>
@@ -403,7 +403,7 @@ class Easybuy {
     ];
     const qrCodeHTMLString = qrcode.reduce((HTMLString, item) => {
       return HTMLString + `<li><img src="${item.img}">${item.tips}</li>`;
-    });
+    }, '');
     const headerHTMLString = `
       <div class="e-container">
         <div class="nav">
@@ -446,7 +446,7 @@ class Easybuy {
           <a href="#">申請開店</a>
           <div class="appdl">
             <span>APP下載</span>
-            <ul class="hidden">
+            <ul>
               ${qrCodeHTMLString}
             </ul>
           </div>

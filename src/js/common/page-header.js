@@ -34,14 +34,14 @@
       return HTMLString + `<li><a href="${page.href}">${page.name}</a></li>`;
     },'');
     navShoppingHTMLString = `
-      <div class="hidden clearfloat" style="height:0px;overflow:hidden;transition:all .2s linear;z-index:6">
+      <div class="clearfloat" style="height:0px;overflow:hidden;transition:all .2s linear;z-index:6">
         <ul class="e-container">
           ${shoppingLi}
         </ul>
       </div>
     `;
     navSocialHTMLString = `
-      <div class="hidden clearfloat" style="height:0px;overflow:hidden;transition:all .2s linear;z-index:6">
+      <div class="clearfloat" style="height:0px;overflow:hidden;transition:all .2s linear;z-index:6">
         <ul class="e-container">
           ${socialLi}
         </ul>
@@ -98,7 +98,7 @@
         <a href="#">申請開店</a>
         <div class="appdl">
           <span>APP下載</span>
-          <ul class="hidden" style="width:490px;">
+          <ul style="width: 478px;">
             ${qrCodeHTMLString}
           </ul>
         </div>
