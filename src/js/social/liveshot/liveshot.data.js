@@ -8,7 +8,6 @@ $(function(){
 /*加載敗家點讚*/
 function ProdigalFunc(){
 	$.getJSON("http://social1.macaoeasybuy.com/sentVolunteersSocialConntroller/querySentVoulunteersLove.easy?easybuyCallback=?",function(data){
-		//console.log(data);
 		var ProdigalHtml=template("Prodigal",data);
 		$(".liveshotBox_thumb_main ul").html(ProdigalHtml);
 		clickTabFunction($(".liveshotBox_thumb_main"),4,$(".liveshotBox_thumb_leftBtn"),$(".liveshotBox_thumb_rightBtn"),344,4,21)
@@ -18,7 +17,6 @@ function ProdigalFunc(){
 /*加載敗家達人*/
 function talentFunc(){
 	$.getJSON("http://social1.macaoeasybuy.com/sentVolunteersSocialConntroller/querySentVolunteersUser.easy?easybuyCallback=?",function(data){
-		//console.log(data);
 		var talentHtml=template("talent",data);
 		$(".liveshotBox_talent_main").html(talentHtml);
 		showHover()
@@ -30,7 +28,6 @@ function topicFunc(){
 	let page = 0;
 	let size = 10;
 	$.getJSON("http://social1.macaoeasybuy.com/sentVolunteersSocialConntroller/querySentVoulunteersTopic.easy?page="+page+"&size="+size+"&easybuyCallback=?",function(data){
-		console.log(data);
 		var topicHtml=template("topic",data);
 		$(".liveshotBox_topic_mainUl").html(topicHtml);
 		clickTabFunction($(".liveshotBox_topic_main"),3,$(".liveshotBox_topic_leftBtn"),$(".liveshotBox_topic_rightBtn"),440,3,90)

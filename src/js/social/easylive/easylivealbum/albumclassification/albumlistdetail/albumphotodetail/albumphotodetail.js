@@ -105,9 +105,7 @@ function postContent(){
 		async:true,
 		dataType:'jsonp',
 		success:function(data){
-			console.log(data);
 			var newData = data.usedInfo;
-			console.log(newData);
 			$('#messBox_mess_time p.articleType span').html(newData.typename); //帖子類型
 			$('#messBox_mess_time p:last-of-type span').html(newData.addtime); //發佈時間
 			userInfo(newData.username,newData.headPic,newData.sex); //用戶性別，頭像，姓名

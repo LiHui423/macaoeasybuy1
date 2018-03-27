@@ -26,7 +26,6 @@ function bannerPicBox(){
 function classBox(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/secondHandController/queryUsedClass.easy",function(json){
 		var secondHandClassData = json;
-		console.log(secondHandClassData);
 		var html = template("secondHandClass", secondHandClassData);
 		$(".secondHand_chooseType ul").html(html);
 	});
@@ -41,7 +40,6 @@ function dailyNecessitiesBox(){
 	$.getJSON("http://shopping1.macaoeasybuy.com/secondHandController/queryClassUsed/0/12/12.easy",function(json){
 		json.list[0].successState=2;
 		json.list[1].successState=2;
-		console.log(json);
 		var html = template("showEachGood", json);
 		$(".dailyNecessitiesList").find('ul').html(html);
 		clickScrollFunction($(".secondHand_exampleEach_life"))

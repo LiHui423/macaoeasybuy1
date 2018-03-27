@@ -7,7 +7,6 @@ function goodDetails(){
 	var id = getId()
 	$.getJSON("http://shopping1.macaoeasybuy.com/goodsdetailController/queryAllGoodsdetaiInfo/" + id + "/1.easy?easybuyCallback=?",function(json){
 		var shopMessData = json;
-		console.log(shopMessData)
 		if(shopMessData.list.length !== 0){
 		/*店鋪信息*/
 			var htmlShopMess = template("shopMess", shopMessData);
@@ -59,7 +58,6 @@ function goodDetails(){
 function otherGoodDetails(){
 	var id = getId()
 	$.getJSON("http://shopping1.macaoeasybuy.com/ShangpinBottomController/queryTuanRandomSp/"+ id +".easy?easybuyCallback=?",function(json){
-		console.log(json)
 		var GroupBuyBeginList = json;
 		var html = template("showGroupBuyBegin", GroupBuyBeginList);
 		$(".groupBuy_goodTab").html(html);

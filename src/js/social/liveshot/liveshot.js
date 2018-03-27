@@ -128,7 +128,6 @@ function setPosition(){
 }
 
 function consoletest(){
-	console.log($(".liveshotBox_labelEach").offset())
 }
 
 /*綁定滾動加載*/
@@ -185,7 +184,6 @@ function postScroll(){
 function clickEvent(){
 	$('body').on('click',function(e){
 		var target=e.target;
-		console.log(target);
 		if($(target).attr('id') === "underline"){
 			var postId=$(target).parents('[data-id]').attr('data-id');
 			window.open('http://social.macaoeasybuy.com/liveshot/ProdigalPostDetail/ProdigalPostDetail.html?postId='+postId);
@@ -197,7 +195,6 @@ function clickEvent(){
 		}
 		if($(target).hasClass('shadow-box')){
 			var postId=$(target).parents('[data-id]').attr('data-id');
-			console.log(postId);
 			window.open('http://social.macaoeasybuy.com/liveshot/ProdigalPostDetail/ProdigalPostDetail.html?postId='+postId);
 
 		}

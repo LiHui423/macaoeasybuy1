@@ -404,7 +404,6 @@ function queryFairClassDetailInfo(id,className){
 	var easyUrl = 'http://social.macaoeasybuy.com';
 	var dataUrl = ipUrl + '/fairQuerySocialController/queryFairClassDetailInfo.easy?id='+id+'&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
-		console.log(data);
 		$('#' + id + '-queryFairClassInfo-box .mdetail_div_topic_right .number').each(function(k){
 			switch(k){
 				case 0:
@@ -499,7 +498,6 @@ function townData() {
 	var townDataHtmlTemplate = 'townDataHtml';
 	$.getJSON(dataUrl,function(data){
 		var newData = data.result;
-		console.log(newData);
 		var html = template(townDataHtmlTemplate, newData);
 		$('#itemContainer').html(html);
 
@@ -521,9 +519,7 @@ function townData() {
 function goTopicDetail(){
 	$('#itemContainer').on('click',function(e){
 		var target=e.target;
-		console.log(target);
 		if($(target).attr('id')==="underline"){
-			console.log('34');
 			var topicId=$(target).parent().parent().attr('data-id');
 			window.open('http://social.macaoeasybuy.com/market/treasureclassifydetail/fairofficialpost/fairofficialpost.html?topicId='+topicId);
 		}

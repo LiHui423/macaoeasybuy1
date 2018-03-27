@@ -69,10 +69,8 @@ function calcNumber(){
 function tabDetailsSection(){
 	$('.museumDetails_TabEach').click(function(){
 		var mainHeight = $('.museumDetails_introductionBox_main').offset().top;
-		console.log(mainHeight);
 		$(this).addClass('museumDetails_TabEach_curr').siblings().removeClass('museumDetails_TabEach_curr');
 		var index = $('.museumDetails_TabEach').index(this);
-		console.log(index);
 		$('.introductionBox_each').eq(index).removeClass('hide').siblings().addClass('hide');
 		if($('.museumDetails_introductionBox_Tab').hasClass('nav_fixed')){
 			$("body").animate({
@@ -103,7 +101,6 @@ function tabDetailsSection(){
 /*商品加入購物籃*/
 function goodAddCart(){
 	var offset = $("#shopCart").offset(); //结束的地方的元素位置
-	console.log(offset);;
 	$(".addShopCart,.museumDetails_addShopCar").click(function(event) { //是$(".addcar")这个元素点击促发的 开始动画的位置就是这个元素的位置为起点
 		if($('.picSelected').length == '0'|| $('#goodChooseNumber').val() == "0"){
 			$('.noChooseSize').fadeIn('fast')

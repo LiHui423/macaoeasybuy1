@@ -21,10 +21,13 @@
     labeldetail: 'http://social.macaoeasybuy.com/label/labeldetail/labeldetail.html',
     // 话题详细页
     buytopicpostdetail: 'http://social.macaoeasybuy.com/easylive/easylivebuytopic/buytopicpostdetail/buytopicpostdetail.html',
+    ProdigalPostDetail: 'http://social.macaoeasybuy.com/liveshot/ProdigalPostDetail/ProdigalPostDetail.html',
+    fairpostdetail: 'http://social.macaoeasybuy.com/market/treasureclassifydetail/fairpostdetail/fairpostdetail.html',
+    secondPostDetail: 'http://social.macaoeasybuy.com/secondhand/secondhandclassifydetail/secondPostDetail/secondPostDetail.html',
+    lifecirclepostdetail: 'http://social.macaoeasybuy.com/easylive/easylivelifecircle/lifecirclepostdetail/lifecirclepostdetail.html',
   }
   $('body').on('click.gotoPage', function (event) {
     const $e = $(event.target);
-    // console.log($e);
 
     // 判断是否是用户头像被点击
     if ($e.attr('data-type') === 'userAvatar') {
@@ -137,7 +140,7 @@
     //搜索結果（話題）頁跳轉到話題詳細頁
     if (location.href.indexOf('search_topic.html') !== -1 && (($e.attr('id') === 'underline') || ($e.hasClass('red_curr')))) {
         const topicID = $e.parents('[data-id]').attr('data-id');
-        jump(`${link.buytopicpostdetail}?id=${topicID}`);
+        window.open(`${link.buytopicpostdetail}?id=${topicID}`);
     }
 
     //搜索結果（帖子）頁跳轉到相關帖子詳細頁
@@ -146,31 +149,26 @@
         for(var i=0;i<cla.length;i++){
             if($(cla[i]).hasClass('search_sortBox_left_curr')){
                 var classNumber=$(cla[i]).attr('data-icon');
-                console.log(classNumber);
                 var pId=$e.parents('[data-id]').attr('data-id');
-                console.log(pId)
                 if(classNumber === "1"){
                     //跳轉到日誌帖子詳細頁
-                    jump('http://social.macaoeasybuy.com/easylive/easylivelog/logpostdetail/logpostdetail.html?id=',pId);
+                    window.open(`${link.logPostDetail}?id='${pId}`);
                 }else if(classNumber === "2"){
                     //跳轉到敗家志帖子詳細頁
-                    jump('http://social.macaoeasybuy.com/liveshot/ProdigalPostDetail/ProdigalPostDetail.html?postId=',pId);
+                    window.open(`${link.ProdigalPostDetail}?postId=${pId}`);
                 }else if(classNumber === "3"){
                     //跳轉到市集帖子詳細頁
-                    jump('http://social.macaoeasybuy.com/market/treasureclassifydetail/fairpostdetail/fairpostdetail.html?id=',pId);
+                    window.open(`${link.fairpostdetail}?id=${pId}`);
                 }else if(classNumber === "4"){
                     //跳轉到二手帖子詳細頁
-                    jump('http://social.macaoeasybuy.com/secondhand/secondhandclassifydetail/secondPostDetail/secondPostDetail.html?postId=',pId);
+                    window.open(`${link.secondPostDetail}?postId=${pId}`);
                 }else if(classNumber === "5"){
                     //跳轉到專輯帖子詳細頁
-                    jump('http://social.macaoeasybuy.com/easylive/easylivealbum/albumclassification/albumlistdetail/albumlistdetail.html?albumId=',pId);
+                    window.open(`${link.albumListDetail}?albumId=${pId}`);
                 }else if(classNumber === "6"){
                     //跳轉到生活圈帖子詳細頁
-                    jump('http://social.macaoeasybuy.com/easylive/easylivelifecircle/lifecirclepostdetail/lifecirclepostdetail.html?id=',pId);
+                    window.open(`${link.lifecirclepostdetail}?id=${pId}`);
                 }
-            }
-            function jump(url,para){
-                window.open(url+para);
             }
         }
     }// 用戶空間-心動，跳轉到相關頁面
@@ -211,7 +209,7 @@
             }
             let postId = $($e.parents('.pillar-all')).attr('id').replace(/[^0-9]/ig,"");
             let userId = $($e.parents('.pillar-all')).attr('data-id');
-            jump('http://userspace.macaoeasybuy.com/'+type+'/detail.html?spaceid=' + userId + '&postId=' , postId);
+            window.open('http://userspace.macaoeasybuy.com/'+type+'/detail.html?spaceid=' + userId + '&postId=' , postId);
         }
     }// 用戶空間-生活圈，跳轉到生活圈詳細頁
     else if(location.href.indexOf('life/index.html') !== -1){
@@ -252,7 +250,7 @@
     else if(location.href.indexOf('hop/index.html') !== -1){
         if($e.html() === '進店看看'){
             let shopId = $e.parents('.focusShopEach').attr('data-id');
-            jump('http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_index.html?shopId=',shopId);
+            window.open('http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_index.html?shopId=',shopId);
         }
     }//用戶空間-日誌列表頁，跳轉到日誌詳細頁
     else if(location.href.indexOf('diary/index.html') !== -1){

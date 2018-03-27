@@ -57,7 +57,7 @@
       const data = res['userSpaceCount'];
       const keys = Object.keys(data);
       keys.forEach((key) => {
-        els[key].innerHTML = `共${data[key]}篇`;
+        els[key].html(`共${data[key]}篇`);
       });
     });
   }

@@ -7,7 +7,6 @@
 // 	albumCollect();
 // 	personLeft();//左側專輯放大
 // 	var picId=location.href.split('=')[1];
-// 	console.log(picId);
 // 	personLeft(picId);
 // });
 // // person-left信息
@@ -22,7 +21,6 @@
 // 		async: true,
 // 		type:"GET",
 // 		success:function(data){
-// 			console.log(data);
 // 		},
 // 		error:function(){
 // 			console.log("發生未知錯誤");
@@ -347,7 +345,6 @@
 // }
 $(function() {
 	var picId=location.href.split('=')[1];
-	console.log(picId);
 	personLeft(picId);//左側專輯放大
 });
 // 專輯圖片放大
@@ -359,9 +356,7 @@ function personLeft(picId){
 		async:true,
 		success:function(data){
 			var data1=JSON.parse(data);
-			console.log(data1);
 			var newData=data1.result;
-			console.log(newData);
 			$('.person-left .messBox_mess_name span').html(newData.collectUserName);
 			$('.person-left .messBox_mess_name img').attr('src', '/src/img/common/'+newData.collectUserSex+'.png');
 			$('.person-left .messBox_mess_time .articleType span').html(newData.collectAlbumName);
