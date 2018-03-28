@@ -39,7 +39,7 @@
     // 判斷是否立即購買
     if($e.attr('data-type') === 'buyNow') {
       const goodID = $e.parents('[data-id]').attr('data-id');
-      csl('被点击的商品的id为：' + goodId);
+      csl('被点击的商品的id为：' + goodID);
       window.open(`${link.limitedDetail}?id=${goodID}`);
     }
 
