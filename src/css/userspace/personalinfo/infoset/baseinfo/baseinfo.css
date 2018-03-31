@@ -249,6 +249,7 @@
 .change-cover-inner .head-img-box img{
 	width:100%;
 	height:100%;
+	border-radius: 50%;
 }
 .change-cover-inner .cover-img-box,
 .change-cover-inner .bg-img-box{

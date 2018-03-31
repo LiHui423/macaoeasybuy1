@@ -204,7 +204,6 @@ function postBanner(opt){
 		async:true,
 		dataType:'jsonp',
 		success:function(data){
-			console.log(data);
 			var newData = data.releaseInfoPics || data.sentVolunteersInfoPics || data.usedInfoPics || data.suitableLifeInfoPics || data.fairInfoPics;
 			if(newData.length == 0){
 				$('#foodBannerul').parents('.showPicBox').remove();
@@ -302,7 +301,6 @@ function checkCard(objBtn,postType){
 				$('.person-check .click-upload-more span').off('click');
 			},
 			success:function(data){
-				console.log(data);
 				var html = template.render(checkTemplate,data.result);
 				if(page == 0){
 					var tourists = '<li class="tourists"><div class="respondBox_fandPic"><div>'+data.result.touristcount+'</div><div>遊客</div></div><div class="respondBox_fansMess clearfloat"><div></div><div></div></div></li>';
@@ -343,7 +341,6 @@ function responseCard(postType){
 				$('.person-messaage .click-upload-more span').off('click');
 			},
 			success:function(data){
-				console.log(data);
 				data.replyList.page = page;
 				var html = template('response',data.replyList);
 				$('#response-list').append(html);
@@ -449,7 +446,6 @@ function isClickLove(lovetype,type){
 			$('#good-for-post').on('click',function(){
 				var goUrl = 'http://userspace1.macaoeasybuy.com/UserLikeConntroller/changeLove.easy?userId='+userId+'&id='+postId+'&type='+type+'&status=1&easybuyCallback=?';
 				$.getJSON(goUrl,function(data){
-					console.log(data);
 					var html = template.render(goodTemplate,data);
 					if($('#good-list>li').length > 0){
 						$('#good-list').prepend(html);

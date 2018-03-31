@@ -11,6 +11,7 @@ function allEvent(){
 	SumPrice();
 	shopCartEachGoodChangeSizeSure();
 	kucunController();
+	shopCartLogin()
 }
 
 /*欄目切換*/
@@ -164,6 +165,31 @@ function shopCartCheckBox(){
 			$('.shopCart_checkBox_good').addClass('shopCart_checkBox_good_hide');
 		}
 		SumPrice();
+	})
+}
+
+// 登錄
+function shopCartLogin(){
+	$('.shopCart_login_btn').on('click',function(){
+		var action = "http://userManager.macaoeasybuy.com/userInfoManagerController/loginTime.easy?easybuyCallback=?";
+		var AccountNo = $("#shopCart_username").val();
+		var AccountPsw = $("#shopCart_password").val();
+		var Parame = new FrameDomain();
+		AccountNo = Parame.parameIcy5c(AccountNo);
+		AccountPsw = Parame.parameIcy5c(AccountPsw);
+
+		var href = Parame.addHref(action + "&AccountNo=" + AccountNo
+				+ "&AccountPsw=" + AccountPsw);
+		$.getJSON(href, "", function(data) {
+			var userInfo = data.userInfo;
+			if (data.userInfo == "" || data.userInfo == null
+					|| data.userInfo == undefined) {
+				alert("登錄失敗");
+			} else {
+				// location.href = userInfo;
+				location.reload();
+			}
+		});
 	})
 }
 

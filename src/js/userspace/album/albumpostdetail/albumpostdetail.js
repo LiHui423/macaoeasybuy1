@@ -69,7 +69,6 @@ function userStatus(){
 function postImage(){
 	$.getJSON('//userspace1.macaoeasybuy.com/UserThealbumConntroller/queryAlbumPicDetail.easy?picId=' + picId + '&easybuyCallback=?', function(data){
 		var needData=data.result;
-		console.log(needData);
 		albumBanner(needData.pic);
 
 		if(easyBuy.global.isSelf){
@@ -100,7 +99,6 @@ function postImage(){
 				id:needData.picId,
 				desc:needData.picDesc
 			}]
-			console.log(collectObj);
 			new PCollector(collectObj);
 		});
 	});
@@ -147,7 +145,6 @@ function otherImage(){
 		// dataType: 'jsonp',
 		success: function(data){
 			data = JSON.parse(data);
-			console.log(data);
 			var needData=data.albumInfo;
 			var imgObj=document.createElement('img');
 			if(needData.thecoverpictureurl === ""){
@@ -199,7 +196,6 @@ function manyImage(){
 			// },
 			success:function(data){
 				data = JSON.parse(data);
-				console.log(data);
 				data.type='other';
 				data.page=page;
 				var html=template('imgDetails',data);
@@ -236,7 +232,6 @@ function collectFuns(){
 		// dataType: 'jsonp',
 		success:function(data){
 			data = JSON.parse(data);
-			console.log(data);
 			var templateHtml=template('collect-photo',data);
 			$('.suggestCollect .CollectedBox .CollectedBox-inner').html(templateHtml);
 			
@@ -265,7 +260,6 @@ function otherAlbum(){
 		// dataType:'jsonp',
 		success:function(data){
 			data = JSON.parse(data);
-			console.log(data);
 			var templateHtml=template('albumOther',data.albumList);
 			$('#upDown').html(templateHtml);
 			var moved=0;
@@ -312,7 +306,6 @@ function postContent(){
 		async:true,
 		dataType:'jsonp',
 		success:function(data){
-			console.log(data);
 			var newData = data.suitableLifeInfo;
 			$('#messBox_mess_time span').html(newData.addtime); //發佈時間
 			$('#atricle_title').html(newData.titlename); //標題

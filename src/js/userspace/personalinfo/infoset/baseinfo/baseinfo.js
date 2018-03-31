@@ -1,3 +1,4 @@
+
 easyBuy.global.startJs = function(){
 	getBaseInfoData(); //獲取用戶的基本信息
 	changeHeadImg(); //更換頭像
@@ -14,55 +15,60 @@ var justNumInput  = easyBuy.global.dep.justNumInput;
 var baseInfo = new Object();
 var seeUserId = easyBuy.global.pageParameter.spaceid;
 function getBaseInfoData(){
-var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserReceive.easy?userId='+userId+'&seeUserId='+seeUserId+'&easybuyCallback=?';
-	$.getJSON(dataUrl,function(data){
-		var newData = data.userReceive;
-		//進度條
-		changeProgress(
-			$('#receiving-data .info-progress'),
-			$('#receiving-data .info-progress div'),
-			$('#receiving-data .info-progress span').eq(0),
-			$('#receiving-data .info-progress span').eq(1),
-			newData.complete,
-			newData.total
-		);
-		//聯繫電話
-		$('#contact-phone .phone-num').html(newData.phone);
-		//聯繫姓名
-		$('#contact-name input').val(newData.realName);
-		//收貨區域
-		if(newData.addressArea){
-			$('#receiving-area .select-btn span').html(newData.addressArea);
-			$('#receiving-area .select-btn').addClass('select');
-		}else{
-			$('#receiving-area .select-btn span').html('請選擇');
-		}
-		$('#receiving-area .select-btn img').css('visibility','visible');
-		//收貨地址
-		$('#receiving-address').val(newData.address ? newData.address : '');
-		//收貨時段
-		if(newData.receiveDay){
-			$('#receiving-time .receiving-time-btn.first .select-btn span').html(newData.receiveDay);
-			$('#receiving-time .receiving-time-btn.first .select-btn').addClass('select');
-		}else{
-			$('#receiving-time .receiving-time-btn.first .select-btn span').html('請選擇');
-		}
-		if(newData.receiveTime){
-			$('#receiving-time .receiving-time-btn.second .select-btn span').html(newData.receiveTime);
-			$('#receiving-time .receiving-time-btn.second .select-btn').addClass('select');
-		}else{
-			$('#receiving-time .receiving-time-btn.second .select-btn span').html('請選擇');
-		}
-		$('#receiving-time .select-btn img').css('visibility','visible');
-		baseInfo = {
-			phone : newData.phone || '',
-			name : newData.realName || '',
-			addressArea : newData.addressArea || '',
-			address : newData.address || '',
-			data : newData.receiveDay || '',
-			time : newData.receiveTime || ''
-		}
-	});
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserReceive.easy?userId='+userId+'&seeUserId='+seeUserId+'&easybuyCallback=?';
+		$.getJSON(dataUrl,function(data){
+			var newData = data.userReceive;
+			//進度條
+			changeProgress(
+				$('#receiving-data .info-progress'),
+				$('#receiving-data .info-progress div'),
+				$('#receiving-data .info-progress span').eq(0),
+				$('#receiving-data .info-progress span').eq(1),
+				newData.complete,
+				newData.total
+			);
+			//聯繫電話
+			$('#contact-phone .phone-num').html(newData.phone);
+			//聯繫姓名
+			$('#contact-name input').val(newData.realName);
+			//收貨區域
+			if(newData.addressArea){
+				$('#receiving-area .select-btn span').html(newData.addressArea);
+				$('#receiving-area .select-btn').addClass('select');
+			}else{
+				$('#receiving-area .select-btn span').html('請選擇');
+			}
+			$('#receiving-area .select-btn img').css('visibility','visible');
+			//收貨地址
+			$('#receiving-address').val(newData.address ? newData.address : '');
+			//收貨時段
+			if(newData.receiveDay){
+				$('#receiving-time .receiving-time-btn.first .select-btn span').html(newData.receiveDay);
+				$('#receiving-time .receiving-time-btn.first .select-btn').addClass('select');
+			}else{
+				$('#receiving-time .receiving-time-btn.first .select-btn span').html('請選擇');
+			}
+			if(newData.receiveTime){
+				$('#receiving-time .receiving-time-btn.second .select-btn span').html(newData.receiveTime);
+				$('#receiving-time .receiving-time-btn.second .select-btn').addClass('select');
+			}else{
+				$('#receiving-time .receiving-time-btn.second .select-btn span').html('請選擇');
+			}
+			$('#receiving-time .select-btn img').css('visibility','visible');
+			baseInfo = {
+				phone : newData.phone || '',
+				name : newData.realName || '',
+				addressArea : newData.addressArea || '',
+				address : newData.address || '',
+				data : newData.receiveDay || '',
+				time : newData.receiveTime || ''
+			}
+		});
+	var url = 'http://userspace1.macaoeasybuy.com/userSpaceIndexController/queryUserSpaceInfo.easy?userId='+userId+'&seeUserId='+seeUserId+'&easybuyCallback=?';
+	$.getJSON(url,function(data){
+		console.log(data);
+		$('#head-img .head-img-box img,#preview-head-img').attr('src','//wap.macaoeasybuy.com'+data.userInfo.userPic)
+	})
 }
 //進度條使用函數
 function changeProgress(box,progress,firstEle,secondEle,now,max){
@@ -103,6 +109,9 @@ function changeHeadImg() {
 	$('#change-head-cancel,#change-head-cancel-s').on('click', function() {
 		$('#change-head-img').css('display', 'none');
 	});
+	$('#change-head-submit').on('click',function(){
+		
+	})
 }
 //更換封面
 function changeCoverImg() {

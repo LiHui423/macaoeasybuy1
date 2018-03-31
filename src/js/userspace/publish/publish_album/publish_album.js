@@ -40,7 +40,7 @@ function sendRequest(obj) {
 	var ipUrl = 'http://userspace1.macaoeasybuy.com';
 	var dataUrl = ipUrl + '/UserPublishController/addAlbum.easy';
 	//創建表單并提交
-	createFormSubmit({
+	easyBuy.global.dep.createFormSubmit({
 		account: myuuid,
 		userId: userId,
 		userName: userName,

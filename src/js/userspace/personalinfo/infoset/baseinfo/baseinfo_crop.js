@@ -10,6 +10,8 @@ function headImgUpload(){
 			id: '#change-head-upload',
 			multiple: false
 		},
+
+		
 		server: 'http://shopping1.macaoeasybuy.com/ceshi/ceshiupload.easy',
 		swf: 'http://localhost:8080/js/common/Uploader.swf',
 		fileNumLimit: 2,
@@ -74,7 +76,8 @@ function headImgUpload(){
 		var myWidth = 110; // 選框寬
 		var myHeight = myWidth; //選框高
 		var api = $.Jcrop('#crop-head-img',{
-			allowSelect:false,
+			allowSelect:true,
+			allowMove: true,
 			bgColor:'#444',
 			maxSize:[boxHeight,boxHeight], //选框最大尺寸
 			minSize:[myWidth,myHeight], //选框最小尺寸
@@ -100,8 +103,9 @@ function headImgUpload(){
 			}
 		});
 		restoreSelecter(api,boxWidth,boxHeight,myWidth,myHeight);
-		moveSlect(api,boxWidth,boxHeight);
+		moveSlect(api,boxWidth,boxHeight,myWidth,myHeight);
 	}
+
 }
 function coverImgUpload(){
 	var box = $('#change-cover-img');
@@ -180,7 +184,8 @@ function coverImgUpload(){
 		var myHeight = (myWidth*boxHeight) / boxWidth; //選框高
 
 		var api = $.Jcrop('#crop-cover-img',{
-			allowSelect:false,
+			allowSelect:true,
+			allowMove:true,
 			bgColor:'#444',
 			maxSize:[boxWidth,boxHeight], //选框最大尺寸
 			minSize:[myWidth,myHeight], //选框最小尺寸
@@ -218,10 +223,10 @@ function coverImgUpload(){
 			}
 		});
 		restoreSelecter(api,boxWidth,boxHeight,myWidth,myHeight);
-		moveSlect(api,boxWidth,boxHeight);
+		moveSlect(api,boxWidth,boxHeight,myWidth,myHeight);
 	}
 }
-//初始化選框
+// 初始化選框
 function restoreSelecter(self,boxWidth,boxHeight,myWidth,myHeight){
 	var a = (boxWidth/2) - (myWidth/2);
 	var b = (boxHeight/2) - (myHeight/2);
@@ -229,7 +234,7 @@ function restoreSelecter(self,boxWidth,boxHeight,myWidth,myHeight){
 	a = null;
 	b = null;
 }
-//預覽圖
+// 預覽圖
 function showPreview(self,obj,myWidth,myHeight){
 	var coords = self.tellSelect();
 	var rx = myWidth / coords.w;
@@ -243,8 +248,11 @@ function showPreview(self,obj,myWidth,myHeight){
 	rx = null;
 	ry = null;
 }
-//拖動圖片
-function moveSlect(self,boxWidth,boxHeight){
+// 拖動圖片
+function moveSlect(self,boxWidth,boxHeight,myWidth,myHeight){
+	console.log(self);
+	console.log(boxWidth)
+	console.log(boxHeight)
 	var api = self;
 	var bBox = api.ui.holder;
 	var isCanMove = false;

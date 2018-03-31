@@ -518,6 +518,7 @@ function shopCartSettlement(){
 	});
 }
 
+
 /**
  * 可否提交订单
  * @param scidlist

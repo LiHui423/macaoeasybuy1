@@ -3,6 +3,7 @@ $(function(){
 	
 	indexScrollFunc();
 	indexChangeFunc();
+	var timer = setInterval(scrollText,5000);
 	indexBanner();
 	
 })
@@ -14,6 +15,71 @@ $(function(){
 // 	var day = new Date().getDay();
 // 	setCookie('MEB_Route',window.location.href,day);
 // };
+
+//評論上下滾動
+// function scrollText(){
+// 	var scrollBox = document.getElementsByClassName('showBox_leftEach_commentBox');
+// 	for(var i = 0; i<scrollBox.length;i++){
+// 		(function(){
+// 			var j = i;
+// 			scrollBox[j].timer = setInterval(runScroll,3000);
+// 			scrollBox[j].onmouseenter = function(){
+// 				clearInterval(this.timer);
+// 			}
+// 			scrollBox[j].onmouseleave = function(){
+// 				this.timer = setInterval(runScroll,3000);
+// 			}
+// 			function runScroll(){
+// 				var lis = $(scrollBox[j]).find('div');
+// 				if(lis.length > 1){
+// 					lis.eq(0).animate({　　　　　　　　
+// 						marginTop: "-140px",
+// 						opacity:"0"　　　　　　
+// 					}, 1500, function() {　　　　　　　　
+// 						$(this).css({
+// 							marginTop: "0px",
+// 							opacity:"1"　
+// 						})
+// 						// .appendTo($(this).parent());　　　　　　
+// 					});
+// 				}
+// 			}
+// 		})()
+// 	}
+// }
+function scrollText(){
+	var scrollBox = document.getElementsByClassName('showBox_leftEach_commentBox');
+	var scrollBoxRight = document.getElementsByClassName('showBox_rightEach_commentBox');
+	$.each(scrollBox, function() {
+		var $lis = $(this).find('div');
+		if($lis.length > 1){
+			$lis.eq(0).animate({　　　　　　　　
+				marginTop: "-125px",
+				opacity:"0"　　　　　　
+			}, 1500, function() {　　　　　　　　
+				$(this).css({
+					marginTop: "0px",
+					opacity:"1"　
+				}).appendTo($(this).parent());　　　　　　
+			});
+		}
+	});
+	$.each(scrollBoxRight, function() {
+		var $lis = $(this).find('div');
+		if($lis.length > 1){
+			$lis.eq(0).animate({　　　　　　　　
+				marginTop: "-125px",
+				opacity:"0"　　　　　　
+			}, 1500, function() {　　　　　　　　
+				$(this).css({
+					marginTop: "0px",
+					opacity:"1"　
+				}).appendTo($(this).parent());　　　　　　
+			});
+		}
+	});
+}
+
 
 /*頭部左側導航欄上下切換*/
 function leftNav(){

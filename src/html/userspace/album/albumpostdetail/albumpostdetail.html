@@ -479,17 +479,17 @@
 			<%for(var i=0;i<albumPics.length;i++){%>
 				<div class='photo-items'>
 					<img src="//wap.macaoeasybuy.com<%=albumPics[i].pic%>"  style='width:213px;height:213px'alt="">
-					<div class='photo-items-filter'></div>
+					<!-- <div class='photo-items-filter'></div> -->
 				</div>
 			<%}%>
 		</script>
 		<!--最近查看宜粉-->
 		<script id="check" type="text/html" data-type="template">
 			<% for(var k=0;k<userList.length;k++){%>
-			<li id="<%=userList[k].id%>">
-				<a href="">
+			<li id="<%=userList[k].id%>" data-id="<%=userList[k].id%>">
+				<a>
 					<div class="respondBox_fandPic">
-						<img src="//wap.macaoeasybuy.com<%=userList[k].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'">
+						<img data-type="userAvatar" src="//wap.macaoeasybuy.com<%=userList[k].pic%>" onerror="this.onerror=null;this.src='/src/img/common/loading_pc_headPic.png'">
 					</div>
 					<div class="respondBox_fansMess clearfloat">
 						<div>

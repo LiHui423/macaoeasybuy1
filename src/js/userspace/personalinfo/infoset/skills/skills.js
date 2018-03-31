@@ -141,7 +141,7 @@ function skillSelect(btn) {
 			//取消
 			$(this).removeClass('select');
 			threeData.isSelect = 0;
-			deleteArrObj(twoData.newList, 'code', threeData.code);
+			easyBuy.global.dep.deleteArrObj(twoData.newList, 'code', threeData.code);
 			if(twoData.newList.length == 0) progressFunc($('#info-progress span').eq(0)[0].num -= 1, $('#info-progress span').eq(1)[0].num);
 		};
 		//把選項的第一個顯示在節點上

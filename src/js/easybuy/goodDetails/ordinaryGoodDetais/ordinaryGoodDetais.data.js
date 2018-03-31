@@ -1,4 +1,5 @@
 $(function(){
+	
 	goodDetails();
 	otherGoodShow();
 })
@@ -38,6 +39,17 @@ function goodDetails(){
 		/*商品信息詳情查看切換*/
 		var htmlTab = template("introductionBoxab", shopMessData);
 		$(".museumDetails_introductionBox_Tab").html(htmlTab);
+
+		// 如果从首页跳转，则直接到评论锚点
+		// if(document.referrer.indexOf('easybuy_index.html') !== -1){
+		// 	document.documentElement.scrollTop = $('[data-order=3]').offset();
+		// 	$('[data-order=3]').addClass(' museumDetails_TabEach_curr');
+		// 	$('[data-order=3]').siblings().removeClass('museumDetails_TabEach_curr');
+		// 	$('.introductionBox_pic').addClass(' hide');
+		// 	$('.introductionBox_evaluation').removeClass('hide');
+		// 	getCommentTop();
+		// 	getCommentBottom(0,2)
+		// }
 		
 		var htmlIntroPic = template("goodIntroShow", shopMessData);
 		$(".introductionBox_pic_main").html(htmlIntroPic);

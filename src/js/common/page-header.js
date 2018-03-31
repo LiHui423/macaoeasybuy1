@@ -73,9 +73,9 @@
           login ?
           `<div class="user">
             <span></span>
-            <ul>
+            <ul data-id=${easyBuy.easyUser.id}>
               <li><img src="" class="e-avatar"></li>
-              <li>個人空間</li>
+              <li data-type="userAvatar">個人空間</li>
               <li>成長詳情</li>
               <li>退出賬號</li>
             </ul>
@@ -164,9 +164,4 @@
   $('.social>span').on('click',function(){
     window.location.href="http://social.macaoeasybuy.com/easylive/easylive.html";
   })
-  // $('#login').on('click',function(){
-  //   console.log('登入按鈕被點擊');
-  //   document.cookie="url"+window.location.href;
-  //   console.log(document.cookie);
-  // })
 })());

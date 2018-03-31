@@ -565,7 +565,9 @@ body{
 .showBox_leftEach_commentBox{
 	padding-top: 15px;
 	height: 248px;
+	overflow: hidden;
 }
+
 .showBox_leftEach_comment{
 	padding: 15px 0;
 }
@@ -676,7 +678,8 @@ body{
 }
 .showBox_rightEach_commentBox{
 	padding-top: 15px;
-    height: 284px;
+	height: 284px;
+	overflow: hidden;
 }
 .showBox_rightEach_comment{
 	padding: 11px 0;

@@ -22,6 +22,7 @@ $(function(){
 function aboutMeData(){
 	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserAboutMeEditor.easy?userId='+userId+'&easybuyCallback=?';
 	$.getJSON(dataUrl,function(data){
+		console.log(data);
 		var newData = data.userBasicInfo;
 		 //賬號
 		$('#easybuy-account .info-content span').html(newData.account);
@@ -52,6 +53,15 @@ function aboutProgress(a,b){
 	$('#about-me-title .info-progress span').eq(1).html(b);
 	$('#about-me-title .info-progress div').css('width',a/b * 100 + '%');
 	$('#about-me-title .info-progress').css('display','block');
+}
+function aboutProgressExpr(a,b){
+	if(a > b) a = b;
+	$('#live-title .info-progress span').eq(0)[0].num = a;
+	$('#live-title .info-progress span').eq(0).html(a);
+	$('#live-title .info-progress span').eq(1)[0].num = b;
+	$('#live-title .info-progress span').eq(1).html(b);
+	$('#live-title .info-progress div').css('width',a/b * 100 + '%');
+	$('#live-title .info-progress').css('display','block');
 }
 //星座感情狀況
 function radioSelect(data,box,parentId){
@@ -349,6 +359,7 @@ function through(){
 			obj.parents('.second-list').addClass('select');
 			obj.html(name + '...');
 		}
+		//aboutProgress($('#live-title .info-progress span').eq(0)[0].num+=1,$('#live-title .info-progress span').eq(1)[0].num);
 	}
 	//點擊發送
 	function submitClick(){

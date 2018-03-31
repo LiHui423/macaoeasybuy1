@@ -27,7 +27,7 @@ function SubclassesSlide(){
 		$(".Subclasses_title span:nth-child(1)").text($(this).find("a").text());
 		$(".Subclasses_title_slideBox").slideUp('fast').addClass("hideSlide");
 	});
-	maskClick('.Subclasses_title_slideBox',function(){
+	easyBuy.global.dep.maskClick('.Subclasses_title_slideBox',function(){
 		$(".Subclasses_title_slideBox").slideUp('fast').addClass("hideSlide");
 	},'slideNav');
 }

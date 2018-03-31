@@ -1316,7 +1316,30 @@ body{
 	margin: auto;
 	margin-bottom: 20px;
 }
+.shopCart_login_input input[type = password]{
+	color: #333;
+	font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun;
+	padding:8px 10px;
+	font-size: 16px;
+	outline-width: medium;
+	outline-style: none;
+	outline-color: invert;
+	border-radius:3px ;
+	text-shadow: 0px 1px 2px #fff;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #CCCCCC;
+	display: block;
+	width: 400px;
+	margin: auto;
+	margin-bottom: 20px;
+}
 .shopCart_login_input input[type = text]::-webkit-input-placeholder{
+	font-size: 16x;
+	font-weight: 400;
+	color: #ABABAB;
+	letter-spacing: 2px;
+}
+.shopCart_login_input input[type = password]::-webkit-input-placeholder{
 	font-size: 16x;
 	font-weight: 400;
 	color: #ABABAB;
@@ -1328,13 +1351,31 @@ body{
 	color: #ABABAB;
 	letter-spacing: 2px;
 }
+.shopCart_login_input input[type = password]:-moz-placeholder{
+	font-size: 16x;
+	font-weight: 400;
+	color: #ABABAB;
+	letter-spacing: 2px;
+}
 .shopCart_login_input input[type = text]::-moz-placeholder{
 	font-size: 16x;
 	font-weight: 400;
 	color: #ABABAB;
 	letter-spacing: 2px;
 }
+.shopCart_login_input input[type = password]::-moz-placeholder{
+	font-size: 16x;
+	font-weight: 400;
+	color: #ABABAB;
+	letter-spacing: 2px;
+}
 .shopCart_login_input input[type = text]:-ms-input-placeholder{
+	font-size: 16x;
+	font-weight: 400;
+	color: #ABABAB;
+	letter-spacing: 2px;
+}
+.shopCart_login_input input[type = password]:-ms-input-placeholder{
 	font-size: 16x;
 	font-weight: 400;
 	color: #ABABAB;

@@ -101,11 +101,12 @@
 	<!--更多主題的js-->
 	<script src="/src/js/easybuy/sClassification/sClassification.js"></script>
 	<script src="/src/js/easybuy/sClassification/sClassification_data.js"></script>
+	<script src="/src/js/common/clickEvent.js"></script>
 	
 	<!-- 子分類的列表內容部分 -->
 	<script id="subclasses_listBox_template" type="text/html">
 		<%for(var i=0;i<list.length;i++){%>
-		<li>
+		<li data-id="<%=list[i].id%>">
 			<img src="//wap.macaoeasybuy.com/<%=list[i].pic%>">
 			<%if(list[i].kucunState == 1){%>
 			<div class="Subclasses_listEach_cover">

@@ -16,6 +16,7 @@ function checkPost(){
 	var resData = editor.getYezContent();
 	var labelList = editor.getLabelArr(); //標籤數組
 	var obj = {
+		account : myuuid,
 		titleName : getTitleName($('#diaryTitle'),24), //獲取標題名字
 		res : resData.newres, //內容
 		atPos : resData.atPos, //真實@人位置
@@ -45,15 +46,18 @@ function checkPost(){
 }
 //發送
 function sendRequest(obj){
+	console.log(obj);
 	var titleName = encodeURIComponent(obj.titleName); // 文章標題
 	var purchasedfrom = encodeURIComponent(obj.res); //文章內容
 	var newLabelName = encodeURIComponent(obj.newLabelName); //新標籤名字
-	var path = 'http://192.168.3.38:8080/page/common/agency.html?';
+	var path = 'http://userspace.macaoeasybuy.com/agency.html?';
 	//請求路徑
 	var ipUrl = 'http://userspace1.macaoeasybuy.com';
 	var dataUrl = ipUrl + '/UserPublishController/addDiary.easy';
+	// var ipUrl = 'http://192.168.3.127:8089';
+	// var dataUrl = ipUrl +  '/yez_easyBuyMall_userSpace/UserPublishController/preUpload.easy';
 	//創建表單并提交
-	createFormSubmit({
+	easyBuy.global.dep.createFormSubmit({
 		account : myuuid,
 		userId : userId,
 		userName : userName,

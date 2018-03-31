@@ -39,7 +39,7 @@
     // 判斷是否立即購買
     if($e.attr('data-type') === 'buyNow') {
       const goodID = $e.parents('[data-id]').attr('data-id');
-      csl('被点击的商品的id为：' + goodId);
+    //   csl('被点击的商品的id为：' + goodId);
       window.open(`${link.limitedDetail}?id=${goodID}`);
     }
 
@@ -47,6 +47,12 @@
     if($e.html() === '進店逛逛') {
       let shopID = $e.attr('data-id');
       window.open(`${link.limitedDetailIndex}?shopId=${shopID}`);
+    }
+
+    // 判斷是否為進去看看
+    if($e.hasClass('Subclasses_listEach_cover_btn')){
+        let productId = $e.parents('[data-id]').attr('data-id');
+        window.open(`${link.ordinaryGoodDetais}?productId=${productId}`);
     }
 
     // 判斷是否為換一換按鈕
@@ -209,7 +215,7 @@
             }
             let postId = $($e.parents('.pillar-all')).attr('id').replace(/[^0-9]/ig,"");
             let userId = $($e.parents('.pillar-all')).attr('data-id');
-            window.open('http://userspace.macaoeasybuy.com/'+type+'/detail.html?spaceid=' + userId + '&postId=' , postId);
+            window.open('http://userspace.macaoeasybuy.com/'+type+'/detail.html?spaceid=' + userId + '&postId=' + postId);
         }
     }// 用戶空間-生活圈，跳轉到生活圈詳細頁
     else if(location.href.indexOf('life/index.html') !== -1){
@@ -250,7 +256,7 @@
     else if(location.href.indexOf('hop/index.html') !== -1){
         if($e.html() === '進店看看'){
             let shopId = $e.parents('.focusShopEach').attr('data-id');
-            window.open('http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_index.html?shopId=',shopId);
+            window.open('http://shopping.macaoeasybuy.com/moreshops/shopDetails/shopDetails_index.html?shopId=' + shopId);
         }
     }//用戶空間-日誌列表頁，跳轉到日誌詳細頁
     else if(location.href.indexOf('diary/index.html') !== -1){
@@ -278,7 +284,6 @@
     else if(location.href.indexOf('fair/index.html') !== -1){
         if($e.hasClass('pillar-shadow')){
             let postId = $e.parents('.pillar-all').attr('id').replace(/\D/gim, '');
-            console.log(postId);
             location.href = 'http://userspace.macaoeasybuy.com/fair/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + postId;
         }
     }
@@ -316,7 +321,7 @@
         const userInfoViewPage = ['information', 'interest', 'skills', 'sentiment', 'growth'];
         const path1 = isUserInfoSet ? 'infoset' : 'infoview';
         const path2 = isUserInfoSet ? userInfoSetPage[index] : userInfoViewPage[index];
-        location.href = `http://userspace.macaoeasybuy.com/personalinfo/${path}/${path2}/${path2}.html?spaceid=${spaceid}`;
+        location.href = `http://userspace.macaoeasybuy.com/personalinfo/${path1}/${path2}/${path2}.html?spaceid=${spaceid}`;
       }
   });
 })();

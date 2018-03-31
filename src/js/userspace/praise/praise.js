@@ -140,7 +140,6 @@ function requestGetData(){
 			if(isComplete) return false;
 		},
 		success:function(data){
-			console.log(data);
 			var data = data.result;
 			var resLen = data.returnList.length;
 			data.page = page;

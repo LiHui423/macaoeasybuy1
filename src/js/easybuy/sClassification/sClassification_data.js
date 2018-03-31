@@ -7,7 +7,7 @@ function getFirstNav(){
 		$.each(data.list, function(k,y) {
 			var str=y.Name;
 			y.Name=encodeURIComponent(encodeURIComponent(y.Name));
-			listHtml += '<li><a href="http://192.168.3.38:8080/page/easybuy/sClassification/sClassification.html?classId='+y.id+'&className='+y.Name+'&listId='+y.DefaultAreaClassid+'" data-id="'+y.DefaultAreaClassid+'">'+str+'</a></li>';
+			listHtml += '<li><a href="http://shopping.macaoeasybuy.com/sClassification/sClassification.html?classId='+y.id+'&className='+y.Name+'&listId='+y.DefaultAreaClassid+'" data-id="'+y.DefaultAreaClassid+'">'+str+'</a></li>';
 		});
 		$('.Subclasses_title_slideBox ul').html(listHtml);
 	})
@@ -23,7 +23,7 @@ function getSecondNav(){
 				$('.Subclasses_titleIntro').html(y.content);
 			}
 			var classNames=encodeURIComponent(encodeURIComponent(className));
-			listHtml += '<li><a href="http://192.168.3.38:8080/page/easybuy/sClassification/sClassification.html?classId='+classId+'&className='+classNames+'&listId='+y.id+'" data-id="'+y.id+'">'+y.Name+'</a></li>';
+			listHtml += '<li><a href="http://shopping.macaoeasybuy.com/sClassification/sClassification.html?classId='+classId+'&className='+classNames+'&listId='+y.id+'" data-id="'+y.id+'">'+y.Name+'</a></li>';
 		});
 		$('.Subclasses_menuUl').html(listHtml);
 		$('.Subclasses_menuUl li a[data-id='+listId+']').parent().addClass('select');

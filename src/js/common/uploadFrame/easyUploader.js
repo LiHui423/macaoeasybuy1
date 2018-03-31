@@ -191,7 +191,10 @@ EasyUplader.prototype = {
         $('#'+this.pickerId + 'form').append(this.pickFile);
         this.picker.attr('for', this.pickFileId);
         $(this.pickFile).on('change', function() {
+            console.log($(this)[0]);
+            // var files = $(this)[0].files;
             var files = $(this)[0].files;
+            console.log(files);
             var olen = self.uploadList.length;
             var nlen = files.length;
             var max = self.maxlength;
@@ -246,8 +249,6 @@ EasyUplader.prototype = {
         file.id = fileId;
         this.uploadList.push(file);
         this.formData.append('file', file);
-        console.log(this.formData.get('file'));
-        var aaa = this.formData.get('file');
         if(this.isPreview){
             this.preview(file, function(a, b){
                 this.onSelectImage&&this.onSelectImage.call(this, a, b);
@@ -272,7 +273,7 @@ EasyUplader.prototype = {
                 fn.call(self, file, $img);
             });
         } else {
-            alert('您的瀏覽器不支持圖片上傳預覽');
+            specialTips('您的瀏覽器不支持圖片上傳預覽');
         }
     },
     cancelFile : function(id){
@@ -315,24 +316,27 @@ EasyUplader.prototype = {
     doSubmit:function(){
         var self=this;
         this.submitBtn.on('click', function(){
+            
             self.onBeforeSend&&self.onBeforeSend.call(self);
 
             self.formData.append('param', JSON.stringify(self.param));
+            
             /*self.uploadProgress();*/
             $.ajax({
                 url:self.server,
-                type:self.method,
+                type:'post',
                 data:self.formData,
                 dataType:'json',
                 processData: false,
                 contentType: false,
                 success:function (data) {
+                    console.log(data);
                     self.onSubmitSuccess&&self.onSubmitSuccess.apply(self, [data]);
-                },
-                error:function (error) {
-                    self.onError('upload');
                 }
             });
+            sendRequest(checkPost());
+           
+
             // if(self.uploadList.length!==0){
             //     self.onBeforeSend&&self.onBeforeSend.call(self);
             //     self.formData.append('param', JSON.stringify(self.param));
