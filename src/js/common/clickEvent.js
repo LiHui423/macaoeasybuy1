@@ -39,11 +39,7 @@
     // 判斷是否立即購買
     if($e.attr('data-type') === 'buyNow') {
       const goodID = $e.parents('[data-id]').attr('data-id');
-<<<<<<< HEAD
-    //   csl('被点击的商品的id为：' + goodId);
-=======
       csl('被点击的商品的id为：' + goodID);
->>>>>>> c5b1d38a952a798b734cf6a69a77d50f36927885
       window.open(`${link.limitedDetail}?id=${goodID}`);
     }
 
@@ -55,8 +51,8 @@
 
     // 判斷是否為進去看看
     if($e.hasClass('Subclasses_listEach_cover_btn')){
-        let productId = $e.parents('[data-id]').attr('data-id');
-        window.open(`${link.ordinaryGoodDetais}?productId=${productId}`);
+        let productID = $e.parents('[data-id]').attr('data-id');
+        window.open(`${link.ordinaryGoodDetais}?productId=${productID}`);
     }
 
     // 判斷是否為換一換按鈕
