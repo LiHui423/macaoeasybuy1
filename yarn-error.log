@@ -1,17 +1,17 @@
 Arguments: 
-  D:\Program Files\nodejs\node.exe C:\Users\NEW\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add gulp-remove-use-strict -D
+  /Users/junhang/.nvm/versions/node/v8.9.4/bin/node /Users/junhang/.nvm/versions/node/v8.9.4/bin/yarn preview
 
 PATH: 
-  C:\Ruby22-x64\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.7.0_80\bin;D:\java\home\maven\apache-maven-3.3.9\bin;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;D:\java\home\maven\apache-maven-3.3.9\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\nodejs\;D:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;;D:\Microsoft VS Code\bin;C:\Users\NEW\AppData\Roaming\npm
+  /Users/junhang/Projects/flutter/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/junhang/Projects/flutter/bin:/Users/junhang/.nvm/versions/node/v8.9.4/bin:/Users/junhang/Library/Android/sdk/tools:/Users/junhang/Library/Android/sdk/platform-tools:/Users/junhang/Library/Android/sdk/tools:/Users/junhang/Library/Android/sdk/platform-tools
 
 Yarn version: 
-  1.3.2
+  1.5.1
 
 Node version: 
   8.9.4
 
 Platform: 
-  win32 x64
+  darwin x64
 
 npm manifest: 
   {
@@ -22,7 +22,7 @@ npm manifest:
     "license": "MIT",
     "private": true,
     "scripts": {
-      "build": "set NODE_ENV=production && gulp build",
+      "build": "cross-env NODE_ENV=production gulp build",
       "preview": "gulp build",
       "start": "gulp dev"
     },
@@ -5075,4 +5075,17 @@ Lockfile:
       yargs-parser "^5.0.0"
 
 Trace: 
-  Error: ENOENT: no such file or directory, copyfile 'C:\Users\NEW\AppData\Local\Yarn\cache\v1\npm-ansi-styles-1.1.0-eaecbf66cd706882760b2f4691582b8f55d7a7de\package.json' -> 'E:\Workspace\lh\Company\macaoeasybuy1\node_modules\gulp-remove-use-strict\node_modules\ansi-styles\package.json'
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c gulp build
+  Directory: /Users/junhang/Company/macaoeasybuy1
+  Output:
+  
+      at ProcessTermError.MessageError (/Users/junhang/.nvm/versions/node/v8.9.4/lib/node_modules/yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/Users/junhang/.nvm/versions/node/v8.9.4/lib/node_modules/yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/Users/junhang/.nvm/versions/node/v8.9.4/lib/node_modules/yarn/lib/cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)

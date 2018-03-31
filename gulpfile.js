@@ -69,7 +69,9 @@ function javascript(src) {
   const filterVendorFile = filter(['**', '!**/vendor/*.js'], {restore: true});
   return gulp.src(SRCPATH)
     .pipe(gif(isGlob, filterVendorFile))
-    .pipe(plumber())
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>'),
+    }))
     .pipe(gif(DEV, sourcemaps.init()))
     .pipe(replace(REGEXP, match => changeURI(match)))
     .pipe(babel({ presets: ['env'] }))
