@@ -345,7 +345,7 @@ class Easybuy {
      * 把链接的参数存起来
      */
     const search = window.location.search.substring(1);
-    this.data.search = search === '' ? null : this.stringToObject(search);
+    this.data.search = search === '' ? {} : this.stringToObject(search);
 
     /**
      * 插入 header
@@ -608,7 +608,6 @@ class Easybuy {
      */
     this.data.template = {};
     window.addEventListener('load', () => {
-      console.log(this);
       document.querySelectorAll('script[data-art-template]').forEach(t => {
         const ID = t.getAttribute('data-art-template');
         const content = t.innerHTML;

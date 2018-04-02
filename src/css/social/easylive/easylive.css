@@ -837,10 +837,10 @@ html {
     width: 100%;
     height: 68px;
     background: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 1)));
-    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
-    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
-    background: -o-linear-gradient(left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
-    background: linear-gradient(left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99E2E1DB, endColorstr=#99E2E1DB);
 }
 
@@ -1013,8 +1013,4 @@ html {
     float: left;
     height: 26px;
     line-height: 31px;
-}
-
-.topic-data {
-
 }

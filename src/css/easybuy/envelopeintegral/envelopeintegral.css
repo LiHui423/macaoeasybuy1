@@ -1,5 +1,5 @@
 #container{
-	background: url("/src/img/easybuy/envelopeintegral/bg.jpg) left center / 2000px no-repeat;
+	background: url("/src/img/easybuy/envelopeintegral/bg.jpg") left center / 2000px no-repeat;
 	background-attachment: fixed;
 }
 .container-swapper{

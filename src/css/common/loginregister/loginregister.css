@@ -267,10 +267,6 @@ input.easy-input:-ms-input-placeholder {
 	margin-top:0px;
 }
 
-/*註冊*/
-#register-box{
-	/*display: none;*/
-}
 #set-user-info{
 	display: none;
 }
@@ -343,10 +339,6 @@ input.easy-input:-ms-input-placeholder {
     width: 100%;
     height: 100%;
     -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
     cursor: pointer;
     border: 0px;
     outline: 0px;
@@ -357,9 +349,6 @@ input.easy-input:-ms-input-placeholder {
 #set-user-info .birth-day li select option{
 	padding:0px;
 	text-align: left;
-}
-#sex{
-
 }
 #sex-boy,
 #sex-girl{

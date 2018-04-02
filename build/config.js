@@ -1,9 +1,10 @@
 const base64 = {
-  baseDir: '../',
+  baseDir: './',
   extensions: ['svg', 'png', 'jpg', 'jpeg'],
   maxImageSize: 8 * 1024,
-  debug: true,
+  debug: false,
 };
+
 const domain = {
   style: {
     dev: 'css',
@@ -18,23 +19,30 @@ const domain = {
     prod: 'systemimages',
   },
 };
+
 const autoprefixer = {
   browsers: ['last 2 version', 'not ie <= 8'],
 };
+
 const htmlmin = {
-  removeComments: true,
-  collapseWhitespace: false,
   collapseBooleanAttributes: false,
+  collapseWhitespace: false,
+  minifyJS: false,
+  minifyCSS: false,
+  removeComments: true,
   removeEmptyAttributes: true,
   removeScriptTypeAttributes: true,
   removeStyleLinkTypeAttributes: true,
-  minifyJS: false,
-  minifyCSS: false
+  sortAttributes: true,
+  sortClassName: true,
 };
+
+const dev = process.env.NODE_ENV === 'development';
+
 module.exports = {
   autoprefixer,
   base64,
   domain,
   htmlmin,
-  postcss,
+  dev,
 };
