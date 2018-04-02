@@ -1,3 +1,117 @@
+// 調用新的上傳插件
+function newUpload(){
+	new EasyUplader({
+		pickerId : 'publish_submit',
+		server : 'http://userspace1.macaoeasybuy.com/UserPublishController/preUpload.easy',
+		// server : 'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/UserPublishController/preUpload.easy',
+		submitBtnId : 'replyBox_sendMess',
+		multiple : true,
+		method : 'POST',
+		isDropUpload:true,
+		isPreview:true,
+		maxlength : 6,
+		maxSize:2,
+		fileType : ['image/png','image/gif','image/jpeg'],
+		onSelectImage : function(file,imgobj){
+			var count = $('#nowNum').html();
+			$('form').append(imgobj);
+			var self = this;
+			//在body中动态生成div，其中包含img/textarea/span删除按钮
+			var itemId='linshi'+Math.floor(Math.random()*100);
+			/*var itemId = file.name.split('.')[0] + 'item';*/
+			var html = '<div class="album-list-item clearfloat" id='+itemId+'><div class="album-list-img-view"><span></span></div><textarea class="album-list-img-content scrollIe scrollOther" placeholder="為您的圖片添加描述"></textarea></div>';
+			/*$('.drop_area').append(html);*/
+			// $('body').append(html);
+			$('#preview-box').prepend(html);
+			$('#publish_submit').addClass('select');
+			count++;
+			$('#nowNum').html(count);
+			$('#'+itemId).css({'position':'relative','display':'inline-block','margin-right':'10px'});
+			$(imgobj).css({'width':'150px','height':'150px'});
+			$('#'+itemId+' .album-list-img-view').append(imgobj);
+			var span=$('#'+itemId).find('span');
+			$(span).css({
+				'position':'absolute',
+				'cursor':'pointer',
+				'width':'20px',
+				'height':'20px',
+				'border-radius':'10px',
+				'background-color':'white',
+				'line-height':'20px',
+				'text-align':'center'
+			})
+			span.addClass('file-temp-btn').html('&times;');
+			span.attr('id',itemId+'item');
+			span.on('click',function(){
+				self.cancelFile(file.id);
+				var count = $('#nowNum').html();
+				count--;
+				$('#nowNum').html(count);
+				$(this).parent().remove();
+			});
+
+			
+		},
+		onSelectFile:function(file){
+			var str = file.name + '这是自定义的参数';
+			// this.setFileParam(str);
+		},
+		onError : function(type){
+			if(type == 'size'){
+				specialTips('文件大小超过限制');
+			}else if(type == 'type'){
+				specialTips('文件格式有问题');
+			}else if(type=='number'){
+				specialTips('文件数量有问题')
+			}else if(type == 'upload'){
+				specialTips('發生未知錯誤');
+			}
+		},
+		onBeforeSend : function(){
+			var self = this;
+			console.log(self.uploadList);
+			var re = checkPost();
+			console.log(re);
+			if(re == false) return false; //先去檢查內容，是否允許上傳
+			//如果沒有要上傳的圖片了，就直接發送內容
+			//否則，點擊時繼續上傳圖片
+			$('#replyBox_sendMess').off('click.uploader');
+			var flag = true;
+			$.each(self.uploadList,function(k,y){
+				if(!y.isComplete) flag = false;
+			});
+			if(self.uploadList.length == 0 || flag){
+				sendRequest(re);
+				self.setParm(re);
+			}else{
+				// $.each(self.uploadList,function(k,y){
+				// 	self.setParm(re);
+				// 	if(!y.isComplete) self.doSubmit();
+				// });
+				self.setParm(re);
+				self.doSubmit();
+			}
+			// var title = $('#diaryTitle').val();
+			// var content = $('#editor').html();
+			// console.log(title);
+			// console.log(content);
+			// if(title === '' || content === ''){
+			// 	alert('帖子標題或內文不能為空');
+			// }else{
+			// 	this.setParm({
+			// 		title : title,
+			// 		content : content,
+			// 	});
+			// }
+		},
+		onSubmitSuccess:function(data){
+			if(data.result == 'success'){
+				specialTips('上傳完成,3s后返回帖子詳細頁');
+			}
+		},
+	});
+}
+// 調用上傳插件--舊的
 function imgUpLoad(){
 	imgUpload({
 		pick : { //文件按鈕

@@ -2,7 +2,8 @@ $(function() {
 	showInputNum(); //監聽標題框的長度並且輸出
 	chooseType(); //選擇文章類型
 	chooseAlbum(); //懸著專輯按鈕
-	imgUpLoad();
+	// imgUpLoad();// 上傳插件--旧的
+	newUpload();//調用新的插件
 });
 //創建存儲內容對象
 var chooseOtherAlbum = {
@@ -118,7 +119,7 @@ function chooseAlbum() {
 				success: function(data) {
 					data.page = page;
 					$.each(data.albumClass, function(k, y) {
-						y.picCount = formatNum(y.picCount);
+						y.picCount = y.picCount;
 					});
 					var html = template('other-album-template', data);
 					$('#other_album_box').append(html);

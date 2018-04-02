@@ -24,6 +24,7 @@ function queryEasyBuyUserSee(){
 			html += '<li data-id="'+y.id+'"><img data-type="userAvatar" src="http://mbuy.oss-cn-hongkong.aliyuncs.com/'+y.Pic+'" onerror="this.onerror=null;this.src=\'/src/img/common/loading_pc_headPic.png\'"></li>';
 		});
 		$('#header-head-img').html(html);
+		
 	});
 }
 //數據列表
@@ -49,9 +50,9 @@ function listData(){
 				console.log(data);
 				$.each(data.list, function(k,y) {
 					y.content = y.content.replace(/<.*?>/ig,'');
-					y.seeNumber = formatNum(y.seeNumber);
-					y.disCount = formatNum(y.disCount);
-					y.loveNum = formatNum(y.loveNum);
+					y.seeNumber = y.seeNumber;
+					y.disCount = y.disCount;
+					y.loveNum = y.loveNum;
 				});
 				var html = template('item-template',data);
 				$('#list').append(html);

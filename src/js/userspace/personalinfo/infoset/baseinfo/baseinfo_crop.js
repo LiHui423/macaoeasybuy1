@@ -250,9 +250,6 @@ function showPreview(self,obj,myWidth,myHeight){
 }
 // 拖動圖片
 function moveSlect(self,boxWidth,boxHeight,myWidth,myHeight){
-	console.log(self);
-	console.log(boxWidth)
-	console.log(boxHeight)
 	var api = self;
 	var bBox = api.ui.holder;
 	var isCanMove = false;

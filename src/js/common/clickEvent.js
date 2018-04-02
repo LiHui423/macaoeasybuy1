@@ -39,11 +39,7 @@
     // 判斷是否立即購買
     if($e.attr('data-type') === 'buyNow') {
       const goodID = $e.parents('[data-id]').attr('data-id');
-<<<<<<< HEAD
-    //   csl('被点击的商品的id为：' + goodId);
-=======
       csl('被点击的商品的id为：' + goodID);
->>>>>>> c5b1d38a952a798b734cf6a69a77d50f36927885
       window.open(`${link.limitedDetail}?id=${goodID}`);
     }
 
@@ -120,7 +116,7 @@
     }
 
     //跳轉到福利社話題帖子詳細頁
-    if (location.href.indexOf('welfarepostdetail.html') !== -1 && $e.hasClass('shadow')) {
+    if (location.href.indexOf('easylivewelfare.html') !== -1 && $e.hasClass('shadow')) {
         const postID = $e.parents('.list-num').attr('data-id');
         csl(postID);
         window.open(`${link.welfarepostdetail}?id=${postID}`);

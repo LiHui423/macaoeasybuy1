@@ -113,13 +113,14 @@
 	<script src="/src/js/common/header&search&footer/footer.js" async></script>
 	<script src="/src/js/common/page-header.js"></script>
 	<script src="/src/js/common/vendor/webuploader.nolog.min.js"></script>
-	<script src="/src/js/common/uploadFrame/uploadFrame.js"></script>
+	<!-- <script src="/src/js/common/uploadFrame/uploadFrame.js"></script> -->
+	<script src="/src/js/common/uploadFrame/easyUploader.js"></script>
 	<script src="/src/js/userspace/publish/publish_getData.js"></script>
 	<script src="/src/js/userspace/publish/publish_album/publish_album.js"></script>
 	<script src="/src/js/userspace/publish/publish_album/publish_album_upload.js"></script>
 
 	<!--圖片預覽模板-->
-	<script id="upload-show-img" type="text/html" data-type="template">
+	<script id="upload-show-img" type="text/html">
 
 		<div class="album-list-item clearfloat" id="<%=id%>">
 
@@ -146,7 +147,7 @@
 
 	</script>
 	<!--獲取其他專輯模板-->
-	<script id="other-album-template" type="text/html" data-type="template">
+	<script id="other-album-template" type="text/html">
 		<%if(albumClass.length != 0){%>
 			<%for(var i=0;i<albumClass.length;i++){%>
 				<%if(i==0 && page == 0){%>

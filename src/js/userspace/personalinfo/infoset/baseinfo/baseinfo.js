@@ -10,6 +10,14 @@ easyBuy.global.startJs = function(){
 	userNameListen(); //監聽姓名輸入框
 	areaInfoListen(); //監聽收貨地址輸入框
 	submitAllInfo(); //提交按鈕
+	confirmUpdate(); //确认更新
+	var IE = navigator.userAgent.indexOf('MSIE');
+	if(IE>-1){
+		var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+        reIE.test(userAgent);  
+		var fIEVersion = parseFloat(RegExp["$1"]);
+		console.log(fIEVersion);
+	}
 }
 var justNumInput  = easyBuy.global.dep.justNumInput;
 var baseInfo = new Object();
@@ -66,8 +74,8 @@ function getBaseInfoData(){
 		});
 	var url = 'http://userspace1.macaoeasybuy.com/userSpaceIndexController/queryUserSpaceInfo.easy?userId='+userId+'&seeUserId='+seeUserId+'&easybuyCallback=?';
 	$.getJSON(url,function(data){
-		console.log(data);
-		$('#head-img .head-img-box img,#preview-head-img').attr('src','//wap.macaoeasybuy.com'+data.userInfo.userPic)
+		$('#head-img .head-img-box img,#preview-head-img').attr('src','//wap.macaoeasybuy.com'+data.userInfo.userPic);
+		$('#change-head-img .head .head-img').append(`<img src=//wap.macaoeasybuy.com/${data.userInfo.userPic}>`);
 	})
 }
 //進度條使用函數
@@ -88,6 +96,23 @@ function changeHeadImg() {
 		$(this).on('click', function() {
 			$(this).siblings('.box-btn').removeClass('select').end().addClass('select');
 			if(k == 0) {
+				$.ajax({
+					url:'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/userSettingController/queryGalleryClass.easy?type=1',
+					type:'GET',
+					dataType:'json',
+					success:function(data){
+						var typeList = data.result;
+						$.each(typeList,function(key,value){
+							var html=`<div id=${value.id}>${value.className}<div>`;
+							$('#change-head-img .select-nav').append(html);
+							$('#change-head-img .pages').append(`<ul class="clearfloat"></ul>`)
+						})
+						$($('#change-head-img .select-nav').find('div')[0]).addClass('select');
+						$('#change-head-img .box-content.select-page .select-nav div').css('width',540/typeList.length-1);
+						// 導航點擊事件
+						navClick('1');
+					}
+				})
 				$('#change-head-img .box-content').eq(1).siblings('.box-content').removeClass('select').end().addClass('select');
 			} else {
 				$('#change-head-img .box-content').eq(0).siblings('.box-content').removeClass('select').end().addClass('select');
@@ -102,15 +127,15 @@ function changeHeadImg() {
 	});
 	$('#change-head-img .box-content.select-page .pages ul li').each(function() {
 		$(this).on('click', function() {
-			$('#change-head-img .box-content.select-page .pages ul li').removeClass('select');
-			$(this).addClass('select');
+			$('#change-head-img .box-content.select-page .pages ul li').addClass('select');
+			$(this).siblings().removeClass('select');
 		});
 	});
 	$('#change-head-cancel,#change-head-cancel-s').on('click', function() {
 		$('#change-head-img').css('display', 'none');
 	});
 	$('#change-head-submit').on('click',function(){
-		
+
 	})
 }
 //更換封面
@@ -121,7 +146,27 @@ function changeCoverImg() {
 	$('#change-cover-img .box-btn').each(function(k) {
 		$(this).on('click', function() {
 			$(this).siblings('.box-btn').removeClass('select').end().addClass('select');
+
 			if(k == 0) {
+				$.ajax({
+					url:'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/userSettingController/queryGalleryClass.easy?type=2',
+					type:'GET',
+					dataType:'json',
+					success:function(data){
+						console.log(data);
+						var typeList = data.result;
+						$.each(typeList,function(key,value){
+							var html=`<div id=${value.id}>${value.className}<div>`;
+							$('#change-cover-img .select-nav').append(html);
+							$('#change-cover-img .pages').append(`<ul class="clearfloat"></ul>`);
+						})
+						$($('#change-cover-img .select-nav').find('div')[0]).addClass('select');
+						$('#change-cover-img .box-content.select-page .select-nav div').css('width',540/typeList.length-1);
+						// 導航點擊事件
+						navClick('2');
+					}
+				})
+				
 				$('#change-cover-img .box-content').eq(1).siblings('.box-content').removeClass('select').end().addClass('select');
 			} else {
 				$('#change-cover-img .box-content').eq(0).siblings('.box-content').removeClass('select').end().addClass('select');
@@ -354,4 +399,135 @@ function submitAllInfo(){
 			$('#submit-btn')[0].flag = true;
 		});
 	});
+}
+// 确认更新
+function confirmUpdate(){
+	$('#change-head-submit,#change-cover-submit').on('click',function(){
+		var type = $(this).attr('id').split('-')[1];
+		if(type === 'head'){
+			type = 1;
+		} else {
+			type = 2;
+		}
+		var targetImg = $('#preview-head-img').attr('src');//获取图片base64编码
+		var square = $('.jcrop-holder').find('div')[0];//获取目标方框
+		var x = $(square).css('left').replace('px','');
+		var y = $(square).css('top').replace('px','');
+		var width = $(square).css('width').replace('px','');
+		var height = $(square).css('height').replace('px','');
+		var param = 'x-oss-process=image/crop,x_'+x+',y_'+y+',w_'+width+',h_'+height;
+		console.log(param);
+		var url = 'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/userSettingController/updateUserPic.easy';
+		$.ajax({
+			url:url,
+			type:'POST',
+			data:{
+				base64: targetImg,
+				id: easyBuy.easyUser.id,
+				type: type,
+				param: param
+			},
+			success:function(data){
+				
+			}
+		})
+	})
+}
+// 導航點擊事件
+function navClick(type){
+	var classId;
+	// 未點擊前
+	if(type === '1'){
+		var $div = $('#change-head-img .change-head-img-box .select-page .select-nav').children();
+		classId = $($div[0]).attr('id');
+	}else if(type === '2'){
+		var $div = $('#change-cover-img .change-cover-img-box .select-page .select-nav').children();
+		classId = $($div[0]).attr('id');
+	}
+	$.ajax({
+		url:'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/userSettingController/queryGallery.easy?classId='+classId+'&size=10&page=0',
+		type:'GET',
+		dataType:'json',
+		success:function(data){
+			console.log(data);
+			var list = data.result;
+			if(type === '1'){
+				var $ul = $('#change-head-img .pages').find('ul');
+				$($ul[0]).addClass('select');
+				var html = ``;
+				$.each(list,function(k,y){
+					html += `<li data-id=${y.id}><img src="http://wap.macaoeasybuy.com/${y.pic}"><div class="li-shadow"></div></li>`
+				})
+				$($ul[0]).append(html);
+				var $liList = $($ul[0]).find('li');
+				$liList.on('click',function(){
+					$(this).addClass('select').siblings().removeClass('select');
+					var src = $($(this).find('img')[0]).attr('src');
+					var imgHtml = `<img src=${src}>`;
+					$('#change-head-img .change-head-img-box .head-img').html(imgHtml);
+				})
+			}else{
+				var $ul = $('#change-cover-img .pages').find('ul');
+				$($ul[0]).addClass('select');
+				var html = ``;
+				$.each(list,function(k,y){
+					html += `<li data-id=${y.id}><img src="http://wap.macaoeasybuy.com/${y.pic}"><div class="li-shadow"></div></li>`
+				})
+				$($ul[0]).append(html);
+				var $liList = $($ul[0]).find('li');
+				$liList.on('click',function(){
+					$(this).addClass('select').siblings().removeClass('select');
+					var src = $($(this).find('img')[0]).attr('src');
+					var img0 = $('#change-cover-img .change-cover-img-box .box-content.select-page .show-cover-box').find('img')[0];
+					var img2 = $('#change-cover-img .change-cover-img-box .box-content.select-page .show-cover-box').find('img')[2];
+					$(img0).attr('src',src);
+					$(img2).attr('src',src);
+				})
+			}
+		}
+	})
+	// 圖庫元素點擊事件
+	$('.select-nav div').off('click').on('click',function(){
+		$(this).addClass('select').siblings().removeClass('select');
+		var classId = $(this).attr('id');
+		var index = $(this).index();
+		$.ajax({
+			url:'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/userSettingController/queryGallery.easy?classId='+classId+'&size=10&page=0',
+			type:'GET',
+			dataType:'json',
+			success:function(data){
+				var list = data.result;
+				var html = ``;
+				$.each(list,function(k,y){
+					html += `<li data-id=${y.id}><img src="http://wap.macaoeasybuy.com/${y.pic}"><div class="li-shadow"></div></li>`;
+				})
+				if(type === '1'){
+					var $ul = $('#change-head-img .pages').find('ul');
+					$($ul[index]).html(html);
+					$($ul[index]).addClass('select').siblings().removeClass('select');
+					var $liList = $($ul[index]).find('li');
+					$liList.on('click',function(){
+						$(this).addClass('select').siblings().removeClass('select');
+						var src = $($(this).find('img')[0]).attr('src');
+						var imgHtml = `<img src=${src}>`;
+						$('#change-head-img .change-head-img-box .head-img').html(imgHtml);
+					})
+				}else if(type === '2'){
+					var $ul = $('#change-cover-img .pages').find('ul');
+					$($ul[index]).html(html);
+					$($ul[index]).addClass('select').siblings().removeClass('select');
+					var $liList = $($ul[index]).find('li');
+					$liList.on('click',function(){
+						$(this).addClass('select').siblings().removeClass('select');
+						var src = $($(this).find('img')[0]).attr('src');
+						var img0 = $('#change-cover-img .change-cover-img-box .box-content.select-page .show-cover-box').find('img')[0];
+						var img2 = $('#change-cover-img .change-cover-img-box .box-content.select-page .show-cover-box').find('img')[2];
+						$(img0).attr('src',src);
+						$(img2).attr('src',src);
+					})
+				}
+			}
+		})
+	})
+
 }

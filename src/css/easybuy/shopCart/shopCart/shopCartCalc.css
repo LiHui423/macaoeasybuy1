@@ -1542,3 +1542,7 @@ body{
 	margin-bottom: 20px;
 	letter-spacing: 1px;
 }
+.searchBox_right_bottom{
+	float: right;
+	margin-top: -31px;
+}
