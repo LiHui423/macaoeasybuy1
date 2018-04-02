@@ -13,6 +13,7 @@ var chooseOtherAlbum = {
 //點擊按鈕先去檢查內容
 function checkPost() {
 	var obj = {
+		account : myuuid,
 		titleName: chooseOtherAlbum.title, //獲取標題名字
 		typeName: getDiaryClass().className, //獲取文章的類別
 		classId: getDiaryClass().id, //類別Id
@@ -30,13 +31,14 @@ function checkPost() {
 }
 //發送
 function sendRequest(obj) {
+	console.log(obj);
 	var titleName = encodeURIComponent(obj.titleName); // 文章標題
 
 	//獲取路徑
 //	var path = window.location.href.split('/').splice(0, window.location.href.split('/').length - 1);
 //	path[1] = '';
 //	path = path.join('/') + '/publish_iframe.html?';
-	var path = 'http://192.168.3.38:8080/page/common/agency.html?';
+	var path = 'http://userspace.macaoeasybuy.com/agency.html?';
 	//請求路徑
 	var ipUrl = 'http://userspace1.macaoeasybuy.com';
 	var dataUrl = ipUrl + '/UserPublishController/addAlbum.easy';

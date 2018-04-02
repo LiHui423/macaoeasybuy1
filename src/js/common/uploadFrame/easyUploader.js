@@ -318,7 +318,10 @@ EasyUplader.prototype = {
         this.submitBtn.on('click', function(){
             
             self.onBeforeSend&&self.onBeforeSend.call(self);
-
+            var textArea = $('#preview-box').find('textarea');
+            $.each(textArea,function(key,value){
+                self.param.list.push($(value).val());
+            })
             self.formData.append('param', JSON.stringify(self.param));
             
             /*self.uploadProgress();*/
