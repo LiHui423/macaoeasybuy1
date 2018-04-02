@@ -1,5 +1,5 @@
 .discountBox{
-	background: url(http://mbuy.oss-cn-hongkong.aliyuncs.com/systemImg/25/8/25/201608251000367873600250360036.png") fixed;
+	background: url("http://mbuy.oss-cn-hongkong.aliyuncs.com/systemImg/25/8/25/201608251000367873600250360036.png") fixed;
 }
 .discount_main{
 	width: 1397px;
@@ -84,9 +84,6 @@
 }
 .discount_goodEach_mess{
 	padding: 10px 15px 10px 25px;
-}
-.discount_goodEach_size{
-
 }
 .discount_goodEach_sizeBox{
 	width: 80px;
@@ -264,7 +261,7 @@
 	text-align: center;
 }
 .discount_goodEach_pic{
-	background-image: url("/src/img/common/loading_pc_600.jpg);
+	background-image: url("/src/img/common/loading_pc_600.jpg");
 	background-size: 100%;
 }
 .discount_goodEach_pic img{
@@ -275,7 +272,7 @@
     transition: opacity 0.4s ease-in-out;
 }
 .discount_goodEach_sizeShow{
-	background-image: url("/src/img/common/loading_pc_80.png");
+	background-image: url("src/img/common/loading_pc_80.png");
 	background-size: 100%;
 }
 .loadingnow{

@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="/src/css/userspace/label/labellist/labellist.css">
     <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
     <script src="/src/js/common/frameDomainJSON.js"></script>
+    <!-- <script src="/src/js/common/easyframe-effect.js"></script> -->
+    <!-- <script src="/src/js/common/easyframe.js"></script> -->
     <script>
         easyBuy.userSpaceGlobal.afterSetIsSelf = function (state) {
             if (state) {
@@ -126,7 +128,7 @@
     <!-- <script src="/src/js/userspace/label/labellist/labellist.js"></script> -->
     <script src="/src/js/userspace/label/labellist/labellist1.js"></script>
     <script src="/src/js/common/clickEvent.js"></script>
-    
+
     <script id="queryUserSpaceLabel" type="text/html">
         <%for(var i=0, item; (item = result[i++]);) {%>
             <div class="label-item" data-id="<%=item.labelId%>">

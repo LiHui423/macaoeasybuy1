@@ -1,7 +1,10 @@
-dev
-dist
-node_modules
-.idea
+.tmp/
+dist/
+node_modules/
+.idea/
+dev/
+
+yarn-error.log
 
 # General
 .DS_Store

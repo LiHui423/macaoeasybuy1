@@ -97,7 +97,7 @@ const label = new Effect({
         // 初始化ApiO
         initApiO() {
             // const effect = this;
-            ApiO = {
+            this.$_data.ApiO = {
                 // 创建的标签数量
                 queryLabelPrevCount: this.template({
                     api: 'http://userspace1.macaoeasybuy.com/UserLabelConntroller/queryLabelPrevCount.easy',

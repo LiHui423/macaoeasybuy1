@@ -51,8 +51,8 @@
 
     // 判斷是否為進去看看
     if($e.hasClass('Subclasses_listEach_cover_btn')){
-        let productId = $e.parents('[data-id]').attr('data-id');
-        window.open(`${link.ordinaryGoodDetais}?productId=${productId}`);
+        let productID = $e.parents('[data-id]').attr('data-id');
+        window.open(`${link.ordinaryGoodDetais}?productId=${productID}`);
     }
 
     // 判斷是否為換一換按鈕

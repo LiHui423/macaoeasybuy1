@@ -1,111 +1,70 @@
 const gulp = require('gulp');
-const babel = require('gulp-babel');
-const postcss = require('gulp-postcss');
-const base64 = require('gulp-base64');
-const filter = require('gulp-filter');
-const gif = require('gulp-if');
-const plumber = require('gulp-plumber');
-const notify = require('gulp-notify');
-const rename = require('gulp-rename');
-const replace = require('gulp-replace');
-const sass = require('gulp-sass');
-const sourcemaps = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify');
-const htmlmin = require('gulp-htmlmin');
-const cssnano = require('cssnano');
-const autoprefixer = require('autoprefixer');
-const del = require('del');
 const path = require('path');
+const $ = require('./build/plugins');
+const config = require('./build/config');
+const utils = require('./build/utils');
 
-const DEV = process.env.NODE_ENV === undefined;
+const DEV = config.dev;
 
 const REGEXP = /\/src\/(img|js|css)/gim;
-const htmlminOptions = {
-  removeComments: true,
-  collapseWhitespace: false,
-  collapseBooleanAttributes: false,
-  removeEmptyAttributes: true,
-  removeScriptTypeAttributes: true,
-  removeStyleLinkTypeAttributes: true,
-  minifyJS: false,
-  minifyCSS: false
-};
 
-const DOMAIN = {
-  style: { dev: 'css', prod: 'easystyle' },
-  javascript: { dev: 'js', prod: 'easyscript' },
-  images: { dev: 'img', prod: 'systemimages' },
-};
-
-const postcssPlugins = [
-  autoprefixer({browsers: ['last 2 version', 'not ie <= 8']}),
-  cssnano()
-];
-/**
- *
- * @param {string} string
- */
-function changeURI(string) {
-  let doo = '';
-  if (string.indexOf('css') !== -1) {
-    doo = DEV ? DOMAIN.style.dev : DOMAIN.style.prod;
-  } else if (string.indexOf('js') !== -1) {
-    doo = DEV ? DOMAIN.javascript.dev : DOMAIN.javascript.prod;
-  } else {
-    doo = DEV ? DOMAIN.images.dev : DOMAIN.images.prod;
-  }
-  doo = string.replace('/src', DEV ? `//${doo}.macaoeasybuy.com` : `//${doo}.macaoeasybuy.com`);
-  return doo;
-}
-/**
- *
- * @param {string} src - src path
- */
 function javascript(src) {
   const isSingleFile = typeof src === 'string';
   const SRCPATH = isSingleFile ? src : 'src/js/**/*.js';
   const DESTPATH = isSingleFile ? path.dirname(SRCPATH).replace('src', 'dev') : (DEV ? 'dev/js' : 'dist/js');
-  const isGlob = SRCPATH.indexOf('*') !== -1;
-  const filterVendorFile = filter(['**', '!**/vendor/*.js'], {restore: true});
+  const isGlob = SRCPATH.includes('*');
+  const filterMinFile = $.filter(['**', '!**/*.min.js'], {restore: true});
   return gulp.src(SRCPATH)
-    .pipe(gif(isGlob, filterVendorFile))
-    .pipe(plumber())
-    .pipe(gif(DEV, sourcemaps.init()))
-    .pipe(replace(REGEXP, match => changeURI(match)))
-    .pipe(babel({ presets: ['env'] }))
-    .pipe(gif(DEV, sourcemaps.write('.')))
-    .pipe(filterVendorFile.restore)
+    .pipe($.if(isGlob, filterMinFile))
+    .pipe($.plumber({
+      errorHandler: $.notify.onError('Error: <%= error.message %>'),
+    }))
+    .pipe($.if(DEV, $.sourcemaps.init()))
+    .pipe($.replace(REGEXP, match => utils.changeURI(match)))
+    .pipe($.babel({ presets: ['env'] }))
+    .pipe($.uglify())
+    .pipe($.if(DEV, $.sourcemaps.write('.')))
+    .pipe(filterMinFile.restore)
     .pipe(gulp.dest(DESTPATH));
 }
 function styleCSS(src) {
   const isSingleFile = typeof src === 'string';
   const SRCPATH = isSingleFile ? src : 'src/css/**/*.css';
   const DESTPATH = isSingleFile ? path.dirname(SRCPATH).replace('src', 'dev') : (DEV ? 'dev/css' : 'dist/css');
-  const isGlob = SRCPATH.indexOf('*') !== -1;
-  const filterVendorFile = filter(['**', '!**/vendor/*.css'], {restore: true});
+  const isGlob = SRCPATH.includes('*');
+  const filterMinFile = $.filter(['**', '!**/*.min.css'], {restore: true});
   return gulp.src(SRCPATH)
-    .pipe(gif(isGlob, filterVendorFile))
-    .pipe(replace(REGEXP, match => changeURI(match)))
-    .pipe(filterVendorFile.restore)
+    .pipe($.if(isGlob, filterMinFile))
+    .pipe($.plumber({
+      errorHandler: $.notify.onError('Error: <%= error.message %>'),
+    }))
+    .pipe($.if(DEV, $.sourcemaps.init()))
+    .pipe($.base64(config.base64))
+    .pipe($.replace(REGEXP, match => utils.changeURI(match)))
+    .pipe($.autoprefixer(config.autoprefixer))
+    .pipe($.cssnano())
+    .pipe($.if(DEV, $.sourcemaps.write('.')))
+    .pipe(filterMinFile.restore)
     .pipe(gulp.dest(DESTPATH));
 }
 function styleSCSS(src) {
   const isSingleFile = typeof src === 'string';
   const SRCPATH = isSingleFile ? src : 'src/css/**/*.scss';
   const DESTPATH = isSingleFile ? path.dirname(SRCPATH).replace('src', 'dev') : (DEV ? 'dev/css' : 'dist/css');
-  const isGlob = SRCPATH.indexOf('*') !== -1;
+  const isGlob = SRCPATH.includes('*');
   return gulp.src(SRCPATH)
-    .pipe(gif(DEV, sourcemaps.init()))
-    .pipe(sass().on('error', sass.logError))
-    .pipe(postcss(postcssPlugins))
-    .pipe(base64({
-      baseDir: './',
-      extensions: ['svg', 'png', 'jpg', 'jpeg'],
-      maxImageSize: 8 * 1024,
-      debug: false,
+    .pipe($.plumber({
+      errorHandler: $.notify.onError('Error: <%= error.message %>'),
     }))
-    .pipe(replace(REGEXP, match => changeURI(match)))
-    .pipe(gif(DEV, sourcemaps.write('.')))
+    .pipe($.if(DEV, $.sourcemaps.init()))
+    .pipe($.sass({
+      outputStyle: 'expanded',
+    }))
+    .pipe($.base64(config.base64))
+    .pipe($.replace(REGEXP, match => utils.changeURI(match)))
+    .pipe($.autoprefixer(config.autoprefixer))
+    .pipe($.cssnano())
+    .pipe($.if(DEV, $.sourcemaps.write('.')))
     .pipe(gulp.dest(DESTPATH));
 }
 function html(src) {
@@ -114,7 +73,13 @@ function html(src) {
   const DESTPATH = isSingleFile ? path.dirname(SRCPATH).replace('src/html', 'dev/page') : (DEV ? 'dev/page' : 'dist/page');
   const isGlob = SRCPATH.indexOf('*') !== -1;
   return gulp.src(SRCPATH)
-    .pipe(replace(REGEXP, match => changeURI(match)))
+    .pipe($.plumber({
+      errorHandler: $.notify.onError('Error: <%= error.message %>'),
+    }))
+    .pipe($.if(DEV, $.sourcemaps.init()))
+    .pipe($.replace(REGEXP, match => utils.changeURI(match)))
+    .pipe($.htmlmin(config.htmlmin))
+    .pipe($.if(DEV, $.sourcemaps.write('.')))
     .pipe(gulp.dest(DESTPATH));
 }
 gulp.task('build', gulp.parallel(javascript, styleCSS, styleSCSS, html));

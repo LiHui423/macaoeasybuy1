@@ -12,8 +12,9 @@ const e = new Easybuy({
   },
   methods: {
     initUserSpace() {
-      const seeUserId = this.data.search.spaceid;
       const userId = this.data.userInfo.id;
+      this.data.search.spaceid === undefined && (this.data.search.spaceid = userId);
+      const seeUserId = this.data.search.spaceid;
       this.data.isSelf = seeUserId === this.data.userInfo.id;
     },
     insertSpaceInfo() {
@@ -26,7 +27,6 @@ const e = new Easybuy({
           seeUserId,
         },
         after: ({ data }) => {
-          console.log(data);
           this.data.spaceInfo = data['userInfo'];
           const ts = this.data.template['userInfo'];
           this.data.elements.userInfo.innerHTML = template.render(ts, this.data.spaceInfo);
