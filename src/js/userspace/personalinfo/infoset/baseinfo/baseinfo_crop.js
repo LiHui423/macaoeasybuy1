@@ -3,6 +3,7 @@ window.onload = function(){
 	coverImgUpload();
 }
 function headImgUpload(){
+	var form = new FormData();
 	var box = $('#change-head-img');
 	var uploadList = [];
 	var uploader = new WebUploader.Uploader({
@@ -26,7 +27,7 @@ function headImgUpload(){
 		compress: false,
 		thumb: {
 			width: 1000,
-			height: 1000,
+			height: 751,
 			quality: 100,
 			allowMagnify: true,
 			crop: false,
@@ -108,6 +109,7 @@ function headImgUpload(){
 
 }
 function coverImgUpload(){
+
 	var box = $('#change-cover-img');
 	var uploadList = [];
 	var uploader = new WebUploader.Uploader({

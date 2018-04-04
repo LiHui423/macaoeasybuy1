@@ -368,9 +368,14 @@ void function () {
         if (selectId.length === 0) {
             $('#editor-btn a').removeAttr('href');
         } else {
-            $('#editor-btn a').attr('href', '/page/userspace/album/albumeditor/albumeditor.html');
+            
+            $('#add-album a').attr('href','/album/albumaddimg/albumaddimg.html?spaceid='+easyBuy.global.pageParameter.spaceid+'&albumId='+easyBuy.global.pageParameter.albumId);
+            $('#editor-btn a').attr('href', '/album/albumeditor/albumeditor.html');
         }
     };
+    $('#add-album').on('click',function(){
+        location.href = 'http://userspace.macaoeasybuy.com/album/albumaddimg/albumaddimg.html?spaceid='+easyBuy.global.pageParameter.spaceid+'&albumId='+easyBuy.global.pageParameter.albumId;
+    })
     //刪除圖片
     data.mineFunc.deletePhotos = function (selectId) {
         if (selectId.length === 0) {

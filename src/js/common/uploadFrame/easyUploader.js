@@ -333,11 +333,14 @@ EasyUplader.prototype = {
                 processData: false,
                 contentType: false,
                 success:function (data) {
-                    console.log(data);
-                    self.onSubmitSuccess&&self.onSubmitSuccess.apply(self, [data]);
+                    if(data.result !== 'success'){
+                        console.log('圖片上傳失敗，請檢查');
+                    }else{
+                        self.onSubmitSuccess&&self.onSubmitSuccess.apply(self, [data]);
+                    }
                 }
             });
-            sendRequest(checkPost());
+            // sendRequest(checkPost());
            
 
             // if(self.uploadList.length!==0){

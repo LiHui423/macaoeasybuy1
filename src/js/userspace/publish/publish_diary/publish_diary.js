@@ -1,11 +1,28 @@
 var editor = null;
 easyBuy.global.startJs = function(){
+	// 判断IE类型
+	function judgeIE(){
+		var type = navigator.userAgent;
+		var isIE = type.indexOf("compatible") > -1 && type.indexOf("MSIE") > -1;
+		if(isIE){
+			var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+			reIE.test(type);
+			var fIEVersion = parseFloat(RegExp["$1"]);
+			return fIEVersion;
+		}
+	}
 	$('#editor-box').load('pubilsh_editor.html',function(){
 		editor = new YezEditor('#editor'); //實例編輯器
 		addSelect(true);
 	});
+	var version = judgeIE();
+	if(version === 9){
+		imgUpLoad();
+	}else{
+		newUpload();
+	}
 	// imgUpLoad();
-	newUpload();
+	// newUpload();
 	showInputNum(); //監聽標題框的長度並且輸出
 
 	chooseType(); //選擇文章類型
@@ -46,7 +63,6 @@ function checkPost(){
 }
 //發送
 function sendRequest(obj){
-	console.log(obj);
 	var titleName = encodeURIComponent(obj.titleName); // 文章標題
 	var purchasedfrom = encodeURIComponent(obj.res); //文章內容
 	var newLabelName = encodeURIComponent(obj.newLabelName); //新標籤名字

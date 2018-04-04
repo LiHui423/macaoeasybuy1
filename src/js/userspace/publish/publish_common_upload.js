@@ -11,7 +11,7 @@ function btnOnSubmitFunc(obj,btn){
 	//否則，點擊是繼續上傳圖片
 	$(btn).off('click.uploader');
 	var flag = true;
-	$.each(self.uploadList,function(k,y){
+	$.each(self.list,function(k,y){
 		if(!y.isComplete) flag = false;
 	});
 	if(self.list.length == 0 || flag){
@@ -27,8 +27,8 @@ function btnOnSubmitFunc(obj,btn){
 		var uploadShowImg = easyBuy.global.template['upload-show-img'];
 		new EasyUplader({
 			pickerId : 'publish_submit',
-			server : 'http://userspace1.macaoeasybuy.com/UserPublishController/preUpload.easy',
-			// server : 'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/UserPublishController/preUpload.easy',
+			// server : 'http://userspace1.macaoeasybuy.com/UserPublishController/preUpload.easy',
+			server : 'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/UserPublishController/preUpload.easy',
 			submitBtnId : 'replyBox_sendMess',
 			multiple : true,
 			method : 'POST',
@@ -113,8 +113,8 @@ function btnOnSubmitFunc(obj,btn){
 					// 	self.setParm(re);
 					// 	if(!y.isComplete) self.doSubmit();
 					// });
-					self.setParm(re);
 					self.doSubmit();
+					// self.setParm(re);
 				}
 				// var title = $('#diaryTitle').val();
 				// var content = $('#editor').html();
@@ -130,8 +130,10 @@ function btnOnSubmitFunc(obj,btn){
 				// }
 			},
 			onSubmitSuccess:function(data){
+				
 				if(data.result == 'success'){
-					specialTips('上傳完成,3s后返回帖子詳細頁');
+					sendRequest(checkPost());
+					specialTips('上傳圖片完成,3s后返回帖子詳細頁');
 				}
 			},
 		});
@@ -148,8 +150,9 @@ function imgUpLoad(){
 		cancelBtn : '.upload-picboxEach_clear', //取消圖片按鈕的Class名
 		submitBtn: '#replyBox_sendMess', //提交按鈕
 		method : 'POST', //上傳方式
-		swf: 'http://easyscript.macaoeasybuy.com/js/common/Uploader.swf', //swf路徑
-		server : 'http://userspace1.macaoeasybuy.com/UserPublishController/preUpload.easy',
+		// swf: 'http://easyscript.macaoeasybuy.com/js/common/Uploader.swf', //swf路徑
+		swf: 'http://easyscript.macaoeasybuy.com/js/plug/Uploader.swf', //swf路徑
+		server : 'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/UserPublishController/preUpload.easy',
 		fileNumLimit : 6, //文件总数量, 超出则不允许加入队列
 		fileSingleSizeLimit: 4 * 1024 * 1024, //单个文件大小是否超出限制, 超出则不允许加入队列。
 		fileSizeLimit: 6 * 4 * 1024 * 1024, //文件总大小是否超出限制, 超出则不允许加入队列。
@@ -260,7 +263,7 @@ function imgUpLoad(){
 			//只要有一個是flase 都不行哦
 			var flag = true;
 			$.each(this.list, function(k,y) {
-				if(y.isComplete == false) flag = false;
+				if(y.isComplete == false) flag = true;
 			});
 			if(flag == true){
 				sendRequest(this.publishData);// 圖片成功，發帖哦
@@ -289,13 +292,14 @@ function errorFunc(){
 }
 //返回的callback
 function formCallbackData(data){
-	console.log(data);
 	if(data == '-1'){
 		specialTips('發佈失敗，請檢查發佈內容！');
 		errorFunc();
 	}else{
 		$('#comment-success-tips-empty .point-number').html(data.point);
-		$('#comment-success-tips-empty').fadeIn(500).delay(1500).fadeOut(500);
+		setTimeout(function(){
+			$('#comment-success-tips-empty').fadeIn(500).delay(1500).fadeOut(500);
+		},1500)
 	}
 	// setTimeout(function(){
 	// 	let arr = location.href.split("?")[0].split("/");

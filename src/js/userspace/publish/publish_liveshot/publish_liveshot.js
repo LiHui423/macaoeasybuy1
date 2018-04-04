@@ -5,17 +5,37 @@ $(function(){
 		addSelect(true);
 	});
 	//imgUpLoad();
-	newUpload();
 	// $('#publish_submit').on('click',function(){
 	// 	newUpload();
 	// })
 	showInputNum(); //監聽標題框的長度並且輸出
 });
+easyBuy.global.startJs = function(){
+	// 判断IE类型
+	function judgeIE(){
+		var type = navigator.userAgent;
+		var isIE = type.indexOf("compatible") > -1 && type.indexOf("MSIE") > -1;
+		if(isIE){
+			var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+			reIE.test(type);
+			var fIEVersion = parseFloat(RegExp["$1"]);
+			return fIEVersion;
+		}
+	}
+	var version = judgeIE();
+	if(version === 9){
+		imgUpLoad();
+	}else{
+		newUpload();
+	}
+	// newUpload();
+}
 //點擊按鈕先去檢查內容
 function checkPost(){
 	var resData = editor.getYezContent();
 	var labelList = editor.getLabelArr(); //標籤數組
 	var obj = {
+		account : myuuid,
 		titleName : getTitleName($('#diaryTitle'),24), //獲取標題名字
 		res : resData.newres, //內容
 		atPos : resData.atPos, //真實@人位置
@@ -42,10 +62,10 @@ function sendRequest(obj){
 	var titleName = encodeURIComponent(obj.titleName); // 文章標題
 	var purchasedfrom = encodeURIComponent(obj.res); //文章內容
 	var newLabelName = encodeURIComponent(obj.newLabelName); //新標籤名字
-	var path = 'http://192.168.3.38:8080/page/common/agency.html?';
+	var path = 'http://userspace.macaoeasybuy.com/agency.html?';
 	//請求路徑
-	var ipUrl = 'http://userspace1.macaoeasybuy.com';
-	var dataUrl = ipUrl + '/UserPublishController/addDissipate.easy';
+	var ipUrl = 'http://192.168.3.127:8089';
+	var dataUrl = ipUrl + '/yez_easyBuyMall_userSpace/UserPublishController/addDissipate.easy';
 	//創建表單并提交
 	createFormSubmit({
 		account : myuuid,

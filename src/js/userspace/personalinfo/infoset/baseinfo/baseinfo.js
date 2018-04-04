@@ -18,6 +18,7 @@ easyBuy.global.startJs = function(){
 		var fIEVersion = parseFloat(RegExp["$1"]);
 		console.log(fIEVersion);
 	}
+	
 }
 var justNumInput  = easyBuy.global.dep.justNumInput;
 var baseInfo = new Object();
@@ -26,6 +27,7 @@ function getBaseInfoData(){
 	var dataUrl = 'http://userspace1.macaoeasybuy.com/userSettingController/queryUserReceive.easy?userId='+userId+'&seeUserId='+seeUserId+'&easybuyCallback=?';
 		$.getJSON(dataUrl,function(data){
 			var newData = data.userReceive;
+			console.log(newData);
 			//進度條
 			changeProgress(
 				$('#receiving-data .info-progress'),
@@ -74,8 +76,9 @@ function getBaseInfoData(){
 		});
 	var url = 'http://userspace1.macaoeasybuy.com/userSpaceIndexController/queryUserSpaceInfo.easy?userId='+userId+'&seeUserId='+seeUserId+'&easybuyCallback=?';
 	$.getJSON(url,function(data){
-		$('#head-img .head-img-box img,#preview-head-img').attr('src','//wap.macaoeasybuy.com'+data.userInfo.userPic);
-		$('#change-head-img .head .head-img').append(`<img src=//wap.macaoeasybuy.com/${data.userInfo.userPic}>`);
+		$('#head-img .head-img-box img,#preview-head-img').attr('src','http://mbuy.oss-cn-hongkong.aliyuncs.com'+data.userInfo.userPic);
+		// $('#change-head-img .head .head-img').append(`<img src=//wap.macaoeasybuy.com/${data.userInfo.userPic}>`);
+		$('#change-head-img .head .head-img').html(`<img src=http://mbuy.oss-cn-hongkong.aliyuncs.com/${data.userInfo.userPic} style="width:110px;height:110px;">`);
 	})
 }
 //進度條使用函數
@@ -102,11 +105,14 @@ function changeHeadImg() {
 					dataType:'json',
 					success:function(data){
 						var typeList = data.result;
+						var html = ``;
+						var ul = ``;
 						$.each(typeList,function(key,value){
-							var html=`<div id=${value.id}>${value.className}<div>`;
-							$('#change-head-img .select-nav').append(html);
-							$('#change-head-img .pages').append(`<ul class="clearfloat"></ul>`)
+							html += `<div id=${value.id}>${value.className}</div>`;
+							ul += `<ul class="clearfloat"></ul>`;
 						})
+						$('#change-head-img .select-nav').html(html);
+						$('#change-head-img .pages').html(ul);
 						$($('#change-head-img .select-nav').find('div')[0]).addClass('select');
 						$('#change-head-img .box-content.select-page .select-nav div').css('width',540/typeList.length-1);
 						// 導航點擊事件
@@ -155,11 +161,14 @@ function changeCoverImg() {
 					success:function(data){
 						console.log(data);
 						var typeList = data.result;
+						var html = ``;
+						var ul = ``;
 						$.each(typeList,function(key,value){
-							var html=`<div id=${value.id}>${value.className}<div>`;
-							$('#change-cover-img .select-nav').append(html);
-							$('#change-cover-img .pages').append(`<ul class="clearfloat"></ul>`);
+							html += `<div id=${value.id}>${value.className}</div>`;
+							ul += `<ul class="clearfloat"></ul>`;
 						})
+						$('#change-cover-img .select-nav').html(html);
+						$('#change-cover-img .pages').html(ul);
 						$($('#change-cover-img .select-nav').find('div')[0]).addClass('select');
 						$('#change-cover-img .box-content.select-page .select-nav div').css('width',540/typeList.length-1);
 						// 導航點擊事件
@@ -402,33 +411,59 @@ function submitAllInfo(){
 }
 // 确认更新
 function confirmUpdate(){
+	// 上傳的確認更新
 	$('#change-head-submit,#change-cover-submit').on('click',function(){
+		// 判斷更新頭像或者背景圖
 		var type = $(this).attr('id').split('-')[1];
 		if(type === 'head'){
 			type = 1;
 		} else {
 			type = 2;
 		}
-		var targetImg = $('#preview-head-img').attr('src');//获取图片base64编码
 		var square = $('.jcrop-holder').find('div')[0];//获取目标方框
-		var x = $(square).css('left').replace('px','');
-		var y = $(square).css('top').replace('px','');
-		var width = $(square).css('width').replace('px','');
-		var height = $(square).css('height').replace('px','');
+		var x = Math.ceil($(square).css('left').replace('px','')*1.85);
+		var y = Math.ceil($(square).css('top').replace('px','')*1.85);
+		var width = Math.ceil($(square).css('width').replace('px','')*1.85);
+		var height = Math.ceil($(square).css('height').replace('px','')*1.85);
 		var param = 'x-oss-process=image/crop,x_'+x+',y_'+y+',w_'+width+',h_'+height;
-		console.log(param);
+		if(type === 1){
+			var targetImg = $('#preview-head-img').attr('src');//获取图片base64编码
+		}else if(type === 2){
+			var targetImg = $('#preview-cover-img').attr('src');//获取图片base64编码
+		}
+		//將base64轉為文件上傳/
+		var $Blob= getBlobBydataURI(targetImg,'image/jpeg'); 
+		var formData = new FormData();  
+		formData.append("files", $Blob ,"file_"+Date.parse(new Date())+".jpeg");
+		formData.append('userId',easyBuy.easyUser.id);
+		formData.append('id','0');
+		formData.append('type',type);
+		formData.append('param',param);
+		function getBlobBydataURI(dataURI,type) {  
+            var binary = atob(dataURI.split(',')[1]);  
+            var array = [];  
+            for(var i = 0; i < binary.length; i++) {  
+                array.push(binary.charCodeAt(i));  
+            }  
+            return new Blob([new Uint8Array(array)], {type:type });  
+		}
+		//****************** */
+		console.log(formData.get('files'));
 		var url = 'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/userSettingController/updateUserPic.easy';
 		$.ajax({
 			url:url,
 			type:'POST',
-			data:{
-				base64: targetImg,
-				id: easyBuy.easyUser.id,
-				type: type,
-				param: param
-			},
+			dataType: 'json',
+			data:formData,
+			contentType:false,
+			processData:false,
+			mimeType:"multipart/form-data",
 			success:function(data){
-				
+				if(data.result === 'success'){
+					// location.reload();
+				}else{
+					alert('更新失敗');
+				}
 			}
 		})
 	})
@@ -530,4 +565,13 @@ function navClick(type){
 		})
 	})
 
+}
+// 判斷上傳圖片或宜買圖庫
+function judgeOr(){
+	var boxBtn = $('#change-head-img,#change-cover-img .box-title').find('div');
+	$.each(boxBtn,function(k,y){
+		if($(y).hasClass('select')){
+			return k;
+		}
+	})
 }

@@ -3,8 +3,27 @@ $(function() {
 	chooseType(); //選擇文章類型
 	chooseAlbum(); //懸著專輯按鈕
 	// imgUpLoad();// 上傳插件--旧的
-	newUpload();//調用新的插件
+	// newUpload();//調用新的插件
 });
+easyBuy.global.startJs = function(){
+	// 判断IE类型
+	function judgeIE(){
+		var type = navigator.userAgent;
+		var isIE = type.indexOf("compatible") > -1 && type.indexOf("MSIE") > -1;
+		if(isIE){
+			var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+			reIE.test(type);
+			var fIEVersion = parseFloat(RegExp["$1"]);
+			return fIEVersion;
+		}
+	}
+	var version = judgeIE();
+	if(version === 9){
+		imgUpLoad();
+	}else{
+		newUpload();
+	}
+}
 //創建存儲內容對象
 var chooseOtherAlbum = {
 	title: '',

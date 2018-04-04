@@ -90,6 +90,23 @@
 
 										<div class="publishBox_surebtn" id="replyBox_sendMess">
 											<span><img src="/src/img/userspace/publish/checkIcon_white.png"></span><span>保存并發佈</span>
+											<!--進度條div-->
+											<div class="upload-component">
+												<div class="upload-close">
+													<span class="upload-close-span">关闭</span>
+												</div>
+												<div class="upload-content">
+													<div class="progress">
+														<span class="upload-text"></span>
+														<span class="uploaded"></span>
+													</div>
+													<div class="confirm-cancel">
+														<span class="confirm">确认</span>
+														<span class="cancel">取消</span>
+													</div>
+												</div>
+											</div>
+											<!-- 進度條結束 -->
 										</div>
 										<div class="publishBox_choosebtn" id="diary_state">
 											<span>公開(所有人可見)</span><span><img src="/src/img/userspace/publish/upIcon_white.png"></span>
@@ -120,7 +137,7 @@
 				<div>+<span class="point-number"></span>分</div>
 			</div>
 		</div>
-
+	
 	<script src="/src/js/plug/yez_js_Reset.js"></script>
 	<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
 	<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
@@ -132,7 +149,9 @@
 	<script src="/src/js/common/page-header.js"></script>
 	<script src="/src/js/plug/yez_Editor.js"></script>
 	<script src="/src/js/common/vendor/webuploader.nolog.min.js"></script>
-	<!-- <script src="/src/js/common/uploadFrame/uploadFrame.js"></script> -->
+	<!-- IE9下使用此插件 -->
+	<script src="/src/js/common/uploadFrame/uploadFrame.js"></script>
+	<!-- 其他浏览器下使用此插件 -->
 	<script src="/src/js/common/uploadFrame/easyUploader.js"></script>
 	<script src="/src/js/userspace/publish/publish_Editor.js"></script>
 	<script src="/src/js/userspace/publish/publish_common_upload.js"></script>
