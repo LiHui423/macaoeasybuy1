@@ -27,7 +27,7 @@
 
 		<div id="swapper">
 
-			<header></header>
+			<header id="page-header"></header>
 			<div id="container" class="clearfloat">
 				<div id="left-menu"></div>
 				<div id="right-content">
@@ -93,9 +93,10 @@
 		<script src="/src/js/userspace/common/whitemenu.js" async></script>
 		<script src="/src/js/userspace/common/newspush.js" async></script>
 		<script src="/src/js/common/header&search&footer/footer.js" async></script>
-		<script src="/src/js/common/page-eader.js"></script>
+		<script src="/src/js/common/page-header.js"></script>
 		<script src="/src/js/common/vendor/imagesloaded-4.1.4.min.js"></script>
 		<script src="/src/js/userspace/liveshot/liveshotlist/liveshotlist.js"></script>
+		<script src="/src/js/common/clickEvent.js"></script>
 
 		<script id="post-template" type="text/html" data-type="template">
 			<%if(UsersentVolunteersList.sentVolunteersList.length != 0){%>
@@ -124,9 +125,9 @@
 							</div>
 							<div class="laster">
 								<ul class="laster-num clearfloat">
-									<li><%=formatNum(UsersentVolunteersList.sentVolunteersList[i].seeNums)%></li>
-									<li><%=formatNum(UsersentVolunteersList.sentVolunteersList[i].loveNums)%></li>
-									<li><%=formatNum(UsersentVolunteersList.sentVolunteersList[i].topicNum)%></li>
+									<li><%=UsersentVolunteersList.sentVolunteersList[i].seeNums%></li>
+									<li><%=UsersentVolunteersList.sentVolunteersList[i].loveNums%></li>
+									<li><%=UsersentVolunteersList.sentVolunteersList[i].topicNum%></li>
 								</ul>
 								<%if(UsersentVolunteersList.isSelf == 0){%>
 									<div class="laster-look">

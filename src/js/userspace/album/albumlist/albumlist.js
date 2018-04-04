@@ -305,7 +305,7 @@ void function () {
           idStr += parseInt(arr[i]) + ',';
         }
       }
-      $.getJSON('http://userspace1.macaoeasybuy.com/UserThealbumConntroller/deleteBatchUserAlbum.easy?idStr=' + idStr + '&userId=' + userId + '&integral=' + arr.length * window.deleteIntegral + '&easybuyCallback=?', function (data) {
+      $.getJSON('http://userspace1.macaoeasybuy.com/UserThealbumConntroller/deleteBatchUserAlbum.easy?idStr=' + idStr + '&userId=' + userId + '&integral=' + arr.length * deleteIntegral + '&easybuyCallback=?', function (data) {
         if (data.status == 'success') {
           $('#delete-post').css('display', 'none');
           //只要刪除數據的，其他盒子點過去的時候都要重新刷過

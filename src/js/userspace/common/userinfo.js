@@ -1,8 +1,10 @@
 void function () {
   function insertUserInfoPanel(uid, sid, fn) {
     $('#user-info').load('/public/userinfo.html', function () {
-      $.getJSON(`http://userspace1.macaoeasybuy.com/userSpaceIndexController/queryUserSpaceInfo.easy?userId=${uid}&seeUserId=${sid}&easybuyCallback=?`, function (data) {
+      // $.getJSON(`http://userspace1.macaoeasybuy.com/userSpaceIndexController/queryUserSpaceInfo.easy?userId=${uid}&seeUserId=${sid}&easybuyCallback=?`, function (data) {
+      $.getJSON(`http://192.168.3.127:8089/yez_easyBuyMall_userSpace/userSpaceIndexController/queryUserSpaceInfo.easy?userId=${uid}&seeUserId=${sid}&easybuyCallback=?`, function (data) {
         var newData = data.userInfo;
+        console.log(newData);
         //存儲用戶信息
         easyBuy.pageUser.name = newData.userName;
         easyBuy.pageUser.pic = newData.userPic;
@@ -15,13 +17,20 @@ void function () {
         //性別
         newData.sex == 'Girl' ? $('#user-info img.sex').attr('src', '/src/img/common/girl.png') : $('#user-info img.sex').attr('src', '/src/img/common/boy.png');
         //頭像
-        $('#user-info .head-pic').attr('src', 'http://wap.macaoeasybuy.com/' + newData.userPic);
+        $('#user-info .head-pic').attr('src', 'http://mbuy.oss-cn-hongkong.aliyuncs.com/' + newData.userPic);
         //寵物
         $('#user-info img.pet').attr('src', 'http://wap.macaoeasybuy.com/' + newData.petGradePic);
         $('#user-info .pet-level').html(newData.petGradeName);
         //身份
         $('#user-info .identity').html(newData.userIdentity ? newData.userIdentity : '普通用戶');
         $('#user-info .user-head').css('visibility', 'visible');
+        // 背景圖
+        $('#user-info .user-info-bg img').attr({'src':'http://mbuy.oss-cn-hongkong.aliyuncs.com/' + newData.backpic},{'width':'100%'},{'height':'100%'});
+        $('#cover-img .cover-img-box img').attr('src','http://mbuy.oss-cn-hongkong.aliyuncs.com/' + newData.backpic);
+        $('#change-cover-img .change-cover-img-box .show-cover-box-pre img').attr('src','http://mbuy.oss-cn-hongkong.aliyuncs.com/' + newData.backpic);
+        $($('#change-cover-img .change-cover-img-box .show-cover-box-bgpre').find('img')[1]).attr('src','http://mbuy.oss-cn-hongkong.aliyuncs.com/' + newData.backpic);
+        $('#change-cover-img .change-cover-img-box .upload-cover-show img').attr('src','http://mbuy.oss-cn-hongkong.aliyuncs.com/' + newData.backpic);
+
         //關注
         $('#point-select-different span')[0].isClick = false;
         if (newData.isSelf === 1) {

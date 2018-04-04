@@ -107,6 +107,8 @@ function imgUpload(opts){
 	});
 	//当文件上传成功时触发。
 	uploader.on('uploadSuccess', function(file, response) {
+		console.log(file);
+		console.log(response);
 		if(opts.uploadSuccess) opts.uploadSuccess.call(this,file,response);
 	});
 	//不管成功或者失败，文件上传完成时触发。

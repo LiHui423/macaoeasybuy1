@@ -2,8 +2,8 @@
 function newUpload(){
 	new EasyUplader({
 		pickerId : 'publish_submit',
-		server : 'http://userspace1.macaoeasybuy.com/UserPublishController/preUpload.easy',
-		// server : 'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/UserPublishController/preUpload.easy',
+		// server : 'http://userspace1.macaoeasybuy.com/UserPublishController/preUpload.easy',
+		server : 'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/UserPublishController/preUpload.easy',
 		submitBtnId : 'replyBox_sendMess',
 		multiple : true,
 		method : 'POST',
@@ -47,7 +47,9 @@ function newUpload(){
 				var count = $('#nowNum').html();
 				count--;
 				$('#nowNum').html(count);
+				$(this).parent().siblings().remove();
 				$(this).parent().remove();
+				
 			});
 
 			
@@ -121,8 +123,8 @@ function imgUpLoad(){
 		cancelBtn : '.upload-picboxEach_clear', //取消圖片按鈕的Class名
 		submitBtn: '#replyBox_sendMess', //提交按鈕
 		method : 'POST', //上傳方式
-		swf: 'http://easyscript.macaoeasybuy.com/js/common/Uploader.swf', //swf路徑
-		server : 'http://userspace1.macaoeasybuy.com/UserPublishController/preUpload.easy',
+		swf: 'http://easyscript.macaoeasybuy.com/js/plug/Uploader.swf', //swf路徑
+		server : 'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/UserPublishController/preUpload.easy',
 		fileNumLimit : 6, //文件总数量, 超出则不允许加入队列
 		fileSingleSizeLimit: 4 * 1024 * 1024, //单个文件大小是否超出限制, 超出则不允许加入队列。
 		fileSizeLimit: 6 * 4 * 1024 * 1024, //文件总大小是否超出限制, 超出则不允许加入队列。

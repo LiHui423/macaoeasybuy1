@@ -28,6 +28,7 @@
   }
   $('body').on('click.gotoPage', function (event) {
     const $e = $(event.target);
+    // console.log($e);
 
     // 判断是否是用户头像被点击
     if ($e.attr('data-type') === 'userAvatar') {
@@ -120,6 +121,13 @@
         const postID = $e.parents('.list-num').attr('data-id');
         csl(postID);
         window.open(`${link.welfarepostdetail}?id=${postID}`);
+    }
+
+    //跳轉到福利社話題帖子詳細頁
+    if (location.href.indexOf('welfarepostdetail.html') !== -1 && $e.is('a')){
+        const postID = $e.parents('.list-num').attr('data-id');
+        csl(postID);
+        location.href = 'http://social.macaoeasybuy.com/easylive/easylivewelfare/welfarepostdetail/welfarepostdetail.html?id=' + postID;
     }
 
     //跳轉到尋寶市集話題帖子詳細頁

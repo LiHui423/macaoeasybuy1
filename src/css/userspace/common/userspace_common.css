@@ -197,6 +197,7 @@
 #user-info .user-info-bg img,
 #user-info .user-info-text img {
     width: 100%;
+    height: 100%;
 }
 
 #user-info .user-info-text {

@@ -5,6 +5,10 @@ $(function(){
 	imgUpload({
 		submitBtn: '#save-btn', //提交按鈕
 		fileBtn: '#upload-btn', //文件按鈕
+		pick : { //文件按鈕
+			id : '#upload-btn',
+			multiple : true
+		},
 		cancelBtn: '.editor-upload .editor-lister li .editor-items-img .close-btn', //取消圖片按鈕
 		swf: '/js/Uploader.swf', //swf路徑 必須
 		server:'http://shopping.macaoeasybuy.com/ceshiUpload/webUploader.easy',
@@ -27,15 +31,24 @@ $(function(){
 		},
 		//當選擇文件后顯示圖片的API
 		showImg:function(fileURL, file){
-			var html = '<li class="editor-lister-item clearfloat" data-id="'+file.id+'">'+
-							+'<div class="editor-items-img">'+
-								+'<img src="'+fileURL+'">'+
-								+'<div class="close-btn">'+
-									+'<img src="/src/img/common/tips-box/img-upload-close.png" alt="">'+
-								+'</div>'+
-							+'</div>'+
-							+'<div class="editor-items-value scrollIe scrollOther" contenteditable="true" placeholder="為此圖片添加描述吧！"></div>'+
-						+'</li>';
+			// var html = '<li class="editor-lister-item clearfloat" data-id="'+file.id+'">'+
+			// 				+'<div class="editor-items-img">'+
+			// 					+'<img src="'+fileURL+'">'+
+			// 					+'<div class="close-btn">'+
+			// 						+'<img src="/src/img/common/tips-box/img-upload-close.png" alt="">'+
+			// 					+'</div>'+
+			// 				+'</div>'+
+			// 				+'<div class="editor-items-value scrollIe scrollOther" contenteditable="true" placeholder="為此圖片添加描述吧！"></div>'+
+			// 			+'</li>';
+			var html = `<li class="editor-lister-item clearfloat" data-id=${file.id}>
+							<div class="editor-items-img">
+								<img src=${fileURL}>
+								<div class="close-btn">
+									<img src="/src/img/common/tips-box/img-upload-close.png" alt="">
+								</div>
+							</div>
+							<div class="editor-items-value scrollIe scrollOther" contenteditable="true" placeholder="為此圖片添加描述吧！"></div>
+						</li>`;
 			$('.editor-upload .editor-lister').prepend(html);
 			html = null;
 			fileCount++;

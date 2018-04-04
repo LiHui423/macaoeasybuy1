@@ -88,7 +88,7 @@ function getListdata(){
 	var isComplete = requestObj[type].isComplete;
 	var boxId = '#'+requestObj[type].showBoxId;
 	var order = type;
-	var dataUrl = 'http://userspace.macaoeasybuy.com/UserLiveShotConntroller/queryUserSentVolunteers.easy';
+	var dataUrl = 'http://userspace1.macaoeasybuy.com/UserLiveShotConntroller/queryUserSentVolunteers.easy';
 	dataUrl = getRequestURL({
 		targetURL : dataUrl,
 		requestData : {
