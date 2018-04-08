@@ -1,4 +1,4 @@
-var postId = easyBuy.global.pageParameter.postId || 500;
+var postId = easyBuy.global.pageParameter.id || 500;
 easyBuy.global.startJs = function(){
 	easyBuy.userSpaceGlobal.replyPostType = '1';
 	easyBuy.userSpaceGlobal.replyVolunteersType = 'replySuitableLife'; //回復貼子分類

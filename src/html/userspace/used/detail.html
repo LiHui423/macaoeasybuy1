@@ -383,10 +383,10 @@
 		<script src="/src/js/common/clickEvent.js"></script>
 
 		<!--上一篇下一篇-->
-		<script id="handPost" type="text/html">
+		<script id="handPost" type="text/html" data-type="template">
 			<div id="<%=id%>handPost" class="page-items clearfloat">
 				<div class="page-items-list">
-					<a href="" class="clearfloat">
+					<a class="clearfloat">
 						<%if(pictureurl != undefined){%>
 							<div class="items-img">
 								<img middle="true" src="//wap.macaoeasybuy.com<%=pictureurl%>" alt="">
@@ -397,7 +397,7 @@
 						<%}else{%>
 							<div class="items-text" style="width:100%">
 						<%}%>
-							<div><%=titlename%></div>
+							<div><span id="underline"><%=titlename%></span></div>
 							<p><%=typename%></p>
 							<div class="handPost-content"></div>
 							<div>

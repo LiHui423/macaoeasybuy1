@@ -16,12 +16,25 @@
 		<script src="/src/js/common/frameDomainJSON.js"></script>
 		<script src="/src/js/common/getData/getData_needLogin.js"></script>
 		<script>
-			easyBuy.userSpaceGlobal.afterSetIsSelf = function(state){
-				if(state){
-					easyFrame.loadCss('//easystyle.macaoeasybuy.com/css/userspace/lifecircle/lifecirclepostdetail/lifecirclepostdetail-mine.css');
-				}else{
-					easyFrame.loadCss('//easystyle.macaoeasybuy.com/css/userspace/lifecircle/lifecirclepostdetail/lifecirclepostdetail-other.css');
-				}
+			// easyBuy.userSpaceGlobal.afterSetIsSelf = function(state){
+			// 	if(state){
+			// 		easyFrame.loadCss('/src/css/userspace/lifecircle/lifecirclepostdetail/lifecirclepostdetail-mine.css');
+			// 	}else{
+			// 		easyFrame.loadCss('/src/css/userspace/lifecircle/lifecirclepostdetail/lifecirclepostdetail-other.css');
+			// 	}
+			// }
+			if(easyBuy.global.isSelf){
+				var link = document.createElement('link');
+				link.type = 'text/css';
+				link.rel = 'stylesheet';
+				link.href = '/src/css/userspace/lifecircle/lifecirclepostdetail/lifecirclepostdetail-mine.css';
+				document.getElementsByTagName("head")[0].appendChild(link);
+			}else{
+				var link = document.createElement('link');
+				link.type = 'text/css';
+				link.rel = 'stylesheet';
+				link.href = '/src/css/userspace/lifecircle/lifecirclepostdetail/lifecirclepostdetail-other.css';
+				document.getElementsByTagName("head")[0].appendChild(link);
 			}
 		</script>
 		<script src="/src/js/userspace/common/userspacebg.js" async></script>

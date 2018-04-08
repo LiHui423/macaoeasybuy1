@@ -301,20 +301,20 @@ function formCallbackData(data){
 			$('#comment-success-tips-empty').fadeIn(500).delay(1500).fadeOut(500);
 		},1500)
 	}
-	// setTimeout(function(){
-	// 	let arr = location.href.split("?")[0].split("/");
-	// 	let hm = arr[arr.length-1];
-	// 	let type = hm.split(".")[0].split("_")[1];
-	// 	if(type === "liveshot"){
-	// 		type = 'buy';
-	// 	}else if(type === "secondHand"){
-	// 		type = 'used';
-	// 	}else if(type === "group"){
-	// 		type = 'life';
-	// 	}else if(type === "market"){
-	// 		type = 'fair';
-	// 	}
-	// 	location.href = 'http://userspace.macaoeasybuy.com/'+type+'/detail.html?spaceid='+easyBuy.easyUser.id+'&id='+data.data;
-	// },3000);
+	setTimeout(function(){
+		let arr = location.href.split("?")[0].split("/");
+		let hm = arr[arr.length-1];
+		let type = hm.split(".")[0].split("_")[1];
+		if(type === "liveshot"){
+			type = 'buy';
+		}else if(type === "secondHand"){
+			type = 'used';
+		}else if(type === "group"){
+			type = 'life';
+		}else if(type === "market"){
+			type = 'fair';
+		}
+		location.href = 'http://userspace.macaoeasybuy.com/'+type+'/detail.html?spaceid='+easyBuy.easyUser.id+'&id='+data.data;
+	},3000);
 	$('#myIframeId,#myFormId').remove();
 }

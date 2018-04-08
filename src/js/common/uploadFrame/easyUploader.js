@@ -316,12 +316,11 @@ EasyUplader.prototype = {
         this.submitBtn.on('click', function(){
             
             self.onBeforeSend&&self.onBeforeSend.call(self);
-            var textArea = $('.editor-lister').find('textarea');
+            var textArea = $('#preview-box').find('textarea');
             $.each(textArea,function(key,value){
                 self.param.list.push($(value).val());
             })
             self.formData.append('param', JSON.stringify(self.param));
-            // easyBuy.global.pageParameter.albumId && self.formData.append('albumId', easyBuy.global.pageParameter.albumId);
             
             /*self.uploadProgress();*/
             $.ajax({

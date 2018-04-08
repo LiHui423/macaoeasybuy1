@@ -174,6 +174,8 @@ function myDeletePost(opt){
 			$.getJSON(delUrl+'?idStr='+postId+'&userId='+userId+'&integral='+num+'&easybuyCallback=?',function(data){
 				if(data.status == 'success'){
 					alert('刪除帖子成功,頁面準備跳轉列表頁');
+					let type = location.href.split('/')[3];
+					location.href = 'http://userspace.macaoeasybuy.com/' + type + '/index.html?spaceid=' + easyBuy.global.pageParameter.spaceid;
 				}else{
 					alert('刪除帖失敗,不知道什麼鬼問題');
 				}

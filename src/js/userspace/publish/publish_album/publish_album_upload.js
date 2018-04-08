@@ -90,7 +90,6 @@ function newUpload(){
 				// 	self.setParm(re);
 				// 	if(!y.isComplete) self.doSubmit();
 				// });
-				self.setParm(re);
 				self.doSubmit();
 			}
 			// var title = $('#diaryTitle').val();
@@ -108,6 +107,7 @@ function newUpload(){
 		},
 		onSubmitSuccess:function(data){
 			if(data.result == 'success'){
+				sendRequest(checkPost());
 				specialTips('上傳完成,3s后返回帖子詳細頁');
 			}
 		},
@@ -155,9 +155,9 @@ function imgUpLoad(){
 			//添加模板
 			$('#preview-box').prepend(html);
 			$('#nowNum').html(this.list.length);
-//			if(this.list.length >= 6){
-//				$('.upload-picbox').css('display','none');
-//			}
+		//			if(this.list.length >= 6){
+		//				$('.upload-picbox').css('display','none');
+		//			}
 		},
 		//取消圖片
 		cancelImg : function(btn,idList) {

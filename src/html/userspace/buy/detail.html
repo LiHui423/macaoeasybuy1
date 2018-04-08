@@ -16,13 +16,27 @@
 		<script src="/src/js/common/frameDomainJSON.js"></script>
 		<script src="/src/js/common/getData/getData_needLogin.js"></script>
 		<script>
-			easyBuy.userSpaceGlobal.afterSetIsSelf = function(state){
-				if(state){
-					easyFrame.loadCss('/css/userspace/liveshot/liveshotpostdetail/liveshotpostdetail-mine.css');
-				}else{
-					easyFrame.loadCss('/css/userspace/liveshot/liveshotpostdetail/liveshotpostdetail-other.css');
-				}
+			// easyBuy.userSpaceGlobal.afterSetIsSelf = function(state){
+			// 	if(easyBuy.global.isSelf){
+			// 		easyFrame.loadCss('/src/css/userspace/liveshot/liveshotpostdetail/liveshotpostdetail-mine.css');
+			// 	}else{
+			// 		easyFrame.loadCss('/src/css/userspace/liveshot/liveshotpostdetail/liveshotpostdetail-other.css');
+			// 	}
+			// }
+			if(easyBuy.global.isSelf){
+				var link = document.createElement('link');
+				link.type = 'text/css';
+				link.rel = 'stylesheet';
+				link.href = '/src/css/userspace/liveshot/liveshotpostdetail/liveshotpostdetail-mine.css';
+				document.getElementsByTagName("head")[0].appendChild(link);
+			}else{
+				var link = document.createElement('link');
+				link.type = 'text/css';
+				link.rel = 'stylesheet';
+				link.href = '/src/css/userspace/liveshot/liveshotpostdetail/liveshotpostdetail-other.css';
+				document.getElementsByTagName("head")[0].appendChild(link);
 			}
+			
 		</script>
 		<script src="/src/js/userspace/common/userspacebg.js" async></script>
 		<script>easyBuy.userSpaceGlobal.whiteNavName = 'SentVolunteersNumber';</script>
@@ -278,7 +292,7 @@
 		<script src="/src/js/plug/yez_js_Reset.js"></script>
 		<script src="/src/js/common/vendor/art-template-3.1.0.min.js"></script>
 		<script src="/src/js/common/vendor-extend/atr-template.extend.js"></script>
-		<script src="/src/js/common/vendor/socketio.min.js"></script>
+		<!-- <script src="/src/js/common/vendor/socketio.min.js"></script> -->
 		<script src="/src/js/userspace/common/userinfo.js" async></script>
 
 		<script src="/src/js/userspace/common/whitemenu.js" async></script>
@@ -298,7 +312,7 @@
 		<script id="handPost" type="text/html" data-type="template">
 			<div id="<%=id%>handPost" class="page-items clearfloat">
 				<div class="page-items-list">
-					<a href="" class="clearfloat">
+					<a class="clearfloat">
 						<%if(pictureurl != undefined){%>
 							<div class="items-img">
 								<img middle="true" src="//wap.macaoeasybuy.com<%=pictureurl%>" alt="">
@@ -309,7 +323,7 @@
 						<%}else{%>
 							<div class="items-text" style="width:100%">
 						<%}%>
-							<div><%=titlename%></div>
+							<div><span id="underline"><%=titlename%></span></div>
 							<div class="handPost-content"></div>
 							<div>
 								<span class="handPost-year"></span>

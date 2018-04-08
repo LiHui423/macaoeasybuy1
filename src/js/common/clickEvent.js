@@ -229,13 +229,13 @@
     else if(location.href.indexOf('life/index.html') !== -1){
         if($e.hasClass('shadow-box')){
             let postId = $e.parents('.pillar-all').attr('id').replace(/[^0-9]/ig,"");
-            location.href = 'http://userspace.macaoeasybuy.com/life/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&postId=' + postId;
+            location.href = 'http://userspace.macaoeasybuy.com/life/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + postId;
         }
     }//用戶空間-生活圈詳細頁，轉到上下篇或返回生活圈列表
     else if(location.href.indexOf('life/detail.html') !== -1){
         if($e.attr('id') === 'underline'){
             let id = $e.parents('.page-items').attr('id').replace(/\D/gim, '');
-            location.href = 'http://userspace.macaoeasybuy.com/life/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&postId=' + id;
+            location.href = 'http://userspace.macaoeasybuy.com/life/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + id;
         }else if($e.is('a') && $e.parents().hasClass('return-list')){
             location.href = 'http://userspace.macaoeasybuy.com/life/index.html?spaceid=' + easyBuy.global.pageParameter.spaceid;
         }
@@ -303,7 +303,14 @@
         }else if($e.is('a') && $e.parents().hasClass('return-list')){
             location.href = 'http://userspace.macaoeasybuy.com/fair/index.html?spaceid=' + easyBuy.global.pageParameter.spaceid;
         }
-    }//用戶空間-敗家志詳細頁，轉到上下篇和返回敗家志列表
+    }//用戶空間-敗家志列表，跳轉到敗家志詳細頁
+    else if(location.href.indexOf('buy/index.html') !== -1){
+        if($e.hasClass('shadow-box')){
+            let postId = $e.parents('.pillar-all').attr('id').replace(/\D/gim, '');
+            location.href = 'http://userspace.macaoeasybuy.com/buy/detail.html?spaceid=' + easyBuy.global.pageParameter.spaceid + '&id=' + postId;
+        }
+    }
+    //用戶空間-敗家志詳細頁，轉到上下篇和返回敗家志列表
     else if(location.href.indexOf('buy/detail.html') !== -1){
         if($e.attr('id') === 'underline'){
             let id = $e.parents('.page-items').attr('id').replace(/\D/gim, '');
