@@ -2,9 +2,9 @@
   background: #e98900 !important;
   color: #fff !important;
 }
-body {
-  // overflow: hidden;
-  // width: 970px;
+.e-icon {
+  width: 15px;
+  height: 15px;
 }
 .tabsBar {
   width: 100%;
@@ -13,12 +13,12 @@ body {
   text-align: center;
   background: #ffffff;
   &:after {
-    content: " ";
+    content: "";
     clear: both;
     display: table;
   }
   .labelTabs {
-    width: 480px;
+    width: 400px;
     height: 100%;
     float: left;
     &[data-eb-active="0"] .tab:first-of-type {
@@ -51,7 +51,7 @@ body {
         overflow: hidden;
         z-index: 1;
         background: url('/src/img/userspace/label/arrow-y.png') no-repeat ;
-        background-position: 250px; 
+        background-position: 250px;
         &:hover {
           height: calc(70px * 6);
         }
@@ -73,14 +73,14 @@ body {
     }
   }
   .sortOrderTabs {
-    width: 40%;
+    width: 23%;
     height: 100%;
     float: right;
     position: relative;
     overflow: hidden;
     &::after {
       height: 6px;
-      width: 33.33333%;
+      width: 50%;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -92,13 +92,10 @@ body {
       left: 0;
     }
     &[data-eb-active="1"]::after {
-      left: 33.33333%;
-    }
-    &[data-eb-active="2"]::after {
-      left: 66.66666%;
+      left: 50%;
     }
     > .tab {
-      width: 33.33333%;
+      width: 50%;
       height: 100%;
       float: left;
       color: #aaa;
@@ -140,7 +137,7 @@ body {
   line-height: normal;
   display: none;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  .select {
+  &.select {
     border-radius: 10px;
     overflow: hidden;
     display: block;
@@ -250,7 +247,6 @@ body {
 .item-container {
     padding: 10px;
   > div {
-    display: none;
     &::after {
       clear: both;
       display: table;
@@ -268,12 +264,12 @@ body {
   }
   .label-item{
     float:left;
-    margin-left:10px;
     width:464px;
     background-color:#fff;
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
+    visibility: hidden;
     .label-picture img{
       width: 100%;
     }
@@ -360,13 +356,10 @@ body {
   .post-item{
     width:48.5%;
     background-color:#fff;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
+    visibility: hidden;
   }
   .post-item .post-picture{
     width: 100%;
