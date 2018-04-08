@@ -1594,11 +1594,11 @@ header {
   height: 24px;
   display: inline-block;
   &.sex-male {
-    background: url("") no-repeat;
+    background: url("/src/img/common/icon/sex-male.png") no-repeat;
     background-size: contain;
   }
   &.sex-female {
-    background: url("") no-repeat;
+    background: url("/src/img/common/icon/sex-female.png") no-repeat;
     background-size: contain;
   }
 }

@@ -657,13 +657,13 @@ template.helper('easySex', function (sex) {
   return url;
 });
 template.helper('sexIcon', function (sex) {
-  var setClass = '';
+  let setClass = '';
   if (sex === 'Girl') {
       setClass = 'sex-female';
   } else if (sex === 'Boy') {
       setClass = 'sex-male'
   }
-  return '<i class="eb-icon ' + setClass + '"></i>';
+  return '<i class="e-icon ' + setClass + '"></i>';
 });
 template.helper('isActive', function (i, j) {
   j = j === undefined ? false : j;
