@@ -54,9 +54,9 @@ function sendRequest(obj) {
 	var titleName = encodeURIComponent(obj.titleName); // 文章標題
 
 	//獲取路徑
-//	var path = window.location.href.split('/').splice(0, window.location.href.split('/').length - 1);
-//	path[1] = '';
-//	path = path.join('/') + '/publish_iframe.html?';
+	//	var path = window.location.href.split('/').splice(0, window.location.href.split('/').length - 1);
+	//	path[1] = '';
+	//	path = path.join('/') + '/publish_iframe.html?';
 	var path = 'http://userspace.macaoeasybuy.com/agency.html?';
 	//請求路徑
 	var ipUrl = 'http://userspace1.macaoeasybuy.com';

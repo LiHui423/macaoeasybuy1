@@ -439,6 +439,7 @@ function confirmUpdate(){
 		formData.append('id','0');
 		formData.append('type',type);
 		formData.append('param',param);
+		// base64解碼方法
 		function getBlobBydataURI(dataURI,type) {  
             var binary = atob(dataURI.split(',')[1]);  
             var array = [];  
@@ -448,7 +449,6 @@ function confirmUpdate(){
             return new Blob([new Uint8Array(array)], {type:type });  
 		}
 		//****************** */
-		console.log(formData.get('files'));
 		var url = 'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/userSettingController/updateUserPic.easy';
 		$.ajax({
 			url:url,
@@ -459,6 +459,54 @@ function confirmUpdate(){
 			processData:false,
 			mimeType:"multipart/form-data",
 			success:function(data){
+				if(data.result === 'success'){
+					// location.reload();
+				}else{
+					alert('更新失敗');
+				}
+			}
+		})
+	})
+	// 圖庫的確認更新
+	$('#change-head-submit-s,#change-cover-submit-s').on('click',function(){
+		// 判斷更新頭像或者背景圖
+		var type = $(this).attr('id').split('-')[1];
+		if(type === 'head'){
+			type = 1;
+			// var targetImg = $('#preview-head-img').attr('src');//获取图片base64编码
+		} else {
+			type = 2;
+			// var targetImg = $('#preview-cover-img').attr('src');//获取图片base64编码
+		}
+		var id = $(this).parent().prev().children('.select').children('.select').attr('data-id');
+		var formData = new FormData();
+		// var $Blob= getBlobBydataURI(targetImg,'image/jpeg'); 
+		// // base64解碼方法
+		// function getBlobBydataURI(dataURI,type) {  
+        //     var binary = atob(dataURI.split(',')[1]);  
+        //     var array = [];  
+        //     for(var i = 0; i < binary.length; i++) {  
+        //         array.push(binary.charCodeAt(i));  
+        //     }  
+        //     return new Blob([new Uint8Array(array)], {type:type });  
+		// }
+		// //****************** */
+		formData.append("files",new Blob([new Uint8Array()], {type:'image/jpeg' }));
+		formData.append('param',"");
+		formData.append('userId',easyBuy.easyUser.id);
+		formData.append('id',id);
+		formData.append('type',type);
+		var url = 'http://192.168.3.127:8089/yez_easyBuyMall_userSpace/userSettingController/updateUserPic.easy';
+		$.ajax({
+			url:url,
+			type:'POST',
+			dataType: 'json',
+			data:formData,
+			contentType:false,
+			processData:false,
+			mimeType:"multipart/form-data",
+			success:function(data){
+				console.log(data);
 				if(data.result === 'success'){
 					// location.reload();
 				}else{
@@ -566,12 +614,4 @@ function navClick(type){
 	})
 
 }
-// 判斷上傳圖片或宜買圖庫
-function judgeOr(){
-	var boxBtn = $('#change-head-img,#change-cover-img .box-title').find('div');
-	$.each(boxBtn,function(k,y){
-		if($(y).hasClass('select')){
-			return k;
-		}
-	})
-}
+

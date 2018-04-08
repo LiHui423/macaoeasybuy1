@@ -191,10 +191,8 @@ EasyUplader.prototype = {
         $('#'+this.pickerId + 'form').append(this.pickFile);
         this.picker.attr('for', this.pickFileId);
         $(this.pickFile).on('change', function() {
-            console.log($(this)[0]);
             // var files = $(this)[0].files;
             var files = $(this)[0].files;
-            console.log(files);
             var olen = self.uploadList.length;
             var nlen = files.length;
             var max = self.maxlength;
@@ -318,11 +316,12 @@ EasyUplader.prototype = {
         this.submitBtn.on('click', function(){
             
             self.onBeforeSend&&self.onBeforeSend.call(self);
-            var textArea = $('#preview-box').find('textarea');
+            var textArea = $('.editor-lister').find('textarea');
             $.each(textArea,function(key,value){
                 self.param.list.push($(value).val());
             })
             self.formData.append('param', JSON.stringify(self.param));
+            // easyBuy.global.pageParameter.albumId && self.formData.append('albumId', easyBuy.global.pageParameter.albumId);
             
             /*self.uploadProgress();*/
             $.ajax({

@@ -275,3 +275,59 @@
     margin-left: 20px;
     background-color: #b3b3b3;
 }
+.editor-lister .album-list-img-view{
+	float: left;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
+}
+.editor-lister .album-list-img-content{
+	float: left;
+    resize: none;
+    height: 150px;
+    width: 671px;
+    margin-left: 20px;
+    border: 0px;
+    border: none;
+    outline: 0px;
+    outline: none;
+    font-size: 18px;
+}
+.comment-success-tips {
+    display: none;
+    position: relative;
+    z-index: 888;
+}
+.comment-success-tips .praise {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 888;
+    width: 320px;
+    background-color: #fff;
+    text-align: center;
+    padding: 14px 26px 14px 26px;
+    color: #ff567c;
+    letter-spacing: 2px;
+    border: 2px solid #ff567c;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.comment-success-tips .praise div:nth-of-type(1) {
+    font-size: 22px;
+    font-weight: bold;
+}
+.comment-success-tips .praise div:nth-of-type(1) img {
+    margin-top: -6px;
+    margin-right: 10px;
+}

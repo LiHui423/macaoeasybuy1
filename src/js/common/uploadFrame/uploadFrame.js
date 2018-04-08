@@ -23,6 +23,7 @@ function imgUpload(opts){
 	uploader.list = [];
 	//向服務器提交文件
 	$(opts.submitBtn).on('click.uploader', function() {
+		console.log('提交按鈕被點擊');
 		if(opts.submitBtnClick) opts.submitBtnClick.call(uploader,this);
 	});
 	//插入圖片，辦定取消事件
